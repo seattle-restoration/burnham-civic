@@ -258,6 +258,42 @@ tr:hover td {
 
 <p>In the meantime, specific permit inquiries can be directed to <a href="mailto:jwalsh@burnhamcivic.org">jwalsh@burnhamcivic.org</a>. We are happy to pull records on any address, developer, or neighborhood in the city.</p>
 
+<div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
+  <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute expertise, or join as a member? Tell us who you are and how you want to help.</p>
+  <form onsubmit="return sendPt()" style="margin:0;">
+    <input type="text" id="pt-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="pt-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
+    <select id="pt-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
+      <option value="Public Supporter">I want to support this publicly</option>
+      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
+      <option value="Expert/Contributor">I have expertise to contribute</option>
+      <option value="Media">Media inquiry</option>
+      <option value="Other">Other</option>
+    </select><br>
+    <textarea id="pt-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
+    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
+    <span id="pt-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
+  </form>
+</div>
+
+<script>
+function sendPt(){
+  var n=document.getElementById('pt-name').value;
+  var e=document.getElementById('pt-email').value;
+  var t=document.getElementById('pt-type').value;
+  var m=document.getElementById('pt-msg').value;
+  var subj='[Permit Tracker] '+t+' — '+n;
+  var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: Permit Tracker\n\n'+(m||'No message.');
+  var a=document.createElement('a');
+  a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
+    +'?subject='+encodeURIComponent(subj)
+    +'&body='+encodeURIComponent(body);
+  a.click();
+  document.getElementById('pt-sent').style.display='inline';
+  return false;
+}
+</script>
+
 <div class="footer">
   <a href="mailto:jwalsh@burnhamcivic.org">jwalsh@burnhamcivic.org</a><br>
   Seattle, Washington &copy; 2026. 501(c)(4) pending.

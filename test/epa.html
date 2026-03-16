@@ -210,6 +210,42 @@ p {
 
 <p>Burnham Civic is monitoring the consent decree compliance timeline, the WIFIA loan covenants, and the Ship Canal tunnel cost trajectory. We have published the complete CSO outfall map and are building a public dashboard that tracks overflow events, infrastructure spending, and drainage rate comparisons across Pacific Northwest cities. Our goal is to ensure that Seattle residents understand the federal leverage that already exists over their infrastructure and the alternatives that remain available.</p>
 
+<div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
+  <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute expertise, or join as a member? Tell us who you are and how you want to help.</p>
+  <form onsubmit="return sendEpa()" style="margin:0;">
+    <input type="text" id="epa-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="epa-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
+    <select id="epa-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
+      <option value="Public Supporter">I want to support this publicly</option>
+      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
+      <option value="Expert/Contributor">I have expertise to contribute</option>
+      <option value="Media">Media inquiry</option>
+      <option value="Other">Other</option>
+    </select><br>
+    <textarea id="epa-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
+    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
+    <span id="epa-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
+  </form>
+</div>
+
+<script>
+function sendEpa(){
+  var n=document.getElementById('epa-name').value;
+  var e=document.getElementById('epa-email').value;
+  var t=document.getElementById('epa-type').value;
+  var m=document.getElementById('epa-msg').value;
+  var subj='[EPA Consent Decree] '+t+' — '+n;
+  var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: EPA Consent Decree\n\n'+(m||'No message.');
+  var a=document.createElement('a');
+  a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
+    +'?subject='+encodeURIComponent(subj)
+    +'&body='+encodeURIComponent(body);
+  a.click();
+  document.getElementById('epa-sent').style.display='inline';
+  return false;
+}
+</script>
+
 <div class="footer">
   <a href="mailto:jwalsh@burnhamcivic.org">jwalsh@burnhamcivic.org</a><br>
   Seattle, Washington &copy; 2026. 501(c)(4) pending.

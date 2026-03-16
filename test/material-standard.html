@@ -214,13 +214,82 @@ p {
 
 <p>Glass is not banned. But the standard would limit glass to no more than 40% of any public-facing facade, consistent with energy performance and durability goals.</p>
 
+<h2>The Puget Standard: Trim Team Color Palette</h2>
+
+<p>Materials are half the equation. The other half is what the city looks like at street level: the railings, bollards, benches, pole bases, park gates, and public fixtures that define the feel of a neighborhood. Right now Seattle has no unified color system for any of it. Every fixture is a different shade of whatever the last contractor had left over.</p>
+
+<p>The Burnham Civic 47 Shifts operation includes a Trim Team that applies a unified color palette to every public fixture in the city. The palette is called the <strong>Puget Standard</strong>, drawn from Puget Sound, the evergreens, and Seattle's natural landscape. Not trendy. Timeless.</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width:100%;max-width:540px;margin:24px 0;border-color:#ccc;font-size:13px;">
+<tr>
+  <td style="background:#1B3A4B;width:20%;height:60px;" title="Deep Navy">&nbsp;</td>
+  <td style="background:#3D5A6E;width:20%;height:60px;" title="Slate Blue">&nbsp;</td>
+  <td style="background:#8B9D83;width:20%;height:60px;" title="Sage Green">&nbsp;</td>
+  <td style="background:#C9A227;width:20%;height:60px;" title="Gold">&nbsp;</td>
+  <td style="background:#E8E0D0;width:20%;height:60px;" title="Warm White">&nbsp;</td>
+</tr>
+<tr style="font-size:11px;font-family:Georgia,serif;color:#666;text-align:center;">
+  <td style="padding:4px;">Deep Navy<br>#1B3A4B</td>
+  <td style="padding:4px;">Slate Blue<br>#3D5A6E</td>
+  <td style="padding:4px;">Sage Green<br>#8B9D83</td>
+  <td style="padding:4px;">Gold<br>#C9A227</td>
+  <td style="padding:4px;">Warm White<br>#E8E0D0</td>
+</tr>
+</table>
+
+<table border="1" cellpadding="6" cellspacing="0" style="width:100%;max-width:540px;margin:0 0 24px;border-color:#ccc;font-size:13px;font-family:Georgia,serif;">
+<tr bgcolor="#eee"><td><b>Color</b></td><td><b>Application</b></td></tr>
+<tr><td style="color:#1B3A4B;font-weight:700;">Deep Navy</td><td>Primary structural: railings, bollards, pole bases, gates</td></tr>
+<tr><td style="color:#3D5A6E;font-weight:700;">Slate Blue</td><td>Secondary accents: fixtures, utility covers, signage frames</td></tr>
+<tr><td style="color:#8B9D83;font-weight:700;">Sage Green</td><td>Parks: benches, trash cans, irrigation covers, play equipment</td></tr>
+<tr><td style="color:#C9A227;font-weight:700;">Gold</td><td>Feature trim: signage lettering, ornamental details, accent bands</td></tr>
+<tr><td style="color:#78716c;font-weight:700;">Warm White</td><td>Light poles, railings on waterfront, crosswalk bollards</td></tr>
+</table>
+
+<p>The Trim Team operates across all four command zones (North, Central, South, Waterfront) during the 47 Shifts execution window. Every bollard, railing, bench, pole base, and public fixture gets painted in the Puget Standard palette. The result is a city that looks like it was maintained on purpose, by people who gave a damn.</p>
+
 <h2>What TBC Is Doing</h2>
 
-<p>Burnham Civic is drafting a model material standard for Seattle, based on the approved palette above, and building the case for its adoption through the city's design review process. We are also compiling a public database of Seattle buildings by material type, age, and assessed value to demonstrate the long-term economic case for durable construction.</p>
+<p>Burnham Civic is drafting a model material standard for Seattle, based on the approved palette above, and building the case for its adoption through the city's design review process. We are also compiling a public database of Seattle buildings by material type, age, and assessed value to demonstrate the long-term economic case for durable construction. The Puget Standard color system is already specified in the 47 Shifts operational order and ready for deployment.</p>
+
+<div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
+  <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute expertise, or join as a member? Tell us who you are and how you want to help.</p>
+  <form onsubmit="return sendInquiry()" style="margin:0;">
+    <input type="text" id="ms-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="ms-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
+    <select id="ms-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
+      <option value="Public Supporter">I want to support this publicly</option>
+      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
+      <option value="Expert/Contributor">I have expertise to contribute</option>
+      <option value="Media">Media inquiry</option>
+      <option value="Other">Other</option>
+    </select><br>
+    <textarea id="ms-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
+    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
+    <span id="ms-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
+  </form>
+</div>
+
+<script>
+function sendInquiry(){
+  var n=document.getElementById('ms-name').value;
+  var e=document.getElementById('ms-email').value;
+  var t=document.getElementById('ms-type').value;
+  var m=document.getElementById('ms-msg').value;
+  var subj='[Material Standard] '+t+' — '+n;
+  var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: Material Standard\n\n'+(m||'No message.');
+  var a=document.createElement('a');
+  a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
+    +'?subject='+encodeURIComponent(subj)
+    +'&body='+encodeURIComponent(body);
+  a.click();
+  document.getElementById('ms-sent').style.display='inline';
+  return false;
+}
+</script>
 
 <div class="footer">
-  <a href="mailto:jwalsh@burnhamcivic.org">jwalsh@burnhamcivic.org</a><br>
-  Seattle, Washington &copy; 2026. 501(c)(4) pending.
+  501(c)(4) pending.
 </div>
 
 </body>
