@@ -9,8 +9,8 @@
 <style>
 body {
   font-family: Georgia, 'Times New Roman', serif;
-  max-width: 640px;
-  margin: 32px auto;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
   padding: 0 16px;
   background: #fff;
   color: #111;
@@ -20,12 +20,30 @@ body {
 a { color: #00c; }
 a:visited { color: #551a8b; }
 a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
 h1 {
   font-size: 22px;
   letter-spacing: 2px;
-  margin: 0 0 2px;
+  margin: 0;
   font-weight: 700;
 }
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
 .subtitle {
   font-size: 12px;
   color: #666;
@@ -37,12 +55,20 @@ hr {
   border-top: 1px solid #ccc;
   margin: 16px 0;
 }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
 .section-head {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #333;
+  color: #666;
   margin: 20px 0 8px;
 }
 ul {
@@ -51,32 +77,84 @@ ul {
   margin: 0 0 4px;
 }
 li {
-  padding: 2px 0;
+  padding: 3px 0;
 }
 li a {
   font-size: 14px;
 }
 .b {
-  font-size: 12px;
+  font-size: 16px;
   color: #999;
-  margin-right: 2px;
+  margin-right: 4px;
+  margin-left: -4px;
+  vertical-align: -1px;
 }
 .desc {
   font-size: 12px;
   color: #666;
   margin-left: 4px;
 }
+.gated a { color: #2d5016; }
+.gated .desc { color: #4a7c30; }
+.gated .b { color: #4a7c30; }
+.tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1px 4px;
+  margin-left: 6px;
+  font-family: Georgia, serif;
+  vertical-align: 1px;
+}
+.tag-lock {
+  background: #2d5016;
+  color: #fff;
+}
+.tag-cat {
+  background: #eee;
+  color: #666;
+  border: 1px solid #ccc;
+}
+.intel-box {
+  border: 1px solid #ccc;
+  padding: 12px 16px;
+  margin: 20px 0;
+}
+.intel-box .section-head { margin-top: 0; }
+.intel-box p {
+  font-size: 13px;
+  color: #555;
+  margin: 6px 0;
+}
+.intel-box .price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+}
+.intel-box a.join {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+  margin-left: 12px;
+}
+.intel-box a.join:visited { color: #fff; }
+.intel-box a.join:hover { background: #2a4a73; }
 .quote {
   font-style: italic;
   font-size: 13px;
   color: #555;
   margin: 24px 0 4px;
-  text-align: center;
 }
 .attr {
   font-size: 11px;
   color: #888;
-  text-align: center;
   margin-bottom: 20px;
 }
 .footer {
@@ -87,60 +165,431 @@ li a {
   border-top: 1px solid #ddd;
 }
 .footer a { color: #999; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* Contact form */
+.contact-form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+  margin: 10px 0 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.contact-form input,
+.contact-form textarea {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  width: 100%;
+  max-width: 400px;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #999;
+}
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+.contact-form button {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  border: none;
+  padding: 6px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.contact-form button:hover { background: #2a4a73; }
+.contact-form .sent {
+  font-size: 13px;
+  color: #555;
+  margin-top: 12px;
+  display: none;
+}
 </style>
 </head>
 <body>
 
-<h1>BURNHAM CIVIC</h1>
-<div class="subtitle">Civic research and planning. Seattle, Washington.</div>
-<hr>
+<div class="header">
+  <h1>BURNHAM CIVIC</h1>
+  <a href="#subscribe" class="subscribe">Subscribe</a>
+</div>
+<div class="subtitle">Civic research and planning at operating speed.</div>
 
-<div class="section-head">Initiatives</div>
-<ul>
-  <li><span class="b">&#9986;</span> <a href="#">47 Shifts</a> <span class="desc">Seattle Unsheltered Response OPORD</span></li>
-  <li><span class="b">&#9986;</span> <a href="#">Lake City Corridor</a> <span class="desc">Mixed-use development, 10 phases</span></li>
-  <li><span class="b">&#9986;</span> <a href="#">Century Gate</a> <span class="desc">Monumental architecture standard</span></li>
-  <li><span class="b">&#9986;</span> <a href="#">Capitol Hill Expansion Zone</a></li>
-  <li><span class="b">&#9986;</span> <a href="#">High Ross</a> <span class="desc">Energy sovereignty, treaty leverage</span></li>
-</ul>
-
-<div class="section-head">Intelligence</div>
-<ul>
-  <li><span class="b">&#10026;</span> <a href="#">Downtown Parcel Map</a> <span class="desc">1,216 parcels, 822 decision makers</span></li>
-  <li><span class="b">&#10026;</span> <a href="#">CSO Outfall Map</a> <span class="desc">Federal infrastructure leverage</span></li>
-  <li><span class="b">&#10026;</span> <a href="#">KCRHA Accountability Brief</a></li>
-  <li><span class="b">&#10026;</span> <a href="#">SDCI Permit Intelligence</a></li>
-</ul>
-
-<div class="section-head">Policy</div>
-<ul>
-  <li><span class="b">&#9998;</span> <a href="#">EO 14344 and the Parthenon</a> <span class="desc">Classical architecture, democratic patrimony</span></li>
-  <li><span class="b">&#9998;</span> <a href="#">Federal Levers</a> <span class="desc">Seattle CSO infrastructure control</span></li>
-  <li><span class="b">&#9998;</span> <a href="#">Housing Power Play</a> <span class="desc">KCRHA de-designation under 24 CFR 578.11(b)</span></li>
-  <li><span class="b">&#9998;</span> <a href="#">Material Standard</a> <span class="desc">Public construction quality benchmarks</span></li>
-</ul>
-
-<div class="section-head">News</div>
-<ul>
-  <li><span class="b">&#9993;</span> <a href="#">Choe Show</a> <span class="desc">Accountability journalism pipeline</span></li>
-  <li><span class="b">&#9993;</span> <a href="https://www.theacropolismuseum.gr/en/sculptural-decoration/metopes">Acropolis Museum: Parthenon Metopes</a> <span class="desc">External</span></li>
-</ul>
-
-<div class="section-head">Organization</div>
-<ul>
-  <li><span class="b">&#9758;</span> <a href="#">The Junto</a> <span class="desc">Founding leadership circle</span></li>
-  <li><span class="b">&#9758;</span> <a href="#">About</a></li>
-</ul>
+<div class="nav">
+  <a href="#" onclick="showTab('seattle');return false" id="nav-seattle" class="active">Seattle</a>
+  <a href="#" onclick="showTab('usa');return false" id="nav-usa">USA</a>
+  <a href="#" onclick="showTab('news');return false" id="nav-news">News</a>
+  <a href="#" onclick="showTab('intelligence');return false" id="nav-intelligence">Intelligence</a>
+  <a href="#" onclick="showTab('strategy');return false" id="nav-strategy">Strategy</a>
+  <a href="#" onclick="showTab('contact');return false" id="nav-contact">Contact</a>
+</div>
 
 <hr>
 
+<!-- SEATTLE TAB -->
+<div id="tab-seattle" class="tab-content active">
+
+<p style="font-size:12px;color:#666;margin:0 0 20px;">Each project below is an active operation. Headlines tell you what we found, tags tell you the domain, descriptions tell you what we're doing about it. <span class="gated" style="display:inline"><span class="tag tag-lock">MEMBERS</span></span> items are live operations visible only to intelligence subscribers. This page updates as we move.</p>
+
+<div class="section-head">War &amp; Defense</div>
+<ul>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">High Ross</a> <span class="tag tag-cat">ENERGY</span> <span class="desc">Energy sovereignty, treaty leverage, dam operations.</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Federal Levers</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">Consent decree and federal infrastructure control.</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Washington State Packaging Fab Project</a> <span class="tag tag-cat">MANUFACTURING</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">47 Shifts</a> <span class="tag tag-cat">OPERATIONS</span> <span class="desc">Seattle Unsheltered Response. 12 teams, full operational order.</span></li>
+</ul>
+
+<div class="section-head">Infrastructure</div>
+<ul>
+  <li><span class="b">&#9874;</span> <a href="cso.html">87 Times a Year</a> <span class="tag tag-cat">CSO</span> <span class="desc">That's how often Seattle's combined sewer system dumps raw sewage into Puget Sound. We mapped every outfall.</span></li>
+  <li><span class="b">&#9874;</span> <a href="epa.html">The $1.4 Billion Lever</a> <span class="tag tag-cat">EPA</span> <span class="desc">The federal government already has a consent decree over Seattle's sewer system and a loan program that could dictate how it gets fixed. Nobody at City Hall is talking about this.</span></li>
+  <li class="gated"><span class="b">&#9874;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Century Gate</a> <span class="tag tag-cat">ARCHITECTURE</span> <span class="desc">Monumental architecture standard for Seattle.</span></li>
+  <li><span class="b">&#9874;</span> <a href="material-standard.html">The Standard Seattle Forgot</a> <span class="tag tag-cat">CONSTRUCTION</span> <span class="desc">There used to be rules about what public buildings had to look like, and then the rules went away and nobody noticed for 30 years.</span></li>
+  <li><span class="b">&#9874;</span> <a href="bogue-plan.html">The Bogue Plan</a> <span class="tag tag-cat">HISTORY</span> <span class="desc">In 1911 Seattle had a master plan for transit, parks, and a civic center. Voters killed it. The city has been improvising ever since.</span></li>
+  <li><span class="b">&#9874;</span> <a href="wackers-manual.html">Wacker's Manual for Seattle</a> <span class="tag tag-cat">PLANNING</span> <span class="desc">Chicago gave every 8th grader a book about how their city worked and why it mattered. Seattle has never had anything like it.</span></li>
+</ul>
+
+<div class="section-head">Accountability</div>
+<ul>
+  <li><span class="b">&#9878;</span> <a href="permit-machine.html">The Permit Machine</a> <span class="tag tag-cat">SDCI</span> <span class="desc">It takes 18 months to get a building permit in Seattle. Inspectors don't show up. Contractors leave. We pulled the data on how SDCI broke the building pipeline.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">King County Regional Homelessness Authority</a> <span class="tag tag-cat">KCRHA</span> <span class="desc">$300M spent. Encampments growing. Where did it go?</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Seattle Housing Authority</a> <span class="tag tag-cat">SHA</span> <span class="desc">Public housing operations and oversight.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Seattle Public Utilities</a> <span class="tag tag-cat">SPU</span> <span class="desc">Combined sewer overflows, infrastructure neglect.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Seattle City Council</a> <span class="tag tag-cat">COUNCIL</span> <span class="desc">Budget oversight and legislative accountability.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Homelessness Authority De-Designation</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">They spent the money. We have the receipts.</span></li>
+  <li><span class="b">&#9878;</span> <a href="permit-tracker.html">Who's Building What</a> <span class="tag tag-cat">DATA</span> <span class="desc">Every active building permit in Seattle, who filed it, what it costs, and where it stands. Updated continuously.</span></li>
+</ul>
+
+<div class="section-head">Housing</div>
+<ul>
+  <li class="gated"><span class="b">&#10042;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Housing Power Play</a> <span class="tag tag-cat">POLICY</span> <span class="desc">Authority de-designation and service delivery reform.</span></li>
+</ul>
+
+<div class="section-head">Development</div>
+<ul>
+  <li class="gated"><span class="b">&#10001;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Lake City Corridor</a> <span class="tag tag-cat">MIXED-USE</span> <span class="desc">Mixed-use development along NE 125th. 10 phases.</span></li>
+  <li class="gated"><span class="b">&#10001;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Capitol Hill Expansion Zone</a> <span class="tag tag-cat">URBAN VILLAGE</span></li>
+</ul>
+
+<div class="section-head">Architecture</div>
+<ul>
+  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Century Gate Design Standard</a> <span class="tag tag-cat">DESIGN</span> <span class="desc">What Seattle's public buildings should look like.</span></li>
+  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">TBC Parcel Map</a> <span class="tag tag-cat">INTEL</span> <span class="desc">An evaluation of Seattle's building owners, the quality of what they've built, and their responsibility for the long-term viability of the city.</span></li>
+</ul>
+
+<hr>
 <p class="quote">"Make no little plans; they have no magic to stir men's blood."</p>
 <p class="attr">Daniel H. Burnham, 1907</p>
+<div class="footer">501(c)(4) pending.</div>
 
-<div class="footer">
-  <a href="mailto:jwalsh@burnhamcivic.org">jwalsh@burnhamcivic.org</a><br>
-  Seattle, Washington &copy; 2026. 501(c)(4) pending.
 </div>
+
+<!-- EDIT MODE -->
+<div style="position:fixed;bottom:12px;right:12px;">
+  <button onclick="document.body.contentEditable=document.body.contentEditable==='true'?'false':'true';this.textContent=document.body.contentEditable==='true'?'EDITING':'EDIT'" style="font-family:Georgia,serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:#eee;border:1px solid #ccc;padding:4px 10px;cursor:pointer;color:#666;">EDIT</button>
+</div>
+
+<!-- USA TAB -->
+<div id="tab-usa" class="tab-content">
+
+<p style="font-size:12px;color:#666;margin:0 0 20px;">National-scale operations. Same format: headlines tell you what we found, tags tell you the domain, descriptions tell you what we're doing about it. <span class="gated" style="display:inline"><span class="tag tag-lock">MEMBERS</span></span> items are live operations visible only to intelligence subscribers.</p>
+
+<div class="section-head">War &amp; Defense</div>
+<ul>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">The Centralia Fab</a> <span class="tag tag-cat">CHIPS ACT</span> <span class="desc">Washington State has the workforce, the power, and the land for semiconductor packaging. Nobody's filed the application yet.</span></li>
+</ul>
+
+<div class="section-head">Infrastructure</div>
+<ul>
+  <li class="gated"><span class="b">&#9874;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Wacker's Manual: The Deep Dive</a> <span class="tag tag-cat">PLANNING</span> <span class="desc">In 1911 Chicago gave every 8th grader a book about how their city worked. It's the reason the Burnham Plan got built. Full analysis of the original manual and what a national rollout looks like.</span></li>
+</ul>
+
+<div class="section-head">Accountability</div>
+<ul>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">The Guilfoyle Memo</a> <span class="tag tag-cat">DIPLOMACY</span> <span class="desc">The U.S. returned 139 Greek antiquities in 2025. The ambassador is planning a Greek Democracy exhibition for the 250th. Nobody has connected this to EO 14344 yet. We did.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Cultural Heritage Agreement</a> <span class="tag tag-cat">TREATY</span> <span class="desc">The U.S.-Greece cultural property agreement expires November 2026. What happens next determines whether the Parthenon Marbles conversation changes permanently.</span></li>
+</ul>
+
+<div class="section-head">Housing</div>
+<ul>
+  <li class="gated"><span class="b">&#10042;</span> <span class="desc">Coming soon. Members only.</span></li>
+</ul>
+
+<div class="section-head">Development</div>
+<ul>
+  <li class="gated"><span class="b">&#10001;</span> <span class="desc">Coming soon. Members only.</span></li>
+</ul>
+
+<div class="section-head">Architecture</div>
+<ul>
+  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">EO 14344 and the Parthenon</a> <span class="tag tag-cat">CLASSICAL</span> <span class="desc">The White House issued an executive order declaring American democracy descends from Athens. Then mandated Greek architecture for federal buildings. Nobody connected this to the Parthenon Marbles sitting in London. We did.</span></li>
+  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Federal Architecture Audit</a> <span class="tag tag-cat">NATIONWIDE</span> <span class="desc">A building-by-building assessment of whether U.S. federal courthouses and agency headquarters comply with EO 14344's classical architecture mandate.</span></li>
+  <li><span class="b">&#9769;</span> <a href="https://www.theacropolismuseum.gr/en/sculptural-decoration/metopes">Acropolis Museum: Parthenon Metopes</a> <span class="tag tag-cat">EXTERNAL</span> <span class="desc">The sculptures EO 14344 is really about. Still in London.</span></li>
+</ul>
+
+</div>
+
+<!-- NEWS TAB -->
+<div id="tab-news" class="tab-content">
+
+<div class="section-head">Latest</div>
+<ul>
+  <li><span class="b">&#9993;</span> <a href="#">U.S. Executive Order Builds the Case for Parthenon Marbles Return</a></li>
+  <li><span class="desc">EO 14344 formally declares American democracy descends from Athens. Nobody has connected this to the Parthenon Marbles. Until now.</span> <span class="desc" style="color:#999">Mar 15, 2026</span></li>
+</ul>
+<ul>
+  <li><span class="b">&#9993;</span> <a href="#">Ambassador Guilfoyle and the 250th Anniversary Opportunity</a></li>
+  <li><span class="desc">139 U.S.-held antiquities returned to Greece in 2025. The diplomatic window is open.</span> <span class="desc" style="color:#999">Mar 15, 2026</span></li>
+</ul>
+<ul>
+  <li><span class="b">&#9993;</span> <a href="#">What 60 Datasets Tell Us About Seattle's Homelessness Response</a></li>
+  <li><span class="desc">A data inventory of the King County Regional Homelessness Authority. 9 public records requests filed.</span> <span class="desc" style="color:#999">Mar 2026</span></li>
+</ul>
+<ul>
+  <li><span class="b">&#9993;</span> <a href="#">The Permit Machine</a></li>
+  <li><span class="desc">Accountability journalism on Seattle's permitting failures.</span> <span class="desc" style="color:#999">Mar 2026</span></li>
+</ul>
+<ul>
+  <li><span class="b">&#9993;</span> <a href="#">Seattle's Sewer Problem: $1.4 Billion in Federal Leverage</a></li>
+  <li><span class="desc">Combined sewer overflows dump raw sewage into Puget Sound 87 times a year.</span> <span class="desc" style="color:#999">Coming soon</span></li>
+</ul>
+
+</div>
+
+<!-- INTELLIGENCE TAB -->
+<div id="tab-intelligence" class="tab-content">
+
+<div class="section-head">Membership Tiers</div>
+
+<div class="intel-box">
+  <div class="section-head">&#9876; TBC Intelligence — Seattle</div>
+  <p>Private briefings, decision maker profiles, and policy analysis for Seattle's built environment.</p>
+  <p><span class="price">$5,000/year</span> <a href="#subscribe" class="join">Join</a></p>
+</div>
+
+<div class="intel-box">
+  <div class="section-head">&#9876; TBC Intelligence — USA</div>
+  <p>National policy analysis, federal architecture audit, cultural diplomacy briefs, and cross-jurisdictional intelligence.</p>
+  <p><span class="price">$10,000/year</span> <a href="#subscribe" class="join">Join</a></p>
+</div>
+
+</div>
+
+<!-- STRATEGY TAB -->
+<div id="tab-strategy" class="tab-content">
+
+<div class="section-head">Objective</div>
+<p style="font-size:14px;color:#333;margin:0 0 8px;">Return Seattle to a top-5 U.S. city on the World's Fair Index.</p>
+<p style="font-size:12px;color:#666;margin:0 0 20px;">Could Seattle host a World's Fair today? That is the standard. The puzzle is solved when Seattle re-enters the top 5.</p>
+<p class="gated" style="font-size:12px;margin:0 0 20px;"><span class="b">&#9876;</span> <a href="#" onclick="showTab('intelligence');return false">World's Fair Index: Full Methodology</a> <span class="desc">Proprietary composite ranking: crime, infrastructure, architecture quality, housing access, civic freedom, tourism rating, citizen satisfaction. Members only.</span></p>
+
+<div class="section-head">Progress</div>
+
+<table border="1" cellpadding="4" cellspacing="0" style="width:100%;font-size:12px;border-color:#999;font-family:Georgia,serif;">
+<tr bgcolor="#ddd">
+  <td><b>ID</b></td>
+  <td><b>Initiative</b></td>
+  <td><b>Category</b></td>
+  <td align="center"><b>Weight</b></td>
+  <td align="center"><b>Access</b></td>
+  <td align="center"><b>Status</b></td>
+</tr>
+<tr>
+  <td>S-01</td>
+  <td>47 Shifts</td>
+  <td>Stability</td>
+  <td align="center">15%</td>
+  <td align="center" bgcolor="#f0f7e6"><font color="#2d5016">Members</font></td>
+  <td align="center"><font color="#ca8a04">&#9679;</font> Planning</td>
+</tr>
+<tr bgcolor="#f5f5f5">
+  <td>S-02</td>
+  <td>High Ross</td>
+  <td>Stability</td>
+  <td align="center">5%</td>
+  <td align="center" bgcolor="#f0f7e6"><font color="#2d5016">Members</font></td>
+  <td align="center"><font color="#999">&#9679;</font> Research</td>
+</tr>
+<tr>
+  <td>S-03</td>
+  <td>Federal Levers</td>
+  <td>Stability</td>
+  <td align="center">5%</td>
+  <td align="center" bgcolor="#f0f7e6"><font color="#2d5016">Members</font></td>
+  <td align="center"><font color="#999">&#9679;</font> Research</td>
+</tr>
+<tr bgcolor="#f5f5f5">
+  <td>I-01</td>
+  <td>Combined Sewer Outfall Map</td>
+  <td>Infrastructure</td>
+  <td align="center">10%</td>
+  <td align="center">Public</td>
+  <td align="center"><font color="#16a34a">&#9679;</font> Active</td>
+</tr>
+<tr>
+  <td>I-02</td>
+  <td>EPA / Water Infrastructure Finance</td>
+  <td>Infrastructure</td>
+  <td align="center">10%</td>
+  <td align="center">Public</td>
+  <td align="center"><font color="#999">&#9679;</font> Research</td>
+</tr>
+<tr bgcolor="#f5f5f5">
+  <td>I-03</td>
+  <td>Century Gate</td>
+  <td>Infrastructure</td>
+  <td align="center">5%</td>
+  <td align="center" bgcolor="#f0f7e6"><font color="#2d5016">Members</font></td>
+  <td align="center"><font color="#999">&#9679;</font> Research</td>
+</tr>
+<tr>
+  <td>I-04</td>
+  <td>Material Standard</td>
+  <td>Infrastructure</td>
+  <td align="center">5%</td>
+  <td align="center">Public</td>
+  <td align="center"><font color="#999">&#9679;</font> Research</td>
+</tr>
+<tr bgcolor="#f5f5f5">
+  <td>A-01</td>
+  <td>Permitting Accountability</td>
+  <td>Accountability</td>
+  <td align="center">10%</td>
+  <td align="center">Public</td>
+  <td align="center"><font color="#16a34a">&#9679;</font> Active</td>
+</tr>
+<tr>
+  <td>A-02</td>
+  <td>Homelessness Authority</td>
+  <td>Accountability</td>
+  <td align="center">5%</td>
+  <td align="center" bgcolor="#f0f7e6"><font color="#2d5016">Members</font></td>
+  <td align="center"><font color="#16a34a">&#9679;</font> Active</td>
+</tr>
+<tr bgcolor="#f5f5f5">
+  <td>H-01</td>
+  <td>Housing Power Play</td>
+  <td>Housing</td>
+  <td align="center">5%</td>
+  <td align="center" bgcolor="#f0f7e6"><font color="#2d5016">Members</font></td>
+  <td align="center"><font color="#ca8a04">&#9679;</font> Planning</td>
+</tr>
+<tr>
+  <td>D-01</td>
+  <td>Lake City Corridor</td>
+  <td>Development</td>
+  <td align="center">10%</td>
+  <td align="center" bgcolor="#f0f7e6"><font color="#2d5016">Members</font></td>
+  <td align="center"><font color="#ca8a04">&#9679;</font> Planning</td>
+</tr>
+<tr bgcolor="#f5f5f5">
+  <td>D-02</td>
+  <td>Capitol Hill Expansion</td>
+  <td>Development</td>
+  <td align="center">5%</td>
+  <td align="center" bgcolor="#f0f7e6"><font color="#2d5016">Members</font></td>
+  <td align="center"><font color="#999">&#9679;</font> Research</td>
+</tr>
+<tr>
+  <td>R-01</td>
+  <td>TBC Parcel Map</td>
+  <td>Architecture</td>
+  <td align="center">5%</td>
+  <td align="center" bgcolor="#f0f7e6"><font color="#2d5016">Members</font></td>
+  <td align="center"><font color="#16a34a">&#9679;</font> Active</td>
+</tr>
+<tr bgcolor="#f5f5f5">
+  <td>R-02</td>
+  <td>Century Gate Design Standard</td>
+  <td>Architecture</td>
+  <td align="center">5%</td>
+  <td align="center" bgcolor="#f0f7e6"><font color="#2d5016">Members</font></td>
+  <td align="center"><font color="#999">&#9679;</font> Research</td>
+</tr>
+</table>
+
+<br>
+<font size="2" color="#888">
+<font color="#16a34a">&#9679;</font> Active &nbsp;
+<font color="#ca8a04">&#9679;</font> Planning &nbsp;
+<font color="#999">&#9679;</font> Research &nbsp;
+<font color="#111">&#9679;</font> Complete
+</font>
+
+</div>
+
+<!-- CONTACT TAB -->
+<div id="tab-contact" class="tab-content">
+
+<div class="section-head">Contact</div>
+
+<form class="contact-form" id="contactForm" onsubmit="return sendForm()">
+  <label for="cf-name">Name</label>
+  <input type="text" id="cf-name" name="name" required>
+
+  <label for="cf-email">Email</label>
+  <input type="email" id="cf-email" name="email" required>
+
+  <label for="cf-subject">Subject</label>
+  <input type="text" id="cf-subject" name="subject">
+
+  <label for="cf-message">Message</label>
+  <textarea id="cf-message" name="message" required></textarea>
+
+  <button type="submit">Send</button>
+  <div class="sent" id="sentMsg">Message sent. We will be in touch.</div>
+</form>
+
+</div>
+
+
+<script>
+var tabs = ['seattle','usa','news','intelligence','strategy','contact'];
+
+function showTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.remove('active'); });
+  document.querySelectorAll('.nav a').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.getElementById('nav-' + tab).classList.add('active');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  var current = -1;
+  for (var i = 0; i < tabs.length; i++) {
+    if (document.getElementById('nav-' + tabs[i]).classList.contains('active')) { current = i; break; }
+  }
+  if (e.key === 'ArrowRight' && current < tabs.length - 1) { showTab(tabs[current + 1]); }
+  if (e.key === 'ArrowLeft' && current > 0) { showTab(tabs[current - 1]); }
+});
+
+function sendForm() {
+  var n = document.getElementById('cf-name').value;
+  var e = document.getElementById('cf-email').value;
+  var s = document.getElementById('cf-subject').value || 'Contact Form';
+  var m = document.getElementById('cf-message').value;
+  var body = 'From: ' + n + ' (' + e + ')\n\n' + m;
+  var a = document.createElement('a');
+  a.href = 'mai' + 'lto:' + 'jwal' + 'sh@burn' + 'hamcivic' + '.org'
+    + '?subject=' + encodeURIComponent(s)
+    + '&body=' + encodeURIComponent(body);
+  a.click();
+  document.getElementById('sentMsg').style.display = 'block';
+  return false;
+}
+</script>
 
 </body>
 </html>

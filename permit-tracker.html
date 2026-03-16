@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who's Building What - BURNHAM CIVIC</title>
+<meta name="description" content="Who's Building What: Seattle's Live Permit Tracker. Every active building permit in Seattle, sourced from SDCI public data.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.7;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+.back {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 24px;
+  display: block;
+}
+.back a { color: #666; }
+.back a:hover { color: #c00; }
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  letter-spacing: 0;
+}
+.dateline {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 28px;
+}
+h2 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #333;
+  margin: 32px 0 12px;
+}
+p {
+  margin: 0 0 16px;
+  font-size: 15px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 16px 0 24px;
+}
+th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  border-bottom: 2px solid #333;
+  padding: 6px 8px;
+}
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+tr:hover td {
+  background: #f9f9f6;
+}
+.status-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  font-family: Georgia, serif;
+}
+.status-active { background: #e8f5e9; color: #2d5016; }
+.status-review { background: #fff8e1; color: #8a6d00; }
+.status-issued { background: #e3f2fd; color: #1565c0; }
+.coming-soon {
+  border: 1px solid #ccc;
+  padding: 20px 24px;
+  margin: 24px 0;
+  text-align: center;
+}
+.coming-soon p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+.coming-soon .label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 8px;
+}
+.footer {
+  font-size: 11px;
+  color: #999;
+  margin-top: 40px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+}
+.footer a { color: #999; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="#subscribe" class="subscribe">Subscribe</a>
+</div>
+
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')">Intelligence</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
+</div>
+
+<hr>
+
+<div class="back"><a href="index.html">&larr; Back to Seattle</a></div>
+
+<h1 class="article-title">Who's Building What: Seattle's Live Permit Tracker</h1>
+<div class="dateline">Burnham Civic Data &middot; March 2026</div>
+
+<h2>What We Track</h2>
+
+<p>The Burnham Civic maintains a continuously updated database of every active building permit filed with the Seattle Department of Construction and Inspections. Each record includes the street address, permit type, project description, applicant name, contractor, estimated construction cost, current status, and key dates from application through final inspection.</p>
+
+<p>The tracker covers all permit categories: new construction, additions and alterations, demolitions, mechanical, electrical, and tenant improvements. We focus on building permits (as opposed to sign permits, grading permits, or other minor filings), because building permits are where the money is and where the decisions that shape the city get made.</p>
+
+<p>Here is what a typical record looks like:</p>
+
+<table>
+<tr>
+  <th>Field</th>
+  <th>Example</th>
+</tr>
+<tr>
+  <td>Address</td>
+  <td>1200 3rd Ave, Seattle, WA 98101</td>
+</tr>
+<tr>
+  <td>Permit Type</td>
+  <td>New Building</td>
+</tr>
+<tr>
+  <td>Description</td>
+  <td>Construct 24-story mixed-use tower with 280 residential units and ground-floor retail</td>
+</tr>
+<tr>
+  <td>Applicant</td>
+  <td>Vulcan Real Estate</td>
+</tr>
+<tr>
+  <td>Contractor</td>
+  <td>Turner Construction</td>
+</tr>
+<tr>
+  <td>Est. Cost</td>
+  <td>$142,000,000</td>
+</tr>
+<tr>
+  <td>Status</td>
+  <td><span class="status-badge status-review">In Review</span></td>
+</tr>
+<tr>
+  <td>Applied</td>
+  <td>2025-09-14</td>
+</tr>
+<tr>
+  <td>Issued</td>
+  <td>Pending</td>
+</tr>
+</table>
+
+<h2>Where the Data Comes From</h2>
+
+<p>All permit data is sourced from the City of Seattle's open data portal at <a href="https://data.seattle.gov">data.seattle.gov</a>, specifically the SDCI building permit dataset (resource ID: 76t5-zqzr). This is a public dataset maintained by the Department of Construction and Inspections, updated regularly, and accessible via the Socrata Open Data API without authentication.</p>
+
+<p>The raw data includes permit numbers, addresses, permit types, descriptions, application dates, issue dates, final dates, status codes, contractor information, and estimated valuations. TBC pulls this data programmatically, cleans it, categorizes it, and presents it in a format designed for accountability rather than bureaucratic record-keeping.</p>
+
+<p>We supplement the SDCI data with parcel ownership information from the King County Assessor, which allows us to connect permits not just to applicants and contractors, but to the underlying property owners. In many cases, the applicant on a permit is an LLC or a design firm, not the actual owner. Cross-referencing with assessor records reveals who is really behind the project.</p>
+
+<h2>Why It Matters</h2>
+
+<p>Building permits are the most concrete expression of how a city changes. Every new tower, every demolished building, every major renovation starts with a permit. The permit record tells you who is building, where they are building, how much they are spending, and how long the city is taking to approve it.</p>
+
+<p>Transparency matters for three reasons.</p>
+
+<p>First, accountability. Seattle's permitting process is notoriously slow. Applications sit in review for months, sometimes years. Inspectors do not show up. Projects stall. Tracking permit timelines at scale reveals which types of projects get fast-tracked and which get buried, which neighborhoods see investment and which do not, and whether the system is working or broken.</p>
+
+<p>Second, patterns. When you look at individual permits, you see construction projects. When you look at thousands of permits over time, you see the city being reshaped. You can identify which developers are most active, which contractors dominate public work, which neighborhoods are gaining density and which are losing it. These patterns are not visible from any single permit record. They emerge from the aggregate.</p>
+
+<p>Third, public interest. The people who live in Seattle have a right to know what is being built around them, who is building it, and what it costs. This information is technically public, but it is buried in a database that most residents will never access. The tracker makes it visible.</p>
+
+<div class="coming-soon">
+  <div class="label">Coming Soon: Interactive Map</div>
+  <p>The full interactive permit tracker, with map visualization, filtering by neighborhood, permit type, applicant, and date range, is currently in development. The data pipeline is operational. The interface is being built.</p>
+</div>
+
+<p>In the meantime, specific permit inquiries can be directed to <a href="mailto:jwalsh@burnhamcivic.org">jwalsh@burnhamcivic.org</a>. We are happy to pull records on any address, developer, or neighborhood in the city.</p>
+
+<div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
+  <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute expertise, or join as a member? Tell us who you are and how you want to help.</p>
+  <form onsubmit="return sendPt()" style="margin:0;">
+    <input type="text" id="pt-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="pt-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
+    <select id="pt-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
+      <option value="Public Supporter">I want to support this publicly</option>
+      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
+      <option value="Expert/Contributor">I have expertise to contribute</option>
+      <option value="Media">Media inquiry</option>
+      <option value="Other">Other</option>
+    </select><br>
+    <textarea id="pt-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
+    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
+    <span id="pt-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
+  </form>
+</div>
+
+<script>
+function sendPt(){
+  var n=document.getElementById('pt-name').value;
+  var e=document.getElementById('pt-email').value;
+  var t=document.getElementById('pt-type').value;
+  var m=document.getElementById('pt-msg').value;
+  var subj='[Permit Tracker] '+t+' — '+n;
+  var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: Permit Tracker\n\n'+(m||'No message.');
+  var a=document.createElement('a');
+  a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
+    +'?subject='+encodeURIComponent(subj)
+    +'&body='+encodeURIComponent(body);
+  a.click();
+  document.getElementById('pt-sent').style.display='inline';
+  return false;
+}
+</script>
+
+<div class="footer">
+  <a href="mailto:jwalsh@burnhamcivic.org">jwalsh@burnhamcivic.org</a><br>
+  Seattle, Washington &copy; 2026. 501(c)(4) pending.
+</div>
+
+</body>
+</html>
