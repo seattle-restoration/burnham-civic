@@ -9,7 +9,7 @@
 <style>
 body {
   font-family: Georgia, 'Times New Roman', serif;
-  max-width: 640px;
+  max-width: 860px;
   margin: 32px auto 32px 10%;
   padding: 0 16px;
   background: #fff;
@@ -97,6 +97,25 @@ li a {
 .gated a { color: #2d5016; }
 .gated .desc { color: #4a7c30; }
 .gated .b { color: #4a7c30; }
+.tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1px 4px;
+  margin-left: 6px;
+  font-family: Georgia, serif;
+  vertical-align: 1px;
+}
+.tag-lock {
+  background: #2d5016;
+  color: #fff;
+}
+.tag-cat {
+  background: #eee;
+  color: #666;
+  border: 1px solid #ccc;
+}
 .intel-box {
   border: 1px solid #ccc;
   padding: 12px 16px;
@@ -206,7 +225,7 @@ li a {
   <h1>BURNHAM CIVIC</h1>
   <a href="#subscribe" class="subscribe">Subscribe</a>
 </div>
-<div class="subtitle">Civic research and planning.</div>
+<div class="subtitle">Civic research and planning at operating speed.</div>
 
 <div class="nav">
   <a href="#" onclick="showTab('seattle');return false" id="nav-seattle" class="active">Seattle</a>
@@ -224,48 +243,48 @@ li a {
 
 <div class="section-head">War &amp; Defense</div>
 <ul>
-  <li class="gated"><span class="b">&#9876;</span> <a href="#" onclick="showTab('intelligence');return false">High Ross</a> <span class="desc">Energy sovereignty, treaty leverage, dam operations. Members only.</span></li>
-  <li class="gated"><span class="b">&#9876;</span> <a href="#" onclick="showTab('intelligence');return false">Federal Levers</a> <span class="desc">Consent decree and federal infrastructure control. Members only.</span></li>
-  <li class="gated"><span class="b">&#9876;</span> <a href="#" onclick="showTab('intelligence');return false">Washington State Packaging Fab Project</a> <span class="desc">Members only.</span></li>
-  <li class="gated"><span class="b">&#9876;</span> <a href="#" onclick="showTab('intelligence');return false">47 Shifts</a> <span class="desc">Seattle Unsheltered Response. 12 teams, full operational order. Members only.</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">High Ross</a> <span class="tag tag-cat">ENERGY</span> <span class="desc">Energy sovereignty, treaty leverage, dam operations.</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Federal Levers</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">Consent decree and federal infrastructure control.</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Washington State Packaging Fab Project</a> <span class="tag tag-cat">MANUFACTURING</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">47 Shifts</a> <span class="tag tag-cat">OPERATIONS</span> <span class="desc">Seattle Unsheltered Response. 12 teams, full operational order.</span></li>
 </ul>
 
 <div class="section-head">Infrastructure</div>
 <ul>
-  <li><span class="b">&#9874;</span> <a href="#">87 Times a Year: Where Seattle Dumps Raw Sewage Into Puget Sound</a> <span class="desc">The outfall map nobody wants you to see.</span></li>
-  <li><span class="b">&#9874;</span> <a href="#">The $1.4 Billion Lever the Feds Already Hold Over Seattle</a> <span class="desc">EPA consent decree meets water infrastructure finance. Seattle has no idea.</span></li>
-  <li class="gated"><span class="b">&#9874;</span> <a href="#" onclick="showTab('intelligence');return false">Century Gate</a> <span class="desc">Monumental architecture standard for Seattle. Members only.</span></li>
-  <li><span class="b">&#9874;</span> <a href="#">The Standard Seattle Forgot</a> <span class="desc">What public construction is supposed to look like. And what we got instead.</span></li>
-  <li><span class="b">&#9874;</span> <a href="#">The Bogue Plan: Seattle's First Master Plan and Why It Failed</a> <span class="desc">1911. Virgil Bogue drew the blueprint. Seattle voted it down. We're still paying for it.</span></li>
-  <li><span class="b">&#9874;</span> <a href="#">Wacker's Manual for Seattle</a> <span class="desc">Chicago wrote the playbook in 1911. Seattle never got one. Until now.</span></li>
+  <li><span class="b">&#9874;</span> <a href="#">87 Times a Year</a> <span class="tag tag-cat">CSO</span> <span class="desc">That's how often Seattle's combined sewer system dumps raw sewage into Puget Sound. We mapped every outfall.</span></li>
+  <li><span class="b">&#9874;</span> <a href="#">The $1.4 Billion Lever</a> <span class="tag tag-cat">EPA</span> <span class="desc">The federal government already has a consent decree over Seattle's sewer system and a loan program that could dictate how it gets fixed. Nobody at City Hall is talking about this.</span></li>
+  <li class="gated"><span class="b">&#9874;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Century Gate</a> <span class="tag tag-cat">ARCHITECTURE</span> <span class="desc">Monumental architecture standard for Seattle.</span></li>
+  <li><span class="b">&#9874;</span> <a href="#">The Standard Seattle Forgot</a> <span class="tag tag-cat">CONSTRUCTION</span> <span class="desc">There used to be rules about what public buildings had to look like, and then the rules went away and nobody noticed for 30 years.</span></li>
+  <li><span class="b">&#9874;</span> <a href="#">The Bogue Plan</a> <span class="tag tag-cat">HISTORY</span> <span class="desc">In 1911 Seattle had a master plan for transit, parks, and a civic center. Voters killed it. The city has been improvising ever since.</span></li>
+  <li><span class="b">&#9874;</span> <a href="#">Wacker's Manual for Seattle</a> <span class="tag tag-cat">PLANNING</span> <span class="desc">Chicago gave every 8th grader a book about how their city worked and why it mattered. Seattle has never had anything like it.</span></li>
 </ul>
 
 <div class="section-head">Accountability</div>
 <ul>
-  <li><span class="b">&#9878;</span> <a href="#">The Permit Machine: How SDCI Broke Seattle's Building Pipeline</a> <span class="desc">18-month permit timelines. Inspectors who don't show up. The numbers.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <a href="#" onclick="showTab('intelligence');return false">King County Regional Homelessness Authority</a> <span class="desc">$300M spent. Encampments growing. Where did it go? Members only.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <a href="#" onclick="showTab('intelligence');return false">Seattle Housing Authority</a> <span class="desc">Public housing operations and oversight. Members only.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <a href="#" onclick="showTab('intelligence');return false">Seattle Public Utilities</a> <span class="desc">Combined sewer overflows, infrastructure neglect. Members only.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <a href="#" onclick="showTab('intelligence');return false">Seattle City Council</a> <span class="desc">Budget oversight and legislative accountability. Members only.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <a href="#" onclick="showTab('intelligence');return false">Homelessness Authority De-Designation</a> <span class="desc">They spent the money. We have the receipts. Members only.</span></li>
-  <li><span class="b">&#9878;</span> <a href="#">Who's Building What: Seattle Permit Tracker</a> <span class="desc">Every active permit. Every contractor. Every address.</span></li>
+  <li><span class="b">&#9878;</span> <a href="#">The Permit Machine</a> <span class="tag tag-cat">SDCI</span> <span class="desc">It takes 18 months to get a building permit in Seattle. Inspectors don't show up. Contractors leave. We pulled the data on how SDCI broke the building pipeline.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">King County Regional Homelessness Authority</a> <span class="tag tag-cat">KCRHA</span> <span class="desc">$300M spent. Encampments growing. Where did it go?</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Seattle Housing Authority</a> <span class="tag tag-cat">SHA</span> <span class="desc">Public housing operations and oversight.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Seattle Public Utilities</a> <span class="tag tag-cat">SPU</span> <span class="desc">Combined sewer overflows, infrastructure neglect.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Seattle City Council</a> <span class="tag tag-cat">COUNCIL</span> <span class="desc">Budget oversight and legislative accountability.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Homelessness Authority De-Designation</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">They spent the money. We have the receipts.</span></li>
+  <li><span class="b">&#9878;</span> <a href="#">Who's Building What</a> <span class="tag tag-cat">DATA</span> <span class="desc">Every active building permit in Seattle, who filed it, what it costs, and where it stands. Updated continuously.</span></li>
 </ul>
 
 <div class="section-head">Housing</div>
 <ul>
-  <li class="gated"><span class="b">&#10042;</span> <a href="#" onclick="showTab('intelligence');return false">Housing Power Play</a> <span class="desc">Authority de-designation and service delivery reform. Members only.</span></li>
+  <li class="gated"><span class="b">&#10042;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Housing Power Play</a> <span class="tag tag-cat">POLICY</span> <span class="desc">Authority de-designation and service delivery reform.</span></li>
 </ul>
 
 <div class="section-head">Development</div>
 <ul>
-  <li class="gated"><span class="b">&#10001;</span> <a href="#" onclick="showTab('intelligence');return false">Lake City Corridor</a> <span class="desc">Mixed-use development along NE 125th. 10 phases. Members only.</span></li>
-  <li class="gated"><span class="b">&#10001;</span> <a href="#" onclick="showTab('intelligence');return false">Capitol Hill Expansion Zone</a> <span class="desc">Members only.</span></li>
+  <li class="gated"><span class="b">&#10001;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Lake City Corridor</a> <span class="tag tag-cat">MIXED-USE</span> <span class="desc">Mixed-use development along NE 125th. 10 phases.</span></li>
+  <li class="gated"><span class="b">&#10001;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Capitol Hill Expansion Zone</a> <span class="tag tag-cat">URBAN VILLAGE</span></li>
 </ul>
 
 <div class="section-head">Architecture</div>
 <ul>
-  <li class="gated"><span class="b">&#9769;</span> <a href="#" onclick="showTab('intelligence');return false">Century Gate Design Standard</a> <span class="desc">What Seattle's public buildings should look like. Members only.</span></li>
-  <li class="gated"><span class="b">&#9769;</span> <a href="#" onclick="showTab('intelligence');return false">TBC Parcel Map</a> <span class="desc">An evaluation of Seattle's building owners, the quality of what they've built, and their responsibility for the long-term viability of the city. Members only.</span></li>
+  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">Century Gate Design Standard</a> <span class="tag tag-cat">DESIGN</span> <span class="desc">What Seattle's public buildings should look like.</span></li>
+  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" onclick="showTab('intelligence');return false">TBC Parcel Map</a> <span class="tag tag-cat">INTEL</span> <span class="desc">An evaluation of Seattle's building owners, the quality of what they've built, and their responsibility for the long-term viability of the city.</span></li>
 </ul>
 
 <hr>
