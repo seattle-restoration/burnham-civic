@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Permit Machine - BURNHAM CIVIC</title>
+<meta name="description" content="We pulled the data on how SDCI broke Seattle's building pipeline. 26-month average permits, 4 correction cycles, $250K-$800K delay costs.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 16px;
+  line-height: 1.7;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.back {
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
+}
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 6px;
+  color: #111;
+}
+.article-subtitle {
+  font-size: 18px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 24px;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 32px 0 12px;
+  color: #111;
+}
+p {
+  margin: 0 0 16px;
+}
+.stat-block {
+  border-left: 3px solid #1e3a5f;
+  padding: 12px 16px;
+  margin: 24px 0;
+  background: #f7f7f5;
+}
+.stat-block p {
+  margin: 4px 0;
+  font-size: 15px;
+}
+.stat-block strong {
+  font-size: 17px;
+}
+.reform-list {
+  margin: 20px 0;
+  padding: 0 0 0 24px;
+}
+.reform-list li {
+  padding: 4px 0;
+  font-size: 15px;
+}
+.footer {
+  font-size: 11px;
+  color: #999;
+  margin-top: 48px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+}
+.footer a { color: #999; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="#subscribe" class="subscribe">Subscribe</a>
+</div>
+
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')">Intelligence</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
+</div>
+
+<hr>
+
+<a href="index.html" class="back">&larr; Back to Seattle</a>
+
+<h1 class="article-title">The Permit Machine</h1>
+<div class="article-subtitle">We pulled the data on how SDCI broke the building pipeline.</div>
+
+<p>If you want to build something in Seattle, you need a permit from the Seattle Department of Construction and Inspections. SDCI is the agency that reviews building plans, issues permits, and sends inspectors to make sure the work gets done right.</p>
+
+<p>In theory, this is how cities ensure that buildings are safe and that construction follows the law. In practice, SDCI has become one of the most significant obstacles to housing production, small business construction, and neighborhood development in Seattle. The data tells the story.</p>
+
+<h2>The Numbers</h2>
+
+<div class="stat-block">
+  <p><strong>26 months</strong> average timeline for complex building permits</p>
+  <p><strong>4 correction cycles</strong> average before a permit is approved</p>
+  <p><strong>$250,000 to $800,000</strong> estimated delay cost per project</p>
+  <p><strong>90%</strong> of SDCI's budget comes from permit fees (fee-funded agency)</p>
+  <p><strong>30%</strong> of staff raised ethics concerns in the 2023 audit</p>
+  <p><strong>3 directors</strong> in 12 months (2022-2023)</p>
+  <p><strong>29 positions</strong> cut during a declared housing emergency</p>
+</div>
+
+<p>Twenty-six months. That is how long it takes, on average, to get a complex building permit through SDCI. Not 26 days. Not 26 weeks. Twenty-six months. More than two years from the day you submit your plans to the day you get permission to start building.</p>
+
+<p>During those 26 months, the developer is paying interest on loans. The architect is responding to correction letters. The contractor is waiting. The tenants who would eventually live or work in the building do not exist yet. And the city wonders why housing is expensive.</p>
+
+<h2>The Drip-Feed</h2>
+
+<p>The correction cycle is where the real damage happens. Here is how it works.</p>
+
+<p>You submit a complete set of building plans to SDCI. A plan reviewer looks at them and sends back a correction letter listing problems. You fix the problems and resubmit. A different reviewer looks at the revised plans and finds new problems that the first reviewer did not mention. You fix those and resubmit. A third reviewer finds more problems.</p>
+
+<p>This happens four times on average. Four rounds of corrections, each taking weeks or months to process. Each round, the reviewer may raise issues that could have been identified in the first review but were not.</p>
+
+<p>This is not quality assurance. This is a drip-feed. The applicant never gets a complete list of everything that needs to be fixed. Instead, problems are revealed one batch at a time, each batch resetting the review clock. The effect is that permit timelines expand with no clear endpoint.</p>
+
+<p>Other cities handle this differently. A parallel review system, where structural, mechanical, electrical, and zoning reviewers all examine the plans simultaneously and issue a single consolidated correction letter, is standard practice in most major U.S. cities. SDCI reviews sequentially and remotely, meaning each discipline reviews the plans one after another, and corrections from one discipline may conflict with corrections from another.</p>
+
+<h2>The Fee Death Spiral</h2>
+
+<p>SDCI is 90% fee-funded. This means the agency's budget comes almost entirely from the fees it charges applicants for permits and reviews. Unlike most city departments, SDCI does not depend on the general fund. It depends on volume.</p>
+
+<p>This creates a perverse incentive. The longer a permit takes to process, the more review fees the applicant pays. Correction cycles generate re-review fees. Extended timelines generate extension fees. The agency's revenue model rewards delay.</p>
+
+<p>This does not mean that individual reviewers are deliberately slowing things down. But it means the system has no financial incentive to get faster. A fee-funded agency that profits from the length of its own process is an agency that will never voluntarily shorten that process.</p>
+
+<p>Meanwhile, the people who pay the fees pass the cost along. Developers add permit delay costs to the price of housing. Small businesses delay expansions or give up entirely. Nonprofits building affordable housing burn through their budgets waiting for permits that do not come.</p>
+
+<h2>The Audit</h2>
+
+<p>In 2023, a city audit of SDCI found that 30% of staff reported ethics concerns within the department. Three directors cycled through the agency in 12 months. Twenty-nine positions were cut during a period when the city had declared a housing emergency.</p>
+
+<p>The audit documented systemic problems: inconsistent application of codes, lack of standardized review procedures, poor communication between reviewers and applicants, and no meaningful performance metrics tied to review timelines.</p>
+
+<p>The audit made recommendations. SDCI accepted most of them. Implementation has been slow.</p>
+
+<h2>Who Benefits, Who Suffers</h2>
+
+<p>Large developers with in-house permitting teams and deep cash reserves can absorb 26-month timelines. They budget for it. They hire expediters. They know which reviewers to call. The permit machine is painful for them, but it is survivable.</p>
+
+<p>Small builders, independent developers, homeowners doing additions, nonprofit housing providers, and small businesses opening new locations cannot absorb these timelines. A $250,000 delay cost on a $2 million project is 12.5% of the total budget. For a small builder, that is the difference between a project that works and a project that does not pencil.</p>
+
+<p>The permit machine is regressive. It favors the large over the small, the well-connected over the new, and the patient over the urgent. In a city with a declared housing emergency, this is not a bureaucratic inconvenience. It is a policy failure.</p>
+
+<h2>11 Reforms</h2>
+
+<p>Burnham Civic has identified 11 specific reforms that would bring SDCI in line with best practices from comparable cities:</p>
+
+<ol class="reform-list">
+  <li>Parallel review: all disciplines review simultaneously, not sequentially</li>
+  <li>Single consolidated correction letter per review cycle</li>
+  <li>Published timeline targets with public performance dashboards</li>
+  <li>Mandatory pre-application conferences for complex projects</li>
+  <li>Dedicated small project track (under $500K construction value)</li>
+  <li>Third-party plan review option for applicants</li>
+  <li>Fee structure reform: flat fees per project type, not per review cycle</li>
+  <li>Reviewer continuity: same reviewer through the full permit lifecycle</li>
+  <li>Digital plan review with real-time markup and applicant access</li>
+  <li>Annual independent audit of review timelines and correction rates</li>
+  <li>Restore cut positions and tie staffing levels to application volume</li>
+</ol>
+
+<p>None of these are radical. Most are already standard in Portland, Denver, Austin, and other cities that manage to issue building permits in under 12 months. The question is not whether these reforms would work. The question is whether anyone at City Hall has the will to implement them.</p>
+
+<h2>What TBC Is Doing</h2>
+
+<p>Burnham Civic is building a public permit tracker that pulls data from SDCI's open records to show real-time permit timelines, correction cycle counts, and cost estimates for every active building permit in Seattle. We are also working with the Choe Show accountability journalism team to document specific cases where permit delays caused measurable harm to housing production and small business development.</p>
+
+<div class="footer">
+  <a href="mailto:jwalsh@burnhamcivic.org">jwalsh@burnhamcivic.org</a><br>
+  Seattle, Washington &copy; 2026. 501(c)(4) pending.
+</div>
+
+</body>
+</html>
