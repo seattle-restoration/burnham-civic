@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BURNHAM CIVIC - Internal</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 640px;
+  margin: 32px auto;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.5;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+h1 { font-size: 22px; letter-spacing: 2px; margin: 0 0 2px; }
+.subtitle { font-size: 12px; color: #666; margin-bottom: 20px; font-style: italic; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+.section-head {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: #333; margin: 20px 0 8px;
+}
+ul { list-style: none; padding: 0; margin: 0 0 4px; }
+li { padding: 2px 0; }
+li a { font-size: 14px; }
+.b { font-size: 12px; color: #999; margin-right: 2px; }
+.desc { font-size: 12px; color: #666; margin-left: 4px; }
+.footer { font-size: 11px; color: #999; margin-top: 32px; padding-top: 12px; border-top: 1px solid #ddd; }
+.footer a { color: #999; }
+
+#gate {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  font-family: Georgia, serif;
+}
+#gate input {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  width: 200px;
+  text-align: center;
+  margin-top: 12px;
+}
+#gate input:focus { outline: none; border-color: #999; }
+#gate .label { font-size: 13px; color: #666; }
+#gate .err { font-size: 12px; color: #c00; margin-top: 8px; min-height: 16px; }
+#content { display: none; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="label">Password required</div>
+  <input type="password" id="pw" autofocus>
+  <div class="err" id="err"></div>
+</div>
+
+<div id="content">
+
+<h1>BURNHAM CIVIC</h1>
+<div class="subtitle">Internal working documents. Do not distribute.</div>
+<hr>
+
+<div class="section-head">Core Documents</div>
+<ul>
+  <li><span class="b">&#9986;</span> <a href="#">47 Shifts OPORD</a> <span class="desc">Full operational order, 12 teams</span></li>
+  <li><span class="b">&#9986;</span> <a href="#">TBC Master Plan</a> <span class="desc">Complete strategic overview</span></li>
+  <li><span class="b">&#9986;</span> <a href="#">Wacker's Manual 2.0</a> <span class="desc">Seattle operating manual</span></li>
+</ul>
+
+<div class="section-head">Intelligence Products</div>
+<ul>
+  <li><span class="b">&#10026;</span> <a href="#">Downtown Parcel Map</a> <span class="desc">1,216 parcels, satellite view, DM cards</span></li>
+  <li><span class="b">&#10026;</span> <a href="#">Master Intelligence Brief</a></li>
+  <li><span class="b">&#10026;</span> <a href="#">Decision Maker Database</a> <span class="desc">822 principals, $17.1B assessed value</span></li>
+  <li><span class="b">&#10026;</span> <a href="#">KCRHA Data Inventory</a> <span class="desc">60+ datasets cataloged</span></li>
+</ul>
+
+<div class="section-head">Policy Briefs</div>
+<ul>
+  <li><span class="b">&#9998;</span> <a href="#">EO 14344: Parthenon Memo</a> <span class="desc">Guilfoyle / 250th anniversary play</span></li>
+  <li><span class="b">&#9998;</span> <a href="#">KCRHA De-Designation</a> <span class="desc">24 CFR 578.11(b) pathway</span></li>
+  <li><span class="b">&#9998;</span> <a href="#">Federal CSO Leverage</a> <span class="desc">EPA/DOJ consent decree</span></li>
+  <li><span class="b">&#9998;</span> <a href="#">Material Standard</a> <span class="desc">Public construction benchmarks</span></li>
+</ul>
+
+<div class="section-head">Media</div>
+<ul>
+  <li><span class="b">&#9993;</span> <a href="#">Choe Show Package</a> <span class="desc">SDCI + KCRHA accountability, 9 PRA requests</span></li>
+  <li><span class="b">&#9993;</span> <a href="#">Andrea Suarez / WHS</a> <span class="desc">Federal funding roadmap, $3.8M Y1</span></li>
+  <li><span class="b">&#9993;</span> <a href="#">Stranger Intel</a></li>
+</ul>
+
+<div class="section-head">Development</div>
+<ul>
+  <li><span class="b">&#9986;</span> <a href="#">Lake City Corridor</a> <span class="desc">10 phases, investor memo</span></li>
+  <li><span class="b">&#9986;</span> <a href="#">Century Gate</a> <span class="desc">Monumental architecture program</span></li>
+  <li><span class="b">&#9986;</span> <a href="#">Capitol Hill Expansion</a></li>
+  <li><span class="b">&#9986;</span> <a href="#">High Ross Dam</a> <span class="desc">Energy sovereignty, treaty leverage</span></li>
+</ul>
+
+<div class="section-head">Organization</div>
+<ul>
+  <li><span class="b">&#9758;</span> <a href="#">The Junto</a> <span class="desc">Recruitment list, 822 DMs mapped</span></li>
+  <li><span class="b">&#9758;</span> <a href="#">Budget Explorer</a> <span class="desc">47 Shifts vendor assignments</span></li>
+  <li><span class="b">&#9758;</span> <a href="#">Seahawks Civic Partner Play</a></li>
+</ul>
+
+<hr>
+
+<div class="footer">
+  <a href="mailto:jwalsh@burnhamcivic.org">jwalsh@burnhamcivic.org</a> | <a href="/">Public site</a><br>
+  Internal use only. Seattle, Washington &copy; 2026
+</div>
+
+</div>
+
+<script>
+(function(){
+  var h='648bad37aab87ba4b22b91c2ff97879e7df414092c39fd91783bebdb07c91e8d';
+  async function check(p){
+    var e=new TextEncoder().encode(p);
+    var b=await crypto.subtle.digest('SHA-256',e);
+    return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')===h;
+  }
+  document.getElementById('pw').addEventListener('keydown',async function(e){
+    if(e.key==='Enter'){
+      if(await check(this.value)){
+        document.getElementById('gate').style.display='none';
+        document.getElementById('content').style.display='block';
+      } else {
+        document.getElementById('err').textContent='Incorrect';
+        this.value='';
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

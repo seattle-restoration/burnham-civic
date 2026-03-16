@@ -3,175 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Burnham Civic</title>
-<meta name="description" content="A civic research and planning organization dedicated to Seattle's infrastructure future. Coming soon.">
+<title>BURNHAM CIVIC</title>
+<meta name="description" content="Civic research and planning for Seattle's infrastructure, architecture, and operational future.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #fafaf9;
-  --surface: #ffffff;
-  --border: #e5e5e4;
-  --text: #1c1917;
-  --text-secondary: #78716c;
-  --accent: #1e3a5f;
-  --gold: #92752c;
-  --gold-light: #faf6eb;
-  --serif: 'Libre Baskerville', Georgia, serif;
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1c1c1c; --surface: #2a2a2a; --border: #3a3a3a;
-    --text: #e7e5e4; --text-secondary: #a8a29e;
-    --accent: #93c5fd; --gold: #fbbf24; --gold-light: #292524;
-  }
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; }
 body {
-  font-family: var(--sans);
-  background: var(--bg);
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 24px;
-}
-
-.container {
-  max-width: 560px;
-  width: 100%;
-  text-align: center;
-}
-
-.mark {
-  width: 56px;
-  height: 56px;
-  background: var(--accent);
-  border-radius: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fbbf24;
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 32px;
-}
-
-.name {
-  font-family: var(--serif);
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 16px;
-  letter-spacing: -0.5px;
-}
-
-.tagline {
-  font-size: 16px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 40px;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.divider {
-  width: 48px;
-  height: 1px;
-  background: var(--border);
-  margin: 0 auto 32px;
-}
-
-.quote {
-  font-family: var(--serif);
-  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 640px;
+  margin: 32px auto;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
   font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  max-width: 440px;
-  margin: 0 auto 12px;
+  line-height: 1.5;
 }
-
-.attribution {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  letter-spacing: 0.5px;
-  margin-bottom: 48px;
-}
-
-.status {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+h1 {
+  font-size: 22px;
   letter-spacing: 2px;
-  color: var(--gold);
-  background: var(--gold-light);
-  padding: 6px 16px;
-  border-radius: 6px;
-  border: 1px solid var(--gold);
-  margin-bottom: 24px;
+  margin: 0 0 2px;
+  font-weight: 700;
 }
-
-.contact {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-bottom: 6px;
-}
-
-.contact a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 16px;
-  text-align: center;
+.subtitle {
   font-size: 12px;
-  color: var(--text-secondary);
+  color: #666;
+  margin-bottom: 20px;
+  font-style: italic;
 }
-
-@media (max-width: 480px) {
-  .name { font-size: 26px; }
-  .tagline { font-size: 15px; }
-  .quote { font-size: 14px; }
-  .mark { width: 48px; height: 48px; font-size: 24px; margin-bottom: 24px; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
 }
+.section-head {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #333;
+  margin: 20px 0 8px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 4px;
+}
+li {
+  padding: 2px 0;
+}
+li a {
+  font-size: 14px;
+}
+.b {
+  font-size: 12px;
+  color: #999;
+  margin-right: 2px;
+}
+.desc {
+  font-size: 12px;
+  color: #666;
+  margin-left: 4px;
+}
+.quote {
+  font-style: italic;
+  font-size: 13px;
+  color: #555;
+  margin: 24px 0 4px;
+  text-align: center;
+}
+.attr {
+  font-size: 11px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.footer {
+  font-size: 11px;
+  color: #999;
+  margin-top: 32px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+}
+.footer a { color: #999; }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="mark">B</div>
-  <div class="name">Burnham Civic</div>
-  <p class="tagline">A civic research and planning organization for Seattle's infrastructure, architecture, and operational future.</p>
-  <div class="divider"></div>
-  <p class="quote">"Make no little plans; they have no magic to stir men's blood."</p>
-  <p class="attribution">Daniel H. Burnham, 1907</p>
-  <div class="status">Coming Soon</div>
-  <p class="contact"><a href="mailto:jwalsh@burnhamcivic.org">jwalsh@burnhamcivic.org</a></p>
-</div>
+<h1>BURNHAM CIVIC</h1>
+<div class="subtitle">Civic research and planning. Seattle, Washington.</div>
+<hr>
 
-<div class="footer">Seattle, Washington &copy; 2026</div>
+<div class="section-head">Initiatives</div>
+<ul>
+  <li><span class="b">&#9986;</span> <a href="#">47 Shifts</a> <span class="desc">Seattle Unsheltered Response OPORD</span></li>
+  <li><span class="b">&#9986;</span> <a href="#">Lake City Corridor</a> <span class="desc">Mixed-use development, 10 phases</span></li>
+  <li><span class="b">&#9986;</span> <a href="#">Century Gate</a> <span class="desc">Monumental architecture standard</span></li>
+  <li><span class="b">&#9986;</span> <a href="#">Capitol Hill Expansion Zone</a></li>
+  <li><span class="b">&#9986;</span> <a href="#">High Ross</a> <span class="desc">Energy sovereignty, treaty leverage</span></li>
+</ul>
+
+<div class="section-head">Intelligence</div>
+<ul>
+  <li><span class="b">&#10026;</span> <a href="#">Downtown Parcel Map</a> <span class="desc">1,216 parcels, 822 decision makers</span></li>
+  <li><span class="b">&#10026;</span> <a href="#">CSO Outfall Map</a> <span class="desc">Federal infrastructure leverage</span></li>
+  <li><span class="b">&#10026;</span> <a href="#">KCRHA Accountability Brief</a></li>
+  <li><span class="b">&#10026;</span> <a href="#">SDCI Permit Intelligence</a></li>
+</ul>
+
+<div class="section-head">Policy</div>
+<ul>
+  <li><span class="b">&#9998;</span> <a href="#">EO 14344 and the Parthenon</a> <span class="desc">Classical architecture, democratic patrimony</span></li>
+  <li><span class="b">&#9998;</span> <a href="#">Federal Levers</a> <span class="desc">Seattle CSO infrastructure control</span></li>
+  <li><span class="b">&#9998;</span> <a href="#">Housing Power Play</a> <span class="desc">KCRHA de-designation under 24 CFR 578.11(b)</span></li>
+  <li><span class="b">&#9998;</span> <a href="#">Material Standard</a> <span class="desc">Public construction quality benchmarks</span></li>
+</ul>
+
+<div class="section-head">News</div>
+<ul>
+  <li><span class="b">&#9993;</span> <a href="#">Choe Show</a> <span class="desc">Accountability journalism pipeline</span></li>
+  <li><span class="b">&#9993;</span> <a href="https://www.theacropolismuseum.gr/en/sculptural-decoration/metopes">Acropolis Museum: Parthenon Metopes</a> <span class="desc">External</span></li>
+</ul>
+
+<div class="section-head">Organization</div>
+<ul>
+  <li><span class="b">&#9758;</span> <a href="#">The Junto</a> <span class="desc">Founding leadership circle</span></li>
+  <li><span class="b">&#9758;</span> <a href="#">About</a></li>
+</ul>
+
+<hr>
+
+<p class="quote">"Make no little plans; they have no magic to stir men's blood."</p>
+<p class="attr">Daniel H. Burnham, 1907</p>
+
+<div class="footer">
+  <a href="mailto:jwalsh@burnhamcivic.org">jwalsh@burnhamcivic.org</a><br>
+  Seattle, Washington &copy; 2026. 501(c)(4) pending.
+</div>
 
 </body>
 </html>
