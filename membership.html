@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership - BURNHAM CIVIC</title>
+<meta name="description" content="Join Burnham Civic. Support civic operations in Seattle.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.5;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+h1 { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; }
+.subtitle { font-size: 12px; color: #666; margin-bottom: 20px; font-style: italic; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+.back { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-bottom: 24px; display: block; }
+
+/* Tiers */
+.tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0 32px; }
+@media (max-width: 600px) { .tiers { grid-template-columns: 1fr; } }
+.tier { border: 1px solid #ccc; padding: 24px; position: relative; }
+.tier.featured { border: 2px solid #1e3a5f; }
+.tier-badge {
+  position: absolute; top: -10px; right: 16px;
+  background: #1e3a5f; color: #fbbf24;
+  font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  padding: 2px 8px; font-family: Georgia, serif;
+}
+.tier-name { font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.tier-price { font-size: 28px; font-weight: 700; margin-bottom: 2px; }
+.tier-price span { font-size: 14px; color: #666; font-weight: 400; }
+.tier-desc { font-size: 13px; color: #666; margin-bottom: 16px; font-style: italic; }
+.tier-features { list-style: none; padding: 0; margin: 0 0 20px; font-size: 13px; }
+.tier-features li { padding: 4px 0; border-bottom: 1px solid #eee; }
+.tier-features li:last-child { border-bottom: none; }
+.tier-features li::before { content: "\2713"; color: #1e3a5f; font-weight: 700; margin-right: 8px; }
+.tier-btn {
+  display: block; width: 100%; padding: 10px;
+  font-family: Georgia, serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase; text-align: center;
+  text-decoration: none; cursor: pointer; border: none;
+}
+.tier-btn-primary { background: #1e3a5f; color: #fff; }
+.tier-btn-primary:hover { background: #2a4a73; }
+.tier-btn-primary:visited { color: #fff; }
+.tier-btn-outline { background: #fff; color: #1e3a5f; border: 1px solid #1e3a5f; }
+.tier-btn-outline:hover { background: #f5f5f5; }
+.tier-btn-outline:visited { color: #1e3a5f; }
+
+/* Junto section */
+.junto-section { margin: 32px 0; padding: 24px; background: #fafaf5; border: 1px solid #ddd; }
+.junto-name { font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+
+/* Region toggle */
+.region-toggle {
+  display: flex; gap: 0; margin-bottom: 16px;
+}
+.region-btn {
+  flex: 1; padding: 10px 16px; text-align: center;
+  font-family: Georgia, serif; font-size: 13px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  cursor: pointer; border: 1px solid #1e3a5f;
+  transition: all 0.2s;
+}
+.region-btn:first-child { border-right: none; }
+.region-btn.active { background: #1e3a5f; color: #fff; }
+.region-btn:not(.active) { background: #fff; color: #1e3a5f; }
+.region-btn:not(.active):hover { background: #f0f0f0; }
+
+/* Price animation */
+.price-struck { text-decoration: line-through; color: #999; font-size: 20px; margin-right: 8px; }
+.price-new { color: #111; }
+.junto-price-area { font-size: 28px; font-weight: 700; margin-bottom: 8px; transition: all 0.3s; }
+
+/* FAQ */
+.faq { margin: 32px 0; }
+.faq h3 { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; margin: 20px 0 8px; }
+.faq p { font-size: 13px; color: #444; margin: 0; }
+
+.stripe-badge { text-align: center; margin: 24px 0; font-size: 11px; color: #999; }
+.stripe-badge svg { vertical-align: middle; margin-right: 4px; }
+</style>
+</head>
+<body>
+
+<a class="back" href="index.html">&larr; Burnham Civic</a>
+
+<h1>MEMBERSHIP</h1>
+<div class="subtitle">Support civic operations. Get access to intelligence, strategy, and the decision-maker network.</div>
+<hr>
+
+<p style="font-size:14px;margin-bottom:8px;">Burnham Civic is an operations board, not a newsletter. Membership funds the work: public records requests, parcel research, policy briefs, and direct engagement with decision makers.</p>
+
+<p style="font-size:14px;margin-bottom:24px;">Every dollar goes to operations. No galas. No overhead. No consultants.</p>
+
+<div class="tiers">
+
+  <div class="tier">
+    <div class="tier-name">Observer</div>
+    <div class="tier-price">Free</div>
+    <div class="tier-desc">Follow the work.</div>
+    <ul class="tier-features">
+      <li>Public operations feed (Seattle + USA)</li>
+      <li>News updates and thread archive</li>
+      <li>Contact form access</li>
+    </ul>
+    <a href="index.html" class="tier-btn tier-btn-outline">Browse Operations</a>
+  </div>
+
+  <div class="tier featured">
+    <div class="tier-badge">Recommended</div>
+    <div class="tier-name">Member</div>
+    <div class="tier-price">$25 <span>/month</span></div>
+    <div class="tier-desc">Access the full intelligence layer.</div>
+    <ul class="tier-features">
+      <li>Everything in Observer</li>
+      <li>Weekly operations brief</li>
+      <li>Intelligence briefs and strategy documents</li>
+      <li>Decision maker network (view access)</li>
+      <li>Direct email line to the operations team</li>
+      <li>Early access to new operations before public launch</li>
+    </ul>
+    <a href="index.html#contact" onclick="localStorage.setItem('cf-prefill','Member Tier ($25/mo)')" class="tier-btn tier-btn-primary">Join as Member</a>
+  </div>
+
+</div>
+
+<!-- JUNTO SECTION WITH REGION TOGGLE -->
+<div class="junto-section">
+  <div class="junto-name">Junto Contributor</div>
+  <div style="font-size:12px;color:#666;font-style:italic;margin-bottom:12px;">Named after Benjamin Franklin's civic improvement club.</div>
+
+  <div class="region-toggle">
+    <div class="region-btn active" onclick="selectRegion('seattle')">Seattle</div>
+    <div class="region-btn" onclick="selectRegion('usa')">USA</div>
+  </div>
+
+  <div class="junto-price-area" id="juntoPrice">
+    <span class="price-struck">$10,000</span>
+    <span class="price-new">$5,000</span>
+    <span style="font-size:14px;color:#666;font-weight:400">/year</span>
+  </div>
+
+  <div class="tier-desc" id="juntoDesc" style="margin-bottom:12px;">For operators and decision makers focused on Seattle. Direct involvement in shaping the city's future.</div>
+
+  <ul class="tier-features" id="juntoFeatures">
+    <li>Everything in Member</li>
+    <li>Full parcel map and decision maker database with contacts</li>
+    <li>47 Shifts operational order and team assignments</li>
+    <li>Quarterly strategy sessions (in-person, Seattle)</li>
+    <li>Named contributor recognition (optional)</li>
+    <li>Priority contact for all new Seattle operations</li>
+  </ul>
+
+  <a href="index.html#contact" onclick="localStorage.setItem('cf-prefill','Junto Contributor (Seattle, $5,000/yr)')" id="juntoBtn" class="tier-btn tier-btn-primary" style="max-width:300px;">Join Seattle Junto</a>
+</div>
+
+<div class="faq">
+  <h3>What does membership fund?</h3>
+  <p>Public records requests, SDCI and KCRHA accountability research, parcel intelligence, policy briefs, and direct engagement with city officials and property owners. All of it is published to members.</p>
+
+  <h3>Is this tax deductible?</h3>
+  <p>Burnham Civic is organized as a 501(c)(4) social welfare organization (formation pending). Contributions are not tax deductible as charitable donations but may be deductible as business expenses. Consult your tax advisor.</p>
+
+  <h3>Can I cancel anytime?</h3>
+  <p>Yes. Email operations@burnhamcivic.org and your membership ends immediately. No contracts.</p>
+
+  <h3>How do I pay?</h3>
+  <p>Email us at the links above and we will send you a secure payment link. We are setting up Stripe for automated billing shortly.</p>
+</div>
+
+<div class="stripe-badge">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+  Payments secured by Stripe (coming soon)
+</div>
+
+<hr>
+<p style="font-size:11px;color:#999;">Burnham Civic &middot; Seattle, WA &middot; <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a></p>
+
+<script>
+function selectRegion(region) {
+  const btns = document.querySelectorAll('.region-btn');
+  btns.forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  const priceArea = document.getElementById('juntoPrice');
+  const desc = document.getElementById('juntoDesc');
+  const features = document.getElementById('juntoFeatures');
+  const btn = document.getElementById('juntoBtn');
+
+  if (region === 'seattle') {
+    priceArea.innerHTML = '<span class="price-struck">$10,000</span> <span class="price-new">$5,000</span> <span style="font-size:14px;color:#666;font-weight:400">/year</span>';
+    desc.textContent = 'For operators and decision makers focused on Seattle. Direct involvement in shaping the city\'s future.';
+    features.innerHTML = `
+      <li>Everything in Member</li>
+      <li>Full parcel map and decision maker database with contacts</li>
+      <li>47 Shifts operational order and team assignments</li>
+      <li>Quarterly strategy sessions (in-person, Seattle)</li>
+      <li>Named contributor recognition (optional)</li>
+      <li>Priority contact for all new Seattle operations</li>
+    `;
+    btn.textContent = 'Join Seattle Junto';
+    btn.href = 'index.html#contact'; btn.onclick = function(){ localStorage.setItem('cf-prefill','Junto Contributor (Seattle, $5,000/yr)'); };
+  } else {
+    priceArea.innerHTML = '<span class="price-new">$10,000</span> <span style="font-size:14px;color:#666;font-weight:400">/year</span>';
+    desc.textContent = 'For principals operating at the national level. Federal policy, cross-city intelligence, and direct coordination with operations across the country.';
+    features.innerHTML = `
+      <li>Everything in Member</li>
+      <li>All Seattle operations + full national operations portfolio</li>
+      <li>Federal policy briefs (infrastructure, housing, defense)</li>
+      <li>Cross-city intelligence network</li>
+      <li>Quarterly strategy sessions (in-person or virtual)</li>
+      <li>Named contributor recognition (optional)</li>
+      <li>Direct input on national operations priority</li>
+    `;
+    btn.textContent = 'Join USA Junto';
+    btn.href = 'index.html#contact'; btn.onclick = function(){ localStorage.setItem('cf-prefill','Junto Contributor (USA, $10,000/yr)'); };
+  }
+}
+</script>
+
+</body>
+</html>
