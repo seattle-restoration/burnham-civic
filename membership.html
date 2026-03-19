@@ -130,7 +130,7 @@ hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
       <li>Direct email line to the operations team</li>
       <li>Early access to new operations before public launch</li>
     </ul>
-    <a href="index.html#contact" onclick="localStorage.setItem('cf-prefill','Member Tier ($25/mo)')" class="tier-btn tier-btn-primary">Join as Member</a>
+    <a href="#interest-form" onclick="prefillForm('Member ($25/mo)')" class="tier-btn tier-btn-primary">Join as Member</a>
   </div>
 
 </div>
@@ -162,26 +162,47 @@ hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
     <li>Priority contact for all new Seattle operations</li>
   </ul>
 
-  <a href="index.html#contact" onclick="localStorage.setItem('cf-prefill','Junto Contributor (Seattle, $5,000/yr)')" id="juntoBtn" class="tier-btn tier-btn-primary" style="max-width:300px;">Join Seattle Junto</a>
+  <a href="#interest-form" onclick="prefillForm('Junto Contributor (Seattle, $5,000/yr)')" id="juntoBtn" class="tier-btn tier-btn-primary" style="max-width:300px;">Join Seattle Junto</a>
+</div>
+
+<!-- INTEREST FORM -->
+<div id="interest-form" style="margin:32px 0;padding:24px;border:2px solid #1e3a5f;">
+  <div style="font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Express Interest</div>
+  <form id="memberForm" onsubmit="return submitInterest()">
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Name</label>
+      <input type="text" id="mf-name" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
+    </div>
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Email</label>
+      <input type="email" id="mf-email" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
+    </div>
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Tier</label>
+      <select id="mf-tier" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;background:#fff;">
+        <option value="Member ($25/mo)">Member ($25/mo)</option>
+        <option value="Junto Contributor (Seattle, $5,000/yr)">Junto Contributor, Seattle ($5,000/yr)</option>
+        <option value="Junto Contributor (USA, $10,000/yr)">Junto Contributor, USA ($10,000/yr)</option>
+      </select>
+    </div>
+    <div style="margin-bottom:16px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Which operations interest you?</label>
+      <textarea id="mf-message" rows="3" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="Optional. Tell us what drew you in."></textarea>
+    </div>
+    <button type="submit" style="background:#1e3a5f;color:#fff;padding:10px 24px;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;width:100%;">Submit Interest</button>
+    <div id="formSent" style="display:none;margin-top:12px;padding:10px;background:#f0f7f0;color:#1e3a5f;font-size:13px;font-weight:700;text-align:center;">Received. We will be in touch shortly.</div>
+  </form>
 </div>
 
 <div class="faq">
   <h3>What does membership fund?</h3>
-  <p>Public records requests, SDCI and KCRHA accountability research, parcel intelligence, policy briefs, and direct engagement with city officials and property owners. All of it is published to members.</p>
+  <p>Public records requests, SDCI and KCRHA accountability research, parcel intelligence, policy briefs, and direct engagement with city officials and property owners.</p>
 
   <h3>Is this tax deductible?</h3>
   <p>Burnham Civic is organized as a 501(c)(4) social welfare organization (formation pending). Contributions are not tax deductible as charitable donations but may be deductible as business expenses. Consult your tax advisor.</p>
 
   <h3>Can I cancel anytime?</h3>
-  <p>Yes. Email operations@burnhamcivic.org and your membership ends immediately. No contracts.</p>
-
-  <h3>How do I pay?</h3>
-  <p>Email us at the links above and we will send you a secure payment link. We are setting up Stripe for automated billing shortly.</p>
-</div>
-
-<div class="stripe-badge">
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-  Payments secured by Stripe (coming soon)
+  <p>Yes. Email operations@burnhamcivic.org. No contracts.</p>
 </div>
 
 <hr>
@@ -210,7 +231,7 @@ function selectRegion(region) {
       <li>Priority contact for all new Seattle operations</li>
     `;
     btn.textContent = 'Join Seattle Junto';
-    btn.href = 'index.html#contact'; btn.onclick = function(){ localStorage.setItem('cf-prefill','Junto Contributor (Seattle, $5,000/yr)'); };
+    btn.href = '#interest-form'; btn.onclick = function(){ prefillForm('Junto Contributor (Seattle, $5,000/yr)'); };
   } else {
     priceArea.innerHTML = '<span class="price-new">$10,000</span> <span style="font-size:14px;color:#666;font-weight:400">/year</span>';
     desc.textContent = 'For principals operating at the national level. Federal policy, cross-city intelligence, and direct coordination with operations across the country.';
@@ -224,8 +245,33 @@ function selectRegion(region) {
       <li>Direct input on national operations priority</li>
     `;
     btn.textContent = 'Join USA Junto';
-    btn.href = 'index.html#contact'; btn.onclick = function(){ localStorage.setItem('cf-prefill','Junto Contributor (USA, $10,000/yr)'); };
+    btn.href = '#interest-form'; btn.onclick = function(){ prefillForm('Junto Contributor (USA, $10,000/yr)'); };
   }
+}
+
+function prefillForm(tier) {
+  var sel = document.getElementById('mf-tier');
+  for (var i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === tier) { sel.selectedIndex = i; break; }
+  }
+  document.getElementById('mf-name').focus();
+}
+
+function submitInterest() {
+  var name = document.getElementById('mf-name').value;
+  var email = document.getElementById('mf-email').value;
+  var tier = document.getElementById('mf-tier').value;
+  var msg = document.getElementById('mf-message').value;
+
+  var subject = 'Membership Interest: ' + tier;
+  var body = 'Name: ' + name + '\nEmail: ' + email + '\nTier: ' + tier + '\n\n' + msg;
+
+  // Send via mailto as fallback
+  var mailto = 'mailto:operations@burnhamcivic.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  window.open(mailto, '_blank');
+
+  document.getElementById('formSent').style.display = 'block';
+  return false;
 }
 </script>
 
