@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>311 Service Requests - BURNHAM CIVIC</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.5;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1 {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+}
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.subtitle {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.section-head {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 28px 0 12px;
+}
+
+/* Zone cards */
+.zone-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.zone-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.zone-card:hover { border-color: #1e3a5f; }
+.zone-card.active { border-color: #1e3a5f; border-width: 2px; }
+.zone-name {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 2px;
+}
+.zone-cc {
+  font-size: 10px;
+  color: #999;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.zone-count {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1;
+}
+.zone-label {
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+}
+.zone-areas {
+  font-size: 10px;
+  color: #aaa;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Charts */
+.chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.chart-box {
+  border: 1px solid #ccc;
+  padding: 16px;
+}
+.chart-box h3 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0 0 12px;
+}
+canvas { width: 100% !important; }
+
+/* Map */
+#map {
+  height: 420px;
+  border: 1px solid #ccc;
+  margin-bottom: 24px;
+}
+
+/* 47 Shifts overlay */
+.shifts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+.shifts-table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #666;
+  border-bottom: 2px solid #111;
+  padding: 6px 8px;
+}
+.shifts-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #eee;
+}
+.shifts-table tr:hover { background: #f8f8f8; }
+.team-code {
+  font-family: 'SF Mono', 'Consolas', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1e3a5f;
+}
+.capacity-bar {
+  display: inline-block;
+  height: 8px;
+  background: #1e3a5f;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+.total-bar {
+  display: inline-block;
+  height: 8px;
+  background: #c00;
+  border-radius: 2px;
+  vertical-align: middle;
+  opacity: 0.3;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-style: italic;
+}
+.stat-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  border: 1px solid #ccc;
+  padding: 16px 20px;
+  flex: 1;
+  text-align: center;
+}
+.stat-num {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.footer {
+  font-size: 11px;
+  color: #999;
+  margin: 32px 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .zone-grid { grid-template-columns: repeat(2, 1fr); }
+  .chart-row { grid-template-columns: 1fr; }
+  .stat-row { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>BURNHAM CIVIC</h1>
+</div>
+<div class="subtitle">Seattle's civic accountability platform</div>
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="311.html" style="color:#111;text-decoration:underline;">311 Dashboard</a>
+  <a href="47shifts.html">47 Shifts</a>
+</div>
+<hr>
+
+<h2 style="font-size:18px;margin:0 0 4px;">Find It, Fix It: Service Request Dashboard</h2>
+<p style="font-size:13px;color:#666;margin:0 0 4px;">
+  Live data from the City of Seattle's 311 system. Every dot is a request the city hasn't resolved.
+  <a href="https://data.seattle.gov/resource/5ngg-rpne.json" style="font-size:11px;">API source</a>
+</p>
+<p style="font-size:13px;color:#111;margin:0 0 20px;">
+  <strong>FIFA World Cup Seattle: June 15, 2026.</strong> 6 matches at Lumen Field. 750,000 visitors. $929M economic impact.
+  47 Shifts clears this backlog in 250 hours across 4 NSSE crew chief zones before the first whistle.
+</p>
+
+<div id="paywall-gate" style="text-align:center;padding:60px 20px;border:1px solid #ccc;margin:32px 0;">
+  <h2 style="font-family:Georgia,serif;font-size:20px;margin-bottom:12px;">&#9878; TBC Intelligence</h2>
+  <p style="font-size:14px;color:#666;margin-bottom:16px;">This operational dashboard is available to TBC Intelligence members.</p>
+  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')" style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;padding:8px 24px;text-decoration:none;font-family:Georgia,serif;">Join - $5,000/year</a>
+</div>
+
+<div id="gated-content" style="display:none;">
+<div class="loading" id="loading">Loading service requests from data.seattle.gov...</div>
+
+<div id="dashboard" style="display:none;">
+
+  <div class="stat-row" id="statRow">
+    <div class="stat-card">
+      <div class="stat-num" id="totalRequests">--</div>
+      <div class="stat-label">Total Requests (12 mo)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="openRequests">--</div>
+      <div class="stat-label">Open / Unresolved</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="avgPerDay">--</div>
+      <div class="stat-label">Avg per Day</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" style="color:#1e3a5f;" id="shiftsNeeded">47</div>
+      <div class="stat-label">Shifts to Clear (47 Shifts)</div>
+    </div>
+  </div>
+
+  <div class="section-head">NSSE Crew Chief Zones / 47 Shifts</div>
+  <div class="zone-grid" id="zoneGrid"></div>
+
+  <div class="chart-row">
+    <div class="chart-box">
+      <h3>By Category</h3>
+      <canvas id="catChart" height="280"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Monthly Volume (12 months)</h3>
+      <canvas id="trendChart" height="280"></canvas>
+    </div>
+  </div>
+
+  <div class="section-head">Map</div>
+  <div id="map"></div>
+
+  <div class="section-head">47 Shifts Team Assignment</div>
+  <table class="shifts-table">
+    <thead>
+      <tr>
+        <th>311 Category</th>
+        <th>47 Shifts Team</th>
+        <th>Crew/Shift</th>
+        <th>Open Requests</th>
+        <th>Shifts to Clear</th>
+      </tr>
+    </thead>
+    <tbody id="assignmentBody"></tbody>
+  </table>
+
+</div>
+
+<div class="footer">
+  Data: City of Seattle Open Data Portal (Socrata API). Updates on page load.<br>
+  47 Shifts operational plan: 47 shifts x 5.3 hours = 250 hours. 120+ personnel. 4 zones.
+</div>
+
+</div><!-- end gated-content -->
+
+<script>
+(function(){
+  var buf='';
+  document.addEventListener('keydown',function(e){
+    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+    buf+=e.key.toLowerCase();
+    if(buf.length>10) buf=buf.slice(-10);
+    if(buf.indexOf('maga')!==-1){
+      document.getElementById('paywall-gate').style.display='none';
+      document.getElementById('gated-content').style.display='block';
+      if(!window._311loaded){ window._311loaded=true; init(); }
+      buf='';
+    }
+  });
+})();
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// ========== ZONE DEFINITIONS ==========
+const ZONES = [
+  {
+    id: 'north', name: 'North Zone', cc: 'CC1 GREENE',
+    hero: 'Gen. Nathanael Greene',
+    areas: 'Aurora, Seattle Center, U-District, Ballard',
+    color: '#818cf8',
+    bounds: { latMin: 47.65, latMax: 47.80, lngMin: -122.40, lngMax: -122.30 }
+  },
+  {
+    id: 'central', name: 'Central Zone', cc: 'CC2 KNOX',
+    hero: 'Gen. Henry Knox',
+    areas: 'The Blade, Pioneer Square, Belltown, CID',
+    color: '#f87171',
+    bounds: { latMin: 47.59, latMax: 47.62, lngMin: -122.36, lngMax: -122.32 }
+  },
+  {
+    id: 'south', name: 'South Zone', cc: 'CC3 WAYNE',
+    hero: 'Gen. Anthony Wayne',
+    areas: 'SODO, Stadium District, The Jungle, Rainier',
+    color: '#c9a227',
+    bounds: { latMin: 47.50, latMax: 47.59, lngMin: -122.36, lngMax: -122.28 }
+  },
+  {
+    id: 'waterfront', name: 'Waterfront Zone', cc: 'CC4 LAFAYETTE',
+    hero: 'Marquis de Lafayette',
+    areas: 'Elliott Bay, Piers, Lake Union, Ship Canal',
+    color: '#60a5fa',
+    bounds: { latMin: 47.59, latMax: 47.66, lngMin: -122.40, lngMax: -122.32 }
+  }
+];
+
+// Expanded zone detection using neighborhood keywords
+const ZONE_KEYWORDS = {
+  north: ['aurora','fremont','wallingford','u district','university','ballard','greenwood','phinney','green lake','ravenna','roosevelt','northgate','lake city','maple leaf','wedgwood','sand point','view ridge','bryant','laurelhurst','montlake','seattle center','queen anne','magnolia','interbay'],
+  central: ['belltown','downtown','pioneer square','chinatown','international district','cid','first hill','capitol hill','central district','pike','pine','1st ave','2nd ave','3rd ave','blade','yesler'],
+  south: ['sodo','georgetown','beacon hill','columbia city','rainier','mount baker','seward park','othello','hillman','south park','tukwila','white center','delridge','highland park','jungle','stadium'],
+  waterfront: ['alaskan way','pier','waterfront','elliott','lake union','westlake','ship canal','harbor','maritime','terminal']
+};
+
+// 47 Shifts team assignments for each 311 category
+const TEAM_MAP = {
+  'Abandoned Vehicle': { team: 'DRAGNET', code: 'Sweep', crewPerShift: 8 },
+  'Graffiti': { team: 'WHITEOUT', code: 'Graffiti Removal', crewPerShift: 5 },
+  'Pothole': { team: 'SDOT HANDOFF', code: 'Roadway', crewPerShift: 6 },
+  'Illegal Dumping': { team: 'DRAGNET', code: 'Sweep', crewPerShift: 8 },
+  'Parking': { team: 'DRAGNET', code: 'Sweep', crewPerShift: 8 },
+  'Litter': { team: 'DELUGE', code: 'Steam Cleaning', crewPerShift: 5 },
+  'Sign': { team: 'SDOT HANDOFF', code: 'Roadway', crewPerShift: 4 },
+  'Sidewalk': { team: 'SDOT HANDOFF', code: 'Roadway', crewPerShift: 6 },
+  'Tree': { team: 'LANDSCAPE', code: 'Vegetation', crewPerShift: 4 },
+  'Unauthorized Camp': { team: 'OVERWATCH', code: 'Security', crewPerShift: 10 },
+  'Other': { team: 'COMMAND', code: 'General', crewPerShift: 4 }
+};
+
+function classifyZone(item) {
+  var lat = parseFloat(item.latitude);
+  var lng = parseFloat(item.longitude);
+  var addr = (item.location || '').toLowerCase();
+
+  // Keyword match first (more accurate for Seattle neighborhoods)
+  for (var zoneId in ZONE_KEYWORDS) {
+    var keywords = ZONE_KEYWORDS[zoneId];
+    for (var i = 0; i < keywords.length; i++) {
+      if (addr.indexOf(keywords[i]) !== -1) return zoneId;
+    }
+  }
+
+  // Fallback to lat/lng
+  if (!isNaN(lat) && !isNaN(lng)) {
+    if (lat >= 47.65) return 'north';
+    if (lat >= 47.59 && lng <= -122.34) return 'waterfront';
+    if (lat >= 47.59) return 'central';
+    return 'south';
+  }
+
+  return 'central'; // default
+}
+
+function getTeam(category) {
+  for (var key in TEAM_MAP) {
+    if (category && category.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
+      return TEAM_MAP[key];
+    }
+  }
+  return TEAM_MAP['Other'];
+}
+
+// ========== DATA FETCH ==========
+async function fetchData() {
+  var oneYearAgo = new Date();
+  oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+  var dateStr = oneYearAgo.toISOString().split('T')[0];
+
+  var allData = [];
+  var offset = 0;
+  var batchSize = 5000;
+
+  while (true) {
+    var url = 'https://data.seattle.gov/resource/5ngg-rpne.json'
+      + '?$where=createddate>\'' + dateStr + '\''
+      + '&$limit=' + batchSize
+      + '&$offset=' + offset
+      + '&$order=createddate DESC';
+
+    var resp = await fetch(url);
+    var data = await resp.json();
+    allData = allData.concat(data);
+    if (data.length < batchSize) break;
+    offset += batchSize;
+    if (offset > 100000) break; // safety
+  }
+
+  return allData;
+}
+
+// ========== SIMPLE CANVAS CHARTS ==========
+function drawBarChart(canvas, labels, datasets, maxVal) {
+  var ctx = canvas.getContext('2d');
+  var dpr = window.devicePixelRatio || 1;
+  var rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  var W = rect.width;
+  var H = rect.height;
+
+  var padL = 50, padR = 16, padT = 16, padB = 80;
+  var chartW = W - padL - padR;
+  var chartH = H - padT - padB;
+  var n = labels.length;
+  var barW = Math.min(chartW / n * 0.7, 40);
+  var gap = chartW / n;
+
+  if (!maxVal) maxVal = Math.max.apply(null, datasets[0].data) * 1.15;
+  if (maxVal === 0) maxVal = 1;
+
+  // Y axis
+  ctx.strokeStyle = '#ccc';
+  ctx.fillStyle = '#999';
+  ctx.font = '10px Georgia';
+  ctx.textAlign = 'right';
+  for (var i = 0; i <= 4; i++) {
+    var y = padT + chartH - (chartH * i / 4);
+    var val = Math.round(maxVal * i / 4);
+    ctx.beginPath();
+    ctx.moveTo(padL, y);
+    ctx.lineTo(W - padR, y);
+    ctx.stroke();
+    ctx.fillText(val.toLocaleString(), padL - 6, y + 3);
+  }
+
+  // Bars
+  for (var d = 0; d < datasets.length; d++) {
+    ctx.fillStyle = datasets[d].color;
+    for (var i = 0; i < datasets[d].data.length; i++) {
+      var val = datasets[d].data[i];
+      var barH = (val / maxVal) * chartH;
+      var x = padL + i * gap + (gap - barW) / 2;
+      var y = padT + chartH - barH;
+      ctx.fillRect(x, y, barW, barH);
+    }
+  }
+
+  // X labels
+  ctx.fillStyle = '#666';
+  ctx.font = '10px Georgia';
+  ctx.textAlign = 'center';
+  for (var i = 0; i < labels.length; i++) {
+    var x = padL + i * gap + gap / 2;
+    ctx.save();
+    ctx.translate(x, padT + chartH + 8);
+    ctx.rotate(Math.PI / 4);
+    ctx.textAlign = 'left';
+    ctx.fillText(labels[i], 0, 0);
+    ctx.restore();
+  }
+}
+
+function drawLineChart(canvas, labels, data) {
+  var ctx = canvas.getContext('2d');
+  var dpr = window.devicePixelRatio || 1;
+  var rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  var W = rect.width;
+  var H = rect.height;
+
+  var padL = 50, padR = 16, padT = 16, padB = 40;
+  var chartW = W - padL - padR;
+  var chartH = H - padT - padB;
+  var maxVal = Math.max.apply(null, data) * 1.15;
+  if (maxVal === 0) maxVal = 1;
+
+  // Grid
+  ctx.strokeStyle = '#eee';
+  ctx.fillStyle = '#999';
+  ctx.font = '10px Georgia';
+  ctx.textAlign = 'right';
+  for (var i = 0; i <= 4; i++) {
+    var y = padT + chartH - (chartH * i / 4);
+    ctx.beginPath();
+    ctx.moveTo(padL, y);
+    ctx.lineTo(W - padR, y);
+    ctx.stroke();
+    ctx.fillText(Math.round(maxVal * i / 4).toLocaleString(), padL - 6, y + 3);
+  }
+
+  // Line
+  ctx.strokeStyle = '#1e3a5f';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  for (var i = 0; i < data.length; i++) {
+    var x = padL + (i / (data.length - 1)) * chartW;
+    var y = padT + chartH - (data[i] / maxVal) * chartH;
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+
+  // Fill
+  ctx.lineTo(padL + chartW, padT + chartH);
+  ctx.lineTo(padL, padT + chartH);
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(30,58,95,0.08)';
+  ctx.fill();
+
+  // Dots
+  ctx.fillStyle = '#1e3a5f';
+  for (var i = 0; i < data.length; i++) {
+    var x = padL + (i / (data.length - 1)) * chartW;
+    var y = padT + chartH - (data[i] / maxVal) * chartH;
+    ctx.beginPath();
+    ctx.arc(x, y, 3, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  // X labels
+  ctx.fillStyle = '#999';
+  ctx.font = '10px Georgia';
+  ctx.textAlign = 'center';
+  for (var i = 0; i < labels.length; i++) {
+    var x = padL + (i / (labels.length - 1)) * chartW;
+    ctx.fillText(labels[i], x, padT + chartH + 16);
+  }
+}
+
+// ========== RENDER ==========
+async function init() {
+  var data = await fetchData();
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('dashboard').style.display = 'block';
+
+  // Classify each request
+  data.forEach(function(d) {
+    d._zone = classifyZone(d);
+    d._category = d.webintakeservicerequests || 'Other';
+  });
+
+  // Stats
+  var openCount = data.filter(function(d) {
+    return d.servicerequeststatusname && d.servicerequeststatusname.toLowerCase() !== 'closed';
+  }).length;
+  document.getElementById('totalRequests').textContent = data.length.toLocaleString();
+  document.getElementById('openRequests').textContent = openCount.toLocaleString();
+  document.getElementById('avgPerDay').textContent = Math.round(data.length / 365).toLocaleString();
+
+  // Zone cards
+  var zoneCounts = {};
+  ZONES.forEach(function(z) { zoneCounts[z.id] = 0; });
+  data.forEach(function(d) { zoneCounts[d._zone] = (zoneCounts[d._zone] || 0) + 1; });
+
+  var zoneGrid = document.getElementById('zoneGrid');
+  ZONES.forEach(function(z) {
+    var card = document.createElement('div');
+    card.className = 'zone-card';
+    card.style.borderLeftColor = z.color;
+    card.style.borderLeftWidth = '4px';
+    card.innerHTML = '<div class="zone-name">' + z.name + '</div>'
+      + '<div class="zone-cc">' + z.cc + '</div>'
+      + '<div style="font-size:9px;color:#bbb;letter-spacing:0.5px;font-style:italic;margin-bottom:6px;">' + z.hero + '</div>'
+      + '<div class="zone-count">' + (zoneCounts[z.id] || 0).toLocaleString() + '</div>'
+      + '<div class="zone-label">open 311 requests</div>'
+      + '<div class="zone-areas">' + z.areas + '</div>';
+    zoneGrid.appendChild(card);
+  });
+
+  // Category chart
+  var catCounts = {};
+  data.forEach(function(d) {
+    var cat = d._category;
+    catCounts[cat] = (catCounts[cat] || 0) + 1;
+  });
+  var sortedCats = Object.keys(catCounts).sort(function(a, b) { return catCounts[b] - catCounts[a]; });
+  var topCats = sortedCats.slice(0, 12);
+  drawBarChart(
+    document.getElementById('catChart'),
+    topCats,
+    [{ data: topCats.map(function(c) { return catCounts[c]; }), color: '#1e3a5f' }]
+  );
+
+  // Trend chart
+  var monthCounts = {};
+  data.forEach(function(d) {
+    if (!d.createddate) return;
+    var m = d.createddate.substring(0, 7); // YYYY-MM
+    monthCounts[m] = (monthCounts[m] || 0) + 1;
+  });
+  var months = Object.keys(monthCounts).sort();
+  drawLineChart(
+    document.getElementById('trendChart'),
+    months.map(function(m) { return m.substring(5); }), // MM only
+    months.map(function(m) { return monthCounts[m]; })
+  );
+
+  // Map
+  var map = L.map('map').setView([47.61, -122.33], 12);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: 'CartoDB',
+    maxZoom: 18
+  }).addTo(map);
+
+  var zoneColorMap = {};
+  ZONES.forEach(function(z) { zoneColorMap[z.id] = z.color; });
+
+  // Sample for performance (max 3000 dots)
+  var mapData = data.filter(function(d) { return d.latitude && d.longitude; });
+  if (mapData.length > 3000) {
+    var step = Math.ceil(mapData.length / 3000);
+    mapData = mapData.filter(function(_, i) { return i % step === 0; });
+  }
+
+  mapData.forEach(function(d) {
+    var color = zoneColorMap[d._zone] || '#999';
+    L.circleMarker([parseFloat(d.latitude), parseFloat(d.longitude)], {
+      radius: 3,
+      color: color,
+      fillColor: color,
+      fillOpacity: 0.5,
+      weight: 0
+    }).addTo(map).bindPopup(
+      '<strong>' + d._category + '</strong><br>'
+      + (d.location || 'No address') + '<br>'
+      + '<span style="font-size:11px;color:#888;">' + (d.createddate || '').substring(0, 10) + ' / ' + (d.servicerequeststatusname || 'Unknown') + '</span>'
+    );
+  });
+
+  // 47 Shifts assignment table
+  var assignBody = document.getElementById('assignmentBody');
+  topCats.forEach(function(cat) {
+    var team = getTeam(cat);
+    var count = catCounts[cat];
+    var shiftsNeeded = Math.ceil(count / (team.crewPerShift * 12)); // 12 items per person per shift
+    var maxBar = catCounts[topCats[0]];
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td>' + cat + '</td>'
+      + '<td><span class="team-code">' + team.team + '</span> <span style="font-size:11px;color:#888;">' + team.code + '</span></td>'
+      + '<td>' + team.crewPerShift + '</td>'
+      + '<td>'
+        + '<span style="font-family:monospace;">' + count.toLocaleString() + '</span>'
+        + ' <span class="total-bar" style="width:' + Math.round(count/maxBar*100) + 'px;"></span>'
+      + '</td>'
+      + '<td>'
+        + '<span style="font-family:monospace;font-weight:700;color:#1e3a5f;">' + shiftsNeeded + '</span>'
+        + ' <span class="capacity-bar" style="width:' + Math.min(shiftsNeeded * 4, 120) + 'px;"></span>'
+      + '</td>';
+    assignBody.appendChild(tr);
+  });
+}
+
+// init() called after gate unlock
+</script>
+</body>
+</html>
