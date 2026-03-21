@@ -623,7 +623,8 @@ document.addEventListener('keydown', function(e) {
 var _kbuf = '', _unlocked = false;
 document.addEventListener('keydown', function(e) {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-  _kbuf += e.key;
+  if (e.key.length !== 1) return;
+  _kbuf += e.key.toLowerCase();
   if (_kbuf.length > 10) _kbuf = _kbuf.slice(-10);
   if (_kbuf.indexOf('/maga') !== -1) {
     _kbuf = '';
