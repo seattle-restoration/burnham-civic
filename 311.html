@@ -316,16 +316,18 @@ canvas { width: 100% !important; }
 
 <script>
 (function(){
-  var buf='';
+  var buf='',unlocked=false;
   document.addEventListener('keydown',function(e){
     if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+    if(e.key.length!==1) return;
     buf+=e.key.toLowerCase();
     if(buf.length>10) buf=buf.slice(-10);
-    if(buf.indexOf('maga')!==-1){
-      document.getElementById('paywall-gate').style.display='none';
-      document.getElementById('gated-content').style.display='block';
-      if(!window._311loaded){ window._311loaded=true; init(); }
+    if(buf.indexOf('/maga')!==-1){
       buf='';
+      unlocked=!unlocked;
+      document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
+      document.getElementById('gated-content').style.display=unlocked?'block':'none';
+      if(unlocked&&!window._311loaded){ window._311loaded=true; init(); }
     }
   });
 })();
