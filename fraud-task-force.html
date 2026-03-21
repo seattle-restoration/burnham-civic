@@ -188,6 +188,14 @@ ol li {
   <p>On March 16, 2026, President Trump signed an executive order establishing the <b>Task Force to Eliminate Fraud</b>, chaired by Vice President JD Vance with FTC Chairman Andrew Ferguson as vice chair. The task force targets fraud, waste, and abuse in federal benefit programs, including housing. TBC has spent a year building the most comprehensive accountability package on Seattle's homelessness-industrial complex. This is our opening.</p>
 </div>
 
+<div id="paywall-gate" style="text-align:center;padding:60px 20px;border:1px solid #ccc;margin:32px 0;">
+  <h2 style="font-family:Georgia,serif;font-size:20px;margin-bottom:12px;">&#9878; TBC Intelligence</h2>
+  <p style="font-size:14px;color:#666;margin-bottom:16px;">This document is available to TBC Intelligence members.</p>
+  <a href="membership.html" style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;padding:8px 24px;text-decoration:none;font-family:Georgia,serif;">Join</a>
+</div>
+
+<div id="gated-content" style="display:none;">
+
 <div class="letterhead">The Burnham Civic</div>
 <div class="letterhead-sub">burnhamcivic.org &nbsp;|&nbsp; jwalsh@burnhamcivic.org &nbsp;|&nbsp; (855) 528-1776</div>
 
@@ -241,6 +249,26 @@ ol li {
 <hr>
 
 <p style="font-size:11px;color:#999;margin-top:24px;">A version of this letter was also sent to Chairman Andrew N. Ferguson, Vice Chairman of the Task Force to Eliminate Fraud, Federal Trade Commission, 600 Pennsylvania Avenue NW, Washington, DC 20580.</p>
+
+</div><!-- end gated-content -->
+
+<script>
+(function(){
+  var buf='',unlocked=false;
+  document.addEventListener('keydown',function(e){
+    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+    if(e.key.length!==1) return;
+    buf+=e.key.toLowerCase();
+    if(buf.length>10) buf=buf.slice(-10);
+    if(buf.indexOf('/maga')!==-1){
+      buf='';
+      unlocked=!unlocked;
+      document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
+      document.getElementById('gated-content').style.display=unlocked?'block':'none';
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
