@@ -94,9 +94,13 @@ li a {
   color: #666;
   margin-left: 4px;
 }
-.gated a { color: #2d5016; }
-.gated .desc { color: #4a7c30; }
-.gated .b { color: #4a7c30; }
+.gated a { color: #888; pointer-events: none; cursor: default; text-decoration: none; }
+.gated .desc { color: #999; }
+.gated .b { color: #999; }
+.gated.unlocked a { color: #00c; pointer-events: auto; cursor: pointer; text-decoration: underline; }
+.gated.unlocked .desc { color: #666; }
+.gated.unlocked .b { color: inherit; }
+.gated.unlocked .tag-lock { display: none; }
 .tag {
   font-size: 9px;
   font-weight: 700;
@@ -256,16 +260,16 @@ li a {
 
 <div class="section-head">War &amp; Defense</div>
 <ul>
-  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">High Ross</a> <span class="tag tag-cat">ENERGY</span> <span class="desc">Energy sovereignty, treaty leverage, dam operations.</span></li>
-  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Federal Levers</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">Consent decree and federal infrastructure control.</span></li>
-  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Washington State Packaging Fab Project</a> <span class="tag tag-cat">MANUFACTURING</span></li>
-  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">47 Shifts</a> <span class="tag tag-cat">OPERATIONS</span> <span class="desc">Seattle Unsheltered Response. 12 teams, full operational order.</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">High Ross</a> <span class="tag tag-cat">ENERGY</span> <span class="desc">Energy sovereignty, treaty leverage, dam operations.</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Federal Levers</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">Consent decree and federal infrastructure control.</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Washington State Packaging Fab Project</a> <span class="tag tag-cat">MANUFACTURING</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">47 Shifts</a> <span class="tag tag-cat">OPERATIONS</span> <span class="desc">Seattle Unsheltered Response. 12 teams, full operational order.</span></li>
 </ul>
 
 <div class="section-head">Infrastructure</div>
 <ul>
   <li><span class="b">&#9874;</span> <a href="cso.html">87 Times a Year</a> <span class="tag tag-cat">CSO</span> <span class="desc">Seattle dumps raw sewage into Puget Sound 87 times a year. The feds already control the fix through a consent decree and $706M in WIFIA loans. We mapped every outfall.</span></li>
-  <li class="gated"><span class="b">&#9874;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Century Gate</a> <span class="tag tag-cat">ARCHITECTURE</span> <span class="desc">Monumental architecture standard for Seattle.</span></li>
+  <li class="gated"><span class="b">&#9874;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Century Gate</a> <span class="tag tag-cat">ARCHITECTURE</span> <span class="desc">Monumental architecture standard for Seattle.</span></li>
   <li><span class="b">&#9874;</span> <a href="material-standard.html">The Standard Seattle Forgot</a> <span class="tag tag-cat">CONSTRUCTION</span> <span class="desc">There used to be rules about what public buildings had to look like, and then the rules went away and nobody noticed for 30 years.</span></li>
   <li><span class="b">&#9874;</span> <a href="ayp-1909.html">The Year Seattle Built a City in a Forest</a> <span class="tag tag-cat">1909</span> <span class="desc">Seattle hosted a world's fair the same year Burnham published the Plan of Chicago. One city got a century-long plan. The other got 138 days.</span></li>
   <li><span class="b">&#9874;</span> <a href="bogue-plan.html">The Bogue Plan</a> <span class="tag tag-cat">HISTORY</span> <span class="desc">In 1911 Seattle had a master plan for transit, parks, and a civic center. Voters killed it. The city has been improvising ever since.</span></li>
@@ -275,39 +279,39 @@ li a {
 <div class="section-head">Accountability</div>
 <ul>
   <li><span class="b">&#9878;</span> <a href="permit-machine.html">The Permit Machine</a> <span class="tag tag-cat">SDCI</span> <span class="desc">It takes 18 months to get a building permit in Seattle. Inspectors don't show up. Contractors leave. We pulled the data on how SDCI broke the building pipeline.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">King County Regional Homelessness Authority</a> <span class="tag tag-cat">KCRHA</span> <span class="desc">$300M spent. Encampments growing. Where did it go?</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="plymouth-housing.html">Plymouth Housing</a> <span class="tag tag-cat">HOUSING</span> <span class="desc">$69.5M in revenue, a $22.4M deficit, and a Bellevue facility that went from 5 police calls to 148 in one year.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="desc.html">Downtown Emergency Service Center</a> <span class="tag tag-cat">DESC</span> <span class="desc">$103M organization whose deputy director sits on the state Appropriations Committee that funds her own employer. Plus 600 police calls at one shelter.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="lihi.html">Low Income Housing Institute</a> <span class="tag tag-cat">LIHI</span> <span class="desc">$108M in revenue, $490M in assets, a 33-year executive director earning $338K, and tiny house villages where people die and the reports don't get filed on time.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="ccs.html">Catholic Community Services</a> <span class="tag tag-cat">CCS</span> <span class="desc">$332M in revenue. Largest KCRHA recipient. Governed entirely by the Archdiocese of Seattle. Almost nobody has looked at the numbers.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Seattle Housing Authority</a> <span class="tag tag-cat">SHA</span> <span class="desc">Public housing operations and oversight.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="ecology.html">Department of Ecology</a> <span class="tag tag-cat">STATE</span> <span class="desc">Fines Seattle $402 per sewage overflow, lost track of 7.4 million tons of carbon reductions, and distributing $2.1B with rules it hasn't finished writing.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Seattle Public Utilities</a> <span class="tag tag-cat">SPU</span> <span class="desc">Combined sewer overflows, infrastructure neglect.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="kcrha.html">King County Regional Homelessness Authority</a> <span class="tag tag-cat">KCRHA</span> <span class="desc">$230M budget, three CEOs in three years, a $10M initiative that produced nothing, and the pass-through that funds every organization we've investigated.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="spd.html">Seattle Police and the World's Fair Standard</a> <span class="tag tag-cat">SPD</span> <span class="desc">Washington State ranks dead last in police staffing for the 15th year. Here is what Tokyo, Singapore, and Dubai do differently, and what it would take to get there.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Seattle City Council</a> <span class="tag tag-cat">COUNCIL</span> <span class="desc">Budget oversight and legislative accountability.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="hdc.html">Housing Development Consortium</a> <span class="tag tag-cat">LOBBY</span> <span class="desc">A $1.6M trade group that lobbied $350M in public housing funds toward its own 215 members. Nobody asked whether any of it worked.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Homelessness Authority De-Designation</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">They spent the money. We have the receipts.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">King County Regional Homelessness Authority</a> <span class="tag tag-cat">KCRHA</span> <span class="desc">$300M spent. Encampments growing. Where did it go?</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" data-href="plymouth-housing.html">Plymouth Housing</a> <span class="tag tag-cat">HOUSING</span> <span class="desc">$69.5M in revenue, a $22.4M deficit, and a Bellevue facility that went from 5 police calls to 148 in one year.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" data-href="desc.html">Downtown Emergency Service Center</a> <span class="tag tag-cat">DESC</span> <span class="desc">$103M organization whose deputy director sits on the state Appropriations Committee that funds her own employer. Plus 600 police calls at one shelter.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" data-href="lihi.html">Low Income Housing Institute</a> <span class="tag tag-cat">LIHI</span> <span class="desc">$108M in revenue, $490M in assets, a 33-year executive director earning $338K, and tiny house villages where people die and the reports don't get filed on time.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" data-href="ccs.html">Catholic Community Services</a> <span class="tag tag-cat">CCS</span> <span class="desc">$332M in revenue. Largest KCRHA recipient. Governed entirely by the Archdiocese of Seattle. Almost nobody has looked at the numbers.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Seattle Housing Authority</a> <span class="tag tag-cat">SHA</span> <span class="desc">Public housing operations and oversight.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" data-href="ecology.html">Department of Ecology</a> <span class="tag tag-cat">STATE</span> <span class="desc">Fines Seattle $402 per sewage overflow, lost track of 7.4 million tons of carbon reductions, and distributing $2.1B with rules it hasn't finished writing.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Seattle Public Utilities</a> <span class="tag tag-cat">SPU</span> <span class="desc">Combined sewer overflows, infrastructure neglect.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" data-href="kcrha.html">King County Regional Homelessness Authority</a> <span class="tag tag-cat">KCRHA</span> <span class="desc">$230M budget, three CEOs in three years, a $10M initiative that produced nothing, and the pass-through that funds every organization we've investigated.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" data-href="spd.html">Seattle Police and the World's Fair Standard</a> <span class="tag tag-cat">SPD</span> <span class="desc">Washington State ranks dead last in police staffing for the 15th year. Here is what Tokyo, Singapore, and Dubai do differently, and what it would take to get there.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Seattle City Council</a> <span class="tag tag-cat">COUNCIL</span> <span class="desc">Budget oversight and legislative accountability.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" data-href="hdc.html">Housing Development Consortium</a> <span class="tag tag-cat">LOBBY</span> <span class="desc">A $1.6M trade group that lobbied $350M in public housing funds toward its own 215 members. Nobody asked whether any of it worked.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Homelessness Authority De-Designation</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">They spent the money. We have the receipts.</span></li>
   <li><span class="b">&#9878;</span> <a href="permit-tracker.html">Who's Building What</a> <span class="tag tag-cat">DATA</span> <span class="desc">Every active building permit in Seattle, who filed it, what it costs, and where it stands. Updated continuously.</span></li>
 </ul>
 
 <div class="section-head">Housing</div>
 <ul>
-  <li class="gated"><span class="b">&#10042;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Housing Power Play</a> <span class="tag tag-cat">POLICY</span> <span class="desc">Authority de-designation and service delivery reform.</span></li>
+  <li class="gated"><span class="b">&#10042;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Housing Power Play</a> <span class="tag tag-cat">POLICY</span> <span class="desc">Authority de-designation and service delivery reform.</span></li>
 </ul>
 
 <div class="section-head">Development</div>
 <ul>
-  <li class="gated"><span class="b">&#10001;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Seahawks Civic Integration</a> <span class="tag tag-cat">FRANCHISE</span> <span class="desc">The franchise is for sale. The next owner inherits a city that needs 250 hours of work before the World Cup. TBC has the playbook and 600+ decision makers ready to execute.</span></li>
-  <li class="gated"><span class="b">&#10001;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Lake City Corridor</a> <span class="tag tag-cat">MIXED-USE</span> <span class="desc">Mixed-use development along NE 125th. 10 phases.</span></li>
-  <li class="gated"><span class="b">&#10001;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Capitol Hill Expansion Zone</a> <span class="tag tag-cat">URBAN VILLAGE</span></li>
+  <li class="gated"><span class="b">&#10001;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Seahawks Civic Integration</a> <span class="tag tag-cat">FRANCHISE</span> <span class="desc">The franchise is for sale. The next owner inherits a city that needs 250 hours of work before the World Cup. TBC has the playbook and 600+ decision makers ready to execute.</span></li>
+  <li class="gated"><span class="b">&#10001;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Lake City Corridor</a> <span class="tag tag-cat">MIXED-USE</span> <span class="desc">Mixed-use development along NE 125th. 10 phases.</span></li>
+  <li class="gated"><span class="b">&#10001;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Capitol Hill Expansion Zone</a> <span class="tag tag-cat">URBAN VILLAGE</span></li>
 </ul>
 
 <div class="section-head">Architecture</div>
 <ul>
-  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Century Gate Design Standard</a> <span class="tag tag-cat">DESIGN</span> <span class="desc">What Seattle's public buildings should look like.</span></li>
-  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">TBC Parcel Map</a> <span class="tag tag-cat">INTEL</span> <span class="desc">An evaluation of Seattle's building owners, the quality of what they've built, and their responsibility for the long-term viability of the city.</span></li>
-  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Bloedel Reserve</a> <span class="tag tag-cat">LANDSCAPE</span> <span class="desc">150-acre estate on Bainbridge Island. One of the finest public gardens in the Pacific Northwest. TBC is developing a preservation and programming strategy.</span></li>
+  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Century Gate Design Standard</a> <span class="tag tag-cat">DESIGN</span> <span class="desc">What Seattle's public buildings should look like.</span></li>
+  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">TBC Parcel Map</a> <span class="tag tag-cat">INTEL</span> <span class="desc">An evaluation of Seattle's building owners, the quality of what they've built, and their responsibility for the long-term viability of the city.</span></li>
+  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Bloedel Reserve</a> <span class="tag tag-cat">LANDSCAPE</span> <span class="desc">150-acre estate on Bainbridge Island. One of the finest public gardens in the Pacific Northwest. TBC is developing a preservation and programming strategy.</span></li>
 </ul>
 
 <hr>
@@ -324,7 +328,7 @@ li a {
 
 <div class="section-head">War &amp; Defense</div>
 <ul>
-  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">The Centralia Fab</a> <span class="tag tag-cat">CHIPS ACT</span> <span class="desc">Washington State has the workforce, the power, and the land for semiconductor packaging. Nobody's filed the application yet.</span></li>
+  <li class="gated"><span class="b">&#9876;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">The Centralia Fab</a> <span class="tag tag-cat">CHIPS ACT</span> <span class="desc">Washington State has the workforce, the power, and the land for semiconductor packaging. Nobody's filed the application yet.</span></li>
 </ul>
 
 <div class="section-head">City Planning</div>
@@ -336,19 +340,19 @@ li a {
 
 <div class="section-head">Infrastructure</div>
 <ul>
-  <li class="gated"><span class="b">&#9874;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Twin Tunnels</a> <span class="tag tag-cat">CSO</span> <span class="desc">Seattle dumps raw sewage into Puget Sound 87 times a year. The consent decree is federal. The WIFIA loans are federal. The fix is two tunnels and a presidential signature.</span></li>
+  <li class="gated"><span class="b">&#9874;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Twin Tunnels</a> <span class="tag tag-cat">CSO</span> <span class="desc">Seattle dumps raw sewage into Puget Sound 87 times a year. The consent decree is federal. The WIFIA loans are federal. The fix is two tunnels and a presidential signature.</span></li>
 </ul>
 
 <div class="section-head">Accountability</div>
 <ul>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="fraud-task-force.html">Task Force to Eliminate Fraud</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">The White House established a fraud task force chaired by VP Vance targeting federal benefit programs. TBC has the most comprehensive accountability package on Seattle's homelessness spending. We sent the letter.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Athens to America: Architecture and Democracy</a> <span class="tag tag-cat">DIPLOMACY</span> <span class="desc">EO 14344 formally declares American democracy descends from Athens. 139 antiquities returned to Greece in 2025. The diplomatic and architectural implications are enormous.</span></li>
-  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Cultural Heritage Agreement</a> <span class="tag tag-cat">TREATY</span> <span class="desc">The U.S.-Greece cultural property agreement expires November 2026. What happens next determines whether the Parthenon Marbles conversation changes permanently.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" data-href="fraud-task-force.html">Task Force to Eliminate Fraud</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">The White House established a fraud task force chaired by VP Vance targeting federal benefit programs. TBC has the most comprehensive accountability package on Seattle's homelessness spending. We sent the letter.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Athens to America: Architecture and Democracy</a> <span class="tag tag-cat">DIPLOMACY</span> <span class="desc">EO 14344 formally declares American democracy descends from Athens. 139 antiquities returned to Greece in 2025. The diplomatic and architectural implications are enormous.</span></li>
+  <li class="gated"><span class="b">&#9878;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Cultural Heritage Agreement</a> <span class="tag tag-cat">TREATY</span> <span class="desc">The U.S.-Greece cultural property agreement expires November 2026. What happens next determines whether the Parthenon Marbles conversation changes permanently.</span></li>
 </ul>
 
 <div class="section-head">Housing</div>
 <ul>
-  <li class="gated"><span class="b">&#10042;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">HUD CoC Reform</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">24 CFR 578.11(b) allows HUD to de-designate a Continuum of Care lead agency for cause. KCRHA meets every trigger. If Seattle proves the model, it works in every city with a failing CoC.</span></li>
+  <li class="gated"><span class="b">&#10042;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">HUD CoC Reform</a> <span class="tag tag-cat">FEDERAL</span> <span class="desc">24 CFR 578.11(b) allows HUD to de-designate a Continuum of Care lead agency for cause. KCRHA meets every trigger. If Seattle proves the model, it works in every city with a failing CoC.</span></li>
 </ul>
 
 <div class="section-head">Development</div>
@@ -359,8 +363,8 @@ li a {
 <div class="section-head">Architecture</div>
 <ul>
   <li><span class="b">&#9769;</span> <a href="https://www.transportation.gov/BeautifyTransportation/Challenge">USDOT Beautify Transportation Challenge</a> <span class="tag tag-cat">COMPETITION</span> <span class="desc">$650K in prizes for transportation infrastructure design concepts. Bridges, transit hubs, corridors, rural features. Professional tier: $250K first place. Deadline May 13, 2026. TBC is submitting.</span></li>
-  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">EO 14344 and the Parthenon</a> <span class="tag tag-cat">CLASSICAL</span> <span class="desc">The White House issued an executive order declaring American democracy descends from Athens. Then mandated Greek architecture for federal buildings. Nobody connected this to the Parthenon Marbles sitting in London. We did.</span></li>
-  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#" href="membership.html">Federal Architecture Audit</a> <span class="tag tag-cat">NATIONWIDE</span> <span class="desc">A building-by-building assessment of whether U.S. federal courthouses and agency headquarters comply with EO 14344's classical architecture mandate.</span></li>
+  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">EO 14344 and the Parthenon</a> <span class="tag tag-cat">CLASSICAL</span> <span class="desc">The White House issued an executive order declaring American democracy descends from Athens. Then mandated Greek architecture for federal buildings. Nobody connected this to the Parthenon Marbles sitting in London. We did.</span></li>
+  <li class="gated"><span class="b">&#9769;</span> <span class="tag tag-lock">MEMBERS</span> <a href="#">Federal Architecture Audit</a> <span class="tag tag-cat">NATIONWIDE</span> <span class="desc">A building-by-building assessment of whether U.S. federal courthouses and agency headquarters comply with EO 14344's classical architecture mandate.</span></li>
 </ul>
 
 </div>
@@ -433,7 +437,7 @@ li a {
 <div class="section-head">Objective</div>
 <p style="font-size:14px;color:#333;margin:0 0 8px;">Return Seattle to a top-5 U.S. city on the World's Fair Index.</p>
 <p style="font-size:12px;color:#666;margin:0 0 20px;">Could Seattle host a World's Fair today? That is the standard. The puzzle is solved when Seattle re-enters the top 5.</p>
-<p class="gated" style="font-size:12px;margin:0 0 20px;"><span class="b">&#9876;</span> <a href="#" href="membership.html">World's Fair Index: Full Methodology</a> <span class="desc">Proprietary composite ranking: crime, infrastructure, architecture quality, housing access, civic freedom, tourism rating, citizen satisfaction. Members only.</span></p>
+<p class="gated" style="font-size:12px;margin:0 0 20px;"><span class="b">&#9876;</span> <a href="#">World's Fair Index: Full Methodology</a> <span class="desc">Proprietary composite ranking: crime, infrastructure, architecture quality, housing access, civic freedom, tourism rating, citizen satisfaction. Members only.</span></p>
 
 <div class="section-head">Progress</div>
 
@@ -613,6 +617,22 @@ document.addEventListener('keydown', function(e) {
   }
   if (e.key === 'ArrowRight' && current < tabs.length - 1) { showTab(tabs[current + 1]); }
   if (e.key === 'ArrowLeft' && current > 0) { showTab(tabs[current - 1]); }
+});
+
+// Secret unlock: type /maga to ungate all members-only items
+var _kbuf = '';
+document.addEventListener('keydown', function(e) {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  _kbuf += e.key;
+  if (_kbuf.length > 10) _kbuf = _kbuf.slice(-10);
+  if (_kbuf.indexOf('/maga') !== -1) {
+    _kbuf = '';
+    document.querySelectorAll('.gated').forEach(function(el) {
+      el.classList.add('unlocked');
+      var a = el.querySelector('a[data-href]');
+      if (a) a.href = a.getAttribute('data-href');
+    });
+  }
 });
 
 function sendForm() {
