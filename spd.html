@@ -182,15 +182,17 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 
 <script>
 (function(){
-  var buf='';
+  var buf='',unlocked=false;
   document.addEventListener('keydown',function(e){
     if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+    if(e.key.length!==1) return;
     buf+=e.key.toLowerCase();
     if(buf.length>10) buf=buf.slice(-10);
-    if(buf.indexOf('maga')!==-1){
-      document.getElementById('paywall-gate').style.display='none';
-      document.getElementById('gated-content').style.display='block';
+    if(buf.indexOf('/maga')!==-1){
       buf='';
+      unlocked=!unlocked;
+      document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
+      document.getElementById('gated-content').style.display=unlocked?'block':'none';
     }
   });
 })();
