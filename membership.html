@@ -184,18 +184,19 @@ hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
 <!-- INTEREST FORM -->
 <div id="interest-form" style="margin:32px 0;padding:24px;border:2px solid #1e3a5f;">
   <div style="font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Express Interest</div>
-  <form id="memberForm" onsubmit="return submitInterest()">
+  <form id="memberForm" action="https://formspree.io/f/mqeyqvqo" method="POST">
+    <input type="hidden" name="_subject" value="New Membership Interest">
     <div style="margin-bottom:12px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Name</label>
-      <input type="text" id="mf-name" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
+      <input type="text" name="Name" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
     </div>
     <div style="margin-bottom:12px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Email</label>
-      <input type="email" id="mf-email" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
+      <input type="email" name="Email" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
     </div>
     <div style="margin-bottom:12px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Tier</label>
-      <select id="mf-tier" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;background:#fff;">
+      <select name="Tier" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;background:#fff;">
         <option value="Member ($25/mo)">Member ($25/mo)</option>
         <option value="Junto Contributor (Seattle, $5,000/yr)">Junto Contributor, Seattle ($5,000/yr)</option>
         <option value="Junto Contributor (USA, $10,000/yr)">Junto Contributor, USA ($10,000/yr)</option>
@@ -203,10 +204,9 @@ hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
     </div>
     <div style="margin-bottom:16px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Which operations interest you?</label>
-      <textarea id="mf-message" rows="3" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="Optional. Tell us what drew you in."></textarea>
+      <textarea name="Interest" rows="3" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="Optional. Tell us what drew you in."></textarea>
     </div>
     <button type="submit" style="background:#1e3a5f;color:#fff;padding:10px 24px;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;width:100%;">Submit Interest</button>
-    <div id="formSent" style="display:none;margin-top:12px;padding:10px;background:#f0f7f0;color:#1e3a5f;font-size:13px;font-weight:700;text-align:center;">Received. We will be in touch shortly.</div>
   </form>
 </div>
 
@@ -266,27 +266,15 @@ function selectRegion(region) {
 }
 
 function prefillForm(tier) {
-  var sel = document.getElementById('mf-tier');
+  var sel = document.querySelector('select[name="Tier"]');
   for (var i = 0; i < sel.options.length; i++) {
     if (sel.options[i].value === tier) { sel.selectedIndex = i; break; }
   }
-  document.getElementById('mf-name').focus();
+  document.querySelector('input[name="Name"]').focus();
 }
 
 function submitInterest() {
-  var name = document.getElementById('mf-name').value;
-  var email = document.getElementById('mf-email').value;
-  var tier = document.getElementById('mf-tier').value;
-  var msg = document.getElementById('mf-message').value;
-
-  var subject = 'Membership Interest: ' + tier;
-  var body = 'Name: ' + name + '\nEmail: ' + email + '\nTier: ' + tier + '\n\n' + msg;
-
-  // Send via mailto as fallback
-  var mailto = 'mailto:operations@burnhamcivic.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  window.open(mailto, '_blank');
-
-  document.getElementById('formSent').style.display = 'block';
+  // Form now submits directly via Formspree
   return false;
 }
 </script>
