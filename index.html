@@ -619,18 +619,25 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowLeft' && current > 0) { showTab(tabs[current - 1]); }
 });
 
-// Secret unlock: type /maga to ungate all members-only items
-var _kbuf = '';
+// Secret toggle: type /maga to gate/ungate all members-only items
+var _kbuf = '', _unlocked = false;
 document.addEventListener('keydown', function(e) {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
   _kbuf += e.key;
   if (_kbuf.length > 10) _kbuf = _kbuf.slice(-10);
   if (_kbuf.indexOf('/maga') !== -1) {
     _kbuf = '';
+    _unlocked = !_unlocked;
     document.querySelectorAll('.gated').forEach(function(el) {
-      el.classList.add('unlocked');
-      var a = el.querySelector('a[data-href]');
-      if (a) a.href = a.getAttribute('data-href');
+      if (_unlocked) {
+        el.classList.add('unlocked');
+        var a = el.querySelector('a[data-href]');
+        if (a) a.href = a.getAttribute('data-href');
+      } else {
+        el.classList.remove('unlocked');
+        var a = el.querySelector('a[data-href]');
+        if (a) a.href = '#';
+      }
     });
   }
 });
