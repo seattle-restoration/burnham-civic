@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wacker's Manual | The Burnham Civic</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='4' fill='%230D0D0D'/><text x='32' y='44' text-anchor='middle' font-size='36' fill='%23C9A84C'>W</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #E8D5A3;
+            --gold-bright: #FFD700;
+            --ivory: #F5F0E8;
+            --dark: #0D0D0D;
+            --dark-card: #141414;
+            --copper: #C67B30;
+            --green: #059669;
+            --blue: #2563EB;
+            --red: #DC2626;
+            --purple: #7C3AED;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family:'Inter',system-ui,sans-serif; background:var(--dark); color:var(--ivory); line-height:1.7; }
+
+        /* NAV */
+        .nav { position:sticky; top:0; z-index:100; background:rgba(13,13,13,0.95); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.12); }
+        .nav-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; padding:0 2rem; height:56px; overflow-x:auto; scrollbar-width:none; }
+        .nav-inner::-webkit-scrollbar { display:none; }
+        .nav-brand { font-family:'Instrument Serif',serif; font-size:1rem; color:var(--gold); white-space:nowrap; margin-right:1rem; }
+        .nav-link { font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:rgba(245,240,232,0.35); text-decoration:none; white-space:nowrap; transition:color 0.3s; padding:0.5rem 0; border-bottom:2px solid transparent; }
+        .nav-link:hover { color:var(--copper); }
+        .nav-link.active { color:var(--gold); border-bottom-color:var(--gold); }
+
+        /* HERO */
+        .hero { min-height:85vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:4rem 2rem; position:relative; overflow:hidden; }
+        .hero::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:radial-gradient(ellipse at center, rgba(201,168,76,0.06) 0%, transparent 60%); }
+        .hero-eyebrow { font-family:'Instrument Serif',serif; font-size:12px; letter-spacing:8px; text-transform:uppercase; color:var(--gold); margin-bottom:24px; opacity:0; animation:fadeUp 1s ease 0.3s forwards; }
+        .hero h1 { font-family:'Instrument Serif',serif; font-size:clamp(36px,6vw,72px); font-weight:700; line-height:1.1; margin-bottom:20px; opacity:0; animation:fadeUp 1s ease 0.5s forwards; }
+        .hero h1 span { background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .hero-sub { font-size:20px; color:var(--gold-light); max-width:700px; margin:0 auto 40px; line-height:1.7; opacity:0; animation:fadeUp 1s ease 0.7s forwards; font-style:italic; }
+        .hero-stats { display:flex; gap:48px; justify-content:center; opacity:0; animation:fadeUp 1s ease 0.9s forwards; flex-wrap:wrap; }
+        .hero-stat { text-align:center; }
+        .hero-stat .num { font-family:'Instrument Serif',serif; font-size:48px; color:var(--gold-bright); }
+        .hero-stat .label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-light); }
+        @keyframes fadeUp { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
+
+        /* SECTIONS */
+        .section { max-width:1200px; margin:0 auto; padding:80px 2rem; }
+        .section-label { font-family:'Instrument Serif',serif; font-size:12px; letter-spacing:6px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; text-align:center; }
+        .section-title { font-family:'Instrument Serif',serif; font-size:clamp(28px,4vw,44px); text-align:center; margin-bottom:12px; }
+        .section-line { width:60px; height:2px; background:var(--gold); margin:0 auto 48px; }
+        .section-sub { text-align:center; max-width:800px; margin:0 auto 48px; color:rgba(245,240,232,0.6); font-size:0.95rem; }
+
+        /* CARDS */
+        .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+        .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+        .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+        @media(max-width:900px) { .grid-2,.grid-3,.grid-4 { grid-template-columns:1fr; } }
+
+        .card { background:rgba(255,255,255,0.02); border:1px solid rgba(201,168,76,0.12); border-radius:12px; padding:1.5rem; transition:all 0.3s; }
+        .card:hover { border-color:rgba(201,168,76,0.3); transform:translateY(-2px); }
+        .card-tag { font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; display:inline-block; padding:0.25rem 0.75rem; border-radius:4px; margin-bottom:1rem; font-weight:600; }
+        .tag-gold { background:var(--gold); color:var(--dark); }
+        .tag-copper { background:var(--copper); color:white; }
+        .tag-green { background:var(--green); color:white; }
+        .tag-blue { background:var(--blue); color:white; }
+        .tag-red { background:var(--red); color:white; }
+        .tag-purple { background:var(--purple); color:white; }
+        .card h3 { font-family:'Instrument Serif',serif; font-size:1.2rem; color:var(--ivory); margin-bottom:0.75rem; }
+        .card p, .card li { font-size:0.85rem; color:rgba(245,240,232,0.65); line-height:1.7; }
+        .card ul { list-style:none; padding:0; }
+        .card li { margin-bottom:0.5rem; padding-left:1rem; position:relative; }
+        .card li::before { content:''; position:absolute; left:0; top:0.6em; width:4px; height:4px; background:var(--gold); border-radius:50%; }
+
+        /* QUOTE */
+        .quote-block { background:rgba(201,168,76,0.05); border-left:3px solid var(--gold); padding:1.5rem 2rem; margin:2rem 0; border-radius:0 8px 8px 0; }
+        .quote-block p { font-style:italic; font-size:1rem; color:rgba(245,240,232,0.85); line-height:1.8; }
+        .quote-block .attr { font-style:normal; font-size:0.8rem; color:var(--gold); margin-top:0.75rem; }
+
+        /* CHAPTER MAP */
+        .chapter-map { display:grid; grid-template-columns:auto 1fr auto; gap:0; }
+        .chapter-row { display:contents; }
+        .chapter-num { font-family:'Instrument Serif',serif; font-size:1.4rem; color:var(--gold); padding:1rem 1.5rem 1rem 0; text-align:right; border-right:2px solid rgba(201,168,76,0.15); position:relative; }
+        .chapter-num::after { content:''; position:absolute; right:-5px; top:50%; width:8px; height:8px; background:var(--gold); border-radius:50%; transform:translateY(-50%); }
+        .chapter-content { padding:0.75rem 0 0.75rem 1.5rem; }
+        .chapter-title-text { font-family:'Instrument Serif',serif; font-size:1rem; color:var(--ivory); }
+        .chapter-desc { font-size:0.8rem; color:rgba(245,240,232,0.5); margin-top:0.25rem; }
+        .chapter-phase { padding:0.75rem 0 0.75rem 1rem; display:flex; align-items:center; }
+        .phase-dot { font-size:0.6rem; letter-spacing:1px; text-transform:uppercase; padding:0.2rem 0.5rem; border-radius:3px; white-space:nowrap; }
+        .phase-scaffold { background:rgba(37,99,235,0.15); color:var(--blue); }
+        .phase-case { background:rgba(5,150,105,0.15); color:var(--green); }
+        .phase-plan { background:rgba(201,168,76,0.15); color:var(--gold); }
+        .phase-build { background:rgba(198,123,48,0.15); color:var(--copper); }
+        .phase-climax { background:rgba(220,38,38,0.15); color:var(--red); }
+
+        /* COMPARE BAR */
+        .compare-bar { position:relative; height:48px; border-radius:8px; overflow:hidden; margin:1rem 0; display:flex; }
+        .compare-fill { display:flex; align-items:center; justify-content:center; font-family:'Instrument Serif',serif; font-size:1.1rem; font-weight:700; }
+        .compare-label { text-align:center; margin-top:0.5rem; font-size:0.75rem; color:rgba(245,240,232,0.5); }
+
+        /* STAT BOX */
+        .stat-box { background:rgba(201,168,76,0.06); border:1px solid rgba(201,168,76,0.15); border-radius:8px; padding:1.25rem; text-align:center; }
+        .stat-box .stat-num { font-family:'Instrument Serif',serif; font-size:2.5rem; color:var(--gold-bright); }
+        .stat-box .stat-label { font-size:0.75rem; color:rgba(245,240,232,0.6); margin-top:0.25rem; }
+        .stat-box.danger { border-color:rgba(220,38,38,0.3); background:rgba(220,38,38,0.08); }
+        .stat-box.danger .stat-num { color:#f87171; }
+
+        /* TECHNIQUE CARDS */
+        .technique { display:grid; grid-template-columns:60px 1fr; gap:1rem; align-items:start; padding:1.25rem 0; border-bottom:1px solid rgba(201,168,76,0.08); }
+        .technique:last-child { border-bottom:none; }
+        .technique-num { font-family:'Instrument Serif',serif; font-size:2rem; color:var(--gold); text-align:center; padding-top:0.25rem; }
+        .technique h4 { font-family:'Instrument Serif',serif; font-size:1.05rem; color:var(--ivory); margin-bottom:0.4rem; }
+        .technique p { font-size:0.85rem; color:rgba(245,240,232,0.6); }
+
+        /* FLOW */
+        .flow-step { display:flex; gap:1rem; margin-bottom:1.5rem; }
+        .flow-line { display:flex; flex-direction:column; align-items:center; width:24px; flex-shrink:0; }
+        .flow-dot { width:12px; height:12px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:4px; }
+        .flow-connector { width:2px; flex:1; background:rgba(201,168,76,0.2); margin-top:4px; }
+        .flow-num { font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--gold); letter-spacing:1px; }
+        .flow-text { font-size:0.9rem; color:rgba(245,240,232,0.75); }
+
+        /* FOOTER */
+        .footer { text-align:center; padding:60px 2rem; border-top:1px solid rgba(201,168,76,0.08); }
+        .footer p { font-size:0.75rem; color:rgba(245,240,232,0.3); }
+
+        /* FADE IN */
+        .fade-in { opacity:0; transform:translateY(20px); transition:all 0.6s ease; }
+        .fade-in.visible { opacity:1; transform:translateY(0); }
+
+        /* DIVIDER */
+        .divider { border:none; border-top:1px solid rgba(201,168,76,0.1); margin:4rem auto; max-width:1200px; }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <span class="nav-brand">Wacker's Manual</span>
+        <a href="#overview" class="nav-link active">Overview</a>
+        <a href="#chapters" class="nav-link">17 Chapters</a>
+        <a href="#techniques" class="nav-link">10 Techniques</a>
+        <a href="#parable" class="nav-link">Paris vs London</a>
+        <a href="#campaign" class="nav-link">The Campaign</a>
+        <a href="#questions" class="nav-link">Discussion Questions</a>
+        <a href="#seattle" class="nav-link">Seattle Adaptation</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="overview">
+    <div class="hero-eyebrow">Burnham Civic Research Brief #12</div>
+    <h1>Wacker's <span>Manual</span></h1>
+    <div class="hero-sub">"Our children shall be taught that they are the coming responsible heads of their various communities."<br>- Walter D. Moody, 1911</div>
+    <div class="hero-stats">
+        <div class="hero-stat"><div class="num">17</div><div class="label">Chapters</div></div>
+        <div class="hero-stat"><div class="num">147</div><div class="label">Pages</div></div>
+        <div class="hero-stat"><div class="num">20+</div><div class="label">Years Taught</div></div>
+        <div class="hero-stat"><div class="num">86</div><div class="label">Bond Issues Passed</div></div>
+    </div>
+</section>
+
+<!-- OVERVIEW CARDS -->
+<div class="section fade-in">
+    <div class="grid-3">
+        <div class="card">
+            <span class="card-tag tag-gold">The Document</span>
+            <h3>Wacker's Manual of the Plan of Chicago: Municipal Economy</h3>
+            <ul>
+                <li><strong>Author:</strong> Walter D. Moody, Managing Director, Chicago Plan Commission</li>
+                <li><strong>Named for:</strong> Charles H. Wacker, Commission Chairman</li>
+                <li><strong>Published:</strong> 1911 (4 editions through 1920)</li>
+                <li><strong>Format:</strong> 147 pages, illustrated, 10x8 inches</li>
+                <li><strong>Audience:</strong> Every 8th grader in Chicago public schools</li>
+                <li><strong>Duration:</strong> Required curriculum 1911 through early 1930s</li>
+            </ul>
+        </div>
+        <div class="card">
+            <span class="card-tag tag-copper">The Author</span>
+            <h3>Walter D. Moody: The Salesman</h3>
+            <ul>
+                <li><strong>Before the Plan Commission:</strong> Sales manager, European buyer, Commerce Association general manager</li>
+                <li><strong>Published:</strong> "Men Who Sell Things" (1907) - a book on salesmanship</li>
+                <li><strong>Appointed:</strong> Managing Director, Jan 13, 1911</li>
+                <li><strong>Served:</strong> 9 years until his death in 1920</li>
+                <li><strong>Gave:</strong> 2,000+ speeches promoting the Plan</li>
+                <li><strong>The key insight:</strong> A plan is a product. Implementation requires sales.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <span class="card-tag tag-green">The Result</span>
+            <h3>Most of the Plan Was Actually Built</h3>
+            <ul>
+                <li><strong>86 bond issues</strong> approved 1912-1931</li>
+                <li><strong>$234 million</strong> total (~$4-5B today)</li>
+                <li><strong>Built:</strong> Wacker Drive, lakefront parks, Michigan Avenue, boulevard system, Navy Pier</li>
+                <li><strong>No other City Beautiful plan</strong> achieved this level of implementation</li>
+                <li><strong>Why:</strong> They raised a generation of citizens who understood the plan and voted for it</li>
+                <li><strong>328 Commission members</strong> served as civic ambassadors</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<hr class="divider">
+
+<!-- CHAPTER MAP -->
+<div class="section fade-in" id="chapters">
+    <div class="section-label">Full Analysis</div>
+    <div class="section-title">17 Chapters: The Pedagogical Arc</div>
+    <div class="section-line"></div>
+    <div class="section-sub">Moody spent six chapters on history before ever mentioning Chicago's plan. By the time a 13-year-old reached Chapter VII, not having a plan was the obviously stupid thing.</div>
+
+    <div class="chapter-map">
+        <div class="chapter-row"><div class="chapter-num">I</div><div class="chapter-content"><div class="chapter-title-text">Municipal Economy</div><div class="chapter-desc">What a city IS as an economic organism. Conservation, health, order. "The city is strategic. It makes the towns."</div></div><div class="chapter-phase"><span class="phase-dot phase-scaffold">Scaffold</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">II</div><div class="chapter-content"><div class="chapter-title-text">The Basis for City Planning</div><div class="chapter-desc">Chicago as ancient trading hub. Indian trails radiating from the river mouth. Geographic destiny.</div></div><div class="chapter-phase"><span class="phase-dot phase-scaffold">Scaffold</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">III</div><div class="chapter-content"><div class="chapter-title-text">Possibilities of Expansion</div><div class="chapter-desc">"Westward the star of empire takes its way." 2M in 75 years vs London's 2,500 years. Resource catalog. Duty language.</div></div><div class="chapter-phase"><span class="phase-dot phase-scaffold">Scaffold</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">IV</div><div class="chapter-content"><div class="chapter-title-text">City Building in Ancient Times</div><div class="chapter-desc">Babylon, Athens, Rome. Rome: "squalid army headquarters" became the Eternal City through civic pride. Roman youths taught patriotism = sacrifice.</div></div><div class="chapter-phase"><span class="phase-dot phase-scaffold">Scaffold</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">V</div><div class="chapter-content"><div class="chapter-title-text">City Building in Europe</div><div class="chapter-desc">THE MASTER CHAPTER. Paris vs London parable. Haussmann = "greatest city builder." Dusseldorf managed like a corporation. 67 discussion questions.</div></div><div class="chapter-phase"><span class="phase-dot phase-scaffold">Scaffold</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">VI</div><div class="chapter-content"><div class="chapter-title-text">Modern Cities in America</div><div class="chapter-desc">Washington as city planner. L'Enfant plan "greeted with derision" - then vindicated. Every major city is planning. Seattle named.</div></div><div class="chapter-phase"><span class="phase-dot phase-scaffold">Scaffold</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">VII</div><div class="chapter-content"><div class="chapter-title-text">Why Chicago Needs a Plan</div><div class="chapter-desc">The emotional heart. "Whether we want them or not, they will come." Generational duty. Grid from farm fences. Youth addressed directly.</div></div><div class="chapter-phase"><span class="phase-dot phase-case">The Case</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">VIII</div><div class="chapter-content"><div class="chapter-title-text">Value of Permanency</div><div class="chapter-desc">"If Chicago were abandoned, what would remain in 2,000 years?" Almost nothing. Building twice costs more than building right once.</div></div><div class="chapter-phase"><span class="phase-dot phase-case">The Case</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">IX</div><div class="chapter-content"><div class="chapter-title-text">Origin of the Plan of Chicago</div><div class="chapter-desc">1893 World's Fair inspires business leaders. Mayor's 6-point pre-emption of every objection. "City building means man building."</div></div><div class="chapter-phase"><span class="phase-dot phase-plan">The Plan</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">X</div><div class="chapter-content"><div class="chapter-title-text">Commercial Possibilities</div><div class="chapter-desc">The money chapter. 17,343 Americans in Paris hotels in 60 days. $100M/month in NYC visitor spending. "The Plan means the City Practical."</div></div><div class="chapter-phase"><span class="phase-dot phase-plan">The Plan</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">XI</div><div class="chapter-content"><div class="chapter-title-text">Purpose and Meaning</div><div class="chapter-desc">Three problems: congestion, traffic, health. "First thought was given to transportation." 40% of Americans now live in cities.</div></div><div class="chapter-phase"><span class="phase-dot phase-plan">The Plan</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">XII</div><div class="chapter-content"><div class="chapter-title-text">Transportation Problems</div><div class="chapter-desc">Freight absurdity: goods carted downtown, stored, carted back. External warehouse center eliminates congestion. Underground electric railway.</div></div><div class="chapter-phase"><span class="phase-dot phase-build">Build It</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">XIII</div><div class="chapter-content"><div class="chapter-title-text">Street System</div><div class="chapter-desc">"Lifetimes are made up of minutes." Indian trails as diagonals. Outer highways 95% built - only 5% needed. 54 questions.</div></div><div class="chapter-phase"><span class="phase-dot phase-build">Build It</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">XIV</div><div class="chapter-content"><div class="chapter-title-text">Michigan Avenue</div><div class="chapter-desc">Double-deck bridge. 6 years of study, 100+ meetings. "Procrastination marks the beginning of the end." 65 questions.</div></div><div class="chapter-phase"><span class="phase-dot phase-build">Build It</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">XV</div><div class="chapter-content"><div class="chapter-title-text">Park System</div><div class="chapter-desc">Parks as lungs. Dropped from 2nd to 37th by density. Use city waste to build lake islands. 100 acres/year at no cost. 72 questions.</div></div><div class="chapter-phase"><span class="phase-dot phase-build">Build It</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">XVI</div><div class="chapter-content"><div class="chapter-title-text">Creating a Civic Center</div><div class="chapter-desc">The emotional climax. "The keystone of an arch." Dome comparable to St. Peter's. Rome's Forum, Athens' Acropolis. "Eternal fame."</div></div><div class="chapter-phase"><span class="phase-dot phase-climax">Climax</span></div></div>
+        <div class="chapter-row"><div class="chapter-num">XVII</div><div class="chapter-content"><div class="chapter-title-text">Final Result of the Plan</div><div class="chapter-desc">The $225M closer. Four civic feats as character proof. "City building means man building." The crowning argument.</div></div><div class="chapter-phase"><span class="phase-dot phase-climax">Climax</span></div></div>
+    </div>
+</div>
+
+<hr class="divider">
+
+<!-- 10 TECHNIQUES -->
+<div class="section fade-in" id="techniques">
+    <div class="section-label">Rhetorical Playbook</div>
+    <div class="section-title">10 Persuasion Techniques</div>
+    <div class="section-line"></div>
+    <div class="section-sub">How Moody convinced 8th graders - and an entire city - to build the most ambitious civic plan in American history.</div>
+
+    <div class="technique"><div class="technique-num">1</div><div><h4>"You're Already Spending the Money"</h4><p>Chicago spent $225M in 25 years with no plan. Paris spent $260M with a plan. Difference: $35M. But Paris got the world's most beautiful city. The argument isn't "spend more." It's "stop spending badly."</p></div></div>
+    <div class="technique"><div class="technique-num">2</div><div><h4>The Paris vs London Parable</h4><p>Planned city vs unplanned city. Paris got boulevards at almost no cost. London spent hundreds of millions trying to fix 300 years of neglect. Foresight is cheap. Neglect is catastrophically expensive.</p></div></div>
+    <div class="technique"><div class="technique-num">3</div><div><h4>Transportation First, Beauty Second</h4><p>"Because we are a commercial people, first thought was given to transportation." Every aesthetic argument has a dollar sign. He killed the "artist's dream" objection before anyone raised it.</p></div></div>
+    <div class="technique"><div class="technique-num">4</div><div><h4>Historical Scaffolding</h4><p>Six full chapters of history before mentioning the Plan. Babylon, Athens, Rome, Paris, Vienna, Washington D.C. By Chapter VII, every student knew: great civilizations plan their cities. Period.</p></div></div>
+    <div class="technique"><div class="technique-num">5</div><div><h4>The Generational Handoff</h4><p>"The men of early Chicago built commerce. It is the great duty which faces the young people of Chicago now - the building of a beautiful city upon the foundations of commerce." You inherited wealth. Now earn it.</p></div></div>
+    <div class="technique"><div class="technique-num">6</div><div><h4>"Lifetimes Are Made Up of Minutes"</h4><p>Time savings = human life itself. "We can justify the spending of millions of dollars today if it means saving time for millions of people in years and centuries to come." Infrastructure is measured in lifespan, not dollars.</p></div></div>
+    <div class="technique"><div class="technique-num">7</div><div><h4>The Vanitas Thought Experiment</h4><p>"If Chicago were abandoned today, what would remain in 2,000 years?" Almost nothing. Steel rusts, wood rots, glass shatters. "We would have left nothing to testify that here existed a progressive people."</p></div></div>
+    <div class="technique"><div class="technique-num">8</div><div><h4>Competitive Shame</h4><p>Every major American city is doing this. Cleveland, Boston, San Francisco, Portland, Seattle. New York spent 40x more on railway terminals. "Are we going to be left behind?"</p></div></div>
+    <div class="technique"><div class="technique-num">9</div><div><h4>The "We" Voice</h4><p>Never "you should." Always "we must." The reader is a co-owner of the problem and the solution. The student isn't being lectured - they're being recruited.</p></div></div>
+    <div class="technique"><div class="technique-num">10</div><div><h4>"City Building Means Man Building"</h4><p>The moral crescendo. The plan isn't about buildings. It's about what kind of people a city produces. "Men who are happy, whose lives are cast in pleasant places, are the men who best do things."</p></div></div>
+</div>
+
+<hr class="divider">
+
+<!-- PARIS VS LONDON -->
+<div class="section fade-in" id="parable">
+    <div class="section-label">The Master Framing Device</div>
+    <div class="section-title">Paris vs London</div>
+    <div class="section-line"></div>
+
+    <div class="grid-2">
+        <div class="card" style="border-color:rgba(5,150,105,0.3);">
+            <span class="card-tag tag-green">Planned</span>
+            <h3>Paris</h3>
+            <ul>
+                <li>Plans laid around 1700 under Louis XIV</li>
+                <li>Napoleon built sidewalks, lit streets, built bridges</li>
+                <li>Baron Haussmann (1853) - "greatest city builder of all time"</li>
+                <li>Cut new streets, widened old ones, opened city to light and air</li>
+                <li>Railroad stations in a circle around center</li>
+                <li>Cost: $260M total over decades</li>
+                <li>Result: world's most beautiful and attractive city</li>
+                <li>Tourists spend $2M in 60 days (1909) - beauty attracts wealth</li>
+            </ul>
+            <div class="quote-block" style="margin-top:1rem;">
+                <p>"Paris enjoys her miles of boulevards, her extensive parks, her opportunities for enjoyment of life and unlimited development, and her world-wide fame as a beautiful and attractive city at the expenditure of almost nothing except foresight."</p>
+            </div>
+        </div>
+        <div class="card" style="border-color:rgba(220,38,38,0.3);">
+            <span class="card-tag tag-red">Unplanned</span>
+            <h3>London</h3>
+            <ul>
+                <li>Great Fire of 1666 destroyed the city</li>
+                <li>Sir Christopher Wren prepared a rebuilding plan</li>
+                <li>"Leading citizens, guided by selfish interest, disregarded Wren's plans"</li>
+                <li>That mistake cost London "millions upon millions"</li>
+                <li>By 1855, realized they had to change - spent $100M+ on fixes</li>
+                <li>Two new streets alone: $125M in land damages</li>
+                <li>300 years of neglect = the most degrading congestion on earth</li>
+                <li>"There is no longer any hope of making London beautiful"</li>
+            </ul>
+            <div class="quote-block" style="margin-top:1rem;border-left-color:var(--red);">
+                <p>"London is struggling to preserve her very existence and is facing expenditures of hundreds of millions that she may merely provide makeshift means of caring for the movement of her people through her streets."</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:2.5rem;">
+        <div class="grid-2">
+            <div>
+                <div style="font-family:'Instrument Serif',serif;font-size:1.1rem;color:var(--gold);margin-bottom:0.75rem;">Chicago: $225M - No Plan</div>
+                <div class="compare-bar">
+                    <div class="compare-fill" style="width:87%;background:rgba(220,38,38,0.25);color:#f87171;">$225M</div>
+                    <div class="compare-fill" style="width:13%;background:rgba(255,255,255,0.05);"></div>
+                </div>
+                <div class="compare-label">25 years of haphazard spending. Nothing to show.</div>
+            </div>
+            <div>
+                <div style="font-family:'Instrument Serif',serif;font-size:1.1rem;color:var(--gold);margin-bottom:0.75rem;">Paris: $260M - With a Plan</div>
+                <div class="compare-bar">
+                    <div class="compare-fill" style="width:100%;background:rgba(5,150,105,0.25);color:var(--green);">$260M</div>
+                </div>
+                <div class="compare-label">Complete rebuilt city. Most beautiful in the world. Only $35M more.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quote-block" style="margin-top:2rem;">
+        <p>"The people of Chicago actually spent for improvements but $35,000,000 less than the city of Paris expended upon its plan for the rebuilding of the entire city, making it the most beautiful and attractive city in the world."</p>
+        <div class="attr">Chapter XVII - The Crowning Argument</div>
+    </div>
+</div>
+
+<hr class="divider">
+
+<!-- THE CAMPAIGN -->
+<div class="section fade-in" id="campaign">
+    <div class="section-label">Implementation</div>
+    <div class="section-title">The Civic Education Machine</div>
+    <div class="section-line"></div>
+    <div class="section-sub">Chicago didn't just publish a plan. They built the most sophisticated civic persuasion operation of their era. The Plan was 10% planning and 90% sales.</div>
+
+    <div class="grid-4" style="margin-bottom:2.5rem;">
+        <div class="stat-box"><div class="stat-num">165K</div><div class="stat-label">Plan copies to voters</div></div>
+        <div class="stat-box"><div class="stat-num">80</div><div class="stat-label">Churches on Nehemiah Day</div></div>
+        <div class="stat-box"><div class="stat-num">328</div><div class="stat-label">Commission members</div></div>
+        <div class="stat-box"><div class="stat-num">2,000+</div><div class="stat-label">Speeches by Moody</div></div>
+    </div>
+
+    <div class="grid-3">
+        <div class="card">
+            <span class="card-tag tag-gold">Schools</span>
+            <h3>Wacker's Manual</h3>
+            <p>Required reading for every 8th grader for 20+ years. 17 chapters. 25-72 discussion questions per chapter. Students treated as future citizens who NEED this information. Adopted by Superintendent Ella Flagg Young.</p>
+        </div>
+        <div class="card">
+            <span class="card-tag tag-copper">Churches</span>
+            <h3>Nehemiah Day</h3>
+            <p>January 19, 1919. Eighty Chicago churches preached sermons advocating the Plan, using the Old Testament prophet's words: "Therefore we, His servants, will arise and build." Moody literally got God on his side.</p>
+        </div>
+        <div class="card">
+            <span class="card-tag tag-blue">Film</span>
+            <h3>"A Tale of One City"</h3>
+            <p>Promotional film screened across Chicago. Combined with lantern slide presentations using Jules Guerin's pastel renderings of what Chicago could become - a 1909 version of PowerPoint, using beauty as persuasion.</p>
+        </div>
+        <div class="card">
+            <span class="card-tag tag-purple">Art</span>
+            <h3>Jules Guerin's Renderings</h3>
+            <p>Pastel-hued bird's-eye views of the planned city. Displayed at the Art Institute. Top-down perspective positioned viewers as gods looking down on a beautiful city that could be theirs. Exhibited July 12, 1909.</p>
+        </div>
+        <div class="card">
+            <span class="card-tag tag-green">Votes</span>
+            <h3>165,000 Cheap Editions</h3>
+            <p>Distributed to likely bond referendum voters. Each copy laid out the specific improvement being voted on and why it mattered. Not vague vision - specific infrastructure with specific benefits.</p>
+        </div>
+        <div class="card">
+            <span class="card-tag tag-red">Network</span>
+            <h3>328-Member Commission</h3>
+            <p>"Men broadly representative of all business and social interests." An army of civic ambassadors, each with their own networks, clubs, churches, and business relationships. No other city built anything close.</p>
+        </div>
+    </div>
+</div>
+
+<hr class="divider">
+
+<!-- DISCUSSION QUESTIONS -->
+<div class="section fade-in" id="questions">
+    <div class="section-label">Pedagogy</div>
+    <div class="section-title">The Discussion Questions</div>
+    <div class="section-line"></div>
+    <div class="section-sub">Moody included 25 to 72 discussion questions per chapter. Not opinion questions - comprehension and recall. He treated teenagers as future citizens who needed to master this material.</div>
+
+    <div class="grid-2" style="margin-bottom:2rem;">
+        <div class="card">
+            <span class="card-tag tag-gold">Sample Questions</span>
+            <h3>From Across All 17 Chapters</h3>
+            <ul>
+                <li>"What were Roman youths taught?" (Ch IV)</li>
+                <li>"What caused the downfall of the Wren plan?" (Ch V)</li>
+                <li>"What should the bitter lesson of London convey to us?" (Ch V)</li>
+                <li>"What is the great duty that faces the young people?" (Ch VII)</li>
+                <li>"What would be one result of abandoning Chicago today?" (Ch VIII)</li>
+                <li>"What does the Plan of Chicago mean?" (Answer: "The City Practical") (Ch X)</li>
+                <li>"Of what are dirt, grime and sordid conditions an evidence?" (Ch X)</li>
+                <li>"How will the creation of a civic center provide eternal fame?" (Ch XVI)</li>
+                <li>"What is the crowning argument?" (Ch XVII)</li>
+            </ul>
+        </div>
+        <div class="card">
+            <span class="card-tag tag-copper">Questions Per Chapter</span>
+            <h3>Volume by Chapter</h3>
+            <div style="display:grid;grid-template-columns:auto 1fr auto;gap:0.5rem 1rem;font-size:0.8rem;margin-top:0.5rem;">
+                <span style="color:var(--gold);">Ch I</span><div style="background:rgba(201,168,76,0.15);height:16px;border-radius:3px;width:34.7%;min-width:20px;"></div><span>25</span>
+                <span style="color:var(--gold);">Ch III</span><div style="background:rgba(201,168,76,0.15);height:16px;border-radius:3px;width:38.9%;min-width:20px;"></div><span>28</span>
+                <span style="color:var(--gold);">Ch IV</span><div style="background:rgba(201,168,76,0.15);height:16px;border-radius:3px;width:44.4%;min-width:20px;"></div><span>32</span>
+                <span style="color:var(--gold);">Ch V</span><div style="background:rgba(201,168,76,0.3);height:16px;border-radius:3px;width:93.1%;min-width:20px;"></div><span style="color:var(--gold);">67</span>
+                <span style="color:var(--gold);">Ch IX</span><div style="background:rgba(201,168,76,0.15);height:16px;border-radius:3px;width:70.8%;min-width:20px;"></div><span>51</span>
+                <span style="color:var(--gold);">Ch X</span><div style="background:rgba(201,168,76,0.15);height:16px;border-radius:3px;width:65.3%;min-width:20px;"></div><span>47</span>
+                <span style="color:var(--gold);">Ch XIII</span><div style="background:rgba(201,168,76,0.15);height:16px;border-radius:3px;width:75%;min-width:20px;"></div><span>54</span>
+                <span style="color:var(--gold);">Ch XIV</span><div style="background:rgba(201,168,76,0.3);height:16px;border-radius:3px;width:90.3%;min-width:20px;"></div><span style="color:var(--gold);">65</span>
+                <span style="color:var(--gold);">Ch XV</span><div style="background:var(--gold);height:16px;border-radius:3px;width:100%;"></div><span style="color:var(--gold-bright);font-weight:700;">72</span>
+                <span style="color:var(--gold);">Ch XVII</span><div style="background:rgba(201,168,76,0.3);height:16px;border-radius:3px;width:84.7%;min-width:20px;"></div><span style="color:var(--gold);">61</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="quote-block">
+        <p>"It is the firm belief of the author that the success of the Plan of Chicago depends on the hold it has in the hearts of the city's future citizens."</p>
+        <div class="attr">Walter D. Moody, Introduction</div>
+    </div>
+</div>
+
+<hr class="divider">
+
+<!-- SEATTLE ADAPTATION -->
+<div class="section fade-in" id="seattle">
+    <div class="section-label">The Seattle Manual</div>
+    <div class="section-title">What We Learn for Seattle</div>
+    <div class="section-line"></div>
+    <div class="section-sub">Every technique Moody used in 1911 has a direct Seattle equivalent. The playbook is sitting there. Nobody has picked it up in 115 years.</div>
+
+    <div class="grid-2" style="margin-bottom:2rem;">
+        <div class="card">
+            <span class="card-tag tag-gold">Chicago Had</span>
+            <h3>The Four Civic Feats</h3>
+            <p>Moody proved Chicago's character by listing four impossible things they'd already done:</p>
+            <ul>
+                <li>Raised every street in the city for drainage</li>
+                <li>Built the ring of parks (1869)</li>
+                <li>The $60M drainage canal</li>
+                <li>The 1893 World's Columbian Exposition</li>
+            </ul>
+            <p style="margin-top:0.75rem;color:var(--gold);font-style:italic;">"No task, however great, has ever proven too great a task for the people of Chicago."</p>
+        </div>
+        <div class="card">
+            <span class="card-tag tag-copper">Seattle Has</span>
+            <h3>Seattle's Four Civic Feats</h3>
+            <p>Seattle has its own list of impossible things accomplished:</p>
+            <ul>
+                <li>The Denny Regrade - moved 16M cubic yards of earth, lowered hills 100+ feet</li>
+                <li>The Lake Washington Ship Canal (1917) - connected Puget Sound to freshwater</li>
+                <li>The 1909 Alaska-Yukon-Pacific Exposition (3.7M visitors)</li>
+                <li>The 1962 World's Fair and Space Needle</li>
+            </ul>
+            <p style="margin-top:0.75rem;color:var(--copper);font-style:italic;">Seattle has never been told this story in a way that builds civic ambition.</p>
+        </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:2rem;">
+        <div class="card">
+            <span class="card-tag tag-green">The Moody Formula</span>
+            <h3>What Made It Work</h3>
+            <ul>
+                <li><strong>Name it after a person</strong> - Wacker's Manual honored a living civic champion</li>
+                <li><strong>Write it for students</strong> - not investors, not politicians. The next generation.</li>
+                <li><strong>Commission it officially</strong> - the Plan Commission authorized it</li>
+                <li><strong>Lead with economics</strong> - "The City Practical," not "The City Beautiful"</li>
+                <li><strong>Discussion questions at every chapter</strong> - forced active engagement</li>
+                <li><strong>The "we" voice</strong> - the reader is a co-owner, not a spectator</li>
+                <li><strong>Use primary sources</strong> - embed actual speeches from civic leaders</li>
+                <li><strong>Teach the process</strong> - committees, hearings, votes. How democracy works.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <span class="card-tag tag-blue">The Seattle Equivalent</span>
+            <h3>Adaptation Roadmap</h3>
+            <ul>
+                <li><strong>Who is Seattle's Wacker?</strong> Someone the Manual is named for</li>
+                <li><strong>Target: 8th grade civics</strong> - same age, same framing as future leaders</li>
+                <li><strong>Seattle's Paris/London:</strong> Bogue Plan rejected (London path) vs what could have been</li>
+                <li><strong>The $225M argument:</strong> What has Seattle spent on transit/housing with nothing to show?</li>
+                <li><strong>"Lifetimes are made up of minutes"</strong> = every minute stuck on I-5 is stolen life</li>
+                <li><strong>Indian trails as diagonals</strong> = Coast Salish trade routes as infrastructure DNA</li>
+                <li><strong>Sound Transit 3 routes = Bogue Plan routes</strong> - 115 years late</li>
+                <li><strong>SB 5192 civics mandate</strong> - the legal on-ramp already exists</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid-4">
+        <div class="stat-box"><div class="stat-num">$225M</div><div class="stat-label">Chicago spent with no plan (25 years)</div></div>
+        <div class="stat-box"><div class="stat-num">$260M</div><div class="stat-label">Paris spent WITH a plan</div></div>
+        <div class="stat-box"><div class="stat-num">$35M</div><div class="stat-label">The difference - Paris got a world-class city</div></div>
+        <div class="stat-box danger"><div class="stat-num">$54B</div><div class="stat-label">Sound Transit 3 - building Bogue's plan 115 years late</div></div>
+    </div>
+
+    <div class="quote-block" style="margin-top:2rem;">
+        <p>"Chicago is destined to become the center of the modern world, if the opportunities in her reach are intelligently realized, and if the city can receive a sufficient supply of trained and enlightened citizens."</p>
+        <div class="attr">Walter D. Moody, Opening Line - Replace "Chicago" with "Seattle" and the sentence still works. That's the whole point.</div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p style="font-family:'Instrument Serif',serif;font-size:1rem;color:var(--gold);margin-bottom:1rem;">"It is the earnest purpose of the author to make the child feel that in him rests the responsibility of assisting Chicago to attain her future greatness."</p>
+    <p>The Burnham Civic - Research Brief #12: Wacker's Manual Analysis<br>
+    Full scan: <a href="https://archive.org/details/wackersmanualofp00mood" style="color:var(--copper);">archive.org/details/wackersmanualofp00mood</a><br><br>
+    The Burnham Civic | Seattle, Washington | 2026</p>
+</footer>
+
+<script>
+    // Scroll fade observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, {threshold:0.1});
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Active nav tracking
+    const sections = document.querySelectorAll('[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(s => {
+            const top = s.getBoundingClientRect().top;
+            if(top < 200) current = s.id;
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + current) link.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
