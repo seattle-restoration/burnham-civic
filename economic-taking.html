@@ -45,17 +45,84 @@ td { padding: 6px 8px; border-bottom: 1px solid #eee; }
 
 <h2 style="margin-top:16px;">Every policy failure has a cost.</h2>
 <p>When a business closes because the city failed to enforce basic public safety, that is an economic taking. When a property owner pays to remove graffiti the city ignored, that is an economic taking. When a 911 call results in property damage because response times have tripled, that is an economic taking.</p>
-<p>This tracker quantifies the cumulative cost of Seattle's policy failures as a liability the city owes its residents and businesses. Five categories, all sourced from public APIs:</p>
+
+<p>This is not a new idea.</p>
+
+<div style="border-left:3px solid #1e3a5f;padding:12px 16px;margin:24px 0;background:#f7f7f5;">
+<p style="margin:0 0 8px;font-size:14px;"><strong>On December 20, 1781</strong>, the New Jersey state legislature passed an act authorizing county appraisers to inventory every damage claim from citizens harmed during the Revolutionary War. Not just by British forces. By American forces too.</p>
+<p style="margin:0 0 8px;font-size:14px;">Each county appointed appraisers. Each appraiser met with claimants starting August 1782. Each claim was itemized: livestock, household goods, food stores, building materials, cash. Each item was appraised. Each inventory was filed with the legislature.</p>
+<p style="margin:0 0 8px;font-size:14px;">In Westfield alone, from a single day of plundering on June 26, 1777: 92 houses entered, 115 claimants, approximately 11,000 individual items documented, total damages of 8,702 pounds (roughly $1.5 million today).</p>
+<p style="margin:0;font-size:13px;color:#666;">Source: <a href="https://www.nj.gov/state/archives/guides/sle00003.pdf">NJ State Archives, Series SLE00003</a>. 7 volumes, 2 microfilm reels. <a href="https://allthingsliberty.com/2015/07/a-shocking-havoc-the-plundering-of-westfield-new-jersey-june-26-1777/">Journal of the American Revolution</a>.</p>
+</div>
+
+<p>We are doing the same thing. The appraisers are APIs. The inventories are databases. The legislature is the public.</p>
+
+<p>This tracker quantifies the cumulative cost of Seattle's policy failures as a liability the city owes its residents and businesses. Five categories, all sourced from public data:</p>
 
 <ol style="font-size:14px;margin:16px 0 24px;line-height:2;">
-  <li><strong>Business Closures</strong> — every license that disappears from the city's active registry, diffed nightly</li>
-  <li><strong>911 Calls with Property Damage</strong> — break-ins, burglaries, vehicle prowls, property destruction</li>
-  <li><strong>Homelessness &amp; Encampment Violations</strong> — complaints, public health incidents, unauthorized camping</li>
-  <li><strong>Graffiti &amp; Vandalism</strong> — 31,000+ reports in a recent two-year window, tracked by resolution status</li>
-  <li><strong>Property Foreclosures</strong> — tax foreclosures and forced sales cross-referenced with neighborhood decline</li>
+  <li><strong>Business Closures</strong>: every license that disappears from the city's active registry, diffed nightly</li>
+  <li><strong>911 Calls with Property Damage</strong>: break-ins, burglaries, vehicle prowls, property destruction</li>
+  <li><strong>Homelessness and Encampment Violations</strong>: complaints, public health incidents, unauthorized camping</li>
+  <li><strong>Graffiti and Vandalism</strong>: 31,000+ reports in a recent two-year window, tracked by resolution status</li>
+  <li><strong>Property Foreclosures</strong>: tax foreclosures and forced sales cross-referenced with neighborhood decline</li>
 </ol>
 
 <p style="font-size:14px;color:#333;">Each incident is a line item. Each line item has a cost. The running total is updated as data pipelines connect. This is not a legal claim. It is a public ledger.</p>
+
+<div style="border:2px solid #1e3a5f;padding:24px;margin:24px 0;">
+  <p style="font-size:16px;font-weight:700;margin:0 0 4px;text-align:center;">Have a claim?</p>
+  <p style="font-size:14px;color:#666;margin:0 0 20px;text-align:center;">If your business closed, your property was damaged, or you bore costs the city should have prevented, submit it below. We will add it to the Claims Ledger.</p>
+  <form action="https://formspree.io/f/mqeyqvqo" method="POST">
+    <input type="hidden" name="_subject" value="Economic Taking Claim">
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Name</label>
+      <input type="text" name="Name" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
+    </div>
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Email</label>
+      <input type="email" name="Email" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
+    </div>
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Claim Category</label>
+      <select name="Category" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;background:#fff;">
+        <option value="">Select a category</option>
+        <option value="Business Closure">Business Closure</option>
+        <option value="911 / Property Damage">911 / Property Damage (break-in, burglary, vandalism)</option>
+        <option value="Homelessness / Encampment">Homelessness / Encampment Violation</option>
+        <option value="Graffiti / Vandalism">Graffiti / Vandalism</option>
+        <option value="Property Foreclosure">Property Foreclosure</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Address or Location</label>
+      <input type="text" name="Location" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="Street address, intersection, or neighborhood">
+    </div>
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Date of Incident</label>
+      <input type="date" name="Date" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
+    </div>
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Estimated Cost ($)</label>
+      <input type="text" name="EstimatedCost" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="Dollar amount of damages or losses">
+    </div>
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Did you file a police report or city complaint?</label>
+      <select name="OfficialReport" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;background:#fff;">
+        <option value="No">No</option>
+        <option value="Yes - Police Report">Yes, police report</option>
+        <option value="Yes - Find It Fix It">Yes, Find It Fix It</option>
+        <option value="Yes - 311">Yes, 311</option>
+        <option value="Yes - Other">Yes, other</option>
+      </select>
+    </div>
+    <div style="margin-bottom:16px;">
+      <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Describe what happened</label>
+      <textarea name="Description" rows="4" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="What happened, what it cost you, and what the city failed to do."></textarea>
+    </div>
+    <button type="submit" style="background:#1e3a5f;color:#fff;padding:10px 24px;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;width:100%;">Submit Claim</button>
+  </form>
+</div>
 
 <div id="paywall-gate" style="text-align:center;padding:60px 20px;border:1px solid #ccc;margin:32px 0;">
   <h2 style="font-family:Georgia,serif;font-size:20px;margin-bottom:12px;border:none;">&#9878; TBC Intelligence</h2>
