@@ -72,19 +72,18 @@ td { padding: 6px 8px; border-bottom: 1px solid #eee; }
 <div style="border:2px solid #1e3a5f;padding:24px;margin:24px 0;">
   <p style="font-size:16px;font-weight:700;margin:0 0 4px;text-align:center;">Have a claim?</p>
   <p style="font-size:14px;color:#666;margin:0 0 20px;text-align:center;">If your business closed, your property was damaged, or you bore costs the city should have prevented, submit it below. We will add it to the Claims Ledger.</p>
-  <form action="https://formspree.io/f/mqeyqvqo" method="POST">
-    <input type="hidden" name="_subject" value="Economic Taking Claim">
+  <form id="claimForm" onsubmit="return submitClaim()">
     <div style="margin-bottom:12px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Name</label>
-      <input type="text" name="Name" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
+      <input type="text" id="cf-name" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
     </div>
     <div style="margin-bottom:12px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Email</label>
-      <input type="email" name="Email" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
+      <input type="email" id="cf-email" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
     </div>
     <div style="margin-bottom:12px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Claim Category</label>
-      <select name="Category" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;background:#fff;">
+      <select id="cf-category" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;background:#fff;">
         <option value="">Select a category</option>
         <option value="Business Closure">Business Closure</option>
         <option value="911 / Property Damage">911 / Property Damage (break-in, burglary, vandalism)</option>
@@ -96,19 +95,19 @@ td { padding: 6px 8px; border-bottom: 1px solid #eee; }
     </div>
     <div style="margin-bottom:12px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Address or Location</label>
-      <input type="text" name="Location" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="Street address, intersection, or neighborhood">
+      <input type="text" id="cf-location" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="Street address, intersection, or neighborhood">
     </div>
     <div style="margin-bottom:12px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Date of Incident</label>
-      <input type="date" name="Date" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
+      <input type="date" id="cf-date" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;">
     </div>
     <div style="margin-bottom:12px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Estimated Cost ($)</label>
-      <input type="text" name="EstimatedCost" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="Dollar amount of damages or losses">
+      <input type="text" id="cf-cost" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="Dollar amount of damages or losses">
     </div>
     <div style="margin-bottom:12px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Did you file a police report or city complaint?</label>
-      <select name="OfficialReport" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;background:#fff;">
+      <select id="cf-report" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;background:#fff;">
         <option value="No">No</option>
         <option value="Yes - Police Report">Yes, police report</option>
         <option value="Yes - Find It Fix It">Yes, Find It Fix It</option>
@@ -118,10 +117,39 @@ td { padding: 6px 8px; border-bottom: 1px solid #eee; }
     </div>
     <div style="margin-bottom:16px;">
       <label style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Describe what happened</label>
-      <textarea name="Description" rows="4" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="What happened, what it cost you, and what the city failed to do."></textarea>
+      <textarea id="cf-message" rows="4" required style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;" placeholder="What happened, what it cost you, and what the city failed to do."></textarea>
     </div>
-    <button type="submit" style="background:#1e3a5f;color:#fff;padding:10px 24px;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;width:100%;">Submit Claim</button>
+    <button type="submit" id="cf-submit" style="background:#1e3a5f;color:#fff;padding:10px 24px;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;width:100%;">Submit Claim</button>
+    <div id="cf-success" style="display:none;margin-top:12px;padding:10px;background:#f0f7f0;color:#1e3a5f;font-size:13px;font-weight:700;text-align:center;">Claim received. We will add it to the ledger.</div>
+    <div id="cf-error" style="display:none;margin-top:12px;padding:10px;background:#fef2f2;color:#dc2626;font-size:13px;font-weight:700;text-align:center;">Something went wrong. Please email operations@burnhamcivic.org directly.</div>
   </form>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+  emailjs.init('CLhYSLpQd2Y7X5TqG');
+  function submitClaim(){
+    var btn=document.getElementById('cf-submit');
+    btn.textContent='Sending...';btn.disabled=true;
+    emailjs.send('service_y3jtwbi','template_5pz5y7e',{
+      subject:'Economic Taking Claim: '+document.getElementById('cf-category').value,
+      name:document.getElementById('cf-name').value,
+      email:document.getElementById('cf-email').value,
+      category:document.getElementById('cf-category').value,
+      location:document.getElementById('cf-location').value,
+      date:document.getElementById('cf-date').value,
+      cost:document.getElementById('cf-cost').value,
+      report:document.getElementById('cf-report').value,
+      message:document.getElementById('cf-message').value
+    }).then(function(){
+      document.getElementById('cf-success').style.display='block';
+      document.getElementById('cf-error').style.display='none';
+      btn.textContent='Submitted';
+    },function(){
+      document.getElementById('cf-error').style.display='block';
+      btn.textContent='Submit Claim';btn.disabled=false;
+    });
+    return false;
+  }
+  </script>
 </div>
 
 <div id="paywall-gate" style="text-align:center;padding:60px 20px;border:1px solid #ccc;margin:32px 0;">
