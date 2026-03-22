@@ -334,6 +334,66 @@ var invoices = [
       { desc: 'Business exodus narrative amplification', detail: 'Each public departure increases probability of the next one', amount: 25000 }
     ],
     baseAmount: 3200000
+  },
+  {
+    id: '004', entity: 'Boeing Company', location: 'HQ: Seattle to Chicago (2001), then Arlington VA (2022)',
+    billTo: 'State of Washington', billToDetail: "Governor's Office", issuedDate: '2026-03-22', dueDate: '2026-04-21', terms: 'Net 30', penaltyRate: 0.07,
+    context: { title: 'HQ Departure After 107 Years', stats: [{num:'107',lbl:'Years in Seattle'},{num:'500+',lbl:'HQ Jobs Relocated'},{num:'2022',lbl:'Final Move to VA'},{num:'$0',lbl:'Paid to WA'}],
+      details: ['Founded in Seattle 1916. HQ moved to Chicago 2001, Arlington VA 2022','787 production consolidated to South Carolina','WA lost corporate decision-making presence permanently'] },
+    lineItems: [
+      {section:'Revenue Loss'},
+      {desc:'HQ payroll relocated (500+ staff)',detail:'Avg comp $165K',amount:82500000},
+      {desc:'B&O tax on HQ service revenue',detail:'0.471% lost',amount:1200000},
+      {desc:'Corporate civic engagement lost',detail:'Philanthropy, sponsorships, exec involvement',amount:5000000}
+    ], baseAmount: 88700000
+  },
+  {
+    id: '005', entity: 'Amazon (Seattle to Bellevue shift)', location: 'Seattle payroll migrating to Bellevue campuses',
+    billTo: 'City of Seattle', billToDetail: 'Office of the Mayor', issuedDate: '2026-03-22', dueDate: '2026-04-21', terms: 'Net 30', penaltyRate: 0.07,
+    context: { title: 'Payroll Migration + Layoffs', stats: [{num:'2,303',lbl:'WA Layoffs (2023)'},{num:'1,887',lbl:'Seattle Layoffs'},{num:'$6-12M',lbl:'Annual Tax Loss'},{num:'$610M',lbl:'Bezos Cap Gains Lost'}],
+      details: ['Thousands of employees shifted from Seattle to Bellevue campuses','Jeff Bezos relocated to Florida, costing WA $610M in capital gains tax','JumpStart payroll tax cited as accelerant'] },
+    lineItems: [
+      {section:'Direct City Revenue Loss'},
+      {desc:'JumpStart payroll tax lost (Bellevue shift)',detail:'Payroll moving outside Seattle city limits',amount:9000000},
+      {desc:'Bezos personal capital gains tax lost',detail:'Relocation to FL, WA 7% cap gains on $8.7B sale',amount:610000000},
+      {desc:'Local spending reduction (1,887 fewer Seattle workers)',detail:'Restaurants, transit, retail',amount:15000000}
+    ], baseAmount: 634000000
+  },
+  {
+    id: '006', entity: 'Microsoft (WA Layoffs)', location: 'Redmond / Bellevue, WA',
+    billTo: 'State of Washington', billToDetail: "Governor's Office", issuedDate: '2026-03-22', dueDate: '2026-04-21', terms: 'Net 30', penaltyRate: 0.07,
+    context: { title: 'AI-Driven Workforce Reduction', stats: [{num:'3,200+',lbl:'WA Jobs Cut Since May 2025'},{num:'15,000',lbl:'Global Reductions'},{num:'30%',lbl:'Code Now AI-Generated'},{num:'6%',lbl:'WA Tech Employment Drop'}],
+      details: ['3,200+ WA jobs eliminated since May 2025','AI replacing entry-level roles: under-25 tech jobs down 13%','Not a relocation but a permanent capacity reduction in WA'] },
+    lineItems: [
+      {section:'Workforce Loss'},
+      {desc:'Displaced wages (3,200 workers x avg $180K)',detail:'Engineers, PMs, support staff',amount:576000000},
+      {desc:'State UI burden',detail:'Unemployment claims from displaced workers',amount:32000000},
+      {desc:'Local economic multiplier loss',detail:'2.5x on displaced spending',amount:48000000}
+    ], baseAmount: 656000000
+  },
+  {
+    id: '007', entity: '222 High-Income Households', location: 'Net outmigration from Washington State',
+    billTo: 'State of Washington', billToDetail: 'Department of Revenue', issuedDate: '2026-03-22', dueDate: '2026-04-21', terms: 'Net 30', penaltyRate: 0.07,
+    context: { title: 'Wealth Flight (SmartAsset 2024)', stats: [{num:'222',lbl:'Households Lost'},{num:'$200K+',lbl:'Income Threshold'},{num:'8th',lbl:'Worst in Nation'},{num:'44%',lbl:'Business Leaders Considering Exit'}],
+      details: ['WA ranked 8th highest for net loss of $200K+ households','Top destinations: AZ, ID, MT, WY, TX, FL','AWB: 44% of business leaders considering moving personally'] },
+    lineItems: [
+      {section:'Tax Revenue Lost'},
+      {desc:'Capital gains tax (7% on est. gains)',detail:'30% of 222 HH with taxable gains',amount:3500000},
+      {desc:'Property tax lost (222 homes, median $850K)',detail:'Avg rate 1.03%',amount:1944000},
+      {desc:'Sales tax lost (consumer spending)',detail:'$44K avg taxable spending x 10.5%',amount:1024000},
+      {desc:'Local economic activity',detail:'Services, dining, retail',amount:3300000}
+    ], baseAmount: 9768000
+  },
+  {
+    id: '008', entity: 'ByteDance / TikTok (Bellevue)', location: 'Bellevue, WA',
+    billTo: 'State of Washington', billToDetail: "Governor's Office", issuedDate: '2026-03-22', dueDate: '2026-04-21', terms: 'Net 30', penaltyRate: 0.07,
+    context: { title: 'Expansion Reversed', stats: [{num:'65',lbl:'Positions Cut'},{num:'4',lbl:'Years After Expansion'},{num:'$200K+',lbl:'Avg Tech Comp'}],
+      details: ['Expanded to Bellevue ~2022, cut 65 positions by 2026','Signal: even companies that chose WA are now retreating'] },
+    lineItems: [
+      {section:'Revenue Loss'},
+      {desc:'Displaced wages (65 x $200K avg)',detail:'Engineering and operations staff',amount:13000000},
+      {desc:'B&O and local tax lost',detail:'Payroll and service revenue',amount:400000}
+    ], baseAmount: 13400000
   }
 ];
 
