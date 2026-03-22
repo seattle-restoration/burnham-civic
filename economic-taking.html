@@ -396,11 +396,11 @@ rows.forEach(function(r) {
 ledgerHTML += '<tr style="border-top:2px solid #1e3a5f;">';
 ledgerHTML += '<td colspan="5" style="padding:10px 6px;font-weight:700;font-size:13px;letter-spacing:0.5px;color:#1e3a5f;">TOTAL (' + invoices.length + ' invoices)</td>';
 ledgerHTML += '<td style="padding:10px 6px;text-align:right;font-weight:700;font-family:monospace;font-size:16px;color:#dc2626;">' + formatCurrency(runningTotal) + '</td>';
-ledgerHTML += '<td colspan="3" style="padding:10px 6px;text-align:center;font-size:11px;color:#666;">And counting.</td>';
+ledgerHTML += '<td colspan="3"></td>';
 ledgerHTML += '</tr>';
 ledgerHTML += '</table>';
 
-ledgerHTML += '<div style="font-size:11px;color:#999;margin-top:8px;">Invoices unpaid after 30 days accrue an additional 7% penalty and are remanded to a federal employee for collections. Contact <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a> or call <a href="tel:+18555281776">(855) 528-1776</a>.</div>';
+ledgerHTML += '<p style="font-size:12px;color:#333;margin-top:12px;text-align:justify;">Invoices unpaid after 30 days accrue an additional 7% penalty and are remanded to a federal employee for collections. Contact <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a> or call <a href="tel:+18555281776">(855) 528-1776</a>.</p>';
 
 document.getElementById('invoice-ledger').innerHTML = ledgerHTML;
 
