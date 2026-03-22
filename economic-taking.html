@@ -156,6 +156,48 @@ td { padding: 6px 8px; border-bottom: 1px solid #eee; }
 <h2 style="margin-top:32px;">Invoices Issued</h2>
 <p style="font-size:14px;color:#333;margin-bottom:8px;">Each invoice is a quantified economic taking caused by civic negligence. Invoices accrue a 7% penalty at issuance. If unpaid after 30 days, an additional 7% penalty is applied and the invoice is remanded to a federal employee for collections.</p>
 
+<style>
+.qb-invoice { border:1px solid #ccc; margin:24px 0; background:#fff; }
+.qb-header { background:#1e3a5f; color:#fff; padding:16px 24px; display:flex; justify-content:space-between; align-items:flex-start; }
+.qb-header-left h3 { font-size:11px; letter-spacing:2px; text-transform:uppercase; margin:0 0 2px; opacity:0.7; }
+.qb-header-left .inv-num { font-size:28px; font-weight:700; letter-spacing:1px; }
+.qb-header-right { text-align:right; }
+.qb-header-right .status { display:inline-block; padding:3px 10px; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; border-radius:2px; }
+.qb-header-right .status-due { background:#fbbf24; color:#111; }
+.qb-header-right .status-late { background:#dc2626; color:#fff; }
+.qb-header-right .status-today { background:#16a34a; color:#fff; }
+.qb-meta { display:flex; justify-content:space-between; padding:16px 24px; border-bottom:1px solid #eee; font-size:13px; flex-wrap:wrap; gap:16px; }
+.qb-meta-col { }
+.qb-meta-col .label { font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#999; margin-bottom:2px; }
+.qb-meta-col .value { font-weight:700; color:#111; }
+.qb-meta-col .sub { font-size:12px; color:#666; font-weight:400; }
+.qb-context { padding:16px 24px; border-bottom:1px solid #eee; }
+.qb-context-title { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#1e3a5f; margin-bottom:8px; }
+.qb-stats { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:8px; }
+.qb-stat { background:#f7f7f5; border:1px solid #eee; padding:8px 14px; text-align:center; flex:1; min-width:100px; }
+.qb-stat .num { font-size:20px; font-weight:700; color:#dc2626; }
+.qb-stat .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:0.5px; }
+.qb-context p { font-size:12px; color:#666; margin:4px 0; line-height:1.5; }
+.qb-items { padding:0 24px; }
+.qb-items table { width:100%; border-collapse:collapse; font-size:13px; }
+.qb-items th { text-align:left; padding:8px 0; border-bottom:2px solid #1e3a5f; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#666; }
+.qb-items th:last-child { text-align:right; }
+.qb-items td { padding:6px 0; border-bottom:1px solid #f0f0f0; }
+.qb-items td:last-child { text-align:right; font-weight:700; }
+.qb-items td.cat { font-size:11px; color:#999; font-weight:400; }
+.qb-items tr.section-head td { font-weight:700; color:#1e3a5f; font-size:12px; padding-top:12px; border-bottom:1px solid #ddd; }
+.qb-items tr.subtotal td { border-top:1px solid #ccc; font-weight:700; }
+.qb-items tr.penalty td { color:#ca8a04; }
+.qb-items tr.late-penalty td { color:#dc2626; }
+.qb-items tr.grand-total td { border-top:3px solid #1e3a5f; font-size:16px; font-weight:700; padding:10px 0; }
+.qb-items tr.grand-total td:last-child { color:#dc2626; font-size:20px; }
+.qb-footer { display:flex; justify-content:space-between; align-items:center; padding:16px 24px; border-top:1px solid #eee; }
+.qb-footer .terms { font-size:11px; color:#999; max-width:60%; }
+.qb-footer .pdf-btn { background:#1e3a5f; color:#fff; padding:8px 20px; font-family:Georgia,serif; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; border:none; cursor:pointer; }
+.qb-footer .pdf-btn:hover { background:#2a4a73; }
+.qb-late-notice { background:#fef2f2; border:1px solid #dc2626; padding:10px 24px; font-size:12px; color:#dc2626; font-weight:700; }
+</style>
+
 <div id="invoice-ledger" style="margin:24px 0;">
 
 <script>
@@ -172,32 +214,126 @@ var invoices = [
   {
     id: '001',
     entity: 'Seattle Lighting',
-    location: '222 2nd Ave Ext S, Pioneer Square',
-    description: 'Business closure after 109 years. 503 fire/EMS calls within 1 block in 12 months. 1,979 crimes across Pioneer Square.',
+    location: '222 2nd Ave Ext S, Pioneer Square, Seattle WA',
     billTo: 'City of Seattle',
-    baseAmount: 6800000,
+    billToDetail: 'Office of the Mayor / Seattle City Council',
     issuedDate: '2026-03-22',
-    penaltyRate: 0.07
+    dueDate: '2026-04-21',
+    terms: 'Net 30',
+    penaltyRate: 0.07,
+    context: {
+      title: 'Public Safety Impact (12 months ending March 2026)',
+      stats: [
+        { num: '503', lbl: 'Fire/EMS 911 Calls (1 block)' },
+        { num: '1,979', lbl: 'Police-reported Crimes' },
+        { num: '42/mo', lbl: 'Avg Emergency Calls' },
+        { num: '109', lbl: 'Years in Business' }
+      ],
+      details: [
+        '373 medical emergencies, 12 overdose responses, 25 fire incidents (rubbish, dumpster, encampment)',
+        '212 simple assaults, 89 aggravated assaults, 33 robberies within Pioneer Square',
+        '209 vehicle break-ins, 96 motor vehicle thefts, 96 burglaries',
+        '224 S Washington St: 68 incidents at one address (13.5% of all calls in radius)',
+        'Peak month: September 2025, 371 crimes (12 per day)'
+      ]
+    },
+    lineItems: [
+      { section: 'Direct Revenue Loss' },
+      { desc: 'Annual retail revenue (lighting/fixtures)', detail: 'Est. based on similar specialty retail, Pioneer Square', amount: 2500000 },
+      { desc: 'Customer foot traffic loss (anchor effect)', detail: 'Pioneer Square loses an anchor tenant after 109 years', amount: 1500000 },
+      { section: 'Tax Base Erosion' },
+      { desc: 'Sales tax revenue lost (10.25% on retail)', detail: 'Annual sales tax the city will no longer collect', amount: 250000 },
+      { desc: 'B&O tax revenue lost', detail: 'Retailing B&O at 0.471% of gross receipts', amount: 12000 },
+      { desc: 'Property tax impact (commercial vacancy)', detail: 'Reduced assessed value from vacant commercial space', amount: 850000 },
+      { section: 'Workforce Displacement' },
+      { desc: 'Employee wages displaced (15-25 workers)', detail: 'Retail staff, management, delivery', amount: 1200000 },
+      { desc: 'Unemployment insurance burden', detail: 'State UI claims from displaced workers', amount: 88000 },
+      { section: 'Emergency Services Cost' },
+      { desc: 'SFD 911 response costs (503 calls x $2,500 avg)', detail: 'Fire/EMS resources deployed within 1 block', amount: 1257500 },
+      { desc: 'SPD patrol and response costs', detail: 'Police resources for 1,979 reported crimes', amount: 642500 },
+      { section: 'Downstream Economic Impact' },
+      { desc: 'Supplier and vendor revenue loss', detail: 'Manufacturers, distributors, contractors who served Seattle Lighting', amount: 500000 }
+    ],
+    baseAmount: 6800000
   },
   {
     id: '002',
     entity: 'Bulwark Capital Management',
-    location: '$1.1B AUM relocated out of Washington State',
-    description: 'Capital management firm departure post-income tax. $11M/yr management fees, $2.2M/yr capital gains tax, $3M/yr employee wages relocated.',
+    location: 'Relocated out of Washington State',
     billTo: 'State of Washington',
-    baseAmount: 17700000,
+    billToDetail: "Governor's Office / WA State Legislature",
     issuedDate: '2026-03-22',
-    penaltyRate: 0.07
+    dueDate: '2026-04-21',
+    terms: 'Net 30',
+    penaltyRate: 0.07,
+    context: {
+      title: 'Capital Flight Profile',
+      stats: [
+        { num: '$1.1B', lbl: 'Assets Under Management' },
+        { num: '$11M', lbl: 'Annual Mgmt Fees Leaving' },
+        { num: '15-20', lbl: 'Finance Jobs Relocated' },
+        { num: '1', lbl: 'Of Many Departures' }
+      ],
+      details: [
+        'Zach Abraham (Principal) publicly cited WA income tax as primary reason for departure',
+        '$1.1 billion in managed assets now governed by another state\'s regulatory and tax framework',
+        'Professional services ecosystem (legal, compliance, audit) follows the fund',
+        'Departure announced on Jason Rantz show (770 AM), amplifying business exodus narrative'
+      ]
+    },
+    lineItems: [
+      { section: 'Direct Tax Revenue Loss' },
+      { desc: 'Capital gains tax on fund performance (est. 20% annual return)', detail: '7% WA cap gains on $220M estimated gains', amount: 2200000 },
+      { desc: 'B&O tax on management fee income', detail: '1.5% service B&O on $11M management fees', amount: 165000 },
+      { section: 'Fee Income Leaving State' },
+      { desc: 'Annual management fees (est. 1% of AUM)', detail: 'Revenue that will now be earned, spent, and taxed elsewhere', amount: 11000000 },
+      { section: 'Workforce and Office' },
+      { desc: 'Employee wages relocated (15-20 finance professionals)', detail: 'Analysts, portfolio managers, compliance, admin', amount: 3000000 },
+      { desc: 'Professional services ecosystem loss', detail: 'Legal counsel, compliance vendors, auditors, IT', amount: 800000 },
+      { desc: 'Commercial lease vacancy', detail: 'Office space left in WA market', amount: 500000 },
+      { section: 'Compounding Loss' },
+      { desc: 'Tax revenue on AUM growth foregone (compounding)', detail: '$1.1B base growing at 8-12% annually, permanently lost to WA', amount: 35000 }
+    ],
+    baseAmount: 17700000
   },
   {
     id: '003',
     entity: 'Moment (Marc Barros)',
-    location: 'Seattle to Wyoming',
-    description: 'Tech company departure. Cited: 10.5% sales tax, capital gains, B&O, estate tax, digital advertising tax.',
+    location: 'Relocated from Seattle, WA to Wyoming',
     billTo: 'State of Washington',
-    baseAmount: 3200000,
+    billToDetail: "Governor's Office / WA State Legislature",
     issuedDate: '2026-03-22',
-    penaltyRate: 0.07
+    dueDate: '2026-04-21',
+    terms: 'Net 30',
+    penaltyRate: 0.07,
+    context: {
+      title: 'Tax Burden Cited by Founder',
+      stats: [
+        { num: '10.5%', lbl: 'City Sales Tax Rate' },
+        { num: '7%', lbl: 'Capital Gains Tax' },
+        { num: '0.471%', lbl: 'B&O Tax Rate' },
+        { num: 'NEW', lbl: 'Digital Advertising Tax' }
+      ],
+      details: [
+        'Marc Barros publicly named WA\'s cumulative tax stack as the reason for relocation',
+        'Also cited: estate tax, new $200K+ digital advertising tax',
+        'Moment is a direct-to-consumer camera/lens tech company with national e-commerce presence',
+        'GeekWire, Seattle Red, Center Square all covered the departure'
+      ]
+    },
+    lineItems: [
+      { section: 'Direct Tax Revenue Loss' },
+      { desc: 'B&O tax on gross receipts (0.471%)', detail: 'Est. $15M annual revenue x 0.471%', amount: 225000 },
+      { desc: 'Sales tax on WA operations', detail: 'Sales tax on in-state purchases, equipment, supplies', amount: 150000 },
+      { section: 'Workforce Displacement' },
+      { desc: 'Employee wages relocated (15-20 tech employees)', detail: 'Engineers, designers, operations, marketing', amount: 2000000 },
+      { section: 'Ecosystem and Real Estate' },
+      { desc: 'Tech ecosystem network effect loss', detail: 'Vendor, contractor, freelancer, and supply chain spend', amount: 500000 },
+      { desc: 'Office/warehouse vacancy', detail: 'Commercial lease left in WA market', amount: 300000 },
+      { section: 'Brand and Narrative Damage' },
+      { desc: 'Business exodus narrative amplification', detail: 'Each public departure increases probability of the next one', amount: 25000 }
+    ],
+    baseAmount: 3200000
   }
 ];
 
@@ -209,49 +345,84 @@ invoices.forEach(function(inv) {
   var penalty1 = Math.round(inv.baseAmount * inv.penaltyRate);
   var subtotal = inv.baseAmount + penalty1;
   var penalty2 = 0;
-  var lateLabel = '';
   if (days > 30) {
     penalty2 = Math.round(subtotal * inv.penaltyRate);
     subtotal += penalty2;
-    lateLabel = '<span style="color:#dc2626;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;background:#fef2f2;padding:2px 8px;margin-left:8px;">REMANDED FOR COLLECTIONS</span>';
   }
   runningTotal += subtotal;
 
-  var statusColor = days > 30 ? '#dc2626' : (days > 0 ? '#ca8a04' : '#16a34a');
+  var statusClass = days > 30 ? 'status-late' : (days > 0 ? 'status-due' : 'status-today');
   var statusText = days > 30 ? 'PAST DUE (30+ DAYS)' : (days > 0 ? days + ' DAYS PAST DUE' : 'ISSUED TODAY');
 
-  ledgerHTML += '<div style="border:1px solid #ddd;padding:16px 20px;margin:12px 0;">';
-  ledgerHTML += '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">';
-  ledgerHTML += '<div>';
-  ledgerHTML += '<span style="font-size:11px;font-weight:700;letter-spacing:1px;color:#666;text-transform:uppercase;">Invoice #' + inv.id + '</span>';
-  ledgerHTML += '<span style="font-size:11px;color:' + statusColor + ';font-weight:700;letter-spacing:0.5px;margin-left:12px;">' + statusText + '</span>';
-  ledgerHTML += lateLabel;
-  ledgerHTML += '</div>';
-  ledgerHTML += '<div style="text-align:right;">';
-  ledgerHTML += '<span style="font-size:24px;font-weight:700;color:#dc2626;">' + formatCurrency(subtotal) + '</span>';
-  ledgerHTML += '</div>';
+  // QuickBooks-style invoice
+  ledgerHTML += '<div class="qb-invoice">';
+
+  // Header bar
+  ledgerHTML += '<div class="qb-header">';
+  ledgerHTML += '<div class="qb-header-left"><h3>INVOICE</h3><div class="inv-num">#' + inv.id + '</div></div>';
+  ledgerHTML += '<div class="qb-header-right"><div class="status ' + statusClass + '">' + statusText + '</div>';
+  if (days > 30) ledgerHTML += '<div style="font-size:10px;font-weight:700;letter-spacing:1px;margin-top:4px;color:#fbbf24;">REMANDED FOR COLLECTIONS</div>';
+  ledgerHTML += '<div style="font-size:24px;font-weight:700;margin-top:4px;">' + formatCurrency(subtotal) + '</div>';
+  ledgerHTML += '</div></div>';
+
+  // Meta row (Bill To, From, Dates, Terms)
+  ledgerHTML += '<div class="qb-meta">';
+  ledgerHTML += '<div class="qb-meta-col"><div class="label">Bill To</div><div class="value">' + inv.billTo + '</div><div class="sub">' + inv.billToDetail + '</div></div>';
+  ledgerHTML += '<div class="qb-meta-col"><div class="label">Re:</div><div class="value">' + inv.entity + '</div><div class="sub">' + inv.location + '</div></div>';
+  ledgerHTML += '<div class="qb-meta-col"><div class="label">Issued</div><div class="value">' + inv.issuedDate + '</div><div class="sub">Due: ' + inv.dueDate + '</div></div>';
+  ledgerHTML += '<div class="qb-meta-col"><div class="label">Terms</div><div class="value">' + inv.terms + '</div><div class="sub">' + days + ' days ago</div></div>';
   ledgerHTML += '</div>';
 
-  ledgerHTML += '<div style="font-size:15px;font-weight:700;margin:8px 0 2px;">' + inv.entity + '</div>';
-  ledgerHTML += '<div style="font-size:13px;color:#666;margin-bottom:6px;">' + inv.location + ' &middot; Bill to: ' + inv.billTo + '</div>';
-  ledgerHTML += '<div style="font-size:13px;color:#333;margin-bottom:10px;">' + inv.description + '</div>';
+  // Context section (crime stats / impact data)
+  ledgerHTML += '<div class="qb-context">';
+  ledgerHTML += '<div class="qb-context-title">' + inv.context.title + '</div>';
+  ledgerHTML += '<div class="qb-stats">';
+  inv.context.stats.forEach(function(s) {
+    ledgerHTML += '<div class="qb-stat"><div class="num">' + s.num + '</div><div class="lbl">' + s.lbl + '</div></div>';
+  });
+  ledgerHTML += '</div>';
+  inv.context.details.forEach(function(d) {
+    ledgerHTML += '<p>&bull; ' + d + '</p>';
+  });
+  ledgerHTML += '</div>';
 
-  // Line items
-  ledgerHTML += '<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0;">';
-  ledgerHTML += '<tr style="border-bottom:1px solid #ddd;"><td style="padding:3px 0;color:#666;">Base economic taking (annual)</td><td style="padding:3px 0;text-align:right;font-weight:700;">' + formatCurrency(inv.baseAmount) + '</td></tr>';
-  ledgerHTML += '<tr style="border-bottom:1px solid #ddd;"><td style="padding:3px 0;color:#666;">7% civic negligence penalty</td><td style="padding:3px 0;text-align:right;font-weight:700;">' + formatCurrency(penalty1) + '</td></tr>';
+  // Line items table
+  ledgerHTML += '<div class="qb-items"><table>';
+  ledgerHTML += '<tr><th>Description</th><th style="width:40%">Basis</th><th>Amount</th></tr>';
+  inv.lineItems.forEach(function(li) {
+    if (li.section) {
+      ledgerHTML += '<tr class="section-head"><td colspan="3">' + li.section + '</td></tr>';
+    } else {
+      ledgerHTML += '<tr><td>' + li.desc + '</td><td class="cat">' + li.detail + '</td><td>' + formatCurrency(li.amount) + '</td></tr>';
+    }
+  });
+  // Subtotal, penalties, grand total
+  ledgerHTML += '<tr class="subtotal"><td colspan="2">Subtotal (Annual Economic Taking)</td><td>' + formatCurrency(inv.baseAmount) + '</td></tr>';
+  ledgerHTML += '<tr class="penalty"><td colspan="2">7% Civic Negligence Penalty</td><td>' + formatCurrency(penalty1) + '</td></tr>';
   if (penalty2 > 0) {
-    ledgerHTML += '<tr style="border-bottom:1px solid #ddd;"><td style="padding:3px 0;color:#dc2626;">7% late penalty (30+ days past due)</td><td style="padding:3px 0;text-align:right;font-weight:700;color:#dc2626;">' + formatCurrency(penalty2) + '</td></tr>';
+    ledgerHTML += '<tr class="late-penalty"><td colspan="2">7% Late Penalty (30+ days past due)</td><td>' + formatCurrency(penalty2) + '</td></tr>';
   }
-  ledgerHTML += '<tr><td style="padding:4px 0;font-weight:700;">Total due</td><td style="padding:4px 0;text-align:right;font-weight:700;font-size:14px;color:#dc2626;">' + formatCurrency(subtotal) + '</td></tr>';
-  ledgerHTML += '</table>';
+  ledgerHTML += '<tr class="grand-total"><td colspan="2">TOTAL DUE</td><td>' + formatCurrency(subtotal) + '</td></tr>';
+  ledgerHTML += '</table></div>';
 
-  ledgerHTML += '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">';
-  ledgerHTML += '<div style="font-size:11px;color:#999;">Issued: ' + inv.issuedDate + ' &middot; ' + days + ' days ago</div>';
-  ledgerHTML += '<button onclick="generatePDF(\'' + inv.id + '\')" style="background:#1e3a5f;color:#fff;padding:6px 16px;font-family:Georgia,serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;">Download PDF</button>';
+  // Late notice
+  if (days > 30) {
+    ledgerHTML += '<div class="qb-late-notice">This invoice is more than 30 days past due. An additional 7% penalty has been applied. This invoice has been remanded to a federal employee for collections.</div>';
+  }
+
+  // Footer with PDF button
+  ledgerHTML += '<div class="qb-footer">';
+  ledgerHTML += '<div class="terms">Issued by: Burnham Civic &middot; <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a> &middot; <a href="tel:+18555281776">(855) 528-1776</a><br>Data: Seattle Open Data Portal (data.seattle.gov), public reporting</div>';
+  ledgerHTML += '<div style="display:flex;align-items:center;gap:8px;">';
+  // Adobe PDF icon (inline SVG)
+  ledgerHTML += '<a href="javascript:void(0)" onclick="generatePDF(\'' + inv.id + '\')" title="Download PDF" style="display:inline-flex;align-items:center;text-decoration:none;">';
+  ledgerHTML += '<svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="32" rx="2" fill="#B30B00"/><path d="M5 24V8h4.2c1.5 0 2.6.3 3.3 1 .7.6 1 1.5 1 2.6 0 .7-.2 1.4-.5 1.9-.4.5-.9.9-1.5 1.1l2.3 3.8V24h-2.3l-2-3.3H7.2V24H5zm2.2-5.1h2c.7 0 1.2-.2 1.6-.5.3-.4.5-.8.5-1.5s-.2-1.1-.5-1.4c-.3-.3-.9-.5-1.6-.5H7.2v3.9z" fill="#fff"/><text x="14" y="28" font-family="Arial" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">PDF</text></svg>';
+  ledgerHTML += '</a>';
+  ledgerHTML += '<button onclick="generatePDF(\'' + inv.id + '\')" class="pdf-btn">Download PDF</button>';
+  ledgerHTML += '</div>';
   ledgerHTML += '</div>';
 
-  ledgerHTML += '</div>';
+  ledgerHTML += '</div>'; // end qb-invoice
 });
 
 // Running total
@@ -278,49 +449,76 @@ function generatePDF(invoiceId) {
   }
 
   var w = window.open('', '_blank');
-  w.document.write('<!DOCTYPE html><html><head><title>Invoice #' + inv.id + ' - Burnham Civic</title>');
-  w.document.write('<style>');
-  w.document.write('body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 24px;color:#111;font-size:14px;line-height:1.6;}');
-  w.document.write('h1{font-size:20px;letter-spacing:2px;margin:0 0 4px;}');
-  w.document.write('.stamp{color:#dc2626;font-size:36px;font-weight:700;transform:rotate(-8deg);display:inline-block;border:4px solid #dc2626;padding:4px 20px;margin:20px 0;letter-spacing:2px;}');
-  w.document.write('table{width:100%;border-collapse:collapse;margin:20px 0;}');
-  w.document.write('td,th{padding:8px;border-bottom:1px solid #ddd;text-align:left;font-size:13px;}');
-  w.document.write('.total td{border-top:2px solid #111;font-weight:700;font-size:15px;}');
-  w.document.write('@media print{body{margin:20px;}.stamp{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}');
-  w.document.write('</style></head><body>');
-  w.document.write('<h1>BURNHAM CIVIC</h1>');
-  w.document.write('<div style="font-size:11px;color:#666;margin-bottom:24px;">Civic research and planning at operating speed.</div>');
-  w.document.write('<hr>');
-  w.document.write('<div style="display:flex;justify-content:space-between;margin:20px 0;">');
-  w.document.write('<div><strong style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#666;">Invoice</strong><br><span style="font-size:28px;font-weight:700;">#' + inv.id + '</span></div>');
-  w.document.write('<div style="text-align:right;"><strong style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#666;">Issued</strong><br>' + inv.issuedDate + '<br><strong style="color:#dc2626;">' + days + ' days past due</strong></div>');
-  w.document.write('</div>');
-  if (days > 0) w.document.write('<div class="stamp">PAST DUE</div>');
-  w.document.write('<div style="display:flex;justify-content:space-between;margin:20px 0;">');
-  w.document.write('<div><strong style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#666;">Re:</strong><br><strong>' + inv.entity + '</strong><br><span style="font-size:13px;color:#666;">' + inv.location + '</span></div>');
-  w.document.write('<div style="text-align:right;"><strong style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#666;">Bill To:</strong><br><strong>' + inv.billTo + '</strong></div>');
-  w.document.write('</div>');
-  w.document.write('<p style="font-size:13px;color:#333;">' + inv.description + '</p>');
-  w.document.write('<table>');
-  w.document.write('<tr><th>Item</th><th style="text-align:right;">Amount</th></tr>');
-  w.document.write('<tr><td>Base annual economic taking</td><td style="text-align:right;">' + formatCurrency(inv.baseAmount) + '</td></tr>');
-  w.document.write('<tr><td>7% civic negligence penalty</td><td style="text-align:right;">' + formatCurrency(penalty1) + '</td></tr>');
-  if (penalty2 > 0) {
-    w.document.write('<tr><td style="color:#dc2626;">7% late penalty (30+ days past due)</td><td style="text-align:right;color:#dc2626;">' + formatCurrency(penalty2) + '</td></tr>');
-  }
-  w.document.write('<tr class="total"><td>TOTAL DUE</td><td style="text-align:right;color:#dc2626;font-size:18px;">' + formatCurrency(subtotal) + '</td></tr>');
-  w.document.write('</table>');
-  if (days > 30) {
-    w.document.write('<div style="border:2px solid #dc2626;padding:12px 16px;margin:20px 0;font-size:13px;color:#dc2626;font-weight:700;">This invoice is more than 30 days past due. An additional 7% penalty has been applied. This invoice has been remanded to a federal employee for collections.</div>');
-  }
-  w.document.write('<hr>');
-  w.document.write('<div style="font-size:11px;color:#999;margin-top:20px;">');
-  w.document.write('Burnham Civic &middot; Seattle, WA<br>');
-  w.document.write('<a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a> &middot; (855) 528-1776<br>');
-  w.document.write('burnhamcivic.org/economic-taking.html');
-  w.document.write('</div>');
-  w.document.write('<script>setTimeout(function(){window.print()},500);<\/script>');
-  w.document.write('</body></html>');
+  var h = '<!DOCTYPE html><html><head><title>Invoice #' + inv.id + ' - Burnham Civic</title>';
+  h += '<style>';
+  h += 'body{font-family:Georgia,serif;max-width:740px;margin:32px auto;padding:0 24px;color:#111;font-size:13px;line-height:1.5;}';
+  h += '.hdr{background:#1e3a5f;color:#fff;padding:16px 24px;display:flex;justify-content:space-between;align-items:flex-start;margin:-32px -24px 0;} .hdr h1{font-size:18px;letter-spacing:2px;margin:0;} .hdr .sub{font-size:10px;opacity:0.7;} .hdr .invnum{font-size:32px;font-weight:700;}';
+  h += '.stamp{color:#dc2626;font-size:28px;font-weight:700;transform:rotate(-8deg);display:inline-block;border:3px solid #dc2626;padding:3px 16px;margin:16px 0;letter-spacing:2px;}';
+  h += '.meta{display:flex;justify-content:space-between;margin:20px 0;padding:12px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;flex-wrap:wrap;gap:12px;}';
+  h += '.meta-col .lbl{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#999;} .meta-col .val{font-weight:700;font-size:14px;} .meta-col .det{font-size:12px;color:#666;}';
+  h += '.ctx{background:#f7f7f5;border:1px solid #eee;padding:12px 16px;margin:16px 0;}';
+  h += '.ctx-title{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#1e3a5f;margin-bottom:6px;}';
+  h += '.ctx-stats{display:flex;gap:12px;margin-bottom:8px;} .ctx-stat{text-align:center;flex:1;} .ctx-stat .n{font-size:18px;font-weight:700;color:#dc2626;} .ctx-stat .l{font-size:9px;color:#666;text-transform:uppercase;}';
+  h += '.ctx p{font-size:11px;color:#666;margin:2px 0;}';
+  h += 'table{width:100%;border-collapse:collapse;margin:16px 0;font-size:12px;}';
+  h += 'th{text-align:left;padding:6px 4px;border-bottom:2px solid #1e3a5f;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;} th:last-child{text-align:right;}';
+  h += 'td{padding:5px 4px;border-bottom:1px solid #f0f0f0;} td:last-child{text-align:right;font-weight:700;}';
+  h += 'tr.sec td{font-weight:700;color:#1e3a5f;padding-top:10px;border-bottom:1px solid #ddd;font-size:11px;}';
+  h += 'td.basis{font-size:10px;color:#999;font-weight:400;}';
+  h += 'tr.sub td{border-top:1px solid #ccc;font-weight:700;} tr.pen td{color:#ca8a04;} tr.lpen td{color:#dc2626;}';
+  h += 'tr.gt td{border-top:3px solid #1e3a5f;font-size:15px;font-weight:700;padding:8px 4px;} tr.gt td:last-child{color:#dc2626;font-size:18px;}';
+  h += '.late-box{border:2px solid #dc2626;padding:10px 16px;margin:16px 0;font-size:12px;color:#dc2626;font-weight:700;}';
+  h += '.footer{border-top:1px solid #ddd;margin-top:24px;padding-top:12px;font-size:10px;color:#999;}';
+  h += '@media print{body{margin:16px;} .hdr{margin:-16px -24px 0;} .stamp,.late-box{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}';
+  h += '</style></head><body>';
+
+  // Header
+  h += '<div class="hdr"><div><h1>BURNHAM CIVIC</h1><div class="sub">Civic research and planning at operating speed.</div></div><div style="text-align:right;"><div class="sub">INVOICE</div><div class="invnum">#' + inv.id + '</div></div></div>';
+
+  if (days > 0) h += '<div class="stamp">PAST DUE</div>';
+
+  // Meta
+  h += '<div class="meta">';
+  h += '<div class="meta-col"><div class="lbl">Bill To</div><div class="val">' + inv.billTo + '</div><div class="det">' + inv.billToDetail + '</div></div>';
+  h += '<div class="meta-col"><div class="lbl">Re:</div><div class="val">' + inv.entity + '</div><div class="det">' + inv.location + '</div></div>';
+  h += '<div class="meta-col"><div class="lbl">Issued</div><div class="val">' + inv.issuedDate + '</div><div class="det">Due: ' + inv.dueDate + '</div></div>';
+  h += '<div class="meta-col"><div class="lbl">Terms</div><div class="val">' + inv.terms + '</div><div class="det">' + days + ' days past due</div></div>';
+  h += '</div>';
+
+  // Context
+  h += '<div class="ctx"><div class="ctx-title">' + inv.context.title + '</div>';
+  h += '<div class="ctx-stats">';
+  inv.context.stats.forEach(function(s) { h += '<div class="ctx-stat"><div class="n">' + s.num + '</div><div class="l">' + s.lbl + '</div></div>'; });
+  h += '</div>';
+  inv.context.details.forEach(function(d) { h += '<p>&bull; ' + d + '</p>'; });
+  h += '</div>';
+
+  // Line items
+  h += '<table><tr><th>Description</th><th style="width:38%">Basis</th><th>Amount</th></tr>';
+  inv.lineItems.forEach(function(li) {
+    if (li.section) {
+      h += '<tr class="sec"><td colspan="3">' + li.section + '</td></tr>';
+    } else {
+      h += '<tr><td>' + li.desc + '</td><td class="basis">' + li.detail + '</td><td>' + formatCurrency(li.amount) + '</td></tr>';
+    }
+  });
+  h += '<tr class="sub"><td colspan="2">Subtotal (Annual Economic Taking)</td><td>' + formatCurrency(inv.baseAmount) + '</td></tr>';
+  h += '<tr class="pen"><td colspan="2">7% Civic Negligence Penalty</td><td>' + formatCurrency(penalty1) + '</td></tr>';
+  if (penalty2 > 0) h += '<tr class="lpen"><td colspan="2">7% Late Penalty (30+ days past due)</td><td>' + formatCurrency(penalty2) + '</td></tr>';
+  h += '<tr class="gt"><td colspan="2">TOTAL DUE</td><td>' + formatCurrency(subtotal) + '</td></tr>';
+  h += '</table>';
+
+  if (days > 30) h += '<div class="late-box">This invoice is more than 30 days past due. An additional 7% penalty has been applied. This invoice has been remanded to a federal employee for collections.</div>';
+
+  // Footer
+  h += '<div class="footer">';
+  h += 'Burnham Civic &middot; Seattle, WA &middot; operations@burnhamcivic.org &middot; (855) 528-1776<br>';
+  h += 'burnhamcivic.org/economic-taking.html &middot; Data: Seattle Open Data Portal (data.seattle.gov)';
+  h += '</div>';
+
+  h += '<script>setTimeout(function(){window.print()},500);<\/script>';
+  h += '</body></html>';
+  w.document.write(h);
   w.document.close();
 }
 </script>
