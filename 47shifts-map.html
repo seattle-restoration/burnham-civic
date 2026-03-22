@@ -81,12 +81,32 @@ body { font-family: Georgia, 'Times New Roman', serif; background: #111; color: 
 
 <div class="zone-legend" id="zoneLegend">
   <h3>4 Crew Chiefs / 47 Shifts</h3>
-  <div class="zone-row"><span><span class="zone-dot" style="background:#f87171"></span>CC1 KNOX (Stadium/Downtown)</span><span class="zone-count" id="zc-knox">...</span></div>
-  <div class="zone-row"><span><span class="zone-dot" style="background:#c9a227"></span>CC2 GREENE (SeaTac Corridor)</span><span class="zone-count" id="zc-greene">...</span></div>
-  <div class="zone-row"><span><span class="zone-dot" style="background:#ef4444"></span>CC3 WAYNE (Aurora Corridor)</span><span class="zone-count" id="zc-wayne">...</span></div>
-  <div class="zone-row"><span><span class="zone-dot" style="background:#818cf8"></span>CC4 LAFAYETTE (I-5 North/Cap Hill)</span><span class="zone-count" id="zc-lafayette">...</span></div>
-  <div class="zone-row" style="margin-top:6px;padding-top:6px;border-top:1px solid #555;"><span>Total unclosed</span><span class="zone-count" id="zc-total">...</span></div>
+  <div class="zone-row cc-btn" onclick="selectCC('knox')" style="cursor:pointer"><span><span class="zone-dot" style="background:#f87171"></span>CC1 KNOX</span><span class="zone-count" id="zc-knox">...</span></div>
+  <div class="zone-row cc-btn" onclick="selectCC('greene')" style="cursor:pointer"><span><span class="zone-dot" style="background:#c9a227"></span>CC2 GREENE</span><span class="zone-count" id="zc-greene">...</span></div>
+  <div class="zone-row cc-btn" onclick="selectCC('wayne')" style="cursor:pointer"><span><span class="zone-dot" style="background:#ef4444"></span>CC3 WAYNE</span><span class="zone-count" id="zc-wayne">...</span></div>
+  <div class="zone-row cc-btn" onclick="selectCC('lafayette')" style="cursor:pointer"><span><span class="zone-dot" style="background:#818cf8"></span>CC4 LAFAYETTE</span><span class="zone-count" id="zc-lafayette">...</span></div>
+  <div class="zone-row" onclick="selectCC('all')" style="cursor:pointer;margin-top:6px;padding-top:6px;border-top:1px solid #555;"><span>All zones</span><span class="zone-count" id="zc-total">...</span></div>
   <div class="zone-row"><span>Shifts allocated</span><span class="zone-count">47</span></div>
+</div>
+
+<!-- Day Planner -->
+<div id="dayPlanner" style="display:none;position:fixed;bottom:20px;left:230px;z-index:1000;background:rgba(0,0,0,0.9);padding:12px 16px;border-radius:4px;font-size:12px;min-width:280px;">
+  <h3 style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#fbbf24;margin-bottom:8px;" id="dp-title">CC1 KNOX / Day 1 of 12</h3>
+  <div style="display:flex;gap:6px;margin-bottom:8px;">
+    <button onclick="prevDay()" style="background:#333;color:#fbbf24;border:none;padding:4px 10px;cursor:pointer;font-family:Georgia,serif;font-size:11px;">&larr; Prev</button>
+    <button onclick="nextDay()" style="background:#333;color:#fbbf24;border:none;padding:4px 10px;cursor:pointer;font-family:Georgia,serif;font-size:11px;">Next &rarr;</button>
+  </div>
+  <div id="dp-teams" style="font-size:11px;line-height:1.8;"></div>
+  <div style="margin-top:8px;padding-top:6px;border-top:1px solid #555;font-size:10px;color:#888;">Arrow keys: prev/next day. ESC: all zones.</div>
+</div>
+
+<!-- Camera Overlay -->
+<div id="cameraToggle" style="position:fixed;top:50px;left:16px;z-index:1000;">
+  <label style="font-size:11px;cursor:pointer;padding:6px 10px;background:rgba(0,0,0,0.85);border-radius:4px;display:flex;align-items:center;gap:6px;">
+    <input type="checkbox" onchange="toggleCameras(this.checked)">
+    <span style="color:#fbbf24;">&#128247;</span>
+    <span style="color:#e5e5e5;">Camera Placements (graffiti hotspots)</span>
+  </label>
 </div>
 
 <div class="stats-box" id="statsBox">
@@ -226,6 +246,156 @@ function buildMap(){
   });
   document.getElementById('zc-total').textContent=total.toLocaleString();
 }
+
+// Sub-team assignment
+var TEAMS = {
+  'Graffiti': {name:'Graffiti Team', color:'#ef4444', rate:30},
+  'Pothole': {name:'Pothole Team', color:'#f59e0b', rate:20},
+  'Illegal Dumping / Needles': {name:'Trim Team', color:'#8b5cf6', rate:15},
+  'Unauthorized Encampment': {name:'Encampment Team', color:'#ec4899', rate:8},
+  'Damaged Sidewalk': {name:'Capex Team', color:'#06b6d4', rate:10}
+};
+
+var ccData = {knox:[],greene:[],wayne:[],lafayette:[]};
+var selectedCC = 'all';
+var currentDay = 0;
+var ccShifts = {knox:12,greene:7,wayne:11,lafayette:17};
+var cameraLayer = null;
+var dayLayer = null;
+
+function assignToZones(){
+  allData.forEach(function(d){
+    var lat=parseFloat(d.latitude),lng=parseFloat(d.longitude);
+    if(isNaN(lat)||isNaN(lng)) return;
+    var z=getZone(lat,lng);
+    if(z) ccData[z].push(d);
+  });
+}
+
+function selectCC(cc){
+  selectedCC = cc;
+  currentDay = 0;
+  if(cc==='all'){
+    document.getElementById('dayPlanner').style.display='none';
+    Object.keys(layers).forEach(function(k){ if(layers[k]) map.addLayer(layers[k]); });
+    map.setView([47.61,-122.335],12);
+    return;
+  }
+  // Hide all layers, show day view
+  Object.keys(layers).forEach(function(k){ if(layers[k]) map.removeLayer(layers[k]); });
+  var z = ZONES.find(function(z){return z.id===cc;});
+  if(z) map.fitBounds(z.bounds,{padding:[60,60]});
+  document.getElementById('dayPlanner').style.display='block';
+  showDay();
+}
+
+function showDay(){
+  var cc = selectedCC;
+  var data = ccData[cc] || [];
+  var shifts = ccShifts[cc] || 12;
+  var itemsPerDay = Math.ceil(data.length / shifts);
+  var start = currentDay * itemsPerDay;
+  var end = Math.min(start + itemsPerDay, data.length);
+  var dayData = data.slice(start, end);
+
+  var ccName = ZONES.find(function(z){return z.id===cc;});
+  document.getElementById('dp-title').textContent =
+    (ccName?ccName.name:'') + ' / Day ' + (currentDay+1) + ' of ' + shifts;
+
+  // Count by team for this day
+  var teamCounts = {};
+  dayData.forEach(function(d){
+    var cat = d.webintakeservicerequests;
+    if(!teamCounts[cat]) teamCounts[cat]=0;
+    teamCounts[cat]++;
+  });
+
+  var html = '';
+  Object.keys(teamCounts).forEach(function(cat){
+    var t = TEAMS[cat];
+    if(!t) return;
+    html += '<div style="display:flex;justify-content:space-between;">' +
+      '<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:'+t.color+';margin-right:6px;vertical-align:middle;"></span>'+t.name+'</span>' +
+      '<span style="color:#fbbf24;font-weight:700;">'+teamCounts[cat]+'</span></div>';
+  });
+  html += '<div style="margin-top:6px;color:#fbbf24;font-weight:700;">Day total: '+dayData.length+'</div>';
+  document.getElementById('dp-teams').innerHTML = html;
+
+  // Show day dots on map
+  if(dayLayer) map.removeLayer(dayLayer);
+  var markers = [];
+  dayData.forEach(function(d){
+    var lat=parseFloat(d.latitude),lng=parseFloat(d.longitude);
+    var cat=d.webintakeservicerequests;
+    var t=TEAMS[cat];
+    var color=t?t.color:'#fff';
+    var m=L.circleMarker([lat,lng],{radius:5,fillColor:color,fillOpacity:0.9,stroke:true,color:'#fff',weight:1});
+    m.bindPopup('<b>Day '+(currentDay+1)+'</b><br><b>'+(t?t.name:cat)+'</b><br>'+(d.location||'')+'<br>'+(d.createddate?d.createddate.split('T')[0]:'')+'<br>Status: '+(d.servicerequeststatusname||''));
+    markers.push(m);
+  });
+  dayLayer = L.layerGroup(markers).addTo(map);
+}
+
+function prevDay(){
+  if(currentDay>0){currentDay--;showDay();}
+}
+function nextDay(){
+  var shifts=ccShifts[selectedCC]||12;
+  if(currentDay<shifts-1){currentDay++;showDay();}
+}
+
+// Camera placement from graffiti hotspots
+function toggleCameras(show){
+  if(!show){ if(cameraLayer) map.removeLayer(cameraLayer); return; }
+  if(cameraLayer){ map.addLayer(cameraLayer); return; }
+
+  // Grid the city into ~200m cells, count graffiti per cell
+  var grid = {};
+  var cellSize = 0.002; // ~200m
+  allData.forEach(function(d){
+    if(d.webintakeservicerequests !== 'Graffiti') return;
+    var lat=parseFloat(d.latitude),lng=parseFloat(d.longitude);
+    if(isNaN(lat)||isNaN(lng)) return;
+    var key = Math.floor(lat/cellSize)+'_'+Math.floor(lng/cellSize);
+    if(!grid[key]) grid[key]={lat:0,lng:0,count:0};
+    grid[key].lat+=lat; grid[key].lng+=lng; grid[key].count++;
+  });
+
+  // Find top 25 hotspot cells
+  var cells = Object.values(grid).map(function(c){
+    return {lat:c.lat/c.count, lng:c.lng/c.count, count:c.count};
+  }).sort(function(a,b){return b.count-a.count;}).slice(0,25);
+
+  var markers = [];
+  cells.forEach(function(c,i){
+    var icon = L.divIcon({
+      html:'<div style="background:#fbbf24;color:#111;font-size:9px;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 0 8px rgba(251,191,36,0.6);">C'+(i+1)+'</div>',
+      iconSize:[20,20], className:''
+    });
+    var m = L.marker([c.lat,c.lng],{icon:icon});
+    m.bindPopup('<b>Camera Site C'+(i+1)+'</b><br>Graffiti incidents: '+c.count+'<br>Lat: '+c.lat.toFixed(5)+'<br>Lng: '+c.lng.toFixed(5));
+    markers.push(m);
+  });
+  cameraLayer = L.layerGroup(markers).addTo(map);
+}
+
+// Override arrow keys for day cycling when CC is selected
+var origKeyHandler = document.onkeydown;
+document.addEventListener('keydown',function(e){
+  if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+  if(selectedCC!=='all'){
+    if(e.key==='ArrowRight'){e.preventDefault();nextDay();}
+    if(e.key==='ArrowLeft'){e.preventDefault();prevDay();}
+    if(e.key==='Escape'){selectCC('all');}
+  }
+});
+
+// After data loads, also assign to zones
+var origBuildMap = buildMap;
+buildMap = function(){
+  origBuildMap();
+  assignToZones();
+};
 
 fetchBatch(0);
 </script>
