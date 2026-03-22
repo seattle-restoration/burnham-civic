@@ -339,6 +339,7 @@ var invoices = [
 
 var ledgerHTML = '';
 var runningTotal = 0;
+var rows = [];
 
 invoices.forEach(function(inv) {
   var days = daysPastDue(inv.issuedDate);
@@ -350,89 +351,56 @@ invoices.forEach(function(inv) {
     subtotal += penalty2;
   }
   runningTotal += subtotal;
-
-  var statusClass = days > 30 ? 'status-late' : (days > 0 ? 'status-due' : 'status-today');
-  var statusText = days > 30 ? 'PAST DUE (30+ DAYS)' : (days > 0 ? days + ' DAYS PAST DUE' : 'ISSUED TODAY');
-
-  // QuickBooks-style invoice
-  ledgerHTML += '<div class="qb-invoice">';
-
-  // Header bar
-  ledgerHTML += '<div class="qb-header">';
-  ledgerHTML += '<div class="qb-header-left"><h3>INVOICE</h3><div class="inv-num">#' + inv.id + '</div></div>';
-  ledgerHTML += '<div class="qb-header-right"><div class="status ' + statusClass + '">' + statusText + '</div>';
-  if (days > 30) ledgerHTML += '<div style="font-size:10px;font-weight:700;letter-spacing:1px;margin-top:4px;color:#fbbf24;">REMANDED FOR COLLECTIONS</div>';
-  ledgerHTML += '<div style="font-size:24px;font-weight:700;margin-top:4px;">' + formatCurrency(subtotal) + '</div>';
-  ledgerHTML += '</div></div>';
-
-  // Meta row (Bill To, From, Dates, Terms)
-  ledgerHTML += '<div class="qb-meta">';
-  ledgerHTML += '<div class="qb-meta-col"><div class="label">Bill To</div><div class="value">' + inv.billTo + '</div><div class="sub">' + inv.billToDetail + '</div></div>';
-  ledgerHTML += '<div class="qb-meta-col"><div class="label">Re:</div><div class="value">' + inv.entity + '</div><div class="sub">' + inv.location + '</div></div>';
-  ledgerHTML += '<div class="qb-meta-col"><div class="label">Issued</div><div class="value">' + inv.issuedDate + '</div><div class="sub">Due: ' + inv.dueDate + '</div></div>';
-  ledgerHTML += '<div class="qb-meta-col"><div class="label">Terms</div><div class="value">' + inv.terms + '</div><div class="sub">' + days + ' days ago</div></div>';
-  ledgerHTML += '</div>';
-
-  // Context section (crime stats / impact data)
-  ledgerHTML += '<div class="qb-context">';
-  ledgerHTML += '<div class="qb-context-title">' + inv.context.title + '</div>';
-  ledgerHTML += '<div class="qb-stats">';
-  inv.context.stats.forEach(function(s) {
-    ledgerHTML += '<div class="qb-stat"><div class="num">' + s.num + '</div><div class="lbl">' + s.lbl + '</div></div>';
-  });
-  ledgerHTML += '</div>';
-  inv.context.details.forEach(function(d) {
-    ledgerHTML += '<p>&bull; ' + d + '</p>';
-  });
-  ledgerHTML += '</div>';
-
-  // Line items table
-  ledgerHTML += '<div class="qb-items"><table>';
-  ledgerHTML += '<tr><th>Description</th><th style="width:40%">Basis</th><th>Amount</th></tr>';
-  inv.lineItems.forEach(function(li) {
-    if (li.section) {
-      ledgerHTML += '<tr class="section-head"><td colspan="3">' + li.section + '</td></tr>';
-    } else {
-      ledgerHTML += '<tr><td>' + li.desc + '</td><td class="cat">' + li.detail + '</td><td>' + formatCurrency(li.amount) + '</td></tr>';
-    }
-  });
-  // Subtotal, penalties, grand total
-  ledgerHTML += '<tr class="subtotal"><td colspan="2">Subtotal (Annual Economic Taking)</td><td>' + formatCurrency(inv.baseAmount) + '</td></tr>';
-  ledgerHTML += '<tr class="penalty"><td colspan="2">7% Civic Negligence Penalty</td><td>' + formatCurrency(penalty1) + '</td></tr>';
-  if (penalty2 > 0) {
-    ledgerHTML += '<tr class="late-penalty"><td colspan="2">7% Late Penalty (30+ days past due)</td><td>' + formatCurrency(penalty2) + '</td></tr>';
-  }
-  ledgerHTML += '<tr class="grand-total"><td colspan="2">TOTAL DUE</td><td>' + formatCurrency(subtotal) + '</td></tr>';
-  ledgerHTML += '</table></div>';
-
-  // Late notice
-  if (days > 30) {
-    ledgerHTML += '<div class="qb-late-notice">This invoice is more than 30 days past due. An additional 7% penalty has been applied. This invoice has been remanded to a federal employee for collections.</div>';
-  }
-
-  // Footer with PDF button
-  ledgerHTML += '<div class="qb-footer">';
-  ledgerHTML += '<div class="terms">Issued by: Burnham Civic &middot; <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a> &middot; <a href="tel:+18555281776">(855) 528-1776</a><br>Data: Seattle Open Data Portal (data.seattle.gov), public reporting</div>';
-  ledgerHTML += '<div style="display:flex;align-items:center;gap:8px;">';
-  // Adobe PDF icon (inline SVG)
-  ledgerHTML += '<a href="javascript:void(0)" onclick="generatePDF(\'' + inv.id + '\')" title="Download PDF" style="display:inline-flex;align-items:center;text-decoration:none;">';
-  ledgerHTML += '<svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="32" rx="2" fill="#B30B00"/><path d="M5 24V8h4.2c1.5 0 2.6.3 3.3 1 .7.6 1 1.5 1 2.6 0 .7-.2 1.4-.5 1.9-.4.5-.9.9-1.5 1.1l2.3 3.8V24h-2.3l-2-3.3H7.2V24H5zm2.2-5.1h2c.7 0 1.2-.2 1.6-.5.3-.4.5-.8.5-1.5s-.2-1.1-.5-1.4c-.3-.3-.9-.5-1.6-.5H7.2v3.9z" fill="#fff"/><text x="14" y="28" font-family="Arial" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">PDF</text></svg>';
-  ledgerHTML += '</a>';
-  ledgerHTML += '<button onclick="generatePDF(\'' + inv.id + '\')" class="pdf-btn">Download PDF</button>';
-  ledgerHTML += '</div>';
-  ledgerHTML += '</div>';
-
-  ledgerHTML += '</div>'; // end qb-invoice
+  rows.push({ inv: inv, days: days, penalty1: penalty1, penalty2: penalty2, subtotal: subtotal });
 });
 
-// Running total
-ledgerHTML += '<div style="border:2px solid #1e3a5f;padding:16px 20px;margin:16px 0;background:#f7f7f5;">';
-ledgerHTML += '<div style="display:flex;justify-content:space-between;align-items:baseline;">';
-ledgerHTML += '<div style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#1e3a5f;">Total Economic Taking (' + invoices.length + ' invoices)</div>';
-ledgerHTML += '<div style="font-size:32px;font-weight:700;color:#dc2626;">' + formatCurrency(runningTotal) + '</div>';
-ledgerHTML += '</div>';
-ledgerHTML += '<div style="font-size:12px;color:#666;margin-top:4px;">And counting. Each business that leaves adds to the bill. Contact <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a> or call <a href="tel:+18555281776">(855) 528-1776</a>.</div>';
-ledgerHTML += '</div>';
+// AR Aging table
+ledgerHTML += '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
+ledgerHTML += '<tr>';
+ledgerHTML += '<th style="text-align:left;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">#</th>';
+ledgerHTML += '<th style="text-align:left;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Entity</th>';
+ledgerHTML += '<th style="text-align:left;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Bill To</th>';
+ledgerHTML += '<th style="text-align:right;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Base</th>';
+ledgerHTML += '<th style="text-align:right;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Penalty</th>';
+ledgerHTML += '<th style="text-align:right;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Total Due</th>';
+ledgerHTML += '<th style="text-align:center;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Age</th>';
+ledgerHTML += '<th style="text-align:center;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Status</th>';
+ledgerHTML += '<th style="text-align:center;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;"></th>';
+ledgerHTML += '</tr>';
+
+rows.forEach(function(r) {
+  var inv = r.inv;
+  var totalPenalty = r.penalty1 + r.penalty2;
+  var ageColor = r.days > 30 ? '#dc2626' : (r.days > 0 ? '#ca8a04' : '#16a34a');
+  var statusLabel = r.days > 30 ? 'COLLECTIONS' : (r.days > 0 ? 'PAST DUE' : 'CURRENT');
+  var statusBg = r.days > 30 ? '#fef2f2' : (r.days > 0 ? '#fffbeb' : '#f0fdf4');
+
+  ledgerHTML += '<tr style="border-bottom:1px solid #eee;">';
+  ledgerHTML += '<td style="padding:8px 6px;font-weight:700;color:#1e3a5f;">' + inv.id + '</td>';
+  ledgerHTML += '<td style="padding:8px 6px;"><strong>' + inv.entity + '</strong><br><span style="font-size:11px;color:#999;">' + inv.location + '</span></td>';
+  ledgerHTML += '<td style="padding:8px 6px;font-size:12px;">' + inv.billTo + '</td>';
+  ledgerHTML += '<td style="padding:8px 6px;text-align:right;font-family:monospace;font-size:12px;">' + formatCurrency(inv.baseAmount) + '</td>';
+  ledgerHTML += '<td style="padding:8px 6px;text-align:right;font-family:monospace;font-size:12px;color:#ca8a04;">' + formatCurrency(totalPenalty) + '</td>';
+  ledgerHTML += '<td style="padding:8px 6px;text-align:right;font-weight:700;font-family:monospace;color:#dc2626;">' + formatCurrency(r.subtotal) + '</td>';
+  ledgerHTML += '<td style="padding:8px 6px;text-align:center;font-weight:700;color:' + ageColor + ';">' + r.days + 'd</td>';
+  ledgerHTML += '<td style="padding:8px 6px;text-align:center;"><span style="font-size:9px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:' + ageColor + ';background:' + statusBg + ';padding:2px 6px;">' + statusLabel + '</span></td>';
+  ledgerHTML += '<td style="padding:8px 6px;text-align:center;white-space:nowrap;">';
+  ledgerHTML += '<a href="javascript:void(0)" onclick="generatePDF(\'' + inv.id + '\')" title="Download PDF" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;color:#B30B00;font-size:11px;font-weight:700;">';
+  ledgerHTML += '<svg width="16" height="18" viewBox="0 0 28 32" fill="none"><rect width="28" height="32" rx="2" fill="#B30B00"/><text x="14" y="21" font-family="Arial" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">PDF</text></svg>';
+  ledgerHTML += '</a>';
+  ledgerHTML += '</td>';
+  ledgerHTML += '</tr>';
+});
+
+// Total row
+ledgerHTML += '<tr style="border-top:2px solid #1e3a5f;">';
+ledgerHTML += '<td colspan="5" style="padding:10px 6px;font-weight:700;font-size:13px;letter-spacing:0.5px;color:#1e3a5f;">TOTAL (' + invoices.length + ' invoices)</td>';
+ledgerHTML += '<td style="padding:10px 6px;text-align:right;font-weight:700;font-family:monospace;font-size:16px;color:#dc2626;">' + formatCurrency(runningTotal) + '</td>';
+ledgerHTML += '<td colspan="3" style="padding:10px 6px;text-align:center;font-size:11px;color:#666;">And counting.</td>';
+ledgerHTML += '</tr>';
+ledgerHTML += '</table>';
+
+ledgerHTML += '<div style="font-size:11px;color:#999;margin-top:8px;">Invoices unpaid after 30 days accrue an additional 7% penalty and are remanded to a federal employee for collections. Contact <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a> or call <a href="tel:+18555281776">(855) 528-1776</a>.</div>';
 
 document.getElementById('invoice-ledger').innerHTML = ledgerHTML;
 
