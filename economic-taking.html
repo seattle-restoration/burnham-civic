@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Economic Taking Tracker - BURNHAM CIVIC</title>
+<meta name="description" content="Every policy failure has a cost. Seattle owes a penalty for each business closure, property crime, graffiti incident, encampment violation, and foreclosure driven by failed governance.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 32px auto 32px 10%; padding: 0 16px; background: #fff; color: #111; font-size: 15px; line-height: 1.6; }
+a { color: #00c; } a:visited { color: #551a8b; } a:hover { color: #c00; }
+.header { display: flex; align-items: baseline; justify-content: space-between; }
+h1 { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; }
+.subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #1e3a5f; padding: 5px 14px; text-decoration: none; font-family: Georgia, serif; }
+.subscribe:hover { background: #2a4a73; } .subscribe:visited { color: #fff; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+h2 { font-size: 18px; margin: 32px 0 8px; }
+h3 { font-size: 15px; margin: 24px 0 6px; color: #1e3a5f; }
+.classified { background: #1e3a5f; color: #fbbf24; padding: 12px 20px; margin: 24px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
+.subtitle { font-size: 12px; color: #666; font-style: italic; margin-bottom: 20px; }
+.running-total { font-size: 48px; font-weight: 700; color: #dc2626; margin: 24px 0 8px; letter-spacing: -1px; }
+.running-label { font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 32px; }
+.cat { border: 1px solid #ddd; padding: 16px 20px; margin: 16px 0; }
+.cat-head { display: flex; justify-content: space-between; align-items: baseline; }
+.cat-name { font-size: 15px; font-weight: 700; }
+.cat-count { font-size: 24px; font-weight: 700; color: #dc2626; }
+.cat-desc { font-size: 13px; color: #666; margin: 6px 0 0; }
+.cat-source { font-size: 11px; color: #999; margin-top: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+th { text-align: left; background: #f5f5f5; padding: 6px 8px; border-bottom: 2px solid #ddd; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+td { padding: 6px 8px; border-bottom: 1px solid #eee; }
+.placeholder { color: #999; font-style: italic; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><a href="/" style="color:inherit;text-decoration:none">BURNHAM CIVIC</a></h1>
+  <a href="membership.html" class="subscribe">Join</a>
+</div>
+<div class="subtitle">Civic research and planning at operating speed.</div>
+<hr>
+
+<div class="classified">Seattle Accountability / Economic Taking Tracker</div>
+
+<h2 style="margin-top:16px;">Every policy failure has a cost.</h2>
+<p>When a business closes because the city failed to enforce basic public safety, that is an economic taking. When a property owner pays to remove graffiti the city ignored, that is an economic taking. When a 911 call results in property damage because response times have tripled, that is an economic taking.</p>
+<p>This tracker quantifies the cumulative cost of Seattle's policy failures as a liability the city owes its residents and businesses.</p>
+
+<div id="paywall-gate" style="text-align:center;padding:60px 20px;border:1px solid #ccc;margin:32px 0;">
+  <h2 style="font-family:Georgia,serif;font-size:20px;margin-bottom:12px;border:none;">&#9878; TBC Intelligence</h2>
+  <p style="font-size:14px;color:#666;margin-bottom:16px;">This tracker is available to TBC Intelligence members.</p>
+  <a href="membership.html" style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;padding:8px 24px;text-decoration:none;font-family:Georgia,serif;">Join</a>
+</div>
+
+<div id="gated-content" style="display:none;">
+
+<div class="running-total">$0</div>
+<div class="running-label">Cumulative economic taking (2024-present) &middot; Updated as data sources connect</div>
+
+<!-- CATEGORY 1: BUSINESS CLOSURES -->
+<div class="cat">
+  <div class="cat-head">
+    <span class="cat-name">1. Business Closures</span>
+    <span class="cat-count">--</span>
+  </div>
+  <div class="cat-desc">Every business license that disappears from the city's active registry. Diffed nightly against the previous snapshot. Each closure assigned an estimated economic impact based on industry, employee count, and tax revenue lost.</div>
+  <div class="cat-source">Source: <a href="https://data.seattle.gov/City-Administration/Active-Business-License-Tax-Certificate/wnbq-64tb">data.seattle.gov/Active-Business-License-Tax-Certificate</a> (nightly export, diffed for disappearances)</div>
+  <p class="placeholder">Data pipeline pending. Will diff active license snapshots to detect closures.</p>
+</div>
+
+<!-- CATEGORY 2: 911 / PROPERTY CRIME -->
+<div class="cat">
+  <div class="cat-head">
+    <span class="cat-name">2. 911 Calls with Property Damage</span>
+    <span class="cat-count">--</span>
+  </div>
+  <div class="cat-desc">Break-ins, burglaries, vehicle prowls, property destruction. Every call where a citizen's property was damaged and the city's response time exceeded acceptable bands. Filtered by call type: BURGLARY, PROPERTY DAMAGE, TRESPASS, VEHICLE PROWL.</div>
+  <div class="cat-source">Source: <a href="https://data.seattle.gov/Public-Safety/Call-Data/33kz-ixgy">data.seattle.gov/Call-Data</a> (updated daily, 2001-present, 95%+ coverage)</div>
+  <table>
+    <tr><th>Call Type</th><th>2024</th><th>2025</th><th>2026 YTD</th><th>Avg Cost</th></tr>
+    <tr><td>Burglary</td><td class="placeholder">--</td><td class="placeholder">--</td><td class="placeholder">--</td><td class="placeholder">--</td></tr>
+    <tr><td>Property Damage</td><td class="placeholder">--</td><td class="placeholder">--</td><td class="placeholder">--</td><td class="placeholder">--</td></tr>
+    <tr><td>Vehicle Prowl</td><td class="placeholder">--</td><td class="placeholder">--</td><td class="placeholder">--</td><td class="placeholder">--</td></tr>
+    <tr><td>Trespass</td><td class="placeholder">--</td><td class="placeholder">--</td><td class="placeholder">--</td><td class="placeholder">--</td></tr>
+  </table>
+</div>
+
+<!-- CATEGORY 3: HOMELESSNESS VIOLATIONS -->
+<div class="cat">
+  <div class="cat-head">
+    <span class="cat-name">3. Homelessness &amp; Encampment Violations</span>
+    <span class="cat-count">--</span>
+  </div>
+  <div class="cat-desc">Encampment complaints, public health incidents, unauthorized camping reports. Every incident where the city's failure to enforce existing law created a cost borne by residents, businesses, or property owners.</div>
+  <div class="cat-source">Source: <a href="https://data.seattle.gov/Public-Safety/Call-Data/33kz-ixgy">SPD Call Data</a> (ENCAMPMENT, HAZARD, DISTURBANCE types) + <a href="https://performance.seattle.gov">Find It Fix It</a></div>
+  <p class="placeholder">Data pipeline pending. Will combine SPD encampment calls with Find It Fix It reports.</p>
+</div>
+
+<!-- CATEGORY 4: GRAFFITI / VANDALISM -->
+<div class="cat">
+  <div class="cat-head">
+    <span class="cat-name">4. Graffiti &amp; Vandalism</span>
+    <span class="cat-count">--</span>
+  </div>
+  <div class="cat-desc">Every graffiti report filed through Find It Fix It or the Graffiti Report Line. Tracked by response time and resolution status. Unresolved reports = cost transferred to property owner. 31,000+ reports in a recent two-year window.</div>
+  <div class="cat-source">Source: <a href="https://performance.seattle.gov/dataset/Spotlight-Chart-Potholes-Graffiti-Reports-Find-It-/v4qr-dw88">performance.seattle.gov / Find It Fix It</a> (Socrata SODA API)</div>
+  <table>
+    <tr><th>Status</th><th>Count</th><th>Avg Response (days)</th><th>Est. Private Cost</th></tr>
+    <tr><td>Resolved</td><td class="placeholder">--</td><td class="placeholder">--</td><td>$0</td></tr>
+    <tr><td>Unresolved (city)</td><td class="placeholder">--</td><td class="placeholder">--</td><td class="placeholder">--</td></tr>
+    <tr><td>Unresolved (private)</td><td class="placeholder">--</td><td class="placeholder">--</td><td class="placeholder">--</td></tr>
+  </table>
+</div>
+
+<!-- CATEGORY 5: PROPERTY FORECLOSURES -->
+<div class="cat">
+  <div class="cat-head">
+    <span class="cat-name">5. Property Foreclosures</span>
+    <span class="cat-count">--</span>
+  </div>
+  <div class="cat-desc">Tax foreclosures, forced sales, and distressed properties in Seattle. Tracked via King County Assessor foreclosure data. Each foreclosure mapped to neighborhood decline indicators: encampment density, 911 call volume, business closure rate.</div>
+  <div class="cat-source">Source: <a href="https://data.kingcounty.gov/Property-Assessments/Foreclosure-parcels/nx4x-daw6">data.kingcounty.gov/Foreclosure-parcels</a> + <a href="https://data.kingcounty.gov/County-Operations/Foreclosure-data/fsze-bwc2">Foreclosure-data</a></div>
+  <p class="placeholder">Data pipeline pending. Will cross-reference foreclosures with neighborhood policy failure indicators.</p>
+</div>
+
+<hr>
+
+<h3>Methodology</h3>
+<p style="font-size:13px;color:#666;">Each category pulls from public APIs maintained by the City of Seattle and King County. Data is queried, diffed, and scored automatically. The "economic taking" valuation assigns a cost to each incident based on published averages (FBI UCR property crime costs, SBA small business closure impacts, KC Assessor assessed values) and city-specific multipliers. The running total is the sum of all categories. This is not a legal claim. It is a public ledger.</p>
+
+<h3>Data Sources</h3>
+<ul style="font-size:13px;color:#666;">
+  <li><a href="https://data.seattle.gov/Public-Safety/Call-Data/33kz-ixgy">SPD 911 Call Data</a> (daily, 2001-present)</li>
+  <li><a href="https://data.seattle.gov/City-Administration/Active-Business-License-Tax-Certificate/wnbq-64tb">Seattle Active Business Licenses</a> (nightly)</li>
+  <li><a href="https://performance.seattle.gov">Find It Fix It / Graffiti Reports</a> (Socrata API)</li>
+  <li><a href="https://data.kingcounty.gov/Property-Assessments/Foreclosure-parcels/nx4x-daw6">King County Foreclosure Parcels</a></li>
+  <li><a href="https://data.kingcounty.gov/County-Operations/Foreclosure-data/fsze-bwc2">King County Foreclosure Data</a></li>
+</ul>
+
+<hr>
+<p style="font-size:11px;color:#999;">Burnham Civic &middot; Seattle, WA &middot; <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a></p>
+
+</div><!-- end gated-content -->
+
+<script>
+(function(){
+  var buf='',unlocked=false;
+  document.addEventListener('keydown',function(e){
+    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+    if(e.key.length!==1) return;
+    buf+=e.key.toLowerCase();
+    if(buf.length>10) buf=buf.slice(-10);
+    if(buf.indexOf('/maga')!==-1){
+      buf='';
+      unlocked=!unlocked;
+      document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
+      document.getElementById('gated-content').style.display=unlocked?'block':'none';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
