@@ -152,6 +152,181 @@ td { padding: 6px 8px; border-bottom: 1px solid #eee; }
   </script>
 </div>
 
+<!-- INVOICES ISSUED -->
+<h2 style="margin-top:32px;">Invoices Issued</h2>
+<p style="font-size:14px;color:#333;margin-bottom:8px;">Each invoice is a quantified economic taking caused by civic negligence. Invoices accrue a 7% penalty at issuance. If unpaid after 30 days, an additional 7% penalty is applied and the invoice is remanded to a federal employee for collections.</p>
+
+<div id="invoice-ledger" style="margin:24px 0;">
+
+<script>
+function daysPastDue(dateStr) {
+  var issued = new Date(dateStr);
+  var now = new Date();
+  return Math.floor((now - issued) / 86400000);
+}
+function formatCurrency(n) {
+  return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
+}
+
+var invoices = [
+  {
+    id: '001',
+    entity: 'Seattle Lighting',
+    location: '222 2nd Ave Ext S, Pioneer Square',
+    description: 'Business closure after 109 years. 503 fire/EMS calls within 1 block in 12 months. 1,979 crimes across Pioneer Square.',
+    billTo: 'City of Seattle',
+    baseAmount: 6800000,
+    issuedDate: '2026-03-22',
+    penaltyRate: 0.07
+  },
+  {
+    id: '002',
+    entity: 'Bulwark Capital Management',
+    location: '$1.1B AUM relocated out of Washington State',
+    description: 'Capital management firm departure post-income tax. $11M/yr management fees, $2.2M/yr capital gains tax, $3M/yr employee wages relocated.',
+    billTo: 'State of Washington',
+    baseAmount: 17700000,
+    issuedDate: '2026-03-22',
+    penaltyRate: 0.07
+  },
+  {
+    id: '003',
+    entity: 'Moment (Marc Barros)',
+    location: 'Seattle to Wyoming',
+    description: 'Tech company departure. Cited: 10.5% sales tax, capital gains, B&O, estate tax, digital advertising tax.',
+    billTo: 'State of Washington',
+    baseAmount: 3200000,
+    issuedDate: '2026-03-22',
+    penaltyRate: 0.07
+  }
+];
+
+var ledgerHTML = '';
+var runningTotal = 0;
+
+invoices.forEach(function(inv) {
+  var days = daysPastDue(inv.issuedDate);
+  var penalty1 = Math.round(inv.baseAmount * inv.penaltyRate);
+  var subtotal = inv.baseAmount + penalty1;
+  var penalty2 = 0;
+  var lateLabel = '';
+  if (days > 30) {
+    penalty2 = Math.round(subtotal * inv.penaltyRate);
+    subtotal += penalty2;
+    lateLabel = '<span style="color:#dc2626;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;background:#fef2f2;padding:2px 8px;margin-left:8px;">REMANDED FOR COLLECTIONS</span>';
+  }
+  runningTotal += subtotal;
+
+  var statusColor = days > 30 ? '#dc2626' : (days > 0 ? '#ca8a04' : '#16a34a');
+  var statusText = days > 30 ? 'PAST DUE (30+ DAYS)' : (days > 0 ? days + ' DAYS PAST DUE' : 'ISSUED TODAY');
+
+  ledgerHTML += '<div style="border:1px solid #ddd;padding:16px 20px;margin:12px 0;">';
+  ledgerHTML += '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">';
+  ledgerHTML += '<div>';
+  ledgerHTML += '<span style="font-size:11px;font-weight:700;letter-spacing:1px;color:#666;text-transform:uppercase;">Invoice #' + inv.id + '</span>';
+  ledgerHTML += '<span style="font-size:11px;color:' + statusColor + ';font-weight:700;letter-spacing:0.5px;margin-left:12px;">' + statusText + '</span>';
+  ledgerHTML += lateLabel;
+  ledgerHTML += '</div>';
+  ledgerHTML += '<div style="text-align:right;">';
+  ledgerHTML += '<span style="font-size:24px;font-weight:700;color:#dc2626;">' + formatCurrency(subtotal) + '</span>';
+  ledgerHTML += '</div>';
+  ledgerHTML += '</div>';
+
+  ledgerHTML += '<div style="font-size:15px;font-weight:700;margin:8px 0 2px;">' + inv.entity + '</div>';
+  ledgerHTML += '<div style="font-size:13px;color:#666;margin-bottom:6px;">' + inv.location + ' &middot; Bill to: ' + inv.billTo + '</div>';
+  ledgerHTML += '<div style="font-size:13px;color:#333;margin-bottom:10px;">' + inv.description + '</div>';
+
+  // Line items
+  ledgerHTML += '<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0;">';
+  ledgerHTML += '<tr style="border-bottom:1px solid #ddd;"><td style="padding:3px 0;color:#666;">Base economic taking (annual)</td><td style="padding:3px 0;text-align:right;font-weight:700;">' + formatCurrency(inv.baseAmount) + '</td></tr>';
+  ledgerHTML += '<tr style="border-bottom:1px solid #ddd;"><td style="padding:3px 0;color:#666;">7% civic negligence penalty</td><td style="padding:3px 0;text-align:right;font-weight:700;">' + formatCurrency(penalty1) + '</td></tr>';
+  if (penalty2 > 0) {
+    ledgerHTML += '<tr style="border-bottom:1px solid #ddd;"><td style="padding:3px 0;color:#dc2626;">7% late penalty (30+ days past due)</td><td style="padding:3px 0;text-align:right;font-weight:700;color:#dc2626;">' + formatCurrency(penalty2) + '</td></tr>';
+  }
+  ledgerHTML += '<tr><td style="padding:4px 0;font-weight:700;">Total due</td><td style="padding:4px 0;text-align:right;font-weight:700;font-size:14px;color:#dc2626;">' + formatCurrency(subtotal) + '</td></tr>';
+  ledgerHTML += '</table>';
+
+  ledgerHTML += '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">';
+  ledgerHTML += '<div style="font-size:11px;color:#999;">Issued: ' + inv.issuedDate + ' &middot; ' + days + ' days ago</div>';
+  ledgerHTML += '<button onclick="generatePDF(\'' + inv.id + '\')" style="background:#1e3a5f;color:#fff;padding:6px 16px;font-family:Georgia,serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;">Download PDF</button>';
+  ledgerHTML += '</div>';
+
+  ledgerHTML += '</div>';
+});
+
+// Running total
+ledgerHTML += '<div style="border:2px solid #1e3a5f;padding:16px 20px;margin:16px 0;background:#f7f7f5;">';
+ledgerHTML += '<div style="display:flex;justify-content:space-between;align-items:baseline;">';
+ledgerHTML += '<div style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#1e3a5f;">Total Economic Taking (' + invoices.length + ' invoices)</div>';
+ledgerHTML += '<div style="font-size:32px;font-weight:700;color:#dc2626;">' + formatCurrency(runningTotal) + '</div>';
+ledgerHTML += '</div>';
+ledgerHTML += '<div style="font-size:12px;color:#666;margin-top:4px;">And counting. Each business that leaves adds to the bill. Contact <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a> or call <a href="tel:+18555281776">(855) 528-1776</a>.</div>';
+ledgerHTML += '</div>';
+
+document.getElementById('invoice-ledger').innerHTML = ledgerHTML;
+
+function generatePDF(invoiceId) {
+  var inv = invoices.find(function(i) { return i.id === invoiceId; });
+  if (!inv) return;
+  var days = daysPastDue(inv.issuedDate);
+  var penalty1 = Math.round(inv.baseAmount * inv.penaltyRate);
+  var subtotal = inv.baseAmount + penalty1;
+  var penalty2 = 0;
+  if (days > 30) {
+    penalty2 = Math.round(subtotal * inv.penaltyRate);
+    subtotal += penalty2;
+  }
+
+  var w = window.open('', '_blank');
+  w.document.write('<!DOCTYPE html><html><head><title>Invoice #' + inv.id + ' - Burnham Civic</title>');
+  w.document.write('<style>');
+  w.document.write('body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 24px;color:#111;font-size:14px;line-height:1.6;}');
+  w.document.write('h1{font-size:20px;letter-spacing:2px;margin:0 0 4px;}');
+  w.document.write('.stamp{color:#dc2626;font-size:36px;font-weight:700;transform:rotate(-8deg);display:inline-block;border:4px solid #dc2626;padding:4px 20px;margin:20px 0;letter-spacing:2px;}');
+  w.document.write('table{width:100%;border-collapse:collapse;margin:20px 0;}');
+  w.document.write('td,th{padding:8px;border-bottom:1px solid #ddd;text-align:left;font-size:13px;}');
+  w.document.write('.total td{border-top:2px solid #111;font-weight:700;font-size:15px;}');
+  w.document.write('@media print{body{margin:20px;}.stamp{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}');
+  w.document.write('</style></head><body>');
+  w.document.write('<h1>BURNHAM CIVIC</h1>');
+  w.document.write('<div style="font-size:11px;color:#666;margin-bottom:24px;">Civic research and planning at operating speed.</div>');
+  w.document.write('<hr>');
+  w.document.write('<div style="display:flex;justify-content:space-between;margin:20px 0;">');
+  w.document.write('<div><strong style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#666;">Invoice</strong><br><span style="font-size:28px;font-weight:700;">#' + inv.id + '</span></div>');
+  w.document.write('<div style="text-align:right;"><strong style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#666;">Issued</strong><br>' + inv.issuedDate + '<br><strong style="color:#dc2626;">' + days + ' days past due</strong></div>');
+  w.document.write('</div>');
+  if (days > 0) w.document.write('<div class="stamp">PAST DUE</div>');
+  w.document.write('<div style="display:flex;justify-content:space-between;margin:20px 0;">');
+  w.document.write('<div><strong style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#666;">Re:</strong><br><strong>' + inv.entity + '</strong><br><span style="font-size:13px;color:#666;">' + inv.location + '</span></div>');
+  w.document.write('<div style="text-align:right;"><strong style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#666;">Bill To:</strong><br><strong>' + inv.billTo + '</strong></div>');
+  w.document.write('</div>');
+  w.document.write('<p style="font-size:13px;color:#333;">' + inv.description + '</p>');
+  w.document.write('<table>');
+  w.document.write('<tr><th>Item</th><th style="text-align:right;">Amount</th></tr>');
+  w.document.write('<tr><td>Base annual economic taking</td><td style="text-align:right;">' + formatCurrency(inv.baseAmount) + '</td></tr>');
+  w.document.write('<tr><td>7% civic negligence penalty</td><td style="text-align:right;">' + formatCurrency(penalty1) + '</td></tr>');
+  if (penalty2 > 0) {
+    w.document.write('<tr><td style="color:#dc2626;">7% late penalty (30+ days past due)</td><td style="text-align:right;color:#dc2626;">' + formatCurrency(penalty2) + '</td></tr>');
+  }
+  w.document.write('<tr class="total"><td>TOTAL DUE</td><td style="text-align:right;color:#dc2626;font-size:18px;">' + formatCurrency(subtotal) + '</td></tr>');
+  w.document.write('</table>');
+  if (days > 30) {
+    w.document.write('<div style="border:2px solid #dc2626;padding:12px 16px;margin:20px 0;font-size:13px;color:#dc2626;font-weight:700;">This invoice is more than 30 days past due. An additional 7% penalty has been applied. This invoice has been remanded to a federal employee for collections.</div>');
+  }
+  w.document.write('<hr>');
+  w.document.write('<div style="font-size:11px;color:#999;margin-top:20px;">');
+  w.document.write('Burnham Civic &middot; Seattle, WA<br>');
+  w.document.write('<a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a> &middot; (855) 528-1776<br>');
+  w.document.write('burnhamcivic.org/economic-taking.html');
+  w.document.write('</div>');
+  w.document.write('<script>setTimeout(function(){window.print()},500);<\/script>');
+  w.document.write('</body></html>');
+  w.document.close();
+}
+</script>
+
+</div>
+
 <div id="paywall-gate" style="text-align:center;padding:60px 20px;border:1px solid #ccc;margin:32px 0;">
   <h2 style="font-family:Georgia,serif;font-size:20px;margin-bottom:12px;border:none;">&#9878; TBC Intelligence</h2>
   <p style="font-size:14px;color:#666;margin-bottom:16px;">Full data, tables, and methodology available to TBC Intelligence members.</p>
