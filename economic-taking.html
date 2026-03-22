@@ -371,9 +371,9 @@ ledgerHTML += '</tr>';
 rows.forEach(function(r) {
   var inv = r.inv;
   var totalPenalty = r.penalty1 + r.penalty2;
-  var ageColor = r.days > 30 ? '#dc2626' : (r.days > 0 ? '#ca8a04' : '#16a34a');
+  var ageColor = r.days > 30 ? '#dc2626' : (r.days > 0 ? '#ca8a04' : '#111');
   var statusLabel = r.days > 30 ? 'COLLECTIONS' : (r.days > 0 ? 'PAST DUE' : 'CURRENT');
-  var statusBg = r.days > 30 ? '#fef2f2' : (r.days > 0 ? '#fffbeb' : '#f0fdf4');
+  var statusColor = r.days > 30 ? '#dc2626' : (r.days > 0 ? '#ca8a04' : '#111');
 
   ledgerHTML += '<tr style="border-bottom:1px solid #eee;">';
   ledgerHTML += '<td style="padding:8px 6px;font-weight:700;color:#1e3a5f;">' + inv.id + '</td>';
@@ -383,7 +383,7 @@ rows.forEach(function(r) {
   ledgerHTML += '<td style="padding:8px 6px;text-align:right;font-family:monospace;font-size:12px;color:#ca8a04;">' + formatCurrency(totalPenalty) + '</td>';
   ledgerHTML += '<td style="padding:8px 6px;text-align:right;font-weight:700;font-family:monospace;color:#dc2626;">' + formatCurrency(r.subtotal) + '</td>';
   ledgerHTML += '<td style="padding:8px 6px;text-align:center;font-weight:700;color:' + ageColor + ';">' + r.days + 'd</td>';
-  ledgerHTML += '<td style="padding:8px 6px;text-align:center;"><span style="font-size:9px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:' + ageColor + ';background:' + statusBg + ';padding:2px 6px;">' + statusLabel + '</span></td>';
+  ledgerHTML += '<td style="padding:8px 6px;text-align:center;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:' + statusColor + ';">' + statusLabel + '</td>';
   ledgerHTML += '<td style="padding:8px 6px;text-align:center;white-space:nowrap;">';
   ledgerHTML += '<a href="javascript:void(0)" onclick="generatePDF(\'' + inv.id + '\')" title="Download PDF" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;color:#B30B00;font-size:11px;font-weight:700;">';
   ledgerHTML += '<svg width="16" height="18" viewBox="0 0 28 32" fill="none"><rect width="28" height="32" rx="2" fill="#B30B00"/><text x="14" y="21" font-family="Arial" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">PDF</text></svg>';
