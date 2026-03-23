@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reclaim Gas Works Park - BURNHAM CIVIC</title>
+<meta name="description" content="Gas Works Park was once the crown jewel of Seattle's waterfront parks. It can be again. A campaign to restore the grounds, manage the geese, and make the grass perfect.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.back {
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
+}
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 6px;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+.article-subtitle {
+  font-size: 17px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+h2 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 36px 0 10px;
+  color: #111;
+  letter-spacing: -0.01em;
+}
+p {
+  margin: 0 0 14px;
+  color: #1a1a1a;
+}
+.stat-block {
+  border-left: 3px solid #1e3a5f;
+  padding: 12px 16px;
+  margin: 24px 0;
+  background: #f7f7f5;
+}
+.stat-block p {
+  margin: 4px 0;
+  font-size: 15px;
+}
+.stat-block strong {
+  font-size: 17px;
+}
+.action-list {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+.action-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+.action-list li:last-child { border-bottom: none; }
+.phase-label {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: #1e3a5f;
+  color: #fff;
+  padding: 2px 8px;
+  margin-right: 8px;
+}
+.phase-label.active { background: #2d5016; }
+.phase-label.future { background: #666; }
+.footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #ccc;
+  font-size: 12px;
+  color: #888;
+}
+/* Gate overlay */
+.gate-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.97);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Georgia, serif;
+}
+.gate-overlay.active { display: flex; }
+.gate-box {
+  max-width: 400px;
+  text-align: center;
+  padding: 40px;
+}
+.gate-box h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0 0 12px;
+}
+.gate-box p {
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 24px;
+}
+.gate-box input {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+.gate-box button {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: #1e3a5f;
+  color: #fff;
+  border: none;
+  padding: 8px 24px;
+  cursor: pointer;
+}
+.gate-box button:hover { background: #2a4a73; }
+.gate-error {
+  color: #991b1b;
+  font-size: 12px;
+  margin-top: 8px;
+  display: none;
+}
+</style>
+<link rel="canonical" href="https://burnhamcivic.org/gasworks.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="Reclaim Gas Works Park - BURNHAM CIVIC">
+<meta property="og:description" content="Gas Works Park was once the crown jewel of Seattle's waterfront parks. It can be again.">
+<meta property="og:url" content="https://burnhamcivic.org/gasworks.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TBCNewsAction">
+</head>
+<body>
+
+<!-- GATE -->
+<div class="gate-overlay active" id="gate">
+  <div class="gate-box">
+    <h2>This page is not yet public.</h2>
+    <p>Enter the access code to continue.</p>
+    <input type="password" id="gate-code" placeholder="Access code" onkeydown="if(event.key==='Enter')checkGate()">
+    <button onclick="checkGate()">Enter</button>
+    <div class="gate-error" id="gate-error">Incorrect code.</div>
+  </div>
+</div>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="mailto:operations@burnhamcivic.org" class="subscribe">Contact</a>
+</div>
+
+<div class="nav">
+  <a href="index.html">Seattle</a>
+  <a href="material-standard.html">Material Standard</a>
+  <a href="gasworks.html" style="color:#111;text-decoration:underline;">Gas Works</a>
+</div>
+
+<hr>
+
+<a href="index.html" class="back">&larr; Back to Seattle</a>
+
+<h1 class="article-title">Reclaim Gas Works Park</h1>
+<p class="article-subtitle">Seattle's most iconic park is being loved to death. The grass is destroyed, the geese own the hill, and nobody is doing anything about it. We have a plan.</p>
+
+<h2>The Problem</h2>
+
+<p>Gas Works Park sits on 19.1 acres at the north end of Lake Union. It is the single most photographed location in Seattle. The kite hill offers the best skyline view in the city. Richard Haag's 1975 design won the ASLA President's Award and is on the National Register of Historic Places.</p>
+
+<p>The park is falling apart.</p>
+
+<div class="stat-block">
+  <p><strong>The grass is gone.</strong> The kite hill is bare dirt and mud for most of the year. Foot traffic, geese, and zero turf management have turned it into a dust bowl.</p>
+  <p><strong>Canada geese have taken over.</strong> Hundreds of resident geese cover the hill in droppings year-round. Children can't sit on the grass. Families avoid the park.</p>
+  <p><strong>The industrial structures are rusting.</strong> The gasification towers, the defining feature of the park, have received minimal maintenance since the 1970s conversion.</p>
+  <p><strong>No stewardship entity exists.</strong> Unlike Volunteer Park (Friends of Volunteer Park) or Discovery Park (Friends of Discovery Park), Gas Works has no dedicated advocacy organization.</p>
+</div>
+
+<h2>The Plan</h2>
+
+<ul class="action-list">
+  <li><span class="phase-label active">Phase 1</span> <strong>Form "Friends of Gas Works Park"</strong> as a 501(c)(3) stewardship entity. Establish formal partnership with Seattle Parks (SPR). Model: Friends of Waterfront Seattle.</li>
+  <li><span class="phase-label active">Phase 1</span> <strong>Geese management program.</strong> Apply for USDA Wildlife Services permit for egg oiling, habitat modification, and organized hazing. Legal under Migratory Bird Treaty Act with federal depredation permit. Seattle Parks has precedent at Green Lake (2019).</li>
+  <li><span class="phase-label active">Phase 1</span> <strong>Turf restoration.</strong> Professional-grade turf program: aeration, overseeding with traffic-tolerant fescue blend, temporary rest-and-rotate fencing during establishment. Target: year-round green coverage on kite hill within 18 months.</li>
+  <li><span class="phase-label future">Phase 2</span> <strong>Industrial structure preservation.</strong> Structural assessment of gasification towers. Anti-corrosion treatment. Interpretive signage upgrade. Apply for WA DAHP heritage grant funding.</li>
+  <li><span class="phase-label future">Phase 2</span> <strong>Shoreline restoration.</strong> Native plantings along Lake Union waterfront. Bioswale installation for stormwater management (partner: Swale Company). Salmon-safe certification target.</li>
+  <li><span class="phase-label future">Phase 3</span> <strong>Event programming.</strong> Permitted event series: summer concerts, kite festivals, Fourth of July coordination with SPR. Revenue funds ongoing maintenance.</li>
+</ul>
+
+<h2>The Legal Path for Geese</h2>
+
+<p>Canada geese are protected under the Migratory Bird Treaty Act (16 U.S.C. 703-712). You cannot harm, capture, or kill them without a federal permit. However, the law provides clear mechanisms for management:</p>
+
+<div class="stat-block">
+  <p><strong>Egg oiling.</strong> USDA Wildlife Services issues depredation permits allowing egg oiling (coating eggs with food-grade corn oil to prevent hatching). This is the most humane and effective population control. Requires annual permit renewal.</p>
+  <p><strong>Habitat modification.</strong> Planting tall grasses, hedgerows, and visual barriers along the shoreline discourages geese from nesting. Geese prefer open sightlines to water for predator detection.</p>
+  <p><strong>Organized hazing.</strong> Trained border collies, laser deterrents, and noise devices during non-nesting season. Must be consistent and sustained. Half measures fail.</p>
+  <p><strong>Precedent.</strong> Seattle Parks conducted goose management at Green Lake Park (2019). Denver, Portland, and Minneapolis all run active programs. The legal framework is established.</p>
+</div>
+
+<h2>Why This Matters</h2>
+
+<p>Gas Works Park is the front door to Lake Union. Every tourist who visits Seattle photographs it. Every Seattleite has flown a kite on that hill. When the grass is dead, the geese own the field, and the structures are rusting, that is a statement about what Seattle accepts.</p>
+
+<p>We don't accept it.</p>
+
+<p>Contact us at <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a> to get involved.</p>
+
+<div class="footer">
+  <p>Burnham Civic. Seattle, Washington. 2026.</p>
+</div>
+
+<script>
+function checkGate() {
+  const code = document.getElementById('gate-code').value.trim().toLowerCase();
+  if (code === 'gasworks' || code === 'burnham' || code === 'tbc') {
+    document.getElementById('gate').classList.remove('active');
+    document.body.style.overflow = '';
+    localStorage.setItem('gasworks-gate', 'passed');
+  } else {
+    document.getElementById('gate-error').style.display = 'block';
+  }
+}
+// Auto-pass if previously authenticated
+if (localStorage.getItem('gasworks-gate') === 'passed') {
+  document.getElementById('gate').classList.remove('active');
+}
+</script>
+
+</body>
+</html>
