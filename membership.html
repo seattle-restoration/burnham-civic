@@ -200,7 +200,7 @@ hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
       <select id="mf-tier" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;background:#fff;">
         <option value="Member ($25/mo)">Member ($25/mo)</option>
         <option value="Junto Contributor (Seattle, $5,000/yr)">Junto Contributor, Seattle ($5,000/yr)</option>
-        <option value="Junto Contributor (LA, $10,000/yr)">Junto Contributor, LA ($10,000/yr)</option>
+        <option value="Junto Contributor (LA, $5,000/yr)">Junto Contributor, LA ($10,000/yr)</option>
         <option value="Junto Contributor (USA, $10,000/yr)">Junto Contributor, USA ($10,000/yr)</option>
       </select>
     </div>
@@ -275,7 +275,7 @@ function selectRegion(region) {
     btn.textContent = 'Join Seattle Junto';
     btn.href = '#interest-form'; btn.onclick = function(){ prefillForm('Junto Contributor (Seattle, $5,000/yr)'); };
   } else if (region === 'la') {
-    priceArea.innerHTML = '<span class="price-new">$10,000</span> <span style="font-size:14px;color:#666;font-weight:400">/year</span>';
+    priceArea.innerHTML = '<span class="price-new">$5,000</span> <span style="font-size:14px;color:#666;font-weight:400">/year</span>';
     desc.textContent = 'For operators and decision makers focused on Los Angeles. Full accountability intelligence, strategy tools, and the LA decision maker network.';
     features.innerHTML = `
       <li>Everything in Member</li>
@@ -288,7 +288,7 @@ function selectRegion(region) {
       <li>Direct input on LA operations priority</li>
     `;
     btn.textContent = 'Join LA Junto';
-    btn.href = '#interest-form'; btn.onclick = function(){ prefillForm('Junto Contributor (LA, $10,000/yr)'); };
+    btn.href = '#interest-form'; btn.onclick = function(){ prefillForm('Junto Contributor (LA, $5,000/yr)'); };
   } else {
     priceArea.innerHTML = '<span class="price-new">$10,000</span> <span style="font-size:14px;color:#666;font-weight:400">/year</span>';
     desc.textContent = 'For principals operating at the national level. Federal policy, cross-city intelligence, and direct coordination with operations across the country.';
