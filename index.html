@@ -618,10 +618,11 @@ ul.acct-sub li { font-size: 14px; }
 
 
 <script>
-var tabs = ['seattle','usa','news','strategy','contact'];
+var tabs = ['seattle','la','usa','news','strategy','contact'];
 
 function showTab(tab) {
   if (tab === 'intelligence') { window.location.href = 'membership.html'; return; }
+  if (tab === 'la') { window.location.href = 'la/'; return; }
   document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.remove('active'); });
   document.querySelectorAll('.nav a').forEach(function(el) { el.classList.remove('active'); });
   document.getElementById('tab-' + tab).classList.add('active');
