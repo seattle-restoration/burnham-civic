@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Standard LA Forgot - BURNHAM CIVIC</title>
+<meta name="description" content="Permit timelines, inspection backlogs, post-fire rebuild bottlenecks. What a Burnham building standard looks like for Los Angeles.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a {
+  margin-right: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: #00c;
+  text-decoration: none;
+}
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.back {
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+  color: #00c;
+}
+.back:hover { color: #c00; }
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+.article-subtitle {
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+.burnham-quote {
+  font-style: italic;
+  font-size: 15px;
+  color: #555;
+  border-left: 3px solid #1e3a5f;
+  padding: 8px 16px;
+  margin: 24px 0;
+  line-height: 1.6;
+}
+.burnham-quote .attr {
+  font-size: 11px;
+  color: #999;
+  font-style: normal;
+  display: block;
+  margin-top: 6px;
+}
+p { margin: 0 0 16px; }
+h2 {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 32px 0 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+.metric-row {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0 24px;
+  flex-wrap: wrap;
+}
+.metric-card {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+}
+.metric-card .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0 0 4px;
+}
+.metric-card .value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+.metric-card .note {
+  font-size: 11px;
+  color: #888;
+  margin: 4px 0 0;
+}
+.progress-block {
+  background: #f9f8f6;
+  border: 1px solid #e0ddd8;
+  padding: 20px 24px;
+  margin: 16px 0 24px;
+}
+.progress-block .pb-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #999;
+  margin: 0 0 12px;
+}
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.progress-row:last-child { margin-bottom: 0; }
+.progress-row .pr-name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #555;
+  min-width: 130px;
+}
+.progress-bar-wrap {
+  flex: 1;
+  background: #e8e5df;
+  height: 10px;
+  position: relative;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: #1e3a5f;
+}
+.progress-bar-fill.amber { background: #c8a96e; }
+.progress-bar-fill.red { background: #8b1a1a; }
+.progress-row .pr-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+  min-width: 60px;
+  text-align: right;
+}
+.standard-list {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.standard-list li {
+  border-left: 3px solid #eee;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+.standard-list li strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 3px;
+}
+.standard-list li.la {
+  border-left-color: #c8a96e;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 0 0 24px;
+}
+@media (max-width: 600px) {
+  .two-col { grid-template-columns: 1fr; }
+  .metric-row { flex-direction: column; }
+}
+.col-header {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin: 0 0 10px;
+}
+.callout-box {
+  background: #fef9ec;
+  border: 1px solid #e8d9a0;
+  padding: 14px 16px;
+  margin: 16px 0 24px;
+  font-size: 13px;
+  color: #444;
+}
+.callout-box .cb-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9a7c2e;
+  margin-bottom: 4px;
+}
+.timeline {
+  border-left: 3px solid #1e3a5f;
+  padding-left: 20px;
+  margin: 16px 0 24px;
+}
+.timeline .event {
+  margin-bottom: 16px;
+}
+.timeline .event .date {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+}
+.timeline .event .text {
+  font-size: 14px;
+  color: #333;
+  margin: 2px 0 0;
+}
+.timeline-note {
+  font-size: 11px;
+  color: #999;
+  font-style: italic;
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  font-size: 11px;
+  color: #999;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="https://burnhamcivic.org/subscribe" class="subscribe">Subscribe</a>
+</div>
+
+<hr>
+
+<nav class="nav">
+  <a href="/">Seattle</a>
+  <a href="/la/" class="active">LA</a>
+  <a href="/intelligence/">Intelligence</a>
+  <a href="/contact/">Contact</a>
+</nav>
+
+<a href="./" class="back">&#8592; Los Angeles</a>
+
+<h1 class="article-title">The Standard LA Forgot</h1>
+<p class="article-subtitle">Permit timelines, inspection backlogs, post-fire rebuild bottlenecks. What a Burnham building standard looks like.</p>
+
+<div class="burnham-quote">
+  Burnham did not just rebuild after the Chicago fire. He set a standard that made the next city better than the one that burned.
+  <span class="attr">The Burnham principle, applied to Los Angeles, January 2025</span>
+</div>
+
+<p>After the 1871 fire, Chicago adopted one of the first comprehensive building codes in America. Fireproof materials, wider streets, setback requirements. The standard did not just prevent the next fire. It created the city we know today. Los Angeles has the same choice. The Palisades and Eaton fires destroyed more than 13,000 homes in January 2025. A year later, fewer than 30 have been rebuilt. That gap is not a tragedy of nature. It is a failure of process and of standard.</p>
+
+<p>What follows is the public record: permit timelines, post-fire rebuild numbers, and what a building standard worthy of the moment would actually require.</p>
+
+<h2>Key Metrics</h2>
+
+<div class="metric-row">
+  <div class="metric-card">
+    <p class="label">Standard Plan Check</p>
+    <p class="value">2&ndash;8 wks</p>
+    <p class="note">Typical LADBS regular plan check processing time for residential and commercial projects in 2025. Complex projects take longer. Source: LADBS dbs.lacity.gov.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Post-Fire Permits Filed</p>
+    <p class="value">6,116</p>
+    <p class="note">Rebuild applications filed across LA County fire-affected areas as of February 2026. Covers Palisades, Eaton, and adjacent zones. Source: LA County Permitting Progress Dashboard.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Permits Issued</p>
+    <p class="value">2,894</p>
+    <p class="note">Of 6,116 applications, 2,894 permits issued as of February 2026, roughly 47 percent of applications filed. Construction underway on approximately 1,420 projects. Source: LA County recovery data.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">LADBS Staff</p>
+    <p class="value">~1,129</p>
+    <p class="note">Total LADBS employees across 11 district offices. The department proposed cutting 23 filled code enforcement positions in the FY 2025-26 budget. Source: LADBS organizational data; CBS Los Angeles.</p>
+  </div>
+</div>
+
+<h2>Post-Fire Rebuild Progress</h2>
+
+<p>The January 2025 Palisades and Eaton fires together destroyed more than 13,000 homes across Los Angeles County. Governor Newsom and Mayor Bass both moved quickly to mandate expedited permitting for like-for-like rebuilds: same footprint, same dimensions, streamlined review. LA County launched a dedicated Permitting Progress Dashboard. One-stop permit centers opened in the fire zones.</p>
+
+<p>The numbers tell a different story about what actually happened on the ground.</p>
+
+<div class="progress-block">
+  <div class="pb-label">Rebuild Pipeline as of February 2026 (13,000+ homes destroyed)</div>
+  <div class="progress-row">
+    <div class="pr-name">Applications Filed</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:47%"></div></div>
+    <div class="pr-val">6,116</div>
+  </div>
+  <div class="progress-row">
+    <div class="pr-name">Permits Issued</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill amber" style="width:22%"></div></div>
+    <div class="pr-val">2,894</div>
+  </div>
+  <div class="progress-row">
+    <div class="pr-name">Under Construction</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill amber" style="width:11%"></div></div>
+    <div class="pr-val">~1,420</div>
+  </div>
+  <div class="progress-row">
+    <div class="pr-name">Homes Completed</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill red" style="width:0.2%"></div></div>
+    <div class="pr-val">28</div>
+  </div>
+</div>
+
+<p>As of early February 2026, just 28 homes had been fully rebuilt. That is one completed structure for every 465 destroyed. Roughly half of impacted homeowners had not yet filed a permit application at all. Among those who had, fewer than half received permits. Among those who received permits, only a fraction broke ground. Costs, insurance failures, and regulatory complexity are the main reported blockers beyond the permit window itself.</p>
+
+<div class="callout-box">
+  <div class="cb-label">Expedited Permitting Programs</div>
+  Mayor Bass announced a Standard Plan Pilot Program allowing pre-approved designs to be permitted in one to three business days for Palisades rebuilds. Governor Newsom issued emergency orders waiving certain code requirements and streamlining debris removal review. LA County rolled out a self-certification plan approval pilot for simpler projects. Despite these measures, the ratio of completed homes to destroyed homes remains under one-quarter of one percent thirteen months after the fires.
+</div>
+
+<h2>The Burnham Building Standard</h2>
+
+<p>Chicago's building code response after 1871 was not clean or immediate. The first reforms banned wood construction in the central business district but allowed it elsewhere. A second fire in 1874 destroyed more than 800 buildings and forced the more comprehensive action: a July 1874 ordinance banning new wood buildings citywide and requiring masonry or fireproof construction. The National Board of Underwriters threatened to cancel all insurance policies in Chicago until the city complied. That threat, more than any political will, drove the real standard.</p>
+
+<p>The parallel for Los Angeles is direct. Chicago needed fireproof materials and enforcement with teeth. Los Angeles needs fire-resistant exterior assemblies in wildland-urban interface zones and an enforcement structure that makes compliance non-negotiable, not aspirational.</p>
+
+<div class="two-col">
+  <div>
+    <p class="col-header">Chicago After 1871 and 1874</p>
+    <ul class="standard-list">
+      <li>
+        <strong>Fireproof Materials Mandated</strong>
+        Wood balloon-frame construction banned in the central business district after 1871. Extended citywide after the 1874 fire. Brick, stone, marble, limestone required for new commercial buildings.
+      </li>
+      <li>
+        <strong>Terra Cotta as Fire Cladding</strong>
+        Terra cotta tile emerged as the practical exterior standard. By the mid-1880s it made Chicago one of the most fireproof cities in the nation. The material also enabled taller buildings on steel frames.
+      </li>
+      <li>
+        <strong>Steel Frame Construction</strong>
+        The weight of fireproof masonry drove the innovation: steel skeleton frames to carry the load and allow height without heft. The Chicago School of architecture was a direct product of the fire codes.
+      </li>
+      <li>
+        <strong>Insurance as Enforcement</strong>
+        The National Board of Underwriters threatened to cancel all Chicago policies in 1874 until code changes were underway. Insurance leverage, not political will alone, locked in the standard.
+      </li>
+      <li>
+        <strong>Rebuild Timeline</strong>
+        The central business district was substantially rebuilt within five years. Full citywide fireproof construction took until the late 1880s. The Rookery Building, designed by Burnham and Root and clad in terra cotta, opened in 1888.
+      </li>
+    </ul>
+  </div>
+  <div>
+    <p class="col-header">Los Angeles Equivalent Standard</p>
+    <ul class="standard-list la">
+      <li>
+        <strong>Fire-Resistant Exterior in WUI Zones</strong>
+        California's 2025 Wildland-Urban Interface Code (Title 24, Part 7), effective January 1, 2026, requires State Fire Marshal-listed ember-resistant vents and fire-resistant wall assemblies for all new construction in designated zones. Rebuilds in the Palisades and Altadena burn areas must meet this standard.
+      </li>
+      <li>
+        <strong>Class A Roofing, Enforced</strong>
+        Class A fire-rated roofing is already required in most LA fire hazard zones. The enforcement gap is at renovation and addition. Every permit-triggered improvement in a WUI zone should require a full roof upgrade to current standard.
+      </li>
+      <li>
+        <strong>Defensible Space with City Backstop</strong>
+        California law requires 100-foot defensible space around structures in hazard zones. Compliance rates in some neighborhoods are below 50 percent. City-funded clearance for non-compliant properties, with lien recovery at sale, closes the gap the way insurance leverage closed it in Chicago.
+      </li>
+      <li>
+        <strong>Seismic Plus Fire Combo Code</strong>
+        Los Angeles is the only major American city that sits simultaneously in a high seismic zone and a high WUI fire zone. Current codes address each hazard separately. A combined performance standard for new WUI construction would eliminate the gap between seismic and fire compliance.
+      </li>
+      <li>
+        <strong>Pre-Permitted Design Library</strong>
+        Chicago's post-fire reconstruction moved quickly because builders knew the rules in advance. LA's Standard Plan Pilot is a start. A full pre-approved catalog for fire zone rebuilds, posted publicly and updated annually, would reduce per-project permitting friction to days rather than months.
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h2>The Chicago Timeline and What LA Should Expect</h2>
+
+<p>Chicago's 1871 fire destroyed roughly 2,000 acres and 17,000 buildings in the central city. Within months, a land rush began and construction crews were rebuilding block by block. The downtown core was substantially reconstructed within five years. But the real standard, the fireproof standard, was not fully in place until after the 1874 fire and the insurance ultimatum that followed it.</p>
+
+<p>Los Angeles destroyed more structures in a single week than Chicago did in the 1871 fire. The debris removal alone is a multi-year operation. A realistic Burnham-standard timeline for the Palisades and Altadena zones would look like this:</p>
+
+<div class="timeline">
+  <div class="event">
+    <div class="date">Year 1 (2025)</div>
+    <div class="text">Debris removal, hazmat clearance, lot stabilization. Permit infrastructure stood up. Pre-approved plans released. First rebuild applications filed. Expedited permitting programs launched.</div>
+  </div>
+  <div class="event">
+    <div class="date">Years 2&ndash;3 (2026&ndash;2027)</div>
+    <div class="text">Bulk of rebuild permits issued and construction underway. WUI code fully in force for all new foundations. Insurance market stabilization required for sustained construction pace. Target: 50 percent of destroyed homes permitted and under construction.</div>
+  </div>
+  <div class="event">
+    <div class="date">Years 4&ndash;5 (2028&ndash;2029)</div>
+    <div class="text">Majority of single-family rebuilds complete. New fire-resistant neighborhood character established in rebuilt blocks. Defensible space enforcement at scale. Target: 80 percent of destroyed structures rebuilt to current WUI standard.</div>
+  </div>
+  <div class="event">
+    <div class="date">Year 6 and Beyond</div>
+    <div class="text">Remaining rebuilds complete. New combined seismic-fire performance code adopted for the entire city, not just burn zones. The rebuilt neighborhoods serve as demonstration blocks for the Burnham standard applied citywide.</div>
+  </div>
+</div>
+<p class="timeline-note">Timeline is illustrative, based on Chicago rebuild history and current LA permit pipeline data. Actual recovery will depend on insurance market conditions, construction labor supply, and sustained political will to enforce new standards.</p>
+
+<p>Chicago took until 1888 to build the Rookery. Los Angeles does not have that much patience available to it. The next Santa Ana wind event is not seventeen years away. The question is not whether to apply the Burnham standard. The question is whether LA applies it before the next fire, or after.</p>
+
+<footer>
+  Burnham Civic / Los Angeles. Building permit timeline data from LADBS (dbs.lacity.gov) and JDJ Consulting public reporting. Post-fire rebuild figures from LA County Permitting Progress Dashboard (recovery.lacounty.gov), CalMatters, Planetizen, and The Daily Economy. Chicago fire history from National Geographic Education, Chicago Architecture Center, and Chicagology. California 2025 WUI Code from ICC Safe (codes.iccsafe.org). LADBS staffing from department organizational records and CBS Los Angeles budget coverage. All figures as of dates cited. Contact: <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a>
+</footer>
+
+</body>
+</html>
