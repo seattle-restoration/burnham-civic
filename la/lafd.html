@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAFD Response Map - BURNHAM CIVIC</title>
+<meta name="description" content="The Palisades fire proved LA's plans were little. Here is what big looks like. LAFD accountability, fire timeline, and the Burnham Standard for fire response.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a {
+  margin-right: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: #00c;
+  text-decoration: none;
+}
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.back {
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+  color: #00c;
+}
+.back:hover { color: #c00; }
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+.article-subtitle {
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+.burnham-quote {
+  font-style: italic;
+  font-size: 15px;
+  color: #555;
+  border-left: 3px solid #1e3a5f;
+  padding: 8px 16px;
+  margin: 24px 0;
+  line-height: 1.6;
+}
+.burnham-quote .attr {
+  font-size: 11px;
+  color: #999;
+  font-style: normal;
+  display: block;
+  margin-top: 6px;
+}
+p { margin: 0 0 16px; }
+h2 {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 32px 0 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+.metric-row {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0 24px;
+  flex-wrap: wrap;
+}
+.metric-card {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+}
+.metric-card .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0 0 4px;
+}
+.metric-card .value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+.metric-card .note {
+  font-size: 11px;
+  color: #888;
+  margin: 4px 0 0;
+}
+.timeline {
+  border-left: 3px solid #1e3a5f;
+  padding-left: 20px;
+  margin: 16px 0 24px;
+}
+.timeline .event {
+  margin-bottom: 16px;
+}
+.timeline .event .date {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+}
+.timeline .event .text {
+  font-size: 14px;
+  color: #333;
+  margin: 2px 0 0;
+}
+.timeline-note {
+  font-size: 11px;
+  color: #999;
+  font-style: italic;
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+.standard-list {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.standard-list li {
+  border-left: 3px solid #eee;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+.standard-list li strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 3px;
+}
+.standard-list li.la {
+  border-left-color: #c8a96e;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 0 0 24px;
+}
+@media (max-width: 600px) {
+  .two-col { grid-template-columns: 1fr; }
+  .metric-row { flex-direction: column; }
+}
+.col-header {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin: 0 0 10px;
+}
+.leadership-change {
+  background: #fef9ec;
+  border: 1px solid #e8d9a0;
+  padding: 14px 16px;
+  margin: 16px 0 24px;
+  font-size: 13px;
+  color: #444;
+}
+.leadership-change .lc-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9a7c2e;
+  margin-bottom: 4px;
+}
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  font-size: 11px;
+  color: #999;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="https://burnhamcivic.org/subscribe" class="subscribe">Subscribe</a>
+</div>
+
+<hr>
+
+<nav class="nav">
+  <a href="/">Seattle</a>
+  <a href="/la/" class="active">LA</a>
+  <a href="/intelligence/">Intelligence</a>
+  <a href="/contact/">Contact</a>
+</nav>
+
+<a href="./" class="back">&#8592; Los Angeles</a>
+
+<h1 class="article-title">LAFD Response Map</h1>
+<p class="article-subtitle">The Palisades fire proved LA's plans were little. Here is what big looks like.</p>
+
+<div class="burnham-quote">
+  "Make no little plans. They have no magic to stir men's blood and probably themselves will not be realized."
+  <span class="attr">Daniel Burnham, architect and city planner, c. 1910</span>
+</div>
+
+<p>After the Great Chicago Fire of 1871, Daniel Burnham did not rebuild the fire department. He rebuilt the city. Wider streets. Fireproof materials. Parks as firebreaks. The 1909 Plan of Chicago was a fire prevention plan disguised as a city plan. Los Angeles, scorched by the deadliest fires in its recorded history, has the same opportunity now. The question is whether it will act like Chicago in 1872 or Chicago in 1870.</p>
+
+<p>What follows is the public record: the budget, the staffing, the timeline, and the standard Burnham would apply.</p>
+
+<h2>Palisades + Eaton Fire Timeline</h2>
+
+<div class="timeline">
+  <div class="event">
+    <div class="date">Jan 7, 2025 &mdash; 10:15 a.m.</div>
+    <div class="text">Palisades Fire ignites in the Santa Monica Mountains. First reported at approximately 10:30 a.m. covering around 10 acres. Fierce Santa Ana winds drive rapid spread westward through Pacific Palisades.</div>
+  </div>
+  <div class="event">
+    <div class="date">Jan 7, 2025 &mdash; 6:11 p.m.</div>
+    <div class="text">Eaton Fire ignites in Eaton Canyon near Altadena. Video evidence later cited in litigation shows electrical equipment arcing at this time. The fire explodes into foothill communities overnight.</div>
+  </div>
+  <div class="event">
+    <div class="date">Jan 7, 2025 &mdash; Evening</div>
+    <div class="text">Hurst Fire also ignites in Sylmar. Ultimately burns 799 acres with no structures destroyed. The three simultaneous fires strain citywide resources.</div>
+  </div>
+  <div class="event">
+    <div class="date">Jan 8, 2025</div>
+    <div class="text">Eaton Fire evacuation orders cover more than 52,000 residents and nearly 21,000 structures by 4 a.m. The Palisades Fire has doubled in size overnight. Mandatory evacuations across both fire zones.</div>
+  </div>
+  <div class="event">
+    <div class="date">Jan 7 &ndash; 12, 2025</div>
+    <div class="text">Peak destruction window. Palisades and Eaton fires together destroy more than 16,000 structures in five days. At least 31 people are killed across both fires.</div>
+  </div>
+  <div class="event">
+    <div class="date">Jan 24, 2025</div>
+    <div class="text">Palisades Fire reaches 23,448 acres at 79 percent containment. Eaton Fire similarly approaching containment after burning more than 14,000 acres in Los Angeles County.</div>
+  </div>
+  <div class="event">
+    <div class="date">Jan 31, 2025</div>
+    <div class="text">Both the Palisades and Eaton fires reach full containment. Combined damage makes this the most destructive wildfire event in Los Angeles history.</div>
+  </div>
+  <div class="event">
+    <div class="date">Feb 21, 2025</div>
+    <div class="text">Mayor Karen Bass fires LAFD Chief Kristin Crowley, citing failures in leadership ahead of the windstorm and refusal to conduct an after-action report. Former Chief Deputy Ronnie Villanueva, a 41-year LAFD veteran, named interim chief.</div>
+  </div>
+  <div class="event">
+    <div class="date">Nov 14, 2025</div>
+    <div class="text">Jaime Moore sworn in as the 20th LAFD Fire Chief after unanimous City Council confirmation. Moore is a 30-year LAFD veteran and the department's first Spanish-speaking and second Latino chief.</div>
+  </div>
+</div>
+<p class="timeline-note">Timeline compiled from public reporting including CAL FIRE incident updates, NBC Los Angeles, CBS Los Angeles, and CNN. Verify all claims independently before citing.</p>
+
+<h2>Key Metrics</h2>
+
+<div class="metric-row">
+  <div class="metric-card">
+    <p class="label">LAFD Annual Budget</p>
+    <p class="value">$895M</p>
+    <p class="note">FY 2024-25, after union contract. Initial signed budget was $820M before a $76M union contract adjustment. Source: LA City Budget Office.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Sworn Personnel</p>
+    <p class="value">~3,400</p>
+    <p class="note">Authorized count ranges from 3,246 to 3,510 across reporting periods. CNN reported LAFD among the most understaffed large departments in the U.S. in January 2025.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Fire Stations</p>
+    <p class="value">106</p>
+    <p class="note">City of Los Angeles stations. Source: LAFD.org. Approximately 1,051 uniformed personnel on duty at any given time.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Structures Destroyed</p>
+    <p class="value">16,255+</p>
+    <p class="note">Palisades: 6,837 structures. Eaton: 9,418 structures. Hurst: 0 structures. Source: CAL FIRE final reports, January 2025.</p>
+  </div>
+</div>
+
+<div class="leadership-change">
+  <div class="lc-label">Leadership Change</div>
+  The fires triggered a full command transition. Chief Kristin Crowley was fired February 21, 2025. Interim Chief Ronnie Villanueva held the department through a nationwide search. Chief Jaime Moore was sworn in November 14, 2025. Moore comes from the Operations Valley Bureau, where he oversaw more than 1,000 firefighters across 39 stations.
+</div>
+
+<h2>The Burnham Standard for Fire Response</h2>
+
+<p>Burnham's lesson from the 1871 Chicago fire was structural, not operational. He did not call for more fire trucks. He called for a different city. The interventions that followed the Chicago fire were physical: wider streets to create firebreaks and allow apparatus access, fireproof building materials mandated by new codes, parks and open space as non-combustible buffers, and water infrastructure sized for fire flow rather than domestic use only. Enforcement mechanisms gave the codes teeth.</p>
+
+<p>Each of those principles has a direct Los Angeles equivalent:</p>
+
+<div class="two-col">
+  <div>
+    <p class="col-header">Burnham's Chicago Prescriptions</p>
+    <ul class="standard-list">
+      <li>
+        <strong>Wider Streets</strong>
+        Fire breaks and apparatus access built into the street grid. No dead-ends without alternative egress.
+      </li>
+      <li>
+        <strong>Fireproof Materials</strong>
+        Mandatory non-combustible exterior cladding for new construction. Building code with enforcement, not suggestion.
+      </li>
+      <li>
+        <strong>Parks as Firebreaks</strong>
+        Open land planned and acquired to interrupt fuel continuity between developed blocks.
+      </li>
+      <li>
+        <strong>Water Infrastructure</strong>
+        Reservoir and main capacity sized for simultaneous fire-flow demand, not just domestic peak.
+      </li>
+      <li>
+        <strong>Enforced Codes</strong>
+        Inspections with consequences. Code compliance not negotiable at time of sale or permit.
+      </li>
+    </ul>
+  </div>
+  <div>
+    <p class="col-header">Los Angeles Equivalents</p>
+    <ul class="standard-list la">
+      <li>
+        <strong>Evacuation Route Capacity</strong>
+        PCH and Sunset were gridlocked during the Palisades fire. Route capacity must be modeled and improved before the next event, not after.
+      </li>
+      <li>
+        <strong>Fire-Resistant Exterior Materials</strong>
+        Class A roofing and ember-resistant vents should be required for all WUI rebuilds. Current defensible space mandates are under-enforced.
+      </li>
+      <li>
+        <strong>Defensible Space and Fuel Management</strong>
+        Continuous vegetation management at the wildland-urban interface, with city-funded clearance where private owners are noncompliant.
+      </li>
+      <li>
+        <strong>Redundant Reservoir Capacity</strong>
+        The Palisades Reservoir was reportedly offline during the fire. Multiple DWP storage points per high-risk zone, with automatic failover.
+      </li>
+      <li>
+        <strong>Pre-positioned Strike Teams</strong>
+        Verified staffing during red flag events. The firing of Chief Crowley cited 1,000 firefighters sent home the morning of the fires.
+      </li>
+    </ul>
+  </div>
+</div>
+
+<p>The Plan of Chicago ran to 164 pages and took three years to produce. Los Angeles does not have three years. The rebuild of Pacific Palisades and Altadena is already underway. The question is whether the codes that govern that rebuild will require Burnham's standard, or permit the same conditions that burned in January 2025.</p>
+
+<footer>
+  Burnham Civic / Los Angeles. Figures from LAFD public reports, CAL FIRE incident records, LA City Budget Office, and news sources including ABC News, CNN, and NBC Los Angeles. All metrics current as of reporting dates cited. Contact: <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a>
+</footer>
+
+</body>
+</html>
