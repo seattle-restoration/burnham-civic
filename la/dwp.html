@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DWP Audit - BURNHAM CIVIC</title>
+<meta name="description" content="Rate increases vs. infrastructure investment. The DWP transfer to the general fund. Where the money leaks.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a {
+  margin-right: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: #00c;
+  text-decoration: none;
+}
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.back {
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+  color: #00c;
+}
+.back:hover { color: #c00; }
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+.article-subtitle {
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+.burnham-quote {
+  font-style: italic;
+  font-size: 15px;
+  color: #555;
+  border-left: 3px solid #1e3a5f;
+  padding: 8px 16px;
+  margin: 24px 0;
+  line-height: 1.6;
+}
+.burnham-quote .attr {
+  font-size: 11px;
+  color: #999;
+  font-style: normal;
+  display: block;
+  margin-top: 6px;
+}
+p { margin: 0 0 16px; }
+h2 {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 32px 0 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+.metric-row {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0 24px;
+  flex-wrap: wrap;
+}
+.metric-card {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+}
+.metric-card .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0 0 4px;
+}
+.metric-card .value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+.metric-card .note {
+  font-size: 11px;
+  color: #888;
+  margin: 4px 0 0;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 16px 0 24px;
+}
+.data-table th {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  border-bottom: 2px solid #ccc;
+  padding: 6px 8px;
+  text-align: left;
+}
+.data-table td {
+  padding: 8px 8px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+.data-table tr.highlight td {
+  background: #f5f8ff;
+  font-weight: 700;
+}
+.data-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.data-table th.num {
+  text-align: right;
+}
+.standard-list {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.standard-list li {
+  border-left: 3px solid #eee;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+.standard-list li strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 3px;
+}
+.standard-list li.la {
+  border-left-color: #c8a96e;
+}
+.callout {
+  background: #f5f8ff;
+  border: 1px solid #c8d4e8;
+  padding: 14px 16px;
+  margin: 16px 0 24px;
+  font-size: 13px;
+  color: #444;
+}
+.callout .callout-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 4px;
+}
+.callout-warn {
+  background: #fff8f0;
+  border: 1px solid #e8c8a0;
+}
+.callout-warn .callout-label {
+  color: #8a5a00;
+}
+@media (max-width: 600px) {
+  .metric-row { flex-direction: column; }
+}
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  font-size: 11px;
+  color: #999;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="https://burnhamcivic.org/subscribe" class="subscribe">Subscribe</a>
+</div>
+
+<hr>
+
+<nav class="nav">
+  <a href="../">Seattle</a>
+  <a href="./" class="active">LA</a>
+  <a href="../membership.html">Intelligence</a>
+  <a href="mailto:operations@burnhamcivic.org">Contact</a>
+</nav>
+
+<a href="./" class="back">&larr; Los Angeles</a>
+
+<h1 class="article-title">DWP Audit</h1>
+<p class="article-subtitle">Rate increases vs. infrastructure investment. The DWP transfer to the general fund. Where the money leaks.</p>
+
+<div class="burnham-quote">
+  "Burnham planned infrastructure for the next century, not the next election cycle. DWP has been planning for the next rate increase."
+  <span class="attr">The Burnham Standard applied to municipal utilities: build for durability, not for budgets that need to be closed by June 30th.</span>
+</div>
+
+<p>The Los Angeles Department of Water and Power is the largest municipal utility in the United States, serving more than 4 million residents and businesses across a 465-square-mile service territory. It delivers roughly 435 million gallons of water per day and operates a power system serving approximately 1.6 million customers. By any measure, it is a significant public institution.</p>
+
+<p>It is also a significant source of revenue for City Hall. Every year, DWP transfers a percentage of its power system revenue directly to the City's General Fund. The transfer does not go to infrastructure. It does not pay down debt or fund capital improvements. It goes into the operating budget of a city that perennially spends more than it takes in from conventional tax sources. Ratepayers make up the difference, and rates have been climbing steadily for a decade.</p>
+
+<h2>Key Metrics</h2>
+
+<div class="metric-row">
+  <div class="metric-card">
+    <p class="label">Combined Budget (FY 2024-25)</p>
+    <p class="value">$8.65B</p>
+    <p class="note">Power Revenue Fund: $6.34B. Water Revenue Fund: $2.31B. Combined DWP budget approved for FY 2024-2025. Source: LADWP Board-approved FY 2024-25 budget resolutions, May 2024.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Annual Transfer to General Fund</p>
+    <p class="value">~$245M</p>
+    <p class="note">Approximate annual transfer from the DWP Power System to the City's General Fund. Consumer Watchdog and news coverage have documented transfers of $241M-$245M in recent years, representing roughly 8% of power revenue. Source: Consumer Watchdog, ABC7, LADWP board records.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Employees</p>
+    <p class="value">~11,000</p>
+    <p class="note">Approximate workforce as reported across LADWP staffing documents and public profiles. FY 2024-25 staffing resolution available at LADWP.com. Source: LADWP Staffing Resolution FY 2024-25.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Power Rate Trend (2019-2025)</p>
+    <p class="value">+4%/yr</p>
+    <p class="note">Tier 1 residential power rates increased approximately 3.7-4% annually from 2019 to 2024, then jumped approximately 11% in 2025. Combined, rates are up roughly 30-35% over six years. Source: NRG Clean Power analysis, LADWP rate schedules.</p>
+  </div>
+</div>
+
+<div class="callout">
+  <div class="callout-label">Leadership Note</div>
+  Janisse Quinones resigned as LADWP CEO and Chief Engineer effective March 27, 2026, following litigation exposure from the January 2025 Palisades Fire. David W. Hanson, who has served at LADWP for over 22 years and as Chief Operating Officer since August 2024, was named interim general manager. Mayor Karen Bass had previously confirmed Quinones at a salary of $750,000 per year, a steep increase from her predecessor. Source: Westside Current, LADWP, Mayor's Office.
+</div>
+
+<h2>The DWP Tax</h2>
+
+<p>The general fund transfer has been a fixture of LA's budget for decades. Under the City Charter, DWP is authorized to transfer a portion of its power revenue to the General Fund as a "payment in lieu of taxes," similar to what a private utility would pay in franchise fees or corporate taxes. The formula has historically been set at approximately 8 percent of power system revenue.</p>
+
+<p>In practice, critics argue the transfer functions as a hidden tax on utility ratepayers. Unlike a property tax or sales tax, it is not subject to Proposition 13 limits. It does not require voter approval. It is embedded in the rate base, invisible to most customers, and adjusted upward as rates rise. Consumer Watchdog called a 2017 transfer of $241 million "theft from ratepayers." The Los Angeles City Council approved it anyway.</p>
+
+<p>The structural problem is predictable: when the City needs to close a budget gap, one lever it can pull is increasing the DWP transfer. Higher transfers require higher rates. The ratepayer base, which has no vote on the transfer formula, absorbs the increase. Low-income households, which spend a higher percentage of income on utilities, absorb it most acutely.</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Reported Transfer to General Fund</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FY 2022-23</td>
+      <td>~$232M</td>
+      <td>Power system transfer; water system transfer separate</td>
+    </tr>
+    <tr>
+      <td>FY 2023-24</td>
+      <td>~$245M</td>
+      <td>Approved by LADWP Board; criticized by Consumer Watchdog</td>
+    </tr>
+    <tr>
+      <td>FY 2024-25</td>
+      <td>~$245M (est.)</td>
+      <td>Historical pattern holds at approx. 8% of power revenue</td>
+    </tr>
+    <tr class="highlight">
+      <td>Cumulative (3 yr)</td>
+      <td>~$722M</td>
+      <td>Three-year total from ratepayer bills to the City operating budget</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Sources: Consumer Watchdog press release (2017), ABC7 reporting on 2017 and 2024 transfers, LADWP Board resolutions, CBS Los Angeles. The transfer mechanism has not fundamentally changed between 2017 and the present; the amounts have grown as rates have risen.</p>
+
+<h2>Infrastructure Investment</h2>
+
+<p>The DWP's infrastructure challenges are not theoretical. The January 2025 wildfire season exposed aging hydrant systems, inadequate pressure capacity in the hillside distribution network, and a water storage deficit that left firefighters without adequate supply during the Palisades Fire. Post-fire litigation has placed LADWP's Power System at risk of billions in liability. KBRA noted an estimated $75 million in wildfire-related recovery costs for the Power System and $17 million for the Water System in early 2025 alone.</p>
+
+<p>Against this backdrop, DWP announced an $18 billion capital improvement plan for 2026 through 2030, including $11.5 billion in planned borrowing. The plan is intended to address grid hardening, wildfire risk reduction, water system upgrades, and clean energy transition requirements. Whether the plan materializes at scale, or is quietly trimmed as the City's broader fiscal pressures mount, will determine whether DWP's infrastructure catches up to the demands placed on it.</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th class="num">Amount</th>
+      <th>Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Combined DWP budget (FY 24-25)</td>
+      <td class="num">$8.65B</td>
+      <td>Power + Water systems combined</td>
+    </tr>
+    <tr>
+      <td>Annual transfer to General Fund</td>
+      <td class="num">~$245M</td>
+      <td>Leaves the utility, funds city operating expenses</td>
+    </tr>
+    <tr>
+      <td>Transfer as % of power budget</td>
+      <td class="num">~3.9%</td>
+      <td>Of $6.34B power budget; ~8% of power operating revenue</td>
+    </tr>
+    <tr>
+      <td>5-year capital plan (2026-2030)</td>
+      <td class="num">$18.0B</td>
+      <td>Announced post-Palisades Fire; includes $11.5B in borrowing</td>
+    </tr>
+    <tr>
+      <td>Long-term debt leverage ratio</td>
+      <td class="num">78.7%</td>
+      <td>Long-term debt to net fixed assets, FY 2024. Source: KBRA, 2025.</td>
+    </tr>
+    <tr>
+      <td>Estimated wildfire recovery costs</td>
+      <td class="num">$92M</td>
+      <td>Power ($75M) + Water ($17M) systems, Jan 2025 wildfires</td>
+    </tr>
+    <tr class="highlight">
+      <td>Palisades Fire liability exposure</td>
+      <td class="num">Billions (est.)</td>
+      <td>Per KBRA and press reports; ongoing litigation as of early 2026</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The capital plan's ambition is notable. So is the leverage ratio. At 78.7% debt-to-net-fixed-assets, DWP is financing a significant share of its existing asset base with borrowed money while simultaneously planning $11.5 billion in new borrowing. Ratepayers will service that debt through future rate increases. The transfer to the General Fund continues alongside the debt service, meaning the revenue base is being asked to do three things simultaneously: maintain current operations, fund capital improvements, and subsidize City Hall's operating budget.</p>
+
+<div class="callout callout-warn">
+  <div class="callout-label">Rate Trajectory</div>
+  LADWP's residential Tier 1 electric rates increased approximately 3.7-4% annually from 2019 through 2024, then jumped roughly 11% in 2025. The 2016 five-year rate action authorized a 3.86% average annual increase for the power system and 5.26% for water. Base rates were held flat through FY 2020. The cumulative effect from 2016 to 2025 has been a substantial increase in bills for ratepayers who have not changed their usage. Source: NRG Clean Power, LADWP rate schedules, LADWP rate action ordinances.
+</div>
+
+<h2>The Burnham Standard</h2>
+
+<p>Daniel Burnham designed for the next century. The 1909 Plan of Chicago specified widths of arterials, placement of parks, and waterfront setbacks that would guide development for generations. The infrastructure Burnham planned outlasted the politics of the moment by decades. That is the test for any public works institution.</p>
+
+<p>Applied to DWP, the Burnham Standard asks three questions. First: are water systems built with redundancy so that a single infrastructure failure during an emergency does not leave firefighters without supply? The Palisades Fire answered that question for 2025. Second: is the power grid hardened against the weather conditions that the next century will deliver, not the conditions of 1960? DWP is beginning to address this, belatedly and under litigation pressure. Third: is the institution financially structured so that ratepayers fund infrastructure, not the City's operating shortfall?</p>
+
+<ul class="standard-list">
+  <li>
+    <strong>Water Redundancy</strong>
+    Burnham Standard: multiple storage points, adequate pressure at elevation, hydrant systems that function during peak firefighting demand. Current reality: the Palisades Fire exposed inadequate hillside pressure and depleted storage tanks.
+  </li>
+  <li>
+    <strong>Grid Hardening</strong>
+    Burnham Standard: overhead lines converted or protected in fire-risk zones; automatic shut-off systems calibrated to wind events; vegetation management on a 10-year cycle. Current reality: DWP's $18B capital plan includes these elements but implementation is years away.
+  </li>
+  <li class="la">
+    <strong>Financial Integrity</strong>
+    Burnham Standard: utility revenue funds utility infrastructure, not the City's general operating budget. Current reality: approximately $245 million per year flows from ratepayer bills to City Hall, a structural subsidy with no sunset and no voter approval.
+  </li>
+  <li class="la">
+    <strong>Rate Transparency</strong>
+    Burnham Standard: ratepayers understand what they are paying for. Current reality: the general fund transfer is embedded in the rate structure and not itemized on customer bills. Most customers do not know it exists.
+  </li>
+</ul>
+
+<footer>
+  <p><strong>Sources:</strong> LADWP FY 2024-25 Budget Resolutions (Power and Water, May 2024); KBRA ratings report on LADWP Power System Revenue Bonds, 2025; Consumer Watchdog press release on general fund transfer; ABC7 and CBS Los Angeles reporting on the $241M-$245M transfer; NRG Clean Power analysis of LADWP rate trends 2019-2025; LADWP Staffing Resolution FY 2024-25; Westside Current reporting on Janisse Quinones resignation (March 2026) and David Hanson interim appointment; Wikipedia entry for LADWP (employee count, service territory, customer figures).</p>
+  <p>All financial figures are derived from publicly available budget documents, board resolutions, and third-party ratings agency reports. Where exact figures were unavailable, ranges or estimates are noted. Burnham Civic is an independent civic research organization. Contact: <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a></p>
+</footer>
+
+</body>
+</html>
