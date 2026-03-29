@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAPD by the Numbers - BURNHAM CIVIC</title>
+<meta name="description" content="Crime trends, staffing shortfalls, response times by district. The data behind the LAPD debate.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a {
+  margin-right: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: #00c;
+  text-decoration: none;
+}
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.back {
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+  color: #00c;
+}
+.back:hover { color: #c00; }
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+.article-subtitle {
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+.burnham-quote {
+  font-style: italic;
+  font-size: 15px;
+  color: #555;
+  border-left: 3px solid #1e3a5f;
+  padding: 8px 16px;
+  margin: 24px 0;
+  line-height: 1.6;
+}
+.burnham-quote .attr {
+  font-size: 11px;
+  color: #999;
+  font-style: normal;
+  display: block;
+  margin-top: 6px;
+}
+p { margin: 0 0 16px; }
+h2 {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 32px 0 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+.metric-row {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0 24px;
+  flex-wrap: wrap;
+}
+.metric-card {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+}
+.metric-card .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0 0 4px;
+}
+.metric-card .value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+.metric-card .note {
+  font-size: 11px;
+  color: #888;
+  margin: 4px 0 0;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 16px 0 24px;
+}
+.data-table th {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  border-bottom: 2px solid #ccc;
+  padding: 6px 8px;
+  text-align: left;
+}
+.data-table td {
+  padding: 8px 8px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+.data-table tr.highlight td {
+  background: #f5f8ff;
+  font-weight: 700;
+}
+.data-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.data-table th.num {
+  text-align: right;
+}
+.standard-list {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.standard-list li {
+  border-left: 3px solid #eee;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+.standard-list li strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 3px;
+}
+.standard-list li.la {
+  border-left-color: #c8a96e;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 0 0 24px;
+}
+@media (max-width: 600px) {
+  .two-col { grid-template-columns: 1fr; }
+  .metric-row { flex-direction: column; }
+}
+.col-header {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin: 0 0 10px;
+}
+.callout {
+  background: #f5f8ff;
+  border: 1px solid #c8d4e8;
+  padding: 14px 16px;
+  margin: 16px 0 24px;
+  font-size: 13px;
+  color: #444;
+}
+.callout .callout-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 4px;
+}
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  font-size: 11px;
+  color: #999;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="https://burnhamcivic.org/subscribe" class="subscribe">Subscribe</a>
+</div>
+
+<hr>
+
+<nav class="nav">
+  <a href="../">Seattle</a>
+  <a href="./" class="active">LA</a>
+  <a href="../membership.html">Intelligence</a>
+  <a href="mailto:operations@burnhamcivic.org">Contact</a>
+</nav>
+
+<a href="./" class="back">&larr; Los Angeles</a>
+
+<h1 class="article-title">LAPD by the Numbers</h1>
+<p class="article-subtitle">Crime trends, staffing shortfalls, response times by district. The data behind the debate.</p>
+
+<div class="burnham-quote">
+  "The city must be planned as a whole, with no part neglected and no district left to itself."
+  <span class="attr">Daniel Burnham, architect and city planner. The principle of connected districts, not siloed ones.</span>
+</div>
+
+<p>Daniel Burnham's grid connected every neighborhood. Streets ran through, not around. Districts fed into one another. Commerce, transit, and civic infrastructure were laid as a single integrated system, not a patchwork of separate jurisdictions. The 1909 Plan of Chicago treated the city as one organism.</p>
+
+<p>LAPD's 21 geographic divisions operate differently. Resources are allocated by bureau, staffing gaps fall unevenly across districts, and response times vary by ZIP code in ways that are rarely surfaced in department press releases. What follows is the public record: budget, sworn strength, crime trends, and how Los Angeles compares to the three other largest police departments in the country.</p>
+
+<h2>Key Metrics</h2>
+
+<div class="metric-row">
+  <div class="metric-card">
+    <p class="label">LAPD Annual Budget</p>
+    <p class="value">$2.14B</p>
+    <p class="note">FY 2025-26 spending plan approved by the Board of Police Commissioners. An 8.1% increase ($160.5M more) over the prior year. Source: LA Board of Police Commissioners, Nov. 2024.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Sworn Officers</p>
+    <p class="value">8,738</p>
+    <p class="note">Actual deployed as of April 2025, against an authorized strength of 8,733 for FY 2024-25. Department has been below 9,000 since 2023, the fewest officers in a generation. Source: LAPD staffing reports.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Population per Officer</p>
+    <p class="value">444</p>
+    <p class="note">Based on 8,738 sworn officers serving approximately 3.88 million residents (2024 Census estimate). Roughly 2.25 officers per 1,000 residents. Well below NYPD's ratio.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Homicides in 2024</p>
+    <p class="value">~280</p>
+    <p class="note">Down 14% (47 fewer) from 327 in 2023. LAPD's 2024 year-end report cited the percentage decline but did not publish the exact annual total. Estimate derived from 327 minus 47. Source: LAPD, Mayor's Office, March 2025.</p>
+  </div>
+</div>
+
+<div class="callout">
+  <div class="callout-label">Leadership Note</div>
+  Jim McDonnell was sworn in as the 59th Chief of LAPD on November 8, 2024, following City Council approval 11-2. McDonnell previously served as Los Angeles County Sheriff and Long Beach Police Chief, making him the first person to hold senior executive roles at all three of the county's largest law enforcement agencies. The 2024 homicide decline was announced jointly by McDonnell and Mayor Karen Bass in March 2025.
+</div>
+
+<h2>Staffing Comparison: Four Largest Departments</h2>
+
+<p>LAPD serves more residents per officer than Chicago or New York. Only Houston approaches a similar ratio, and Houston's sworn count has been falling for several years. The comparison below uses Wikipedia's list of largest U.S. departments (sworn counts) and 2024 U.S. Census Bureau population estimates.</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Department</th>
+      <th class="num">Sworn Officers</th>
+      <th class="num">City Population</th>
+      <th class="num">Officers per 1,000</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="highlight">
+      <td>LAPD</td>
+      <td class="num">8,784</td>
+      <td class="num">3,880,000</td>
+      <td class="num">2.26</td>
+      <td>Below 9,000 since 2023. Mayor Bass goal: 9,500.</td>
+    </tr>
+    <tr>
+      <td>NYPD</td>
+      <td class="num">33,475</td>
+      <td class="num">8,478,000</td>
+      <td class="num">3.95</td>
+      <td>Largest U.S. department. Targeting 35,000 by fall 2026.</td>
+    </tr>
+    <tr>
+      <td>Chicago PD</td>
+      <td class="num">11,580</td>
+      <td class="num">2,700,000</td>
+      <td class="num">4.29</td>
+      <td>Highest ratio of the four. OIG tracks patrol staffing separately.</td>
+    </tr>
+    <tr>
+      <td>Houston PD</td>
+      <td class="num">5,195</td>
+      <td class="num">2,390,000</td>
+      <td class="num">2.17</td>
+      <td>Dropped below 5,000 briefly in 2024. Rebuilding.</td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-size:11px;color:#999;margin-top:-16px;">Sworn officer counts from Wikipedia's list of largest U.S. police departments (sourced from agency reports). Population figures from U.S. Census Bureau Vintage 2024 estimates. Ratios calculated by Burnham Civic.</p>
+
+<h2>2024 Crime Trends</h2>
+
+<p>LAPD's 2024 year-end report, released in March 2025 by Chief McDonnell and Mayor Bass, showed broad declines across violent crime categories. The department also transitioned its data collection to the federal NIBRS standard, which affects year-over-year comparability.</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th class="num">2024 Change</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Homicides</td>
+      <td class="num">-14% (-47)</td>
+      <td>2023 total was 327. Valley Bureau down 28%. GRYD/CSP zones down 40%.</td>
+    </tr>
+    <tr>
+      <td>Shooting Victims</td>
+      <td class="num">-19% (-225)</td>
+      <td>Attributed to proactive community partnership programs.</td>
+    </tr>
+    <tr>
+      <td>Robberies</td>
+      <td class="num">Flat</td>
+      <td>8,637 in 2024 vs. 8,696 in 2023.</td>
+    </tr>
+    <tr>
+      <td>Property Crimes</td>
+      <td class="num">-7,259 incidents</td>
+      <td>Year-over-year total decline across the category.</td>
+    </tr>
+    <tr>
+      <td>DUI Crashes</td>
+      <td class="num">-36.7%</td>
+      <td>Significant drop. Method change (NIBRS transition) may affect comparability.</td>
+    </tr>
+    <tr>
+      <td>Fatal Pedestrian Collisions</td>
+      <td class="num">-7%</td>
+      <td>Traffic safety improvement despite ongoing Vision Zero gaps.</td>
+    </tr>
+    <tr>
+      <td>Illegal Firearms Seized</td>
+      <td class="num">7,634 total</td>
+      <td>790 identified as ghost guns. Absolute count, not a year-over-year comparison.</td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-size:11px;color:#999;margin-top:-16px;">Source: LAPD 2024 End of Year Crime Statistics, released March 2025. Exact totals for homicide and shooting victims not published in the public press release; percentage and count changes derived from official statements.</p>
+
+<h2>The Burnham Standard: Connected Districts</h2>
+
+<p>Burnham's plan for Chicago did not assign a north side plan and a south side plan. It assigned one plan to a whole city. Streets, parks, transit, and civic institutions were mapped as a unified system. Every district connected to every other.</p>
+
+<p>LAPD's 21 geographic divisions are the opposite of that. Each division carries its own staffing complement, its own discretionary deployment, and its own internal priority-setting. The result is a city where response times, officer density, and crime suppression programs are distributed unevenly, without a citywide optimization layer to correct for the gaps.</p>
+
+<div class="two-col">
+  <div>
+    <p class="col-header">Burnham's Chicago Principles</p>
+    <ul class="standard-list">
+      <li>
+        <strong>Single Integrated Plan</strong>
+        No district operates independently. Resources flow to where the system is weakest, not to where the loudest constituent is.
+      </li>
+      <li>
+        <strong>Data Before Deployment</strong>
+        Infrastructure decisions followed empirical surveys of traffic, commerce, and density. Not intuition or political geography.
+      </li>
+      <li>
+        <strong>Physical Connectivity</strong>
+        Streets, parks, and transit linked every neighborhood to every other. No dead ends. No isolated districts.
+      </li>
+      <li>
+        <strong>Long Horizon</strong>
+        The 1909 plan was designed for fifty years out. Staffing, capital investment, and code enforcement were projected forward, not managed quarter-to-quarter.
+      </li>
+    </ul>
+  </div>
+  <div>
+    <p class="col-header">LAPD Accountability Standards</p>
+    <ul class="standard-list la">
+      <li>
+        <strong>Publish Response Times by Division</strong>
+        Average response time by call priority, by geographic division, updated quarterly. Currently not available in public-facing LAPD data releases.
+      </li>
+      <li>
+        <strong>Officer Density Map</strong>
+        Deployed officers per square mile and per resident by division, not just citywide averages. Let the gaps be visible.
+      </li>
+      <li>
+        <strong>Staffing Model Tied to Crime Data</strong>
+        Discretionary deployment should follow incident concentration data, not seniority-driven watch assignments.
+      </li>
+      <li>
+        <strong>District-Level Crime Trend Disclosure</strong>
+        Annual crime trends broken out by all 21 divisions. The current year-end report buries geographic breakdowns in percentage summaries.
+      </li>
+    </ul>
+  </div>
+</div>
+
+<p>Los Angeles has 8,738 officers for 3.88 million residents. That is a constraint. The question is not whether to hire more officers, though Mayor Bass has set a target of 9,500 and the FY 2025-26 budget funds 240 new recruits. The question is whether the department's current deployment logic treats the city as one system or as 21 separate ones. Burnham's answer would be that a plan which does not integrate its parts is not a plan. It is an administration.</p>
+
+<footer>
+  Burnham Civic / Los Angeles. Figures from LAPD public reports, LA Board of Police Commissioners (Nov. 2024), Mayor's Office press releases (March 2025), Wikipedia list of largest U.S. police departments, and U.S. Census Bureau Vintage 2024 population estimates. Officer counts from Wikipedia sourced from agency reports; per-capita ratios calculated by Burnham Civic. Homicide total for 2024 is an estimate derived from LAPD's stated 14% decrease (47 fewer) from the 2023 total of 327. Exact 2024 total was not published in the LAPD public press release. Contact: <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a>
+</footer>
+
+</body>
+</html>
