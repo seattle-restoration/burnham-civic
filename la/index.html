@@ -170,29 +170,10 @@ li a {
   <li><span class="b">&#9733;</span> <span class="tag tag-lock">RESTRICTED</span> <a href="network.html">The Network</a> <span class="tag tag-cat">RECRUITMENT</span> <span class="desc">100 key leaders. The coalition that wins.</span></li>
 </ul>
 
-<div style="border:1px solid #ddd;padding:16px 20px;margin:20px 0;">
-  <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1e3a5f;margin:0 0 6px;">Member Access</p>
-  <p style="font-size:12px;color:#666;margin:0 0 10px;">Strategy pages contain proprietary intelligence valued at $10,000+. Enter your access code to unlock.</p>
-  <div style="display:flex;gap:8px;align-items:center;">
-    <input type="password" id="hub-gate-input" placeholder="Access code" style="font-family:Georgia,serif;font-size:13px;padding:5px 10px;border:1px solid #ccc;width:180px;">
-    <button id="hub-gate-btn" style="font-family:Georgia,serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 16px;cursor:pointer;">Unlock</button>
-    <span id="hub-gate-msg" style="font-size:12px;display:none;"></span>
-  </div>
+<div style="margin:16px 0 0;">
+  <a href="../membership.html" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;padding:5px 14px;text-decoration:none;font-family:Georgia,serif;">Join</a>
+  <span style="font-size:12px;color:#888;margin-left:10px;">Intelligence subscribers receive an access code for strategy pages.</span>
 </div>
-<script>
-(function(){
-  var PASS='pratt',COOKIE='tbc_la_auth',DAYS=30;
-  function getCk(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
-  function setCk(n,v,d){var dt=new Date();dt.setTime(dt.getTime()+d*864e5);document.cookie=n+'='+v+';expires='+dt.toUTCString()+';path=/la/';}
-  if(getCk(COOKIE)==='1'){document.getElementById('hub-gate-msg').textContent='Unlocked.';document.getElementById('hub-gate-msg').style.display='inline';document.getElementById('hub-gate-msg').style.color='#16a34a';document.getElementById('hub-gate-input').style.display='none';document.getElementById('hub-gate-btn').style.display='none';}
-  document.getElementById('hub-gate-btn').addEventListener('click',function(){
-    var inp=document.getElementById('hub-gate-input');
-    if(inp.value===PASS){setCk(COOKIE,'1',DAYS);document.getElementById('hub-gate-msg').textContent='Unlocked. Strategy pages are now accessible.';document.getElementById('hub-gate-msg').style.display='inline';document.getElementById('hub-gate-msg').style.color='#16a34a';inp.style.display='none';document.getElementById('hub-gate-btn').style.display='none';}
-    else{document.getElementById('hub-gate-msg').textContent='Incorrect code.';document.getElementById('hub-gate-msg').style.display='inline';document.getElementById('hub-gate-msg').style.color='#c00';inp.value='';inp.focus();}
-  });
-  document.getElementById('hub-gate-input').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('hub-gate-btn').click();});
-})();
-</script>
 
 <hr>
 <p class="quote">"Make no little plans; they have no magic to stir men's blood and probably themselves will not be realized. Make big plans; aim high in hope and work, remembering that a noble, logical diagram once recorded will not die."</p>
