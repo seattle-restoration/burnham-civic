@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Network - BURNHAM CIVIC</title>
+<meta name="description" content="100 key LA business leaders. The coalition that wins.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 960px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a {
+  margin-right: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: #00c;
+  text-decoration: none;
+}
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.back {
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+  color: #00c;
+}
+.back:hover { color: #c00; }
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+.article-subtitle {
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+.burnham-quote {
+  font-style: italic;
+  font-size: 15px;
+  color: #555;
+  border-left: 3px solid #1e3a5f;
+  padding: 8px 16px;
+  margin: 24px 0;
+  line-height: 1.6;
+}
+.burnham-quote .attr {
+  font-size: 11px;
+  color: #999;
+  font-style: normal;
+  display: block;
+  margin-top: 6px;
+}
+
+/* Pipeline stats */
+.pipeline {
+  display: flex;
+  gap: 0;
+  margin: 24px 0 20px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+.pipeline-cell {
+  flex: 1;
+  padding: 10px 12px;
+  border-right: 1px solid #ddd;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.pipeline-cell:last-child { border-right: none; }
+.pipeline-cell:hover { background: #f8f8f8; }
+.pipeline-cell.active { background: #f0f4f8; }
+.pipeline-cell .pl-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 3px;
+}
+.pipeline-cell .pl-count {
+  font-size: 22px;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+.pl-cold .pl-label { color: #999; }
+.pl-cold .pl-count { color: #bbb; }
+.pl-researched .pl-label { color: #666; }
+.pl-researched .pl-count { color: #888; }
+.pl-contacted .pl-label { color: #ca8a04; }
+.pl-contacted .pl-count { color: #ca8a04; }
+.pl-meeting .pl-label { color: #2563eb; }
+.pl-meeting .pl-count { color: #2563eb; }
+.pl-committed .pl-label { color: #16a34a; }
+.pl-committed .pl-count { color: #16a34a; font-weight: 700; }
+.pl-donor .pl-label { color: #1e3a5f; }
+.pl-donor .pl-count { color: #1e3a5f; font-weight: 700; }
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.controls input[type="text"] {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 160px;
+}
+.controls input[type="text"]:focus { outline: none; border-color: #1e3a5f; }
+.controls select {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+.controls select:focus { outline: none; border-color: #1e3a5f; }
+.btn-export {
+  font-family: Georgia, serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-export:hover { background: #2a4a73; }
+.btn-clear {
+  font-family: Georgia, serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #c00;
+  background: #fff;
+  border: 1px solid #e0b0b0;
+  padding: 6px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-clear:hover { background: #fff5f5; }
+
+/* Table */
+.table-wrap {
+  overflow-x: auto;
+}
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  border-bottom: 2px solid #111;
+  padding: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+th:hover { color: #111; }
+th .sort-icon { margin-left: 3px; opacity: 0.4; }
+th.sorted .sort-icon { opacity: 1; color: #1e3a5f; }
+td { padding: 6px; border-bottom: 1px solid #eee; vertical-align: top; }
+tr:hover td { background: #fafafa; }
+td input, td select, td textarea {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  padding: 3px 5px;
+  border: 1px solid transparent;
+  background: transparent;
+  width: 100%;
+  box-sizing: border-box;
+}
+td input:focus, td select:focus, td textarea:focus {
+  border-color: #ccc;
+  background: #fff;
+  outline: none;
+}
+td textarea {
+  resize: vertical;
+  min-height: 38px;
+}
+.name-cell strong { display: block; font-size: 13px; }
+.name-cell span { font-size: 11px; color: #888; font-style: italic; }
+.tier-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border: 1px solid #ccc;
+  color: #555;
+}
+.tier-a { border-color: #1e3a5f; color: #1e3a5f; }
+.tier-b { border-color: #888; color: #666; }
+.tier-c { border-color: #bbb; color: #999; }
+.status-cold { color: #999; }
+.status-researched { color: #666; }
+.status-contacted { color: #ca8a04; }
+.status-meeting { color: #2563eb; }
+.status-committed { color: #16a34a; font-weight: 700; }
+.status-donor { color: #1e3a5f; font-weight: 700; }
+.date-cell { font-size: 11px; color: #888; white-space: nowrap; }
+.no-results {
+  text-align: center;
+  padding: 32px;
+  color: #999;
+  font-style: italic;
+  font-size: 13px;
+}
+.row-count {
+  font-size: 11px;
+  color: #999;
+  margin: 8px 0 0;
+  text-align: right;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="../membership.html" class="subscribe">Subscribe</a>
+</div>
+<div style="font-size:13px;color:#555;margin-bottom:12px;font-style:italic;">"Make no little plans. They have no magic to stir men's blood."</div>
+
+<div class="nav">
+  <a href="../">Seattle</a>
+  <a href="./" class="active">LA</a>
+  <a href="../membership.html">Intelligence</a>
+  <a href="mailto:operations@burnhamcivic.org">Contact</a>
+</div>
+
+<hr>
+
+<a href="./" class="back">&#8592; Back to LA</a>
+
+<h1 class="article-title">The Network</h1>
+<p class="article-subtitle">100 key leaders. The coalition that wins.</p>
+
+<div class="burnham-quote">
+  The Plan of Chicago was not a government project. It was funded by the Commercial Club of Chicago, 328 of the city's most influential business leaders. They didn't wait for City Hall. They built the coalition first, then presented the plan. This is your Commercial Club.
+</div>
+
+<div class="pipeline" id="pipeline">
+  <div class="pipeline-cell pl-cold" data-filter="COLD">
+    <span class="pl-label">Cold</span>
+    <span class="pl-count" id="cnt-cold">0</span>
+  </div>
+  <div class="pipeline-cell pl-researched" data-filter="RESEARCHED">
+    <span class="pl-label">Researched</span>
+    <span class="pl-count" id="cnt-researched">0</span>
+  </div>
+  <div class="pipeline-cell pl-contacted" data-filter="CONTACTED">
+    <span class="pl-label">Contacted</span>
+    <span class="pl-count" id="cnt-contacted">0</span>
+  </div>
+  <div class="pipeline-cell pl-meeting" data-filter="MEETING">
+    <span class="pl-label">Meeting</span>
+    <span class="pl-count" id="cnt-meeting">0</span>
+  </div>
+  <div class="pipeline-cell pl-committed" data-filter="COMMITTED">
+    <span class="pl-label">Committed</span>
+    <span class="pl-count" id="cnt-committed">0</span>
+  </div>
+  <div class="pipeline-cell pl-donor" data-filter="DONOR">
+    <span class="pl-label">Donor</span>
+    <span class="pl-count" id="cnt-donor">0</span>
+  </div>
+</div>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Search name or company..." oninput="applyFilters()">
+  <select id="filter-sector" onchange="applyFilters()">
+    <option value="">All Sectors</option>
+    <option>Real Estate</option>
+    <option>Finance</option>
+    <option>Tech</option>
+    <option>Entertainment</option>
+    <option>Construction</option>
+    <option>Hospitality</option>
+    <option>Civic / Nonprofit</option>
+  </select>
+  <select id="filter-status" onchange="applyFilters()">
+    <option value="">All Statuses</option>
+    <option>COLD</option>
+    <option>RESEARCHED</option>
+    <option>CONTACTED</option>
+    <option>MEETING</option>
+    <option>COMMITTED</option>
+    <option>DONOR</option>
+  </select>
+  <select id="filter-tier" onchange="applyFilters()">
+    <option value="">All Tiers</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <button class="btn-export" onclick="exportCSV()">Export CSV</button>
+  <button class="btn-clear" onclick="clearAllData()">Reset CRM</button>
+</div>
+
+<div class="table-wrap">
+  <table id="crm-table">
+    <thead>
+      <tr>
+        <th onclick="sortBy('name')" id="th-name">Name <span class="sort-icon">&#9650;</span></th>
+        <th onclick="sortBy('company')" id="th-company">Company <span class="sort-icon">&#9650;</span></th>
+        <th onclick="sortBy('sector')" id="th-sector">Sector <span class="sort-icon">&#9650;</span></th>
+        <th onclick="sortBy('tier')" id="th-tier">Tier <span class="sort-icon">&#9650;</span></th>
+        <th onclick="sortBy('status')" id="th-status">Status <span class="sort-icon">&#9650;</span></th>
+        <th>Notes</th>
+        <th onclick="sortBy('lastTouched')" id="th-lastTouched">Last Touch <span class="sort-icon">&#9650;</span></th>
+      </tr>
+    </thead>
+    <tbody id="crm-body"></tbody>
+  </table>
+</div>
+<div class="row-count" id="row-count"></div>
+
+<script src="network-data.js"></script>
+<script>
+var LS_KEY = 'tbc_la_network';
+var STATUSES = ['COLD', 'RESEARCHED', 'CONTACTED', 'MEETING', 'COMMITTED', 'DONOR'];
+
+var sortCol = 'tier';
+var sortAsc = true;
+var activePipelineFilter = null;
+
+// Load user overrides from localStorage
+function loadOverrides() {
+  try {
+    var raw = localStorage.getItem(LS_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch(e) {
+    return {};
+  }
+}
+
+function saveOverrides(overrides) {
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify(overrides));
+  } catch(e) {}
+}
+
+// Merge base data with user overrides
+function getMergedData() {
+  var overrides = loadOverrides();
+  return NETWORK_DATA.map(function(base) {
+    var key = base.name;
+    var ov = overrides[key] || {};
+    return {
+      name: base.name,
+      company: base.company,
+      title: base.title,
+      sector: base.sector,
+      tier: base.tier,
+      status: ov.status || 'COLD',
+      notes: (ov.notes !== undefined) ? ov.notes : (base.note || ''),
+      lastTouched: ov.lastTouched || '',
+      nextAction: ov.nextAction || ''
+    };
+  });
+}
+
+function saveField(name, field, value) {
+  var overrides = loadOverrides();
+  if (!overrides[name]) overrides[name] = {};
+  overrides[name][field] = value;
+  if (field === 'status') {
+    overrides[name].lastTouched = new Date().toISOString().slice(0, 10);
+  }
+  saveOverrides(overrides);
+}
+
+function formatDate(iso) {
+  if (!iso) return '';
+  var parts = iso.slice(0, 10).split('-');
+  if (parts.length < 3) return iso;
+  return parts[1] + '/' + parts[2] + '/' + parts[0].slice(2);
+}
+
+function getStatusClass(status) {
+  return 'status-' + (status || 'cold').toLowerCase();
+}
+
+function getTierClass(tier) {
+  return 'tier-' + (tier || '').toLowerCase();
+}
+
+function applyFilters() {
+  var search = document.getElementById('search').value.toLowerCase().trim();
+  var sector = document.getElementById('filter-sector').value;
+  var status = document.getElementById('filter-status').value;
+  var tier = document.getElementById('filter-tier').value;
+
+  var data = getMergedData();
+
+  // Sort first
+  data.sort(function(a, b) {
+    var av = (a[sortCol] || '').toString().toLowerCase();
+    var bv = (b[sortCol] || '').toString().toLowerCase();
+    // Tier sort: A < B < C
+    if (sortCol === 'tier') {
+      av = { a: 1, b: 2, c: 3 }[av] || 9;
+      bv = { a: 1, b: 2, c: 3 }[bv] || 9;
+      return sortAsc ? av - bv : bv - av;
+    }
+    // Status sort by pipeline order
+    if (sortCol === 'status') {
+      av = STATUSES.indexOf(a.status.toUpperCase());
+      bv = STATUSES.indexOf(b.status.toUpperCase());
+      if (av === -1) av = 99;
+      if (bv === -1) bv = 99;
+      return sortAsc ? av - bv : bv - av;
+    }
+    if (av < bv) return sortAsc ? -1 : 1;
+    if (av > bv) return sortAsc ? 1 : -1;
+    return 0;
+  });
+
+  // Filter
+  var filtered = data.filter(function(row) {
+    if (search && !(row.name.toLowerCase().indexOf(search) >= 0 || row.company.toLowerCase().indexOf(search) >= 0)) return false;
+    if (sector && row.sector !== sector) return false;
+    if (status && row.status.toUpperCase() !== status.toUpperCase()) return false;
+    if (tier && row.tier.toUpperCase() !== tier.toUpperCase()) return false;
+    if (activePipelineFilter && row.status.toUpperCase() !== activePipelineFilter) return false;
+    return true;
+  });
+
+  renderTable(filtered);
+  renderPipeline(data);
+  document.getElementById('row-count').textContent = filtered.length + ' of ' + data.length + ' contacts';
+}
+
+function renderTable(rows) {
+  var tbody = document.getElementById('crm-body');
+  if (rows.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="7" class="no-results">No contacts match the current filters.</td></tr>';
+    return;
+  }
+
+  var html = '';
+  rows.forEach(function(row) {
+    var statusClass = getStatusClass(row.status);
+    var tierClass = getTierClass(row.tier);
+    var statusOptions = STATUSES.map(function(s) {
+      return '<option value="' + s + '"' + (row.status.toUpperCase() === s ? ' selected' : '') + '>' + s + '</option>';
+    }).join('');
+
+    var escapedName = escapeAttr(row.name);
+    var escapedNotes = escapeHtml(row.notes);
+
+    html += '<tr>';
+    html += '<td class="name-cell"><strong>' + escapeHtml(row.name) + '</strong><span>' + escapeHtml(row.title) + '</span></td>';
+    html += '<td>' + escapeHtml(row.company) + '</td>';
+    html += '<td>' + escapeHtml(row.sector) + '</td>';
+    html += '<td><span class="tier-badge ' + tierClass + '">' + escapeHtml(row.tier) + '</span></td>';
+    html += '<td><select class="' + statusClass + '" onchange="onStatusChange(this, ' + JSON.stringify(row.name) + ')">' + statusOptions + '</select></td>';
+    html += '<td><textarea rows="2" onblur="onNotesChange(this, ' + JSON.stringify(row.name) + ')" oninput="this.style.height=\'auto\';this.style.height=this.scrollHeight+\'px\'">' + escapedNotes + '</textarea></td>';
+    html += '<td class="date-cell">' + formatDate(row.lastTouched) + '</td>';
+    html += '</tr>';
+  });
+
+  tbody.innerHTML = html;
+}
+
+function renderPipeline(data) {
+  var counts = { COLD: 0, RESEARCHED: 0, CONTACTED: 0, MEETING: 0, COMMITTED: 0, DONOR: 0 };
+  data.forEach(function(row) {
+    var s = (row.status || 'COLD').toUpperCase();
+    if (counts.hasOwnProperty(s)) counts[s]++;
+  });
+  document.getElementById('cnt-cold').textContent = counts.COLD;
+  document.getElementById('cnt-researched').textContent = counts.RESEARCHED;
+  document.getElementById('cnt-contacted').textContent = counts.CONTACTED;
+  document.getElementById('cnt-meeting').textContent = counts.MEETING;
+  document.getElementById('cnt-committed').textContent = counts.COMMITTED;
+  document.getElementById('cnt-donor').textContent = counts.DONOR;
+
+  // Active state on pipeline cells
+  document.querySelectorAll('.pipeline-cell').forEach(function(cell) {
+    if (cell.dataset.filter === activePipelineFilter) {
+      cell.classList.add('active');
+    } else {
+      cell.classList.remove('active');
+    }
+  });
+}
+
+function onStatusChange(sel, name) {
+  var newStatus = sel.value;
+  saveField(name, 'status', newStatus);
+  // Update select class in place
+  sel.className = getStatusClass(newStatus);
+  // Update last touch cell in same row
+  var row = sel.closest('tr');
+  if (row) {
+    var dateCell = row.querySelector('.date-cell');
+    if (dateCell) dateCell.textContent = formatDate(new Date().toISOString().slice(0, 10));
+  }
+  // Re-render pipeline counts
+  var data = getMergedData();
+  renderPipeline(data);
+  document.getElementById('row-count').textContent = (document.querySelectorAll('#crm-body tr:not(.no-results-row)').length) + ' of ' + data.length + ' contacts';
+}
+
+function onNotesChange(textarea, name) {
+  saveField(name, 'notes', textarea.value);
+}
+
+function sortBy(col) {
+  if (sortCol === col) {
+    sortAsc = !sortAsc;
+  } else {
+    sortCol = col;
+    sortAsc = true;
+  }
+  // Update header classes
+  document.querySelectorAll('th').forEach(function(th) { th.classList.remove('sorted'); });
+  var thEl = document.getElementById('th-' + col);
+  if (thEl) {
+    thEl.classList.add('sorted');
+    var icon = thEl.querySelector('.sort-icon');
+    if (icon) icon.innerHTML = sortAsc ? '&#9650;' : '&#9660;';
+  }
+  applyFilters();
+}
+
+// Pipeline click to filter
+document.querySelectorAll('.pipeline-cell').forEach(function(cell) {
+  cell.addEventListener('click', function() {
+    var f = cell.dataset.filter;
+    if (activePipelineFilter === f) {
+      activePipelineFilter = null;
+      document.getElementById('filter-status').value = '';
+    } else {
+      activePipelineFilter = f;
+      document.getElementById('filter-status').value = f;
+    }
+    applyFilters();
+  });
+});
+
+// Sync status dropdown with pipeline filter
+document.getElementById('filter-status').addEventListener('change', function() {
+  activePipelineFilter = this.value || null;
+  applyFilters();
+});
+
+function exportCSV() {
+  var data = getMergedData();
+  var headers = ['Name', 'Title', 'Company', 'Sector', 'Tier', 'Status', 'Notes', 'Last Touched', 'Next Action'];
+  var rows = [headers];
+  data.forEach(function(row) {
+    rows.push([
+      csvEscape(row.name),
+      csvEscape(row.title),
+      csvEscape(row.company),
+      csvEscape(row.sector),
+      csvEscape(row.tier),
+      csvEscape(row.status),
+      csvEscape(row.notes),
+      csvEscape(row.lastTouched),
+      csvEscape(row.nextAction)
+    ]);
+  });
+  var csv = rows.map(function(r) { return r.join(','); }).join('\n');
+  var blob = new Blob([csv], { type: 'text/csv' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'tbc-la-network.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function csvEscape(val) {
+  var s = (val || '').toString();
+  if (s.indexOf(',') >= 0 || s.indexOf('"') >= 0 || s.indexOf('\n') >= 0) {
+    return '"' + s.replace(/"/g, '""') + '"';
+  }
+  return s;
+}
+
+function escapeHtml(str) {
+  return (str || '').toString()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function escapeAttr(str) {
+  return (str || '').toString().replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function clearAllData() {
+  if (confirm('Reset all CRM data? This will clear all status, notes, and last touch dates. Base contact info is preserved.')) {
+    localStorage.removeItem(LS_KEY);
+    activePipelineFilter = null;
+    document.getElementById('filter-status').value = '';
+    applyFilters();
+  }
+}
+
+// Initial render
+sortBy('tier');
+</script>
+<script src="gate.js"></script>
+</body>
+</html>
