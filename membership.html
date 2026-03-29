@@ -72,7 +72,8 @@ hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
   cursor: pointer; border: 1px solid #1e3a5f;
   transition: all 0.2s;
 }
-.region-btn:first-child { border-right: none; }
+.region-btn { border-right: none; }
+.region-btn:last-child { border-right: 1px solid #1e3a5f; }
 .region-btn.active { background: #1e3a5f; color: #fff; }
 .region-btn:not(.active) { background: #fff; color: #1e3a5f; }
 .region-btn:not(.active):hover { background: #f0f0f0; }
@@ -158,6 +159,7 @@ hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
 
   <div class="region-toggle">
     <div class="region-btn active" onclick="selectRegion('seattle')">Seattle</div>
+    <div class="region-btn" onclick="selectRegion('la')">LA</div>
     <div class="region-btn" onclick="selectRegion('usa')">USA</div>
   </div>
 
@@ -198,6 +200,7 @@ hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
       <select id="mf-tier" style="width:100%;padding:8px;font-family:Georgia,serif;font-size:14px;border:1px solid #ccc;background:#fff;">
         <option value="Member ($25/mo)">Member ($25/mo)</option>
         <option value="Junto Contributor (Seattle, $5,000/yr)">Junto Contributor, Seattle ($5,000/yr)</option>
+        <option value="Junto Contributor (LA, $10,000/yr)">Junto Contributor, LA ($10,000/yr)</option>
         <option value="Junto Contributor (USA, $10,000/yr)">Junto Contributor, USA ($10,000/yr)</option>
       </select>
     </div>
@@ -271,6 +274,21 @@ function selectRegion(region) {
     `;
     btn.textContent = 'Join Seattle Junto';
     btn.href = '#interest-form'; btn.onclick = function(){ prefillForm('Junto Contributor (Seattle, $5,000/yr)'); };
+  } else if (region === 'la') {
+    priceArea.innerHTML = '<span class="price-new">$10,000</span> <span style="font-size:14px;color:#666;font-weight:400">/year</span>';
+    desc.textContent = 'For operators and decision makers focused on Los Angeles. Full accountability intelligence, strategy tools, and the LA decision maker network.';
+    features.innerHTML = `
+      <li>Everything in Member</li>
+      <li>LAHSA, LAFD, LAPD, DWP accountability intelligence with 990 data</li>
+      <li>Shadow Cabinet strategy tool (name department heads before the election)</li>
+      <li>LA Network CRM: 65+ verified business leaders with pipeline tracking</li>
+      <li>Transit and building standards accountability briefs</li>
+      <li>Quarterly strategy sessions (in-person or virtual)</li>
+      <li>Named contributor recognition (optional)</li>
+      <li>Direct input on LA operations priority</li>
+    `;
+    btn.textContent = 'Join LA Junto';
+    btn.href = '#interest-form'; btn.onclick = function(){ prefillForm('Junto Contributor (LA, $10,000/yr)'); };
   } else {
     priceArea.innerHTML = '<span class="price-new">$10,000</span> <span style="font-size:14px;color:#666;font-weight:400">/year</span>';
     desc.textContent = 'For principals operating at the national level. Federal policy, cross-city intelligence, and direct coordination with operations across the country.';
@@ -300,6 +318,18 @@ function submitInterest() {
   // Form now submits directly via Formspree
   return false;
 }
+
+// Auto-select LA tab if coming from /la/ pages
+(function(){
+  var ref = document.referrer || '';
+  var params = new URLSearchParams(window.location.search);
+  if (ref.indexOf('/la/') !== -1 || ref.indexOf('/la.') !== -1 || params.get('region') === 'la') {
+    selectRegion('la');
+    var btns = document.querySelectorAll('.region-btn');
+    btns.forEach(function(b){ b.classList.remove('active'); });
+    btns[1].classList.add('active');
+  }
+})();
 </script>
 
 </body>
