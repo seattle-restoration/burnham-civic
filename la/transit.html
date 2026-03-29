@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LA Metro Transit Accountability - BURNHAM CIVIC</title>
+<meta name="description" content="LA Metro promised completion for the 2026 World Cup. It missed. What Burnham's approach to rail would look like for the 2028 Olympics.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a {
+  margin-right: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: #00c;
+  text-decoration: none;
+}
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.back {
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+  color: #00c;
+}
+.back:hover { color: #c00; }
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+.article-subtitle {
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+.burnham-quote {
+  font-style: italic;
+  font-size: 15px;
+  color: #555;
+  border-left: 3px solid #1e3a5f;
+  padding: 8px 16px;
+  margin: 24px 0;
+  line-height: 1.6;
+}
+.burnham-quote .attr {
+  font-size: 11px;
+  color: #999;
+  font-style: normal;
+  display: block;
+  margin-top: 6px;
+}
+p { margin: 0 0 16px; }
+h2 {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 32px 0 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+.metric-row {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0 24px;
+  flex-wrap: wrap;
+}
+.metric-card {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+}
+.metric-card .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0 0 4px;
+}
+.metric-card .value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+.metric-card .note {
+  font-size: 11px;
+  color: #888;
+  margin: 4px 0 0;
+}
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 16px 0 24px;
+}
+.project-table th {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+  padding: 6px 10px 6px 0;
+}
+.project-table td {
+  padding: 10px 10px 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+  color: #333;
+}
+.project-table tr:last-child td {
+  border-bottom: none;
+}
+.status-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+}
+.status-open { background: #e8f4e8; color: #2a6a2a; }
+.status-late { background: #fef3e2; color: #8a5a00; }
+.status-delayed { background: #fdecea; color: #a02020; }
+.status-planning { background: #f0f0f0; color: #555; }
+.status-testing { background: #e8eaf6; color: #3949ab; }
+.wc-yes { color: #2a6a2a; font-weight: 700; }
+.wc-no { color: #a02020; font-weight: 700; }
+.wc-partial { color: #8a5a00; font-weight: 700; }
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 0 0 24px;
+}
+@media (max-width: 600px) {
+  .two-col { grid-template-columns: 1fr; }
+  .metric-row { flex-direction: column; }
+  .project-table { font-size: 12px; }
+  .project-table th, .project-table td { padding: 8px 6px 8px 0; }
+}
+.col-header {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin: 0 0 10px;
+}
+.standard-list {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.standard-list li {
+  border-left: 3px solid #eee;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+.standard-list li strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 3px;
+}
+.standard-list li.la {
+  border-left-color: #c8a96e;
+}
+.cost-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 16px 0 24px;
+}
+.cost-table th {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+  padding: 6px 10px 6px 0;
+}
+.cost-table td {
+  padding: 9px 10px 9px 0;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+  color: #333;
+}
+.cost-table tr:last-child td {
+  border-bottom: none;
+}
+.cost-table .highlight {
+  font-weight: 700;
+  color: #a02020;
+}
+.event-box {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 14px 16px;
+  margin: 16px 0 24px;
+  font-size: 13px;
+  color: #444;
+}
+.event-box .ev-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 8px;
+}
+.event-box .ev-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.event-box .ev-row:last-child {
+  margin-bottom: 0;
+}
+.event-box .ev-event {
+  font-weight: 700;
+  min-width: 140px;
+  color: #111;
+}
+.event-box .ev-status-open { color: #2a6a2a; }
+.event-box .ev-status-late { color: #8a5a00; }
+.event-box .ev-status-no { color: #a02020; }
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  font-size: 11px;
+  color: #999;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="https://burnhamcivic.org/subscribe" class="subscribe">Subscribe</a>
+</div>
+
+<hr>
+
+<nav class="nav">
+  <a href="/">Seattle</a>
+  <a href="/la/" class="active">LA</a>
+  <a href="/intelligence/">Intelligence</a>
+  <a href="/contact/">Contact</a>
+</nav>
+
+<a href="./" class="back">&#8592; Los Angeles</a>
+
+<h1 class="article-title">The Train That Wasn't Ready</h1>
+<p class="article-subtitle">LA Metro promised completion for the 2026 World Cup. It missed. What Burnham's approach to rail would look like for the 2028 Olympics.</p>
+
+<div class="burnham-quote">
+  "Burnham's 1909 Plan of Chicago created the rail and boulevard system that still works 117 years later. That system was designed for permanence, not for a single event."
+  <span class="attr">The Burnham Standard, applied to Los Angeles transit, 2026</span>
+</div>
+
+<p>In November 2016, Los Angeles County voters approved Measure M by a 71.5 percent margin. The half-cent sales tax, with no sunset, was supposed to fund the most ambitious transit expansion in American history: 28 major projects over 40 years, totaling more than $120 billion. The pitch was clear. LA was going to build its way out of car dependency, and the 2026 FIFA World Cup and 2028 Summer Olympics would showcase the result.</p>
+
+<p>That timeline has not held. Of the original 28 projects promised before the 2028 Games, 10 are now expected to open after the Olympics. The D Line subway extension, the most important single project, is arriving in phases stretching to fall 2027. The LAX Automated People Mover, a 2.25-mile airport connector that was supposed to open in 2023, is still in testing as of March 2026 at a cost more than $1.4 billion above its original budget. The system Angelenos are riding to World Cup matches this summer is largely the one they had when Measure M passed.</p>
+
+<p>What follows is the public record: what was promised, what was built, what it cost, and what a Burnham-standard permanent rail grid would require.</p>
+
+<h2>Key Metrics</h2>
+
+<div class="metric-row">
+  <div class="metric-card">
+    <p class="label">Metro Annual Budget</p>
+    <p class="value">$9.4B</p>
+    <p class="note">FY 2025-26, a 2% increase over the prior year. Includes $794.5M for D Line Extension work. Source: LA Metro FY26 Proposed Budget.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Measure M Lifetime Total</p>
+    <p class="value">$120B+</p>
+    <p class="note">Projected over 40 years from a no-sunset half-cent county sales tax approved November 2016 with 71.5% of the vote. Source: LA Metro.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Miles of Rail</p>
+    <p class="value">121</p>
+    <p class="note">Six lines, 107 stations as of early 2026. Two heavy rail lines, four light rail lines. Section 1 of D Line adds 3.92 miles in May 2026. Source: LA Metro Facts at a Glance.</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Annual Boardings</p>
+    <p class="value">311M</p>
+    <p class="note">2024 full-year total, an 8% increase over 2023 and the highest since before the pandemic. October 2024 hit 1.025 million average weekday boardings. Source: LA Metro.</p>
+  </div>
+</div>
+
+<h2>Project Status Table</h2>
+
+<table class="project-table">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Status</th>
+      <th>Opening</th>
+      <th>Budget</th>
+      <th>WC 2026</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Regional Connector</strong><br>1.9 miles, 3 downtown stations linking A, E, and L Lines</td>
+      <td><span class="status-pill status-open">Open</span></td>
+      <td>June 16, 2023</td>
+      <td>~$1.5B</td>
+      <td class="wc-yes">Yes</td>
+    </tr>
+    <tr>
+      <td><strong>LAX/Metro Transit Center</strong><br>New station connecting C and K Lines to airport shuttle</td>
+      <td><span class="status-pill status-open">Open</span></td>
+      <td>June 6, 2025</td>
+      <td>$900M</td>
+      <td class="wc-yes">Yes</td>
+    </tr>
+    <tr>
+      <td><strong>D Line Extension, Section 1</strong><br>3.92 miles: Wilshire/La Brea, Wilshire/Fairfax, Wilshire/La Cienega</td>
+      <td><span class="status-pill status-late">Late</span></td>
+      <td>May 8, 2026</td>
+      <td>$3.51B</td>
+      <td class="wc-partial">Partial</td>
+    </tr>
+    <tr>
+      <td><strong>LAX Automated People Mover</strong><br>2.25-mile connector: terminals to Metro Transit Center and Rent-A-Car facility</td>
+      <td><span class="status-pill status-testing">Testing</span></td>
+      <td>Late 2026 (est.)</td>
+      <td>$3.34B</td>
+      <td class="wc-no">No</td>
+    </tr>
+    <tr>
+      <td><strong>D Line Extension, Section 2</strong><br>2.6 miles: Beverly Drive, Century City/Constellation stations</td>
+      <td><span class="status-pill status-delayed">Delayed</span></td>
+      <td>Spring 2027</td>
+      <td>~$2.9B</td>
+      <td class="wc-no">No</td>
+    </tr>
+    <tr>
+      <td><strong>D Line Extension, Section 3</strong><br>2.5 miles: Westwood/UCLA, Westwood/VA Hospital</td>
+      <td><span class="status-pill status-delayed">Delayed</span></td>
+      <td>Fall 2027</td>
+      <td>~$3.3B</td>
+      <td class="wc-no">No</td>
+    </tr>
+    <tr>
+      <td><strong>East San Fernando Valley Light Rail</strong><br>6.7 miles along Van Nuys Blvd, 11 stations</td>
+      <td><span class="status-pill status-planning">Construction</span></td>
+      <td>2031 (est.)</td>
+      <td>$3.64B</td>
+      <td class="wc-no">No</td>
+    </tr>
+    <tr>
+      <td><strong>Sepulveda Transit Corridor</strong><br>Underground heavy rail through the 405 Corridor, Valley to Westside</td>
+      <td><span class="status-pill status-planning">EIR Phase</span></td>
+      <td>2033-2035 (est.)</td>
+      <td>$15.4-24.4B</td>
+      <td class="wc-no">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-size:11px;color:#999;margin:-16px 0 24px;">Status as of March 2026. Sources: LA Metro project pages, Engineering News-Record, LAist, Streetsblog LA, Beverly Hills Purple Line FAQ. WC 2026 = operational for FIFA World Cup (July 2026 matches at SoFi Stadium).</p>
+
+<h2>World Cup 2026 vs Olympics 2028</h2>
+
+<p>Eight FIFA World Cup matches are scheduled at SoFi Stadium in Inglewood between mid-June and mid-July 2026. Metro is not relying on a new rail line to serve SoFi. Instead, it is running enhanced bus service from the existing C and K Line stations near the stadium and deploying approximately 330 additional buses on match days. The D Line Section 1, opening May 8, will provide faster access to the Miracle Mile and La Cienega corridor but does not reach the stadium.</p>
+
+<div class="event-box">
+  <div class="ev-label">Transit Readiness by Event</div>
+  <div class="ev-row">
+    <span class="ev-event">World Cup (Jun-Jul 2026)</span>
+    <span class="ev-status-late">Regional Connector open. LAX/Metro Transit Center open. D Line Section 1 open May 8. LAX Automated People Mover still in testing. No new direct SoFi Stadium rail. Enhanced bus service only.</span>
+  </div>
+  <div class="ev-row">
+    <span class="ev-event">Super Bowl (Feb 2027)</span>
+    <span class="ev-status-late">D Line Sections 2 and 3 targeted for spring and fall 2027. LAX APM expected to be operational. Still no D Line connection to Westwood or UCLA.</span>
+  </div>
+  <div class="ev-row">
+    <span class="ev-event">Olympics (Jul-Aug 2028)</span>
+    <span class="ev-status-no">Of 28 promised projects, 10 are now expected to open after 2028. Full D Line to Westwood targeted fall 2027 but subject to slippage. Sepulveda Corridor still in environmental review, opening no earlier than 2033.</span>
+  </div>
+</div>
+
+<p>Metro's own March 2026 report acknowledged that 10 of the 28 projects on the "28 by 28" list will not be complete before the Olympic opening ceremony. The agency substituted 11 projects in March 2024 after acknowledging those could not be delivered in time. As of early 2026, only three of the original 28 projects are complete. Seven are under construction. Twelve are still in the planning phase.</p>
+
+<h2>Cost Per Mile: How LA Compares</h2>
+
+<table class="cost-table">
+  <thead>
+    <tr>
+      <th>System / Project</th>
+      <th>Type</th>
+      <th>Cost Per Mile</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>LA Metro D Line Extension</strong></td>
+      <td>Heavy rail (subway)</td>
+      <td class="highlight">~$1.06B/mile</td>
+      <td>$9.5B total for 9 miles. Metro's own estimate cited about $1B/mile as the norm for this project.</td>
+    </tr>
+    <tr>
+      <td><strong>LAX Automated People Mover</strong></td>
+      <td>APM (airport connector)</td>
+      <td class="highlight">$1.49B/mile</td>
+      <td>$3.34B for 2.25 miles. Original budget was $1.9B. One of the costliest airport connectors in US history.</td>
+    </tr>
+    <tr>
+      <td><strong>Madrid Metro expansion</strong></td>
+      <td>Heavy rail (subway)</td>
+      <td>~$320M/mile</td>
+      <td>International benchmark cited by transit researcher Alon Levy.</td>
+    </tr>
+    <tr>
+      <td><strong>Paris Metro extension</strong></td>
+      <td>Heavy rail (subway)</td>
+      <td>~$160M/mile</td>
+      <td>Among the most cost-efficient underground rail builds in the developed world.</td>
+    </tr>
+    <tr>
+      <td><strong>Phoenix Valley Metro Rail</strong></td>
+      <td>Light rail</td>
+      <td>~$85M/mile</td>
+      <td>At-grade construction in a flat desert grid. Lower land and labor costs.</td>
+    </tr>
+    <tr>
+      <td><strong>Dallas DART Orange Line</strong></td>
+      <td>Light rail</td>
+      <td>~$83M/mile</td>
+      <td>Airport extension completed 2014. Comparable to Phoenix in construction context.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The cost gap between Los Angeles and European peer cities is not simply about tunneling or geology. Transit researchers point to project delivery structures, contractor markups, environmental review timelines, and station design complexity as compounding factors. The D Line encountered tar sands and abandoned oil wells in Beverly Hills, adding cost. But even accounting for those conditions, the $1 billion per mile figure is roughly three times what comparably complex projects cost in France, Spain, or Italy.</p>
+
+<h2>The Burnham Standard for Rail</h2>
+
+<p>Burnham's 1909 Plan of Chicago did not design transit for the 1909 World's Fair. It designed transit for 1909, 1959, and 2009. The elevated rail lines and radial boulevard system he proposed were meant to carry a metropolis that did not yet exist. That is the test: not whether a system opens before the Olympic torch, but whether it will still be serving the city a century later.</p>
+
+<div class="two-col">
+  <div>
+    <p class="col-header">Burnham's Approach</p>
+    <ul class="standard-list">
+      <li>
+        <strong>Plan for permanence</strong>
+        Design the full network grid before breaking ground on any segment. Do not build extensions that require future demolition or rerouting.
+      </li>
+      <li>
+        <strong>Rights-of-way first</strong>
+        Acquire corridor land before development forecloses options. Delay raises costs and forces compromises.
+      </li>
+      <li>
+        <strong>Interoperability by design</strong>
+        Every station a transfer point. No dead-end lines. No one-seat rides that require a shuttle at the terminus.
+      </li>
+      <li>
+        <strong>Frequency over coverage</strong>
+        A train every four minutes beats a train to every neighborhood every twenty. Core corridors run first and run often.
+      </li>
+      <li>
+        <strong>No event deadlines</strong>
+        Transit built for the Olympics is transit built to the wrong specification. The commuter who rides every day is the customer, not the tourist who rides once.
+      </li>
+    </ul>
+  </div>
+  <div>
+    <p class="col-header">Los Angeles Equivalents</p>
+    <ul class="standard-list la">
+      <li>
+        <strong>Complete the spine first</strong>
+        The D Line to Westwood and the Sepulveda Corridor connect the Valley to the Westside to the Airport. Nothing else matters until those corridors are finished. Scattered bus rapid transit lines and surface rail are delay tactics.
+      </li>
+      <li>
+        <strong>Fix the LAX connection now</strong>
+        The world's fifth busiest airport has no direct rail connection in 2026. The APM costs $1.49 billion per mile and is three years late. This is the most visible failure in the system.
+      </li>
+      <li>
+        <strong>Publish a 100-year map</strong>
+        Metro's 28 by 28 list is an events checklist, not a city plan. A Burnham-standard network map would show every planned corridor with rights-of-way already acquired.
+      </li>
+      <li>
+        <strong>Reduce cost per mile</strong>
+        At $1 billion per mile, Measure M's $120 billion buys 120 miles of heavy rail. At Madrid costs, it buys 375 miles. The difference is not tunneling. It is procurement and project delivery reform.
+      </li>
+      <li>
+        <strong>Run more trains on what exists</strong>
+        The existing 121-mile network averages fewer than one million weekday boardings on its best days. Frequency investment on core lines yields ridership faster than new construction.
+      </li>
+    </ul>
+  </div>
+</div>
+
+<p>The 2028 Olympics will come and go. The test of what LA Metro built is not whether athletes can ride a train from the Olympic Village to the stadium. It is whether a teacher in Van Nuys can ride a train to Westwood in 2045. By that measure, the system Measure M is funding has the right ambition and the wrong timeline. The Sepulveda Corridor will not open until 2033 at the earliest. A project that could have been operating for twelve years before the 2028 Games will not carry a single passenger until five years after them.</p>
+
+<p>Burnham's Plan of Chicago was audacious not because it was large, but because it was early. The rail lines it envisioned were drawn before the city needed them. Los Angeles is doing the opposite: building a transit system after the city has already sprawled into the configuration that makes transit hard. That makes the work harder and the cost higher. It does not make the work less necessary.</p>
+
+<footer>
+  Burnham Civic / Los Angeles. Figures from LA Metro FY26 Proposed Budget, LA Metro project pages, FTA project profiles, LAist, Streetsblog Los Angeles, Engineering News-Record, Ballotpedia Measure M entry, and Transit Costs Project data. All project timelines and budgets current as of March 2026 and subject to change. Contact: <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a>
+</footer>
+
+</body>
+</html>
