@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Preliminary Cabinet - BURNHAM CIVIC</title>
+<meta name="description" content="Name your people before the election. Eight roles that determine whether LA rebuilds to a standard or by accident.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a {
+  margin-right: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: #00c;
+  text-decoration: none;
+}
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.back {
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+  color: #00c;
+}
+.back:hover { color: #c00; }
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+.article-subtitle {
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+.burnham-quote {
+  font-style: italic;
+  font-size: 15px;
+  color: #555;
+  border-left: 3px solid #1e3a5f;
+  padding: 8px 16px;
+  margin: 24px 0;
+  line-height: 1.6;
+}
+.burnham-quote .attr {
+  font-size: 11px;
+  color: #999;
+  font-style: normal;
+  display: block;
+  margin-top: 6px;
+}
+p { margin: 0 0 16px; }
+h2 {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 32px 0 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+.cabinet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+@media (max-width: 600px) {
+  .cabinet-grid { grid-template-columns: 1fr; }
+}
+.role-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+}
+.role-card .role-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin: 0 0 2px;
+}
+.role-card .role-dept {
+  font-size: 11px;
+  color: #888;
+  margin: 0 0 10px;
+  font-style: italic;
+}
+.role-card .current-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999;
+  margin: 0 0 3px;
+}
+.role-card .current-holder {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 2px;
+}
+.role-card .holder-since {
+  font-size: 11px;
+  color: #888;
+  margin: 0 0 6px;
+}
+.role-card .holder-record {
+  font-size: 12px;
+  color: #555;
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+.role-card .controls-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999;
+  margin: 0 0 3px;
+}
+.role-card .controls-text {
+  font-size: 12px;
+  color: #444;
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+.role-card .pick-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9a7c2e;
+  margin: 0 0 4px;
+}
+.role-card .pick-input {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 13px;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  color: #111;
+  background: #fef9ec;
+  margin: 0 0 8px;
+}
+.role-card .pick-input:focus {
+  outline: none;
+  border-color: #9a7c2e;
+  background: #fff8e6;
+}
+.role-card .why-matters {
+  font-size: 11px;
+  color: #888;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.5;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+.save-notice {
+  font-size: 11px;
+  color: #2d5016;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  height: 16px;
+  margin-bottom: 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.save-notice.show {
+  opacity: 1;
+}
+.restricted-banner {
+  background: #1e3a5f;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  font-size: 11px;
+  color: #999;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="https://burnhamcivic.org/subscribe" class="subscribe">Subscribe</a>
+</div>
+
+<hr>
+
+<nav class="nav">
+  <a href="/">Seattle</a>
+  <a href="/la/" class="active">LA</a>
+  <a href="/intelligence/">Intelligence</a>
+  <a href="/contact/">Contact</a>
+</nav>
+
+<a href="./" class="back">&#8592; Los Angeles</a>
+
+<div class="restricted-banner">Restricted</div>
+
+<h1 class="article-title">The Preliminary Cabinet</h1>
+<p class="article-subtitle">Name your people before the election. No other candidate will do this.</p>
+
+<div class="burnham-quote">
+  Burnham didn't just draw plans. He assembled the team that could build them. The Commercial Club, the architects, the engineers. He named them. Chicago knew who was building their city before the first brick was laid.
+  <span class="attr">Burnham Civic editorial note</span>
+</div>
+
+<p>Voters deserve to know who will run their city before they vote. These are the eight positions that determine whether LA rebuilds to a standard or rebuilds by accident.</p>
+
+<h2>Spencer's Cabinet Picks</h2>
+
+<div class="save-notice" id="save-notice">Saved.</div>
+
+<div class="cabinet-grid" id="cabinet-grid">
+
+  <div class="role-card">
+    <p class="role-title">Fire Chief</p>
+    <p class="role-dept">Los Angeles Fire Department</p>
+    <p class="current-label">Current Holder</p>
+    <p class="current-holder">Jaime Moore</p>
+    <p class="holder-since">Since November 14, 2025</p>
+    <p class="holder-record">The 20th LAFD Fire Chief. Appointed after Kristin Crowley was fired following the January 2025 Palisades and Eaton fires. 30-year LAFD veteran. First Spanish-speaking chief. Unanimously confirmed by City Council 12-0.</p>
+    <p class="controls-label">Controls</p>
+    <p class="controls-text">~3,400 sworn personnel. 106 stations. $895M annual budget. Commands all fire suppression, emergency medical services, and urban search and rescue for the city.</p>
+    <p class="pick-label">Spencer's Pick</p>
+    <input type="text" class="pick-input" data-role="fire-chief" placeholder="Name your Fire Chief..." autocomplete="off">
+    <p class="why-matters">The fires of January 2025 killed 31 people and destroyed 16,000 structures. Whoever holds this role sets the rebuild standard and the pre-positioning doctrine for the next event.</p>
+  </div>
+
+  <div class="role-card">
+    <p class="role-title">Chief of Police</p>
+    <p class="role-dept">Los Angeles Police Department</p>
+    <p class="current-label">Current Holder</p>
+    <p class="current-holder">Jim McDonnell</p>
+    <p class="holder-since">Since November 8, 2024</p>
+    <p class="holder-record">The 59th LAPD Chief. Previously served as LA County Sheriff. Confirmed by Mayor Bass after a national search. Focus on officer morale, recruitment, and crime reduction during a period of significant staffing shortfalls.</p>
+    <p class="controls-label">Controls</p>
+    <p class="controls-text">~9,000 sworn officers (authorized). Citywide patrol, detective, and specialized units. Annual budget exceeding $3B. Manages consent decree obligations and LAPD reform commitments.</p>
+    <p class="pick-label">Spencer's Pick</p>
+    <input type="text" class="pick-input" data-role="police-chief" placeholder="Name your Police Chief..." autocomplete="off">
+    <p class="why-matters">LAPD is 2,000 officers below its authorized strength. Who leads the department determines whether recruitment recovers and whether the city can sustain the public safety capacity the rebuild requires.</p>
+  </div>
+
+  <div class="role-card">
+    <p class="role-title">General Manager</p>
+    <p class="role-dept">Los Angeles Department of Water and Power</p>
+    <p class="current-label">Current Holder</p>
+    <p class="current-holder">David W. Hanson (Interim)</p>
+    <p class="holder-since">Interim, effective March 27, 2026</p>
+    <p class="holder-record">Designated interim after CEO Janisse Quinones resigned to lead LUMA, Puerto Rico's grid operator. Hanson has been LADWP's Chief Operating Officer and Senior Assistant General Manager since August 2024. Over 20 years at the department.</p>
+    <p class="controls-label">Controls</p>
+    <p class="controls-text">The largest municipal utility in the United States. 4 million customers. $6B+ annual budget. Controls water delivery and electrical infrastructure across a city that just proved how badly it can fail.</p>
+    <p class="pick-label">Spencer's Pick</p>
+    <input type="text" class="pick-input" data-role="dwp-gm" placeholder="Name your DWP General Manager..." autocomplete="off">
+    <p class="why-matters">The Palisades Reservoir was reportedly offline during the January fires. DWP controls both the water and the power. This is the single most consequential operational appointment for the rebuild.</p>
+  </div>
+
+  <div class="role-card">
+    <p class="role-title">City Attorney</p>
+    <p class="role-dept">Office of the City Attorney</p>
+    <p class="current-label">Current Holder</p>
+    <p class="current-holder">Hydee Feldstein Soto</p>
+    <p class="holder-since">Since December 12, 2022</p>
+    <p class="holder-record">First female City Attorney in LA history and the first Latina elected citywide. Leads a team of 1,000+ legal professionals including 550+ attorneys. Up for re-election June 2026.</p>
+    <p class="controls-label">Controls</p>
+    <p class="controls-text">All civil litigation involving the city. Prosecutes misdemeanor crimes. Advises the Council and Mayor on legal matters. Negotiates major contracts and settlement agreements. Over $100M annual budget.</p>
+    <p class="pick-label">Spencer's Pick</p>
+    <input type="text" class="pick-input" data-role="city-attorney" placeholder="Name your City Attorney..." autocomplete="off">
+    <p class="why-matters">The rebuild will generate years of litigation: utility liability, contractor disputes, code enforcement. A City Attorney with a clear standard of accountability changes how those cases get resolved.</p>
+  </div>
+
+  <div class="role-card">
+    <p class="role-title">Executive Director</p>
+    <p class="role-dept">Los Angeles Homeless Services Authority (LAHSA)</p>
+    <p class="current-label">Current Holder</p>
+    <p class="current-holder">Gita O'Neill (Interim CEO)</p>
+    <p class="holder-since">Since August 26, 2025</p>
+    <p class="holder-record">Former director of homeless policies and strategies for the City Attorney's office. Hired on 12-month interim contract after Va Lecia Adams Kellum stepped down. Overseeing structural transition as LA County builds its own separate homelessness department.</p>
+    <p class="controls-label">Controls</p>
+    <p class="controls-text">$800M+ annual budget. Coordinates over 100 contractor organizations providing outreach, shelter, and services. Responsible for the annual homeless count and federal HUD reporting.</p>
+    <p class="pick-label">Spencer's Pick</p>
+    <input type="text" class="pick-input" data-role="lahsa-ed" placeholder="Name your LAHSA Director..." autocomplete="off">
+    <p class="why-matters">LAHSA is losing its county mandate. The agency either transforms into something that works or it continues spending $800M for outcomes that haven't moved. This hire is the test of whether the new administration is serious.</p>
+  </div>
+
+  <div class="role-card">
+    <p class="role-title">Chief Executive Officer</p>
+    <p class="role-dept">LA Metro</p>
+    <p class="current-label">Current Holder</p>
+    <p class="current-holder">Stephanie Wiggins</p>
+    <p class="holder-since">Since 2021</p>
+    <p class="holder-record">Contract extended April 2025 with a 20%+ raise to $511,000/year. Board voted 11-0 to keep her through the 2026 FIFA World Cup and the 2028 Olympic Games. Reported 53% ridership increase and 87% customer satisfaction.</p>
+    <p class="controls-label">Controls</p>
+    <p class="controls-text">$9B+ annual budget. Rail, bus, and active transportation network serving 9.6 million county residents. $23B capital program. Coordinating all transit for the 2026 World Cup and 2028 Olympics.</p>
+    <p class="pick-label">Spencer's Pick</p>
+    <input type="text" class="pick-input" data-role="metro-ceo" placeholder="Name your Metro CEO..." autocomplete="off">
+    <p class="why-matters">The 2028 Olympics is a forcing function. Metro either delivers world-class transit or LA becomes a global embarrassment on a deadline that cannot move. This role determines whether the city is ready.</p>
+  </div>
+
+  <div class="role-card">
+    <p class="role-title">General Manager and Superintendent of Building</p>
+    <p class="role-dept">Los Angeles Department of Building and Safety (LADBS)</p>
+    <p class="current-label">Current Holder</p>
+    <p class="current-holder">Osama Younan</p>
+    <p class="holder-since">Since 2020</p>
+    <p class="holder-record">33-year LADBS veteran. Appointed by Mayor Garcetti. Has led the department through post-fire permitting surge, implementing self-certification programs to accelerate Palisades rebuild approvals. Engineer, LEED AP.</p>
+    <p class="controls-label">Controls</p>
+    <p class="controls-text">All building permits, inspections, and code enforcement for the city. Directly controls the speed of the post-fire rebuild. Over 300,000 permits issued annually. Sets interpretation of building code for all new construction.</p>
+    <p class="pick-label">Spencer's Pick</p>
+    <input type="text" class="pick-input" data-role="ladbs-gm" placeholder="Name your LADBS General Manager..." autocomplete="off">
+    <p class="why-matters">16,000 structures need to be rebuilt. The permit pipeline is the bottleneck. A GM with the authority and willingness to set a Burnham-level construction standard changes what gets built and how fast.</p>
+  </div>
+
+  <div class="role-card">
+    <p class="role-title">City Administrative Officer</p>
+    <p class="role-dept">Office of the City Administrative Officer</p>
+    <p class="current-label">Current Holder</p>
+    <p class="current-holder">Matthew W. Szabo</p>
+    <p class="holder-since">Since approximately 2021</p>
+    <p class="holder-record">Reports jointly to the Mayor and City Council. Led the city through a $1B budget deficit in FY 2025-26, closing the gap through labor negotiations that avoided mass layoffs. Primary financial and labor advisor to all city leadership.</p>
+    <p class="controls-label">Controls</p>
+    <p class="controls-text">City budget preparation and administration. All labor contract negotiations for 40,000+ city employees. Internal audits and management reviews. The financial operating system behind every department on this list.</p>
+    <p class="pick-label">Spencer's Pick</p>
+    <input type="text" class="pick-input" data-role="cao" placeholder="Name your CAO..." autocomplete="off">
+    <p class="why-matters">The CAO holds the purse strings and the labor agreements. A rebuild that is ambitious on paper collapses if the person writing the budget treats it like a normal year. This role is where fiscal strategy becomes operational reality.</p>
+  </div>
+
+</div>
+
+<hr>
+<p style="font-size:12px;color:#666;margin:0 0 20px;">Sources: LAFD.org, LAPD Online, LADWPnews.com, cityattorney.lacity.gov, LAHSA.org, LA Metro, LADBS.org, CAO.lacity.gov. Titles and holders verified as of March 2026. All picks save automatically to this browser.</p>
+
+<footer>
+  Burnham Civic / Los Angeles Strategy. Restricted to authorized users. Contact: <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a>
+</footer>
+
+<script>
+(function() {
+  var STORAGE_KEY = 'tbc_la_cabinet';
+  var saveTimer = null;
+
+  function loadPicks() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return {};
+      return JSON.parse(raw);
+    } catch(e) {
+      return {};
+    }
+  }
+
+  function savePicks(picks) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(picks));
+    } catch(e) {}
+  }
+
+  function showSaved() {
+    var notice = document.getElementById('save-notice');
+    notice.classList.add('show');
+    setTimeout(function() {
+      notice.classList.remove('show');
+    }, 1800);
+  }
+
+  function onInput(e) {
+    if (saveTimer) clearTimeout(saveTimer);
+    saveTimer = setTimeout(function() {
+      var picks = loadPicks();
+      var inputs = document.querySelectorAll('.pick-input');
+      for (var i = 0; i < inputs.length; i++) {
+        var role = inputs[i].getAttribute('data-role');
+        picks[role] = inputs[i].value;
+      }
+      savePicks(picks);
+      showSaved();
+    }, 500);
+  }
+
+  window.addEventListener('DOMContentLoaded', function() {
+    var picks = loadPicks();
+    var inputs = document.querySelectorAll('.pick-input');
+    for (var i = 0; i < inputs.length; i++) {
+      var role = inputs[i].getAttribute('data-role');
+      if (picks[role]) {
+        inputs[i].value = picks[role];
+      }
+      inputs[i].addEventListener('input', onInput);
+    }
+  });
+})();
+</script>
+
+<script src="gate.js"></script>
+</body>
+</html>
