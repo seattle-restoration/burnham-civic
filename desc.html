@@ -47,12 +47,12 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 <meta property="og:title" content="DESC - BURNHAM CIVIC">
 <meta property="og:description" content="DESC accountability brief. $103M in revenue. Deputy Director sits on the state Appropriations Committee. 600 police calls at Burien shelter.">
 <meta property="og:url" content="https://burnhamcivic.org/desc.html">
-<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta property="og:image" content="https://burnhamcivic.org/og-accountability-1.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@TBCNewsAction">
 <meta name="twitter:title" content="DESC - BURNHAM CIVIC">
 <meta name="twitter:description" content="DESC accountability brief. $103M in revenue. Deputy Director sits on the state Appropriations Committee. 600 police calls at Burien shelter.">
-<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-accountability-1.png">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJC34M3909"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WJC34M3909');</script>
@@ -79,8 +79,12 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 
 <div id="paywall-gate">
   <h2>&#9878; TBC Intelligence</h2>
-  <p>This accountability brief is available to TBC Intelligence members.</p>
-  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')" class="join-btn">Join - $5,000/year</a>
+  <p>Enter password to access article.</p>
+  <div style="margin-top:16px;">
+    <input type="password" id="gate-pw" placeholder="Password" style="font-family:Georgia,serif;font-size:14px;padding:8px 12px;border:1px solid #ccc;width:200px;" onkeydown="if(event.key==='Enter')checkPw()">
+    <button onclick="checkPw()" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:9px 20px;margin-left:8px;cursor:pointer;">Enter</button>
+  </div>
+  <p id="gate-error" style="display:none;color:#991b1b;font-size:13px;margin-top:8px;">Incorrect password.</p>
 </div>
 
 <div id="gated-content">
@@ -146,6 +150,9 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 <p>4. What operational changes were made after the Burien shelter generated 600 police calls and multiple overdose deaths?</p>
 <p>5. Two-thirds of all spending goes to payroll. What is the staff-to-client ratio across DESC's programs, and how does it compare to peer organizations?</p>
 
+<h2>TBC Action</h2>
+<p>On April 12, 2026, The Burnham Civic submitted a formal complaint to the HUD Office of Inspector General citing building-level 911 data for DESC properties (3,575 calls at the Morrison Hotel block in four years, 873 overdose calls all-time, Navigation Center CID calls up 148% from 2022 to 2025). The complaint requests a monitoring review of DESC's HUD-funded properties and an audit of KCRHA's subrecipient oversight. DESC lost its low-risk auditee status in FY2024 for the first time. TBC does not publish reports and wait. We file complaints, we name decision makers, and we follow through until there are consequences.</p>
+
 <div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
   <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
   <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute expertise, or join as a member? Tell us who you are and how you want to help.</p>
@@ -164,24 +171,22 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
   </form>
 </div>
 
+<h2>Accountability Series</h2>
+<p><a href="plymouth-housing.html">Plymouth Housing</a> &#183; <a href="ccs.html">Catholic Community Services</a> &#183; <a href="lihi.html">Low Income Housing Institute</a> &#183; <a href="kcrha.html">KCRHA</a> &#183; <a href="hdc.html">HDC</a></p>
+
 </div>
 
 <script>
-(function(){
-  var buf='',unlocked=false;
-  document.addEventListener('keydown',function(e){
-    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
-    if(e.key.length!==1) return;
-    buf+=e.key.toLowerCase();
-    if(buf.length>10) buf=buf.slice(-10);
-    if(buf.indexOf('/maga')!==-1){
-      buf='';
-      unlocked=!unlocked;
-      document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
-      document.getElementById('gated-content').style.display=unlocked?'block':'none';
-    }
-  });
-})();
+function checkPw(){
+  var pw=document.getElementById('gate-pw').value;
+  if(pw==='saveseattle'){
+    document.getElementById('paywall-gate').style.display='none';
+    document.getElementById('gated-content').style.display='block';
+    document.getElementById('gate-error').style.display='none';
+  } else {
+    document.getElementById('gate-error').style.display='block';
+  }
+}
 function sendDesc(){
   var n=document.getElementById('desc-name').value;
   var e=document.getElementById('desc-email').value;
@@ -197,6 +202,6 @@ function sendDesc(){
 }
 </script>
 
-<div class="footer">501(c)(4) pending.</div>
+<div class="footer">The Burnham Civic. operations@burnhamcivic.org</div>
 </body>
 </html>
