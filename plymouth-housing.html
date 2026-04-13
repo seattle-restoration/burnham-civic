@@ -46,12 +46,12 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 <meta property="og:title" content="Plymouth Housing - BURNHAM CIVIC">
 <meta property="og:description" content="Plymouth Housing accountability brief. $69.5M in revenue. $22.4M deficit. 148 police calls at one facility. Where is the money going?">
 <meta property="og:url" content="https://burnhamcivic.org/plymouth-housing.html">
-<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta property="og:image" content="https://burnhamcivic.org/og-accountability-1.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@TBCNewsAction">
 <meta name="twitter:title" content="Plymouth Housing - BURNHAM CIVIC">
 <meta name="twitter:description" content="Plymouth Housing accountability brief. $69.5M in revenue. $22.4M deficit. 148 police calls at one facility. Where is the money going?">
-<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-accountability-1.png">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJC34M3909"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WJC34M3909');</script>
@@ -78,8 +78,12 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 
 <div id="paywall-gate">
   <h2>&#9878; TBC Intelligence</h2>
-  <p>This accountability brief is available to TBC Intelligence members.</p>
-  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')" class="join-btn">Join - $5,000/year</a>
+  <p>Enter password to access article.</p>
+  <div style="margin-top:16px;">
+    <input type="password" id="gate-pw" placeholder="Password" style="font-family:Georgia,serif;font-size:14px;padding:8px 12px;border:1px solid #ccc;width:200px;" onkeydown="if(event.key==='Enter')checkPw()">
+    <button onclick="checkPw()" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:9px 20px;margin-left:8px;cursor:pointer;">Enter</button>
+  </div>
+  <p id="gate-error" style="display:none;color:#991b1b;font-size:13px;margin-top:8px;">Incorrect password.</p>
 </div>
 
 <div id="gated-content">
@@ -116,22 +120,100 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 <p>Plymouth Crossing, a facility in Bellevue, generated 5 police calls in late 2023. In 2024, that number was <strong>148</strong>. That is not a gradual increase. That is a facility that lost control.</p>
 <p>Reports from the facility describe rampant drug use, assaults, feces in hallways, and bed bug infestations. Proposals for similar Plymouth facilities in Kenmore and Redmond have met significant community pushback over crime and public safety impacts.</p>
 
-<h2>The Belltown Attack</h2>
-<p>A Plymouth Housing resident with a violent criminal history allegedly attacked a woman with a baseball bat in Belltown, causing injuries that required skull surgery. The resident was housed by Plymouth under the Housing First model, which does not screen for criminal history or require behavioral compliance.</p>
+<h2>The Murder of Kristin Benson</h2>
+<p>On November 23, 2020, Plymouth Housing case manager <strong>Kristin "Kris" Benson</strong> was stabbed to death at the Lewiston/Scargo building (2209 1st Ave, Belltown). She was an 8-year Plymouth employee. The suspect, Hans Dewey Van-Belkum, was a 58-year-old resident who had lived in the building for 8 years. He purchased a military-grade knife from a surplus store two weeks before the attack. Benson was stabbed 12 times; 8 wounds to her back, 3 individually fatal. The knife was found buried in her back. Van-Belkum believed Benson was trying to have him evicted. He was charged with first-degree murder.</p>
+<p>Plymouth Housing named a new building after Benson. The Lewiston/Scargo building where she was killed continues to generate 600-700 police calls per year.</p>
 
-<h2>Harm Reduction Policy</h2>
-<p>Plymouth explicitly allows drug consumption within units under a "harm reduction" philosophy. Their website states they help residents "minimize harms" of substance use. Critics argue this policy enables continued drug use rather than promoting recovery, and that the organization measures success by retention rate (93% of residents stay housed) rather than by whether residents are actually getting better.</p>
-<p>Staying in the building is the metric. Recovery is not.</p>
+<h2>17,722 Police Calls in Four Years</h2>
+<p>Using the Seattle Police Department's publicly available 911 dispatch data (data.seattle.gov, dataset 33kz-ixgy), we compiled police call volumes for each Plymouth Housing building by block address for calendar years 2022 through 2025.</p>
 
-<h2>KCRHA Relationship</h2>
-<p>Plymouth is a major contracted provider through KCRHA's Coordinated Entry for All system. Housing units are filled through the Housing Triage Tool administered by KCRHA. The $51.9 million in "contributions" listed on Plymouth's 990 is largely government funding routed through KCRHA, the City of Seattle, King County, and HUD Continuum of Care grants.</p>
+<table class="data">
+<tr><th>Building</th><th>Units</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th><th>4yr Total</th><th>OD Calls</th><th>Calls/Unit/Yr</th></tr>
+<tr><td>Sylvia Odom (20XX 3 AV)</td><td class="num">65</td><td class="num">408</td><td class="num">560</td><td class="num">490</td><td class="num">485</td><td class="num deficit">1,943</td><td class="num deficit">244</td><td class="num deficit">7.5</td></tr>
+<tr><td>Lewiston/Scargo (22XX 1 AV)</td><td class="num">102</td><td class="num">635</td><td class="num">620</td><td class="num">602</td><td class="num">698</td><td class="num deficit">2,555</td><td class="num deficit">200</td><td class="num deficit">6.3</td></tr>
+<tr><td>Simons Senior (21XX 3 AV)</td><td class="num">95</td><td class="num">357</td><td class="num">592</td><td class="num">529</td><td class="num">599</td><td class="num deficit">2,077</td><td class="num deficit">295</td><td class="num deficit">5.5</td></tr>
+<tr><td>Almquist Place (5XX RAINIER S)</td><td class="num">105</td><td class="num">624</td><td class="num">706</td><td class="num">418</td><td class="num">489</td><td class="num deficit">2,237</td><td class="num deficit">256</td><td class="num deficit">5.3</td></tr>
+<tr><td>First Hill (7XX CHERRY)</td><td class="num">80</td><td class="num">416</td><td class="num">436</td><td class="num">414</td><td class="num">381</td><td class="num deficit">1,647</td><td class="num deficit">232</td><td class="num deficit">5.1</td></tr>
+<tr><td>Campbell Place (1XX 12 AV)</td><td class="num">103</td><td class="num">111</td><td class="num">546</td><td class="num">621</td><td class="num deficit">746</td><td class="num deficit">2,024</td><td class="num">157</td><td class="num deficit">4.9</td></tr>
+<tr><td>Stewart (1XX STEWART)</td><td class="num">87</td><td class="num">311</td><td class="num">308</td><td class="num">388</td><td class="num">293</td><td class="num">1,300</td><td class="num">184</td><td class="num">3.7</td></tr>
+<tr><td>Humphrey House (1XX CEDAR)</td><td class="num">84</td><td class="num">265</td><td class="num">270</td><td class="num">244</td><td class="num">238</td><td class="num">1,017</td><td class="num">132</td><td class="num">3.0</td></tr>
+<tr><td>Pat Williams (2XX PONTIUS N)</td><td class="num">84</td><td class="num">247</td><td class="num">186</td><td class="num">142</td><td class="num">119</td><td class="num">694</td><td class="num">19</td><td class="num">2.1</td></tr>
+<tr><td>Toft Terrace (64XX 15 NW)</td><td class="num">81</td><td class="num">14</td><td class="num">161</td><td class="num">162</td><td class="num">112</td><td class="num">449</td><td class="num">7</td><td class="num">1.4</td></tr>
+<tr><td>Benson Place (6XX 2 AV N)</td><td class="num">93</td><td class="num">178</td><td class="num">129</td><td class="num">105</td><td class="num">120</td><td class="num">532</td><td class="num">8</td><td class="num">1.4</td></tr>
+<tr><td>Colwell (1XX YALE N)</td><td class="num">126</td><td class="num">128</td><td class="num">122</td><td class="num">100</td><td class="num">80</td><td class="num">430</td><td class="num">32</td><td class="num">0.9</td></tr>
+<tr><td>Pacific (3XX MARION)</td><td class="num">112</td><td class="num">195</td><td class="num">122</td><td class="num">28</td><td class="num">69</td><td class="num">414</td><td class="num">76</td><td class="num">0.9</td></tr>
+<tr><td>Blake House (10XX BOYLSTON)</td><td class="num">115</td><td class="num">0</td><td class="num">43</td><td class="num">186</td><td class="num">174</td><td class="num">403</td><td class="num">62</td><td class="num">0.9</td></tr>
+<tr style="font-weight:700;border-top:2px solid #999;"><td>TOTAL</td><td class="num">1,332</td><td class="num">3,893</td><td class="num">4,459</td><td class="num">4,318</td><td class="num">4,603</td><td class="num deficit">17,722</td><td class="num deficit">1,853</td><td class="num">3.3</td></tr>
+</table>
+
+<div class="stat-block">
+<p><strong class="deficit">17,722 police calls</strong> across 14 Plymouth buildings in four years</p>
+<p><strong class="deficit">1,853 overdose calls</strong> (all-time, from SPD dispatch data)</p>
+<p><strong>Sylvia Odom's Place</strong> (65 units): 7.5 police calls per unit per year. A police response every 7 weeks per apartment.</p>
+<p><strong>Campbell Place</strong>: 572% increase in calls (111 to 746) between 2022 and 2025</p>
+<p><strong>Simons Senior</strong>: 295 overdose calls, the most of any single Plymouth building</p>
+</div>
+
+<p style="font-size:13px;color:#666;">Note: SPD data is reported at block level. Volumes include all activity on the block, not exclusively Plymouth buildings. However, Plymouth buildings are typically the dominant residential structure on their respective blocks. Data source: data.seattle.gov, dataset 33kz-ixgy, field dispatch_address.</p>
+
+<h2>PSH Buildings as Overdose Death Concentrators</h2>
+<p>The Seattle City Auditor's July 2024 report, "Addressing Places in Seattle Where Overdoses and Crime are Concentrated," found:</p>
+<div class="stat-block">
+<p>On a two-block stretch of Third Avenue between Blanchard and Virginia Streets, where Plymouth's <strong>Sylvia Odom's Place</strong> and <strong>Simons Senior Apartments</strong> are located, <strong class="deficit">10 of 11 fatal overdoses</strong> occurred in or outside the three permanent supportive housing buildings.</p>
+<p>Across King County in 2023, <strong class="deficit">279 fatal overdoses occurred in permanent supportive housing.</strong></p>
+<p>The auditor's conclusion: more people are dying of drug overdoses behind closed doors in permanent supportive housing than on the streets.</p>
+</div>
+
+<h2>HUD Funding: $22.5 Million</h2>
+<p>Plymouth's audited Schedule of Expenditures of Federal Awards (FY ending December 31, 2024, FAC Report ID 2024-12-GSAFAC-0000375377) shows $26.8 million in total federal expenditures, of which $22.5 million (84%) comes from HUD:</p>
+
+<table class="data">
+<tr><th>Program</th><th>CFDA</th><th>Amount</th><th>Detail</th></tr>
+<tr><td>Continuum of Care</td><td class="num">14.267</td><td class="num">$17,241,322</td><td>9 grants via City of Seattle ($1.3M) and King County ($15.9M)</td></tr>
+<tr><td>CDBG Mortgage Loans</td><td class="num">14.218</td><td class="num">$5,483,911</td><td>5 properties via City of Seattle</td></tr>
+<tr><td>HOME Mortgage Loans</td><td class="num">14.239</td><td class="num">$1,103,600</td><td>2 properties via City of Seattle and Thurston County</td></tr>
+<tr style="font-weight:700;"><td>Total HUD</td><td></td><td class="num">$22,490,484</td><td></td></tr>
+<tr><td>ARPA/SLFRF (Treasury)</td><td class="num">21.027</td><td class="num">$4,346,010</td><td>State of Washington</td></tr>
+<tr style="font-weight:700;border-top:2px solid #999;"><td>Total Federal</td><td></td><td class="num">$26,836,494</td><td></td></tr>
+</table>
+
+<p>The CDBG and HOME loans are secured by specific Plymouth properties. HUD has a direct financial interest in those buildings. The CoC grants fund ongoing PSH operations. HUD has programmatic authority over all of it.</p>
+
+<h2>Community Opposition</h2>
+<p>Every Plymouth expansion has faced organized resistance:</p>
+<div class="stat-block">
+<p><strong>Kenmore (Dec 2023):</strong> City Council voted 5-2 to block a 100-unit Plymouth project. Residents accused Plymouth of a bait-and-switch: marketing the project as housing for veterans and seniors, then switching to chronic homelessness with no treatment requirements.</p>
+<p><strong>Redmond (2024-2025):</strong> 50+ protesters at City Hall. 2.5 hours of testimony. City gave Plymouth a $5.5M property for free plus $3M in funding. Legal appeals filed. Public excluded from the groundbreaking ceremony.</p>
+<p><strong>Kirkland:</strong> La Quinta Inn conversion. Neighbors: "free housing for a felon."</p>
+<p><strong>Bellevue (Plymouth Crossing):</strong> Became "the city's top source of 911 calls." A resident with 57 prior warrants was committing car thefts from the building.</p>
+</div>
+
+<h2>What Plymouth Won't Publish</h2>
+<p>Plymouth reports a 95% housing retention rate. It does not publish:</p>
+<div class="stat-block">
+<p><strong>Mortality data.</strong> How many residents die per year? From what causes? At what age? The 279 fatal overdoses in PSH across King County suggest significant deaths, but Plymouth does not disclose building-level mortality.</p>
+<p><strong>Exits to independence.</strong> How many residents leave Plymouth for independent housing? Employment? The "will die there" statement from a Plymouth representative (March 2026) suggests the answer is: almost none.</p>
+<p><strong>Incident reports.</strong> No public accounting of assaults, overdoses, or building conditions.</p>
+<p><strong>Journalists are banned from facilities.</strong> CEO Karen Lee has dismissed all criticism as "misinformation."</p>
+</div>
 
 <h2>Key Questions</h2>
-<p>1. How does Plymouth justify a CEO salary of nearly $400,000 while running a $22.4 million annual deficit?</p>
-<p>2. What specific outcomes does Plymouth track beyond retention rate? What percentage of residents achieve employment, sobriety, or independent living?</p>
-<p>3. What operational changes were made at Plymouth Crossing after police calls increased from 5 to 148?</p>
-<p>4. How much of Plymouth's government funding comes through KCRHA contracts versus direct city, county, and federal grants?</p>
-<p>5. At the current burn rate, when does the reserve fund run out?</p>
+<p>1. How does Plymouth justify a CEO salary of nearly $400,000 while running a $22.4 million annual deficit and generating 17,722 police calls across its portfolio?</p>
+<p>2. What specific outcomes does Plymouth track beyond retention rate? How many residents die per year, and from what causes?</p>
+<p>3. What operational changes were made at Plymouth Crossing after police calls increased from 5 to 148, and at Campbell Place after calls increased from 111 to 746?</p>
+<p>4. Is the 95% retention rate calculated inclusive or exclusive of resident deaths?</p>
+<p>5. Why are journalists banned from Plymouth facilities? What are the conditions inside Lewiston/Scargo, where a case manager was murdered and calls remain at 600-700 per year?</p>
+<p>6. Do the CDBG and HOME loan properties (contract IDs DL35131B, DL2825AK, DL39045B, DL577089, DL55036B) meet HUD Housing Quality Standards given the conditions documented by the Seattle City Auditor?</p>
+<p>7. At the current burn rate ($22M/yr deficit against $159M reserves), when does the reserve fund run out?</p>
+
+<h2>Source Documents</h2>
+<p>Single Audit: Dauby O'Connor & Zaleski, LLC, signed June 26, 2025. FAC Report ID: 2024-12-GSAFAC-0000375377.</p>
+<p>SPD 911 Data: data.seattle.gov, dataset 33kz-ixgy, field dispatch_address. No authentication required.</p>
+<p>Seattle City Auditor: "Addressing Places in Seattle Where Overdoses and Crime are Concentrated," July 2024.</p>
+<p>990 filings: <a href="https://projects.propublica.org/nonprofits/organizations/911122621">ProPublica Nonprofit Explorer</a> (EIN 91-1122621).</p>
+
+<h2>TBC Action</h2>
+<p>On April 12, 2026, The Burnham Civic submitted a formal complaint to the HUD Office of Inspector General (hotline@hudoig.gov) citing building-level 911 data, the Seattle City Auditor's overdose findings, and the audited Schedule of Expenditures of Federal Awards for Plymouth Housing and other HUD-funded providers in the WA-500 Continuum of Care. The complaint requests a monitoring review of Plymouth's HUD-funded properties, an audit of KCRHA's subrecipient oversight, and disclosure of resident mortality data. TBC does not publish reports and wait. We file complaints, we name decision makers, and we follow through until there are consequences.</p>
 
 <div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
   <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
@@ -151,24 +233,22 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
   </form>
 </div>
 
+<h2>Accountability Series</h2>
+<p><a href="desc.html">DESC</a> &#183; <a href="ccs.html">Catholic Community Services</a> &#183; <a href="lihi.html">Low Income Housing Institute</a> &#183; <a href="kcrha.html">KCRHA</a> &#183; <a href="hdc.html">HDC</a></p>
+
 </div>
 
 <script>
-(function(){
-  var buf='',unlocked=false;
-  document.addEventListener('keydown',function(e){
-    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
-    if(e.key.length!==1) return;
-    buf+=e.key.toLowerCase();
-    if(buf.length>10) buf=buf.slice(-10);
-    if(buf.indexOf('/maga')!==-1){
-      buf='';
-      unlocked=!unlocked;
-      document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
-      document.getElementById('gated-content').style.display=unlocked?'block':'none';
-    }
-  });
-})();
+function checkPw(){
+  var pw=document.getElementById('gate-pw').value;
+  if(pw==='saveseattle'){
+    document.getElementById('paywall-gate').style.display='none';
+    document.getElementById('gated-content').style.display='block';
+    document.getElementById('gate-error').style.display='none';
+  } else {
+    document.getElementById('gate-error').style.display='block';
+  }
+}
 function sendPh(){
   var n=document.getElementById('ph-name').value;
   var e=document.getElementById('ph-email').value;
@@ -184,6 +264,6 @@ function sendPh(){
 }
 </script>
 
-<div class="footer">501(c)(4) pending.</div>
+<div class="footer">The Burnham Civic. operations@burnhamcivic.org</div>
 </body>
 </html>

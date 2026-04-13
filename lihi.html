@@ -46,12 +46,12 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 <meta property="og:title" content="Low Income Housing Institute - BURNHAM CIVIC">
 <meta property="og:description" content="LIHI accountability brief. $108 million in revenue, $490 million in assets, tiny house villages with unreported deaths, and a 33-year executive director earning $338K.">
 <meta property="og:url" content="https://burnhamcivic.org/lihi.html">
-<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta property="og:image" content="https://burnhamcivic.org/og-accountability-1.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@TBCNewsAction">
 <meta name="twitter:title" content="Low Income Housing Institute - BURNHAM CIVIC">
 <meta name="twitter:description" content="LIHI accountability brief. $108 million in revenue, $490 million in assets, tiny house villages with unreported deaths, and a 33-year executive director earning $338K.">
-<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-accountability-1.png">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJC34M3909"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WJC34M3909');</script>
@@ -78,8 +78,12 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 
 <div id="paywall-gate">
   <h2>&#9878; TBC Intelligence</h2>
-  <p>This accountability brief is available to TBC Intelligence members.</p>
-  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')" class="join-btn">Join - $5,000/year</a>
+  <p>Enter password to access article.</p>
+  <div style="margin-top:16px;">
+    <input type="password" id="gate-pw" placeholder="Password" style="font-family:Georgia,serif;font-size:14px;padding:8px 12px;border:1px solid #ccc;width:200px;" onkeydown="if(event.key==='Enter')checkPw()">
+    <button onclick="checkPw()" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:9px 20px;margin-left:8px;cursor:pointer;">Enter</button>
+  </div>
+  <p id="gate-error" style="display:none;color:#991b1b;font-size:13px;margin-top:8px;">Incorrect password.</p>
 </div>
 
 <div id="gated-content">
@@ -143,8 +147,11 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 <p>4. With $490 million in assets and consistent annual surpluses, why is LIHI still dependent on government funding for 63% of its revenue? Where is the asset growth going?</p>
 <p>5. After 33 years with no succession plan, what happens to a $490 million organization when Sharon Lee leaves?</p>
 
-<h2>Related Briefs</h2>
-<p><a href="plymouth-housing.html">Plymouth Housing</a> &#183; <a href="desc.html">DESC</a> &#183; <a href="hdc.html">HDC</a> &#183; <a href="ccs.html">Catholic Community Services</a></p>
+<h2>TBC Action</h2>
+<p>On April 12, 2026, The Burnham Civic submitted a formal complaint to the HUD Office of Inspector General citing LIHI's $103.5 million in federal expenditures, its KCRHA contract clawback ($3M rescinded in 2024-2025), and the broader pattern of oversight failure across the WA-500 Continuum of Care. LIHI has clean audits, but clean audits do not answer the question of why a nonprofit housing provider has accumulated $490 million in assets and a $52 million single-year surplus while operating tiny home villages with documented safety failures. TBC does not publish reports and wait. We file complaints, we name decision makers, and we follow through until there are consequences.</p>
+
+<h2>Accountability Series</h2>
+<p><a href="plymouth-housing.html">Plymouth Housing</a> &#183; <a href="desc.html">DESC</a> &#183; <a href="ccs.html">Catholic Community Services</a> &#183; <a href="kcrha.html">KCRHA</a> &#183; <a href="hdc.html">HDC</a></p>
 
 <div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
   <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
@@ -174,7 +181,7 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
     if(e.key.length!==1) return;
     buf+=e.key.toLowerCase();
     if(buf.length>10) buf=buf.slice(-10);
-    if(buf.indexOf('/maga')!==-1){
+    if(buf.indexOf('saveseattle')!==-1){
       buf='';
       unlocked=!unlocked;
       document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
@@ -182,6 +189,16 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
     }
   });
 })();
+function checkPw(){
+  var pw=document.getElementById('gate-pw').value;
+  if(pw==='saveseattle'){
+    document.getElementById('paywall-gate').style.display='none';
+    document.getElementById('gated-content').style.display='block';
+    document.getElementById('gate-error').style.display='none';
+  } else {
+    document.getElementById('gate-error').style.display='block';
+  }
+}
 function sendLihi(){
   var n=document.getElementById('lihi-name').value;
   var e=document.getElementById('lihi-email').value;
@@ -197,6 +214,6 @@ function sendLihi(){
 }
 </script>
 
-<div class="footer">501(c)(4) pending.</div>
+<div class="footer">The Burnham Civic. operations@burnhamcivic.org</div>
 </body>
 </html>

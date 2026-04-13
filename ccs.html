@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Catholic Community Services - BURNHAM CIVIC</title>
-<meta name="description" content="CCS accountability brief. $332 million in revenue, the largest KCRHA recipient, governed entirely by the Archdiocese of Seattle. Almost nobody has looked at the numbers.">
+<meta name="description" content="CCS accountability brief. $332 million in revenue, going concern audit opinion, $25M expense surge, failed ERP system, and a CEO fighting the federal government that funds 90% of operations.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -44,14 +44,14 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Burnham Civic">
 <meta property="og:title" content="Catholic Community Services - BURNHAM CIVIC">
-<meta property="og:description" content="CCS accountability brief. $332 million in revenue, the largest KCRHA recipient, governed entirely by the Archdiocese of Seattle. Almost nobody has looked at the numbers.">
+<meta property="og:description" content="CCS accountability brief. $332 million in revenue, going concern audit opinion, $25M expense surge, and a CEO fighting the government that funds 90% of operations.">
 <meta property="og:url" content="https://burnhamcivic.org/ccs.html">
-<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta property="og:image" content="https://burnhamcivic.org/og-accountability-1.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@TBCNewsAction">
 <meta name="twitter:title" content="Catholic Community Services - BURNHAM CIVIC">
-<meta name="twitter:description" content="CCS accountability brief. $332 million in revenue, the largest KCRHA recipient, governed entirely by the Archdiocese of Seattle. Almost nobody has looked at the numbers.">
-<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<meta name="twitter:description" content="CCS accountability brief. $332 million in revenue, going concern audit opinion, $25M expense surge, and a CEO fighting the government that funds 90% of operations.">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-accountability-1.png">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJC34M3909"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WJC34M3909');</script>
@@ -74,12 +74,16 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 <a href="index.html" class="back">&larr; Back to Seattle</a>
 
 <h1 class="article-title">Catholic Community Services of Western Washington</h1>
-<div class="article-subtitle">$332 million in revenue, the largest single recipient of KCRHA funding, governed entirely by the Archdiocese of Seattle, and almost nobody has looked at the numbers.</div>
+<div class="article-subtitle">$332 million in revenue, a going concern audit opinion, a $25 million expense surge, a failed ERP system written off for $2.5 million, and a CEO publicly fighting the federal government that provides 90% of the money.</div>
 
 <div id="paywall-gate">
   <h2>&#9878; TBC Intelligence</h2>
-  <p>This accountability brief is available to TBC Intelligence members.</p>
-  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')" class="join-btn">Join - $5,000/year</a>
+  <p>Enter password to access article.</p>
+  <div style="margin-top:16px;">
+    <input type="password" id="gate-pw" placeholder="Password" style="font-family:Georgia,serif;font-size:14px;padding:8px 12px;border:1px solid #ccc;width:200px;" onkeydown="if(event.key==='Enter')checkPw()">
+    <button onclick="checkPw()" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:9px 20px;margin-left:8px;cursor:pointer;">Enter</button>
+  </div>
+  <p id="gate-error" style="display:none;color:#991b1b;font-size:13px;margin-top:8px;">Incorrect password.</p>
 </div>
 
 <div id="gated-content">
@@ -103,49 +107,97 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 <p>CCS states that it serves clients "regardless of religious affiliation." That may be true at the service delivery level. But the governance is entirely ecclesiastical. Every dollar of public money passes through a board that reports to a bishop, not to voters or taxpayers.</p>
 
 <h2>Financials</h2>
-<p>CCS is a $332 million organization. It is larger than most people realize and larger than most reporters have bothered to investigate.</p>
+<p>CCS is a $320 million organization. It is larger than most people realize and larger than most reporters have bothered to investigate. The most recent fiscal year (ending June 30, 2025) is the first time the auditor has ever questioned whether the organization can survive.</p>
 
 <table class="data">
 <tr><th>Year</th><th>Revenue</th><th>Expenses</th><th>Net Income</th><th>Net Assets</th></tr>
-<tr><td>2024</td><td class="num">$332.5M</td><td class="num">$319.7M</td><td class="num">+$12.8M</td><td class="num">$181.2M</td></tr>
-<tr><td>2023</td><td class="num">$295.4M</td><td class="num">$288.1M</td><td class="num">+$7.3M</td><td class="num">$164.9M</td></tr>
+<tr><td class="deficit">2025</td><td class="num">$320.0M</td><td class="num">$322.0M</td><td class="num deficit">-$5.0M</td><td class="num">$97.0M</td></tr>
+<tr><td>2024</td><td class="num">$318.6M</td><td class="num">$297.0M</td><td class="num">+$12.8M</td><td class="num">$102.0M</td></tr>
+<tr><td>2023</td><td class="num">$295.4M</td><td class="num">$288.1M</td><td class="num">+$7.3M</td><td class="num">$89.1M</td></tr>
 <tr><td>2022</td><td class="num">$265.2M</td><td class="num">$263.2M</td><td class="num">+$2.0M</td><td class="num">$133.0M</td></tr>
 <tr><td>2021</td><td class="num">$262.3M</td><td class="num">$249.9M</td><td class="num">+$12.4M</td><td class="num">$134.9M</td></tr>
-<tr><td>2020</td><td class="num">$211.6M</td><td class="num">$206.7M</td><td class="num">+$5.0M</td><td class="num">$114.6M</td></tr>
 </table>
 
-<div class="stat-block">
-<p><strong>Revenue grew 57%</strong> from $211.6M (2020) to $332.5M (2024)</p>
-<p><strong>$177.2M</strong> in salaries and wages (55.4% of total expenses)</p>
-<p><strong>$148.1M</strong> in contributions (44.5% of revenue, largely government grants)</p>
-<p><strong>$179.6M</strong> in program service revenue (54% of revenue)</p>
-</div>
+<p>The FY2025 audit (CliftonLarsonAllen LLP, Bellevue, signed March 27, 2026) issued a going concern opinion for the first time in the organization's history, along with a material weakness in internal controls. Revenue from government grew $15.5M, but private contributions collapsed from $18.9M to $9.5M and expenses jumped $25M. The result was a $5 million loss after three consecutive years of surplus.</p>
 
-<p>CCS is consistently profitable. It has accumulated $181 million in net assets. More than half of every dollar spent goes to salaries. The contribution line, $148 million, is largely government grants routed through KCRHA, HUD, DSHS, and other public agencies.</p>
+<table class="data">
+<tr><th>What changed</th><th>FY2024</th><th>FY2025</th><th>Delta</th></tr>
+<tr><td>Total expenses</td><td class="num">$297.0M</td><td class="num">$322.0M</td><td class="num deficit">+$25.0M</td></tr>
+<tr><td>Salaries and payroll</td><td class="num">$218.0M</td><td class="num">$243.8M</td><td class="num deficit">+$25.8M</td></tr>
+<tr><td>Contributions (private)</td><td class="num">$18.9M</td><td class="num">$9.5M</td><td class="num deficit">-$9.4M</td></tr>
+<tr><td>Legacies and bequests</td><td class="num">$4.9M</td><td class="num">$669K</td><td class="num deficit">-$4.3M</td></tr>
+<tr><td>IT subscriptions</td><td class="num">$1.5M</td><td class="num">$4.6M</td><td class="num deficit">+$3.1M</td></tr>
+<tr><td>Professional fees</td><td class="num">$6.9M</td><td class="num">$10.8M</td><td class="num deficit">+$3.9M</td></tr>
+<tr><td>INFOR ERP write-off</td><td class="num">$0</td><td class="num">$2.45M</td><td class="num deficit">-$2.45M</td></tr>
+</table>
 
-<h2>The Audit Flag</h2>
-<p>A 2016 audit identified a <strong>material weakness in internal controls</strong>. For an organization handling over $200 million in public funds at the time, this is a significant finding. A material weakness means the auditor found conditions where material misstatements in the financial statements could occur and not be detected by the organization's own processes.</p>
-<p>No public follow-up documentation or resolution has been found. The question of whether the weakness was remediated remains unanswered. For an organization that has since grown to $332 million in revenue, this is not a historical footnote. It is an open question.</p>
+<p>Payroll accounts for the entire expense increase. 76 cents of every dollar now goes to personnel. The INFOR ERP system (enterprise software for payroll, HR, workforce management, supply chain) was abandoned October 31, 2025 after an independent assessment found major modules were never successfully implemented. CCS wrote off $2.45M and continues to pay the noncancelable subscription.</p>
+
+<h2>The Restructuring</h2>
+<p>Effective January 1, 2024, CCS carved out its King County permanent supportive housing and homeless services operations into a new entity called the Coordinated Care Agency (CCA), operating under the Archdiocesan Housing Authority (AHA). CCS transferred approximately $45 million in equity to AHA. An additional $595,391 was transferred in FY2025.</p>
+<p>CCS's homelessness numbers are now split across two entities. Year-over-year comparisons become difficult. The going concern opinion is on CCS, not on CCA/AHA. Whether CCS moved healthier operations into the new entity and left the distressed operations behind is an open question.</p>
+
+<h2>Federal Funding Exposure</h2>
+<p>CCS spent $23.4 million in federal funds in FY2025, down from $26.5 million the prior year. The breakdown:</p>
+
+<table class="data">
+<tr><th>Federal Agency</th><th>Amount</th><th>Primary Programs</th></tr>
+<tr><td>Veterans Affairs</td><td class="num">$9,497,535</td><td>SSVF ($9.2M), Per Diem ($305K)</td></tr>
+<tr><td>HUD</td><td class="num">$6,708,712</td><td>CoC ($3.1M), CDBG ($1.8M), ESG ($963K), HOME ($730K)</td></tr>
+<tr><td>Health & Human Services</td><td class="num">$6,262,808</td><td>Aging/Meals ($2.1M), Refugee ($1.9M), Unaccompanied Children ($944K)</td></tr>
+<tr><td>Treasury (ARPA)</td><td class="num">$187,951</td><td>COVID recovery (winding down)</td></tr>
+<tr><td>Other (DOJ, DOT, CNCS, DHS)</td><td class="num">$723,611</td><td>Opioid treatment, transit, AmeriCorps, emergency food</td></tr>
+<tr><td><strong>Total</strong></td><td class="num"><strong>$23,380,617</strong></td><td></td></tr>
+</table>
+
+<p>CEO Meneses has publicly stated she is war-gaming 10%, 25%, and 50% federal funding cut scenarios. On a $289 million government revenue base, a 25% cut would be $72 million. CCS has no private fundraising infrastructure proportional to its scale. The Archdiocese does not have $72 million to fill the gap.</p>
+<p>In July 2025, CCS issued a public statement opposing proposed Congressional cuts to Medicaid and SNAP. This positions the organization adversarial to the administration that controls most of its federal funding. The VA SSVF program alone ($9.2M) serves the current administration's stated priorities. A cooperative posture on veterans could protect that funding. A confrontational posture risks all of it.</p>
+
+<h2>The Audit Trail</h2>
+<p>CCS has now had material weaknesses in three audit years: 2016, 2018, and 2025. The FY2025 audit (signed March 27, 2026) identified four findings:</p>
+
+<table class="data">
+<tr><th>Finding</th><th>Severity</th><th>Description</th></tr>
+<tr><td>2025-001</td><td class="deficit">Material weakness</td><td>Internal controls over financial reporting</td></tr>
+<tr><td>2025-002</td><td class="deficit">Material weakness</td><td>Internal controls over federal compliance</td></tr>
+<tr><td>2025-003</td><td>Significant deficiency</td><td>Federal compliance</td></tr>
+<tr><td>2025-004</td><td>Significant deficiency</td><td>Federal compliance</td></tr>
+</table>
+
+<p>Prior year findings from Treasury (21), VA (64), and HHS (93) were also noted. The 2024 audit had three significant deficiencies, all repeats from 2023: failure to check vendor suspension/debarment in SAM, payroll allocation errors, and indirect cost calculation errors. CCS submitted corrective action plans. The same errors escalated to material weaknesses one year later.</p>
+
+<h2>Board Compensation</h2>
+<p>Two board members receive six-figure compensation, both marked as "related" parties on the 990: Vice Chair Caitlin Moulding (COO of the Archdiocese) at $254,231 and Treasurer Megan Slivinski at $239,446. Both are Archdiocese employees governing an entity that receives hundreds of millions in public funds. They are not independent overseers.</p>
 
 <h2>The Scrutiny Gap</h2>
-<p>CCS receives $19.7 million from KCRHA, the largest single allocation. Its total revenue of $332.5 million dwarfs every other homeless services provider in King County. DESC, LIHI, and Plymouth combined do not match CCS in scale.</p>
-<p>Yet CCS receives almost zero investigative coverage. The Seattle Times, Publicola, and local television stations have run dozens of stories on DESC, LIHI, and Plymouth. CCS appears in the coverage primarily as a quote source or a passing mention.</p>
-<p>The religious structure may explain this. Reporters are reluctant to scrutinize faith-based organizations with the same intensity they apply to secular nonprofits. The result is a $332 million blind spot in public accountability.</p>
+<p>CCS receives tens of millions from KCRHA, the largest single allocation. Its total revenue dwarfs every other homeless services provider in King County. DESC, LIHI, and Plymouth combined do not match CCS in scale.</p>
+<p>Yet CCS receives almost zero investigative coverage. The Seattle Times, PubliCola, and local television stations have run dozens of stories on DESC, LIHI, and Plymouth. CCS appears in the coverage primarily as a quote source or a passing mention.</p>
+<p>The religious structure may explain this. Reporters are reluctant to scrutinize faith-based organizations with the same intensity they apply to secular nonprofits. The result is a $320 million blind spot in public accountability.</p>
 
-<h2>Federal Funding Cliff</h2>
-<p>HUD Continuum of Care funding to KCRHA has been cut 66%, from $68 million to $23 million. CCS is directly exposed. CEO Meneses has publicly stated that CCS is modeling 10%, 25%, and 50% federal funding cut scenarios.</p>
-<p>In her own words: "There's no way we're going to raise $500 million a year, immediately anyways, of private money."</p>
-<p>This is an honest assessment, and it reveals the core vulnerability. CCS has no private fundraising infrastructure proportional to its scale. It has grown to $332 million almost entirely on the back of government contracts. If federal funding contracts further, there is no backstop. The Archdiocese of Seattle does not have $332 million to fill the gap.</p>
+<h2>What's At Stake</h2>
+<p>CCS is not just a homeless services provider. It is the Archdiocese of Seattle's entire social services operation: 4,000+ employees, ~200 programs, 100,000+ people served annually. The organization runs 2,500+ housing units across 62 properties, the largest VA SSVF program in Washington ($9.2M), senior meals ($2.1M), refugee resettlement ($1.9M), and unaccompanied children services ($944K). 49% of employees are covered by collective bargaining agreements expiring June 30, 2026.</p>
+<p>If CCS fails, it is not just homeless shelters that close. It is senior meals, veteran services, refugee resettlement, unaccompanied children programs, behavioral health, substance abuse treatment, and long-term care across the entire western half of Washington State. This is the largest potential social services collapse in the state's history.</p>
 
 <h2>Key Questions</h2>
-<p>1. Should $19.7 million in public homelessness funding flow through an organization whose board is composed entirely of Archdiocese officials and whose corporate member is the Archbishop?</p>
-<p>2. Was the 2016 material weakness in internal controls ever remediated? Where is the documentation?</p>
-<p>3. What are CCS's measurable outcomes for the $332 million it spends annually? What percentage of clients in its housing programs achieve stable, independent housing?</p>
-<p>4. What is CCS's contingency plan if federal funding is cut by 25% or more? Has the Archdiocese committed any backstop funding?</p>
-<p>5. How does an organization of this scale operate with a board that has no independent members, no public accountability mechanism, and no governance structure outside the church hierarchy?</p>
+<p>1. What caused program expenses to jump $20.2 million in a single year? How much of the $25.8M payroll increase reflects new hires versus wage increases? What is the current headcount by division?</p>
+<p>2. What is the total cost of the INFOR ERP implementation, including consulting, subscription, training, and the $2.45M write-off? Who approved the project? Was there a competitive bid? What is the remaining noncancelable subscription obligation?</p>
+<p>3. Why did private contributions drop from $18.9M to $9.5M? Which donors left and why?</p>
+<p>4. What assets and revenue were transferred to the Coordinated Care Agency (CCA) under AHA? Was the restructuring designed to protect assets from CCS's deteriorating financial position?</p>
+<p>5. What is the going concern narrative in the FY2025 audit? What specific conditions or events does the auditor cite as raising substantial doubt?</p>
+<p>6. Has the Archdiocese committed any backstop funding? What is the contingency plan if federal funding is cut 25% or more?</p>
+<p>7. Why did CCS issue a public statement opposing the federal administration that provides 90% of its revenue? Who approved that statement? Was the board consulted?</p>
+<p>8. Should hundreds of millions in public funds flow through an organization whose board has no independent members, two compensated directors ($254K and $239K), and no governance structure outside the church hierarchy?</p>
 
-<h2>Related Briefs</h2>
-<p><a href="plymouth-housing.html">Plymouth Housing</a> &#183; <a href="desc.html">DESC</a> &#183; <a href="hdc.html">HDC</a> &#183; <a href="lihi.html">Low Income Housing Institute</a></p>
+<h2>Source Documents</h2>
+<p>FY2025 Single Audit: CliftonLarsonAllen LLP, signed March 27, 2026. Filed with the Federal Audit Clearinghouse March 31, 2026. Report ID: 2025-06-GSAFAC-0000412681.</p>
+<p>FY2024 Single Audit: CliftonLarsonAllen LLP, signed August 1, 2025. Report ID: 2024-06-GSAFAC-0000378729.</p>
+<p>990 filings available at <a href="https://projects.propublica.org/nonprofits/organizations/911585652">ProPublica Nonprofit Explorer</a> (EIN 91-1585652).</p>
+
+<h2>TBC Action</h2>
+<p>On April 12, 2026, The Burnham Civic submitted a formal complaint to the HUD Office of Inspector General citing CCS's going concern opinion, its material weaknesses in FY2025, and the broader pattern of audit failures across the WA-500 Continuum of Care. CCS receives $6.7 million in HUD funds (CoC, CDBG, ESG, HOME) and $9.5 million from the VA. The complaint requests a review of whether KCRHA, as the Collaborative Applicant, has the capacity to monitor subrecipients that are themselves failing federal audits. TBC does not publish reports and wait. We file complaints, we name decision makers, and we follow through until there are consequences.</p>
+
+<h2>Accountability Series</h2>
+<p><a href="plymouth-housing.html">Plymouth Housing</a> &#183; <a href="desc.html">DESC</a> &#183; <a href="lihi.html">Low Income Housing Institute</a> &#183; <a href="kcrha.html">KCRHA</a> &#183; <a href="hdc.html">HDC</a></p>
 
 <div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
   <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
@@ -168,21 +220,16 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 </div>
 
 <script>
-(function(){
-  var buf='',unlocked=false;
-  document.addEventListener('keydown',function(e){
-    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
-    if(e.key.length!==1) return;
-    buf+=e.key.toLowerCase();
-    if(buf.length>10) buf=buf.slice(-10);
-    if(buf.indexOf('/maga')!==-1){
-      buf='';
-      unlocked=!unlocked;
-      document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
-      document.getElementById('gated-content').style.display=unlocked?'block':'none';
-    }
-  });
-})();
+function checkPw(){
+  var pw=document.getElementById('gate-pw').value;
+  if(pw==='saveseattle'){
+    document.getElementById('paywall-gate').style.display='none';
+    document.getElementById('gated-content').style.display='block';
+    document.getElementById('gate-error').style.display='none';
+  } else {
+    document.getElementById('gate-error').style.display='block';
+  }
+}
 function sendCcs(){
   var n=document.getElementById('ccs-name').value;
   var e=document.getElementById('ccs-email').value;
@@ -198,6 +245,6 @@ function sendCcs(){
 }
 </script>
 
-<div class="footer">501(c)(4) pending.</div>
+<div class="footer">The Burnham Civic. operations@burnhamcivic.org</div>
 </body>
 </html>
