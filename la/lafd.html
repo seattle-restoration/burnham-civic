@@ -92,20 +92,35 @@ h1.article-title {
   line-height: 1.5;
 }
 .burnham-quote {
+  position: relative;
   font-style: italic;
   font-size: 15px;
   color: #555;
-  border-left: 3px solid #1e3a5f;
-  padding: 8px 16px;
-  margin: 24px 0;
+  padding: 18px 0 18px 24px;
+  margin: 28px 0;
   line-height: 1.6;
+  background:
+    linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) no-repeat;
+  background-size: 1px 100%;
+  background-position: 4px 0;
 }
+.burnham-quote::before,
+.burnham-quote::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before { top: 9px; }
+.burnham-quote::after { bottom: 9px; }
 .burnham-quote .attr {
-  font-size: 11px;
-  color: #999;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888;
   font-style: normal;
   display: block;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 p { margin: 0 0 16px; }
 h2 {
@@ -151,19 +166,31 @@ h2 {
   margin: 4px 0 0;
 }
 .timeline {
-  border-left: 3px solid #1e3a5f;
-  padding-left: 20px;
+  position: relative;
+  padding-left: 24px;
   margin: 16px 0 24px;
 }
+.timeline::before {
+  content: ""; position: absolute;
+  left: 4px; top: 8px; bottom: 8px; width: 1px;
+  background: #1c1917;
+}
 .timeline .event {
-  margin-bottom: 16px;
+  position: relative;
+  margin-bottom: 18px;
+}
+.timeline .event::before {
+  content: ""; position: absolute;
+  left: -23px; top: 6px;
+  width: 7px; height: 7px;
+  background: #1c1917; transform: rotate(45deg);
 }
 .timeline .event .date {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #1e3a5f;
+  color: #1c1917;
 }
 .timeline .event .text {
   font-size: 14px;
@@ -175,7 +202,7 @@ h2 {
   color: #999;
   font-style: italic;
   margin: 8px 0 0;
-  padding-left: 20px;
+  padding-left: 24px;
 }
 .standard-list {
   margin: 0 0 24px;
@@ -183,11 +210,21 @@ h2 {
   list-style: none;
 }
 .standard-list li {
-  border-left: 3px solid #eee;
-  padding: 10px 16px;
-  margin-bottom: 10px;
+  padding: 12px 0 12px 22px;
+  margin: 0;
   font-size: 14px;
   color: #333;
+  border-bottom: 1px dotted #ddd;
+  position: relative;
+}
+.standard-list li:last-child { border-bottom: none; }
+.standard-list li::before {
+  content: ""; position: absolute;
+  left: 0; top: 18px;
+  width: 14px; height: 9px;
+  background: #1c1917;
+  clip-path: polygon(0 100%, 25% 100%, 25% 66%, 50% 66%, 50% 33%, 75% 33%, 75% 0, 100% 0, 100% 100%);
+  transform: rotate(180deg);
 }
 .standard-list li strong {
   display: block;
@@ -195,11 +232,22 @@ h2 {
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #1e3a5f;
+  color: #1c1917;
   margin-bottom: 3px;
 }
-.standard-list li.la {
-  border-left-color: #c8a96e;
+.standard-list li.la::after {
+  content: "LA";
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #9a7c2e;
+  background: #fef9ec;
+  border: 1px solid #e8d9a0;
+  padding: 1px 5px;
+  margin-left: 8px;
+  vertical-align: 2px;
+  border-radius: 2px;
 }
 .two-col {
   display: grid;
@@ -242,6 +290,144 @@ footer {
   font-size: 11px;
   color: #999;
 }
+.firebreak-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 16px;
+  font-size: 13px;
+}
+.firebreak-table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  border-bottom: 1px solid #1c1917;
+  padding: 8px 10px 6px;
+  background: #fafaf7;
+}
+.firebreak-table td {
+  padding: 8px 10px;
+  border-bottom: 1px dotted #ddd;
+  color: #333;
+  vertical-align: top;
+}
+.firebreak-table td:first-child {
+  font-weight: 700;
+  color: #1c1917;
+  width: 28px;
+}
+.firebreak-table td:nth-child(2) {
+  font-weight: 600;
+  color: #1c1917;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 14px;
+}
+.audit-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9a7c2e;
+  background: #fef9ec;
+  border: 1px solid #e8d9a0;
+  padding: 1px 6px;
+  margin-left: 8px;
+  vertical-align: 2px;
+  border-radius: 2px;
+}
+.firebreak-note {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+  border-left: 2px solid #9a7c2e;
+  background: #fef9ec;
+  padding: 8px 12px;
+  margin: 16px 0 24px;
+}
+hr {
+  border: none;
+  height: 1px;
+  background: #1c1917;
+  width: 100%;
+  margin: 18px 0;
+  position: relative;
+  overflow: visible;
+}
+.inline-break {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 32px auto;
+  max-width: 280px;
+}
+.inline-break .dia {
+  width: 9px; height: 9px;
+  flex: 0 0 9px;
+  background: #1c1917;
+  transform: rotate(45deg);
+}
+.inline-break hr {
+  flex: 1; margin: 0;
+}
+
+/* === DECO SYSTEM OVERRIDES (sitewide) === */
+.burnham-quote, .stat-block {
+  position: relative !important;
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
+  background-size: 1px 100% !important;
+  background-position: 4px 0 !important;
+  background-repeat: no-repeat !important;
+}
+.burnham-quote::before, .burnham-quote::after,
+.stat-block::before, .stat-block::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before, .stat-block::before { top: 9px; }
+.burnham-quote::after, .stat-block::after { bottom: 9px; }
+.timeline {
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  position: relative;
+}
+.timeline::before {
+  content: ""; position: absolute;
+  left: 4px; top: 8px; bottom: 8px; width: 1px;
+  background: #1c1917;
+}
+.timeline .event { position: relative; }
+.timeline .event::before {
+  content: ""; position: absolute;
+  left: -23px; top: 6px;
+  width: 7px; height: 7px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.timeline .event .date { color: #1c1917 !important; }
+.timeline-note { padding-left: 24px !important; }
+.standard-list li {
+  border-left: 0 !important;
+  padding-left: 22px !important;
+  position: relative;
+  border-bottom: 1px dotted #ddd;
+}
+.standard-list li:last-child { border-bottom: none; }
+.standard-list li::before {
+  content: ""; position: absolute;
+  left: 0; top: 17px;
+  width: 16px; height: 10px;
+  background: #1c1917;
+  clip-path: polygon(0 100%, 0 0, 25% 0, 25% 25%, 50% 25%, 50% 50%, 75% 50%, 75% 75%, 100% 75%, 100% 100%);
+}
+.standard-list li strong { color: #1c1917 !important; }
+.standard-list li.la::before { background: #c8a96e !important; }
 </style>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Burnham Civic">
@@ -455,6 +641,69 @@ footer {
 </ul>
 
 <p>This is civic planning at the scale Burnham wrote about. The state pays once, in advance, to make a problem stop happening, instead of paying many times for a problem that recurs every Santa Ana season.</p>
+
+<h2>The Plan of Los Angeles: PLA Firebreak Series</h2>
+
+<p>Burnham's Plan of Chicago organized a city's century of investment around named, located, civic-purpose parks. The Plan of Los Angeles, in the same tradition, names twelve canyon high-points and converts them into a single connected firebreak system above the Santa Monica Mountains residential edge. Each park is part of one named series. Each park is dedicated to one of the twelve victims of the January 2025 Palisades fire. The geography of memory protects the neighborhoods that were spared.</p>
+
+<p>The series is divided into two phases. Seven new-build parks at canyon high-points currently held in a federal-state patchwork. Five existing public parks already on the right ground, but configured for recreation rather than fire suppression. The first phase requires land cession to LA Recreation and Parks. The second phase requires audit and conversion.</p>
+
+<p class="col-header" style="margin-top:24px;">Phase 1: New-Build Parks (land cession required)</p>
+
+<table class="firebreak-table">
+  <thead>
+    <tr><th>#</th><th>Park (working name)</th><th>Protects</th><th>Currently held by</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>PLA-Firebreak-Topanga Crest</td><td>Pacific Palisades + Topanga</td><td>California State Parks</td></tr>
+    <tr><td>2</td><td>PLA-Firebreak-Sullivan Canyon Top</td><td>Brentwood</td><td>SMMNRA + private</td></tr>
+    <tr><td>3</td><td>PLA-Firebreak-Mandeville Ridge</td><td>Mandeville Canyon</td><td>SMMNRA + private</td></tr>
+    <tr><td>4</td><td>PLA-Firebreak-Sepulveda Crown</td><td>Bel-Air (405 corridor)</td><td>SMMNRA + private</td></tr>
+    <tr><td>5</td><td>PLA-Firebreak-Stone Canyon</td><td>Bel-Air east</td><td>LADWP + SMMNRA</td></tr>
+    <tr><td>6</td><td>PLA-Firebreak-Beverly Glen Top</td><td>Beverly Glen</td><td>SMMNRA + private</td></tr>
+    <tr><td>7</td><td>PLA-Firebreak-Fryman Upper</td><td>Studio City</td><td>SMMNRA + Mountains Conservancy</td></tr>
+  </tbody>
+</table>
+
+<p class="col-header" style="margin-top:24px;">Phase 2: Existing Public Parks <span class="audit-tag">Needs Audit</span></p>
+
+<table class="firebreak-table">
+  <thead>
+    <tr><th>#</th><th>Park (working name)</th><th>Protects</th><th>Land manager</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>8</td><td>PLA-Firebreak-Coldwater Canyon</td><td>Beverly Hills + Studio City</td><td>LA Recreation and Parks</td></tr>
+    <tr><td>9</td><td>PLA-Firebreak-Runyon Canyon</td><td>West Hollywood + Hollywood</td><td>LA Recreation and Parks</td></tr>
+    <tr><td>10</td><td>PLA-Firebreak-Cahuenga Peak</td><td>Hollywood north slope</td><td>LA Rec and Parks (Griffith)</td></tr>
+    <tr><td>11</td><td>PLA-Firebreak-Will Rogers Ridge</td><td>Pacific Palisades east</td><td>California State Parks</td></tr>
+    <tr><td>12</td><td>PLA-Firebreak-Wilacre</td><td>Tarzana + Encino</td><td>Mountains Conservancy</td></tr>
+  </tbody>
+</table>
+
+<p class="firebreak-note">Park dedications to the twelve Palisades fire victims pending verification of names and biographical detail through primary sources (Cal Fire releases, LA County Coroner, LA Times reporting). The dedication is the point of the series; misnaming a victim would defeat the purpose.</p>
+
+<h2>The Plumbed Park Audit</h2>
+
+<p>The five existing public parks were designed for recreation, not for fire suppression. Each requires an audit against the six points of the Plumbed Park Standard before it can carry the name "PLA Firebreak." The audit is a standardized methodology applied uniformly across all five sites and published as a single comparable report.</p>
+
+<p class="col-header">Six findings per park</p>
+
+<ul class="standard-list">
+  <li><strong>Pressurized Water at Altitude</strong>Does the park have a dedicated reservoir and dedicated fire-flow mains, with hydrant spacing under 200 feet at the perimeter? Expected baseline finding across all five: no dedicated fire-flow infrastructure.</li>
+  <li><strong>Standby Pumping Capacity</strong>Sized for simultaneous multi-strike-team operations under red-flag conditions, not for normal-day demand. Expected baseline finding: no standby capacity at any site.</li>
+  <li><strong>Helicopter Refill Point</strong>Landing pad and water-drop refill source at the developed-slope altitude. Expected baseline finding: helicopter access at Cahuenga Peak for sign maintenance, none at the other four.</li>
+  <li><strong>Cleared Ridgeline Corridor</strong>A maintained, surfaced, non-combustible band along the windward ridgeline, sized for strike-team staging. Expected baseline finding: chaparral and brush across all five.</li>
+  <li><strong>Vegetation-Management Baseline</strong>Cadence of brush clearance, funding source, executing agency. Expected baseline finding: minimal clearance, captured in general parks budget where it competes with playgrounds and restrooms.</li>
+  <li><strong>Pre-Cleared Emergency Authority</strong>Existing ESA Section 4(d) coverage and CEQA categorical exclusions in place to execute clearance under red-flag forecast. Expected baseline finding: each clearance reviewed individually on a six-month or longer cycle.</li>
+</ul>
+
+<p>Each park report includes current-state inventory, gap analysis against the six points, conversion cost estimate, time-to-firebreak-grade timeline, and a ranked recommendation. The five reports are published as one document with comparable methodology so that the audit results are debate-ready, not litigation bait.</p>
+
+<p class="col-header" style="margin-top:24px;">The Audit Panel</p>
+
+<p>A standing multi-agency audit panel runs the methodology and signs the report. LAFD planning division chairs. LADWP infrastructure represents the water-supply specification. LA Recreation and Parks represents the existing parks operations. An outside fire-engineering consultancy provides independent technical review. The panel reports to the Mayor and the City Council, and the report is public.</p>
+
+<p>The civic ask in the 2026 mayoral cycle is direct: name the panel, set the deadline, deliver the audit. The current administration either delivers it or refuses, and the refusal becomes the campaign.</p>
 
 <h2>The Next Palisades</h2>
 
