@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 40" fill="currentColor" stroke="currentColor">
+  <line x1="10" y1="28" x2="160" y2="28" stroke-width="1"/>
+  <line x1="240" y1="28" x2="390" y2="28" stroke-width="1"/>
+  <polygon points="170,32 178,22 188,14 200,8 212,14 222,22 230,32" fill="currentColor" stroke="none"/>
+  <polygon points="180,32 186,24 193,18 200,14 207,18 214,24 220,32" fill="currentColor" stroke="none"/>
+  <polygon points="190,32 194,26 200,20 206,26 210,32" fill="currentColor" stroke="none"/>
+  <polygon points="200,0 201.5,7 200,8 198.5,7"/>
+  <polygon points="200,32 204,36 200,40 196,36" fill="currentColor"/>
+  <line x1="170" y1="36" x2="230" y2="36" stroke-width="0.5"/>
+</svg>
