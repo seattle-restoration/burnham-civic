@@ -218,6 +218,35 @@ h2 {
   border-top: 1px solid #eee;
   padding-top: 8px;
 }
+.role-card .bc-recommend {
+  background: #f7f5ec;
+  border-left: 3px solid #1e3a5f;
+  padding: 8px 10px;
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: #333;
+  line-height: 1.5;
+}
+.role-card .bc-recommend .bc-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 3px;
+}
+.role-card .bc-recommend .bc-name {
+  font-weight: 700;
+  color: #111;
+}
+.role-card .bc-recommend.bc-search {
+  background: #f5f5f5;
+  border-left-color: #999;
+}
+.role-card .bc-recommend.bc-search .bc-label {
+  color: #666;
+}
 .save-notice {
   font-size: 11px;
   color: #2d5016;
@@ -308,7 +337,11 @@ footer {
     <p class="controls-label">Controls</p>
     <p class="controls-text">~3,400 sworn personnel. 106 stations. $895M annual budget. Commands all fire suppression, emergency medical services, and urban search and rescue for the city.</p>
     <p class="pick-label">Spencer's Pick</p>
-    <input type="text" class="pick-input" data-role="fire-chief" placeholder="Name your Fire Chief..." autocomplete="off">
+    <input type="text" class="pick-input" data-role="fire-chief" placeholder="Name your Fire Chief..." value="Kristin Crowley" autocomplete="off">
+    <div class="bc-recommend">
+      <span class="bc-label">Burnham Civic Recommendation</span>
+      <span class="bc-name">Reinstate Kristin Crowley.</span> Crowley was fired by Mayor Bass after warning, in a December 2024 internal memo, that budget cuts had degraded LAFD wildfire readiness. Pratt has publicly defended her as the operator who told the truth before the fire. The Burnham Standard requires command continuity from someone who flagged the failure before it happened, not after.
+    </div>
     <p class="why-matters">The fires of January 2025 killed 31 people and destroyed 16,000 structures. Whoever holds this role sets the rebuild standard and the pre-positioning doctrine for the next event.</p>
   </div>
 
@@ -322,7 +355,11 @@ footer {
     <p class="controls-label">Controls</p>
     <p class="controls-text">~9,000 sworn officers (authorized). Citywide patrol, detective, and specialized units. Annual budget exceeding $3B. Manages consent decree obligations and LAPD reform commitments.</p>
     <p class="pick-label">Spencer's Pick</p>
-    <input type="text" class="pick-input" data-role="police-chief" placeholder="Name your Police Chief..." autocomplete="off">
+    <input type="text" class="pick-input" data-role="police-chief" placeholder="Name your Police Chief..." value="Alex Villanueva" autocomplete="off">
+    <div class="bc-recommend">
+      <span class="bc-label">Burnham Civic Recommendation</span>
+      <span class="bc-name">Alex Villanueva.</span> Former LA County Sheriff. Endorsed Pratt at his campaign kickoff. The most senior law-enforcement leader in Pratt's public orbit. Caveat: ran LASD, not LAPD, so confirmation would require a deliberate transition campaign. The alternative is another internal LAPD promotion that does not interrupt the staffing-shortfall pattern.
+    </div>
     <p class="why-matters">LAPD is 2,000 officers below its authorized strength. Who leads the department determines whether recruitment recovers and whether the city can sustain the public safety capacity the rebuild requires.</p>
   </div>
 
@@ -337,6 +374,10 @@ footer {
     <p class="controls-text">The largest municipal utility in the United States. 4 million customers. $6B+ annual budget. Controls water delivery and electrical infrastructure across a city that just proved how badly it can fail.</p>
     <p class="pick-label">Spencer's Pick</p>
     <input type="text" class="pick-input" data-role="dwp-gm" placeholder="Name your DWP General Manager..." autocomplete="off">
+    <div class="bc-recommend bc-search">
+      <span class="bc-label">Burnham Civic Search Criteria</span>
+      No clear pick has emerged from Pratt's public orbit. Recommendation: a national search prioritizing utility operators with documented post-failure reform records. Newark post-lead and Flint post-2014 produced this profile. Internal LADWP promotion does not interrupt the institutional pattern that produced the Santa Ynez Reservoir failure.
+    </div>
     <p class="why-matters">The Palisades Reservoir was reportedly offline during the January fires. DWP controls both the water and the power. This is the single most consequential operational appointment for the rebuild.</p>
   </div>
 
@@ -351,6 +392,10 @@ footer {
     <p class="controls-text">All civil litigation involving the city. Prosecutes misdemeanor crimes. Advises the Council and Mayor on legal matters. Negotiates major contracts and settlement agreements. Over $100M annual budget.</p>
     <p class="pick-label">Spencer's Pick</p>
     <input type="text" class="pick-input" data-role="city-attorney" placeholder="Name your City Attorney..." autocomplete="off">
+    <div class="bc-recommend bc-search">
+      <span class="bc-label">Burnham Civic Search Criteria</span>
+      No clear pick has emerged from Pratt's public orbit. Recommendation: a litigator with utility-liability and post-disaster insurance-claim experience. The post-Palisades caseload will include subrogation claims, contractor disputes, and code-enforcement actions on a multi-year horizon. Continuation candidates with no documented record on this scale of litigation should be ruled out early.
+    </div>
     <p class="why-matters">The rebuild will generate years of litigation: utility liability, contractor disputes, code enforcement. A City Attorney with a clear standard of accountability changes how those cases get resolved.</p>
   </div>
 
@@ -364,7 +409,11 @@ footer {
     <p class="controls-label">Controls</p>
     <p class="controls-text">$800M+ annual budget. Coordinates over 100 contractor organizations providing outreach, shelter, and services. Responsible for the annual homeless count and federal HUD reporting.</p>
     <p class="pick-label">Spencer's Pick</p>
-    <input type="text" class="pick-input" data-role="lahsa-ed" placeholder="Name your LAHSA Director..." autocomplete="off">
+    <input type="text" class="pick-input" data-role="lahsa-ed" placeholder="Name your LAHSA Director..." value="Andrea Suarez" autocomplete="off">
+    <div class="bc-recommend">
+      <span class="bc-label">Burnham Civic Recommendation</span>
+      <span class="bc-name">Andrea Suarez.</span> Founder of We Heart Seattle, a volunteer-led model Pratt has publicly amplified in his "homeless industrial complex" framing. Suarez has run encampment exits and corridor cleanups with measurable outcomes the LAHSA contractor stack has not produced at $800M annual spend. The agency is mid-restructure as LA County builds its own homelessness department. This is the moment to import an operator who has already run a different model.
+    </div>
     <p class="why-matters">LAHSA is losing its county mandate. The agency either transforms into something that works or it continues spending $800M for outcomes that haven't moved. This hire is the test of whether the new administration is serious.</p>
   </div>
 
@@ -379,6 +428,10 @@ footer {
     <p class="controls-text">$9B+ annual budget. Rail, bus, and active transportation network serving 9.6 million county residents. $23B capital program. Coordinating all transit for the 2026 World Cup and 2028 Olympics.</p>
     <p class="pick-label">Spencer's Pick</p>
     <input type="text" class="pick-input" data-role="metro-ceo" placeholder="Name your Metro CEO..." autocomplete="off">
+    <div class="bc-recommend bc-search">
+      <span class="bc-label">Burnham Civic Search Criteria</span>
+      No clear pick has emerged from Pratt's public orbit. Recommendation: an operator with documented Olympics-delivery experience (London 2012, Tokyo 2020/21, Paris 2024) or a national search prioritizing transit chiefs who have closed delivery gaps under hard deadline. The 2028 Games are a forcing function the current succession line has not faced.
+    </div>
     <p class="why-matters">The 2028 Olympics is a forcing function. Metro either delivers world-class transit or LA becomes a global embarrassment on a deadline that cannot move. This role determines whether the city is ready.</p>
   </div>
 
@@ -392,7 +445,11 @@ footer {
     <p class="controls-label">Controls</p>
     <p class="controls-text">All building permits, inspections, and code enforcement for the city. Directly controls the speed of the post-fire rebuild. Over 300,000 permits issued annually. Sets interpretation of building code for all new construction.</p>
     <p class="pick-label">Spencer's Pick</p>
-    <input type="text" class="pick-input" data-role="ladbs-gm" placeholder="Name your LADBS General Manager..." autocomplete="off">
+    <input type="text" class="pick-input" data-role="ladbs-gm" placeholder="Name your LADBS General Manager..." value="Chuck Hart" autocomplete="off">
+    <div class="bc-recommend">
+      <span class="bc-label">Burnham Civic Recommendation</span>
+      <span class="bc-name">Chuck Hart.</span> Hart Built Construction. Featured guest on Spencer's podcast for the episode "Rebuilding the Palisades: Frontline and Comeback Story," focused on the permit pipeline and what it actually takes to rebuild fire-affected neighborhoods. The Palisades rebuild needs a GM who has actually pulled permits in fire-recovery conditions. That is rarely true of internal LADBS promotions.
+    </div>
     <p class="why-matters">16,000 structures need to be rebuilt. The permit pipeline is the bottleneck. A GM with the authority and willingness to set a Burnham-level construction standard changes what gets built and how fast.</p>
   </div>
 
@@ -407,6 +464,10 @@ footer {
     <p class="controls-text">City budget preparation and administration. All labor contract negotiations for 40,000+ city employees. Internal audits and management reviews. The financial operating system behind every department on this list.</p>
     <p class="pick-label">Spencer's Pick</p>
     <input type="text" class="pick-input" data-role="cao" placeholder="Name your CAO..." autocomplete="off">
+    <div class="bc-recommend bc-search">
+      <span class="bc-label">Burnham Civic Search Criteria</span>
+      No clear pick has emerged from Pratt's public orbit. Recommendation: a strategic finance operator with documented experience closing budget gaps under labor-contract pressure. Szabo closed a $1B FY 25-26 gap through labor negotiations. The next CAO inherits a multi-billion rebuild capital plan against an Olympics deadline. Continuation candidates without a documented record on this scale should be ruled out early.
+    </div>
     <p class="why-matters">The CAO holds the purse strings and the labor agreements. A rebuild that is ambitious on paper collapses if the person writing the budget treats it like a normal year. This role is where fiscal strategy becomes operational reality.</p>
   </div>
 
