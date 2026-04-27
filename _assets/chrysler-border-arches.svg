@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 180" preserveAspectRatio="xMidYMid meet" fill="currentColor">
+  <!-- Stacked Chrysler nested-arch tiers, 4 repeats of 45 units each -->
+  <g>
+    <!-- tier 1 -->
+    <path d="M 15 2 L 28 16 L 28 22 L 22 19 L 22 26 L 18 24 L 18 32 L 15 30 L 12 32 L 12 24 L 8 26 L 8 19 L 2 22 L 2 16 Z"/>
+    <line x1="15" y1="32" x2="15" y2="45" stroke="currentColor" stroke-width="1"/>
+  </g>
+  <g transform="translate(0,45)">
+    <path d="M 15 2 L 28 16 L 28 22 L 22 19 L 22 26 L 18 24 L 18 32 L 15 30 L 12 32 L 12 24 L 8 26 L 8 19 L 2 22 L 2 16 Z"/>
+    <line x1="15" y1="32" x2="15" y2="45" stroke="currentColor" stroke-width="1"/>
+  </g>
+  <g transform="translate(0,90)">
+    <path d="M 15 2 L 28 16 L 28 22 L 22 19 L 22 26 L 18 24 L 18 32 L 15 30 L 12 32 L 12 24 L 8 26 L 8 19 L 2 22 L 2 16 Z"/>
+    <line x1="15" y1="32" x2="15" y2="45" stroke="currentColor" stroke-width="1"/>
+  </g>
+  <g transform="translate(0,135)">
+    <path d="M 15 2 L 28 16 L 28 22 L 22 19 L 22 26 L 18 24 L 18 32 L 15 30 L 12 32 L 12 24 L 8 26 L 8 19 L 2 22 L 2 16 Z"/>
+    <line x1="15" y1="32" x2="15" y2="45" stroke="currentColor" stroke-width="1"/>
+  </g>
+</svg>

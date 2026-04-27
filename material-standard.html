@@ -119,6 +119,62 @@ p {
 .material-list li:last-child { border-bottom: none; }
 .material-list .approved { color: #2d5016; }
 .material-list .banned { color: #991b1b; }
+
+/* === DECO SYSTEM OVERRIDES (sitewide) === */
+.burnham-quote, .stat-block {
+  position: relative !important;
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
+  background-size: 1px 100% !important;
+  background-position: 4px 0 !important;
+  background-repeat: no-repeat !important;
+}
+.burnham-quote::before, .burnham-quote::after,
+.stat-block::before, .stat-block::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before, .stat-block::before { top: 9px; }
+.burnham-quote::after, .stat-block::after { bottom: 9px; }
+.timeline {
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  position: relative;
+}
+.timeline::before {
+  content: ""; position: absolute;
+  left: 4px; top: 8px; bottom: 8px; width: 1px;
+  background: #1c1917;
+}
+.timeline .event { position: relative; }
+.timeline .event::before {
+  content: ""; position: absolute;
+  left: -23px; top: 6px;
+  width: 7px; height: 7px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.timeline .event .date { color: #1c1917 !important; }
+.timeline-note { padding-left: 24px !important; }
+.standard-list li {
+  border-left: 0 !important;
+  padding-left: 22px !important;
+  position: relative;
+  border-bottom: 1px dotted #ddd;
+}
+.standard-list li:last-child { border-bottom: none; }
+.standard-list li::before {
+  content: ""; position: absolute;
+  left: 0; top: 17px;
+  width: 16px; height: 10px;
+  background: #1c1917;
+  clip-path: polygon(0 100%, 0 0, 25% 0, 25% 25%, 50% 25%, 50% 50%, 75% 50%, 75% 75%, 100% 75%, 100% 100%);
+}
+.standard-list li strong { color: #1c1917 !important; }
+.standard-list li.la::before { background: #c8a96e !important; }
 </style>
 <!-- SEO -->
 <link rel="canonical" href="https://burnhamcivic.org/material-standard.html">
