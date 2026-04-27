@@ -1,0 +1,17 @@
+# Local-only swatches and design tools
+_swatches*.html
+
+# Accidental directory from a shell command
+~/
+
+# Local research scripts and data pulls
+data/
+
+# Working spec docs (not for publication)
+economic-taking-v2-spec.md
+*-spec.md
+
+# OS / editor cruft
+.DS_Store
+*.swp
+.vscode/
