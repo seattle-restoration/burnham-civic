@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 220" preserveAspectRatio="xMidYMid meet" fill="currentColor">
+  <!-- Full Chrysler crown silhouette at top, hairline rail descending -->
+  <!-- needle spire -->
+  <polygon points="30,0 31.5,18 30,20 28.5,18"/>
+  <!-- 5 nested arches -->
+  <path d="M 30 22 L 56 64 L 56 70 L 49 66 L 49 76 L 42 72 L 42 82 L 35 78 L 35 90 L 30 88 L 25 90 L 25 78 L 18 82 L 18 72 L 11 76 L 11 66 L 4 70 L 4 64 Z"/>
+  <!-- vertical rail down to bottom -->
+  <line x1="30" y1="92" x2="30" y2="218" stroke="currentColor" stroke-width="1.4"/>
+  <!-- terminal diamond at base -->
+  <polygon points="30,210 36,216 30,222 24,216" transform="translate(0,-4)"/>
+</svg>
