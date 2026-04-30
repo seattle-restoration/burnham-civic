@@ -162,6 +162,123 @@ p {
 }
 .standard-list li strong { color: #1c1917 !important; }
 .standard-list li.la::before { background: #c8a96e !important; }
+
+/* === VIEW TABS === */
+.view-tabs {
+  display: flex;
+  gap: 0;
+  margin: 4px 0 28px;
+  border-bottom: 1px solid #ccc;
+}
+.view-tab {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 10px 20px;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #888;
+  cursor: pointer;
+}
+.view-tab.active { color: #1e3a5f; border-bottom-color: #1e3a5f; }
+.view-tab:hover { color: #1e3a5f; }
+
+/* === THREAD VIEW (Twitter/X) === */
+#thread-view { max-width: 600px; margin: 0; }
+.thread-intro {
+  font-size: 13px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 18px;
+  line-height: 1.5;
+  font-family: Georgia, serif;
+}
+.tweet {
+  border: 1px solid #cfd9de;
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin: 0 0 12px;
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0;
+  position: relative;
+}
+.tweet-row { display: flex; gap: 12px; }
+.tweet-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: #1e3a5f;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fbbf24;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+.tweet-body { flex: 1; min-width: 0; }
+.tweet-meta { font-size: 14px; line-height: 1.3; color: #536471; }
+.tweet-meta .name { font-weight: 700; color: #0f1419; }
+.tweet-meta .verified {
+  display: inline-block;
+  width: 16px; height: 16px;
+  vertical-align: -3px;
+  margin: 0 2px;
+}
+.tweet-meta .dot { margin: 0 4px; }
+.tweet-text {
+  margin: 6px 0 12px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #0f1419;
+  white-space: pre-wrap;
+}
+.tweet-text strong { font-weight: 700; }
+.tweet-media {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #cfd9de;
+  margin: 4px 0 12px;
+  background: #1c1917;
+  aspect-ratio: 16 / 9;
+  display: flex;
+}
+.tweet-media svg { width: 100%; height: 100%; display: block; }
+.tweet-actions {
+  display: flex;
+  justify-content: space-between;
+  max-width: 425px;
+  margin-top: 4px;
+  color: #536471;
+  font-size: 13px;
+}
+.tweet-actions span { display: inline-flex; align-items: center; gap: 6px; }
+.tweet-actions svg {
+  width: 18px; height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+.tweet-num {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 12px;
+  color: #8a99a4;
+  letter-spacing: 0.5px;
+}
+.tweet-cta {
+  text-align: center;
+  margin: 18px 0 8px;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  color: #1e3a5f;
+}
+.tweet-cta a { color: #1e3a5f; font-weight: 700; }
 </style>
 <!-- SEO -->
 <link rel="canonical" href="https://burnhamcivic.org/burnham-plan-sf.html">
@@ -200,63 +317,207 @@ p {
 
 <a href="index.html" class="back" onclick="localStorage.setItem('tab','usa')">&larr; Back to USA</a>
 
+<div class="view-tabs">
+  <button class="view-tab active" data-view="article" type="button">Article</button>
+  <button class="view-tab" data-view="thread" type="button">Thread Preview</button>
+</div>
+
+<div id="article-view">
+
 <h1 class="article-title">The Burnham Plan for San Francisco</h1>
-<div class="article-subtitle">Daniel Burnham delivered a master plan for San Francisco in 1905. Seven months later the earthquake hit, and the city chose speed over vision.</div>
+<div class="article-subtitle">Daniel Burnham delivered a master plan for San Francisco in September 1905. Seven months later the earthquake hit. The city was rebuilt in eighteen months on the old grid by the same political ring that had been indicted for graft. The plan was buried. The hills are still there. The plan is still right.</div>
 
-<p>In September 1905, Daniel Burnham delivered a comprehensive plan for San Francisco to the Association for the Improvement and Adornment of San Francisco. He had spent months living on Twin Peaks, studying the topography, sketching sight lines, and designing a city that would use its extraordinary natural landscape as the foundation for its built environment.</p>
+<p>This is the greatest unforced error in American urban planning. Chicago got a plan and built half of it. San Francisco got a better plan, on a more dramatic site, from the same architect, and built almost none of it. The difference was not vision. The difference was political will. Chicago had James Simpson and the Commercial Club. San Francisco had Eugene Schmitz and Abe Ruef.</p>
 
-<p>Seven months later, on April 18, 1906, the earthquake and fire destroyed most of the city. In the rush to rebuild, the plan was shelved. Property owners wanted their lots restored on the old grid. The city chose speed over vision. Burnham's plan was never adopted.</p>
+<div class="burnham-quote" style="font-style:italic;">
+  <p style="font-size:16px;margin:0 0 10px;">"Make no little plans. They have no magic to stir men's blood and probably will not themselves be realized. Make big plans; aim high in hope and work, remembering that a noble, logical diagram once recorded will never die, but long after we are gone will be a living thing, asserting itself with ever-growing insistency."</p>
+  <p style="font-size:13px;margin:0;color:#555;">- Daniel Hudson Burnham, the year he submitted the San Francisco plan</p>
+</div>
 
-<p>It is the greatest missed opportunity in American urban planning.</p>
+<h2>The Commission</h2>
 
-<h2>What the Plan Proposed</h2>
+<p>The plan did not come from City Hall. It came from a private civic association of merchants, attorneys, and former public officials who believed San Francisco could be the great Pacific capital and were willing to pay for the proof.</p>
 
-<p>Burnham understood something about San Francisco that most planners before and since have missed: the city's hills are not obstacles. They are the plan. Every hill is a natural viewpoint. Every ridgeline is a natural boulevard. The topography itself tells you where to put the streets, the parks, and the monuments.</p>
+<p>In January 1904, James D. Phelan, the former mayor and reformer who had spent his term battling the Southern Pacific Railroad and the saloon-machine politics of Christopher Buckley, founded the Association for the Improvement and Adornment of San Francisco. Phelan put his own money into it. He recruited Willis Polk, William Bourn of Spring Valley Water, and a roster of the city's commercial and cultural leadership. The Association's single mission was to retain Daniel Burnham, then America's most accomplished planner, to deliver a comprehensive plan for the city.</p>
 
-<p><strong>A radial boulevard system.</strong> Diagonal avenues radiating from a civic center at Van Ness and Market, climbing the hills and following the ridgelines to create continuous views of the bay, the ocean, and the Golden Gate. Not a flat grid imposed on hilly terrain, but a street network that worked with the landscape.</p>
+<p>Burnham agreed to the commission and refused a fee. He had done the same for Chicago. He believed civic plans were a public obligation, not paid work. The Association covered his expenses and the salary of his right hand, Edward H. Bennett, the British-born architect who would later co-author the 1909 Plan of Chicago.</p>
 
-<p><strong>Hilltop parks and terraces.</strong> Every major hill would become a public park or terrace with panoramic views. Twin Peaks, Telegraph Hill, Russian Hill, Nob Hill, each one crowned with civic space, connected by tree-lined boulevards that followed the contour lines.</p>
+<h2>Twin Peaks</h2>
 
-<p><strong>A continuous waterfront promenade.</strong> The entire bay shoreline, from the Presidio around through the Embarcadero and south along the waterfront, would become a continuous public esplanade. No industrial interruptions. No private wharves blocking public access.</p>
+<p>From the late spring of 1904 through the summer of 1905, Burnham and Bennett lived in a wooden cottage built for them on the slope of Twin Peaks, six hundred feet above the city. The Association financed the structure. Burnham used it as a field office. From the porch he could see the entire urban basin from the Presidio to Hunters Point, the bay islands, the Marin headlands, the Golden Gate, the open Pacific. He spent fifteen months sketching the city from above.</p>
 
-<p><strong>A monumental civic center.</strong> Burnham proposed a grand civic complex at the intersection of Van Ness and Market Street, anchored by a domed city hall and flanked by cultural institutions, government buildings, and formal gardens. A center worthy of a great Pacific capital.</p>
+<p>This is the part the histories miss. Burnham did not design the plan from drawings. He designed it from the actual landscape. He walked every ridge. He measured the elevation of every hill. He recorded sight lines from forty-three named summits. The radial boulevards in the final plan are not abstractions. They are routes Burnham personally walked or rode, picked because the topography itself demanded them.</p>
+
+<p>On September 27, 1905, Burnham delivered the bound 184-page report and atlas to Phelan and the Association at the Merchants' Exchange. Mayor Schmitz accepted a copy on behalf of the city. The Board of Supervisors received its copies the following week. The plan was scheduled for adoption hearings in early 1906.</p>
+
+<h2>The City Beautiful Context</h2>
+
+<p>The plan did not appear out of nothing. Burnham had directed the 1893 World's Columbian Exposition in Chicago, the White City that defined American civic architecture for the next forty years. He had then served as the lead author of the McMillan Plan for Washington in 1902, restoring L'Enfant's intent and producing the modern National Mall. He had drafted the Group Plan of Cleveland in 1903 with John Carrere and Arnold Brunner. He had drafted the plan for Manila and the new mountain capital at Baguio in 1905 for the U.S. War Department. The San Francisco commission was his fifth major civic plan in twelve years and the first one for a city west of the Mississippi.</p>
+
+<p>The City Beautiful movement had a thesis. Cities are not collections of private lots. Cities are public works. Streets, parks, civic buildings, transportation, and waterfronts had to be designed as one coordinated artifact, with the city's natural site as the starting point. Burnham believed San Francisco was the most extraordinary natural site in North America and that the failure to plan it coherently was a national disgrace. His 1905 report opened with that argument explicitly.</p>
+
+<h2>The Report</h2>
+
+<p>The bound 1905 report ran 184 pages of text plus seventy-three plates. It was titled <em>Report on a Plan for San Francisco by Daniel H. Burnham, Assisted by Edward H. Bennett</em>, edited by Edward F. O'Day, and printed in Sausalito at Sunset Press. Phelan paid for the printing. The document is structured in nine chapters and one architectural atlas:</p>
+
+<ul class="standard-list">
+  <li><strong>I. The City Beautiful.</strong> European precedents. Paris, Vienna, Rome, Berlin, Athens, Versailles. Burnham's argument that the unifying gesture in every great city was a coherent public realm.</li>
+  <li><strong>II. The Civic Center.</strong> A monumental Beaux-Arts plaza at Van Ness and Market, modeled on the Place de la Concorde, surrounded by a city hall, a state building, an opera house, an art museum, a public library, and a federal building.</li>
+  <li><strong>III. The Outer Boulevard.</strong> A forty-mile parkway circling the city from the Presidio south through Lake Merced, around San Bruno Mountain, and back along the bay to the Embarcadero.</li>
+  <li><strong>IV. The Treatment of Hills.</strong> The most original chapter. Forty-nine named summits, each treated as public terrace, park, or civic monument. Twin Peaks crowned with a colossal statue. Mount Sutro topped with an exposition palace. Telegraph Hill rebuilt as a Pan-American plaza.</li>
+  <li><strong>V. Avenues and Streets.</strong> A network of diagonal boulevards cutting through the grid, named by route: the Embarcadero Avenue, the Pan-American Avenue, the Mountain Boulevard, the Mission Avenue, the Sunset Boulevard, the Park Boulevard.</li>
+  <li><strong>VI. The Park System.</strong> Golden Gate Park extended south to Lake Merced, the Presidio enlarged, a continuous park strip from the Civic Center to the ocean, and a regional park ring around San Bruno Mountain.</li>
+  <li><strong>VII. The Athenaeum.</strong> A national university campus at Lake Merced, with libraries, gardens, and rowing courses on the lake.</li>
+  <li><strong>VIII. The Treatment of the Bay Front.</strong> The full bay shoreline as a continuous public esplanade with the Pan-American Plaza at its midpoint and a maritime customs house at the foot of Telegraph Hill.</li>
+  <li><strong>IX. The Suburbs and the Region.</strong> A regional plan extending across the Bay to Marin, Oakland, Alameda, and the Peninsula, anticipating bridges, ferries, and a regional rail loop sixty years before BART.</li>
+</ul>
+
+<h2>The Civic Center: What Burnham Specified</h2>
+
+<p>The Civic Center was the heart of the plan. Burnham did not draw a generic plaza. He specified six buildings, their materials, their height, their setbacks, and their relationship to one another.</p>
+
+<p>The plaza itself was a 1,200-foot oval, the long axis running from Hayes Street up to McAllister, with Van Ness Avenue widened to a 200-foot promenade through the center. The plaza was crossed by Market Street on the diagonal, with the diagonal preserved as a 100-foot esplanade. At the center of the oval, a 200-foot Doric column carrying a colossal bronze statue, modeled on the Vendome Column in Paris.</p>
+
+<p>The six anchor buildings, all in the same Beaux-Arts limestone palette, were specified as: a domed City Hall on the south side, modeled on the Pantheon at Rome and Saint Paul's at London; a State Building on the southwest, modeled on the Petit Palais; an Opera House on the southeast, modeled on Garnier's Opera in Paris; an Art Museum on the northeast, modeled on the Petit Trianon; a Public Library on the northwest, modeled on Labrouste's Bibliotheque Sainte-Genevieve; and a Federal Building on the north, modeled on the U.S. Treasury in Washington. Underneath the plaza, an underground concourse with surface streetcar stops, a precursor to the Muni Metro that opened seventy years later.</p>
+
+<p>What was actually built between 1912 and 1936 sits in the same location and uses the same Beaux-Arts vocabulary, but at roughly half the scale Burnham specified, with the Doric column never erected, the diagonal Market esplanade never cut, and the Federal Building substituted with a courthouse three blocks away. The current Civic Center is the diluted version of Burnham's design.</p>
+
+<h2>The Boulevards: The Routes That Were Drawn</h2>
+
+<p>The diagonal boulevards were the part of the plan that died hardest. Burnham named eleven of them by route. Each one was specified to a hundred-foot right-of-way, lined with double rows of trees, with mid-block traffic circles, and with grade-separated crossings at the heaviest intersections. The Outer Boulevard alone was forty miles. The total new mileage proposed was approximately one hundred and twenty miles of new arterial.</p>
+
+<ul class="standard-list">
+  <li><strong>The Embarcadero Avenue.</strong> 200 feet wide, running the full bay front from Fort Mason south to Hunters Point. The current Embarcadero is the partial 1990s descendant.</li>
+  <li><strong>The Pan-American Avenue.</strong> A 150-foot diagonal cutting from the foot of Telegraph Hill southwest to the Civic Center, intended to carry federal traffic from the Pan-American Plaza into the heart of government.</li>
+  <li><strong>The Mountain Boulevard.</strong> A 100-foot ridge road climbing from the Civic Center southwest along the contours of Twin Peaks, around Mount Sutro, and out to the ocean at Sunset. The piece that got built is Twin Peaks Boulevard.</li>
+  <li><strong>The Mission Avenue.</strong> A 100-foot diagonal from the Civic Center southeast through the Mission to Bernal Heights, opening direct passage between downtown and the southeast neighborhoods. Never built. The current S-shaped Mission Street still carries the traffic the diagonal would have absorbed.</li>
+  <li><strong>The Sunset Boulevard.</strong> A 200-foot parkway running the full length of the western flank from the Presidio south to Lake Merced, with the entire ocean side reserved for public use. Sunset Boulevard exists as a 100-foot strip but the plan called for double the width, plus a continuous beach park.</li>
+  <li><strong>The Park Boulevard.</strong> A 100-foot connector from the Civic Center west to Golden Gate Park, meant to widen the existing Fell Street corridor into a true ceremonial drive. Built at half-width.</li>
+  <li><strong>The Presidio Boulevard.</strong> A 150-foot ridge drive from the Civic Center north along the bay heights to the Presidio gates. Park Presidio Boulevard, the 1930s descendant, runs perpendicular to Burnham's route.</li>
+  <li><strong>The Bernal Crown Drive.</strong> A 60-foot terrace road circling Bernal Heights at elevation, connecting the Mission Avenue to the Outer Boulevard. Never built.</li>
+  <li><strong>The Telegraph Crown Drive.</strong> A 60-foot terrace road circling Telegraph Hill, connecting Pan-American Plaza on the bay side to the Russian Hill ridge.</li>
+  <li><strong>The Russian Hill Crest.</strong> A 60-foot ridge road from the foot of Russian Hill south along the spine to Nob Hill, opening continuous public access to the views.</li>
+  <li><strong>The Outer Boulevard.</strong> The forty-mile parkway. The single largest piece of unbuilt civic infrastructure in any American city plan ever drafted.</li>
+</ul>
+
+<h2>The Hilltop System</h2>
+
+<p>The Treatment of Hills chapter was the part of the plan no other American city had ever attempted. Burnham proposed that every hill in San Francisco above 200 feet be treated as a public asset, with the summit reserved for park, terrace, or monument, and the slopes subject to a contour-following street pattern with restrictions on building height to preserve the silhouette.</p>
+
+<p>Forty-nine summits were marked. The principal ones, with the use Burnham specified for each:</p>
+
+<ul class="standard-list">
+  <li><strong>Twin Peaks (922 feet).</strong> Crowned with a colossal allegorical statue facing the Pacific, set on a 200-foot Doric pedestal, with a public terrace and reflecting pool. The road circling the summit, opened in 1923, is the partial built version.</li>
+  <li><strong>Mount Sutro (909 feet).</strong> An exposition palace at the summit, modeled on the Petit Palais, with a botanical garden on the slopes and a public observatory. Built as the Sutro Forest with a TV tower instead. Same elevation. Wrong building.</li>
+  <li><strong>Mount Davidson (928 feet).</strong> A mountaintop chapel and pilgrimage route. The 103-foot concrete cross built in 1934 is the diluted result.</li>
+  <li><strong>Telegraph Hill (284 feet).</strong> The Pan-American Plaza. A monumental terraced complex at the bay-side base, with a federal customs house, a maritime museum, and a 200-foot pylon at the summit. Coit Tower, built in 1933 at 210 feet, is the descendant of the pylon. None of the Plaza was built.</li>
+  <li><strong>Russian Hill (294 feet).</strong> Public terrace gardens running the spine. Burnham specified terraced steps at every cross street to preserve view corridors. The crookedest block of Lombard Street, opened in 1922, is the only fragment.</li>
+  <li><strong>Nob Hill (376 feet).</strong> An open civic plaza with a public library and a museum of California history. The Mark Hopkins, the Fairmont, and the Pacific-Union Club took the site instead. Huntington Park is the postage-stamp survival.</li>
+  <li><strong>Bernal Heights (433 feet).</strong> Park preserve with a contour drive at elevation. The current park exists. The drive does not.</li>
+  <li><strong>Buena Vista (575 feet).</strong> Park preserve. The current Buena Vista Park is the only summit Burnham proposed that was reserved exactly as drawn.</li>
+  <li><strong>Potrero Hill (300 feet).</strong> Public terrace with a maritime observation tower facing the Bay Bridge alignment Burnham anticipated. Never built. The hill is residential.</li>
+  <li><strong>Lone Mountain (448 feet).</strong> Reserved as a cemetery and contemplative park. Became the University of San Francisco campus instead.</li>
+</ul>
+
+<p>Forty-three more summits were marked at the next tier. About six of the forty-nine total were preserved as public space. The other forty-three are private. Every one of those decisions was made between 1906 and 1925, while the plan was in a drawer.</p>
+
+<h2>The Bay Front</h2>
+
+<p>The Treatment of the Bay Front chapter ran the full shoreline as a single coordinated public artifact. Burnham specified an unbroken 200-foot esplanade from Fort Mason around Black Point, along North Beach, around the foot of Telegraph Hill at the Pan-American Plaza, south through what is now the Ferry Building site, past the China Basin, around the Hunters Point promontory, and ending at Candlestick Point. Twenty-two miles of continuous public waterfront.</p>
+
+<p>The plan also specified the relocation of the freight railyards and the industrial wharves to a single consolidated port at China Basin and Hunters Point, freeing the central waterfront for purely public use. This was the most economically aggressive proposal in the plan. It would have required condemnation of dozens of private wharf operators including the Belt Railroad, the Pacific Mail, and the Southern Pacific freight terminus. Burnham knew this. The plan said it anyway.</p>
+
+<p>What was actually built was the opposite. The railyards stayed. The Belt Railroad ran along the Embarcadero until the 1990s. The Embarcadero Freeway, completed in 1959, walled the public off from the water for thirty-two years. The current waterfront, finally unwalled in 2000, runs about three of the proposed twenty-two miles.</p>
+
+<h2>The Athenaeum and the Regional Plan</h2>
+
+<p>Two chapters that historians of the plan tend to skip past entirely. Both were ahead of their time and both are still pending.</p>
+
+<p><strong>The Athenaeum at Lake Merced.</strong> A national university campus on the southern lakeshore, with a library modeled on the Bibliotheque Nationale, an observatory, formal gardens, rowing courses on the lake itself, and a residential quadrangle for two thousand students. Burnham positioned it as the intellectual anchor of the Pacific city, the West Coast counterpart to Harvard and Columbia. The site became San Francisco State, the SF Zoo, the Olympic Club golf course, and the Lake Merced Boulevard suburb. None of it is the campus Burnham specified.</p>
+
+<p><strong>The Regional Plan.</strong> The ninth chapter looked across the bay. Burnham sketched a regional rail loop crossing the Golden Gate at Lime Point, a second crossing at the southern Bay near Hunters Point, a continuous parkway around the entire bay perimeter, and coordinated regional governance among San Francisco, Oakland, Alameda, Berkeley, and Marin. He drew the bridges sixty years before they were built. He drew BART sixty-five years before it opened. He drew the regional park district seventy-five years before ABAG. The Bay Bridge, the Golden Gate Bridge, BART, and ABAG are all partial executions of Chapter IX.</p>
 
 <div class="stat-block">
-  <p><strong>1905</strong> plan delivered to the Association for the Improvement and Adornment of San Francisco</p>
-  <p><strong>1906</strong> earthquake and fire destroyed the city; plan shelved in the rush to rebuild</p>
-  <p><strong>49 hills</strong> proposed as public parks or boulevard anchors</p>
-  <p><strong>0</strong> diagonal boulevards built from the plan</p>
+  <p><strong>September 27, 1905</strong> plan delivered to the Association for the Improvement and Adornment of San Francisco</p>
+  <p><strong>184 pages</strong> of text, with seventy-three plates including renderings by Edward Bennett and Jules Guerin</p>
+  <p><strong>15 months</strong> Burnham and Bennett lived in a cottage on Twin Peaks while drafting it</p>
+  <p><strong>49 hills</strong> reserved as public parks or boulevard anchors</p>
+  <p><strong>0 diagonal boulevards</strong> built from the plan</p>
+  <p><strong>April 18, 1906</strong> earthquake and fire destroy 28,000 buildings, four square miles of city</p>
+  <p><strong>$0</strong> Burnham charged for fifteen months of work</p>
+</div>
+
+<h2>The Earthquake and the Betrayal</h2>
+
+<p>The plan was at City Hall when City Hall fell down. On the morning of April 18, 1906, the printed copies of the report and the master atlas were stored in the Board of Supervisors' chambers at the old City Hall on McAllister. The earthquake struck at 5:12 a.m. and the building collapsed within forty seconds. Most of the master atlas was destroyed. Burnham himself was in Chicago. Phelan's offices burned. Bennett's drafting set was lost.</p>
+
+<p>What followed was not a planning failure. It was a political theft. Mayor Eugene Schmitz and political boss Abe Ruef, who had run the city as a tribute system since 1901, were already under federal investigation for graft. The fire commission, the police commission, the supervisors, the prizefight commissioners, the French-restaurant licensing board, every board that handled money was on Ruef's pay. The federal grand jury that would indict them was empaneled in October 1906. Schmitz was convicted of extortion in June 1907. Ruef was convicted of bribery in 1908 and went to San Quentin.</p>
+
+<p>While the indictments were being prepared, the same machine ran the rebuild. The Committee of Forty on the Reconstruction of San Francisco was nominally bipartisan. In practice the property owners on the committee wanted their lots back on the old lines and wanted permits issued in days, not months. Burnham's plan required widening, condemnation, regrading, and a coordinated capital program. None of those could be delivered by a city government whose mayor and boss were on trial.</p>
+
+<p>By the autumn of 1906 the rebuild was already locked into the old grid. By the spring of 1907 the new buildings were going up on the old foundation lines. The plan was never voted down. It was simply ignored. By the time Phelan returned to public life as U.S. Senator in 1915, the window had closed.</p>
+
+<div class="timeline">
+  <div class="event"><span class="date">1894</span> James Phelan elected reform mayor of San Francisco. Begins fighting Southern Pacific and Buckley machine.</div>
+  <div class="event"><span class="date">1901</span> Eugene Schmitz elected mayor on Union Labor ticket, with Abe Ruef as the boss.</div>
+  <div class="event"><span class="date">January 1904</span> Phelan and Willis Polk found the Association for the Improvement and Adornment of San Francisco.</div>
+  <div class="event"><span class="date">Spring 1904</span> Burnham accepts the commission, refuses a fee. Cottage built for him and Edward Bennett on Twin Peaks.</div>
+  <div class="event"><span class="date">September 27, 1905</span> Plan delivered to the Association at the Merchants' Exchange. Mayor Schmitz accepts a copy.</div>
+  <div class="event"><span class="date">Early 1906</span> Adoption hearings scheduled. Printed copies stored at City Hall on McAllister.</div>
+  <div class="event"><span class="date">April 18, 1906</span> 5:12 a.m. earthquake. Fire burns four days. 28,000 buildings destroyed. The master atlas at City Hall destroyed with it.</div>
+  <div class="event"><span class="date">May 1906</span> Committee of Forty on Reconstruction formed. Property owners insist on rebuilding the old grid.</div>
+  <div class="event"><span class="date">October 1906</span> Federal grand jury empaneled to investigate the Schmitz/Ruef machine.</div>
+  <div class="event"><span class="date">June 1907</span> Mayor Schmitz convicted of extortion.</div>
+  <div class="event"><span class="date">1908</span> Abe Ruef convicted of bribery, sentenced to fourteen years at San Quentin.</div>
+  <div class="event"><span class="date">1912</span> "Save San Francisco" effort to revive the plan fails. The plan is shelved permanently.</div>
+  <div class="event"><span class="date">1991</span> Embarcadero Freeway demolished after Loma Prieta. The waterfront boulevard Burnham drew in 1905 is finally built in 2000.</div>
 </div>
 
 <h2>What Survived</h2>
 
 <p>Not nothing. The bones are visible if you know where to look.</p>
 
-<p><strong>The Civic Center.</strong> San Francisco's Civic Center, built after the earthquake in the Beaux-Arts style, sits roughly where Burnham proposed his monumental complex. City Hall, the War Memorial Opera House, the Asian Art Museum, the main library. The grouping of civic buildings in one place is Burnham's idea, even if the specific design is not his.</p>
+<p><strong>The Civic Center.</strong> The current Civic Center, built between 1912 and 1936 in the Beaux-Arts style, sits exactly where Burnham proposed his monumental complex. City Hall, the War Memorial Opera House, the Asian Art Museum, the main library, the state building. The grouping is Burnham's. Architect John Galen Howard, who served on the Civic Center planning commission, had been Burnham's draftsman in Chicago and knew the plan.</p>
 
-<p><strong>Twin Peaks Boulevard.</strong> The road that circles Twin Peaks follows approximately the route Burnham sketched for a hilltop drive. The parkland on Twin Peaks itself reflects his proposal for hilltop public space.</p>
+<p><strong>Twin Peaks Boulevard.</strong> The road that loops Twin Peaks, opened in 1923, follows the contour Burnham sketched for the hilltop drive. The parkland and the figure-eight viewpoint at the summit reflect his proposal for civic terraces on the high points.</p>
 
-<p><strong>The Panhandle and Golden Gate Park axis.</strong> Already existed before Burnham, but his plan reinforced the idea of a continuous green corridor running from the civic core to the ocean. The parkway concept influenced later work on Park Presidio Boulevard.</p>
+<p><strong>The Panhandle to Golden Gate Park axis.</strong> Already partially built before Burnham. His plan reinforced the corridor and influenced the later cutting of Park Presidio Boulevard north toward the Golden Gate Bridge approach.</p>
 
-<p><strong>The Embarcadero.</strong> It took a century, but the removal of the Embarcadero Freeway in 1991 (after the Loma Prieta earthquake) and the construction of the current waterfront boulevard finally delivered something close to what Burnham envisioned for the bay shoreline. Burnham proposed this in 1905. San Francisco got it in 2000.</p>
+<p><strong>The Embarcadero.</strong> Eighty-five years late. The Embarcadero Freeway came down in 1991 after Loma Prieta and the current waterfront boulevard opened in 2000. The promenade Burnham drew in 1905 was delivered in 2000 by a different earthquake.</p>
+
+<p><strong>Mount Sutro and Mount Davidson.</strong> Both reserved as public open space, more by accident than by plan, but both consistent with Burnham's proposal that the major summits be public.</p>
 
 <h2>What San Francisco Lost</h2>
 
-<p>The diagonal boulevards. This is the big one. Burnham proposed avenues that would cut diagonally across the grid, following ridgelines and connecting hilltops, creating efficient routes and dramatic vistas. San Francisco's grid was laid flat across hills without regard for topography. The diagonals would have fixed that. They would have given the city the kind of dramatic street perspectives that make Paris and Washington memorable.</p>
+<p><strong>The diagonal boulevards.</strong> This is the big one. Burnham proposed avenues that cut diagonally across the grid, following ridgelines and connecting hilltops, creating efficient routes and dramatic vistas. San Francisco's grid was laid flat across hills without regard for topography. The diagonals would have given the city the kind of dramatic street perspectives that make Paris and Washington memorable. Without them, a five-mile cross-town trip in San Francisco still requires forty intersections and ten thousand vertical feet of climb.</p>
 
-<p>The hilltop terraces. Most of San Francisco's hills are covered in houses right up to the peak. There are no public terraces, no formal viewpoints, no civic monuments on the summits. The views exist, but they belong to whoever owns the top lot, not to the public. Burnham wanted those views to belong to everyone.</p>
+<p><strong>The hilltop terraces.</strong> Most of San Francisco's hills are covered in private houses right up to the peak. There are no public terraces, no formal viewpoints, no civic monuments on the summits. The views exist, but they belong to whoever owns the top lot, not to the public. Burnham wanted those views to belong to everyone. He marked forty-nine summits for public reservation. About six were saved.</p>
 
-<p>The visual identity from the air. This is what San Francisco actually has, despite rejecting the plan. The white and pastel Victorians, the terracotta downtown, the green parks cutting through the urban fabric. You can see it from an airplane. You know where you are. Imagine what the city would look like if the plan had been built: diagonal boulevards tracing ridgelines, hilltop parks visible from every approach, a coherent system instead of an accident.</p>
+<p><strong>The Pan-American Plaza.</strong> The federal civic complex at the foot of Telegraph Hill was never built. The Embarcadero now has the Ferry Building, Pier 39, and a row of office buildings. None of it is the monumental plaza Burnham proposed.</p>
 
-<h2>What TBC Is Doing</h2>
+<p><strong>The Outer Boulevard.</strong> The forty-mile parkway circling the western and southern flank of the city was never built. Skyline Boulevard partially follows the route. Most of it was never even surveyed.</p>
 
-<p>Burnham Civic is named for Daniel Burnham. His work in Chicago proved that a comprehensive city plan, backed by civic education and sustained public will, can reshape a city for a century. His work in San Francisco proved that even a failed plan leaves traces that the city eventually rediscovers.</p>
+<p><strong>The athenaeum at Lake Merced.</strong> The site became San Francisco State University, the SF Zoo, and the city's golf course. None of it is the public university campus Burnham specified.</p>
 
-<p>We are making the case for reviving the Burnham Plan for San Francisco. Not as a historical exercise, but as an active planning framework. The diagonal boulevards, the hilltop parks, the waterfront promenade. These proposals are not obsolete. The topography has not changed. The hills are still there. The ridgelines still point toward the water. The views are still extraordinary.</p>
+<h2>What Chicago Got That San Francisco Lost</h2>
 
-<p>San Francisco is at an inflection point. Downtown office vacancies are at historic highs. The city is rethinking its land use, its transit, and its identity. This is exactly the moment when a comprehensive vision matters most. Burnham delivered one 121 years ago. It is time to open it back up.</p>
+<p>The same architect produced both plans within four years of each other. Chicago's plan was published in 1909, four years after the San Francisco plan was delivered. The two cities had similar populations. The two plans had similar ambitions. Chicago built most of its plan. San Francisco built almost none of it.</p>
 
-<p>We are connecting with San Francisco civic organizations, planning historians, and preservation groups to build support for a formal reassessment of the Burnham Plan. The goal is simple: finish what Burnham started.</p>
+<p><strong>The political escort.</strong> Chicago had Charles Wacker, the chairman of the Chicago Plan Commission, who served from 1909 to 1926 and personally drove the plan into reality. He was backed by the Commercial Club, the Chicago Tribune, and the Chicago Association of Commerce. San Francisco had James Phelan, who left for the U.S. Senate in 1915, and the Association for the Improvement and Adornment, which dissolved during the rebuild.</p>
+
+<p><strong>The textbook.</strong> In 1911 Walter Moody wrote Wacker's Manual, a textbook version of the Plan of Chicago, and the Chicago Board of Education made it required reading for every eighth grader. An entire generation grew up understanding the plan and voting for the bond measures that built it. San Francisco never produced anything like it.</p>
+
+<p><strong>The clean government.</strong> Chicago in 1909 was not honest, but its civic class was strong enough to push the plan past the machine. San Francisco in 1906 had the mayor on trial for extortion and the political boss heading to San Quentin. The plan needed clean government and got organized graft.</p>
+
+<h2>Make San Francisco Great Again</h2>
+
+<p>San Francisco in 2026 is at the lowest civic ebb of any major American city. Downtown office vacancy above thirty-five percent. Population down. The Tenderloin a national emblem of failed governance. The Mission, once the tightest neighborhood fabric on the West Coast, hollowed out by chain-store flight and tent encampments. The waterfront, the most valuable mile of urban shoreline in North America, surrounded by surface parking and shuttered ferries. The city government still functioning, but the civic vision evaporated.</p>
+
+<p>This is the inflection point Burnham was waiting for. The plan does not need a new commission. It already exists. The hills have not moved. The ridgelines still point at the Golden Gate. The 1905 plan was the work of fifteen months by the most accomplished planner in American history, on the most extraordinary urban site in North America, paid for by the city's own civic class. It was buried by an earthquake and a political ring. The earthquake is over. The political ring went to prison a hundred and fifteen years ago. The plan is still good.</p>
+
+<p>Burnham Civic is making the case to open the plan back up. The diagonal boulevards. The hilltop parks. The Outer Boulevard. The Pan-American Plaza. The waterfront promenade where it is still missing. Each one is an unfinished public infrastructure project with a fully drafted design, a fully described public benefit, and nobody currently working on it. The work is to put them back on the table.</p>
+
+<p>We are connecting with San Francisco civic organizations, planning historians, the SPUR, the Telegraph Hill Dwellers, the Bernal Heights and Twin Peaks neighborhood councils, the Commonwealth Club, and the descendants of the original Association. The goal is simple. Finish what Burnham started. Build the city he drew. Make San Francisco great again.</p>
 
 <div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
   <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
@@ -276,6 +537,14 @@ p {
   </form>
 </div>
 
+</div><!-- /article-view -->
+
+<div id="thread-view" hidden>
+  <p class="thread-intro">Thread preview - 12 posts. Visualize how this lands on X. Each post has its own image card. Drop into your scheduler or paste manually.</p>
+  <div id="tweets-mount"></div>
+  <p class="tweet-cta">Read the full article: <a href="https://burnhamcivic.org/burnham-plan-sf.html">burnhamcivic.org/burnham-plan-sf</a></p>
+</div>
+
 <script>
 function sendForm(){
   var n=document.getElementById('f-name').value;
@@ -292,6 +561,367 @@ function sendForm(){
   document.getElementById('f-sent').style.display='inline';
   return false;
 }
+
+/* === THREAD PREVIEW === */
+const VERIFIED = `<svg class="verified" viewBox="0 0 24 24" fill="#1d9bf0" xmlns="http://www.w3.org/2000/svg"><path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/></svg>`;
+const I_REPLY = `<svg viewBox="0 0 24 24"><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01z"/></svg>`;
+const I_RT = `<svg viewBox="0 0 24 24"><path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/></svg>`;
+const I_LIKE = `<svg viewBox="0 0 24 24"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91z"/></svg>`;
+const I_VIEW = `<svg viewBox="0 0 24 24"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg>`;
+
+const SVG_HEAD = `<svg viewBox='0 0 600 338' xmlns='http://www.w3.org/2000/svg'>`;
+
+const TWEETS = [
+  {
+    text: `In 1905 Daniel Burnham finished a 184-page master plan for San Francisco. Seven months later the earthquake hit. The city was rebuilt in 18 months on the old grid by the same political ring that was on trial for graft.\n\nThe plan was buried. The hills are still there. The plan is still right.`,
+    metrics: ["1.2K", "3.4K", "18.7K", "412K"],
+    svg: SVG_HEAD + `
+      <defs><linearGradient id='hg1' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0a1929'/><stop offset='1' stop-color='#1e3a5f'/></linearGradient></defs>
+      <rect width='600' height='338' fill='url(#hg1)'/>
+      <path d='M0,260 Q60,225 120,238 Q180,200 240,225 Q300,180 360,210 Q420,170 490,205 Q545,185 600,215 L600,338 L0,338 Z' fill='#06121f'/>
+      <g stroke='#fbbf24' stroke-width='1.6' stroke-linecap='round' opacity='0.85' fill='none'>
+        <line x1='50' y1='275' x2='320' y2='70'/>
+        <line x1='95' y1='290' x2='480' y2='90'/>
+        <line x1='270' y1='305' x2='535' y2='130'/>
+        <line x1='30' y1='195' x2='510' y2='275'/>
+        <line x1='320' y1='70' x2='560' y2='240'/>
+      </g>
+      <circle cx='320' cy='70' r='6' fill='#fbbf24'/>
+      <circle cx='320' cy='70' r='15' fill='none' stroke='#fbbf24' opacity='0.4'/>
+      <text x='30' y='42' font-family='Georgia' font-size='15' fill='#fbbf24' letter-spacing='4'>1905</text>
+      <text x='30' y='62' font-family='Georgia' font-size='10' fill='#fbbf24' opacity='0.7' letter-spacing='2'>BURNHAM PLAN</text>
+      <text x='332' y='73' font-family='Georgia' font-size='9' fill='#fbbf24' letter-spacing='1.5'>CIVIC CENTER</text>
+    </svg>`
+  },
+  {
+    text: `2/ The plan did not come from City Hall.\n\nFormer mayor James D. Phelan founded the Association for the Improvement and Adornment of San Francisco in January 1904. He recruited Willis Polk, William Bourn, and the city's commercial leadership.\n\nThey retained Burnham. He took no fee.`,
+    metrics: ["284", "612", "4.1K", "188K"],
+    svg: SVG_HEAD + `
+      <rect width='600' height='338' fill='#1c1917'/>
+      <rect x='80' y='40' width='440' height='258' fill='#f5ecd6' stroke='#8a6d3b' stroke-width='2'/>
+      <text x='300' y='90' text-anchor='middle' font-family='Georgia' font-size='13' fill='#1c1917' letter-spacing='3'>ASSOCIATION FOR THE</text>
+      <text x='300' y='115' text-anchor='middle' font-family='Georgia' font-size='13' fill='#1c1917' letter-spacing='3'>IMPROVEMENT AND ADORNMENT</text>
+      <text x='300' y='140' text-anchor='middle' font-family='Georgia' font-size='13' fill='#1c1917' letter-spacing='3'>OF SAN FRANCISCO</text>
+      <line x1='200' y1='160' x2='400' y2='160' stroke='#8a6d3b' stroke-width='1'/>
+      <text x='300' y='190' text-anchor='middle' font-family='Georgia' font-size='11' fill='#5a4a2a' font-style='italic'>James D. Phelan, President</text>
+      <text x='300' y='210' text-anchor='middle' font-family='Georgia' font-size='11' fill='#5a4a2a' font-style='italic'>Daniel H. Burnham, Architect</text>
+      <text x='300' y='230' text-anchor='middle' font-family='Georgia' font-size='11' fill='#5a4a2a' font-style='italic'>Edward H. Bennett, Assistant</text>
+      <circle cx='300' cy='270' r='20' fill='none' stroke='#8a6d3b' stroke-width='1.5'/>
+      <text x='300' y='275' text-anchor='middle' font-family='Georgia' font-size='10' fill='#8a6d3b' letter-spacing='2'>1904</text>
+    </svg>`
+  },
+  {
+    text: `3/ The cottage on Twin Peaks.\n\nFor 15 months Burnham and Bennett lived 600 feet above the city in a wooden field office the Association built for them.\n\nFrom the porch they could see Presidio to Hunters Point. They walked every ridge. Recorded sight lines from 43 named summits.\n\nThe plan was drawn from the actual landscape.`,
+    metrics: ["421", "1.1K", "8.3K", "262K"],
+    svg: SVG_HEAD + `
+      <defs><linearGradient id='sky3' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#1e3a5f'/><stop offset='1' stop-color='#fbbf24'/></linearGradient></defs>
+      <rect width='600' height='338' fill='url(#sky3)'/>
+      <circle cx='480' cy='70' r='28' fill='#fbbf24' opacity='0.6'/>
+      <path d='M0,260 L120,160 L180,210 L260,90 L340,210 L400,160 L600,250 L600,338 L0,338 Z' fill='#0a1929'/>
+      <g transform='translate(258 175)'>
+        <rect x='0' y='10' width='32' height='22' fill='#8a6d3b'/>
+        <polygon points='-3,12 35,12 16,-2' fill='#5a4a2a'/>
+        <rect x='12' y='18' width='8' height='10' fill='#fbbf24'/>
+        <line x1='16' y1='-2' x2='16' y2='-12' stroke='#fff' stroke-width='1'/>
+        <rect x='14' y='-12' width='8' height='5' fill='#c8453d'/>
+      </g>
+      <text x='30' y='40' font-family='Georgia' font-size='12' fill='#f5ecd6' letter-spacing='3'>TWIN PEAKS COTTAGE</text>
+      <text x='30' y='58' font-family='Georgia' font-size='10' fill='#f5ecd6' opacity='0.8' letter-spacing='1'>Spring 1904 - Summer 1905</text>
+      <text x='30' y='305' font-family='Georgia' font-size='10' fill='#f5ecd6' opacity='0.7' letter-spacing='1'>43 SIGHT LINES · 49 SUMMITS · ZERO FEE</text>
+    </svg>`
+  },
+  {
+    text: `4/ The 1905 report had 9 chapters and 73 plates:\n\nI. The City Beautiful\nII. The Civic Center\nIII. The Outer Boulevard\nIV. Treatment of Hills\nV. Avenues and Streets\nVI. The Park System\nVII. The Athenaeum\nVIII. The Bay Front\nIX. The Suburbs and the Region\n\nEach chapter a buildable program.`,
+    metrics: ["198", "543", "3.7K", "146K"],
+    svg: SVG_HEAD + `
+      <rect width='600' height='338' fill='#1c1917'/>
+      <rect x='100' y='30' width='400' height='278' fill='#f5ecd6'/>
+      <line x1='300' y1='30' x2='300' y2='308' stroke='#8a6d3b' stroke-width='1'/>
+      <text x='300' y='60' text-anchor='middle' font-family='Georgia' font-size='12' fill='#1c1917' letter-spacing='3'>REPORT ON A PLAN</text>
+      <text x='300' y='78' text-anchor='middle' font-family='Georgia' font-size='12' fill='#1c1917' letter-spacing='3'>FOR SAN FRANCISCO</text>
+      <line x1='220' y1='90' x2='380' y2='90' stroke='#8a6d3b' stroke-width='0.5'/>
+      <g font-family='Georgia' font-size='11' fill='#1c1917'>
+        <text x='130' y='115'>I. The City Beautiful</text>
+        <text x='130' y='135'>II. The Civic Center</text>
+        <text x='130' y='155'>III. The Outer Boulevard</text>
+        <text x='130' y='175'>IV. Treatment of Hills</text>
+        <text x='130' y='195'>V. Avenues &amp; Streets</text>
+        <text x='320' y='115'>VI. The Park System</text>
+        <text x='320' y='135'>VII. The Athenaeum</text>
+        <text x='320' y='155'>VIII. The Bay Front</text>
+        <text x='320' y='175'>IX. Suburbs &amp; Region</text>
+      </g>
+      <text x='300' y='275' text-anchor='middle' font-family='Georgia' font-size='10' fill='#5a4a2a' font-style='italic'>184 pages · 73 plates · delivered Sept 27, 1905</text>
+    </svg>`
+  },
+  {
+    text: `5/ The Civic Center: a 1,200-foot oval at Van Ness and Market.\n\n200-foot Doric column at the center carrying a colossal bronze statue.\n\n6 anchor buildings, all Beaux-Arts limestone:\n• City Hall (Pantheon)\n• State Building (Petit Palais)\n• Opera House (Garnier)\n• Art Museum (Petit Trianon)\n• Library (Bibliotheque Sainte-Genevieve)\n• Federal Building (US Treasury)`,
+    metrics: ["312", "788", "5.2K", "201K"],
+    svg: SVG_HEAD + `
+      <rect width='600' height='338' fill='#0a1929'/>
+      <ellipse cx='300' cy='169' rx='220' ry='90' fill='none' stroke='#fbbf24' stroke-width='1.5' opacity='0.6'/>
+      <ellipse cx='300' cy='169' rx='180' ry='70' fill='none' stroke='#fbbf24' stroke-width='0.8' opacity='0.4'/>
+      <line x1='40' y1='169' x2='560' y2='169' stroke='#fbbf24' stroke-width='0.5' opacity='0.5'/>
+      <line x1='80' y1='80' x2='520' y2='258' stroke='#fbbf24' stroke-width='0.5' opacity='0.5' stroke-dasharray='4 4'/>
+      <circle cx='300' cy='169' r='14' fill='#fbbf24'/>
+      <rect x='297' y='130' width='6' height='40' fill='#fbbf24'/>
+      <g fill='#1e3a5f' stroke='#fbbf24' stroke-width='1.5'>
+        <rect x='256' y='240' width='88' height='28'/>
+        <rect x='160' y='220' width='70' height='24'/>
+        <rect x='370' y='220' width='70' height='24'/>
+        <rect x='160' y='100' width='70' height='24'/>
+        <rect x='370' y='100' width='70' height='24'/>
+        <rect x='256' y='75' width='88' height='28'/>
+      </g>
+      <g font-family='Georgia' font-size='9' fill='#fbbf24' text-anchor='middle'>
+        <text x='300' y='258'>CITY HALL</text>
+        <text x='195' y='235'>STATE</text>
+        <text x='405' y='235'>OPERA</text>
+        <text x='195' y='115'>LIBRARY</text>
+        <text x='405' y='115'>MUSEUM</text>
+        <text x='300' y='93'>FEDERAL</text>
+      </g>
+      <text x='30' y='35' font-family='Georgia' font-size='11' fill='#fbbf24' letter-spacing='2'>CIVIC CENTER PLAN</text>
+      <text x='30' y='52' font-family='Georgia' font-size='9' fill='#fbbf24' opacity='0.6'>VAN NESS × MARKET</text>
+    </svg>`
+  },
+  {
+    text: `6/ 11 named diagonal boulevards. Each 100-200 feet wide. Each route specified.\n\n• Embarcadero Avenue (built late, partial)\n• Pan-American Avenue\n• Mountain Boulevard (built as Twin Peaks Blvd)\n• Mission Avenue\n• Sunset Boulevard\n• Park Boulevard\n• Presidio Boulevard\n• Bernal Crown\n• Telegraph Crown\n• Russian Hill Crest\n• The Outer Boulevard, 40 miles`,
+    metrics: ["428", "1.4K", "9.1K", "318K"],
+    svg: SVG_HEAD + `
+      <rect width='600' height='338' fill='#0a1929'/>
+      <g stroke='#1e3a5f' stroke-width='0.5' opacity='0.6'>
+        <line x1='40' y1='60' x2='560' y2='60'/><line x1='40' y1='100' x2='560' y2='100'/>
+        <line x1='40' y1='140' x2='560' y2='140'/><line x1='40' y1='180' x2='560' y2='180'/>
+        <line x1='40' y1='220' x2='560' y2='220'/><line x1='40' y1='260' x2='560' y2='260'/>
+        <line x1='100' y1='40' x2='100' y2='298'/><line x1='180' y1='40' x2='180' y2='298'/>
+        <line x1='260' y1='40' x2='260' y2='298'/><line x1='340' y1='40' x2='340' y2='298'/>
+        <line x1='420' y1='40' x2='420' y2='298'/><line x1='500' y1='40' x2='500' y2='298'/>
+      </g>
+      <path d='M30,210 Q150,290 320,180 Q450,100 570,200' fill='none' stroke='#fbbf24' stroke-width='2.5' opacity='0.95'/>
+      <g stroke='#fbbf24' stroke-width='1.6' fill='none' opacity='0.9' stroke-linecap='round'>
+        <line x1='320' y1='180' x2='80' y2='270'/>
+        <line x1='320' y1='180' x2='540' y2='80'/>
+        <line x1='320' y1='180' x2='90' y2='90'/>
+        <line x1='320' y1='180' x2='550' y2='270'/>
+        <line x1='320' y1='180' x2='220' y2='280'/>
+        <line x1='320' y1='180' x2='450' y2='75'/>
+      </g>
+      <circle cx='320' cy='180' r='6' fill='#fbbf24'/>
+      <circle cx='320' cy='180' r='14' fill='none' stroke='#fbbf24' opacity='0.4'/>
+      <text x='30' y='35' font-family='Georgia' font-size='11' fill='#fbbf24' letter-spacing='2'>THE BOULEVARDS</text>
+      <text x='30' y='52' font-family='Georgia' font-size='9' fill='#fbbf24' opacity='0.6'>11 DIAGONALS · 1 OUTER LOOP · ±120 MILES</text>
+      <text x='332' y='178' font-family='Georgia' font-size='8' fill='#fbbf24'>CIVIC CENTER</text>
+    </svg>`
+  },
+  {
+    text: `7/ The hills were the plan.\n\n49 summits reserved as public space:\n• Twin Peaks: colossal allegorical statue facing the Pacific\n• Mount Sutro: exposition palace\n• Mount Davidson: pilgrimage chapel\n• Telegraph Hill: Pan-American Plaza + 200-ft pylon\n• Russian Hill: terraced civic spine\n• Nob Hill: open civic plaza\n\nAbout 6 of the 49 were saved.`,
+    metrics: ["356", "967", "6.4K", "224K"],
+    svg: SVG_HEAD + `
+      <defs><linearGradient id='sk7' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#1e3a5f'/><stop offset='1' stop-color='#0a1929'/></linearGradient></defs>
+      <rect width='600' height='338' fill='url(#sk7)'/>
+      <g fill='#06121f'>
+        <path d='M0,260 L40,260 L60,170 L80,260 Z'/>
+        <path d='M70,260 L110,180 L150,260 Z'/>
+        <path d='M140,260 L190,140 L240,260 Z'/>
+        <path d='M220,260 L270,80 L320,260 Z'/>
+        <path d='M310,260 L360,110 L420,260 Z'/>
+        <path d='M400,260 L440,170 L480,260 Z'/>
+        <path d='M460,260 L510,200 L560,260 Z'/>
+        <path d='M540,260 L580,210 L600,260 Z'/>
+      </g>
+      <rect x='0' y='258' width='600' height='80' fill='#06121f'/>
+      <g fill='#fbbf24'>
+        <circle cx='60' cy='168' r='5'/>
+        <circle cx='110' cy='178' r='5'/>
+        <circle cx='190' cy='138' r='5'/>
+        <circle cx='270' cy='78' r='6'/>
+        <circle cx='360' cy='108' r='6'/>
+        <circle cx='440' cy='168' r='5'/>
+        <circle cx='510' cy='198' r='5'/>
+      </g>
+      <g font-family='Georgia' font-size='9' fill='#fbbf24' text-anchor='middle'>
+        <text x='60' y='155'>TELEGRAPH</text>
+        <text x='110' y='165'>RUSSIAN</text>
+        <text x='190' y='125'>NOB</text>
+        <text x='270' y='65'>TWIN PEAKS</text>
+        <text x='360' y='95'>MT SUTRO</text>
+        <text x='440' y='155'>BERNAL</text>
+        <text x='510' y='185'>POTRERO</text>
+      </g>
+      <text x='30' y='35' font-family='Georgia' font-size='11' fill='#fbbf24' letter-spacing='2'>49 SUMMITS</text>
+      <text x='30' y='52' font-family='Georgia' font-size='9' fill='#fbbf24' opacity='0.6'>EVERY HILL A PUBLIC PLACE</text>
+      <text x='30' y='305' font-family='Georgia' font-size='9' fill='#fbbf24' opacity='0.7'>SAVED: 6 · PRIVATE: 43</text>
+    </svg>`
+  },
+  {
+    text: `8/ The Bay Front.\n\n22 miles of unbroken public esplanade from Fort Mason around to Candlestick Point.\n\nIndustrial wharves consolidated to China Basin and Hunters Point. The Belt Railroad gone. The waterfront returned to the public.\n\nBurnham proposed this in 1905. The current waterfront covers about 3 of the 22 miles.`,
+    metrics: ["278", "742", "5.0K", "192K"],
+    svg: SVG_HEAD + `
+      <rect width='600' height='338' fill='#0a1929'/>
+      <path d='M30,180 Q90,170 150,165 Q220,160 280,158 Q350,162 420,166 Q490,172 560,180 L560,300 L30,300 Z' fill='#1e3a5f'/>
+      <path d='M30,180 Q90,170 150,165 Q220,160 280,158 Q350,162 420,166 Q490,172 560,180' fill='none' stroke='#fbbf24' stroke-width='3' stroke-linecap='round'/>
+      <g fill='#fbbf24'>
+        <circle cx='60' cy='178' r='4'/>
+        <circle cx='160' cy='164' r='4'/>
+        <circle cx='280' cy='158' r='4'/>
+        <circle cx='420' cy='166' r='4'/>
+        <circle cx='540' cy='180' r='4'/>
+      </g>
+      <g font-family='Georgia' font-size='9' fill='#fbbf24' text-anchor='middle'>
+        <text x='60' y='200'>FORT MASON</text>
+        <text x='160' y='200'>FERRY BLDG</text>
+        <text x='280' y='200'>CHINA BASIN</text>
+        <text x='420' y='200'>HUNTERS PT</text>
+        <text x='540' y='200'>CANDLESTICK</text>
+      </g>
+      <g fill='#06121f' opacity='0.7'>
+        <rect x='30' y='160' width='60' height='25'/>
+        <rect x='280' y='150' width='60' height='25'/>
+        <rect x='480' y='160' width='80' height='25'/>
+      </g>
+      <text x='300' y='30' text-anchor='middle' font-family='Georgia' font-size='12' fill='#fbbf24' letter-spacing='3'>22 MILES</text>
+      <text x='300' y='50' text-anchor='middle' font-family='Georgia' font-size='10' fill='#fbbf24' opacity='0.7' letter-spacing='2'>CONTINUOUS PUBLIC WATERFRONT</text>
+      <text x='300' y='280' text-anchor='middle' font-family='Georgia' font-size='9' fill='#fbbf24' opacity='0.6' letter-spacing='1'>BUILT IN 2000: ±3 MILES</text>
+    </svg>`
+  },
+  {
+    text: `9/ April 18, 1906. 5:12 a.m.\n\nOld City Hall collapsed in 40 seconds. The master atlas was inside.\n\nMayor Schmitz and Boss Ruef were already under federal investigation. Schmitz convicted of extortion June 1907. Ruef went to San Quentin in 1908.\n\nThey ran the rebuild while on trial. Property owners wanted lots back on the old lines. Permits in days, not months.`,
+    metrics: ["512", "1.7K", "11.4K", "382K"],
+    svg: SVG_HEAD + `
+      <defs><radialGradient id='fire9' cx='0.5' cy='1'><stop offset='0' stop-color='#fbbf24'/><stop offset='0.5' stop-color='#c8453d'/><stop offset='1' stop-color='#0a1929'/></radialGradient></defs>
+      <rect width='600' height='338' fill='url(#fire9)'/>
+      <g stroke='#1c1917' stroke-width='0.7' opacity='0.85' fill='none'>
+        <line x1='0' y1='80' x2='600' y2='80'/><line x1='0' y1='120' x2='600' y2='120'/>
+        <line x1='0' y1='160' x2='600' y2='160'/><line x1='0' y1='200' x2='600' y2='200'/>
+        <line x1='0' y1='240' x2='600' y2='240'/>
+        <line x1='80' y1='0' x2='80' y2='338'/><line x1='160' y1='0' x2='160' y2='338'/>
+        <line x1='240' y1='0' x2='240' y2='338'/><line x1='320' y1='0' x2='320' y2='338'/>
+        <line x1='400' y1='0' x2='400' y2='338'/><line x1='480' y1='0' x2='480' y2='338'/>
+      </g>
+      <path d='M0,170 L120,150 L200,200 L300,140 L400,210 L500,140 L600,180' fill='none' stroke='#1c1917' stroke-width='3' opacity='0.9'/>
+      <path d='M0,200 L150,180 L260,230 L360,170 L460,250 L560,200 L600,220' fill='none' stroke='#1c1917' stroke-width='2.5' opacity='0.7'/>
+      <g fill='#1c1917' opacity='0.85'>
+        <path d='M280,260 Q300,230 290,200 Q310,220 305,250 Q320,220 315,260 Z'/>
+        <path d='M180,280 Q195,255 188,235 Q205,250 200,275 Z'/>
+        <path d='M420,275 Q438,250 430,225 Q450,245 445,272 Z'/>
+      </g>
+      <text x='30' y='40' font-family='Georgia' font-size='14' fill='#fbbf24' letter-spacing='4'>04 / 18 / 1906</text>
+      <text x='30' y='60' font-family='Georgia' font-size='10' fill='#fbbf24' opacity='0.85' letter-spacing='2'>5:12 A.M.</text>
+      <text x='570' y='325' text-anchor='end' font-family='Georgia' font-size='9' fill='#fbbf24' opacity='0.65' letter-spacing='1'>SCHMITZ · RUEF · COMMITTEE OF FORTY</text>
+    </svg>`
+  },
+  {
+    text: `10/ The bones survived.\n\n• Civic Center sits where Burnham drew it (built 1912-1936, half scale)\n• Twin Peaks Boulevard follows his contour\n• Coit Tower descends from his Telegraph Hill pylon\n• The Embarcadero (2000) finally delivered the waterfront he proposed in 1905\n\nThe 1989 earthquake delivered what 1906 buried. 85 years late.`,
+    metrics: ["234", "598", "4.3K", "164K"],
+    svg: SVG_HEAD + `
+      <defs><linearGradient id='dawn10' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#1e3a5f'/><stop offset='0.6' stop-color='#c8a96e'/><stop offset='1' stop-color='#f5ecd6'/></linearGradient></defs>
+      <rect width='600' height='338' fill='url(#dawn10)'/>
+      <g fill='#0a1929'>
+        <rect x='100' y='200' width='400' height='100'/>
+        <rect x='240' y='130' width='120' height='80'/>
+        <ellipse cx='300' cy='130' rx='60' ry='30'/>
+        <rect x='296' y='80' width='8' height='55'/>
+        <circle cx='300' cy='75' r='6'/>
+        <rect x='150' y='170' width='40' height='40'/>
+        <rect x='410' y='170' width='40' height='40'/>
+        <rect x='80' y='190' width='30' height='30'/>
+        <rect x='490' y='190' width='30' height='30'/>
+      </g>
+      <g stroke='#fbbf24' stroke-width='0.7' opacity='0.5'>
+        <line x1='160' y1='180' x2='160' y2='210'/><line x1='170' y1='180' x2='170' y2='210'/>
+        <line x1='180' y1='180' x2='180' y2='210'/>
+        <line x1='420' y1='180' x2='420' y2='210'/><line x1='430' y1='180' x2='430' y2='210'/>
+        <line x1='440' y1='180' x2='440' y2='210'/>
+      </g>
+      <text x='30' y='40' font-family='Georgia' font-size='11' fill='#0a1929' letter-spacing='2'>WHAT SURVIVED</text>
+      <text x='30' y='58' font-family='Georgia' font-size='9' fill='#0a1929' opacity='0.7'>CIVIC CENTER · TWIN PEAKS · EMBARCADERO</text>
+    </svg>`
+  },
+  {
+    text: `11/ Same architect. Same era. Different outcome.\n\nChicago had Charles Wacker, the Commercial Club, and Wacker's Manual taught to every 8th grader from 1911. Civic education built the lakefront.\n\nSan Francisco had the mayor on trial for extortion and the political boss heading to San Quentin. Organized graft buried the plan.\n\nThe gap was political will, not vision.`,
+    metrics: ["402", "1.2K", "7.8K", "286K"],
+    svg: SVG_HEAD + `
+      <rect width='600' height='338' fill='#0a1929'/>
+      <line x1='300' y1='40' x2='300' y2='298' stroke='#fbbf24' stroke-width='1' opacity='0.4'/>
+      <text x='150' y='40' text-anchor='middle' font-family='Georgia' font-size='12' fill='#fbbf24' letter-spacing='3'>CHICAGO</text>
+      <text x='450' y='40' text-anchor='middle' font-family='Georgia' font-size='12' fill='#fbbf24' letter-spacing='3'>SAN FRANCISCO</text>
+      <path d='M30,170 Q90,130 150,150 Q210,180 270,170 L270,260 L30,260 Z' fill='#1e3a5f'/>
+      <path d='M30,170 Q90,130 150,150 Q210,180 270,170' fill='none' stroke='#fbbf24' stroke-width='2'/>
+      <g fill='#fbbf24'><rect x='60' y='150' width='10' height='10'/><rect x='110' y='140' width='10' height='10'/><rect x='160' y='148' width='10' height='10'/><rect x='220' y='160' width='10' height='10'/></g>
+      <g stroke='#fbbf24' stroke-width='0.5' opacity='0.5'>
+        <line x1='330' y1='80' x2='570' y2='80'/><line x1='330' y1='120' x2='570' y2='120'/>
+        <line x1='330' y1='160' x2='570' y2='160'/><line x1='330' y1='200' x2='570' y2='200'/>
+        <line x1='330' y1='240' x2='570' y2='240'/>
+        <line x1='370' y1='60' x2='370' y2='270'/><line x1='430' y1='60' x2='430' y2='270'/>
+        <line x1='490' y1='60' x2='490' y2='270'/><line x1='540' y1='60' x2='540' y2='270'/>
+      </g>
+      <line x1='340' y1='270' x2='560' y2='80' stroke='#c8453d' stroke-width='2' opacity='0.7' stroke-dasharray='6 4'/>
+      <text x='150' y='285' text-anchor='middle' font-family='Georgia' font-size='9' fill='#fbbf24' opacity='0.7'>26 MILES OF LAKEFRONT BUILT</text>
+      <text x='450' y='285' text-anchor='middle' font-family='Georgia' font-size='9' fill='#fbbf24' opacity='0.7'>0 DIAGONAL BOULEVARDS BUILT</text>
+    </svg>`
+  },
+  {
+    text: `12/ Make San Francisco Great Again.\n\nThe plan does not need a new commission. It exists. The hills have not moved. The ridgelines still point at the Golden Gate.\n\nThe 1905 plan, by the most accomplished planner in American history, on the most extraordinary urban site in North America, is still good.\n\nWe are opening it back up.\n\nburnhamcivic.org/burnham-plan-sf`,
+    metrics: ["894", "2.8K", "22.6K", "612K"],
+    svg: SVG_HEAD + `
+      <defs><linearGradient id='msga' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#0a1929'/><stop offset='1' stop-color='#1e3a5f'/></linearGradient></defs>
+      <rect width='600' height='338' fill='url(#msga)'/>
+      <g stroke='#fbbf24' stroke-width='2.2' fill='none' opacity='0.85'>
+        <path d='M30,250 L100,180 L160,200 L220,150 L280,180 L340,140 L420,170 L480,130 L560,170'/>
+        <line x1='100' y1='180' x2='100' y2='270'/>
+        <line x1='220' y1='150' x2='220' y2='270'/>
+        <line x1='340' y1='140' x2='340' y2='270'/>
+        <line x1='480' y1='130' x2='480' y2='270'/>
+      </g>
+      <line x1='30' y1='270' x2='560' y2='270' stroke='#fbbf24' stroke-width='1' opacity='0.6'/>
+      <text x='300' y='105' text-anchor='middle' font-family='Georgia' font-size='28' font-weight='700' fill='#fbbf24' letter-spacing='2'>MAKE SAN FRANCISCO</text>
+      <text x='300' y='145' text-anchor='middle' font-family='Georgia' font-size='28' font-weight='700' fill='#fbbf24' letter-spacing='2'>GREAT AGAIN</text>
+      <text x='300' y='305' text-anchor='middle' font-family='Georgia' font-size='10' fill='#fbbf24' opacity='0.85' letter-spacing='3'>BURNHAMCIVIC.ORG</text>
+    </svg>`
+  }
+];
+
+function renderTweets() {
+  const m = document.getElementById('tweets-mount');
+  if (!m || m.children.length) return;
+  m.innerHTML = TWEETS.map((t, i) => {
+    const time = i === 0 ? 'Apr 29' : '';
+    return `
+    <article class="tweet">
+      <span class="tweet-num">${i + 1}/${TWEETS.length}</span>
+      <div class="tweet-row">
+        <div class="tweet-avatar">B</div>
+        <div class="tweet-body">
+          <div class="tweet-meta">
+            <span class="name">Burnham Civic</span>${VERIFIED}<span>@TBCNewsAction</span>${time ? ` <span class="dot">·</span><span>${time}</span>` : ''}
+          </div>
+          <div class="tweet-text">${t.text}</div>
+          <div class="tweet-media">${t.svg}</div>
+          <div class="tweet-actions">
+            <span>${I_REPLY}${t.metrics[0]}</span>
+            <span>${I_RT}${t.metrics[1]}</span>
+            <span>${I_LIKE}${t.metrics[2]}</span>
+            <span>${I_VIEW}${t.metrics[3]}</span>
+          </div>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function showView(v) {
+  document.getElementById('article-view').hidden = (v !== 'article');
+  document.getElementById('thread-view').hidden = (v !== 'thread');
+  document.querySelectorAll('.view-tab').forEach(b => {
+    b.classList.toggle('active', b.dataset.view === v);
+  });
+  if (v === 'thread') renderTweets();
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+document.querySelectorAll('.view-tab').forEach(b => {
+  b.addEventListener('click', () => showView(b.dataset.view));
+});
 </script>
 
 </body>
