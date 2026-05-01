@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Firebreak Park Series - BURNHAM CIVIC</title>
+<meta name="description" content="Twelve canyon-high-point parks above the Santa Monica Mountains residential edge. The fire-prevention plan disguised as a park plan. After Burnham's Chicago, after the 2025 Palisades fire.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a {
+  margin-right: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: #00c;
+  text-decoration: none;
+}
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.back {
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+  color: #00c;
+}
+.back:hover { color: #c00; }
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+.article-subtitle {
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+.burnham-quote {
+  position: relative;
+  font-style: italic;
+  font-size: 15px;
+  color: #555;
+  padding: 18px 0 18px 24px;
+  margin: 28px 0;
+  line-height: 1.6;
+  background:
+    linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) no-repeat;
+  background-size: 1px 100%;
+  background-position: 4px 0;
+}
+.burnham-quote::before,
+.burnham-quote::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before { top: 9px; }
+.burnham-quote::after { bottom: 9px; }
+.burnham-quote .attr {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888;
+  font-style: normal;
+  display: block;
+  margin-top: 10px;
+}
+p { margin: 0 0 16px; }
+h2 {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 32px 0 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+.metric-row {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0 24px;
+  flex-wrap: wrap;
+}
+.metric-card {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+}
+.metric-card .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0 0 4px;
+}
+.metric-card .value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+.metric-card .note {
+  font-size: 11px;
+  color: #888;
+  margin: 4px 0 0;
+}
+.cover-image {
+  width: 100%;
+  margin: 16px 0 24px;
+  border: 1px solid #ddd;
+  display: block;
+}
+.parks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 16px 0 24px;
+}
+@media (max-width: 600px) { .parks-grid { grid-template-columns: 1fr; } }
+.park {
+  border: 1px solid #e2e2e2;
+  background: #fdfdfb;
+  padding: 0 0 14px;
+}
+.park img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #e2e2e2;
+}
+.park .pno {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9a7c2e;
+  margin: 12px 14px 0;
+}
+.park h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 4px 14px 6px;
+  color: #1c1917;
+}
+.park .protects {
+  font-size: 12px;
+  color: #555;
+  margin: 0 14px 8px;
+  font-style: italic;
+}
+.park .body {
+  font-size: 13px;
+  color: #333;
+  margin: 0 14px;
+  line-height: 1.5;
+}
+.park .phase-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  background: #eaf0f8;
+  border: 1px solid #c2cfe2;
+  padding: 1px 6px;
+  margin-left: 8px;
+  vertical-align: 2px;
+  border-radius: 2px;
+}
+.park .phase-tag.p2 {
+  color: #5a4a1a;
+  background: #fef9ec;
+  border-color: #e8d9a0;
+}
+.park .demo-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1c1917;
+  padding: 2px 6px;
+  margin-left: 8px;
+  vertical-align: 2px;
+}
+.standard-list {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.standard-list li {
+  padding: 12px 0 12px 22px;
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px dotted #ddd;
+  position: relative;
+}
+.standard-list li:last-child { border-bottom: none; }
+.standard-list li::before {
+  content: ""; position: absolute;
+  left: 0; top: 18px;
+  width: 14px; height: 9px;
+  background: #1c1917;
+  clip-path: polygon(0 100%, 25% 100%, 25% 66%, 50% 66%, 50% 33%, 75% 33%, 75% 0, 100% 0, 100% 100%);
+  transform: rotate(180deg);
+}
+.standard-list li strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1c1917;
+  margin-bottom: 3px;
+}
+.figure {
+  margin: 16px 0 24px;
+  border: 1px solid #e2e2e2;
+  background: #fdfdfb;
+}
+.figure img {
+  width: 100%;
+  display: block;
+}
+.figure .cap {
+  font-size: 12px;
+  color: #555;
+  font-style: italic;
+  padding: 8px 14px 10px;
+  border-top: 1px solid #e2e2e2;
+}
+.firebreak-note {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+  border-left: 2px solid #9a7c2e;
+  background: #fef9ec;
+  padding: 10px 14px;
+  margin: 16px 0 24px;
+}
+.cession-callout {
+  background: #fafaf7;
+  border: 1px solid #ddd;
+  padding: 14px 18px;
+  margin: 20px 0;
+  font-size: 14px;
+}
+.cession-callout .lc-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 6px;
+}
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  font-size: 11px;
+  color: #999;
+}
+.inline-break {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 32px auto;
+  max-width: 280px;
+}
+.inline-break .dia {
+  width: 9px; height: 9px;
+  flex: 0 0 9px;
+  background: #1c1917;
+  transform: rotate(45deg);
+}
+.inline-break hr {
+  flex: 1; margin: 0;
+  border: none;
+  height: 1px;
+  background: #1c1917;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="../membership.html" class="subscribe">Subscribe</a>
+</div>
+
+<div class="nav">
+  <a href="../">Seattle</a>
+  <a href="./" class="active">LA</a>
+  <a href="../membership.html">Intelligence</a>
+  <a href="mailto:operations@burnhamcivic.org">Contact</a>
+</div>
+
+<a class="back" href="./">&larr; Back to LA</a>
+
+<h1 class="article-title">The Firebreak Park Series</h1>
+<p class="article-subtitle">Twelve canyon-high-point parks above the Santa Monica Mountains residential edge. One signed federal-state firebreak compact. The fire-prevention plan disguised as a park plan.</p>
+
+<div class="burnham-quote">
+  Make no little plans. They have no magic to stir men's blood and probably will not themselves be realized. Make big plans. Aim high in hope and work.
+  <span class="attr">Daniel Burnham, 1910</span>
+</div>
+
+<p>After the Great Chicago Fire of 1871, Daniel Burnham did not rebuild the fire department. He rebuilt the city. Wider streets. Fireproof materials. Parks as firebreaks. The 1909 Plan of Chicago was a fire-prevention plan disguised as a city plan.</p>
+
+<p>Los Angeles, scorched by the deadliest wildfires in its recorded history, has the same opportunity now. The question is whether it will act like Chicago in 1872 or Chicago in 1870.</p>
+
+<img class="cover-image" src="../_assets/firebreak/cover-12-parks.png" alt="Twelve parks of the PLA Firebreak Series mapped on the Santa Monica Mountains">
+
+<h2>The receipt</h2>
+
+<div class="metric-row">
+  <div class="metric-card">
+    <p class="label">Structures destroyed</p>
+    <p class="value">6,837</p>
+    <p class="note">Palisades fire, January 2025, in five days</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Lives lost</p>
+    <p class="value">12</p>
+    <p class="note">Palisades + Eaton, January 2025</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Santa Ynez Reservoir</p>
+    <p class="value">EMPTY</p>
+    <p class="note">117 million gallons offline when the fire started; offline AGAIN in 2026 for cover replacement</p>
+  </div>
+</div>
+
+<p>The water failed where the fire was hottest. LADWP has installed a temporary 6-mile, 10-inch hose from Topanga as a stopgap. The reservoir-reliability problem is a recurring failure, not a one-time event.</p>
+
+<h2>The series</h2>
+
+<p>Twelve canyon-high-point parks. Each one a graded firebreak that protects a named neighborhood from the next ignition. Phase 1 names seven new firebreak parks at canyon high-points currently held in a federal-state patchwork. Phase 2 names five existing public parks already on the right ground but configured for recreation, not fire suppression.</p>
+
+<div class="parks-grid">
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-01-topanga-crest.png" alt="Topanga Crest park boundary">
+    <div class="pno">Park 1 of 12 <span class="phase-tag">Phase 1</span></div>
+    <h3>Topanga Crest</h3>
+    <div class="protects">Protects Pacific Palisades, Sunset Mesa, Castellammare</div>
+    <div class="body">The 2025 Palisades Fire ignited inside this parcel, near Skull Rock trailhead in Topanga State Park. The cession blocker and the ignition-source parcel are the same parcel.</div>
+  </div>
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-02-sullivan-canyon.png" alt="Sullivan Canyon Top park boundary">
+    <div class="pno">Park 2 of 12 <span class="phase-tag">Phase 1</span></div>
+    <h3>Sullivan Canyon Top</h3>
+    <div class="protects">Protects Brentwood, Brentwood Park, Kenter Canyon</div>
+    <div class="body">Ridgeline fragmented across NPS, MRCA, the private Sullivan Canyon Preservation Association, and the City of LA. Parcel consolidation is the entry move.</div>
+  </div>
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-03-mandeville-ridge.png" alt="Mandeville Ridge park boundary">
+    <div class="pno">Park 3 of 12 <span class="phase-tag">Phase 1</span></div>
+    <h3>Mandeville Ridge</h3>
+    <div class="protects">Protects Mandeville Canyon</div>
+    <div class="body">One canyon road, five miles deep, three thousand residents. The 1978 Mandeville Fire destroyed twenty-five homes and St. Matthew's Episcopal. The 2025 Palisades Fire was active here on January 11. A firebreak does not solve evacuation. Pair with second-egress hardening.</div>
+  </div>
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-04-sepulveda-crown.png" alt="Sepulveda Crown park boundary">
+    <div class="pno">Park 4 of 12 <span class="phase-tag">Phase 1</span></div>
+    <h3>Sepulveda Crown</h3>
+    <div class="protects">Protects Bel-Air east of the 405, Casiano, Roscomare, the Getty Center campus</div>
+    <div class="body">The 2017 Skirball Fire ignited here at a homeless cooking fire below Mulholland and ran 422 acres on offshore wind. The CEQA work from Skirball is a head start on the Section 4(d) and cat-ex packages this site needs.</div>
+  </div>
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-05-stone-canyon.png" alt="Stone Canyon park boundary">
+    <div class="pno">Park 5 of 12 <span class="phase-tag">Phase 1</span></div>
+    <h3>Stone Canyon</h3>
+    <div class="protects">Protects Bel-Air east</div>
+    <div class="body">The 1961 Bel Air Fire ignited at the north end of Stone Canyon at 8:15 AM on November 6 from construction-crew brush burning. It ran west, destroyed 484 homes, burned 16,090 acres. The same reservoir served as a helicopter dip in 2025. Cession is not the unblock here. Reservoir reliability is.</div>
+  </div>
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-06-beverly-glen.png" alt="Beverly Glen Top park boundary">
+    <div class="pno">Park 6 of 12 <span class="phase-tag">Phase 1</span></div>
+    <h3>Beverly Glen Top</h3>
+    <div class="protects">Protects lower Beverly Glen, Bel-Air east, Holmby Hills</div>
+    <div class="body">Beverly Glen Boulevard is single-canyon-road egress for residents on the south face. Same evacuation profile as Mandeville. Same ignition-pattern template as the 2025 Sunset Fire.</div>
+  </div>
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-07-fryman-upper.png" alt="Fryman Upper park boundary">
+    <div class="pno">Park 7 of 12 <span class="phase-tag">Phase 1</span></div>
+    <h3>Fryman Upper</h3>
+    <div class="protects">Protects Studio City south of Mulholland, Sherman Oaks east</div>
+    <div class="body">Mountains Conservancy already owns the parcel through MRCA. No federal cession required. The Betty B. Dearing Cross Mountain Trail runs through here, connecting four parks in one continuous corridor. The easiest of the seven Phase 1 sites to actually firebreak.</div>
+  </div>
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-08-coldwater-canyon.png" alt="Coldwater Canyon park boundary">
+    <div class="pno">Park 8 of 12 <span class="phase-tag p2">Phase 2</span></div>
+    <h3>Coldwater Canyon</h3>
+    <div class="protects">Protects Studio City south, Beverly Hills north slopes, Benedict Canyon</div>
+    <div class="body">LA Recreation and Parks has operated the site under agreement with TreePeople since 1977. Restored native chaparral, lower fuel load. The local partner is already in place. The audit asks whether the existing infrastructure meets the six-point Plumbed Park Standard.</div>
+  </div>
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-09-runyon-canyon.png" alt="Runyon Canyon park boundary">
+    <div class="pno">Park 9 of 12 <span class="phase-tag p2">Phase 2</span></div>
+    <h3>Runyon Canyon</h3>
+    <div class="protects">Protects Hollywood, West Hollywood, the Sunset Strip</div>
+    <div class="body">Designated Very High Fire Hazard Severity Zone. The January 2025 Sunset Fire ignited along Solar and Astral Drives, burned 43 acres, evacuated the Walk of Fame and the Hollywood Bowl. A near-miss for the densest hill perimeter in the city.</div>
+  </div>
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-10-cahuenga-peak.png" alt="Cahuenga Peak park boundary">
+    <div class="pno">Park 10 of 12 <span class="phase-tag p2">Phase 2</span></div>
+    <h3>Cahuenga Peak</h3>
+    <div class="protects">Protects the Hollywood north slope, Lake Hollywood, Toluca Lake</div>
+    <div class="body">The highest peak in Griffith Park at 1,820 ft. Existing helicopter access for Hollywood Sign maintenance is a head start on the helo refill point. The 2007 Griffith Park Fire burned 817 acres here; the WPA-era catch basins have reaccumulated brush since.</div>
+  </div>
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-11-will-rogers-ridge.png" alt="Will Rogers Ridge park boundary">
+    <div class="pno">Park 11 of 12 <span class="phase-tag p2">Phase 2</span></div>
+    <h3>Will Rogers Ridge</h3>
+    <div class="protects">Protects Pacific Palisades east, the residential blocks rebuilding from the January 2025 fire footprint</div>
+    <div class="body">99.5% of the park unit was burned in 2025. The 31-room Ranch House and the historic stables were destroyed. The park reopened in November 2025. Whatever standard is set here is the standard the rebuild meets.</div>
+  </div>
+
+  <div class="park">
+    <img src="../_assets/firebreak/park-12-wilacre.png" alt="Wilacre park boundary">
+    <div class="pno">Park 12 of 12 <span class="phase-tag p2">Phase 2</span><span class="demo-tag">Demo project</span></div>
+    <h3>Wilacre</h3>
+    <div class="protects">Protects Studio City and Sherman Oaks east</div>
+    <div class="body">128 acres on the north face of the Santa Monicas, already owned by MRCA. Connects to Fryman Upper, Coldwater Canyon, and Franklin Canyon along the Betty B. Dearing Cross Mountain Trail. Four parks, one continuous corridor, all four already in public hands.</div>
+  </div>
+
+</div>
+
+<h2>Phase 0: the Cross Mountain Trail demonstration</h2>
+
+<p>Wilacre, Fryman Upper, Coldwater Canyon, and Franklin Canyon. Four parks, one continuous corridor along the Betty B. Dearing Cross Mountain Trail, all four already in public conservancy or LA Recreation and Parks hands. No federal cession required. TreePeople is the natural local partner, having operated Coldwater since 1977.</p>
+
+<div class="figure">
+  <img src="../_assets/firebreak/cross-mountain-trail.png" alt="Cross Mountain Trail demonstration corridor">
+  <div class="cap">The four-park demonstration corridor on the Betty B. Dearing Trail. All four parcels in public hands today. This is the project that ships first.</div>
+</div>
+
+<p>This is the project that ships first. Phase 0 demonstrates the Plumbed Park Standard on a corridor where every parcel is already public. No new acquisition, no federal compact, no consultation calendar. Pure capex against existing public ground. The cost-share of one Cross Mountain corridor is single-digit-percent of one fire's federal aid request.</p>
+
+<h2>The Plumbed Park Standard</h2>
+
+<p>Six points. Every park in the series funded against this standard. Every dollar of federal cost-share conditioned on it.</p>
+
+<ul class="standard-list">
+  <li><strong>1. Cleared graded firebreak</strong>Mechanical clearance of fuels along the ridgeline, graded to a standardized width. Annual maintenance cycles funded into the cooperative agreement, not deferred.</li>
+  <li><strong>2. Fire-flow main</strong>A dedicated fire-flow main at the ridgeline. Currently zero of the twelve sites have one. Sized for fire flow rather than domestic use only.</li>
+  <li><strong>3. Helicopter dip and refill point</strong>Reliable, year-round water source for aerial assets. Stone Canyon shows the principle. The reservoir-reliability problem becomes a procurement problem.</li>
+  <li><strong>4. Hardened evacuation infrastructure</strong>Second-egress hardening on canyon roads. Mandeville and Beverly Glen are the test cases. A firebreak does not solve evacuation. Both are required.</li>
+  <li><strong>5. Defensible perimeter on the residential edge</strong>200-foot mechanically cleared zone along the park boundary against the residential edge. Standardized across all twelve sites.</li>
+  <li><strong>6. Native restoration in the cleared zone</strong>Coastal sage scrub managed for fire behavior, not against it. Braunton's milkvetch germinates after fire and disturbance. Section 4(d) special rules let the firebreak help the population, not harm it.</li>
+</ul>
+
+<div class="firebreak-note">Section 7 of the Endangered Species Act has been the regulatory bottleneck for two decades. The milkvetch germinates after disturbance. The gnatcatcher population is functionally extirpated from the corridor. Section 4(d) special rules are the unblock, not waivers and not lawsuits.</div>
+
+<h2>The federal-state compact</h2>
+
+<div class="cession-callout">
+  <div class="lc-label">Two desks, one signature</div>
+  Phase 1 names two desks: Burgum at Interior, Newsom in Sacramento. Five National Park Service cooperative agreements, two California State Parks compacts, one LADWP operational agreement. Pressure mechanism is the standard cost-share conditioning of California's pending FEMA and CDBG-DR tranches. None of it is novel. All of it is the standard federal-state administrative practice that built the Interstate Highway System.
+</div>
+
+<h2>The cost</h2>
+
+<div class="metric-row">
+  <div class="metric-card">
+    <p class="label">Phase 1 ROM</p>
+    <p class="value">$80M-$145M</p>
+    <p class="note">Seven canyon-high-point sites, one-time capex</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Phase 2 ROM</p>
+    <p class="value">$25M-$70M</p>
+    <p class="note">Five existing parks brought to standard</p>
+  </div>
+  <div class="metric-card">
+    <p class="label">Annual O&amp;M</p>
+    <p class="value">$3M-$9M</p>
+    <p class="note">Maintenance, clearance cycles, helicopter readiness</p>
+  </div>
+</div>
+
+<p>Series total: $105M to $290M one-time capex, plus $3M to $9M annual operations. Reference: California's Palisades plus Eaton federal cost-share request runs to multiple billions. The full series prices at single-digit-percent of one fire's federal aid.</p>
+
+<h2>The dramatic facts</h2>
+
+<div class="figure">
+  <img src="../_assets/firebreak/santa-ynez-empty.png" alt="Santa Ynez Reservoir empty">
+  <div class="cap">Santa Ynez Reservoir, empty when the Palisades fire started in January 2025. Offline again in 2026 for cover replacement. The recurring failure that LADWP's 6-mile, 10-inch hose from Topanga is currently masking.</div>
+</div>
+
+<div class="figure">
+  <img src="../_assets/firebreak/bel-air-1961.png" alt="1961 Bel Air Fire origin">
+  <div class="cap">The 1961 Bel Air Fire. Ignited at the north end of Stone Canyon at 8:15 AM on November 6 from construction-crew brush burning. 484 homes destroyed, 16,090 acres burned, six hours.</div>
+</div>
+
+<div class="figure">
+  <img src="../_assets/firebreak/milkvetch-topanga.png" alt="Braunton's milkvetch in Topanga">
+  <div class="cap">Braunton's milkvetch germinates after fire and mechanical disturbance. The two-decade Section 7 narrative has it backwards. The firebreak helps the population. Section 4(d) is the unblock.</div>
+</div>
+
+<h2>The next mayor</h2>
+
+<p>The Plan of Chicago ran to 164 pages and took three years to produce. Los Angeles does not have three years. The rebuild of Pacific Palisades is already underway. The next mayor either delivers this compact or refuses, and the refusal becomes the campaign.</p>
+
+<div class="burnham-quote">
+  Burnham's lesson from the 1871 Chicago fire was structural, not operational. He did not call for more fire trucks. He called for a different city.
+  <span class="attr">After Burnham, Chicago, 1909</span>
+</div>
+
+<div class="inline-break">
+  <span class="dia"></span><hr><span class="dia"></span>
+</div>
+
+<p style="font-size:13px;color:#555;">Working files, methodology, and parcel-level dossiers maintained at the LAFD response brief: <a href="lafd.html">lafd.html</a>. Outreach: <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a>.</p>
+
+<footer>
+  Burnham Civic LLC. Independent civic intelligence. Built on Daniel Burnham's principles.
+</footer>
+
+</body>
+</html>
