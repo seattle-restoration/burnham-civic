@@ -152,6 +152,15 @@ td { padding: 6px 8px; border-bottom: 1px solid #eee; }
   </script>
 </div>
 
+<div id="paywall-gate" style="text-align:center;padding:60px 20px;border:1px solid #ccc;margin:32px 0;">
+  <h2 style="font-family:Georgia,serif;font-size:20px;margin-bottom:12px;border:none;">&#9878; TBC Intelligence</h2>
+  <p style="font-size:14px;color:#666;margin-bottom:8px;">The full ledger of issued invoices, line-item methodology, and cumulative outstanding balance is restricted to TBC Intelligence members.</p>
+  <p style="font-size:12px;color:#999;margin-bottom:16px;">33 invoices issued. Civic Negligence Ledger billed to the City of Seattle. Capital Flight Ledger billed to the State of Washington.</p>
+  <a href="membership.html" style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;padding:8px 24px;text-decoration:none;font-family:Georgia,serif;">Join</a>
+</div>
+
+<div id="gated-content" style="display:none;">
+
 <!-- INVOICES ISSUED -->
 <h2 style="margin-top:32px;">Invoices Issued</h2>
 <p style="font-size:14px;color:#333;margin-bottom:8px;">Each invoice is a quantified economic taking caused by civic negligence. Invoices accrue a 7% penalty at issuance. If unpaid after 30 days, an additional 7% penalty is applied and the invoice is remanded to a federal employee for collections.</p>
@@ -200,6 +209,7 @@ td { padding: 6px 8px; border-bottom: 1px solid #eee; }
 
 <div id="invoice-ledger" style="margin:24px 0;">
 
+<script src="data/invoices.js"></script>
 <script>
 function daysPastDue(dateStr) {
   var issued = new Date(dateStr);
@@ -210,198 +220,8 @@ function formatCurrency(n) {
   return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
 }
 
-var invoices = [
-  {
-    id: '001',
-    entity: 'Seattle Lighting',
-    location: '222 2nd Ave Ext S, Pioneer Square, Seattle WA',
-    billTo: 'City of Seattle',
-    billToDetail: 'Office of the Mayor / Seattle City Council',
-    issuedDate: '2026-03-22',
-    dueDate: '2026-04-21',
-    terms: 'Net 30',
-    penaltyRate: 0.07,
-    context: {
-      title: 'Public Safety Impact (12 months ending March 2026)',
-      stats: [
-        { num: '503', lbl: 'Fire/EMS 911 Calls (1 block)' },
-        { num: '1,979', lbl: 'Police-reported Crimes' },
-        { num: '42/mo', lbl: 'Avg Emergency Calls' },
-        { num: '109', lbl: 'Years in Business' }
-      ],
-      details: [
-        '373 medical emergencies, 12 overdose responses, 25 fire incidents (rubbish, dumpster, encampment)',
-        '212 simple assaults, 89 aggravated assaults, 33 robberies within Pioneer Square',
-        '209 vehicle break-ins, 96 motor vehicle thefts, 96 burglaries',
-        '224 S Washington St: 68 incidents at one address (13.5% of all calls in radius)',
-        'Peak month: September 2025, 371 crimes (12 per day)'
-      ]
-    },
-    lineItems: [
-      { section: 'Direct Revenue Loss' },
-      { desc: 'Annual retail revenue (lighting/fixtures)', detail: 'Est. based on similar specialty retail, Pioneer Square', amount: 2500000 },
-      { desc: 'Customer foot traffic loss (anchor effect)', detail: 'Pioneer Square loses an anchor tenant after 109 years', amount: 1500000 },
-      { section: 'Tax Base Erosion' },
-      { desc: 'Sales tax revenue lost (10.25% on retail)', detail: 'Annual sales tax the city will no longer collect', amount: 250000 },
-      { desc: 'B&O tax revenue lost', detail: 'Retailing B&O at 0.471% of gross receipts', amount: 12000 },
-      { desc: 'Property tax impact (commercial vacancy)', detail: 'Reduced assessed value from vacant commercial space', amount: 850000 },
-      { section: 'Workforce Displacement' },
-      { desc: 'Employee wages displaced (15-25 workers)', detail: 'Retail staff, management, delivery', amount: 1200000 },
-      { desc: 'Unemployment insurance burden', detail: 'State UI claims from displaced workers', amount: 88000 },
-      { section: 'Emergency Services Cost' },
-      { desc: 'SFD 911 response costs (503 calls x $2,500 avg)', detail: 'Fire/EMS resources deployed within 1 block', amount: 1257500 },
-      { desc: 'SPD patrol and response costs', detail: 'Police resources for 1,979 reported crimes', amount: 642500 },
-      { section: 'Downstream Economic Impact' },
-      { desc: 'Supplier and vendor revenue loss', detail: 'Manufacturers, distributors, contractors who served Seattle Lighting', amount: 500000 }
-    ],
-    baseAmount: 6800000
-  },
-  {
-    id: '002',
-    entity: 'Bulwark Capital Management',
-    location: 'Relocated out of Washington State',
-    billTo: 'State of Washington',
-    billToDetail: "Governor's Office / WA State Legislature",
-    issuedDate: '2026-03-22',
-    dueDate: '2026-04-21',
-    terms: 'Net 30',
-    penaltyRate: 0.07,
-    context: {
-      title: 'Capital Flight Profile',
-      stats: [
-        { num: '$1.1B', lbl: 'Assets Under Management' },
-        { num: '$11M', lbl: 'Annual Mgmt Fees Leaving' },
-        { num: '15-20', lbl: 'Finance Jobs Relocated' },
-        { num: '1', lbl: 'Of Many Departures' }
-      ],
-      details: [
-        'Zach Abraham (Principal) publicly cited WA income tax as primary reason for departure',
-        '$1.1 billion in managed assets now governed by another state\'s regulatory and tax framework',
-        'Professional services ecosystem (legal, compliance, audit) follows the fund',
-        'Departure announced on Jason Rantz show (770 AM), amplifying business exodus narrative'
-      ]
-    },
-    lineItems: [
-      { section: 'Direct Tax Revenue Loss' },
-      { desc: 'Capital gains tax on fund performance (est. 20% annual return)', detail: '7% WA cap gains on $220M estimated gains', amount: 2200000 },
-      { desc: 'B&O tax on management fee income', detail: '1.5% service B&O on $11M management fees', amount: 165000 },
-      { section: 'Fee Income Leaving State' },
-      { desc: 'Annual management fees (est. 1% of AUM)', detail: 'Revenue that will now be earned, spent, and taxed elsewhere', amount: 11000000 },
-      { section: 'Workforce and Office' },
-      { desc: 'Employee wages relocated (15-20 finance professionals)', detail: 'Analysts, portfolio managers, compliance, admin', amount: 3000000 },
-      { desc: 'Professional services ecosystem loss', detail: 'Legal counsel, compliance vendors, auditors, IT', amount: 800000 },
-      { desc: 'Commercial lease vacancy', detail: 'Office space left in WA market', amount: 500000 },
-      { section: 'Compounding Loss' },
-      { desc: 'Tax revenue on AUM growth foregone (compounding)', detail: '$1.1B base growing at 8-12% annually, permanently lost to WA', amount: 35000 }
-    ],
-    baseAmount: 17700000
-  },
-  {
-    id: '003',
-    entity: 'Moment (Marc Barros)',
-    location: 'Relocated from Seattle, WA to Wyoming',
-    billTo: 'State of Washington',
-    billToDetail: "Governor's Office / WA State Legislature",
-    issuedDate: '2026-03-22',
-    dueDate: '2026-04-21',
-    terms: 'Net 30',
-    penaltyRate: 0.07,
-    context: {
-      title: 'Tax Burden Cited by Founder',
-      stats: [
-        { num: '10.5%', lbl: 'City Sales Tax Rate' },
-        { num: '7%', lbl: 'Capital Gains Tax' },
-        { num: '0.471%', lbl: 'B&O Tax Rate' },
-        { num: 'NEW', lbl: 'Digital Advertising Tax' }
-      ],
-      details: [
-        'Marc Barros publicly named WA\'s cumulative tax stack as the reason for relocation',
-        'Also cited: estate tax, new $200K+ digital advertising tax',
-        'Moment is a direct-to-consumer camera/lens tech company with national e-commerce presence',
-        'GeekWire, Seattle Red, Center Square all covered the departure'
-      ]
-    },
-    lineItems: [
-      { section: 'Direct Tax Revenue Loss' },
-      { desc: 'B&O tax on gross receipts (0.471%)', detail: 'Est. $15M annual revenue x 0.471%', amount: 225000 },
-      { desc: 'Sales tax on WA operations', detail: 'Sales tax on in-state purchases, equipment, supplies', amount: 150000 },
-      { section: 'Workforce Displacement' },
-      { desc: 'Employee wages relocated (15-20 tech employees)', detail: 'Engineers, designers, operations, marketing', amount: 2000000 },
-      { section: 'Ecosystem and Real Estate' },
-      { desc: 'Tech ecosystem network effect loss', detail: 'Vendor, contractor, freelancer, and supply chain spend', amount: 500000 },
-      { desc: 'Office/warehouse vacancy', detail: 'Commercial lease left in WA market', amount: 300000 },
-      { section: 'Brand and Narrative Damage' },
-      { desc: 'Business exodus narrative amplification', detail: 'Each public departure increases probability of the next one', amount: 25000 }
-    ],
-    baseAmount: 3200000
-  },
-  {
-    id: '004', entity: 'Boeing Company', location: 'HQ: Seattle to Chicago (2001), then Arlington VA (2022)',
-    billTo: 'State of Washington', billToDetail: "Governor's Office", issuedDate: '2026-03-22', dueDate: '2026-04-21', terms: 'Net 30', penaltyRate: 0.07,
-    context: { title: 'HQ Departure After 107 Years', stats: [{num:'107',lbl:'Years in Seattle'},{num:'500+',lbl:'HQ Jobs Relocated'},{num:'2022',lbl:'Final Move to VA'},{num:'$0',lbl:'Paid to WA'}],
-      details: ['Founded in Seattle 1916. HQ moved to Chicago 2001, Arlington VA 2022','787 production consolidated to South Carolina','WA lost corporate decision-making presence permanently'] },
-    lineItems: [
-      {section:'Revenue Loss'},
-      {desc:'HQ payroll relocated (500+ staff)',detail:'Avg comp $165K',amount:82500000},
-      {desc:'B&O tax on HQ service revenue',detail:'0.471% lost',amount:1200000},
-      {desc:'Corporate civic engagement lost',detail:'Philanthropy, sponsorships, exec involvement',amount:5000000}
-    ], baseAmount: 88700000
-  },
-  {
-    id: '005', entity: 'Amazon (Seattle to Bellevue shift)', location: 'Seattle payroll migrating to Bellevue campuses',
-    billTo: 'City of Seattle', billToDetail: 'Office of the Mayor', issuedDate: '2026-03-22', dueDate: '2026-04-21', terms: 'Net 30', penaltyRate: 0.07,
-    context: { title: 'Payroll Migration + Layoffs', stats: [{num:'2,303',lbl:'WA Layoffs (2023)'},{num:'1,887',lbl:'Seattle Layoffs'},{num:'$6-12M',lbl:'Annual Tax Loss'},{num:'$610M',lbl:'Bezos Cap Gains Lost'}],
-      details: ['Thousands of employees shifted from Seattle to Bellevue campuses','Jeff Bezos relocated to Florida, costing WA $610M in capital gains tax','JumpStart payroll tax cited as accelerant'] },
-    lineItems: [
-      {section:'Direct City Revenue Loss'},
-      {desc:'JumpStart payroll tax lost (Bellevue shift)',detail:'Payroll moving outside Seattle city limits',amount:9000000},
-      {desc:'Bezos personal capital gains tax lost',detail:'Relocation to FL, WA 7% cap gains on $8.7B sale',amount:610000000},
-      {desc:'Local spending reduction (1,887 fewer Seattle workers)',detail:'Restaurants, transit, retail',amount:15000000}
-    ], baseAmount: 634000000
-  },
-  {
-    id: '006', entity: 'Microsoft (WA Layoffs)', location: 'Redmond / Bellevue, WA',
-    billTo: 'State of Washington', billToDetail: "Governor's Office", issuedDate: '2026-03-22', dueDate: '2026-04-21', terms: 'Net 30', penaltyRate: 0.07,
-    context: { title: 'AI-Driven Workforce Reduction', stats: [{num:'3,200+',lbl:'WA Jobs Cut Since May 2025'},{num:'15,000',lbl:'Global Reductions'},{num:'30%',lbl:'Code Now AI-Generated'},{num:'6%',lbl:'WA Tech Employment Drop'}],
-      details: ['3,200+ WA jobs eliminated since May 2025','AI replacing entry-level roles: under-25 tech jobs down 13%','Not a relocation but a permanent capacity reduction in WA'] },
-    lineItems: [
-      {section:'Workforce Loss'},
-      {desc:'Displaced wages (3,200 workers x avg $180K)',detail:'Engineers, PMs, support staff',amount:576000000},
-      {desc:'State UI burden',detail:'Unemployment claims from displaced workers',amount:32000000},
-      {desc:'Local economic multiplier loss',detail:'2.5x on displaced spending',amount:48000000}
-    ], baseAmount: 656000000
-  },
-  {
-    id: '007', entity: '222 High-Income Households', location: 'Net outmigration from Washington State',
-    billTo: 'State of Washington', billToDetail: 'Department of Revenue', issuedDate: '2026-03-22', dueDate: '2026-04-21', terms: 'Net 30', penaltyRate: 0.07,
-    context: { title: 'Wealth Flight (SmartAsset 2024)', stats: [{num:'222',lbl:'Households Lost'},{num:'$200K+',lbl:'Income Threshold'},{num:'8th',lbl:'Worst in Nation'},{num:'44%',lbl:'Business Leaders Considering Exit'}],
-      details: ['WA ranked 8th highest for net loss of $200K+ households','Top destinations: AZ, ID, MT, WY, TX, FL','AWB: 44% of business leaders considering moving personally'] },
-    lineItems: [
-      {section:'Tax Revenue Lost'},
-      {desc:'Capital gains tax (7% on est. gains)',detail:'30% of 222 HH with taxable gains',amount:3500000},
-      {desc:'Property tax lost (222 homes, median $850K)',detail:'Avg rate 1.03%',amount:1944000},
-      {desc:'Sales tax lost (consumer spending)',detail:'$44K avg taxable spending x 10.5%',amount:1024000},
-      {desc:'Local economic activity',detail:'Services, dining, retail',amount:3300000}
-    ], baseAmount: 9768000
-  },
-  {
-    id: '008', entity: 'ByteDance / TikTok (Bellevue)', location: 'Bellevue, WA',
-    billTo: 'State of Washington', billToDetail: "Governor's Office", issuedDate: '2026-03-22', dueDate: '2026-04-21', terms: 'Net 30', penaltyRate: 0.07,
-    context: { title: 'Expansion Reversed', stats: [{num:'65',lbl:'Positions Cut'},{num:'4',lbl:'Years After Expansion'},{num:'$200K+',lbl:'Avg Tech Comp'}],
-      details: ['Expanded to Bellevue ~2022, cut 65 positions by 2026','Signal: even companies that chose WA are now retreating'] },
-    lineItems: [
-      {section:'Revenue Loss'},
-      {desc:'Displaced wages (65 x $200K avg)',detail:'Engineering and operations staff',amount:13000000},
-      {desc:'B&O and local tax lost',detail:'Payroll and service revenue',amount:400000}
-    ], baseAmount: 13400000
-  }
-];
 
-var ledgerHTML = '';
-var runningTotal = 0;
-var rows = [];
-
-invoices.forEach(function(inv) {
+function computeRow(inv) {
   var days = daysPastDue(inv.issuedDate);
   var penalty1 = Math.round(inv.baseAmount * inv.penaltyRate);
   var subtotal = inv.baseAmount + penalty1;
@@ -410,62 +230,81 @@ invoices.forEach(function(inv) {
     penalty2 = Math.round(subtotal * inv.penaltyRate);
     subtotal += penalty2;
   }
-  runningTotal += subtotal;
-  rows.push({ inv: inv, days: days, penalty1: penalty1, penalty2: penalty2, subtotal: subtotal });
-});
+  return { inv: inv, days: days, penalty1: penalty1, penalty2: penalty2, subtotal: subtotal };
+}
 
-// AR Aging table
-ledgerHTML += '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
-ledgerHTML += '<tr>';
-ledgerHTML += '<th style="text-align:left;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">#</th>';
-ledgerHTML += '<th style="text-align:left;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Entity</th>';
-ledgerHTML += '<th style="text-align:left;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Bill To</th>';
-ledgerHTML += '<th style="text-align:right;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Base</th>';
-ledgerHTML += '<th style="text-align:right;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Penalty</th>';
-ledgerHTML += '<th style="text-align:right;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Total Due</th>';
-ledgerHTML += '<th style="text-align:center;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Age</th>';
-ledgerHTML += '<th style="text-align:center;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">Status</th>';
-ledgerHTML += '<th style="text-align:center;padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;"></th>';
-ledgerHTML += '</tr>';
+function renderLedger(title, sub, invoices) {
+  var rows = invoices.map(computeRow);
+  var ledgerSubtotal = rows.reduce(function(s,r){return s+r.subtotal;},0);
+  var h = '';
+  h += '<h3 style="font-size:18px;margin:32px 0 4px;color:#1e3a5f;border-bottom:2px solid #1e3a5f;padding-bottom:6px;">' + title + '</h3>';
+  h += '<p style="font-size:12px;color:#666;margin:0 0 12px;font-style:italic;">' + sub + '</p>';
+  h += '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
+  h += '<tr>';
+  ['#','Entity','Bill To','Base','Penalty','Total Due','Age','Status',''].forEach(function(label,i){
+    var align = (i>=3 && i<=5) ? 'right' : (i>=6 ? 'center' : 'left');
+    h += '<th style="text-align:'+align+';padding:8px 6px;border-bottom:2px solid #1e3a5f;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;">'+label+'</th>';
+  });
+  h += '</tr>';
+  rows.forEach(function(r) {
+    var inv = r.inv;
+    var totalPenalty = r.penalty1 + r.penalty2;
+    var ageColor = r.days > 30 ? '#dc2626' : (r.days > 0 ? '#ca8a04' : '#111');
+    var statusLabel = r.days > 30 ? 'COLLECTIONS' : (r.days > 0 ? 'PAST DUE' : 'CURRENT');
+    var statusColor = r.days > 30 ? '#dc2626' : (r.days > 0 ? '#ca8a04' : '#111');
+    h += '<tr style="border-bottom:1px solid #eee;">';
+    h += '<td style="padding:8px 6px;font-weight:700;color:#1e3a5f;font-family:monospace;">' + inv.id + '</td>';
+    h += '<td style="padding:8px 6px;"><strong>' + inv.entity + '</strong><br><span style="font-size:11px;color:#999;">' + inv.location + '</span></td>';
+    h += '<td style="padding:8px 6px;font-size:12px;">' + inv.billTo + '</td>';
+    h += '<td style="padding:8px 6px;text-align:right;font-family:monospace;font-size:12px;">' + formatCurrency(inv.baseAmount) + '</td>';
+    h += '<td style="padding:8px 6px;text-align:right;font-family:monospace;font-size:12px;color:#ca8a04;">' + formatCurrency(totalPenalty) + '</td>';
+    h += '<td style="padding:8px 6px;text-align:right;font-weight:700;font-family:monospace;color:#dc2626;">' + formatCurrency(r.subtotal) + '</td>';
+    h += '<td style="padding:8px 6px;text-align:center;font-weight:700;color:' + ageColor + ';">' + r.days + 'd</td>';
+    h += '<td style="padding:8px 6px;text-align:center;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:' + statusColor + ';">' + statusLabel + '</td>';
+    h += '<td style="padding:8px 6px;text-align:center;white-space:nowrap;">';
+    h += '<a href="javascript:void(0)" onclick="generatePDF(\'' + inv.id + '\')" title="Download PDF" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;color:#B30B00;font-size:11px;font-weight:700;">';
+    h += '<svg width="16" height="18" viewBox="0 0 28 32" fill="none"><rect width="28" height="32" rx="2" fill="#B30B00"/><text x="14" y="21" font-family="Arial" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">PDF</text></svg>';
+    h += '</a></td></tr>';
+  });
+  h += '<tr style="border-top:2px solid #1e3a5f;">';
+  h += '<td colspan="5" style="padding:10px 6px;font-weight:700;font-size:13px;letter-spacing:0.5px;color:#1e3a5f;">SUBTOTAL (' + invoices.length + ' invoices)</td>';
+  h += '<td style="padding:10px 6px;text-align:right;font-weight:700;font-family:monospace;font-size:15px;color:#dc2626;">' + formatCurrency(ledgerSubtotal) + '</td>';
+  h += '<td colspan="3"></td></tr>';
+  h += '</table>';
+  return { html: h, subtotal: ledgerSubtotal };
+}
 
-rows.forEach(function(r) {
-  var inv = r.inv;
-  var totalPenalty = r.penalty1 + r.penalty2;
-  var ageColor = r.days > 30 ? '#dc2626' : (r.days > 0 ? '#ca8a04' : '#111');
-  var statusLabel = r.days > 30 ? 'COLLECTIONS' : (r.days > 0 ? 'PAST DUE' : 'CURRENT');
-  var statusColor = r.days > 30 ? '#dc2626' : (r.days > 0 ? '#ca8a04' : '#111');
+var civicRendered = renderLedger(
+  'I. Civic Negligence Ledger',
+  'Billed to City of Seattle. Each entity is a Seattle business that closed in the rolling 12-month window. Line items reflect direct revenue loss, tax base erosion, workforce displacement, and emergency-services cost based on SPD call volume within ~1 block.',
+  civicInvoices
+);
+var flightRendered = renderLedger(
+  'II. Capital Flight Ledger',
+  'Billed to State of Washington. Each entity is an executive, firm, or major employer that announced relocation, contraction, or capital reallocation out of WA in the rolling window. Line items reflect tax revenue lost, workforce relocated, and ecosystem impact.',
+  flightInvoices
+);
 
-  ledgerHTML += '<tr style="border-bottom:1px solid #eee;">';
-  ledgerHTML += '<td style="padding:8px 6px;font-weight:700;color:#1e3a5f;">' + inv.id + '</td>';
-  ledgerHTML += '<td style="padding:8px 6px;"><strong>' + inv.entity + '</strong><br><span style="font-size:11px;color:#999;">' + inv.location + '</span></td>';
-  ledgerHTML += '<td style="padding:8px 6px;font-size:12px;">' + inv.billTo + '</td>';
-  ledgerHTML += '<td style="padding:8px 6px;text-align:right;font-family:monospace;font-size:12px;">' + formatCurrency(inv.baseAmount) + '</td>';
-  ledgerHTML += '<td style="padding:8px 6px;text-align:right;font-family:monospace;font-size:12px;color:#ca8a04;">' + formatCurrency(totalPenalty) + '</td>';
-  ledgerHTML += '<td style="padding:8px 6px;text-align:right;font-weight:700;font-family:monospace;color:#dc2626;">' + formatCurrency(r.subtotal) + '</td>';
-  ledgerHTML += '<td style="padding:8px 6px;text-align:center;font-weight:700;color:' + ageColor + ';">' + r.days + 'd</td>';
-  ledgerHTML += '<td style="padding:8px 6px;text-align:center;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:' + statusColor + ';">' + statusLabel + '</td>';
-  ledgerHTML += '<td style="padding:8px 6px;text-align:center;white-space:nowrap;">';
-  ledgerHTML += '<a href="javascript:void(0)" onclick="generatePDF(\'' + inv.id + '\')" title="Download PDF" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;color:#B30B00;font-size:11px;font-weight:700;">';
-  ledgerHTML += '<svg width="16" height="18" viewBox="0 0 28 32" fill="none"><rect width="28" height="32" rx="2" fill="#B30B00"/><text x="14" y="21" font-family="Arial" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">PDF</text></svg>';
-  ledgerHTML += '</a>';
-  ledgerHTML += '</td>';
-  ledgerHTML += '</tr>';
-});
+var ledgerHTML = civicRendered.html + flightRendered.html;
+var runningTotal = civicRendered.subtotal + flightRendered.subtotal;
 
-// Total row
-ledgerHTML += '<tr style="border-top:2px solid #1e3a5f;">';
-ledgerHTML += '<td colspan="5" style="padding:10px 6px;font-weight:700;font-size:13px;letter-spacing:0.5px;color:#1e3a5f;">TOTAL (' + invoices.length + ' invoices)</td>';
-ledgerHTML += '<td style="padding:10px 6px;text-align:right;font-weight:700;font-family:monospace;font-size:16px;color:#dc2626;">' + formatCurrency(runningTotal) + '</td>';
-ledgerHTML += '<td colspan="3"></td>';
-ledgerHTML += '</tr>';
-ledgerHTML += '</table>';
+ledgerHTML += '<div style="margin:24px 0;padding:16px 20px;background:#1e3a5f;color:#fff;display:flex;justify-content:space-between;align-items:center;">';
+ledgerHTML += '<div><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:0.7;">Cumulative Outstanding</div>';
+ledgerHTML += '<div style="font-size:11px;color:#fbbf24;">' + (civicInvoices.length + flightInvoices.length) + ' invoices · Civic ' + formatCurrency(civicRendered.subtotal) + ' · Flight ' + formatCurrency(flightRendered.subtotal) + '</div></div>';
+ledgerHTML += '<div style="font-size:32px;font-weight:700;color:#fbbf24;font-family:monospace;">' + formatCurrency(runningTotal) + '</div>';
+ledgerHTML += '</div>';
 
 ledgerHTML += '<p style="font-size:12px;color:#333;margin-top:12px;text-align:justify;">Invoices unpaid after 30 days accrue an additional 7% penalty and are remanded to a federal employee for collections. Contact <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a> or call <a href="tel:+18555281776">(855) 528-1776</a>.</p>';
 
 document.getElementById('invoice-ledger').innerHTML = ledgerHTML;
 
+// PDF lookup must search both ledgers
+function findInvoice(id) {
+  return civicInvoices.find(function(i){return i.id===id;}) || flightInvoices.find(function(i){return i.id===id;});
+}
+
 function generatePDF(invoiceId) {
-  var inv = invoices.find(function(i) { return i.id === invoiceId; });
+  var inv = findInvoice(invoiceId);
   if (!inv) return;
   var days = daysPastDue(inv.issuedDate);
   var penalty1 = Math.round(inv.baseAmount * inv.penaltyRate);
@@ -498,63 +337,7 @@ function generatePDF(invoiceId) {
   h += '.late-box{border:2px solid #dc2626;padding:10px 16px;margin:16px 0;font-size:12px;color:#dc2626;font-weight:700;}';
   h += '.footer{border-top:1px solid #ddd;margin-top:24px;padding-top:12px;font-size:10px;color:#999;}';
   h += '@media print{body{margin:16px;} .hdr{margin:-16px -24px 0;} .stamp,.late-box{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}';
-  h += '
-/* === DECO SYSTEM OVERRIDES (sitewide) === */
-.burnham-quote, .stat-block {
-  position: relative !important;
-  border-left: 0 !important;
-  padding-left: 24px !important;
-  padding-top: 18px !important;
-  padding-bottom: 18px !important;
-  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
-  background-size: 1px 100% !important;
-  background-position: 4px 0 !important;
-  background-repeat: no-repeat !important;
-}
-.burnham-quote::before, .burnham-quote::after,
-.stat-block::before, .stat-block::after {
-  content: ""; position: absolute;
-  left: 0; width: 9px; height: 9px;
-  background: #1c1917; transform: rotate(45deg);
-}
-.burnham-quote::before, .stat-block::before { top: 9px; }
-.burnham-quote::after, .stat-block::after { bottom: 9px; }
-.timeline {
-  border-left: 0 !important;
-  padding-left: 24px !important;
-  position: relative;
-}
-.timeline::before {
-  content: ""; position: absolute;
-  left: 4px; top: 8px; bottom: 8px; width: 1px;
-  background: #1c1917;
-}
-.timeline .event { position: relative; }
-.timeline .event::before {
-  content: ""; position: absolute;
-  left: -23px; top: 6px;
-  width: 7px; height: 7px;
-  background: #1c1917; transform: rotate(45deg);
-}
-.timeline .event .date { color: #1c1917 !important; }
-.timeline-note { padding-left: 24px !important; }
-.standard-list li {
-  border-left: 0 !important;
-  padding-left: 22px !important;
-  position: relative;
-  border-bottom: 1px dotted #ddd;
-}
-.standard-list li:last-child { border-bottom: none; }
-.standard-list li::before {
-  content: ""; position: absolute;
-  left: 0; top: 17px;
-  width: 16px; height: 10px;
-  background: #1c1917;
-  clip-path: polygon(0 100%, 0 0, 25% 0, 25% 25%, 50% 25%, 50% 50%, 75% 50%, 75% 75%, 100% 75%, 100% 100%);
-}
-.standard-list li strong { color: #1c1917 !important; }
-.standard-list li.la::before { background: #c8a96e !important; }
-</style></head><body>';
+  h += '</style></head><body>';
 
   // Header
   h += '<div class="hdr"><div><h1>BURNHAM CIVIC</h1><div class="sub">Civic research and planning at operating speed.</div></div><div style="text-align:right;"><div class="sub">INVOICE</div><div class="invnum">#' + inv.id + '</div></div></div>';
@@ -608,17 +391,6 @@ function generatePDF(invoiceId) {
 </script>
 
 </div>
-
-<div id="paywall-gate" style="text-align:center;padding:60px 20px;border:1px solid #ccc;margin:32px 0;">
-  <h2 style="font-family:Georgia,serif;font-size:20px;margin-bottom:12px;border:none;">&#9878; TBC Intelligence</h2>
-  <p style="font-size:14px;color:#666;margin-bottom:16px;">Full data, tables, and methodology available to TBC Intelligence members.</p>
-  <a href="membership.html" style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;padding:8px 24px;text-decoration:none;font-family:Georgia,serif;">Join</a>
-</div>
-
-<div id="gated-content" style="display:none;">
-
-<div class="running-total">$0</div>
-<div class="running-label">Cumulative economic taking (2024-present) &middot; Updated as data sources connect</div>
 
 <!-- CATEGORY 1: BUSINESS CLOSURES -->
 <div class="cat">
