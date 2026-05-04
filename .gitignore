@@ -5,7 +5,9 @@ _swatches*.html
 ~/
 
 # Local research scripts and data pulls
-data/
+data/*
+# but ship the production artifact the HTML loads
+!data/invoices.js
 
 # Working spec docs (not for publication)
 economic-taking-v2-spec.md
