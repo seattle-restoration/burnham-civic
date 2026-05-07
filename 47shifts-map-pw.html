@@ -114,8 +114,10 @@ body { font-family: Georgia, 'Times New Roman', serif; background: #111; color: 
 <div id="paywall-gate" style="position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#111;display:flex;align-items:center;justify-content:center;flex-direction:column;">
   <h1 style="font-size:22px;letter-spacing:2px;color:#fbbf24;margin-bottom:8px;">47 SHIFTS</h1>
   <h2 style="font-family:Georgia,serif;font-size:18px;color:#e5e5e5;margin-bottom:16px;">Operations Map</h2>
-  <p style="font-size:14px;color:#888;margin-bottom:24px;">This operational dashboard is available to TBC Intelligence members.</p>
-  <a href="membership.html" style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#111;background:#fbbf24;padding:10px 28px;text-decoration:none;font-family:Georgia,serif;">Join</a>
+  <p style="font-size:14px;color:#888;margin-bottom:20px;">Restricted access.</p>
+  <input type="password" id="pw-input" placeholder="Password" style="font-family:Georgia,serif;font-size:14px;padding:8px 12px;border:1px solid #555;background:#1a1a1a;color:#e5e5e5;width:240px;display:block;margin:0 0 12px;text-align:center;">
+  <button id="pw-submit" style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#111;background:#fbbf24;border:none;padding:10px 28px;cursor:pointer;font-family:Georgia,serif;">Enter</button>
+  <p id="pw-error" style="font-family:Georgia,serif;font-size:12px;color:#ef4444;margin:12px 0 0;display:none;">Incorrect password.</p>
 </div>
 
 <div id="gated-content" style="display:none;">
@@ -457,6 +459,30 @@ fetchBatch(0);
 </script>
 
 </div><!-- end gated-content -->
+
+<script>
+(function(){
+  var PASS='saveseattle';
+  var COOKIE='tbc_pw_auth';
+  var DAYS=30;
+  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
+  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
+  function unlock(){
+    document.getElementById('paywall-gate').style.display='none';
+    document.getElementById('gated-content').style.display='block';
+    if(typeof map!=='undefined'&&map.invalidateSize) setTimeout(function(){map.invalidateSize();},50);
+  }
+  if(getCookie(COOKIE)===btoa(PASS)){ unlock(); return; }
+  function tryPw(){
+    var inp=document.getElementById('pw-input');
+    if(inp.value===PASS){ setCookie(COOKIE,btoa(PASS),DAYS); unlock(); }
+    else { document.getElementById('pw-error').style.display='block'; inp.value=''; inp.focus(); }
+  }
+  document.getElementById('pw-submit').addEventListener('click',tryPw);
+  document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')tryPw();});
+  setTimeout(function(){document.getElementById('pw-input').focus();},100);
+})();
+</script>
 
 </body>
 </html>

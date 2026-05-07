@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /47shifts-map-pw.html
 
 Sitemap: https://burnhamcivic.org/sitemap.xml
