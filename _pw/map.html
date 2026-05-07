@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>47 Shifts Operations Map - BURNHAM CIVIC</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; background: #111; color: #e5e5e5; }
+#map { width:100%; height:100vh; }
+.header-bar {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:rgba(30,58,95,0.95); backdrop-filter:blur(8px);
+  padding:8px 16px; display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid rgba(251,191,36,0.3);
+}
+.header-bar h1 { font-size:14px; letter-spacing:2px; color:#fbbf24; }
+.header-bar .subtitle { font-size:11px; color:#ccc; margin-left:12px; }
+.controls { display:flex; gap:6px; align-items:center; }
+.controls label { font-size:11px; cursor:pointer; padding:4px 8px; border:1px solid #555; border-radius:3px; }
+.controls input:checked + span { background:#fbbf24; color:#111; }
+.controls input { display:none; }
+.controls label span { padding:2px 6px; border-radius:2px; font-size:10px; font-weight:700; letter-spacing:0.5px; }
+.zone-legend {
+  position:fixed; bottom:20px; left:16px; z-index:1000;
+  background:rgba(0,0,0,0.85); padding:12px 16px; border-radius:4px;
+  font-size:12px; min-width:200px;
+}
+.zone-legend h3 { font-size:11px; letter-spacing:1px; text-transform:uppercase; color:#fbbf24; margin-bottom:8px; }
+.zone-row { display:flex; justify-content:space-between; padding:3px 0; border-bottom:1px solid #333; }
+.zone-row:last-child { border:none; }
+.zone-dot { width:10px; height:10px; border-radius:50%; display:inline-block; margin-right:6px; vertical-align:middle; }
+.zone-count { font-weight:700; color:#fbbf24; }
+.stats-box {
+  position:fixed; top:50px; right:16px; z-index:1000;
+  background:rgba(0,0,0,0.85); padding:12px 16px; border-radius:4px;
+  font-size:12px; min-width:180px;
+}
+.stats-box h3 { font-size:11px; letter-spacing:1px; text-transform:uppercase; color:#fbbf24; margin-bottom:8px; }
+.stat-row { display:flex; justify-content:space-between; padding:2px 0; }
+.stat-val { font-weight:700; }
+.loading {
+  position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+  z-index:2000; background:rgba(30,58,95,0.95); padding:24px 40px;
+  border-radius:4px; font-size:14px; color:#fbbf24; letter-spacing:1px;
+}
+.dot-graffiti { background:#ef4444; }
+.dot-pothole { background:#f59e0b; }
+.dot-dumping { background:#8b5cf6; }
+.dot-encampment { background:#ec4899; }
+.dot-sidewalk { background:#06b6d4; }
+
+/* === DECO SYSTEM OVERRIDES (sitewide) === */
+.burnham-quote, .stat-block {
+  position: relative !important;
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
+  background-size: 1px 100% !important;
+  background-position: 4px 0 !important;
+  background-repeat: no-repeat !important;
+}
+.burnham-quote::before, .burnham-quote::after,
+.stat-block::before, .stat-block::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before, .stat-block::before { top: 9px; }
+.burnham-quote::after, .stat-block::after { bottom: 9px; }
+.timeline {
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  position: relative;
+}
+.timeline::before {
+  content: ""; position: absolute;
+  left: 4px; top: 8px; bottom: 8px; width: 1px;
+  background: #1c1917;
+}
+.timeline .event { position: relative; }
+.timeline .event::before {
+  content: ""; position: absolute;
+  left: -23px; top: 6px;
+  width: 7px; height: 7px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.timeline .event .date { color: #1c1917 !important; }
+.timeline-note { padding-left: 24px !important; }
+.standard-list li {
+  border-left: 0 !important;
+  padding-left: 22px !important;
+  position: relative;
+  border-bottom: 1px dotted #ddd;
+}
+.standard-list li:last-child { border-bottom: none; }
+.standard-list li::before {
+  content: ""; position: absolute;
+  left: 0; top: 17px;
+  width: 16px; height: 10px;
+  background: #1c1917;
+  clip-path: polygon(0 100%, 0 0, 25% 0, 25% 25%, 50% 25%, 50% 50%, 75% 50%, 75% 75%, 100% 75%, 100% 100%);
+}
+.standard-list li strong { color: #1c1917 !important; }
+.standard-list li.la::before { background: #c8a96e !important; }
+</style>
+</head>
+<body>
+<script>
+(function(){
+  var m=document.cookie.match(/(^| )tbc_pw_auth=([^;]+)/);
+  if(!m||m[2]!==btoa('saveseattle')){ window.top.location.href='/47shifts-map-pw.html'; }
+})();
+</script>
+
+<div id="gated-content">
+<div class="header-bar">
+  <div style="display:flex;align-items:baseline;">
+    <h1>47 SHIFTS</h1>
+    <span class="subtitle">World Cup Visitor Zone Operations / Unclosed Tickets / Live from data.seattle.gov</span>
+  </div>
+  <div class="controls">
+    <label><input type="checkbox" checked onchange="toggleLayer('graffiti',this.checked)"><span class="dot-graffiti" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle;"></span><span>Graffiti</span></label>
+    <label><input type="checkbox" checked onchange="toggleLayer('pothole',this.checked)"><span class="dot-pothole" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle;"></span><span>Potholes</span></label>
+    <label><input type="checkbox" checked onchange="toggleLayer('dumping',this.checked)"><span class="dot-dumping" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle;"></span><span>Dumping/Needles</span></label>
+    <label><input type="checkbox" checked onchange="toggleLayer('encampment',this.checked)"><span class="dot-encampment" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle;"></span><span>Encampments</span></label>
+    <label><input type="checkbox" checked onchange="toggleLayer('sidewalk',this.checked)"><span class="dot-sidewalk" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle;"></span><span>Sidewalks</span></label>
+  </div>
+</div>
+
+<div id="map"></div>
+
+<div class="zone-legend" id="zoneLegend">
+  <h3>4 Crew Chiefs / 47 Shifts</h3>
+  <div class="zone-row cc-btn" onclick="selectCC('knox')" style="cursor:pointer"><span><span class="zone-dot" style="background:#f87171"></span>CC1 KNOX</span><span class="zone-count" id="zc-knox">...</span></div>
+  <div class="zone-row cc-btn" onclick="selectCC('greene')" style="cursor:pointer"><span><span class="zone-dot" style="background:#c9a227"></span>CC2 GREENE</span><span class="zone-count" id="zc-greene">...</span></div>
+  <div class="zone-row cc-btn" onclick="selectCC('wayne')" style="cursor:pointer"><span><span class="zone-dot" style="background:#ef4444"></span>CC3 WAYNE</span><span class="zone-count" id="zc-wayne">...</span></div>
+  <div class="zone-row cc-btn" onclick="selectCC('lafayette')" style="cursor:pointer"><span><span class="zone-dot" style="background:#818cf8"></span>CC4 LAFAYETTE</span><span class="zone-count" id="zc-lafayette">...</span></div>
+  <div class="zone-row" onclick="selectCC('all')" style="cursor:pointer;margin-top:6px;padding-top:6px;border-top:1px solid #555;"><span>All zones</span><span class="zone-count" id="zc-total">...</span></div>
+  <div class="zone-row"><span>Shifts allocated</span><span class="zone-count">47</span></div>
+</div>
+
+<!-- Day Planner -->
+<div id="dayPlanner" style="display:none;position:fixed;bottom:20px;left:230px;z-index:1000;background:rgba(0,0,0,0.9);padding:12px 16px;border-radius:4px;font-size:12px;min-width:280px;">
+  <h3 style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#fbbf24;margin-bottom:8px;" id="dp-title">CC1 KNOX / Day 1 of 12</h3>
+  <div style="display:flex;gap:6px;margin-bottom:8px;">
+    <button onclick="prevDay()" style="background:#333;color:#fbbf24;border:none;padding:4px 10px;cursor:pointer;font-family:Georgia,serif;font-size:11px;">&larr; Prev</button>
+    <button onclick="nextDay()" style="background:#333;color:#fbbf24;border:none;padding:4px 10px;cursor:pointer;font-family:Georgia,serif;font-size:11px;">Next &rarr;</button>
+  </div>
+  <div id="dp-teams" style="font-size:11px;line-height:1.8;"></div>
+  <div style="margin-top:8px;padding-top:6px;border-top:1px solid #555;font-size:10px;color:#888;">Arrow keys: prev/next day. ESC: all zones.</div>
+</div>
+
+<!-- Camera Overlay -->
+<div id="cameraToggle" style="position:fixed;top:50px;left:16px;z-index:1000;">
+  <label style="font-size:11px;cursor:pointer;padding:6px 10px;background:rgba(0,0,0,0.85);border-radius:4px;display:flex;align-items:center;gap:6px;">
+    <input type="checkbox" onchange="toggleCameras(this.checked)">
+    <span style="color:#fbbf24;">&#128247;</span>
+    <span style="color:#e5e5e5;">Camera Placements (graffiti hotspots)</span>
+  </label>
+</div>
+
+<div class="stats-box" id="statsBox">
+  <h3>2026 Unclosed</h3>
+  <div class="stat-row"><span>Graffiti</span><span class="stat-val" id="st-graffiti">...</span></div>
+  <div class="stat-row"><span>Potholes</span><span class="stat-val" id="st-pothole">...</span></div>
+  <div class="stat-row"><span>Dumping/Needles</span><span class="stat-val" id="st-dumping">...</span></div>
+  <div class="stat-row"><span>Encampments</span><span class="stat-val" id="st-encampment">...</span></div>
+  <div class="stat-row"><span>Damaged Sidewalk</span><span class="stat-val" id="st-sidewalk">...</span></div>
+  <div class="stat-row" style="margin-top:6px;padding-top:6px;border-top:1px solid #555;"><span>Data source</span><span class="stat-val" style="font-weight:400;font-size:10px;">data.seattle.gov</span></div>
+</div>
+
+<div class="loading" id="loadMsg">Loading live data from Seattle APIs...</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var map = L.map('map',{zoomControl:false}).setView([47.61,-122.335],13);
+L.control.zoom({position:'bottomright'}).addTo(map);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{
+  attribution:'Esri',maxZoom:19
+}).addTo(map);
+
+// World Cup Visitor Zones - 4 Crew Chiefs, 47 Shifts
+var ZONES = [
+  {id:'knox',name:'CC1 KNOX',color:'#f87171',
+    bounds:[[47.585,-122.365],[47.635,-122.325]],
+    desc:'Stadium, Downtown, Belltown, Pike Place, Seattle Center, hotels'},
+  {id:'greene',name:'CC2 GREENE',color:'#c9a227',
+    bounds:[[47.44,-122.34],[47.585,-122.30]],
+    desc:'SeaTac Corridor, I-5 south, Light Rail, SODO'},
+  {id:'wayne',name:'CC3 WAYNE',color:'#ef4444',
+    bounds:[[47.635,-122.365],[47.77,-122.345]],
+    desc:'Aurora Corridor, SR-99, Shoreline to Fremont'},
+  {id:'lafayette',name:'CC4 LAFAYETTE',color:'#818cf8',
+    bounds:[[47.635,-122.345],[47.80,-122.295]],
+    desc:'I-5 North, Paine Field arrival, U-District, Capitol Hill, First Hill'}
+];
+ZONES.forEach(function(z){
+  L.rectangle(z.bounds,{color:z.color,weight:2,fillOpacity:0.10,dashArray:'6 4'}).addTo(map)
+   .bindTooltip(z.name,{permanent:true,direction:'center',className:'zone-label'});
+});
+
+var COLORS = {
+  'Graffiti':'#ef4444',
+  'Pothole':'#f59e0b',
+  'Illegal Dumping / Needles':'#8b5cf6',
+  'Unauthorized Encampment':'#ec4899',
+  'Damaged Sidewalk':'#06b6d4'
+};
+var LAYER_KEYS = {
+  'Graffiti':'graffiti','Pothole':'pothole',
+  'Illegal Dumping / Needles':'dumping',
+  'Unauthorized Encampment':'encampment',
+  'Damaged Sidewalk':'sidewalk'
+};
+var layers = {graffiti:null,pothole:null,dumping:null,encampment:null,sidewalk:null};
+var counts = {graffiti:0,pothole:0,dumping:0,encampment:0,sidewalk:0};
+var zoneCounts = {knox:0,greene:0,wayne:0,lafayette:0};
+
+function getZone(lat,lng){
+  for(var i=0;i<ZONES.length;i++){
+    var b=ZONES[i].bounds;
+    if(lat>=b[0][0]&&lat<=b[1][0]&&lng>=b[0][1]&&lng<=b[1][1]) return ZONES[i].id;
+  }
+  return null;
+}
+
+function toggleLayer(key,show){
+  if(layers[key]){
+    if(show) map.addLayer(layers[key]);
+    else map.removeLayer(layers[key]);
+  }
+}
+
+// Fetch data in batches
+var API='https://data.seattle.gov/resource/5ngg-rpne.json';
+var CATS="webintakeservicerequests='Graffiti' OR webintakeservicerequests='Pothole' OR webintakeservicerequests='Illegal Dumping / Needles' OR webintakeservicerequests='Unauthorized Encampment' OR webintakeservicerequests='Damaged Sidewalk'";
+var OPEN="servicerequeststatusname='Open' OR servicerequeststatusname='Reported' OR servicerequeststatusname='New' OR servicerequeststatusname='Duplicate (Open)'";
+var WHERE="createddate>'2026-01-01' AND latitude IS NOT NULL AND ("+CATS+") AND ("+OPEN+")";
+var LIMIT=5000;
+
+var allData=[];
+function fetchBatch(offset){
+  var url=API+'?$where='+encodeURIComponent(WHERE)+'&$limit='+LIMIT+'&$offset='+offset+'&$order=createddate DESC';
+  fetch(url).then(function(r){return r.json()}).then(function(data){
+    if(!data.length||data.error){buildMap();return;}
+    allData=allData.concat(data);
+    document.getElementById('loadMsg').textContent='Loading... '+allData.length+' records';
+    if(data.length<LIMIT){buildMap();}
+    else{setTimeout(function(){fetchBatch(offset+LIMIT);},200);}
+  }).catch(function(){buildMap();});
+}
+
+function buildMap(){
+  document.getElementById('loadMsg').style.display='none';
+  // Group by layer
+  var grouped={graffiti:[],pothole:[],dumping:[],encampment:[],sidewalk:[]};
+  allData.forEach(function(d){
+    var cat=d.webintakeservicerequests;
+    var key=LAYER_KEYS[cat];
+    if(!key)return;
+    var lat=parseFloat(d.latitude),lng=parseFloat(d.longitude);
+    if(isNaN(lat)||isNaN(lng))return;
+    grouped[key].push(d);
+    counts[key]++;
+    var z=getZone(lat,lng);
+    if(z)zoneCounts[z]++;
+  });
+  // Build marker layers
+  Object.keys(grouped).forEach(function(key){
+    var markers=[];
+    var catName=Object.keys(LAYER_KEYS).find(function(k){return LAYER_KEYS[k]===key;});
+    var color=COLORS[catName]||'#fff';
+    grouped[key].forEach(function(d){
+      var lat=parseFloat(d.latitude),lng=parseFloat(d.longitude);
+      var m=L.circleMarker([lat,lng],{radius:3,fillColor:color,fillOpacity:0.7,stroke:false});
+      var popup='<b>'+d.webintakeservicerequests+'</b><br>'+
+        (d.location||'')+'<br>'+
+        (d.createddate?d.createddate.split('T')[0]:'')+'<br>'+
+        'Status: '+(d.servicerequeststatusname||'Unknown');
+      m.bindPopup(popup);
+      markers.push(m);
+    });
+    layers[key]=L.layerGroup(markers).addTo(map);
+  });
+  // Update stats
+  document.getElementById('st-graffiti').textContent=counts.graffiti.toLocaleString();
+  document.getElementById('st-pothole').textContent=counts.pothole.toLocaleString();
+  document.getElementById('st-dumping').textContent=counts.dumping.toLocaleString();
+  document.getElementById('st-encampment').textContent=counts.encampment.toLocaleString();
+  document.getElementById('st-sidewalk').textContent=counts.sidewalk.toLocaleString();
+  // Update zone counts
+  var total=0;
+  Object.keys(zoneCounts).forEach(function(z){
+    document.getElementById('zc-'+z).textContent=zoneCounts[z].toLocaleString();
+    total+=zoneCounts[z];
+  });
+  document.getElementById('zc-total').textContent=total.toLocaleString();
+}
+
+// Sub-team assignment
+var TEAMS = {
+  'Graffiti': {name:'Graffiti Team', color:'#ef4444', rate:30},
+  'Pothole': {name:'Pothole Team', color:'#f59e0b', rate:20},
+  'Illegal Dumping / Needles': {name:'Trim Team', color:'#8b5cf6', rate:15},
+  'Unauthorized Encampment': {name:'Encampment Team', color:'#ec4899', rate:8},
+  'Damaged Sidewalk': {name:'Capex Team', color:'#06b6d4', rate:10}
+};
+
+var ccData = {knox:[],greene:[],wayne:[],lafayette:[]};
+var selectedCC = 'all';
+var currentDay = 0;
+var ccShifts = {knox:12,greene:7,wayne:11,lafayette:17};
+var cameraLayer = null;
+var dayLayer = null;
+
+function assignToZones(){
+  allData.forEach(function(d){
+    var lat=parseFloat(d.latitude),lng=parseFloat(d.longitude);
+    if(isNaN(lat)||isNaN(lng)) return;
+    var z=getZone(lat,lng);
+    if(z) ccData[z].push(d);
+  });
+}
+
+function selectCC(cc){
+  selectedCC = cc;
+  currentDay = 0;
+  if(cc==='all'){
+    document.getElementById('dayPlanner').style.display='none';
+    Object.keys(layers).forEach(function(k){ if(layers[k]) map.addLayer(layers[k]); });
+    map.setView([47.61,-122.335],12);
+    return;
+  }
+  // Hide all layers, show day view
+  Object.keys(layers).forEach(function(k){ if(layers[k]) map.removeLayer(layers[k]); });
+  var z = ZONES.find(function(z){return z.id===cc;});
+  if(z) map.fitBounds(z.bounds,{padding:[60,60]});
+  document.getElementById('dayPlanner').style.display='block';
+  showDay();
+}
+
+function showDay(){
+  var cc = selectedCC;
+  var data = ccData[cc] || [];
+  var shifts = ccShifts[cc] || 12;
+  var itemsPerDay = Math.ceil(data.length / shifts);
+  var start = currentDay * itemsPerDay;
+  var end = Math.min(start + itemsPerDay, data.length);
+  var dayData = data.slice(start, end);
+
+  var ccName = ZONES.find(function(z){return z.id===cc;});
+  document.getElementById('dp-title').textContent =
+    (ccName?ccName.name:'') + ' / Day ' + (currentDay+1) + ' of ' + shifts;
+
+  // Count by team for this day
+  var teamCounts = {};
+  dayData.forEach(function(d){
+    var cat = d.webintakeservicerequests;
+    if(!teamCounts[cat]) teamCounts[cat]=0;
+    teamCounts[cat]++;
+  });
+
+  var html = '';
+  Object.keys(teamCounts).forEach(function(cat){
+    var t = TEAMS[cat];
+    if(!t) return;
+    html += '<div style="display:flex;justify-content:space-between;">' +
+      '<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:'+t.color+';margin-right:6px;vertical-align:middle;"></span>'+t.name+'</span>' +
+      '<span style="color:#fbbf24;font-weight:700;">'+teamCounts[cat]+'</span></div>';
+  });
+  html += '<div style="margin-top:6px;color:#fbbf24;font-weight:700;">Day total: '+dayData.length+'</div>';
+  document.getElementById('dp-teams').innerHTML = html;
+
+  // Show day dots on map
+  if(dayLayer) map.removeLayer(dayLayer);
+  var markers = [];
+  dayData.forEach(function(d){
+    var lat=parseFloat(d.latitude),lng=parseFloat(d.longitude);
+    var cat=d.webintakeservicerequests;
+    var t=TEAMS[cat];
+    var color=t?t.color:'#fff';
+    var m=L.circleMarker([lat,lng],{radius:5,fillColor:color,fillOpacity:0.9,stroke:true,color:'#fff',weight:1});
+    m.bindPopup('<b>Day '+(currentDay+1)+'</b><br><b>'+(t?t.name:cat)+'</b><br>'+(d.location||'')+'<br>'+(d.createddate?d.createddate.split('T')[0]:'')+'<br>Status: '+(d.servicerequeststatusname||''));
+    markers.push(m);
+  });
+  dayLayer = L.layerGroup(markers).addTo(map);
+}
+
+function prevDay(){
+  if(currentDay>0){currentDay--;showDay();}
+}
+function nextDay(){
+  var shifts=ccShifts[selectedCC]||12;
+  if(currentDay<shifts-1){currentDay++;showDay();}
+}
+
+// Camera placement from graffiti hotspots
+function toggleCameras(show){
+  if(!show){ if(cameraLayer) map.removeLayer(cameraLayer); return; }
+  if(cameraLayer){ map.addLayer(cameraLayer); return; }
+
+  // Grid the city into ~200m cells, count graffiti per cell
+  var grid = {};
+  var cellSize = 0.002; // ~200m
+  allData.forEach(function(d){
+    if(d.webintakeservicerequests !== 'Graffiti') return;
+    var lat=parseFloat(d.latitude),lng=parseFloat(d.longitude);
+    if(isNaN(lat)||isNaN(lng)) return;
+    var key = Math.floor(lat/cellSize)+'_'+Math.floor(lng/cellSize);
+    if(!grid[key]) grid[key]={lat:0,lng:0,count:0};
+    grid[key].lat+=lat; grid[key].lng+=lng; grid[key].count++;
+  });
+
+  // Find top 25 hotspot cells
+  var cells = Object.values(grid).map(function(c){
+    return {lat:c.lat/c.count, lng:c.lng/c.count, count:c.count};
+  }).sort(function(a,b){return b.count-a.count;}).slice(0,25);
+
+  var markers = [];
+  cells.forEach(function(c,i){
+    var icon = L.divIcon({
+      html:'<div style="background:#fbbf24;color:#111;font-size:9px;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 0 8px rgba(251,191,36,0.6);">C'+(i+1)+'</div>',
+      iconSize:[20,20], className:''
+    });
+    var m = L.marker([c.lat,c.lng],{icon:icon});
+    m.bindPopup('<b>Camera Site C'+(i+1)+'</b><br>Graffiti incidents: '+c.count+'<br>Lat: '+c.lat.toFixed(5)+'<br>Lng: '+c.lng.toFixed(5));
+    markers.push(m);
+  });
+  cameraLayer = L.layerGroup(markers).addTo(map);
+}
+
+// Override arrow keys for day cycling when CC is selected
+var origKeyHandler = document.onkeydown;
+document.addEventListener('keydown',function(e){
+  if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+  if(selectedCC!=='all'){
+    if(e.key==='ArrowRight'){e.preventDefault();nextDay();}
+    if(e.key==='ArrowLeft'){e.preventDefault();prevDay();}
+    if(e.key==='Escape'){selectCC('all');}
+  }
+});
+
+// After data loads, also assign to zones
+var origBuildMap = buildMap;
+buildMap = function(){
+  origBuildMap();
+  assignToZones();
+};
+
+fetchBatch(0);
+</script>
+
+</div><!-- end gated-content -->
+
+</body>
+</html>
