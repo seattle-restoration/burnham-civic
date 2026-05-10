@@ -34,12 +34,6 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 .conflict p { margin: 4px 0; font-size: 15px; }
 .footer { font-size: 11px; color: #999; margin-top: 48px; padding-top: 12px; border-top: 1px solid #ddd; }
 
-#paywall-gate { text-align: center; padding: 60px 20px; border: 1px solid #ccc; margin: 32px 0; }
-#paywall-gate h2 { font-family: Georgia, serif; font-size: 20px; margin-bottom: 12px; }
-#paywall-gate p { font-size: 14px; color: #666; margin-bottom: 16px; }
-#paywall-gate a.join-btn { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #1e3a5f; padding: 8px 24px; text-decoration: none; font-family: Georgia, serif; }
-#gated-content { display: none; }
-
 /* === DECO SYSTEM OVERRIDES (sitewide) === */
 .burnham-quote, .stat-block {
   position: relative !important;
@@ -133,17 +127,7 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 <h1 class="article-title">Downtown Emergency Service Center</h1>
 <div class="article-subtitle">$103 million in revenue. The deputy director votes on the state budget that funds her own employer. And a Burien shelter with 600 police calls in its first year.</div>
 
-<div id="paywall-gate">
-  <h2>&#9878; TBC Intelligence</h2>
-  <p>Enter password to access article.</p>
-  <div style="margin-top:16px;">
-    <input type="password" id="gate-pw" autofocus placeholder="Password" style="font-family:Georgia,serif;font-size:14px;padding:8px 12px;border:1px solid #ccc;width:200px;" onkeydown="if(event.key==='Enter')checkPw()">
-    <button onclick="checkPw()" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:9px 20px;margin-left:8px;cursor:pointer;">Enter</button>
-  </div>
-  <p id="gate-error" style="display:none;color:#991b1b;font-size:13px;margin-top:8px;">Incorrect password.</p>
-</div>
-
-<div id="gated-content">
+<div>
 
 <h2>Overview</h2>
 <p>DESC is one of Seattle's largest homeless services providers. It operates 1,347 units of supportive housing across 21 locations, 508 emergency shelter beds across 5 locations, behavioral health services, crisis response teams, and a new post-overdose recovery center. Its headquarters is at 515 Third Avenue in downtown Seattle.</p>
@@ -291,16 +275,6 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
 </div>
 
 <script>
-function checkPw(){
-  var pw=document.getElementById('gate-pw').value;
-  if(pw==='saveseattle'){
-    document.getElementById('paywall-gate').style.display='none';
-    document.getElementById('gated-content').style.display='block';
-    document.getElementById('gate-error').style.display='none';
-  } else {
-    document.getElementById('gate-error').style.display='block';
-  }
-}
 function sendDesc(){
   var n=document.getElementById('desc-name').value;
   var e=document.getElementById('desc-email').value;
