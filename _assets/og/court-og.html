@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  .card{position:relative;width:1200px;height:630px;
+    background:url('court-bg.png') center/cover no-repeat;
+    font-family:Georgia,'Times New Roman',serif}
+  /* navy wash for legibility, heavier top + bottom */
+  .wash{position:absolute;inset:0;
+    background:
+      linear-gradient(to bottom, rgba(18,30,48,.82) 0%, rgba(18,30,48,.30) 32%, rgba(18,30,48,.34) 60%, rgba(18,30,48,.9) 100%);
+  }
+  /* art deco corner frames */
+  .corner{position:absolute;width:120px;height:120px;}
+  .tl{top:30px;left:30px} .tr{top:30px;right:30px;transform:scaleX(-1)}
+  .bl{bottom:30px;left:30px;transform:scaleY(-1)} .br{bottom:30px;right:30px;transform:scale(-1,-1)}
+  .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .monogram{width:96px;height:104px;display:flex;align-items:center;justify-content:center;
+    position:relative;margin-bottom:26px}
+  .monogram .b{font-size:74px;font-weight:700;color:#d8af33;font-family:Georgia,serif;line-height:1;
+    text-shadow:0 2px 14px rgba(0,0,0,.55);position:relative;z-index:2}
+  .brand{font-size:52px;letter-spacing:13px;color:#e9c75a;font-weight:700;
+    text-shadow:0 2px 16px rgba(0,0,0,.6);padding-left:13px}
+  .rule{width:300px;height:1px;background:linear-gradient(to right,transparent,#c9a227,transparent);margin:20px 0}
+  .title{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:42px;color:#f3ead2;
+    max-width:880px;line-height:1.18;text-shadow:0 2px 16px rgba(0,0,0,.7)}
+  .url{position:absolute;bottom:54px;left:0;right:0;text-align:center;
+    font-size:17px;letter-spacing:3px;color:#cdb978;text-transform:lowercase;
+    text-shadow:0 2px 10px rgba(0,0,0,.7)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="wash"></div>
+
+  <svg class="corner tl" viewBox="0 0 120 120" fill="none" stroke="#c9a227" stroke-width="3">
+    <path d="M6 6 L60 6 M6 6 L6 60"/>
+    <path d="M16 16 L46 16 M16 16 L16 46"/>
+    <path d="M26 26 L36 26 L36 36" stroke-width="2.5"/>
+    <circle cx="60" cy="6" r="2.5" fill="#c9a227" stroke="none"/>
+    <circle cx="6" cy="60" r="2.5" fill="#c9a227" stroke="none"/>
+  </svg>
+  <svg class="corner tr" viewBox="0 0 120 120" fill="none" stroke="#c9a227" stroke-width="3">
+    <path d="M6 6 L60 6 M6 6 L6 60"/><path d="M16 16 L46 16 M16 16 L16 46"/>
+    <path d="M26 26 L36 26 L36 36" stroke-width="2.5"/>
+    <circle cx="60" cy="6" r="2.5" fill="#c9a227" stroke="none"/><circle cx="6" cy="60" r="2.5" fill="#c9a227" stroke="none"/>
+  </svg>
+  <svg class="corner bl" viewBox="0 0 120 120" fill="none" stroke="#c9a227" stroke-width="3">
+    <path d="M6 6 L60 6 M6 6 L6 60"/><path d="M16 16 L46 16 M16 16 L16 46"/>
+    <path d="M26 26 L36 26 L36 36" stroke-width="2.5"/>
+    <circle cx="60" cy="6" r="2.5" fill="#c9a227" stroke="none"/><circle cx="6" cy="60" r="2.5" fill="#c9a227" stroke="none"/>
+  </svg>
+  <svg class="corner br" viewBox="0 0 120 120" fill="none" stroke="#c9a227" stroke-width="3">
+    <path d="M6 6 L60 6 M6 6 L6 60"/><path d="M16 16 L46 16 M16 16 L16 46"/>
+    <path d="M26 26 L36 26 L36 36" stroke-width="2.5"/>
+    <circle cx="60" cy="6" r="2.5" fill="#c9a227" stroke="none"/><circle cx="6" cy="60" r="2.5" fill="#c9a227" stroke="none"/>
+  </svg>
+
+  <div class="content">
+    <div class="monogram">
+      <svg width="96" height="104" viewBox="0 0 96 104" fill="none" stroke="#c9a227" stroke-width="2.5" style="position:absolute;inset:0">
+        <path d="M48 4 L90 22 L90 78 L48 100 L6 78 L6 22 Z"/>
+        <path d="M48 12 L83 27 L83 73 L48 89 L13 73 L13 27 Z" stroke-width="1.4" opacity=".7"/>
+      </svg>
+      <span class="b">B</span>
+    </div>
+    <div class="brand">BURNHAM CIVIC</div>
+    <div class="rule"></div>
+    <div class="title">The Five Seats That Decide the Income Tax</div>
+  </div>
+
+  <div class="url">burnhamcivic.org/court-2026.html</div>
+</div>
+</body>
+</html>
