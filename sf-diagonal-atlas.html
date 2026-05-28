@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Diagonal Atlas - Burnham Plan for San Francisco - BURNHAM CIVIC</title>
+<meta name="description" content="Interactive overlay of Daniel Burnham's 1905 diagonal boulevards on modern San Francisco. Identifies routes, widths, displaced parcels, and federal funding mechanisms by phasing tier.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="The Diagonal Atlas - Burnham Plan for San Francisco - BURNHAM CIVIC">
+<meta property="og:description" content="Interactive overlay of Daniel Burnham's 1905 diagonal boulevards on modern San Francisco. Routes, widths, displaced parcels, and federal funding by phasing tier.">
+<meta property="og:url" content="https://burnhamcivic.org/sf-diagonal-atlas.html">
+<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TBCNewsAction">
+<meta name="twitter:title" content="The Diagonal Atlas - Burnham Plan for San Francisco">
+<meta name="twitter:description" content="Burnham's 1905 diagonals overlaid on modern San Francisco.">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #fff;
+  color: #111;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+
+.page-header {
+  padding: 14px 24px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.page-header .site-title {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.page-header .nav { font-size: 11px; }
+.page-header .nav a {
+  margin-left: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: #00c;
+  text-decoration: none;
+}
+.page-header .nav a:hover { color: #c00; }
+
+.subhead {
+  padding: 14px 24px 12px;
+  border-bottom: 1px solid #ddd;
+}
+.subhead h1 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: 26px;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+.subhead .subtitle { font-style: italic; color: #555; font-size: 13px; }
+.subhead .back { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #00c; text-decoration: none; }
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  height: calc(100vh - 116px);
+  min-height: 540px;
+}
+#map {
+  width: 100%;
+  height: 100%;
+  background: #0a1929;
+}
+.sidebar {
+  border-left: 1px solid #ddd;
+  background: #faf9f6;
+  overflow-y: auto;
+  padding: 18px 20px;
+}
+
+.sidebar h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+.sidebar .lead {
+  font-size: 12px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 18px;
+  line-height: 1.5;
+}
+
+.legend {
+  font-size: 11px;
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.legend-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.legend-row:last-child { margin-bottom: 0; }
+.legend-dot { width: 14px; height: 4px; border-radius: 2px; flex-shrink: 0; }
+
+.tier-1 { background: #2e7d4f; }
+.tier-2 { background: #c8932e; }
+.tier-3 { background: #b3392c; }
+
+.boulevard-list { list-style: none; padding: 0; margin: 0; }
+.boulevard-list li {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e3e0d8;
+  cursor: pointer;
+  transition: background 0.1s;
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+.boulevard-list li:hover { background: #f1ede0; }
+.boulevard-list li.active { background: #1e3a5f; color: #fff; }
+.boulevard-list li.active .meta { color: #fbbf24; }
+.boulevard-list .pin { width: 10px; height: 10px; border-radius: 50%; }
+.boulevard-list .name { font-weight: 700; font-size: 13px; }
+.boulevard-list .meta { font-size: 11px; color: #777; }
+
+.detail {
+  margin-top: 18px;
+  padding: 14px 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.detail.hidden { display: none; }
+.detail h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: 22px;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+.detail .tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  margin-right: 6px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.detail .tag.t1 { background: #2e7d4f; }
+.detail .tag.t2 { background: #c8932e; }
+.detail .tag.t3 { background: #b3392c; }
+
+.detail .stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin: 12px 0;
+  padding: 10px 0;
+  border-top: 1px solid #e3e0d8;
+  border-bottom: 1px solid #e3e0d8;
+}
+.detail .stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+}
+.detail .stat-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1c1917;
+}
+.detail .desc { font-size: 12px; color: #333; line-height: 1.5; margin: 8px 0; }
+.detail .funding {
+  font-size: 11px;
+  background: #f7f4ea;
+  border-left: 3px solid #c8932e;
+  padding: 6px 10px;
+  margin: 10px 0 0;
+}
+
+.toggles {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid #ddd;
+}
+.toggles button {
+  flex: 1;
+  padding: 8px 6px;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-family: Georgia, serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #1e3a5f;
+}
+.toggles button.on { background: #1e3a5f; color: #fbbf24; border-color: #1e3a5f; }
+
+.foot {
+  font-size: 10px;
+  color: #999;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #e3e0d8;
+  line-height: 1.5;
+}
+
+/* Leaflet popup overrides */
+.leaflet-popup-content-wrapper {
+  background: #1c1917;
+  color: #fbbf24;
+  border-radius: 4px;
+  font-family: Georgia, serif;
+}
+.leaflet-popup-content {
+  margin: 10px 14px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.leaflet-popup-content b { color: #fff; }
+.leaflet-popup-tip { background: #1c1917; }
+
+/* Map attribution */
+.leaflet-control-attribution {
+  background: rgba(0,0,0,0.5) !important;
+  color: #ccc !important;
+}
+.leaflet-control-attribution a { color: #fbbf24 !important; }
+
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; height: auto; }
+  #map { height: 60vh; }
+  .sidebar { max-height: 70vh; border-left: none; border-top: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <div class="nav">
+    <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+    <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+    <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+    <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+    <a href="membership.html">Intelligence</a>
+  </div>
+</div>
+
+<div class="subhead">
+  <a href="burnham-plan-sf.html" class="back">&larr; Back to The Burnham Plan for San Francisco</a>
+  <h1>The Diagonal Atlas</h1>
+  <div class="subtitle">Burnham's 1905 boulevard system overlaid on modern San Francisco. Click any boulevard for route, width, displacement estimate, federal funding mechanism, and phasing tier.</div>
+</div>
+
+<div class="app">
+  <div id="map"></div>
+  <aside class="sidebar">
+    <h2>The Eleven Boulevards</h2>
+    <p class="lead">Each line is a named diagonal from the 1905 Plan. Width, route, and anchor points are from Burnham's original report. Displacement counts are first-pass estimates; refined building-footprint intersection layer ships in v2.</p>
+
+    <div class="legend">
+      <div class="legend-row"><div class="legend-dot tier-1"></div><span><b>Tier 1</b> - existing right-of-way or low-density. Easiest first build.</span></div>
+      <div class="legend-row"><div class="legend-dot tier-2"></div><span><b>Tier 2</b> - moderate displacement. Mixed neighborhoods.</span></div>
+      <div class="legend-row"><div class="legend-dot tier-3"></div><span><b>Tier 3</b> - heaviest displacement. Single-family neighborhoods.</span></div>
+    </div>
+
+    <ul class="boulevard-list" id="boulList"></ul>
+
+    <div class="detail hidden" id="detail">
+      <span class="tag" id="d-tier"></span>
+      <h3 id="d-name"></h3>
+      <div class="desc" id="d-route"></div>
+      <div class="stat-grid">
+        <div><div class="stat-label">Width</div><div class="stat-value" id="d-width"></div></div>
+        <div><div class="stat-label">Length</div><div class="stat-value" id="d-length"></div></div>
+        <div><div class="stat-label">Status</div><div class="stat-value" id="d-status"></div></div>
+        <div><div class="stat-label">Phasing</div><div class="stat-value" id="d-phase"></div></div>
+        <div><div class="stat-label">Buildings (est)</div><div class="stat-value" id="d-buildings"></div></div>
+        <div><div class="stat-label">Takings (est)</div><div class="stat-value" id="d-value"></div></div>
+      </div>
+      <div class="desc" id="d-notes"></div>
+      <div class="funding"><b>Funding:</b> <span id="d-funding"></span></div>
+    </div>
+
+    <div class="toggles">
+      <button id="t-plan" class="on" type="button">1905 Plan</button>
+      <button id="t-buf" class="on" type="button">Right-of-way</button>
+      <button id="t-anchor" class="on" type="button">Anchors</button>
+      <button id="t-bldg" class="on" type="button">Buildings</button>
+    </div>
+
+    <div style="margin:14px 0 0;padding:10px 12px;background:#fff;border:1px solid #ddd;">
+      <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:6px;">Burnham 1905 Plan opacity</div>
+      <input type="range" id="planOpacity" min="0" max="100" value="55" style="width:100%;accent-color:#1e3a5f;">
+      <div style="font-size:10px;color:#666;margin-top:4px;display:flex;justify-content:space-between;"><span>Modern only</span><span id="planOpacityLabel">55%</span><span>Plan only</span></div>
+      <div style="font-size:11px;color:#777;margin-top:8px;line-height:1.4;">Source: <a href="http://www.davidrumsey.com/maps1120881-28528.html" target="_blank">David Rumsey Map Collection</a>. Original at the Bancroft Library. Georeference is rectangular bounds (approximate); the actual plan has slight rotation we will calibrate in v2.</div>
+    </div>
+
+    <p style="font-size:11px;color:#666;font-style:italic;margin:14px 0 0;">Zoom to street level (z14+) to load real SF building footprints from <a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/Building-Footprints/ynuv-fyni" target="_blank">SF Open Data</a>. Buildings under any boulevard right-of-way render in red.</p>
+
+    <div class="foot">
+      Boulevard alignments are first-pass approximations derived from text descriptions in Burnham &amp; Bennett, <em>Report on a Plan for San Francisco</em>, September 1905. The original plates (I-LXXIII) are at the Bancroft Library, UC Berkeley, and have not been digitally georeferenced. Building footprints are live-fetched from SF Open Data (dataset ynuv-fyni). Map tiles &copy; OpenStreetMap contributors and Esri.
+    </div>
+  </aside>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/@turf/turf@7.1.0/turf.min.js"></script>
+<script>
+// === BOULEVARD DEFINITIONS (1905 Plan, modern coordinates) ===
+const BOULEVARDS = [
+  {
+    id: 'embarcadero',
+    name: 'The Embarcadero Avenue',
+    width_ft: 200,
+    tier: 1,
+    color: '#2e7d4f',
+    route: 'Fort Mason south through the Ferry Building, China Basin, Mission Bay, around the Hunters Point promontory, ending at Candlestick Point. The full bay shoreline as one continuous public esplanade.',
+    status: 'Partially built (1991-2000). Embarcadero from Fort Mason to Mission Bay completed after Loma Prieta. Southern segment to Hunters Point still missing.',
+    length_mi: 7.1,
+    phase: 'Tier 1 (low displacement)',
+    buildings_est: '~150 (mostly industrial)',
+    value_est: '$0.8B-1.2B',
+    notes: 'Most of the existing Embarcadero already follows Burnham\'s alignment. The remaining gap is the southern run from Mission Bay to Candlestick. Largely warehouses, surface lots, and shuttered shipyard parcels. Lowest political resistance in the entire plan.',
+    funding: 'USDOT Beautify Transportation Challenge + FHWA Scenic Byways + Port of SF capital + private development partnerships at China Basin / Hunters Point.',
+    coords: [
+      [37.7963, -122.4225], [37.7913, -122.3954], [37.7779, -122.3816], [37.7595, -122.3758]
+    ]
+  },
+  {
+    id: 'panamerican',
+    name: 'Pan-American Avenue',
+    width_ft: 150,
+    tier: 2,
+    color: '#c8932e',
+    route: 'Telegraph Hill base southwest through the Financial District and SOMA, ending at the Civic Center oval at Van Ness and Market.',
+    status: 'Never built. Route is currently a mix of high-rise commercial and SOMA mid-rise.',
+    length_mi: 1.9,
+    phase: 'Tier 2 (commercial displacement)',
+    buildings_est: '~180 (mostly commercial)',
+    value_est: '$2.4B-3.1B',
+    notes: 'Cuts diagonally across the Montgomery / Sansome / Battery commercial blocks. Most affected buildings are mid-rise office, much of it currently in the SF downtown vacancy crisis (35%+ vacant). Federal anchor at Telegraph Hill becomes the Pan-American Plaza federal civic complex.',
+    funding: 'GSA federal building program (Pan-American Plaza anchor) + USDOT discretionary + EO 14344 federal architecture beautification + downtown revitalization grants.',
+    coords: [
+      [37.7876, -122.3956], [37.7636, -122.4185]
+    ]
+  },
+  {
+    id: 'mountain',
+    name: 'Mountain Boulevard',
+    width_ft: 100,
+    tier: 3,
+    color: '#b3392c',
+    route: 'Civic Center southwest along the contour of Twin Peaks, around Mount Sutro, ending at the Sunset District at the Pacific.',
+    status: 'Partial. Twin Peaks Boulevard (1923) is the descendant of the central segment. The Civic Center connection and the western descent to Sunset were never built.',
+    length_mi: 4.4,
+    phase: 'Tier 3 (single-family displacement)',
+    buildings_est: '~720 (mostly residential)',
+    value_est: '$1.6B-2.2B',
+    notes: 'Cuts through Cole Valley, Inner Sunset, and the eastern Sunset. Heavy single-family displacement on the western descent. Twin Peaks Boulevard segment already exists. Hardest political fight in the plan, saved for last.',
+    funding: 'FHWA federal-aid highway + NPS for the Twin Peaks summit park + state Active Transportation Program + transfer-of-development-rights program for displaced owners.',
+    coords: [
+      [37.7636, -122.4185], [37.7456, -122.4379], [37.7415, -122.4418],
+      [37.7375, -122.4461], [37.7354, -122.4395], [37.7393, -122.4348],
+      [37.7456, -122.4379]
+    ]
+  },
+  {
+    id: 'mission',
+    name: 'Mission Avenue',
+    width_ft: 100,
+    tier: 3,
+    color: '#b3392c',
+    route: 'Civic Center southeast through the Mission District, ending at Bernal Heights summit park.',
+    status: 'Never built. Modern S-shaped Mission Street still carries the traffic this diagonal would have absorbed.',
+    length_mi: 2.3,
+    phase: 'Tier 3 (Mission residential displacement)',
+    buildings_est: '~480 (mixed residential)',
+    value_est: '$1.1B-1.5B',
+    notes: 'Diagonal cut through the Mission. Most affected buildings are 2-4 unit Victorians and mixed-use commercial. Politically the most sensitive route because of Mission tenant displacement concerns. Requires aggressive relocation policy + on-route inclusionary housing.',
+    funding: 'FHWA federal-aid + HUD CDBG-DR for relocation + state Affordable Housing Program for replacement units + TDR program.',
+    coords: [
+      [37.7636, -122.4185], [37.7428, -122.3928]
+    ]
+  },
+  {
+    id: 'sunset',
+    name: 'Sunset Boulevard',
+    width_ft: 200,
+    tier: 1,
+    color: '#2e7d4f',
+    route: 'Presidio south along the western edge, through the Outer Richmond and Sunset, ending at Lake Merced. Continuous public beach park along the ocean side.',
+    status: 'Existing Sunset Boulevard runs the route at half the proposed width (100 ft instead of 200). Beach park strip partially exists as Ocean Beach.',
+    length_mi: 3.6,
+    phase: 'Tier 1 (existing alignment widening)',
+    buildings_est: '~95 (residential edge)',
+    value_est: '$0.4B-0.6B',
+    notes: 'Existing right-of-way already follows the Burnham route. Widening to 200 ft requires acquiring one row of lots on the eastern edge. Western edge is already public (Ocean Beach / Great Highway / GGNRA).',
+    funding: 'FHWA federal-aid + GGNRA for the beach side + state coastal program + USDOT scenic byway designation.',
+    coords: [
+      [37.7783, -122.4771], [37.7231, -122.4771]
+    ]
+  },
+  {
+    id: 'park',
+    name: 'Park Boulevard',
+    width_ft: 100,
+    tier: 1,
+    color: '#2e7d4f',
+    route: 'Civic Center west along the Fell Street corridor, ending at Golden Gate Park. Connector from the civic core to the great park.',
+    status: 'Existing Fell Street + Oak Street + Panhandle corridor. Built at half-width.',
+    length_mi: 1.5,
+    phase: 'Tier 1 (existing corridor widening)',
+    buildings_est: '~80 (mixed)',
+    value_est: '$0.3B-0.5B',
+    notes: 'Widening of the existing Fell / Oak couplet into a single 100-ft tree-lined ceremonial drive. The Panhandle public-park strip already exists. Modest displacement on the southern edge.',
+    funding: 'FHWA federal-aid + SF Recreation &amp; Parks for the central park strip + state Active Transportation Program.',
+    coords: [
+      [37.7636, -122.4185], [37.7603, -122.4488]
+    ]
+  },
+  {
+    id: 'presidio',
+    name: 'Presidio Boulevard',
+    width_ft: 150,
+    tier: 3,
+    color: '#b3392c',
+    route: 'Civic Center north through Pacific Heights to the Presidio gates at Lombard.',
+    status: 'Never built as a continuous diagonal. Modern Park Presidio Boulevard runs perpendicular and serves a different function.',
+    length_mi: 1.9,
+    phase: 'Tier 3 (Pacific Heights single-family)',
+    buildings_est: '~340 (high-value residential)',
+    value_est: '$3.2B-4.4B',
+    notes: 'Most expensive single segment in the plan. Cuts through Pacific Heights single-family blocks where lots routinely sell for $5M-$15M. Politically the most powerful neighborhood opposition in the city.',
+    funding: 'FHWA federal-aid + GSA Presidio frontage + premium TDR program + private investment partnerships at Presidio gateway.',
+    coords: [
+      [37.7636, -122.4185], [37.7768, -122.4384]
+    ]
+  },
+  {
+    id: 'bernal',
+    name: 'Bernal Crown Drive',
+    width_ft: 60,
+    tier: 2,
+    color: '#c8932e',
+    route: 'Contour ring around Bernal Heights summit at elevation. Connects to Mission Avenue at the north and to the Outer Boulevard at the south.',
+    status: 'Bernal Heights Park exists at the summit. The contour drive around the park footprint was never built.',
+    length_mi: 2.6,
+    phase: 'Tier 2 (single-family ring)',
+    buildings_est: '~240 (single-family)',
+    value_est: '$0.8B-1.1B',
+    notes: 'Ring road at the contour line just below the summit. Affects two rows of single-family homes on each side. Bernal residents have historically been preservation-minded; this would be a fight.',
+    funding: 'FHWA federal-aid + NPS for the summit park + state Active Transportation Program.',
+    coords: [
+      [37.7338, -122.4060], [37.7301, -122.4098], [37.7268, -122.4045],
+      [37.7301, -122.3991], [37.7338, -122.4060]
+    ]
+  },
+  {
+    id: 'telegraph',
+    name: 'Telegraph Crown Drive',
+    width_ft: 60,
+    tier: 2,
+    color: '#c8932e',
+    route: 'Contour ring around Telegraph Hill connecting Pan-American Plaza on the bay side to the Russian Hill ridge.',
+    status: 'Coit Tower (1933) sits where Burnham proposed a 200-ft pylon. The contour ring around the hill was never built.',
+    length_mi: 1.3,
+    phase: 'Tier 2 (mixed displacement)',
+    buildings_est: '~110 (mixed)',
+    value_est: '$0.5B-0.7B',
+    notes: 'Ring around Telegraph Hill at the upper contour. Mix of single-family Edwardians and apartment buildings. Telegraph Hill Dwellers neighborhood association (the historic preservation faction) is a likely ally on this segment given the Pan-American Plaza anchor.',
+    funding: 'NPS for Coit Tower park expansion + FHWA federal-aid + GSA Pan-American Plaza linkage.',
+    coords: [
+      [37.7871, -122.4013], [37.7849, -122.4045], [37.7827, -122.4002],
+      [37.7845, -122.3960], [37.7871, -122.4013]
+    ]
+  },
+  {
+    id: 'russian',
+    name: 'Russian Hill Crest',
+    width_ft: 60,
+    tier: 2,
+    color: '#c8932e',
+    route: 'Ridge drive along the spine from Russian Hill summit south to Nob Hill, opening continuous public access to the views from both summits.',
+    status: 'Never built. Lombard Street\'s crooked block (1922) is the only fragment.',
+    length_mi: 0.9,
+    phase: 'Tier 2 (mixed displacement)',
+    buildings_est: '~70 (apartment + single-family)',
+    value_est: '$0.4B-0.6B',
+    notes: 'Connects two of the city\'s most expensive viewpoints with a continuous public ridge drive. Affects mostly multi-unit apartment buildings on the spine; lower per-unit displacement than single-family routes.',
+    funding: 'FHWA federal-aid + state Active Transportation Program + premium TDR.',
+    coords: [
+      [37.7819, -122.4167], [37.7797, -122.4198], [37.7775, -122.4156],
+      [37.7797, -122.4119], [37.7819, -122.4167]
+    ]
+  },
+  {
+    id: 'outer',
+    name: 'The Outer Boulevard',
+    width_ft: 100,
+    tier: 1,
+    color: '#2e7d4f',
+    route: 'Forty-mile parkway circling the western and southern flank of the city. Presidio south along the ridge above the Sunset, around Lake Merced, across San Bruno Mountain, back along the bay to the Embarcadero. Largest single piece of unbuilt civic infrastructure in any American city plan ever drafted.',
+    status: 'Mostly unbuilt. Skyline Boulevard partially follows the southern ridge. Most of the route was never even surveyed.',
+    length_mi: 39.8,
+    phase: 'Tier 1 (largely parkland or ridge ROW)',
+    buildings_est: '~420 (sparse, mostly San Bruno Mt slopes)',
+    value_est: '$0.4B-0.6B',
+    notes: 'Forty miles. Most of the route runs through existing parkland, ridges, and military reservations (Presidio, GGNRA, San Bruno Mountain State Park). Displacement is concentrated in 3-4 short segments where the ridge is privately developed. Lowest per-mile displacement of any segment.',
+    funding: 'NPS Recreation Trails Program + FHWA Federal Lands Access + GGNRA + California State Parks + USDOT Beautify Transportation Challenge.',
+    coords: [
+      [37.7288, -122.4985], [37.7162, -122.4904], [37.7113, -122.4662],
+      [37.7136, -122.4326], [37.7191, -122.3963], [37.7301, -122.3765]
+    ]
+  }
+];
+
+// === MAP SETUP ===
+const map = L.map('map', {
+  center: [37.7700, -122.4400],
+  zoom: 12,
+  zoomControl: true,
+  attributionControl: true
+});
+
+// Basemap layers - toggleable
+const baseLayers = {
+  'OSM (buildings visible)': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19
+  }),
+  'Satellite': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri',
+    maxZoom: 19
+  }),
+  'Carto Dark': L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  })
+};
+baseLayers['OSM (buildings visible)'].addTo(map);
+L.control.layers(baseLayers, null, { position: 'topright', collapsed: false }).addTo(map);
+
+// === BURNHAM 1905 PLAN OVERLAY ===
+// Rectangular bounds calibrated by visual inspection of the Rumsey scan.
+// The plan's bottom 18% is title cartouche (no map content), so south bound is shifted up accordingly.
+const PLAN_BOUNDS = [[37.708, -122.518], [37.815, -122.355]];
+const planOverlay = L.imageOverlay('_assets/sf-plan/burnham-1905-sf-plan.jpg', PLAN_BOUNDS, {
+  opacity: 0.55,
+  interactive: false,
+  alt: 'Burnham 1905 Plan of San Francisco'
+}).addTo(map);
+
+// === DRAW BOULEVARDS ===
+const TIER_COLOR = { 1: '#2e7d4f', 2: '#c8932e', 3: '#b3392c' };
+const layerByBoul = {};
+const bufferByBoul = {};
+const anchorByBoul = {};
+
+function ftToMeters(ft) { return ft * 0.3048; }
+
+BOULEVARDS.forEach(b => {
+  const color = TIER_COLOR[b.tier];
+  const widthM = ftToMeters(b.width_ft);
+
+  // Polyline (the centerline)
+  const line = L.polyline(b.coords, {
+    color: color,
+    weight: 3,
+    opacity: 0.95,
+    lineJoin: 'round',
+    lineCap: 'round'
+  }).addTo(map);
+
+  // Buffer polygon (the right of way)
+  const turfLine = turf.lineString(b.coords.map(c => [c[1], c[0]]));
+  const turfBuffer = turf.buffer(turfLine, widthM / 2, { units: 'meters' });
+  const bufferLayer = L.geoJSON(turfBuffer, {
+    style: {
+      color: color,
+      weight: 0,
+      fillColor: color,
+      fillOpacity: 0.18
+    }
+  }).addTo(map);
+
+  // Anchor markers (start + end points, plus midpoint for long ones)
+  const anchorGroup = L.layerGroup();
+  const start = b.coords[0];
+  const end = b.coords[b.coords.length - 1];
+  L.circleMarker(start, { radius: 5, color: color, fillColor: '#fbbf24', fillOpacity: 1, weight: 1.5 }).addTo(anchorGroup);
+  L.circleMarker(end, { radius: 5, color: color, fillColor: '#fbbf24', fillOpacity: 1, weight: 1.5 }).addTo(anchorGroup);
+  anchorGroup.addTo(map);
+
+  layerByBoul[b.id] = line;
+  bufferByBoul[b.id] = bufferLayer;
+  anchorByBoul[b.id] = anchorGroup;
+
+  line.on('click', () => selectBoulevard(b.id));
+  bufferLayer.on('click', () => selectBoulevard(b.id));
+
+  line.bindTooltip(b.name + ' (' + b.width_ft + ' ft)', {
+    sticky: true,
+    direction: 'top',
+    className: 'boul-tip'
+  });
+});
+
+// === SIDEBAR LIST ===
+const list = document.getElementById('boulList');
+BOULEVARDS.forEach(b => {
+  const li = document.createElement('li');
+  li.dataset.id = b.id;
+  li.innerHTML = `
+    <div class="pin" style="background:${TIER_COLOR[b.tier]}"></div>
+    <div>
+      <div class="name">${b.name}</div>
+      <div class="meta">${b.width_ft}-ft &middot; ${b.length_mi} mi</div>
+    </div>
+    <div class="meta">T${b.tier}</div>
+  `;
+  li.addEventListener('click', () => selectBoulevard(b.id));
+  list.appendChild(li);
+});
+
+// === DETAIL PANEL ===
+const detail = document.getElementById('detail');
+const $ = id => document.getElementById(id);
+
+function selectBoulevard(id) {
+  const b = BOULEVARDS.find(x => x.id === id);
+  if (!b) return;
+
+  document.querySelectorAll('.boulevard-list li').forEach(li => {
+    li.classList.toggle('active', li.dataset.id === id);
+  });
+
+  detail.classList.remove('hidden');
+  const tagEl = $('d-tier');
+  tagEl.textContent = 'Tier ' + b.tier;
+  tagEl.className = 'tag t' + b.tier;
+  $('d-name').textContent = b.name;
+  $('d-route').textContent = b.route;
+  $('d-width').textContent = b.width_ft + ' ft';
+  $('d-length').textContent = b.length_mi + ' mi';
+  $('d-status').textContent = b.status.split('.')[0];
+  $('d-phase').textContent = 'Tier ' + b.tier;
+  $('d-buildings').textContent = b.buildings_est;
+  $('d-value').textContent = b.value_est;
+  $('d-notes').textContent = b.notes;
+  $('d-funding').textContent = b.funding;
+
+  // Highlight: bring the polyline forward, fade others
+  Object.entries(layerByBoul).forEach(([k, l]) => {
+    l.setStyle({ weight: k === id ? 6 : 2, opacity: k === id ? 1 : 0.5 });
+  });
+  Object.entries(bufferByBoul).forEach(([k, l]) => {
+    l.setStyle({ fillOpacity: k === id ? 0.45 : 0.10 });
+  });
+
+  // Pan to the boulevard
+  map.fitBounds(layerByBoul[id].getBounds(), { padding: [40, 40], maxZoom: 14 });
+}
+
+// === TOGGLES ===
+$('t-buf').addEventListener('click', () => {
+  const btn = $('t-buf');
+  btn.classList.toggle('on');
+  const show = btn.classList.contains('on');
+  Object.values(bufferByBoul).forEach(l => show ? l.addTo(map) : map.removeLayer(l));
+});
+$('t-anchor').addEventListener('click', () => {
+  const btn = $('t-anchor');
+  btn.classList.toggle('on');
+  const show = btn.classList.contains('on');
+  Object.values(anchorByBoul).forEach(l => show ? l.addTo(map) : map.removeLayer(l));
+});
+
+// === BUILDING FOOTPRINT LAYER (live from SF Open Data) ===
+const buildingsLayer = L.geoJSON(null, {
+  style: feature => ({
+    color: feature.properties._affected ? '#b3392c' : '#666',
+    weight: feature.properties._affected ? 1.2 : 0.4,
+    fillColor: feature.properties._affected ? '#b3392c' : '#aaa',
+    fillOpacity: feature.properties._affected ? 0.55 : 0.15
+  }),
+  onEachFeature: (feature, layer) => {
+    if (feature.properties._affected) {
+      layer.bindPopup(`
+        <b>Affected by:</b> ${feature.properties._affectedBy}<br>
+        <b>Building ID:</b> ${feature.properties.sf16_bldgid || 'unknown'}<br>
+        <b>Height (m):</b> ${feature.properties.hgt_median_m || 'n/a'}<br>
+        <b>Footprint:</b> ${(feature.properties._area || 0).toFixed(0)} m²
+      `);
+    }
+  }
+});
+buildingsLayer.addTo(map);
+
+const bldgCache = new Set();
+let bldgFetchPending = false;
+const bldgStatus = document.createElement('div');
+bldgStatus.style.cssText = 'position:absolute;bottom:30px;left:14px;background:rgba(28,25,23,0.85);color:#fbbf24;padding:6px 12px;font-family:Georgia,serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;border-radius:3px;z-index:500;display:none;';
+document.body.appendChild(bldgStatus);
+
+function setBldgStatus(msg) {
+  if (!msg) { bldgStatus.style.display = 'none'; return; }
+  bldgStatus.textContent = msg;
+  bldgStatus.style.display = 'block';
+}
+
+// Pre-compute boulevard buffers as turf features for spatial intersection
+const turfBuffers = BOULEVARDS.map(b => {
+  const turfLine = turf.lineString(b.coords.map(c => [c[1], c[0]]));
+  return {
+    id: b.id,
+    name: b.name,
+    poly: turf.buffer(turfLine, ftToMeters(b.width_ft) / 2, { units: 'meters' })
+  };
+});
+
+async function fetchBuildings() {
+  if (bldgFetchPending) return;
+  if (map.getZoom() < 14) {
+    setBldgStatus(null);
+    return;
+  }
+  const b = map.getBounds();
+  const key = `${b.getNorth().toFixed(3)},${b.getEast().toFixed(3)},${b.getSouth().toFixed(3)},${b.getWest().toFixed(3)}`;
+  if (bldgCache.has(key)) return;
+  bldgCache.add(key);
+
+  bldgFetchPending = true;
+  setBldgStatus('Loading buildings from SF Open Data ...');
+  try {
+    const where = `within_box(shape, ${b.getNorth()}, ${b.getWest()}, ${b.getSouth()}, ${b.getEast()})`;
+    const url = `https://data.sfgov.org/resource/ynuv-fyni.geojson?$where=${encodeURIComponent(where)}&$limit=10000`;
+    const r = await fetch(url);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const fc = await r.json();
+    let total = 0, hit = 0;
+    fc.features.forEach(f => {
+      if (!f.geometry) return;
+      total++;
+      // Check intersection with any boulevard buffer
+      let affectedBy = null;
+      for (const bb of turfBuffers) {
+        try {
+          if (turf.booleanIntersects(f.geometry, bb.poly.geometry)) {
+            affectedBy = bb.name;
+            break;
+          }
+        } catch (e) { /* skip bad geometries */ }
+      }
+      f.properties._affected = !!affectedBy;
+      f.properties._affectedBy = affectedBy;
+      try { f.properties._area = turf.area(f.geometry); } catch(e) { f.properties._area = 0; }
+      if (affectedBy) hit++;
+      buildingsLayer.addData(f);
+    });
+    setBldgStatus(`Loaded ${total} buildings; ${hit} under boulevard right-of-way`);
+    setTimeout(() => setBldgStatus(null), 3500);
+  } catch (e) {
+    setBldgStatus('Building fetch failed: ' + e.message);
+    setTimeout(() => setBldgStatus(null), 4000);
+  } finally {
+    bldgFetchPending = false;
+  }
+}
+
+let fetchDebounce = null;
+map.on('moveend', () => {
+  clearTimeout(fetchDebounce);
+  fetchDebounce = setTimeout(fetchBuildings, 600);
+});
+
+$('t-bldg').addEventListener('click', () => {
+  const btn = $('t-bldg');
+  btn.classList.toggle('on');
+  const show = btn.classList.contains('on');
+  if (show) {
+    buildingsLayer.addTo(map);
+    fetchBuildings();
+  } else {
+    map.removeLayer(buildingsLayer);
+  }
+});
+
+// === 1905 PLAN OVERLAY CONTROLS ===
+$('t-plan').addEventListener('click', () => {
+  const btn = $('t-plan');
+  btn.classList.toggle('on');
+  const show = btn.classList.contains('on');
+  if (show) planOverlay.addTo(map); else map.removeLayer(planOverlay);
+});
+$('planOpacity').addEventListener('input', e => {
+  const v = parseInt(e.target.value, 10);
+  planOverlay.setOpacity(v / 100);
+  document.getElementById('planOpacityLabel').textContent = v + '%';
+});
+
+// Default fit
+map.fitBounds(L.latLngBounds([37.7050, -122.5108], [37.8100, -122.3700]), { padding: [20, 20] });
+// Trigger initial fetch if zoomed in enough
+setTimeout(fetchBuildings, 500);
+</script>
+
+</body>
+</html>
