@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+(function(){
+  var m=document.cookie.match(/(^| )tbc_maga_auth=([^;]+)/);
+  if(!m||m[2]!==btoa('maga')){ window.top.location.href='/tbc-3d-map-pw.html'; }
+})();
+</script>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TBC Intelligence Map — Multi-Region 3D</title>
