@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TBC 3D Intelligence Map - BURNHAM CIVIC</title>
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="TBC 3D Intelligence Map - BURNHAM CIVIC">
+<meta property="og:description" content="Members-only multi-region 3D parcel intelligence map.">
+<meta property="og:url" content="https://burnhamcivic.org/tbc-3d-map-pw.html">
+<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TBCNewsAction">
+<meta name="twitter:title" content="TBC 3D Intelligence Map">
+<meta name="twitter:description" content="Restricted access.">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { height:100%; font-family: Georgia, 'Times New Roman', serif; background:#0c0e1a; color:#e5e5e5; overflow:hidden; }
+#topbar {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:rgba(12,14,26,0.97); border-bottom:1px solid rgba(251,191,36,0.3);
+  display:flex; align-items:center; padding:0 16px; height:42px;
+}
+#topbar .brand { font-size:13px; letter-spacing:2px; color:#fbbf24; font-weight:700; margin-right:24px; }
+#topbar .title { font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#e5e5e5; }
+#topbar .spacer { flex:1; }
+#topbar a.home { color:#888; font-size:11px; letter-spacing:1px; text-decoration:none; }
+#topbar a.home:hover { color:#fbbf24; }
+.frame-wrap { position:fixed; top:42px; left:0; right:0; bottom:0; }
+.frame-wrap iframe { width:100%; height:100%; border:0; display:block; }
+
+#paywall-gate {
+  position:fixed; top:0; left:0; right:0; bottom:0; z-index:9999;
+  background:#111; display:flex; align-items:center; justify-content:center; flex-direction:column; padding:24px;
+}
+#paywall-gate h1 { font-size:22px; letter-spacing:2px; color:#fbbf24; margin-bottom:8px; text-align:center; }
+#paywall-gate h2 { font-family:Georgia,serif; font-size:18px; color:#e5e5e5; margin-bottom:8px; font-weight:400; text-align:center; }
+#paywall-gate p.lead { font-size:14px; color:#888; margin-bottom:24px; text-align:center; max-width:480px; line-height:1.5; }
+#pw-input {
+  font-family:Georgia,serif; font-size:14px; padding:10px 14px;
+  border:1px solid #555; background:#1a1a1a; color:#e5e5e5;
+  width:240px; display:block; margin:0 0 12px; text-align:center;
+}
+#pw-submit {
+  font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  color:#111; background:#fbbf24; border:none; padding:10px 28px; cursor:pointer;
+  font-family:Georgia,serif;
+}
+#pw-error { font-family:Georgia,serif; font-size:12px; color:#ef4444; margin:12px 0 0; display:none; }
+.home-link { color:#666; font-size:11px; letter-spacing:1px; text-decoration:none; margin-top:24px; }
+.home-link:hover { color:#fbbf24; }
+</style>
+</head>
+<body>
+
+<div id="paywall-gate">
+  <h1>BURNHAM CIVIC</h1>
+  <h2>TBC 3D Intelligence Map</h2>
+  <p class="lead">Restricted access. Members-only multi-region parcel intelligence.</p>
+  <input type="password" id="pw-input" placeholder="Password" autocomplete="off">
+  <button id="pw-submit">Enter</button>
+  <p id="pw-error">Incorrect password.</p>
+  <a href="/" class="home-link">&larr; burnhamcivic.org</a>
+</div>
+
+<div id="app" style="display:none;">
+  <div id="topbar">
+    <span class="brand">BURNHAM CIVIC</span>
+    <span class="title">TBC 3D Intelligence Map</span>
+    <span class="spacer"></span>
+    <a href="/" class="home">&larr; burnhamcivic.org</a>
+  </div>
+  <div class="frame-wrap">
+    <iframe id="map-frame" src="about:blank" title="TBC 3D Intelligence Map" allow="fullscreen"></iframe>
+  </div>
+</div>
+
+<script>
+(function(){
+  var PASS='maga';
+  var COOKIE='tbc_maga_auth';
+  var DAYS=30;
+  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
+  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
+
+  function showApp(){
+    document.getElementById('paywall-gate').style.display='none';
+    document.getElementById('app').style.display='block';
+    document.getElementById('map-frame').src='/_pw/tbc-3d-map.html';
+  }
+
+  if(getCookie(COOKIE)===btoa(PASS)){ showApp(); return; }
+
+  function tryPw(){
+    var inp=document.getElementById('pw-input');
+    if(inp.value===PASS){ setCookie(COOKIE,btoa(PASS),DAYS); showApp(); }
+    else { document.getElementById('pw-error').style.display='block'; inp.value=''; inp.focus(); }
+  }
+  document.getElementById('pw-submit').addEventListener('click',tryPw);
+  document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')tryPw();});
+  setTimeout(function(){document.getElementById('pw-input').focus();},100);
+})();
+</script>
+
+</body>
+</html>
