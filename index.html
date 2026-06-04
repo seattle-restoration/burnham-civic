@@ -685,6 +685,14 @@ ul.acct-sub li { font-size: 14px; }
 var tabs = ['seattle','la','usa','news','strategy','contact'];
 
 function showTab(tab) {
+  // GA4: fire on every tab activation, including external nav targets (la, intelligence).
+  // Filter `tab_name = strategy` in GA4 to see Strategy traffic specifically.
+  try {
+    if (typeof gtag === 'function') {
+      gtag('event', 'tab_view', { tab_name: tab });
+      if (tab === 'strategy') { gtag('event', 'strategy_view'); }
+    }
+  } catch (e) {}
   if (tab === 'intelligence') { window.location.href = 'membership.html'; return; }
   if (tab === 'la') { window.location.href = 'la/'; return; }
   document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.remove('active'); });
