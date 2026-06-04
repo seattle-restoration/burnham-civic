@@ -369,9 +369,12 @@ footer {
   <a href="../membership.html" class="subscribe">Subscribe</a>
 </div>
 <div class="nav">
-  <a href="../">Seattle</a>
+  <a href="../" onclick="try{localStorage.setItem('tab','seattle')}catch(e){}">Seattle</a>
   <a href="./" class="active">LA</a>
+  <a href="../" onclick="try{localStorage.setItem('tab','usa')}catch(e){}">USA</a>
+  <a href="../news.html">News</a>
   <a href="../membership.html">Intelligence</a>
+  <a href="../" onclick="try{localStorage.setItem('tab','strategy')}catch(e){}">Strategy</a>
   <a href="mailto:operations@burnhamcivic.org">Contact</a>
 </div>
 <hr>
