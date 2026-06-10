@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Busan Standard - BURNHAM CIVIC</title>
+<meta name="description" content="Busan put a 101-story tower on the beach in Haeundae, miles from its downtown. Redmond headquarters Microsoft, just opened light rail, holds 640 acres of parkland on Lake Sammamish, and caps its downtown at 144 feet. The gap is not money. It is ambition.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header { display: flex; align-items: baseline; justify-content: space-between; }
+h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
+.subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #1e3a5f; padding: 5px 14px; text-decoration: none; font-family: Georgia, serif; }
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+.back { font-size: 12px; margin-bottom: 24px; display: block; }
+h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; font-weight: 400; line-height: 1.15; margin: 0 0 6px; color: #111; letter-spacing: -0.02em; }
+.article-subtitle { font-size: 17px; color: #555; font-style: italic; margin: 0 0 24px; letter-spacing: -0.01em; }
+h2 { font-size: 19px; font-weight: 700; margin: 36px 0 10px; color: #111; letter-spacing: -0.01em; }
+p { margin: 0 0 14px; color: #1a1a1a; }
+.stat-block { padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
+.stat-block p { margin: 4px 0; font-size: 15px; }
+.stat-block strong { font-size: 17px; }
+table.compare { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+table.compare th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #666; border-bottom: 2px solid #1c1917; padding: 6px 8px; }
+table.compare td { padding: 7px 8px; border-bottom: 1px dotted #ddd; vertical-align: top; }
+table.compare td:first-child { color: #555; font-size: 13px; }
+/* === DECO SYSTEM OVERRIDES (sitewide) === */
+.burnham-quote, .stat-block {
+  position: relative !important;
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
+  background-size: 1px 100% !important;
+  background-position: 4px 0 !important;
+  background-repeat: no-repeat !important;
+}
+.burnham-quote::before, .burnham-quote::after,
+.stat-block::before, .stat-block::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before, .stat-block::before { top: 9px; }
+.burnham-quote::after, .stat-block::after { bottom: 9px; }
+/* === MEMBERS GATE === */
+.lockpanel { background:#1e3a5f; padding:20px 24px; margin:32px 0; color:#cbd5e1; }
+.lockpanel .mtag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#fbbf24; color:#1e3a5f; padding:2px 8px; margin-bottom:10px; }
+.lockpanel h3 { font-family:Georgia,serif; font-size:16px; color:#fff; margin:0 0 8px; font-weight:700; }
+.lockpanel ul { margin:0 0 14px 18px; padding:0; font-size:13px; }
+.lockpanel li { margin:3px 0; }
+.lockpanel input[type=password] { font-family:Georgia,serif; font-size:13px; padding:5px 8px; border:1px solid #475569; background:#16304f; color:#fff; width:180px; }
+.lockpanel button { font-family:Georgia,serif; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#1e3a5f; background:#fbbf24; border:none; padding:6px 14px; margin-left:6px; cursor:pointer; }
+.lockpanel .sub-link { font-size:12px; margin-left:12px; }
+.lockpanel .sub-link a { color:#fbbf24; }
+.lockpanel .pw-err { font-size:12px; color:#fca5a5; display:none; margin-top:8px; }
+.members-content { display:none; }
+body.tbc-member .members-content { display:block; }
+body.tbc-member .lockpanel { display:none; }
+.members-content .mbadge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#1e3a5f; color:#fbbf24; padding:2px 8px; margin:24px 0 0; }
+</style>
+<!-- SEO -->
+<link rel="canonical" href="https://burnhamcivic.org/redmond-tallest.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="The Busan Standard - BURNHAM CIVIC">
+<meta property="og:description" content="Busan put a 101-story tower on the beach in Haeundae. Redmond headquarters Microsoft, just opened light rail, and caps its downtown at 144 feet. The gap is ambition.">
+<meta property="og:url" content="https://burnhamcivic.org/redmond-tallest.html">
+<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TBCNewsAction">
+<meta name="twitter:title" content="The Busan Standard - BURNHAM CIVIC">
+<meta name="twitter:description" content="Busan put a 101-story tower on the beach in Haeundae. Redmond headquarters Microsoft, just opened light rail, and caps its downtown at 144 feet. The gap is ambition.">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJC34M3909"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WJC34M3909');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="membership.html" class="subscribe">Subscribe</a>
+</div>
+
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')">Intelligence</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
+</div>
+
+<hr>
+
+<a href="index.html" class="back">&larr; Back to Seattle</a>
+
+<h1 class="article-title">The Busan Standard</h1>
+<div class="article-subtitle">Busan put a 101-story tower on the beach in Haeundae, miles from its downtown. Redmond headquarters the most valuable company on earth, just opened light rail, holds 640 acres of parkland on Lake Sammamish, and caps its entire downtown at 144 feet. The gap is not money. It is ambition.</div>
+
+<p>In Haeundae, a beach district on the eastern edge of Busan, South Korea, there is a tower called LCT The Sharp. It is 411.6 meters tall. That is 1,350 feet, 101 floors, the second tallest building in the country, and it stands directly on the sand, flanked by two 85-story residential towers, with a hot spring spa and a water park in the base and an observation deck on the top three floors. It is not in Busan's historic downtown. It is not in the central business district. It is on a beach, in what an American planner would call a suburb.</p>
+
+<p>That is the part Americans cannot process. Korea does not ration its best architecture to the city core. When Busan decided to build a world-class landmark, it put it where people swim. The result is one of the most recognizable skylines in Asia, and it belongs to a district, not a downtown.</p>
+
+<p>Now look at Redmond.</p>
+
+<h2>The Same Hand of Cards</h2>
+
+<p>Redmond is the home of Microsoft, the most valuable company in the world, and the place where a large share of the planet's cloud is run. In 2025 light rail arrived: the 2 Line now runs through Overlake and into downtown Redmond. The city holds the north end of Lake Sammamish, with Marymoor Park's 640 acres sitting between the rail line and the water, and the Sammamish River trail running through the middle of town. By every measure that matters, this is one of the richest, best-educated, best-connected suburbs in the United States.</p>
+
+<p>Its downtown is capped at 144 feet, and that is the generous number, available only by maxing out the incentive program near the rail station. The base allowance is 60. The suburb that runs the cloud has a skyline shorter than its evergreens.</p>
+
+<table class="compare">
+  <tr><th></th><th>Haeundae, Busan</th><th>Redmond</th></tr>
+  <tr><td>Setting</td><td>Beachfront district, miles from downtown</td><td>Lakeside tech district, 15 miles from downtown Seattle</td></tr>
+  <tr><td>The amenity</td><td>Haeundae Beach</td><td>Marymoor Park, 640 acres, and the north end of Lake Sammamish</td></tr>
+  <tr><td>The anchor economy</td><td>Tourism, port city of 3.3 million</td><td>Microsoft headquarters, the most valuable company on earth</td></tr>
+  <tr><td>Transit</td><td>Metro line, urban expressway</td><td>2 Line light rail, opened 2025, plus SR 520</td></tr>
+  <tr><td>Tallest allowed</td><td><strong>LCT The Sharp built: 1,350 ft, 101 floors</strong></td><td><strong>Downtown capped at 144 ft; Overlake allows 30 stories, unused</strong></td></tr>
+</table>
+
+<p>Same hand of cards. One city played it. And here is the detail that makes Redmond the right place to start: the permission already exists. Redmond's own zoning allows up to 30 stories in Overlake, the tallest allowance in the city, written into code and sitting there unused. Nobody has built to it. The ceiling is not the law. The ceiling is nerve.</p>
+
+<h2>The Project</h2>
+
+<p>Burnham Civic proposes Redmond's tallest building: a landmark tower in the Overlake or Marymoor corridor, standing against the park and the lake the way LCT stands against the beach. A tower you see from the 520, from a 2 Line train, from a kayak on the Sammamish Slough, and from the far shore of Lake Sammamish. A real piece of architecture, with a crown, built to be photographed for a hundred years.</p>
+
+<p>The height target is plain: use the 30 stories Redmond already wrote into its own code, and make the case for more. Haeundae went from beach town to 101 floors in one generation. Redmond does not need 101 floors to change what the word suburb means in Washington. It needs one tower good enough that people ride the train to Redmond just to look at it.</p>
+
+<h2>Why the Suburbs</h2>
+
+<p>This is the first filing in a larger Burnham Civic doctrine: beautiful architecture in the suburbs. Sometime around 1950 the American settlement pattern decided that ambition lives downtown and everything else gets the leftovers: the five-over-one, the office park, the strip center. Busan never agreed to that, and neither did the streetcar suburbs America built before the war, which is why their main streets are the most expensive real estate in every metro today.</p>
+
+<p>Redmond is the right opening move because Redmond has already done the hard parts. It built the employment base, it got the train, it preserved the park and the river. A city that hosts the company running the world's computing, and then caps itself at 144 feet, has quietly accepted leftovers. Nobody ever voted for that ceiling as a vision. It accumulated, the way ceilings do.</p>
+
+<h2>The Style</h2>
+
+<p>Modern Deco. The living continuation of the style America invented the last time it believed in tall buildings: setback massing that steps as it rises, vertical masonry piers that pull the eye up, bronze metalwork, and a crown that is lit, sculpted, and legible from across the lake. New York recently proved the language still works at extreme height. 111 West 57th Street, finished in terracotta and bronze at 1,428 feet, is the most elegant supertall built anywhere in decades. Seattle Tower proved it locally in 1929, with 33 shades of brick climbing to a lighter top.</p>
+
+<p>The skin should be glazed terracotta, and there is a regional reason. The clay seams of the Renton-Auburn corridor fired the terracotta that built early Seattle, including the Arctic Building's walruses, before the kilns closed in the Depression. <a href="material-standard.html">Our material standard work</a> calls for bringing those kilns home, and a tower-scale order is exactly the guaranteed demand that justifies the first one. The Eastside's first landmark gets built from Puget Sound clay, and every building after it gets cheaper to clad.</p>
+
+<p>This matters from the air as much as from the train. Every approach into SeaTac crosses the region's rooflines, and a city of glass and gravel ballast reads as nothing from a window seat. Masonry reads. A terracotta crown on the Eastside is marketing the region can never buy back once it builds another glass slab instead.</p>
+
+<h2>What TBC Is Doing</h2>
+
+<p>We are building the full Busan case study, the tenant-stack economics, and the site file for the Overlake and Marymoor corridors. The basics are above. The working file below is for members.</p>
+
+<p>Busan put 1,350 feet on the sand. Redmond has the lake, the park, the train, and the company that runs the cloud. It is missing one decision.</p>
+
+<div class="lockpanel">
+  <span class="mtag">MEMBERS</span>
+  <h3>The Busan File: How They Built It, and Where Redmond Builds</h3>
+  <ul>
+    <li>How LCT The Sharp actually got built: timeline, builder, and the scandal that nearly killed it</li>
+    <li>The tenant stack: who occupies a 101-story beach tower and why each layer pays</li>
+    <li>What transfers to King County and what does not</li>
+    <li>The site file: the 30-story allowance nobody is using, and the park-edge play</li>
+  </ul>
+  <form onsubmit="return tbcTryPw('rt-pw')" style="margin:0;display:inline;">
+    <input type="password" id="rt-pw" placeholder="Member password">
+    <button type="submit">Enter</button>
+    <span class="sub-link"><a href="membership.html">Become a member &rarr;</a></span>
+  </form>
+  <p class="pw-err" id="rt-pw-err">Incorrect password.</p>
+</div>
+
+<div class="members-content">
+
+<span class="mbadge">MEMBERS FILE</span>
+<h2>How They Actually Built It</h2>
+
+<p>Construction started October 28, 2013 and the complex was completed November 30, 2019, with POSCO Engineering and Construction delivering the structure: roughly six years from groundbreaking to Korea's first and largest beachfront residential development. The site was a former tourist hotel parcel on the sand, rezoned and entitled through Busan's district government for residential use at landmark height.</p>
+
+<p>And that entitlement is where the cautionary tale lives. The LCT project became one of Korea's biggest municipal corruption cases. In November 2016 the developer behind the project, Lee Young-bok, was indicted on charges of amassing a slush fund of roughly 57 billion won and lobbying public officials, with the investigation reaching lawmakers, judges, and prosecutors, and the former head of Haeundae district was arrested as the scandal widened. The towers got built anyway, and they are magnificent, which is the uncomfortable lesson in full: demand for a beachfront landmark was strong enough to survive the dirtiest entitlement process in recent Korean memory. The market was never the problem. The process was. Redmond's version runs the same play with a clean sheet: public entitlement, open record, council votes in daylight. We get the tower without the indictments.</p>
+
+<h2>The Tenant Stack</h2>
+
+<p>A 101-story tower on a beach only pencils because every layer monetizes the height differently. The LCT stack, bottom to top: a shopping mall, a hot spring spa, and a water park at the base, which make the tower a destination for people who will never go upstairs. The Signiel Busan hotel, run by Lotte with 260 rooms, opened June 2020 on the lower tower floors, branding the address. Above it, 561 serviced residences marketed heavily to outside investors, which carried the construction financing. Next door, the two 85-story towers of straight residential. And at the very top, floors 98 through 100, the BUSAN X the SKY observatory, a ticketed attraction that turns the building's height itself into a paying tenant.</p>
+
+<p>Read the stack as a machine. The public pays at the bottom and the top, residents pay for the middle, and the hotel pays in brand. Nobody is renting generic office space. That is why it worked in a district away from the business core, and the same program fits Redmond: retail and spa base on the rail line, a flagged hotel that upgrades the entire Eastside market east of Bellevue, residences above it, and an observatory at the crown with Rainier in one direction, the Cascades in the other, both lakes below, and the Seattle skyline on the horizon. There is no public observation deck anywhere on the Eastside. The first one will print money, and Microsoft's visitor traffic alone could carry the hotel.</p>
+
+<h2>What Transfers, What Does Not</h2>
+
+<p>Transfers: the district-landmark principle, the put-it-on-the-amenity siting, the mixed stack that needs no office tenant, the observatory as civic dividend, and the use of a single landmark to reprice an entire district, which Haeundae's Marine City demonstrates conclusively. Does not transfer: Korean project-financing-vehicle leverage, 561 units of foreign-investor presales, or 101 stories on day one. The Redmond version is shorter, cleaner, and still changes everything, because it is competing with a 144-foot ceiling, not with Busan.</p>
+
+<h2>The Site File</h2>
+
+<p>The unlock already exists in Overlake. The Overlake zoning, consolidated effective January 2025, carries the tallest height allowances in the city, up to 30 stories, and nothing built or proposed comes near it. The play is the blocks around the Overlake Village light rail station: on the 2 Line, walking distance to Microsoft's campus, freeway-visible from 520, and high ground with sightlines to Bellevue, the lakes, and Rainier. A 30-story Modern Deco tower there requires no rezone, no comprehensive plan fight, and no council heroics. It requires a developer who reads the code and a design worth defending. That is the near-term move, and it sets the precedent height for everything after.</p>
+
+<p>The park-edge play is Marymoor Village. The 2 Line's southeastern station sits in a district Redmond has explicitly planned for growth, directly against Marymoor Park's 640 acres, with the north tip of Lake Sammamish a short walk away. This is the true Haeundae move: the tower against the green and the water, seen across the park the way LCT is seen down the beach. Heights there today are modest, so this is the second tower, the one that takes a rezone fight worth having, after Overlake proves the market. Doctrine in one line: first tower where the code already allows it, second tower where the amenity is, and the downtown cap becomes indefensible somewhere in between.</p>
+
+<p>One more Eastside note for the file: downtown Redmond's 144-foot cap survived the June 2025 zoning consolidation untouched. Nobody defended it as a vision. It simply rolled forward. Caps that roll forward unexamined are exactly what this project exists to put on trial.</p>
+
+</div>
+
+<div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
+  <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute expertise, or join as a member? Tell us who you are and how you want to help.</p>
+  <form onsubmit="return sendInquiry()" style="margin:0;">
+    <input type="text" id="ms-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="ms-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
+    <select id="ms-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
+      <option value="Public Supporter">I want to support this publicly</option>
+      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
+      <option value="Expert/Contributor">I have expertise to contribute</option>
+      <option value="Media">Media inquiry</option>
+      <option value="Other">Other</option>
+    </select><br>
+    <textarea id="ms-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
+    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
+    <span id="ms-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
+  </form>
+</div>
+
+<script>
+(function(){
+  var PASS='maga', COOKIE='tbc_maga_auth';
+  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
+  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
+  function unlock(){document.body.classList.add('tbc-member');}
+  if(getCookie(COOKIE)===btoa(PASS)) unlock();
+  window.tbcTryPw=function(id){
+    var inp=document.getElementById(id);
+    if(inp.value===PASS){setCookie(COOKIE,btoa(PASS),30);unlock();}
+    else{var e=document.getElementById(id+'-err');if(e)e.style.display='block';inp.value='';}
+    return false;
+  };
+})();
+function sendInquiry(){
+  var n=document.getElementById('ms-name').value;
+  var e=document.getElementById('ms-email').value;
+  var t=document.getElementById('ms-type').value;
+  var m=document.getElementById('ms-msg').value;
+  var subj='[Busan Standard] '+t+' - '+n;
+  var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: The Busan Standard\n\n'+(m||'No message.');
+  var a=document.createElement('a');
+  a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
+    +'?subject='+encodeURIComponent(subj)
+    +'&body='+encodeURIComponent(body);
+  a.click();
+  document.getElementById('ms-sent').style.display='inline';
+  return false;
+}
+</script>
+
+</body>
+</html>

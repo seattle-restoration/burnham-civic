@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Gap in the Skyline - BURNHAM CIVIC</title>
+<meta name="description" content="From the two places Seattle actually sees itself, I-5 at SeaTac and the crest of the Ship Canal Bridge, the skyline has a hole between Columbia Center and Rainier Square. Seattle's next tallest building goes exactly there.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header { display: flex; align-items: baseline; justify-content: space-between; }
+h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
+.subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #1e3a5f; padding: 5px 14px; text-decoration: none; font-family: Georgia, serif; }
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+.back { font-size: 12px; margin-bottom: 24px; display: block; }
+h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; font-weight: 400; line-height: 1.15; margin: 0 0 6px; color: #111; letter-spacing: -0.02em; }
+.article-subtitle { font-size: 17px; color: #555; font-style: italic; margin: 0 0 24px; letter-spacing: -0.01em; }
+h2 { font-size: 19px; font-weight: 700; margin: 36px 0 10px; color: #111; letter-spacing: -0.01em; }
+p { margin: 0 0 14px; color: #1a1a1a; }
+.stat-block { padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
+.stat-block p { margin: 4px 0; font-size: 15px; }
+.stat-block strong { font-size: 17px; }
+.diagram { margin: 28px 0; }
+.diagram .caption { font-size: 12px; color: #777; font-style: italic; margin-top: 6px; }
+table.compare { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+table.compare th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #666; border-bottom: 2px solid #1c1917; padding: 6px 8px; }
+table.compare td { padding: 7px 8px; border-bottom: 1px dotted #ddd; vertical-align: top; }
+table.compare td:first-child { font-weight: 700; font-size: 13px; }
+/* === DECO SYSTEM OVERRIDES (sitewide) === */
+.burnham-quote, .stat-block {
+  position: relative !important;
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
+  background-size: 1px 100% !important;
+  background-position: 4px 0 !important;
+  background-repeat: no-repeat !important;
+}
+.burnham-quote::before, .burnham-quote::after,
+.stat-block::before, .stat-block::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before, .stat-block::before { top: 9px; }
+.burnham-quote::after, .stat-block::after { bottom: 9px; }
+/* === MEMBERS GATE === */
+.lockpanel { background:#1e3a5f; padding:20px 24px; margin:32px 0; color:#cbd5e1; }
+.lockpanel .mtag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#fbbf24; color:#1e3a5f; padding:2px 8px; margin-bottom:10px; }
+.lockpanel h3 { font-family:Georgia,serif; font-size:16px; color:#fff; margin:0 0 8px; font-weight:700; }
+.lockpanel ul { margin:0 0 14px 18px; padding:0; font-size:13px; }
+.lockpanel li { margin:3px 0; }
+.lockpanel input[type=password] { font-family:Georgia,serif; font-size:13px; padding:5px 8px; border:1px solid #475569; background:#16304f; color:#fff; width:180px; }
+.lockpanel button { font-family:Georgia,serif; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#1e3a5f; background:#fbbf24; border:none; padding:6px 14px; margin-left:6px; cursor:pointer; }
+.lockpanel .sub-link { font-size:12px; margin-left:12px; }
+.lockpanel .sub-link a { color:#fbbf24; }
+.lockpanel .pw-err { font-size:12px; color:#fca5a5; display:none; margin-top:8px; }
+.members-content { display:none; }
+body.tbc-member .members-content { display:block; }
+body.tbc-member .lockpanel { display:none; }
+.members-content .mbadge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#1e3a5f; color:#fbbf24; padding:2px 8px; margin:24px 0 0; }
+</style>
+<!-- SEO -->
+<link rel="canonical" href="https://burnhamcivic.org/seattle-tallest.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="The Gap in the Skyline - BURNHAM CIVIC">
+<meta property="og:description" content="From I-5 at SeaTac and the crest of the Ship Canal Bridge, Seattle's skyline has a hole between Columbia Center and Rainier Square. The next tallest building goes exactly there.">
+<meta property="og:url" content="https://burnhamcivic.org/seattle-tallest.html">
+<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TBCNewsAction">
+<meta name="twitter:title" content="The Gap in the Skyline - BURNHAM CIVIC">
+<meta name="twitter:description" content="From I-5 at SeaTac and the crest of the Ship Canal Bridge, Seattle's skyline has a hole between Columbia Center and Rainier Square. The next tallest building goes exactly there.">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJC34M3909"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WJC34M3909');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="membership.html" class="subscribe">Subscribe</a>
+</div>
+
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')">Intelligence</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
+</div>
+
+<hr>
+
+<a href="index.html" class="back">&larr; Back to Seattle</a>
+
+<h1 class="article-title">The Gap in the Skyline</h1>
+<div class="article-subtitle">From the two places Seattle actually sees itself, the skyline has a hole in it, right between Columbia Center and Rainier Square. The next tallest building in Seattle goes exactly there. We can show you where to stand.</div>
+
+<p>A skyline is a designed object. Most cities refuse to believe this. They treat the silhouette of their downtown as the accidental sum of forty separate financing decisions, and it shows. The cities that take it seriously, Paris composing its axis, Chicago arranging its wall of towers along the lakefront the way Burnham drew it in 1909, get skylines that read as one deliberate thing from the places people actually see them.</p>
+
+<p>Start with a simpler question: where do people actually see Seattle's skyline? Strip out the helicopter shots and the marketing renderings, and the honest answer is a windshield on Interstate 5, hundreds of thousands of times a day. And from I-5 there are two moments, one coming up from the south and one coming down from the north, when the skyline presents itself whole.</p>
+
+<h2>The Two Vantage Points</h2>
+
+<div class="stat-block">
+  <p><strong>South:</strong> I-5 northbound at SeaTac (47.4265 N, 122.2791 W), twelve miles out. The freeway crests and downtown rises off the horizon for the first time.</p>
+  <p><strong>North:</strong> I-5 southbound at the crest of the Ship Canal Bridge (47.6521 N, 122.3226 W), three miles out. The deck climbs and the whole skyline opens across the water.</p>
+</div>
+
+<p>These are the two front doors of the city. Hundreds of thousands of people pass through them every day. Arriving from the airport, the SeaTac rise is the first time a visitor sees Seattle. Coming home from the north, the Ship Canal crest is the moment the city declares itself. No public space, no park, no viewpoint comes close to the daily audience of these two stretches of freeway.</p>
+
+<p>And from both of them, the skyline says the same thing. Two masts hold the composition up: Columbia Center at 933 feet, the tallest building in Seattle since 1985, and Rainier Square Tower at 850 feet, finished in 2020. They stand about half a mile apart on the downtown spine. From the SeaTac rise they sit nearly in line, a front mast and a back mast. From the Ship Canal crest they frame the center of the view.</p>
+
+<p>Between them: air. A sag in the middle of the composition, visible from both front doors at once. The skyline has a gap where its summit should be.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#f7f7f5;">
+  <!-- ground line -->
+  <line x1="40" y1="240" x2="720" y2="240" stroke="#1c1917" stroke-width="1"/>
+  <!-- skyline silhouette (schematic, from I-5) -->
+  <rect x="120" y="200" width="22" height="40" fill="#c9c5bd"/>
+  <rect x="150" y="185" width="26" height="55" fill="#c9c5bd"/>
+  <rect x="184" y="195" width="18" height="45" fill="#c9c5bd"/>
+  <!-- Rainier Square 850 ft -->
+  <polygon points="230,240 230,120 252,108 262,108 262,240" fill="#8a8580"/>
+  <text x="246" y="100" font-family="Georgia" font-size="11" fill="#1c1917" text-anchor="middle">Rainier Square 850'</text>
+  <!-- THE GAP -->
+  <rect x="290" y="78" width="150" height="162" fill="none" stroke="#991b1b" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="365" y="68" font-family="Georgia" font-size="12" font-weight="bold" fill="#991b1b" text-anchor="middle">THE GAP</text>
+  <text x="365" y="160" font-family="Georgia" font-size="11" font-style="italic" fill="#991b1b" text-anchor="middle">933'+ goes here</text>
+  <!-- mid buildings inside gap, low -->
+  <rect x="300" y="205" width="24" height="35" fill="#c9c5bd"/>
+  <rect x="334" y="190" width="30" height="50" fill="#c9c5bd"/>
+  <rect x="372" y="198" width="22" height="42" fill="#c9c5bd"/>
+  <rect x="402" y="185" width="28" height="55" fill="#c9c5bd"/>
+  <!-- Columbia Center 933 ft -->
+  <polygon points="470,240 470,98 484,90 498,98 498,240" fill="#57534e"/>
+  <text x="484" y="82" font-family="Georgia" font-size="11" fill="#1c1917" text-anchor="middle">Columbia Center 933'</text>
+  <!-- right shoulder -->
+  <rect x="520" y="190" width="24" height="50" fill="#c9c5bd"/>
+  <rect x="552" y="205" width="20" height="35" fill="#c9c5bd"/>
+  <!-- sightline arrows -->
+  <line x1="48" y1="236" x2="285" y2="150" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="712" y1="236" x2="445" y2="150" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="3,3"/>
+  <g transform="translate(48,250)">
+    <rect x="-8" y="-6" width="9" height="9" fill="#1e3a5f" transform="rotate(45)"/>
+    <text x="6" y="16" font-family="Georgia" font-size="10" fill="#1e3a5f">I-5 N at SeaTac, 12 mi</text>
+  </g>
+  <g transform="translate(712,250)">
+    <rect x="-1" y="-6" width="9" height="9" fill="#1e3a5f" transform="rotate(45)"/>
+    <text x="-6" y="16" font-family="Georgia" font-size="10" fill="#1e3a5f" text-anchor="end">I-5 S at Ship Canal crest, 3 mi</text>
+  </g>
+</svg>
+<div class="caption">Schematic elevation of the downtown skyline as composed from the two I-5 vantage points. The two tallest buildings frame a visible gap on the Fourth and Fifth Avenue spine.</div>
+</div>
+
+<h2>Where the Gap Touches the Ground</h2>
+
+<p>Run the sightline from each vantage point through the space between the two towers and the lines land on the same ground: the Fourth and Fifth Avenue spine between Cherry Street and University Street, centered around Fourth and Madison. This is the financial district's old heart, and it is conspicuously underbuilt for the most visible ground in the city.</p>
+
+<p>The city has already seen what belongs there. In 2015, Crescent Heights proposed 4/C at Fourth and Columbia, on the half block between Cherry and Columbia: 1,111 feet and 102 stories, taller than Columbia Center by 178 feet. The FAA issued a notice of presumed hazard in January 2016 over SeaTac and Boeing Field flight paths and recommended 965 feet. The design came back at 1,029 feet and 93 stories. A decade later it remains unbuilt, and the gap remains a gap.</p>
+
+<div class="stat-block">
+  <p><strong>933 ft</strong> Columbia Center, tallest in Seattle since 1985, 41 years and counting</p>
+  <p><strong>850 ft</strong> Rainier Square Tower, 2020</p>
+  <p><strong>1,029 ft</strong> the FAA-shaped envelope already proven out by the 4/C review</p>
+  <p><strong>0</strong> buildings over 933 feet built, started, or permitted</p>
+</div>
+
+<p>That is the whole opportunity in four lines. The zoning in the downtown office core allows the height. The FAA review already established the real ceiling, in the band just above 1,000 feet. The most visible parcels in the city sit in the exact corridor where a summit tower would complete the composition from both freeway approaches at once. Forty-one years is a long time for a city this rich to go without raising its own roofline.</p>
+
+<p>So we went looking for the parcel, and we found two answers. There is a site inside the gap that is already entitled for over 1,000 feet and is on the market right now at a discount to its 2015 price. And when we ran the sightline math properly, block by block, the geometry pointed at an even better piece of ground that nobody is talking about. Both are in the member file, along with the math.</p>
+
+<div class="lockpanel">
+  <span class="mtag">MEMBERS</span>
+  <h3>The Parcel File: Where the Summit Tower Goes</h3>
+  <ul>
+    <li>The sightline math, run block by block, and the bullseye where the two lines cross</li>
+    <li>The visual-height problem: which building actually reads tallest from the north, and the number that beats it</li>
+    <li>The entitled site, its asking price, and why it is below the 2015 basis</li>
+    <li>The full target list, and the FAA picture as it stands today</li>
+  </ul>
+  <form onsubmit="return tbcTryPw('st-pw')" style="margin:0;display:inline;">
+    <input type="password" id="st-pw" placeholder="Member password">
+    <button type="submit">Enter</button>
+    <span class="sub-link"><a href="membership.html">Become a member &rarr;</a></span>
+  </form>
+  <p class="pw-err" id="st-pw-err">Incorrect password.</p>
+</div>
+
+<div class="members-content">
+
+<span class="mbadge">MEMBERS FILE</span>
+<h2>The Bullseye</h2>
+
+<p>Run the centerline of the gap from each vantage point and extend the two lines until they cross. From the SeaTac rise, Columbia Center and Rainier Square sit at bearings of 348.9 and 348.6 degrees, nearly one mast behind the other, and the center of that gap runs straight up the Fourth Avenue spine. From the Ship Canal crest, the same two towers sit at 186.4 and 190.5 degrees, and the centerline of the gap leaves the bridge at 188.5. The two lines intersect at 47.6078 north, 122.3323 west.</p>
+
+<p>That point is the 1100 block of Fourth Avenue, between Spring and Seneca, one block north of the Central Library. Standing on it today: hotels and a parking garage. Mid-rise hospitality, not legacy towers, which makes the bullseye one of the most acquirable pieces of ground in the band. No entitlement exists there, and at this location that is a detail, not a wall, for reasons covered below.</p>
+
+<p>We pulled the county assessor's roll for the block. Four parcels, four owners, and one of them is a gift:</p>
+
+<table class="compare">
+  <tr><th>PIN</th><th>Parcel</th><th>Lot</th><th>Assessed Land</th><th>Assessed Improvements</th></tr>
+  <tr><td>0942000170</td><td>415 Seneca St, the Olympic Hotel parking garage</td><td>28,800 sf</td><td>$46.1M</td><td><strong>$1,000</strong></td></tr>
+  <tr><td>0942000210</td><td>400 Spring St, Executive Hotel Pacific</td><td>8,325 sf</td><td>$13.3M</td><td>$18.3M</td></tr>
+  <tr><td>0942000265</td><td>1100 Fifth Ave, Hotel Vintage</td><td>14,400 sf</td><td>$23.0M</td><td>$14.8M</td></tr>
+  <tr><td>0942000165</td><td>411 Seneca St, the W Seattle</td><td>18,315 sf</td><td>$29.3M</td><td>$138.4M</td></tr>
+</table>
+
+<p>Start with the garage. It covers 28,800 square feet of the most geometrically valuable ground in the city, and the county values the structure on it at one thousand dollars. By the assessor's own arithmetic it is land waiting for a building. Add the two aging hotels on the Spring Street side, the Executive Pacific and the Vintage, and the assembly reaches 51,525 square feet across three owners, a full supertall floor plate, without ever knocking on the W's door. The W and its $138 million of improvements are only in play if someone wants the entire 69,840-square-foot block, and the better answer is that they stay: a 26-story shoulder standing next to the summit, the way Two Union stands next to nothing today.</p>
+
+<p>The fallback assembly is the Monaco side across Fourth: the Kimpton Monaco at 1101 Fourth (19,980 sf), the single-story retail pad at 1119 Fourth, also assessed at one thousand dollars of improvements (3,060 sf), and the small Hotel Seattle at 315 Seneca (3,600 sf). About 26,600 square feet: tighter, cheaper, and still on the line.</p>
+
+<div class="diagram">
+  <img src="_assets/bullseye-overhead.jpg" alt="Plan-style overhead map of downtown Seattle with two sightlines crossing at the bullseye block" style="width:100%;display:block;">
+  <div class="caption">The bullseye, drawn the way Burnham would have drawn it: the two approach sightlines crossing at a single block on the Fourth Avenue spine. Concept plate; bearings and parcels per the brief above.</div>
+</div>
+
+<h2>The Two Union Problem</h2>
+
+<p>Here is the measurement that belongs at the front of every conversation about this project. From the Ship Canal Bridge crest, the building that reads tallest is not Columbia Center. It is Two Union Square: 740 feet, the fifth tallest building in the city. Two Union stands about 600 meters closer to the bridge than Columbia Center and on higher ground at Sixth Avenue, so its roofline tops out at roughly 2.60 degrees of elevation against Columbia's 2.73. A tenth of a degree is below what the eye can resolve at that distance, and Two Union's lit twin arcs take the night outright. Visual height is what a skyline actually is, and by visual height the north front door of Seattle is owned by the number five building.</p>
+
+<p>Worse, or better, depending on your seat: Two Union's bearing from the bridge is 188.6 degrees. It is sitting almost exactly on the gap centerline. The spot where the summit should stand is occupied by a 740-foot building doing an impression of one.</p>
+
+<div class="stat-block">
+  <p><strong>2.73&deg;</strong> Columbia Center's apparent height from the Ship Canal crest</p>
+  <p><strong>2.60&deg;</strong> Two Union Square's, effectively a tie, with the better crown</p>
+  <p><strong>188.6&deg;</strong> Two Union's bearing from the bridge: dead center in the gap</p>
+  <p><strong>~900 ft</strong> at the bullseye block to clearly out-rank Two Union from the north</p>
+  <p><strong>933+ ft</strong> to be the true summit from every direction. Call it 1,000 and the argument ends</p>
+</div>
+
+<p>A tower on the 1100 block of Fourth rises directly behind Two Union's line as seen from the bridge. At 1,000 feet it caps Two Union exactly where Two Union currently fakes the summit, tops Columbia Center from every direction, and completes the composition from the south at the same time. One building fixes both front doors.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 760 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#f7f7f5;">
+  <!-- street grid -->
+  <g stroke="#d6d3cd" stroke-width="1">
+    <line x1="160" y1="50" x2="160" y2="540"/>
+    <line x1="300" y1="50" x2="300" y2="540"/>
+    <line x1="440" y1="50" x2="440" y2="540"/>
+    <line x1="580" y1="50" x2="580" y2="540"/>
+    <line x1="80" y1="80"  x2="700" y2="80"/>
+    <line x1="80" y1="130" x2="700" y2="130"/>
+    <line x1="80" y1="180" x2="700" y2="180"/>
+    <line x1="80" y1="230" x2="700" y2="230"/>
+    <line x1="80" y1="280" x2="700" y2="280"/>
+    <line x1="80" y1="330" x2="700" y2="330"/>
+    <line x1="80" y1="380" x2="700" y2="380"/>
+    <line x1="80" y1="430" x2="700" y2="430"/>
+    <line x1="80" y1="480" x2="700" y2="480"/>
+  </g>
+  <!-- street labels -->
+  <g font-family="Georgia" font-size="9" fill="#a8a29e">
+    <text x="163" y="62">3rd Ave</text>
+    <text x="303" y="62">4th Ave</text>
+    <text x="443" y="62">5th Ave</text>
+    <text x="583" y="62">6th Ave</text>
+    <text x="84" y="76">Union</text>
+    <text x="84" y="126">University</text>
+    <text x="84" y="176">Seneca</text>
+    <text x="84" y="226">Spring</text>
+    <text x="84" y="276">Madison</text>
+    <text x="84" y="326">Marion</text>
+    <text x="84" y="376">Columbia</text>
+    <text x="84" y="426">Cherry</text>
+    <text x="84" y="476">James</text>
+  </g>
+
+  <!-- sightline from SeaTac (south, enters bottom) through bullseye -->
+  <line x1="429" y1="555" x2="346" y2="55" stroke="#1e3a5f" stroke-width="1.6" stroke-dasharray="7,5"/>
+  <!-- sightline from Ship Canal crest (north, enters top right) through Two Union, crossing at bullseye -->
+  <line x1="700" y1="78" x2="180" y2="268" stroke="#1e3a5f" stroke-width="1.6" stroke-dasharray="7,5"/>
+
+  <!-- buildings -->
+  <!-- Rainier Square: 4th-5th, Union-University -->
+  <rect x="305" y="84" width="130" height="42" fill="#8a8580"/>
+  <text x="370" y="104" font-family="Georgia" font-size="10" fill="#fff" text-anchor="middle">RAINIER SQUARE</text>
+  <text x="370" y="117" font-family="Georgia" font-size="10" fill="#fff" text-anchor="middle">850'</text>
+  <!-- Two Union: 6th at Union -->
+  <rect x="585" y="84" width="92" height="42" fill="#8a8580"/>
+  <text x="631" y="104" font-family="Georgia" font-size="10" fill="#fff" text-anchor="middle">TWO UNION</text>
+  <text x="631" y="117" font-family="Georgia" font-size="10" fill="#fff" text-anchor="middle">740'</text>
+  <!-- Central Library -->
+  <rect x="305" y="234" width="130" height="42" fill="#e7e5e0"/>
+  <text x="370" y="258" font-family="Georgia" font-size="9" fill="#78716c" text-anchor="middle">CENTRAL LIBRARY</text>
+  <!-- Columbia Center: 4th-5th, Columbia-Cherry -->
+  <rect x="305" y="384" width="130" height="42" fill="#57534e"/>
+  <text x="370" y="404" font-family="Georgia" font-size="10" fill="#fff" text-anchor="middle">COLUMBIA CENTER</text>
+  <text x="370" y="417" font-family="Georgia" font-size="10" fill="#fff" text-anchor="middle">933'</text>
+  <!-- 701 Fourth: west side of 4th, Columbia-Cherry -->
+  <rect x="228" y="384" width="68" height="42" fill="none" stroke="#57534e" stroke-width="1.2"/>
+  <text x="262" y="403" font-family="Georgia" font-size="8.5" fill="#57534e" text-anchor="middle">701 FOURTH</text>
+  <text x="262" y="414" font-family="Georgia" font-size="8.5" fill="#57534e" text-anchor="middle">entitled 1,029'</text>
+  <!-- Bosa pit: 3rd & Cherry -->
+  <rect x="100" y="434" width="56" height="42" fill="none" stroke="#78716c" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="128" y="453" font-family="Georgia" font-size="8.5" fill="#78716c" text-anchor="middle">3RD &amp; CHERRY</text>
+  <text x="128" y="464" font-family="Georgia" font-size="8.5" fill="#78716c" text-anchor="middle">the pit, 629'</text>
+
+  <!-- THE BULLSEYE: 4th, Seneca-Spring -->
+  <rect x="305" y="184" width="130" height="42" fill="#fbbf24" fill-opacity="0.25" stroke="#991b1b" stroke-width="1.6" stroke-dasharray="5,4"/>
+  <g transform="translate(370,205)">
+    <rect x="-6" y="-6" width="12" height="12" fill="#991b1b" transform="rotate(45)"/>
+  </g>
+  <text x="448" y="200" font-family="Georgia" font-size="11" font-weight="bold" fill="#991b1b">THE BULLSEYE</text>
+  <text x="448" y="214" font-family="Georgia" font-size="9.5" fill="#991b1b">W + Monaco blocks, 1100 4th</text>
+  <text x="448" y="227" font-family="Georgia" font-size="9.5" fill="#991b1b">both sightlines cross here</text>
+
+  <!-- sightline labels -->
+  <g font-family="Georgia" font-size="10" fill="#1e3a5f">
+    <text x="434" y="572">&#8593; sightline from I-5 N at SeaTac, 12 mi south</text>
+    <text x="380" y="70" text-anchor="start"></text>
+    <text x="540" y="155">&#8592; sightline from Ship Canal crest, 3 mi north</text>
+    <text x="540" y="168" font-style="italic" fill="#991b1b">runs straight through Two Union</text>
+  </g>
+
+  <!-- north arrow -->
+  <g transform="translate(720,520)">
+    <line x1="0" y1="18" x2="0" y2="-12" stroke="#1c1917" stroke-width="1.2"/>
+    <polygon points="0,-18 -5,-8 5,-8" fill="#1c1917"/>
+    <text x="0" y="34" font-family="Georgia" font-size="10" fill="#1c1917" text-anchor="middle">N</text>
+  </g>
+</svg>
+<div class="caption">Overhead schematic of the Fourth Avenue band. Grid straightened for legibility; bearings as computed in the brief. The north sightline passes through Two Union before crossing the south sightline at the 1100 block of Fourth.</div>
+</div>
+
+<div class="diagram">
+  <img src="_assets/sightline-south.jpg" alt="View from I-5 northbound at SeaTac with the summit tower rising in the center of the skyline" style="width:100%;display:block;">
+  <div class="caption">The south front door: I-5 northbound at SeaTac, twelve miles out. The summit takes the center of the composition between the two masts. Concept rendering.</div>
+</div>
+
+<div class="diagram">
+  <img src="_assets/sightline-north.jpg" alt="View from the Ship Canal Bridge crest with the summit tower rising directly behind Two Union Square" style="width:100%;display:block;">
+  <div class="caption">The north front door: the Ship Canal crest. The summit rises directly behind Two Union's lit arches, capping the building that fakes the summit today. Concept rendering.</div>
+</div>
+
+<h2>The FAA</h2>
+
+<p>The 4/C entitlement fight established the working ceiling for downtown supertalls in the band just above 1,000 feet, and it was fought in 2016, under a different administration with a different posture toward building anything. The current Department of Transportation is the friendliest environment for a signature American tower in forty years; this is the same department running a national competition to make transportation infrastructure beautiful. An aeronautical review at the bullseye starts fresh, and the bullseye sits farther from the Boeing Field approach path than the 4/C site that already cleared 1,029 feet. The FAA is a process to run, not a reason to shrink the building before anyone has asked.</p>
+
+<h2>The Discount Play: 701 Fourth Avenue</h2>
+
+<p>The west side of Fourth, the half block running from Cherry Street to Columbia Street, directly across from Columbia Center and dead center in the southern half of the gap. This is the 4/C site. Crescent Heights bought it in 2015 for roughly $49 million and spent years pushing the entitlement through design review and the FAA, landing on the 1,029-foot, 93-story envelope after the 2016 presumed-hazard fight.</p>
+
+<p>In 2024 they put it on the market with pricing guidance around $40 million. Read that again: a decade of holding, a completed FAA fight, an entitlement for the tallest building on the West Coast outside California, offered below the 2015 purchase price, with ten years of inflation ignored on top. As of late 2025 there is no construction activity and no announced buyer. The most valuable air rights in the Pacific Northwest are sitting in a broker's deck.</p>
+
+<div class="stat-block">
+  <p><strong>$49M</strong> what Crescent Heights paid in 2015</p>
+  <p><strong>~$40M</strong> the 2024 asking guidance</p>
+  <p><strong>1,029 ft / 93 stories</strong> the FAA-shaped envelope already proven through review</p>
+  <p><strong>0</strong> competing parcels in the gap with an entitlement anywhere near this</p>
+</div>
+
+<h2>What a Buyer Inherits</h2>
+
+<p>The FAA file is the asset. Any new supertall proposal in downtown Seattle starts a multi-year aeronautical review with an uncertain outcome; this parcel already ran that gauntlet and came out with a number. The buyer also inherits the design review record, the half-block assemblage that nobody could reassemble today at this basis, and a position straight across Fourth Avenue from the building it would dethrone.</p>
+
+<p>What it lacks is a story, which is why it has sat. Crescent Heights pitched 4/C as 1,090 residential units in a soft condo market, and the market shrugged. The composition argument sells something bigger: the summit of the skyline, the building that completes the view from both front doors of the city, the first thing four hundred thousand people see every day. Towers with a civic story pre-sell. Towers without one sit in broker decks for a decade. The parcel does not need rezoning. It needs a reason.</p>
+
+<h2>The Target List</h2>
+
+<p>Four pieces of ground decide this, all within six blocks of each other on the Fourth Avenue spine.</p>
+
+<table class="compare">
+  <tr><th>Parcel</th><th>Where</th><th>Status</th><th>The Play</th></tr>
+  <tr>
+    <td>The Bullseye<br>(1100 block of Fourth)</td>
+    <td>Fourth Ave between Spring and Seneca: the W Seattle (1112 Fourth, 26 stories) and Kimpton Monaco (1101 Fourth, 11 stories) blocks</td>
+    <td>No entitlement, no listing, no story attached. Mid-rise hotels on the exact intersection of both sightlines, one block north of the library</td>
+    <td>The perfect site. Assemble the hotel blocks and build the summit where the two lines cross, rising directly behind Two Union from the north view</td>
+  </tr>
+  <tr>
+    <td>701 Fourth Ave<br>(the 4/C site)</td>
+    <td>West side of Fourth, half block from Cherry to Columbia, directly across from Columbia Center</td>
+    <td>Entitled at 1,029 ft / 93 stories with the FAA fight already won. Bought for ~$49M in 2015, listed 2024 around $40M, no announced buyer as of late 2025</td>
+    <td>The summit site. Buy the entitlement at a discount, bring the civic story the last owner never had</td>
+  </tr>
+  <tr>
+    <td>King County Civic Campus<br>(500 Fourth Ave and surrounds)</td>
+    <td>Fourth Ave from James to Yesler, anchored by the County Administration Building</td>
+    <td>Admin Building vacant since 2022. County strategic plan covers roughly seven blocks, with master planning starting in 2025 and up to 7,800 homes floated</td>
+    <td>The south anchor. The county is openly shopping for a vision; the campus rebuild frames the skyline's base from the south approach</td>
+  </tr>
+  <tr>
+    <td>3rd &amp; Cherry<br>(old Civic Square block)</td>
+    <td>The full block across from City Hall</td>
+    <td>Bosa's 57-story, 629-ft condo tower entitled, excavated, and paused since 2022 on cost escalation. The pit is still there</td>
+    <td>The restart. An entitled hole in the ground a block from Columbia Center; at 629 ft it fills the gap's south shoulder while the summit goes up across the street</td>
+  </tr>
+</table>
+
+<p>The geometry favors the bullseye; the balance sheet favors 701 Fourth, where the entitlement is already bought and paid for and the land is on sale below its 2015 basis. Either one works. The bullseye is the perfect building; 701 Fourth is the fast one. The crown, wherever it lands, follows the Modern Deco direction in <a href="redmond-tallest.html">The Busan Standard</a> style file: setback massing, vertical masonry piers, a lit crown designed for the two freeway vantage points, the Ship Canal Bridge crest where it caps Two Union, and every window seat into SeaTac.</p>
+
+</div>
+
+<h2>The Standard</h2>
+
+<p>One condition, and it is not negotiable: the building that fills the gap cannot be another glass box. A summit tower is the city's signature, seen by more people than any other object in Washington State. It follows <a href="material-standard.html">the material standard</a>: masonry and stone at the street, a real crown at the top, a silhouette designed for the two vantage points it will live in. Columbia Center gave Seattle height with a black curtain wall. The next tallest should give Seattle height the way the Smith Tower gave it height in 1914, as a piece of architecture the city is proud to be measured by.</p>
+
+<p>And the freeway is only half the audience. The other half is in the air. Every approach into SeaTac carries a plane full of window seats over this region, and what they see today is gravel roofs and curtain wall, a city that reads as nothing from above. Masonry reads from altitude. A sculpted, lit crown reads from altitude. This is the same case we make in the material standard work: a city you can recognize from the air is a city that markets itself every single day, on every single flight, for free. The summit tower is where that starts.</p>
+
+<h2>What TBC Is Doing</h2>
+
+<p>We are publishing the vantage-point doctrine so the conversation starts from composition, not from parcel-by-parcel accident. We are mapping ownership, entitlement status, and development capacity for every parcel in the Fourth-and-Fifth Avenue band between Cherry and University, building on our <a href="permit-tracker.html">permit tracker</a> and parcel intelligence work. And we are taking the composition case, and the parcel file above, to the development community directly: the FAA ceiling plus the sightline gap define a once-per-century envelope, roughly 1,000 feet of permitted air over the most-watched ground in the Pacific Northwest, waiting for someone with the nerve Seattle had in 1914.</p>
+
+<p>Drive north from the airport and look at the hole in the skyline. Then ask why a city that builds everything else refuses to finish its own silhouette.</p>
+
+<div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
+  <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute expertise, or join as a member? Tell us who you are and how you want to help.</p>
+  <form onsubmit="return sendInquiry()" style="margin:0;">
+    <input type="text" id="ms-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="ms-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
+    <select id="ms-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
+      <option value="Public Supporter">I want to support this publicly</option>
+      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
+      <option value="Expert/Contributor">I have expertise to contribute</option>
+      <option value="Media">Media inquiry</option>
+      <option value="Other">Other</option>
+    </select><br>
+    <textarea id="ms-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
+    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
+    <span id="ms-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
+  </form>
+</div>
+
+<script>
+(function(){
+  var PASS='maga', COOKIE='tbc_maga_auth';
+  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
+  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
+  function unlock(){document.body.classList.add('tbc-member');}
+  if(getCookie(COOKIE)===btoa(PASS)) unlock();
+  window.tbcTryPw=function(id){
+    var inp=document.getElementById(id);
+    if(inp.value===PASS){setCookie(COOKIE,btoa(PASS),30);unlock();}
+    else{var e=document.getElementById(id+'-err');if(e)e.style.display='block';inp.value='';}
+    return false;
+  };
+})();
+function sendInquiry(){
+  var n=document.getElementById('ms-name').value;
+  var e=document.getElementById('ms-email').value;
+  var t=document.getElementById('ms-type').value;
+  var m=document.getElementById('ms-msg').value;
+  var subj='[Gap in the Skyline] '+t+' - '+n;
+  var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: The Gap in the Skyline\n\n'+(m||'No message.');
+  var a=document.createElement('a');
+  a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
+    +'?subject='+encodeURIComponent(subj)
+    +'&body='+encodeURIComponent(body);
+  a.click();
+  document.getElementById('ms-sent').style.display='inline';
+  return false;
+}
+</script>
+
+</body>
+</html>
