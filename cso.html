@@ -181,6 +181,21 @@ p {
 }
 .standard-list li strong { color: #1c1917 !important; }
 .standard-list li.la::before { background: #c8a96e !important; }
+/* === MEMBERS GATE === */
+.lockpanel { background:#1e3a5f; padding:20px 24px; margin:32px 0; color:#cbd5e1; }
+.lockpanel .mtag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#fbbf24; color:#1e3a5f; padding:2px 8px; margin-bottom:10px; }
+.lockpanel h3 { font-family:Georgia,serif; font-size:16px; color:#fff; margin:0 0 8px; font-weight:700; }
+.lockpanel ul { margin:0 0 14px 18px; padding:0; font-size:13px; }
+.lockpanel li { margin:3px 0; }
+.lockpanel input[type=password] { font-family:Georgia,serif; font-size:13px; padding:5px 8px; border:1px solid #475569; background:#16304f; color:#fff; width:180px; }
+.lockpanel button { font-family:Georgia,serif; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#1e3a5f; background:#fbbf24; border:none; padding:6px 14px; margin-left:6px; cursor:pointer; }
+.lockpanel .sub-link { font-size:12px; margin-left:12px; }
+.lockpanel .sub-link a { color:#fbbf24; }
+.lockpanel .pw-err { font-size:12px; color:#fca5a5; display:none; margin-top:8px; }
+.members-content { display:none; }
+body.tbc-member .members-content { display:block; }
+body.tbc-member .lockpanel { display:none; }
+.members-content .mbadge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#1e3a5f; color:#fbbf24; padding:2px 8px; margin:24px 0 0; }
 </style>
 <!-- SEO -->
 <link rel="canonical" href="https://burnhamcivic.org/cso.html">
@@ -306,15 +321,84 @@ p {
 
 <p>The data is public. The locations are published by Seattle Public Utilities. But nobody has put it all in one place and said: this is what the highest drainage rates in the Pacific Northwest are buying you.</p>
 
-<h2>What TBC Is Doing</h2>
+<h2>What Burnham Civic Is Doing</h2>
 
-<p>Burnham Civic has mapped every outfall and is now actively engaging the EPA on consent decree compliance. We are monitoring the city's adherence to every milestone in the modified decree entered May 22, 2025, and every covenant in the $289 million of WIFIA lending on the Ship Canal tunnel.</p>
+<p>This is not a commentary operation. This is a compliance operation, and it has five active workstreams:</p>
+
+<p><strong>1. The outfall map.</strong> We identified and mapped every active CSO outfall in the city, all 82 SPU pipes plus King County's 38, by location, receiving waterway, and affected neighborhood. The city publishes the data in fragments; we put it in one place.</p>
+
+<p><strong>2. The records docket.</strong> We have filed public records requests with Seattle Public Utilities pursuing four specific questions: how the tunnel's costs were allocated, how its contractors were selected, the complete change order history behind the $287 million overrun, and the city's own internal compliance assessments. These requests are in progress, and what comes back gets published.</p>
+
+<p><strong>3. The compliance scorecard.</strong> Every year, SPU files an annual report with state and federal regulators. We read all of it, every table. That is where the 161 overflows came from. That is where the 700-million-gallon green infrastructure admission came from, on page 57. That is where SPU discloses, quietly, that the 20-year moving average at two outfalls it calls "controlled" still exceeds the state performance standard. The 2025 report lands next spring, and we will grade it in public.</p>
+
+<p><strong>4. The EPA channel.</strong> The consent decree was just reopened and modified in May 2025, which means the remaining compliance decisions are live questions sitting on a federal docket, not settled history. We are preparing a formal submission to EPA Region 10 asking for two specific things on every remaining uncontrolled outfall, using a mechanism the EPA has already approved in another city. Members can read exactly what we are asking for, and why it works, in the Operation File below.</p>
+
+<p><strong>5. Neighborhood briefs.</strong> Ballard is first: one pipe, Outfall 152, produced 63 percent of the entire city's 2024 sewage overflow volume, and the neighborhoods above it are precisely where the city's own rebate program pays homeowners to fix the problem at the source. Each basin gets its own brief.</p>
 
 <p>If Seattle falls out of compliance, the consequences are real. WIFIA loans carry federal default provisions. A default finding would give the EPA grounds to assert effective control over the infrastructure projects themselves. Burnham Civic is building the case file to support that intervention if the city's performance warrants it.</p>
 
-<p>We have filed public records requests with Seattle Public Utilities and are pursuing specific questions about project cost allocation, contractor selection, change order history, and the city's internal compliance assessments. These requests are in progress.</p>
+<p>The objective is straightforward: these projects can be delivered at a fraction of their current cost. Chicago built a comparable tunnel for $28 million per mile. Seattle is paying $263 million. Green infrastructure has proven effective at lower cost and with broader community benefit. Under federal oversight, the city would be compelled to pursue it.</p>
 
-<p>The objective is straightforward: these projects can be delivered at a fraction of their current cost. Chicago built a comparable tunnel for $28 million per mile. Seattle is paying $263 million. Green infrastructure alternatives, including the Thornton Creek watershed restoration and the Barton CSO rain gardens in West Seattle, have proven effective at lower cost and with broader community benefit. Under federal oversight, the city would be compelled to pursue them.</p>
+<div class="lockpanel">
+  <span class="mtag">MEMBERS</span>
+  <h3>The Operation File: How the Tunnel Era Ends</h3>
+  <ul>
+    <li>The 2016 federal precedent where the EPA signed off on green infrastructure instead of a tunnel, by name, date, and mechanism</li>
+    <li>The EPA-invented delivery model that put a private operator in control of a county's entire stormwater program, and its ten-year results</li>
+    <li>The target list: the three Seattle outfalls where the gray-to-green flip happens first</li>
+    <li>The exact ask going to EPA Region 10, and the timeline the modified consent decree creates</li>
+  </ul>
+  <form onsubmit="return tbcTryPw('cso-pw')" style="margin:0;display:inline;">
+    <input type="password" id="cso-pw" placeholder="Member password">
+    <button type="submit">Enter</button>
+    <span class="sub-link"><a href="membership.html">Become a member &rarr;</a></span>
+  </form>
+  <p class="pw-err" id="cso-pw-err">Incorrect password.</p>
+</div>
+
+<div class="members-content">
+
+<span class="mbadge">MEMBERS FILE</span>
+<h2>The Precedent: Washington, D.C., January 14, 2016</h2>
+
+<p>Everything Burnham Civic is asking for has already been signed once, by the same federal agencies, in the capital. On January 14, 2016, DC Water, the EPA, the Department of Justice, and the District government signed a modification to the 2005 Clean Rivers consent decree that authorized green infrastructure to control the Piney Branch outfall on Rock Creek <em>instead of building a 9.5 million gallon storage tunnel</em>. Not green as decoration alongside the tunnel. Green instead of the tunnel.</p>
+
+<p>The mechanism matters as much as the outcome. The amended decree required DC Water to submit "practicability assessments" demonstrating what green infrastructure could control in each sewershed. DC Water submitted them for both Rock Creek and the Potomac. The EPA reviewed both and approved the plans: Rock Creek went to a hybrid green-gray approach, and the green portions are built and performing. A federal CSO consent decree is not a tunnel mandate. It is an overflow-reduction mandate, and the EPA has already accepted planted infrastructure as compliance, in writing, under court supervision.</p>
+
+<p>Seattle's consent decree was modified on May 22, 2025. The file is open. The same signature blocks exist. Nobody has put the DC mechanism in front of Region 10 for Seattle's remaining outfalls. That is the gap Burnham Civic exists to close.</p>
+
+<h2>The Vehicle: The EPA's Own Operating Model</h2>
+
+<p>The second piece is who builds and maintains the green infrastructure, because the answer cannot be "the city," and the city has proven it. SPU trained more than 800 green infrastructure contractors since 2009 and kept 20 active. It hit its 700 million gallon target and cut the program's outreach staff the same year. Municipal delivery of distributed infrastructure fails on overhead, procurement friction, and attention span.</p>
+
+<p>The EPA solved this too. It is called a Community-Based Public-Private Partnership, CBP3, a model the EPA's own Region 3 Green Streets program developed. In March 2015, Prince George's County, Maryland signed the first one: a 30-year agreement handing a private partner responsibility for planning, designing, building, and maintaining the county's green stormwater retrofits. The county committed $100 million in the first three years to retrofit 2,000 acres, scoped to 4,000. The private operator carries the asset for its whole life cycle, so it cannot build junk and walk away.</p>
+
+<p>The results, a decade in: county residents perform 63 percent of the work, 79 percent of projects go to local and disadvantaged businesses, more than $179 million in subcontracts to local companies, recognition from the EPA and the White House. The model aligns every incentive the city's current procurement misaligns: speed, unit cost, maintenance, and local jobs.</p>
+
+<p>Put the two pieces together and the play writes itself. The DC mechanism converts tunnel obligations into green infrastructure obligations. The CBP3 model hands delivery to an accountable private operator at a fixed performance price. The EPA invented both. Seattle has adopted neither.</p>
+
+<h2>The Target List</h2>
+
+<table class="comparison-table">
+  <tr><th>Target</th><th>Why It Flips First</th></tr>
+  <tr><td><strong>Outfall 139, Montlake</strong></td><td>Uncontrolled, and SPU's own 2024 report names a possible storage project there that is still unscoped. It is the next gray-vs-green decision in the city, and it has not been made yet. A practicability assessment demanded now lands before the concrete is specified.</td></tr>
+  <tr><td><strong>Outfalls 59 and 68</strong></td><td>SPU's Table 5-8 admits the 20-year moving average at both exceeds the state CSO performance standard even though its permit calls them "controlled." Documented, ongoing noncompliance is the leverage that opens the decree.</td></tr>
+  <tr><td><strong>The Ballard basin (Outfall 152)</strong></td><td>63 percent of the city's 2024 overflow volume from one pipe, in a basin where RainWise already pays homeowners an average $4,800 per installation. This is where distributed green control scales fastest, parcel by parcel, with rebate money that is already budgeted.</td></tr>
+</table>
+
+<h2>The Ask Going to EPA Region 10</h2>
+
+<p>The formal submission Burnham Civic is preparing asks the EPA for two things, both precedented:</p>
+
+<p><strong>First: DC-style green infrastructure practicability assessments on every remaining uncontrolled Seattle outfall</strong>, starting with Montlake, before any further gray storage projects are scoped. The May 2025 modification proves the decree can be amended; the 2016 DC modification proves the EPA will amend a decree in exactly this direction when the assessment supports it.</p>
+
+<p><strong>Second: CBP3 delivery for the green portion of compliance.</strong> The EPA developed the model, recognized its results, and showcases it. Asking Region 10 to push its own agency's delivery model into its own consent decree is the easiest ask in federal environmental practice.</p>
+
+<p>The leverage stack behind the ask: the WIFIA covenants ($289 million on the tunnel, where the EPA is both regulator and lender), the documented Table 5-8 exceedances, the Ecology penalty record, and the change order file as it comes back through public records. The city's answer to "why not green, why not cheaper" has to survive all four at once.</p>
+
+<p>Members who can contribute engineering review, Clean Water Act practice, relationships inside Region 10 or the utilities, or Ballard-basin organizing: use the form below and say so. This file updates as the docket moves.</p>
+
+</div>
 
 <div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
   <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
@@ -335,6 +419,19 @@ p {
 </div>
 
 <script>
+(function(){
+  var PASS='maga', COOKIE='tbc_maga_auth';
+  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
+  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
+  function unlock(){document.body.classList.add('tbc-member');}
+  if(getCookie(COOKIE)===btoa(PASS)) unlock();
+  window.tbcTryPw=function(id){
+    var inp=document.getElementById(id);
+    if(inp.value===PASS){setCookie(COOKIE,btoa(PASS),30);unlock();}
+    else{var e=document.getElementById(id+'-err');if(e)e.style.display='block';inp.value='';}
+    return false;
+  };
+})();
 function sendCso(){
   var n=document.getElementById('cso-name').value;
   var e=document.getElementById('cso-email').value;
