@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build the Second Bridge - BURNHAM CIVIC</title>
+<meta name="description" content="The most-opened drawbridge in America carries a million bike rides a year on six-foot sidewalks. The answer is not to ration the bridge. It is to build its twin: a bike and pedestrian bascule on the east side, in the same 1917 style.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header { display: flex; align-items: baseline; justify-content: space-between; }
+h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
+.subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #1e3a5f; padding: 5px 14px; text-decoration: none; font-family: Georgia, serif; }
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+.back { font-size: 12px; margin-bottom: 24px; display: block; }
+h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; font-weight: 400; line-height: 1.15; margin: 0 0 6px; color: #111; letter-spacing: -0.02em; }
+.article-subtitle { font-size: 17px; color: #555; font-style: italic; margin: 0 0 24px; letter-spacing: -0.01em; }
+h2 { font-size: 19px; font-weight: 700; margin: 36px 0 10px; color: #111; letter-spacing: -0.01em; }
+p { margin: 0 0 14px; color: #1a1a1a; }
+.stat-block { padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
+.stat-block p { margin: 4px 0; font-size: 15px; }
+.stat-block strong { font-size: 17px; }
+/* === DECO SYSTEM OVERRIDES (sitewide) === */
+.burnham-quote, .stat-block {
+  position: relative !important;
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
+  background-size: 1px 100% !important;
+  background-position: 4px 0 !important;
+  background-repeat: no-repeat !important;
+}
+.burnham-quote::before, .burnham-quote::after,
+.stat-block::before, .stat-block::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before, .stat-block::before { top: 9px; }
+.burnham-quote::after, .stat-block::after { bottom: 9px; }
+/* === MEMBERS GATE === */
+.lockpanel { background:#1e3a5f; padding:20px 24px; margin:32px 0; color:#cbd5e1; }
+.lockpanel .mtag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#fbbf24; color:#1e3a5f; padding:2px 8px; margin-bottom:10px; }
+.lockpanel h3 { font-family:Georgia,serif; font-size:16px; color:#fff; margin:0 0 8px; font-weight:700; }
+.lockpanel ul { margin:0 0 14px 18px; padding:0; font-size:13px; }
+.lockpanel li { margin:3px 0; }
+.lockpanel input[type=password] { font-family:Georgia,serif; font-size:13px; padding:5px 8px; border:1px solid #475569; background:#16304f; color:#fff; width:180px; }
+.lockpanel button { font-family:Georgia,serif; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#1e3a5f; background:#fbbf24; border:none; padding:6px 14px; margin-left:6px; cursor:pointer; }
+.lockpanel .sub-link { font-size:12px; margin-left:12px; }
+.lockpanel .sub-link a { color:#fbbf24; }
+.lockpanel .pw-err { font-size:12px; color:#fca5a5; display:none; margin-top:8px; }
+.members-content { display:none; }
+body.tbc-member .members-content { display:block; }
+body.tbc-member .lockpanel { display:none; }
+.members-content .mbadge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#1e3a5f; color:#fbbf24; padding:2px 8px; margin:24px 0 0; }
+</style>
+<!-- SEO -->
+<link rel="canonical" href="https://burnhamcivic.org/fremont-bridge-east.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="Build the Second Bridge - BURNHAM CIVIC">
+<meta property="og:description" content="The most-opened drawbridge in America carries a million bike rides a year on six-foot sidewalks. Build its twin on the east side, same 1917 style, same blue and orange.">
+<meta property="og:url" content="https://burnhamcivic.org/fremont-bridge-east.html">
+<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TBCNewsAction">
+<meta name="twitter:title" content="Build the Second Bridge - BURNHAM CIVIC">
+<meta name="twitter:description" content="The most-opened drawbridge in America carries a million bike rides a year on six-foot sidewalks. Build its twin on the east side, same 1917 style, same blue and orange.">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJC34M3909"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WJC34M3909');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="membership.html" class="subscribe">Subscribe</a>
+</div>
+
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')">Intelligence</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
+</div>
+
+<hr>
+
+<a href="index.html" class="back">&larr; Back to Seattle</a>
+
+<h1 class="article-title">Build the Second Bridge</h1>
+<div class="article-subtitle">The most-opened drawbridge in America carries a million bike rides a year on six-foot sidewalks, and the only idea on the table is to start kicking people off it. There is a better idea. Build its twin.</div>
+
+<p>On June 15, 1917, Seattle opened the Fremont Bridge. It cost $410,000. It was the first double-leaf bascule bridge the city ever built, and it is still there, doing its job, 109 years later. It opens an average of 35 times a day for canal traffic, which makes it the most frequently opened drawbridge in the United States. In 1985 the neighborhood voted on its colors at a street fair and picked blue with orange trim, and the city painted it that way, and that is the bridge everyone in Seattle knows.</p>
+
+<p>It is also completely out of room.</p>
+
+<h2>The Squeeze</h2>
+
+<div class="stat-block">
+  <p><strong>35</strong> openings a day, the most of any drawbridge in America</p>
+  <p><strong>16,953</strong> vehicles crossing per day</p>
+  <p><strong>20,400</strong> weekday bus riders across four routes</p>
+  <p><strong>2,374</strong> bike crossings a day, over 1.1 million rides a year</p>
+  <p><strong>6 feet</strong> of sidewalk at the narrow points, shared by bikes and pedestrians in both directions, against a 10-foot recommended minimum</p>
+</div>
+
+<p>The Fremont Bridge has Seattle's busiest bike crossing. The city installed its first bike counter there in 2012, and by 2019 it was logging 1.12 million rides a year. Every one of those rides happens on a sidewalk that pinches to about six feet, shared with everyone on foot, on a bridge deck that also carries four lanes of traffic and some of the busiest bus corridors in the city.</p>
+
+<p>So the conversation has started, the way it always starts in Seattle. In December 2025 the transit advocates published the proposal you knew was coming: make the Fremont Bridge car-free. Take the four lanes, give them to buses and bikes, and send 17,000 daily drivers to the Aurora Bridge. The arithmetic is earnest and the instinct is familiar. When a piece of infrastructure runs out of capacity, Seattle's reflex is to ration it. Divide the existing asset into thinner and angrier slices and call it progress.</p>
+
+<p>There is another tradition, and it is the one that built the bridge in the first place. In 1917 the city did not ration the ferry. It built a bridge. When capacity ran out, the answer was more capacity. Seattle has not opened a new crossing of the Ship Canal since the I-5 bridge in 1962. Every fight over the Fremont Bridge, every car-free petition and every angry comment thread, is downstream of one fact: for sixty years, nobody has added a single foot of deck across that water.</p>
+
+<h2>The Project</h2>
+
+<p>Burnham Civic proposes a second Fremont Bridge: a dedicated bicycle and pedestrian bascule on the east side of the existing bridge, built in the exact style of the original. Same double-leaf bascule type. Same proportions and counterweight geometry, scaled to a narrower deck. Same tender house detailing. Same blue, same orange trim the neighborhood voted for in 1985. From the water, from Gas Works, from every seat on every boat waiting for the spans to rise, the two bridges read as a matched pair, built a century apart, telling the same story about what this city does when it runs out of room.</p>
+
+<p>The east side is not arbitrary. The Westlake corridor lands at the bridge's southeast approach, and the east sidewalk is already the desire line between Westlake and the Burke-Gilman side of the canal. A new east span picks up that traffic without weaving anyone across Fremont Avenue.</p>
+
+<p>It has to be a bascule because the Ship Canal is a federal navigation channel. A fixed span at the Fremont Bridge's 30-foot closed clearance is not an option, and a fixed span high enough to clear masted traffic would be a freeway ramp through the center of Fremont. A twin bascule matches the existing bridge's openings: one bridge tender, two spans, synchronized lifts. Boats wait once.</p>
+
+<h2>What It Solves</h2>
+
+<p>Everything currently being fought over, without the fight. The existing bridge keeps its four lanes and its 20,400 daily bus riders. The existing sidewalks go back to being sidewalks, where people walk across the canal without a peloton threading through them. Bikes get a full dedicated deck instead of six shared feet. Nobody loses a lane, nobody gets rerouted to Aurora, and the most-opened drawbridge in America gets a twin instead of a diet.</p>
+
+<p>And Fremont, the neighborhood that calls itself the center of the universe, gets the most photographed pair of bridges on the West Coast.</p>
+
+<h2>The Standard</h2>
+
+<p>This project is a test case for a principle that runs through everything Burnham Civic publishes: new infrastructure should be built in the style that made the old infrastructure worth keeping. See <a href="material-standard.html">The Standard Seattle Forgot</a>. The 1917 bridge is beloved because it was built with conviction, painted by referendum, and maintained for a century. Its twin should be designed so that in 2126 nobody can remember which one came first.</p>
+
+<h2>What TBC Is Doing</h2>
+
+<p>We are developing the concept brief, building the cost and precedent file, and assembling the coalition that takes this to SDOT and the Army Corps of Engineers. The working file below is for members.</p>
+
+<p>Seattle built the first one for $410,000 during a world war. The city that did that did not ration sidewalks.</p>
+
+<div class="lockpanel">
+  <span class="mtag">MEMBERS</span>
+  <h3>The Operation File: Second Fremont Bridge</h3>
+  <ul>
+    <li>The precedent file: four modern movable bike and pedestrian bridges and what they cost</li>
+    <li>The permit path: Army Corps, Coast Guard, SDOT, in the right order</li>
+    <li>The funding stack, from the federal bridge programs to a naming gift</li>
+    <li>The coalition map: who on the north bank says yes first</li>
+  </ul>
+  <form onsubmit="return tbcTryPw('fb-pw')" style="margin:0;display:inline;">
+    <input type="password" id="fb-pw" placeholder="Member password">
+    <button type="submit">Enter</button>
+    <span class="sub-link"><a href="membership.html">Become a member &rarr;</a></span>
+  </form>
+  <p class="pw-err" id="fb-pw-err">Incorrect password.</p>
+</div>
+
+<div class="members-content">
+
+<span class="mbadge">MEMBERS FILE</span>
+<h2>The Precedent File</h2>
+
+<p>Movable bike and pedestrian bridges are a solved problem. The Gateshead Millennium Bridge on the Tyne, finished in 2001, tilts open for river traffic and became the most photographed structure in northeast England. Copenhagen opened the Inderhavnsbroen, a sliding bike and pedestrian span across its inner harbor, in 2016, and Cirkelbroen, a swing span, in 2015. Kiel's Hörnbrücke folds. None of these cities agonized about whether a dedicated crossing for people was worth building over working water. They built them, and the bridges became the postcard.</p>
+
+<p>The Fremont version is easier than any of those, because the hard questions are already answered by the bridge standing next to it: span length, clearance, opening protocol, even the paint. Designing the twin is mostly a copying job, and the original 1917 drawings are public record.</p>
+
+<h2>The Permit Path</h2>
+
+<p>The Ship Canal is a federal navigation channel, so the sequence matters. Army Corps of Engineers first, under Section 408, because the canal is their water and their walls. Coast Guard bridge permit second, where the synchronized-opening case carries the argument: a twin that lifts with the existing bridge adds zero new interruptions to navigation. SDOT third, with the approaches and the Westlake and Burke-Gilman connections. The Fremont Chamber and the north-bank owners come before all three in practice, because a neighborhood that shows up unified is the difference between a five-year process and a fifteen-year one.</p>
+
+<h2>The Funding Stack</h2>
+
+<p>The federal Bridge Investment Program and the surface transportation grant programs exist for exactly this: a discrete, photogenic, bike and pedestrian crossing with a freight-relief story. Seattle's 2024 transportation levy is the local match pool. The remainder is the interesting part: a bascule bridge with a tender house is one of the most brandable civic objects a donor can put a name on. The 1917 bridge cost $410,000. A naming gift at the scale Seattle philanthropy spends on a building wing covers the entire design phase of its twin.</p>
+
+<h2>The Coalition Map</h2>
+
+<p>The north bank of the canal at Fremont is held by legacy industrial owners whose families have run that waterfront for generations, and who have watched every recent transportation idea arrive as a plan to take something away from them: a lane, a dock, a parking lot. This project is the opposite, and they should hear it first, before the city does. It adds capacity, honors the 1917 bridge their neighborhood painted by referendum, and makes their waterfront the most photographed industrial frontage on the West Coast. The ask is a letter: the owners of the north bank, the Fremont Chamber, the bike organizations, and the freight interests, all on one page, telling the city to build instead of ration. Nobody has put those four groups on the same page in twenty years. This is the project that does it.</p>
+
+</div>
+
+<div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
+  <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute engineering expertise, or join as a member? Tell us who you are and how you want to help.</p>
+  <form onsubmit="return sendInquiry()" style="margin:0;">
+    <input type="text" id="ms-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="ms-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
+    <select id="ms-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
+      <option value="Public Supporter">I want to support this publicly</option>
+      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
+      <option value="Expert/Contributor">I have expertise to contribute</option>
+      <option value="Media">Media inquiry</option>
+      <option value="Other">Other</option>
+    </select><br>
+    <textarea id="ms-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
+    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
+    <span id="ms-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
+  </form>
+</div>
+
+<script>
+(function(){
+  var PASS='maga', COOKIE='tbc_maga_auth';
+  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
+  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
+  function unlock(){document.body.classList.add('tbc-member');}
+  if(getCookie(COOKIE)===btoa(PASS)) unlock();
+  window.tbcTryPw=function(id){
+    var inp=document.getElementById(id);
+    if(inp.value===PASS){setCookie(COOKIE,btoa(PASS),30);unlock();}
+    else{var e=document.getElementById(id+'-err');if(e)e.style.display='block';inp.value='';}
+    return false;
+  };
+})();
+function sendInquiry(){
+  var n=document.getElementById('ms-name').value;
+  var e=document.getElementById('ms-email').value;
+  var t=document.getElementById('ms-type').value;
+  var m=document.getElementById('ms-msg').value;
+  var subj='[Second Fremont Bridge] '+t+' - '+n;
+  var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: Build the Second Bridge\n\n'+(m||'No message.');
+  var a=document.createElement('a');
+  a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
+    +'?subject='+encodeURIComponent(subj)
+    +'&body='+encodeURIComponent(body);
+  a.click();
+  document.getElementById('ms-sent').style.display='inline';
+  return false;
+}
+</script>
+
+</body>
+</html>
