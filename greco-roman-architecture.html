@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greco-Roman Architecture: A Reader's Course - BURNHAM CIVIC</title>
+<meta name="description" content="A deep, plain-English course on the history of Greek and Roman architecture, from Mycenae to the Pantheon, and how it became the standard for civic building from Jefferson to EO 14344.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #1e3a5f; --gold: #c9a227; --ink: #111; --paper: #fff; --rule: #ccc; --muted: #555; --tint: #f7f7f5; }
+  * { box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.65; letter-spacing: -0.01em; -webkit-font-smoothing: antialiased; }
+  a { color: #00c; }
+  a:visited { color: #551a8b; }
+  a:hover { color: #c00; }
+  .page { display: grid; grid-template-columns: 240px 1fr; gap: 32px; max-width: 1200px; margin: 32px auto; padding: 0 24px; }
+  aside.toc { position: sticky; top: 24px; align-self: start; max-height: calc(100vh - 48px); overflow-y: auto; font-size: 12px; padding-right: 12px; border-right: 1px solid var(--rule); }
+  aside.toc h2 { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy); margin: 0 0 12px; font-weight: 700; }
+  aside.toc ol { list-style: none; padding: 0; margin: 0; counter-reset: section; }
+  aside.toc li { counter-increment: section; margin: 0 0 8px; }
+  aside.toc li::before { content: counter(section, decimal-leading-zero) ". "; color: var(--gold); font-weight: 700; }
+  aside.toc a { color: var(--ink); text-decoration: none; }
+  aside.toc a:hover { color: #c00; text-decoration: underline; }
+  main { max-width: 760px; }
+  .header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+  h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
+  .subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: var(--navy); padding: 5px 14px; text-decoration: none; }
+  .subscribe:hover { background: #2a4a73; }
+  .subscribe:visited { color: #fff; }
+  .nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
+  .nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+  .nav a:hover { color: #c00; }
+  hr { border: none; border-top: 1px solid var(--rule); margin: 16px 0; }
+  .back { font-size: 12px; margin-bottom: 24px; display: block; }
+  h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 42px; font-weight: 400; line-height: 1.1; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .article-subtitle { font-size: 18px; color: var(--muted); font-style: italic; margin: 0 0 28px; letter-spacing: -0.01em; }
+  h2 { font-size: 22px; font-weight: 700; margin: 44px 0 10px; letter-spacing: -0.01em; border-bottom: 1px solid var(--rule); padding-bottom: 6px; scroll-margin-top: 20px; }
+  h3 { font-size: 16px; font-weight: 700; margin: 26px 0 6px; color: #1c1917; }
+  h4 { font-size: 14px; font-weight: 700; margin: 18px 0 4px; color: #1c1917; text-transform: uppercase; letter-spacing: 0.5px; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 4px; }
+  table.brief { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 13px; }
+  table.brief td, table.brief th { border: 1px solid var(--rule); padding: 7px 9px; text-align: left; vertical-align: top; }
+  table.brief th { background: #eee; font-weight: 700; }
+  .note { font-size: 13px; color: var(--muted); }
+  .callout { position: relative; padding: 18px 16px 18px 28px; margin: 24px 0; background: var(--tint); }
+  .callout::before { content: ""; position: absolute; left: 8px; top: 12px; bottom: 12px; width: 2px; background: var(--navy); }
+  .callout p { margin: 4px 0; }
+  .callout em { color: var(--muted); }
+  figure { margin: 28px 0; text-align: center; }
+  figure svg { max-width: 100%; height: auto; }
+  figcaption { font-size: 12px; color: var(--muted); margin-top: 8px; font-style: italic; }
+  .pull { font-family: 'Instrument Serif', Georgia, serif; font-size: 22px; line-height: 1.3; color: var(--navy); padding: 16px 0; margin: 20px 0; border-top: 1px solid var(--navy); border-bottom: 1px solid var(--navy); }
+  .term { font-variant: small-caps; letter-spacing: 0.5px; font-weight: 700; }
+  .greek { font-style: italic; }
+  @media (max-width: 900px) { .page { grid-template-columns: 1fr; } aside.toc { position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--rule); padding-bottom: 16px; margin-bottom: 16px; } main { max-width: none; } }
+</style>
+<link rel="canonical" href="https://burnhamcivic.org/greco-roman-architecture.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="Greco-Roman Architecture: A Reader's Course - BURNHAM CIVIC">
+<meta property="og:description" content="A deep, plain-English course on the history of Greek and Roman architecture, from Mycenae to the Pantheon, and how it became the standard from Jefferson to EO 14344.">
+</head>
+<body>
+
+<div class="page">
+
+<aside class="toc">
+<h2>Contents</h2>
+<ol>
+  <li><a href="#preface">How to Read This</a></li>
+  <li><a href="#before-greece">Before Greece: Mycenae and Minoan Crete</a></li>
+  <li><a href="#geometric">The Geometric Temple, 1000-650 BC</a></li>
+  <li><a href="#orders">The Five Orders, Explained Properly</a></li>
+  <li><a href="#vitruvius">Vitruvius and the Body of the Building</a></li>
+  <li><a href="#plans">Temple Plans: A Grammar</a></li>
+  <li><a href="#acropolis">The Athenian Acropolis</a></li>
+  <li><a href="#beyond-athens">Sanctuaries Beyond Athens</a></li>
+  <li><a href="#western">The Western Greeks: Paestum and Sicily</a></li>
+  <li><a href="#civic-greek">Civic Forms: Agora, Stoa, Theatre, Stadium</a></li>
+  <li><a href="#hellenistic">Hellenistic Scale: Pergamon to Alexandria</a></li>
+  <li><a href="#etruscan">The Etruscan Bridge to Rome</a></li>
+  <li><a href="#republican-rome">Republican Rome Borrows and Edits</a></li>
+  <li><a href="#concrete">The Concrete Revolution</a></li>
+  <li><a href="#arch-vault-dome">Arch, Vault, Dome</a></li>
+  <li><a href="#augustan">Augustan Rome: A City of Marble</a></li>
+  <li><a href="#colosseum">The Colosseum and the Theatre of Power</a></li>
+  <li><a href="#pantheon">The Pantheon</a></li>
+  <li><a href="#baths-basilica">Baths and the Birth of the Basilica</a></li>
+  <li><a href="#urbanism">Roman Urbanism, From Britain to Syria</a></li>
+  <li><a href="#late-antique">Late Antiquity: The Basilica Becomes a Church</a></li>
+  <li><a href="#transmission">Transmission: How the Language Survived</a></li>
+  <li><a href="#renaissance">Renaissance: Alberti and Palladio</a></li>
+  <li><a href="#french-english">French and English Classical</a></li>
+  <li><a href="#american">The American Founders' Choice</a></li>
+  <li><a href="#city-beautiful">McMillan, Burnham, and the City Beautiful</a></li>
+  <li><a href="#break">The 1960s Break</a></li>
+  <li><a href="#now">2025 and the Return</a></li>
+  <li><a href="#further-reading">Further Reading</a></li>
+</ol>
+</aside>
+
+<main>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="index.html" class="subscribe">Home</a>
+</div>
+
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="eo-14344.html">EO 14344</a>
+  <a href="athens-to-america.html">Athens to America</a>
+  <a href="century-gate.html">Century Gate</a>
+</div>
+
+<hr>
+
+<a href="eo-14344.html" class="back">&larr; Back to EO 14344</a>
+
+<h1 class="article-title">Greco-Roman Architecture: A Reader's Course</h1>
+<div class="article-subtitle">Everything you need to read a temple, a forum, a basilica, and a federal courthouse. Twenty-eight sections, written so a citizen can sit down with a coffee and finish in an afternoon.</div>
+
+<h2 id="preface">How to Read This</h2>
+
+<p>This is a reader's course, not a survey. The goal is for you to be able to walk into a museum, a capitol, or a U.S. courthouse, look at a building, and know what the architect did, why he did it, and which two-thousand-year-old conversation he is taking part in. We will move chronologically, from the bronze-age citadels that pre-date Greek temples through the Pantheon, then trace how the visual language survived the fall of Rome and arrived, more or less intact, at the U.S. Capitol and the Seattle of Bogue's 1911 plan.</p>
+
+<p>A few rules of the road. Architecture is a craft before it is an art, and a system before it is a craft. The Greek and Roman builders worked in modular proportions, with parts that fit together like sentences. Once you learn the parts, you stop staring at a building and start reading it. The reading goes faster than people expect because the parts repeat. There are only five orders. There are roughly a dozen common plan types. There is one arch and three families of vault. If you learn those, you have ninety percent of the language.</p>
+
+<p>This essay is the long companion to our <a href="eo-14344.html">primer on Executive Order 14344</a>, which makes classical architecture the federal standard again, and to <a href="athens-to-america.html">Athens to America</a>, which traces the political inheritance. Where those two pages tell you what the policy is and why it has roots in the Founding, this page tells you what the buildings actually are.</p>
+
+<div class="pull">The parts repeat. Once you learn them, you stop staring at a building and start reading it.</div>
+
+<h2 id="before-greece">Before Greece: Mycenae and Minoan Crete</h2>
+
+<p>The Greek temple did not appear from nothing. Two earlier civilizations on Crete and on the Greek mainland had already built monumental architecture, and the Greeks who came after them inherited stone walls, gateways, and a habit of placing important buildings on hills.</p>
+
+<h3>Minoan Crete, ~2000-1450 BC</h3>
+
+<p>The Minoans, named by the archaeologist Arthur Evans after the legendary King Minos, built palace complexes at Knossos, Phaistos, Mallia, and Zakros. These were not palaces in the European sense, with throne rooms and barracks. They were sprawling administrative and ceremonial centers, multi-story, lit by large open courtyards, with workshops, storage magazines, and ceremonial chambers all woven together. The Knossos plan has more than a thousand rooms. The Minoans were the first major culture in the Mediterranean to use columns as a serious architectural element, and their column is an oddity: it tapers downward, wider at the top than at the bottom. They did not write proportions down and we do not know why they did it.</p>
+
+<h3>Mycenaean Greece, ~1600-1100 BC</h3>
+
+<p>The Mycenaean civilization, on the mainland, built fortified citadels on hilltops. Their masonry is the famous <span class="term">cyclopean</span> work, named because later Greeks could not imagine humans had moved the blocks. The Lion Gate at Mycenae, around 1250 BC, is the earliest surviving piece of monumental sculpture in Greece: two lions flanking a column, carved on a triangular stone above a post-and-lintel doorway. That triangular stone is the ancestor of the <span class="term">pediment</span> that will sit over every classical portico for the next three thousand years.</p>
+
+<p>The Mycenaean tomb of choice was the <span class="term">tholos</span>, a beehive-shaped chamber covered by a corbelled stone dome. The Treasury of Atreus, also called the Tomb of Agamemnon, was the largest dome in the world for about fourteen hundred years, until the Pantheon. Both Mycenae and the tholos are the dim memory the Homeric poems are reaching for. When the classical Greeks rediscovered these ruins, they assumed gods had built them.</p>
+
+<p>Then the Bronze Age collapse, around 1200-1100 BC. Palaces burned, populations crashed, the linear-B script was forgotten. Greece entered a four-century gap we call the Dark Age. The civilization that re-emerged would have to invent its architecture nearly from scratch, with only the memory of those cyclopean walls.</p>
+
+<h2 id="geometric">The Geometric Temple, 1000-650 BC</h2>
+
+<p>The first Greek temples were small huts with thatched roofs. We know they existed because later, stone temples copied them in stone. Greek architecture is unusual that way. Many of its strangest features are <span class="term">skeuomorphs</span>, a fancy word meaning a feature that was once functional but is now decorative because the material changed. The Doric frieze, for example, has alternating panels: a grooved one called a <span class="term">triglyph</span> and a plain one called a <span class="term">metope</span>. The triglyph is a stone memory of the end of a wooden beam. The metope is a stone memory of the panel between two beams. The Greeks were so attached to the look of the early wooden temple that, when they switched to stone in the seventh century BC, they kept rendering the wood joinery in marble.</p>
+
+<p>The plan was simple: a long rectangular room called the <span class="term">cella</span> or <span class="greek">naos</span>, with the cult statue inside, fronted by a porch. As temples grew larger, a colonnade was added around the outside, and the building started to feel like the buildings we recognize. The temple of Hera at Olympia, built around 600 BC, was originally wood and replaced piecemeal in stone over centuries. A visitor in the second century AD reported one of the original wooden columns was still standing in the back porch. The transition from wood to stone happened slowly, column by column, while the building stayed in service.</p>
+
+<h2 id="orders">The Five Orders, Explained Properly</h2>
+
+<p>An order is not a style. It is a system. Each order is a complete kit of parts in fixed proportions, running from the base of the column up through its capital and on through the horizontal beams it carries. If you know the diameter of the column at its base, you can derive the height of the column, the width of the entablature above it, the spacing between columns, and the projection of the cornice. The Greeks developed three orders. The Romans added two more, both subtle variations. Together they make the five.</p>
+
+<figure>
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .col { fill: none; stroke: #1e3a5f; stroke-width: 1.5; }
+    .ent { fill: none; stroke: #1e3a5f; stroke-width: 1.5; }
+    .accent { fill: none; stroke: #c9a227; stroke-width: 1.5; }
+    .lbl { font: 700 11px Georgia, serif; fill: #1e3a5f; text-anchor: middle; }
+    .sub { font: 11px Georgia, serif; fill: #555; text-anchor: middle; font-style: italic; }
+  </style>
+
+  <!-- Doric -->
+  <g transform="translate(60,0)">
+    <rect class="ent" x="-30" y="40" width="100" height="22"/>
+    <rect class="col" x="0" y="62" width="40" height="14"/>
+    <path class="col" d="M0,76 Q-2,76 -2,78 L-2,82 Q-2,84 0,84 L40,84 Q42,84 42,82 L42,78 Q42,76 40,76 Z"/>
+    <path class="col" d="M4,84 Q4,200 8,210 L32,210 Q36,200 36,84"/>
+    <line class="col" x1="10" y1="90" x2="10" y2="205"/>
+    <line class="col" x1="14" y1="90" x2="14" y2="205"/>
+    <line class="col" x1="18" y1="90" x2="18" y2="205"/>
+    <line class="col" x1="22" y1="90" x2="22" y2="205"/>
+    <line class="col" x1="26" y1="90" x2="26" y2="205"/>
+    <line class="col" x1="30" y1="90" x2="30" y2="205"/>
+    <line class="accent" x1="0" y1="50" x2="100" y2="50"/>
+    <line class="accent" x1="14" y1="40" x2="14" y2="50"/>
+    <line class="accent" x1="40" y1="40" x2="40" y2="50"/>
+    <line class="accent" x1="66" y1="40" x2="66" y2="50"/>
+    <text class="lbl" x="20" y="240">DORIC</text>
+    <text class="sub" x="20" y="256">Greek mainland</text>
+    <text class="sub" x="20" y="270">no base, fluted</text>
+    <text class="sub" x="20" y="284">echinus + abacus</text>
+  </g>
+
+  <!-- Ionic -->
+  <g transform="translate(220,0)">
+    <rect class="ent" x="-30" y="40" width="100" height="22"/>
+    <path class="col" d="M-8,70 Q-8,76 -2,78 Q10,80 10,76 L30,76 Q30,80 42,78 Q48,76 48,70 Z"/>
+    <circle class="accent" cx="0" cy="74" r="5"/>
+    <circle class="accent" cx="40" cy="74" r="5"/>
+    <path class="col" d="M6,84 L34,84 L34,200 L6,200 Z"/>
+    <line class="col" x1="10" y1="84" x2="10" y2="200"/>
+    <line class="col" x1="14" y1="84" x2="14" y2="200"/>
+    <line class="col" x1="18" y1="84" x2="18" y2="200"/>
+    <line class="col" x1="22" y1="84" x2="22" y2="200"/>
+    <line class="col" x1="26" y1="84" x2="26" y2="200"/>
+    <line class="col" x1="30" y1="84" x2="30" y2="200"/>
+    <ellipse class="col" cx="20" cy="208" rx="18" ry="4"/>
+    <ellipse class="col" cx="20" cy="214" rx="20" ry="4"/>
+    <text class="lbl" x="20" y="240">IONIC</text>
+    <text class="sub" x="20" y="256">Asia Minor</text>
+    <text class="sub" x="20" y="270">volute scrolls</text>
+    <text class="sub" x="20" y="284">slender, base</text>
+  </g>
+
+  <!-- Corinthian -->
+  <g transform="translate(380,0)">
+    <rect class="ent" x="-30" y="40" width="100" height="22"/>
+    <path class="col" d="M4,68 L36,68 L40,86 L0,86 Z"/>
+    <path class="accent" d="M6,86 Q10,76 14,74 M14,74 Q18,78 18,86"/>
+    <path class="accent" d="M22,86 Q26,76 30,74 M30,74 Q34,78 34,86"/>
+    <path class="accent" d="M2,80 Q-2,72 -2,68"/>
+    <path class="accent" d="M38,80 Q42,72 42,68"/>
+    <path class="col" d="M6,86 L34,86 L34,200 L6,200 Z"/>
+    <line class="col" x1="10" y1="86" x2="10" y2="200"/>
+    <line class="col" x1="14" y1="86" x2="14" y2="200"/>
+    <line class="col" x1="18" y1="86" x2="18" y2="200"/>
+    <line class="col" x1="22" y1="86" x2="22" y2="200"/>
+    <line class="col" x1="26" y1="86" x2="26" y2="200"/>
+    <line class="col" x1="30" y1="86" x2="30" y2="200"/>
+    <ellipse class="col" cx="20" cy="208" rx="18" ry="4"/>
+    <ellipse class="col" cx="20" cy="214" rx="20" ry="4"/>
+    <text class="lbl" x="20" y="240">CORINTHIAN</text>
+    <text class="sub" x="20" y="256">Athens / Rome</text>
+    <text class="sub" x="20" y="270">acanthus leaves</text>
+    <text class="sub" x="20" y="284">tallest, most florid</text>
+  </g>
+
+  <!-- Tuscan -->
+  <g transform="translate(540,0)">
+    <rect class="ent" x="-30" y="40" width="100" height="22"/>
+    <rect class="col" x="0" y="62" width="40" height="14"/>
+    <path class="col" d="M2,76 L38,76 L34,88 L6,88 Z"/>
+    <path class="col" d="M8,88 L32,88 L32,200 L8,200 Z"/>
+    <ellipse class="col" cx="20" cy="208" rx="16" ry="4"/>
+    <ellipse class="col" cx="20" cy="214" rx="18" ry="4"/>
+    <text class="lbl" x="20" y="240">TUSCAN</text>
+    <text class="sub" x="20" y="256">Roman (Etruscan)</text>
+    <text class="sub" x="20" y="270">plain Doric</text>
+    <text class="sub" x="20" y="284">no flutes, has base</text>
+  </g>
+</svg>
+<figcaption>The first four orders, capitals to base. Composite (Roman) combines Ionic volutes with Corinthian acanthus and is not drawn here.</figcaption>
+</figure>
+
+<h3>Doric</h3>
+
+<p>The oldest. Greek mainland. Sturdy, almost military. The column has no base. It rises straight from the floor (the <span class="term">stylobate</span>), is carved with twenty shallow flutes (vertical grooves), and ends in a simple cushion-and-slab capital: a round <span class="term">echinus</span> swelling outward, topped by a square <span class="term">abacus</span>. The columns are short and stocky, traditionally four to six diameters tall. The frieze above alternates triglyphs and metopes. The Parthenon is Doric. So is the Lincoln Memorial.</p>
+
+<h3>Ionic</h3>
+
+<p>From the Greek cities of Asia Minor (the western coast of modern Turkey). Slenderer than Doric, eight to nine diameters tall, with a molded base, twenty-four deeper flutes, and a capital with two paired spiral scrolls called <span class="term">volutes</span>. The Ionic frieze is usually continuous rather than divided into panels. The Erechtheion on the Athenian Acropolis is Ionic. So is the Treasury Building in Washington and most of the U.S. Capitol's interior.</p>
+
+<h3>Corinthian</h3>
+
+<p>The youngest of the Greek orders, invented in Athens late in the fifth century BC and made famous by the Roman period. The shaft is the same as Ionic, but the capital is a tall bell wrapped in two rows of carved acanthus leaves with small volutes peeking out at the corners. Vitruvius reports that the sculptor Callimachus invented the form after seeing a basket on a young girl's grave with an acanthus plant growing through it. True or not, the story stuck. The Pantheon's portico is Corinthian. So is the Capitol's exterior, the U.S. Supreme Court, and most American banks built before 1960.</p>
+
+<h3>Tuscan</h3>
+
+<p>The Roman simplification of Doric, attributed to the Etruscans. Plain shaft, no flutes, a base, and a very simple capital. The Romans used Tuscan for utilitarian buildings: warehouses, baths, lower stories of large public buildings. American examples are everywhere because Tuscan is what you reach for when you want classical dignity without expense. Most small-town post offices and courthouses lean Tuscan.</p>
+
+<h3>Composite</h3>
+
+<p>A Roman invention. Take a Corinthian capital, replace the small corner volutes with the large paired volutes of an Ionic capital, and you have Composite. The most florid of the orders, used by the Romans for triumphal arches. The Arch of Titus and the Arch of Septimius Severus in the Roman Forum are Composite.</p>
+
+<div class="callout">
+<p>Once you can name the order on a column, you can read forty percent of a classical building. Doric for gravity, Ionic for elegance, Corinthian for celebration, Tuscan for utility, Composite for victory. Buildings often mix orders by floor: heavy Doric at the ground, lighter Ionic above, ornate Corinthian on top. The Colosseum does this in three superimposed registers.</p>
+</div>
+
+<h2 id="vitruvius">Vitruvius and the Body of the Building</h2>
+
+<p>Sometime in the 20s BC, in the early reign of Augustus, a Roman military engineer named Marcus Vitruvius Pollio wrote a ten-book treatise titled <em>De Architectura</em>. It is the only surviving complete architectural treatise from the ancient world, and it shaped two thousand years of building. Vitruvius was not the most accomplished designer of his era, and we have no buildings we can confidently attribute to him. But he wrote everything down, and he wrote with authority.</p>
+
+<p>Vitruvius gave architecture three jobs, in famous Latin: <span class="term">firmitas</span>, <span class="term">utilitas</span>, <span class="term">venustas</span>. Firmness, usefulness, beauty. A building must stand up, it must serve its function, and it must be beautiful. The order of those three matters. Beauty without firmness is folly. Firmness without beauty is barbarism. Modern architecture often treats beauty as optional or as the result of the other two. Vitruvius treats it as a requirement.</p>
+
+<p>His theory of beauty rests on proportion. The orders, he says, are not arbitrary fashions. They imitate the proportions of the human body. Doric is the proportion of a sturdy man: column height six times the base diameter, just as a man's height is six times the length of his foot. Ionic is the proportion of a matron, more slender, with the volutes as hair curling down. Corinthian is the proportion of a young girl. The capitals echo the head. The flutes echo the folds of a garment. This is the source of the famous <a href="https://en.wikipedia.org/wiki/Vitruvian_Man" target="_blank" rel="noopener">Vitruvian Man</a>, Leonardo's drawing of a body inscribed in a circle and a square, made fifteen hundred years after Vitruvius died, as an illustration of his text.</p>
+
+<p>Vitruvius was rediscovered by Poggio Bracciolini in a Swiss monastery in 1414. His text became the foundation of every Renaissance treatise that followed. Alberti's <em>De Re Aedificatoria</em> (1452), Serlio's seven books (1537-1575), Vignola's <em>Five Orders</em> (1562), and Palladio's <em>Four Books</em> (1570) are all, in one sense, edits of Vitruvius. The Founders read Palladio, and Palladio was reading Vitruvius. The line is direct.</p>
+
+<h2 id="plans">Temple Plans: A Grammar</h2>
+
+<p>If the order is the vocabulary, the plan type is the syntax. Greek temples come in a handful of plan types, named for how many columns sit where. Learn these names and you can read a temple plan instantly.</p>
+
+<figure>
+<svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .cella { fill: #f7f7f5; stroke: #1e3a5f; stroke-width: 1.5; }
+    .colp { fill: #1e3a5f; }
+    .plblbig { font: 700 12px Georgia, serif; fill: #1e3a5f; text-anchor: middle; }
+    .plbl { font: 11px Georgia, serif; fill: #555; text-anchor: middle; font-style: italic; }
+  </style>
+  <!-- in antis -->
+  <g transform="translate(20,20)">
+    <rect class="cella" x="10" y="0" width="60" height="60"/>
+    <circle class="colp" cx="22" cy="48" r="3"/>
+    <circle class="colp" cx="58" cy="48" r="3"/>
+    <text class="plblbig" x="40" y="86">IN ANTIS</text>
+    <text class="plbl" x="40" y="100">two columns</text>
+    <text class="plbl" x="40" y="114">between wall ends</text>
+  </g>
+  <!-- prostyle -->
+  <g transform="translate(140,20)">
+    <rect class="cella" x="10" y="0" width="60" height="46"/>
+    <circle class="colp" cx="18" cy="56" r="3"/>
+    <circle class="colp" cx="32" cy="56" r="3"/>
+    <circle class="colp" cx="48" cy="56" r="3"/>
+    <circle class="colp" cx="62" cy="56" r="3"/>
+    <text class="plblbig" x="40" y="86">PROSTYLE</text>
+    <text class="plbl" x="40" y="100">columns in</text>
+    <text class="plbl" x="40" y="114">front porch only</text>
+  </g>
+  <!-- amphi -->
+  <g transform="translate(260,20)">
+    <rect class="cella" x="10" y="12" width="60" height="46"/>
+    <circle class="colp" cx="18" cy="6" r="3"/>
+    <circle class="colp" cx="32" cy="6" r="3"/>
+    <circle class="colp" cx="48" cy="6" r="3"/>
+    <circle class="colp" cx="62" cy="6" r="3"/>
+    <circle class="colp" cx="18" cy="64" r="3"/>
+    <circle class="colp" cx="32" cy="64" r="3"/>
+    <circle class="colp" cx="48" cy="64" r="3"/>
+    <circle class="colp" cx="62" cy="64" r="3"/>
+    <text class="plblbig" x="40" y="86">AMPHIPROSTYLE</text>
+    <text class="plbl" x="40" y="100">columns on</text>
+    <text class="plbl" x="40" y="114">both short ends</text>
+  </g>
+  <!-- peripteral -->
+  <g transform="translate(380,20)">
+    <rect class="cella" x="14" y="8" width="52" height="48"/>
+    <circle class="colp" cx="8" cy="4" r="2.5"/>
+    <circle class="colp" cx="20" cy="4" r="2.5"/>
+    <circle class="colp" cx="32" cy="4" r="2.5"/>
+    <circle class="colp" cx="44" cy="4" r="2.5"/>
+    <circle class="colp" cx="56" cy="4" r="2.5"/>
+    <circle class="colp" cx="68" cy="4" r="2.5"/>
+    <circle class="colp" cx="8" cy="60" r="2.5"/>
+    <circle class="colp" cx="20" cy="60" r="2.5"/>
+    <circle class="colp" cx="32" cy="60" r="2.5"/>
+    <circle class="colp" cx="44" cy="60" r="2.5"/>
+    <circle class="colp" cx="56" cy="60" r="2.5"/>
+    <circle class="colp" cx="68" cy="60" r="2.5"/>
+    <circle class="colp" cx="8" cy="20" r="2.5"/>
+    <circle class="colp" cx="8" cy="32" r="2.5"/>
+    <circle class="colp" cx="8" cy="44" r="2.5"/>
+    <circle class="colp" cx="68" cy="20" r="2.5"/>
+    <circle class="colp" cx="68" cy="32" r="2.5"/>
+    <circle class="colp" cx="68" cy="44" r="2.5"/>
+    <text class="plblbig" x="40" y="86">PERIPTERAL</text>
+    <text class="plbl" x="40" y="100">single colonnade</text>
+    <text class="plbl" x="40" y="114">all four sides</text>
+  </g>
+  <!-- dipteral -->
+  <g transform="translate(500,20)">
+    <rect class="cella" x="22" y="16" width="36" height="32"/>
+    <g>
+      <circle class="colp" cx="8" cy="4" r="2"/>
+      <circle class="colp" cx="20" cy="4" r="2"/>
+      <circle class="colp" cx="32" cy="4" r="2"/>
+      <circle class="colp" cx="44" cy="4" r="2"/>
+      <circle class="colp" cx="56" cy="4" r="2"/>
+      <circle class="colp" cx="68" cy="4" r="2"/>
+      <circle class="colp" cx="8" cy="12" r="2"/>
+      <circle class="colp" cx="20" cy="12" r="2"/>
+      <circle class="colp" cx="32" cy="12" r="2"/>
+      <circle class="colp" cx="44" cy="12" r="2"/>
+      <circle class="colp" cx="56" cy="12" r="2"/>
+      <circle class="colp" cx="68" cy="12" r="2"/>
+      <circle class="colp" cx="8" cy="52" r="2"/>
+      <circle class="colp" cx="20" cy="52" r="2"/>
+      <circle class="colp" cx="32" cy="52" r="2"/>
+      <circle class="colp" cx="44" cy="52" r="2"/>
+      <circle class="colp" cx="56" cy="52" r="2"/>
+      <circle class="colp" cx="68" cy="52" r="2"/>
+      <circle class="colp" cx="8" cy="60" r="2"/>
+      <circle class="colp" cx="20" cy="60" r="2"/>
+      <circle class="colp" cx="32" cy="60" r="2"/>
+      <circle class="colp" cx="44" cy="60" r="2"/>
+      <circle class="colp" cx="56" cy="60" r="2"/>
+      <circle class="colp" cx="68" cy="60" r="2"/>
+      <circle class="colp" cx="8" cy="20" r="2"/>
+      <circle class="colp" cx="8" cy="28" r="2"/>
+      <circle class="colp" cx="8" cy="36" r="2"/>
+      <circle class="colp" cx="8" cy="44" r="2"/>
+      <circle class="colp" cx="16" cy="20" r="2"/>
+      <circle class="colp" cx="16" cy="28" r="2"/>
+      <circle class="colp" cx="16" cy="36" r="2"/>
+      <circle class="colp" cx="16" cy="44" r="2"/>
+      <circle class="colp" cx="60" cy="20" r="2"/>
+      <circle class="colp" cx="60" cy="28" r="2"/>
+      <circle class="colp" cx="60" cy="36" r="2"/>
+      <circle class="colp" cx="60" cy="44" r="2"/>
+      <circle class="colp" cx="68" cy="20" r="2"/>
+      <circle class="colp" cx="68" cy="28" r="2"/>
+      <circle class="colp" cx="68" cy="36" r="2"/>
+      <circle class="colp" cx="68" cy="44" r="2"/>
+    </g>
+    <text class="plblbig" x="40" y="86">DIPTERAL</text>
+    <text class="plbl" x="40" y="100">double colonnade</text>
+    <text class="plbl" x="40" y="114">all four sides</text>
+  </g>
+</svg>
+<figcaption>Five common Greek temple plan types. The cella, the inner room with the cult statue, is the grey block. The dots are columns. The Parthenon is peripteral. The Temple of Apollo at Didyma is dipteral.</figcaption>
+</figure>
+
+<p>You can further describe a temple by counting the columns across the short end: <span class="term">tetrastyle</span> (four), <span class="term">hexastyle</span> (six), <span class="term">octastyle</span> (eight), <span class="term">decastyle</span> (ten). The Parthenon is an octastyle peripteral Doric temple. That single phrase tells a trained reader almost everything about the plan. You now read it too.</p>
+
+<h2 id="acropolis">The Athenian Acropolis</h2>
+
+<p>If there is a single place to start with classical architecture, it is the rocky hill in the middle of Athens called the Acropolis (literally, "the high city"). Almost everything you have ever seen in a federal courthouse is downstream of the building program Pericles funded there in the third quarter of the fifth century BC.</p>
+
+<p>The backstory matters. In 480 BC the Persians sacked Athens and burned the older temples on the hill. For three decades after the Persian wars, the Athenians left the ruins as a memorial. Then, around 447 BC, Pericles led the Athenian assembly in a decision to rebuild on a scale that has never been matched. The money came partly from the Delian League treasury, which the Athenians had quietly converted into their own. The rebuilding program was politically controversial in its own time. It was also one of the most consequential decisions in the history of civilization.</p>
+
+<h3>The Parthenon, 447-432 BC</h3>
+
+<p>The architects were Ictinus and Callicrates. The sculptor was Phidias. The temple is octastyle (eight columns on the front), peripteral (columns all around), Doric. The cult statue inside was a chryselephantine (gold and ivory) Athena Parthenos forty feet tall. The Parthenon is famous now for its proportions and for the optical refinements its builders applied to make it look perfect to the eye.</p>
+
+<p>The refinements are subtle and astonishing. The stylobate, the platform on which the columns stand, is not flat. It curves gently upward in the middle, by about four inches over its length, because a perfectly flat platform looks like it is sagging. The columns lean inward slightly so that if extended upward they would meet a mile above the roof. The columns swell about a third of the way up, a curvature called <span class="term">entasis</span>, so they do not appear pinched. The corner columns are slightly thicker than the others, because a column silhouetted against the sky looks thinner than one against a wall. Almost every line in the building that you assume is straight is actually a slight curve. These refinements were known to the Greeks, recovered by the Renaissance, lost again, and rediscovered by surveyors in the 1830s with shock and disbelief.</p>
+
+<h3>The Erechtheion, 421-406 BC</h3>
+
+<p>Built across from the Parthenon on the older sacred site. Ionic, on an awkward sloping ground, asymmetrical in plan, with three porches at three levels. The south porch is the famous one: six female figures called <span class="term">caryatids</span> stand in place of columns and carry the roof on their heads. One was looted by Lord Elgin and is now in the British Museum. The other five are in the Acropolis Museum, replaced on the building itself by replicas. The Erechtheion is, deliberately, the lighter and more delicate companion to the masculine Parthenon.</p>
+
+<h3>The Propylaea, 437-432 BC</h3>
+
+<p>The monumental gateway through which a procession entered the Acropolis. Architect: Mnesicles. It is the rare Greek building that mixes orders deliberately: Doric outside, Ionic inside, because the inner colonnade had to span a wider opening and Ionic let the architect use slenderer columns. The Propylaea is the model for every grand entry gate in classical tradition, including the Brandenburg Gate in Berlin and the gateways of the Russell Senate Office Building.</p>
+
+<h3>The Temple of Athena Nike, c. 427-424 BC</h3>
+
+<p>A tiny Ionic gem perched on a bastion just outside the Propylaea. Tetrastyle amphiprostyle. Roughly the size of a one-car garage. Demolished by the Ottomans in the seventeenth century to build a defensive bastion, then painstakingly reconstructed in 1834, 1936, and again in 2000. Each generation has done a slightly better job. It is a reminder that nothing classical comes down to us unmediated. Every ruin has been read, repaired, and partly reimagined by those who came after.</p>
+
+<h2 id="beyond-athens">Sanctuaries Beyond Athens</h2>
+
+<p>Athens gets the attention, but Greek architecture happened in dozens of cities and sanctuaries across the Aegean and beyond. Three matter for the reader.</p>
+
+<h3>Olympia</h3>
+
+<p>The sanctuary of Zeus in the western Peloponnese, home to the original Olympic Games. The Temple of Zeus at Olympia, finished around 457 BC, was the largest Doric temple on the Greek mainland and housed Phidias's other masterpiece, a chryselephantine Zeus enthroned, forty-three feet tall, counted among the Seven Wonders. The statue is lost. The temple was thrown down by an earthquake in late antiquity and its column drums lie scattered today like fallen tree trunks, which is itself a strangely moving sight.</p>
+
+<h3>Delphi</h3>
+
+<p>The sanctuary of Apollo, perched on a steep slope of Mount Parnassus, home to the oracle whose pronouncements decided wars and colonization decisions for centuries. The Temple of Apollo at Delphi was rebuilt several times. The site is a study in how Greek architecture worked with terrain rather than against it. A processional way zig-zagged up the slope, lined with treasuries, small shrines, and votive monuments, each a tiny piece of architecture in its own right. The Athenians built a treasury in pure Doric here around 490 BC to commemorate Marathon. Most surviving Greek small architecture, the things you can study and absorb in an afternoon, lives at Delphi.</p>
+
+<h3>Bassae</h3>
+
+<p>The Temple of Apollo Epicurius at Bassae, in remote Arcadia, was designed around 420 BC by the same Ictinus who designed the Parthenon. It is the temple that combines, for the first time on a single building, all three Greek orders: Doric outside, Ionic columns lining the cella interior, and a single Corinthian column at the back of the cella. That solitary Corinthian column is the earliest known Corinthian capital, and it gave the order its name.</p>
+
+<h2 id="western">The Western Greeks: Paestum and Sicily</h2>
+
+<p>The Greeks colonized southern Italy and Sicily aggressively from the eighth century BC onward and they built temples there even more massive than at home. The colonies were wealthy from grain and trade, and they advertised their devotion to the gods with enormous Doric temples that often stood in pristine landscapes.</p>
+
+<p>The best preserved temples in the entire Greek world are not in Greece. They are at <span class="term">Paestum</span>, south of Naples, where three Doric temples from the sixth and fifth centuries BC stand nearly complete. The Temple of Hera I (mid-sixth century) has the heavy archaic Doric look, columns squat and powerful. The Temple of Hera II, around 460 BC, is so well preserved that Goethe stood in front of it and finally understood what Doric meant. The Temple of Athena, late sixth century, is the smallest of the three and the most refined. To visit Paestum on a quiet morning is the closest a modern person can get to seeing Greek temples as the Greeks did.</p>
+
+<p>In Sicily, the temples of Selinunte and Agrigento are even larger. The Temple of Olympian Zeus at Agrigento, begun around 510 BC, was the largest Doric temple ever attempted, with engaged half-columns sixty feet tall along the exterior walls and giant <span class="term">telamons</span> (male figures equivalent to caryatids) appearing to support the entablature. It was never finished. The temples of Selinunte were thrown down by earthquakes and some have now been reassembled enough to walk through.</p>
+
+<h2 id="civic-greek">Civic Forms: Agora, Stoa, Theatre, Stadium</h2>
+
+<p>Greek architecture was not only temples. The Greeks invented several civic building types that became permanent features of Western city-making.</p>
+
+<h3>Agora</h3>
+
+<p>The agora was the open public square at the center of a Greek city, surrounded by civic and commercial buildings. The Athenian Agora, at the foot of the Acropolis, was the daily working life of the city: lawcourts, market stalls, the council chamber (<span class="term">bouleuterion</span>), the magistrates' offices (the <span class="term">tholos</span>, where they ate and slept on rotation), shrines, and the great north-south <span class="term">Panathenaic Way</span> running through it. Socrates argued there. Plato studied there. The agora is the ancestor of the Roman forum and the medieval town square, and ultimately of every American courthouse green.</p>
+
+<h3>Stoa</h3>
+
+<p>A stoa is a long colonnaded portico, open on one side, that frames the edge of an agora. It gave shade in summer, shelter from rain, and a place to walk and talk. The Stoa Poikile (the Painted Stoa) on the north side of the Athenian Agora was where Zeno taught his philosophy, which is why the school is called <span class="term">Stoicism</span>. The Stoa of Attalos on the east side, built around 150 BC by a king of Pergamon as a gift to Athens, was rebuilt by the American School of Classical Studies at Athens in the 1950s and is the only fully reconstructed Greek building you can walk through.</p>
+
+<h3>Theatre</h3>
+
+<p>The Greek theatre was carved into a hillside in a horseshoe of stone seating around a circular dancing floor called the <span class="term">orchestra</span>, with a stage building (the <span class="term">skene</span>, source of our word "scene") behind it. The acoustics are still astonishing. At Epidaurus, the best preserved Greek theatre, a coin dropped on the stone of the orchestra can be heard in the back row. The Greek theatre invented the basic geometry every American performance hall still uses: the audience wraps around the action in a partial circle.</p>
+
+<h3>Stadium and Hippodrome</h3>
+
+<p>The stadium, a long narrow track for foot races, with seating on the sides and a curved end, was a Greek invention attached to most major sanctuaries. The original at Olympia gave us the word and the unit of length. The hippodrome was the larger version for chariot racing. The Romans inherited both and turned them into the circus and the amphitheatre.</p>
+
+<h2 id="hellenistic">Hellenistic Scale: Pergamon to Alexandria</h2>
+
+<p>Alexander the Great died in 323 BC. His generals carved up his conquests and the resulting kingdoms (Ptolemaic Egypt, Seleucid Syria, Antigonid Macedon, Attalid Pergamon, and others) competed to build on a scale Greece itself had never seen. This is the Hellenistic period, roughly 323-31 BC, and it transformed Greek architecture.</p>
+
+<p>The Hellenistic kingdoms had cash from agriculture, trade, and tribute. They built libraries, museums (the word for the temple of the Muses), royal palaces, gymnasium complexes, fountains, and city plans laid out on grids. The Library of Alexandria, founded by Ptolemy I around 295 BC, was attached to the Mouseion, the original museum. The Pharos of Alexandria, the lighthouse, stood at the harbor entrance four hundred feet high until a series of earthquakes brought it down. The altar of Zeus at Pergamon was a freestanding outdoor altar surrounded by a giant horseshoe of relief sculpture showing the gods fighting the giants. The whole thing was excavated by German archaeologists in the 1870s and reassembled in the Pergamon Museum in Berlin. The Library of Celsus at Ephesus, built around 117 AD, is the photograph everyone knows from Turkey travel posters: a tall, two-story facade with paired columns flanking niches.</p>
+
+<p>The Hellenistic shift was toward theatre, drama, and scale. Architects began to play with effects: deep porches, projecting and recessed wall planes, columns engaged into walls. The Romans inherited all of this. By the time we get to the Pantheon, the architectural imagination had already been stretched by three centuries of Hellenistic kings competing to outdo each other.</p>
+
+<h2 id="etruscan">The Etruscan Bridge to Rome</h2>
+
+<p>Before Rome was Rome, central Italy was Etruscan. The Etruscans had their own civilization, their own language (still mostly undeciphered), their own religion, and their own architecture. The Romans took two things from them that shaped everything after.</p>
+
+<p>First, the arch. The Etruscans were not the first to build true arches (the Mesopotamians had them earlier), but they were the people who passed the technique to Rome. The arch was the engineering breakthrough that let Roman building become Roman.</p>
+
+<p>Second, the temple type. The Etruscan temple was different from the Greek. It sat on a tall <span class="term">podium</span> with steps only at the front, had a deep porch that took up half the building, and faced strongly forward. Greek temples were designed to be approached from any direction. Etruscan temples were designed to be approached frontally, like a stage. The Romans adopted this. Almost every Roman temple, including the Maison Carrée in Nîmes and the Temple of Portunus in Rome, is Etruscan in plan with Greek orders applied to it. That fusion is the basic Roman move: Greek vocabulary on an Etruscan frame.</p>
+
+<h2 id="republican-rome">Republican Rome Borrows and Edits</h2>
+
+<p>The Romans were ruthless borrowers. They had no shame about taking the best of what they found and improving it. From the Greeks they took the orders, the marble, the temple type for the gods, and Vitruvius's theory. From the Etruscans they took the arch and the high-podium temple. From their own builders they got a single material that changed everything.</p>
+
+<p>The Roman Republic (509-27 BC) was, architecturally, a long apprenticeship. Early Republican temples in Rome were modest: the Temple of Portunus near the Tiber, with its Ionic prostyle facade on an Etruscan podium, is a perfect surviving example of the standard Republican type. The forum at the foot of the Palatine grew slowly through the third and second centuries BC, picking up basilicas, shrines, the comitium where the assembly met, and shops.</p>
+
+<p>By the late Republic, Roman generals were sponsoring building programs to advertise themselves. Pompey built the first permanent stone theatre in Rome in 55 BC, attached to a temple of Venus so that the seating could double as the temple's monumental staircase and dodge the old prohibition against permanent theatres. Julius Caesar began the Forum of Caesar and the Basilica Julia. After Caesar's assassination, his heir, Augustus, finished both and then built his own forum next to his great-uncle's, with a Temple of Mars Ultor at the head of it.</p>
+
+<h2 id="concrete">The Concrete Revolution</h2>
+
+<p>The most consequential thing the Romans invented was a material. <span class="term">Opus caementicium</span> is the Roman name for what we now call Roman concrete. It is a mix of lime mortar, water, sand, an aggregate of broken stone or rubble, and, crucially, <span class="term">pozzolana</span>, a volcanic ash from the area around Naples. Pozzolana contains silica and alumina that react with lime to form a cement so strong it actually gets stronger over time, and so durable that two-thousand-year-old Roman concrete piers still stand in the Mediterranean while modern concrete piers fail in fifty years.</p>
+
+<p>Roman concrete changed what a building could be. Greek architecture was an architecture of post-and-lintel: vertical supports carrying horizontal beams. That limits what you can do. You cannot span very far without enormous beams. You cannot enclose vast interior spaces. Roman concrete, poured into wooden forms and reinforced with bricks or stone facing, could be shaped into arches, vaults, and domes. It could hold up enormous interior spaces with no internal columns. It could be poured underwater for harbors and pier foundations. It was, in modern terms, the technology that won the architectural Cold War of the ancient world.</p>
+
+<p>The Romans usually faced their concrete with another material so the building did not look like raw concrete from the outside. Common facings were small irregular stones (<span class="term">opus incertum</span>), small square stones set in a diagonal grid (<span class="term">opus reticulatum</span>), bricks (<span class="term">opus testaceum</span>), and panels of marble. Roman concrete is the structural truth behind a thousand buildings whose surface is something else entirely. The Pantheon, the Baths of Caracalla, the Colosseum's substructures, the warehouse vaults of Ostia: concrete inside, dressed stone or brick outside.</p>
+
+<h2 id="arch-vault-dome">Arch, Vault, Dome</h2>
+
+<p>The arch is the parent. The vault and the dome are its children. If you understand the arch you understand all three.</p>
+
+<figure>
+<svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .stone { fill: #f7f7f5; stroke: #1e3a5f; stroke-width: 1.2; }
+    .key { fill: #c9a227; stroke: #1e3a5f; stroke-width: 1.2; }
+    .ground { stroke: #1e3a5f; stroke-width: 1.5; }
+    .glabel { font: 700 12px Georgia, serif; fill: #1e3a5f; text-anchor: middle; }
+    .gsub { font: 11px Georgia, serif; fill: #555; text-anchor: middle; font-style: italic; }
+  </style>
+  <!-- arch -->
+  <g transform="translate(60,30)">
+    <path class="stone" d="M0,120 L0,80 A60,60 0 0 1 120,80 L120,120 L100,120 L100,80 A40,40 0 0 0 20,80 L20,120 Z"/>
+    <path class="key" d="M52,30 L68,30 L72,46 L48,46 Z"/>
+    <line class="ground" x1="-10" y1="120" x2="130" y2="120"/>
+    <text class="glabel" x="60" y="150">ARCH</text>
+    <text class="gsub" x="60" y="166">stones held by</text>
+    <text class="gsub" x="60" y="180">the keystone</text>
+  </g>
+  <!-- barrel vault -->
+  <g transform="translate(240,30)">
+    <path class="stone" d="M0,120 L0,80 A60,60 0 0 1 120,80 L120,120 Z"/>
+    <path class="stone" d="M20,120 L20,72 A60,60 0 0 1 100,72 L100,120 Z" opacity="0.6"/>
+    <path class="stone" d="M40,120 L40,64 A60,60 0 0 1 80,64 L80,120 Z" opacity="0.3"/>
+    <line class="ground" x1="-10" y1="120" x2="130" y2="120"/>
+    <text class="glabel" x="60" y="150">BARREL VAULT</text>
+    <text class="gsub" x="60" y="166">arch extended</text>
+    <text class="gsub" x="60" y="180">into a tunnel</text>
+  </g>
+  <!-- groin vault -->
+  <g transform="translate(420,30)">
+    <path class="stone" d="M0,120 L0,80 A60,60 0 0 1 120,80 L120,120 Z"/>
+    <path class="stone" d="M30,120 L30,90 A30,30 0 0 1 90,90 L90,120 Z" opacity="0.6"/>
+    <path class="key" d="M55,40 L65,40 L67,52 L53,52 Z"/>
+    <line class="ground" x1="-10" y1="120" x2="130" y2="120"/>
+    <text class="glabel" x="60" y="150">GROIN VAULT</text>
+    <text class="gsub" x="60" y="166">two barrels</text>
+    <text class="gsub" x="60" y="180">cross at right angles</text>
+  </g>
+  <!-- dome -->
+  <g transform="translate(600,30)">
+    <path class="stone" d="M0,120 A60,60 0 0 1 120,120 Z"/>
+    <ellipse class="stone" cx="60" cy="120" rx="60" ry="14"/>
+    <circle class="key" cx="60" cy="80" r="6"/>
+    <line class="ground" x1="-10" y1="134" x2="130" y2="134"/>
+    <text class="glabel" x="60" y="150">DOME</text>
+    <text class="gsub" x="60" y="166">arches rotated</text>
+    <text class="gsub" x="60" y="180">around an axis</text>
+  </g>
+</svg>
+<figcaption>The arch family. Each is the previous shape rotated or extruded. The Pantheon's dome is conceptually a stack of horizontal rings, each ring an arch lying on its back.</figcaption>
+</figure>
+
+<h3>Arch</h3>
+
+<p>The arch is a set of wedge-shaped stones (<span class="term">voussoirs</span>) curved over an opening, locked into place by a top center stone called the <span class="term">keystone</span>. The genius of the arch is that gravity does not push the stones down. It pushes them sideways into each other, which jams the keystone in tighter. An arch wants to fall outward, not down. To stop it, you build a heavy wall on each side or a tied buttress. The arch lets you span much wider openings than any single beam could carry. It is the first major architectural advance over the post-and-lintel system the Greeks worked in for a thousand years.</p>
+
+<h3>Barrel Vault</h3>
+
+<p>Take an arch and run it back into space. The result is a barrel vault: a tunnel covered by a continuous arched ceiling. Barrel vaults can roof very large rectangular rooms with no internal supports. The Romans used barrel vaults for warehouses, the substructures of theatres and amphitheatres, and aqueduct channels.</p>
+
+<h3>Groin Vault</h3>
+
+<p>Cross two barrel vaults at right angles and the result is a groin vault. The four corners now carry all the load, which means the spaces between them, on all four sides, can be opened up. Repeat the groin vault in a grid and you get the great vaulted halls of the Imperial baths and the Basilica of Maxentius, with vast clear interior spaces and tall lateral windows. Every medieval cathedral nave that is not Romanesque is some version of the Roman groin vault, evolved.</p>
+
+<h3>Dome</h3>
+
+<p>Rotate the arch on its vertical axis and you get a hemispherical dome. The forces still want to push outward at the base, so a dome needs a heavy ring or thick walls under it to hold it together. The Romans built domes on circular rooms (rotundas), on octagons (with the dome resolving onto the octagonal walls via transitional shapes), and eventually on squares (which required pendentives, perfected by the Byzantines at Hagia Sophia in the sixth century). The Pantheon is the masterclass.</p>
+
+<h2 id="augustan">Augustan Rome: A City of Marble</h2>
+
+<p>Augustus, the first Roman emperor, ruled from 27 BC to 14 AD. He inherited a city of brick and tufa stone and left, in his famous boast preserved by Suetonius, "a city of marble." The Augustan program is the moment Rome's architecture catches up to Rome's politics.</p>
+
+<p>Augustus did three things at once. He rebuilt old temples that had fallen into disrepair, repaired and expanded the old Forum Romanum, and added his own monumental Forum of Augustus next to Caesar's Forum and the Forum Romanum, anchored by the Temple of Mars Ultor (Mars the Avenger), commemorating his vengeance on Caesar's assassins. The Forum of Augustus, with its towering enclosing wall to seal off the slums of the Subura behind it, was Roman urbanism asserting itself against the chaos of the older city. The Theatre of Marcellus, finished by Augustus in honor of his nephew, gave Rome its first permanent stone theatre.</p>
+
+<p>The Augustan period codified the order system. Greek precedent was studied, sometimes literally measured, and Roman architects standardized proportions in a way that lasted until our own time. The temple-on-podium, frontal, with a deep prostyle porch and Corinthian columns, became the standard Roman religious building. The Maison Carrée at Nîmes, finished around 4-7 AD, is the most perfectly preserved Augustan temple anywhere. Thomas Jefferson saw it in 1787, called himself "nourished by the remains of Roman grandeur," and used it as the explicit model for the Virginia State Capitol at Richmond, which is therefore the first major American building modeled directly on an extant Roman temple. The line from Augustus to Jefferson, in this one case, runs through a single building.</p>
+
+<h2 id="colosseum">The Colosseum and the Theatre of Power</h2>
+
+<p>The Flavian Amphitheatre, which we call the Colosseum because of a colossal statue of Nero that once stood nearby, was begun by Vespasian around 70 AD and finished by his son Titus in 80 AD. It seated roughly fifty thousand spectators. It is the largest amphitheatre ever built and, in raw urban presence, the most influential building in the history of architecture.</p>
+
+<p>The Colosseum is a teaching diagram for how Romans combined orders. The exterior wall has four superimposed registers. The ground floor is Tuscan (or sometimes called Doric in Roman use), the second floor Ionic, the third floor Corinthian, and the fourth, an attic register, has flat Corinthian pilasters punctuated by small windows. The orders progress from heavy to light as the building rises, which is structurally sensible because the lower walls carry more load. This pattern, called the <span class="term">stacked orders</span>, was Roman and was picked up by every Renaissance architect after Alberti's <a href="#" onclick="return false;">Palazzo Rucellai</a> in Florence (1450). When you see a Beaux-Arts bank with Doric ground floor and Corinthian above, you are looking at the Colosseum's grammar.</p>
+
+<p>Structurally, the Colosseum is concrete inside. The vast network of corridors, stairs, and vomitories that let fifty thousand spectators enter and exit in minutes (Romans estimated under fifteen) is a Roman concrete circulation system of an order modern stadium designers still study. The subterranean hypogeum, beneath the arena floor, contained a system of elevators and trap doors that lifted animals and gladiators up to the action. Almost nothing about the building was simple.</p>
+
+<h2 id="pantheon">The Pantheon</h2>
+
+<p>The Pantheon as we have it was built by the emperor Hadrian around 113-125 AD, replacing an earlier temple by Augustus's son-in-law Marcus Agrippa (whose inscription Hadrian preserved on the new pediment). The probable architect was Apollodorus of Damascus, Hadrian's chief engineer, though Hadrian himself was a serious amateur architect and may have had a hand in the design.</p>
+
+<p>The Pantheon does two extraordinary things at once. From the front, it looks like an ordinary Roman temple: an octastyle Corinthian portico on a podium, gable roof, the kind of facade you have already seen at the Maison Carrée. You walk through that portico. Then the building does something completely unprecedented. The rectangle of the portico opens into an enormous circular rotunda, perfectly enclosed under a concrete dome 142 feet across and 142 feet high. The dome's diameter equals the height of the room from floor to oculus. If you complete the sphere downward into the floor, the geometry is exact. The Pantheon is, conceptually, a perfect sphere set inside a cylinder, with a hole at the top.</p>
+
+<p>That oculus, the round hole in the center of the dome twenty-seven feet across, is the only light source. The sun moves through the room over the day as a circular spotlight tracking across walls, columns, and floor. Rain falls through it; the floor is gently sloped with drains. The dome is the largest unreinforced concrete dome ever built and was the largest dome of any kind in the world for thirteen hundred years, until Brunelleschi's dome of Florence Cathedral in 1436. Brunelleschi studied the Pantheon obsessively before attempting Florence.</p>
+
+<p>The Pantheon survived intact because it was converted to a Christian church (Santa Maria ad Martyres) in 609 AD, which protected it from the pillaging that wrecked almost every other major Roman building. The bronze sheathing on the porch ceiling was removed in 1626 by Pope Urban VIII (a Barberini, which gave Romans the famous quip "Quod non fecerunt barbari, fecerunt Barberini" - "what the barbarians did not do, the Barberinis did"). The bronze was melted down for the baldachin in St. Peter's and cannons at Castel Sant'Angelo. The building still stands, still functions, still stuns. Jefferson designed the Rotunda of the University of Virginia (1822-1826) as a half-scale Pantheon. The U.S. Capitol Rotunda is its descendant. Low Library at Columbia, the National Gallery of Art's West Building, the Rhode Island State House, the Jefferson Memorial. The Pantheon is the most copied building in the world.</p>
+
+<div class="callout">
+<p><strong>How to read the Pantheon in two minutes.</strong> Look up. The dome is divided into five horizontal rings of <span class="term">coffers</span> (recessed squares), each ring smaller than the one below it. The coffers are not decoration. They lighten the dome. The concrete gets progressively lighter as it rises (heavy travertine aggregate at the base, light pumice at the top), and the wall gets thinner toward the oculus. The whole structure is a graded composite. The Romans did not know modern statics, but they knew what worked.</p>
+</div>
+
+<h2 id="baths-basilica">Baths and the Birth of the Basilica</h2>
+
+<p>Two Roman building types matter for the long story: the imperial bath, and the basilica.</p>
+
+<h3>Imperial Baths</h3>
+
+<p>The great bath complexes were Rome's people's palaces. The Baths of Trajan (109 AD), Diocletian (306 AD), and Caracalla (216 AD) were not just bathhouses. They were enormous civic centers that included a sequence of progressively heated chambers (cold, warm, hot), exercise yards, libraries, lecture halls, gardens, statuary, and shops. The Baths of Caracalla covered thirty acres and could hold sixteen hundred bathers at a time. The central hall, the <span class="term">frigidarium</span>, was vaulted with three giant groin vaults and was one of the most magnificent interior spaces in the ancient world. Penn Station in New York (McKim, Mead & White, 1910) directly modeled its main waiting room on the frigidarium of Caracalla. It is the closest the modern world has come to that experience, and we tore it down in 1963, which is one of the original wounds Burnham Civic exists to address.</p>
+
+<h3>The Basilica</h3>
+
+<p>The basilica was, originally, a Roman law court and meeting hall. The form: a long rectangular hall with a colonnaded interior dividing it into a central nave and side aisles, a higher central nave with windows above the aisle roofs (a <span class="term">clerestory</span>), and a semicircular <span class="term">apse</span> at one end where the magistrate sat. Roman basilicas: the Basilica Aemilia, the Basilica Julia, the Basilica Ulpia (in Trajan's Forum), and finally the Basilica of Maxentius, the largest vaulted building of antiquity.</p>
+
+<p>When Christianity became the official religion under Constantine in the fourth century, the new church needed a building type. The pagan temple, with its small cella and cult statue inside, was wrong: Christianity was a congregational religion that gathered the whole community indoors to hear the word and share the meal. The Romans took the basilica, kept its plan exactly, replaced the magistrate's throne with the altar, and called it a church. Every Western church for the next sixteen centuries, from Old St. Peter's in Rome through Notre-Dame in Paris through the National Cathedral in Washington, is some descendant of the Roman lawcourt basilica. The American word "basilica," used by the Catholic Church for certain especially honored churches, preserves the Roman name. The English word "court" for a law-court traces back, through several stops, to the same Roman institution.</p>
+
+<h2 id="urbanism">Roman Urbanism, From Britain to Syria</h2>
+
+<p>The Romans did not just build buildings. They built cities, and they built them on a pattern that traveled. The standard Roman colonial city plan was a rectangle, oriented roughly with the cardinal directions, divided by two main streets that crossed at the center: the <span class="term">cardo</span> running north-south and the <span class="term">decumanus</span> running east-west. At their crossing was the forum. Smaller streets divided the rest of the city into rectangular blocks called <span class="term">insulae</span>. There were walls and gates aligned to the two main streets. There was a sewer (the Romans were obsessed with sanitation), an aqueduct bringing water in, a forum with a basilica and a temple, public baths, a theatre, sometimes an amphitheatre, and a port if there was one.</p>
+
+<p>You can stand in modern Pavia, Turin, Florence, Bologna, Vienna, Cologne, Lyon, Barcelona, or London and trace the Roman street grid still underlying the city. The walking distances are still walkable. The forum site is still usually the central square. The cathedral is often where the Roman temple was. Roman colonial planning is one of the most successful planning experiments in history, in part because it is modest, repeatable, and tied to topography only loosely. Burnham knew this. The 1909 Plan of Chicago and the 1903 McMillan Plan of Washington both rest, at bottom, on Roman planning ideas: the long axis, the focal monument at the crossing, the radial diagonal cutting through the grid.</p>
+
+<h2 id="late-antique">Late Antiquity: The Basilica Becomes a Church</h2>
+
+<p>The empire did not collapse in a day. Roman building continued through the fourth and fifth centuries, especially in the eastern half. Constantine moved the capital to Byzantium and renamed it Constantinople in 330 AD. The eastern empire lasted, in continuously diminishing form, until 1453.</p>
+
+<p>The two major Late Antique architectural achievements both happened in Constantinople. The first was Hagia Sophia, finished in 537 AD by the architects Anthemius of Tralles and Isidore of Miletus, both mathematicians as much as architects. Hagia Sophia put a vast central dome on a square base by inventing or perfecting <span class="term">pendentives</span>, the curved triangular surfaces that transition from a square room below to a round dome above. The dome is one hundred feet across and floats over the central worship space with a band of windows around its base, so that visitors reported it appeared to be hung from heaven by a golden chain. The Ottomans converted it to a mosque in 1453 and added the four minarets. It is one of the great buildings on earth.</p>
+
+<p>The second major Late Antique strand was the development of the basilica as the standard Christian church plan, from Old St. Peter's in Rome (begun 319 AD) through Santa Sabina in Rome (422 AD) through the churches of Ravenna in the fifth and sixth centuries, including San Vitale (548 AD), where the basilica geometry began to fuse with the central plan ideas Hagia Sophia developed in Constantinople. From these roots Byzantine, Romanesque, and Gothic architecture all grew.</p>
+
+<h2 id="transmission">Transmission: How the Language Survived</h2>
+
+<p>The western Roman empire collapsed in the late fifth century, and with it went the resources to build at Roman scale. What happened to classical architecture in the eight centuries that followed is a story of preservation in fragments.</p>
+
+<p>Monasteries kept building manuscripts. Charlemagne, crowned emperor in Rome in 800 AD, deliberately revived Roman building forms in his Carolingian capital at Aachen. His palace chapel there, finished around 805 AD, is an octagon based on San Vitale at Ravenna, which Charlemagne had visited and admired. The Carolingian renaissance was modest in output but it kept the chain alive. Romanesque architecture, beginning in the eleventh century, was an explicit return to Roman vaulting and Roman wall heaviness, applied at a smaller scale.</p>
+
+<p>Then Gothic, beginning at the Abbey of Saint-Denis north of Paris around 1140, broke decisively from the classical language. The pointed arch, the ribbed vault, the flying buttress, the wall replaced by stained glass: Gothic was a new visual order. For three centuries the classical language went quiet in northern Europe, though it never fully left Italy. Roman ruins were always there, still visible. Italian architects never forgot how to read them.</p>
+
+<p>Then the rediscovery. In 1414 Poggio Bracciolini, a papal secretary at the Council of Constance, found a complete manuscript of Vitruvius in a monastery library in Saint Gall, Switzerland. He copied it and sent it back to Florence. Within a generation, Florentine architects were measuring Roman ruins systematically and building in conscious revival of classical forms. The Renaissance had begun.</p>
+
+<h2 id="renaissance">Renaissance: Alberti and Palladio</h2>
+
+<p>Two figures matter most for the long American story.</p>
+
+<h3>Leon Battista Alberti, 1404-1472</h3>
+
+<p>Florentine humanist, athlete, mathematician, codebreaker (he wrote one of the first treatises on cryptography), and, in middle age, architect. Alberti wrote <em>De Re Aedificatoria</em>, the first architectural treatise of the Renaissance, around 1452. It was modeled on Vitruvius but written in better Latin and organized more clearly. Alberti's buildings included the facade of Santa Maria Novella in Florence, the Palazzo Rucellai (which introduced the stacked orders pattern from the Colosseum into Renaissance domestic architecture), and the Tempio Malatestiano in Rimini. Alberti made the move that mattered: he argued that classical proportion was a universal rational order, available to any educated man, not a regional Italian style.</p>
+
+<h3>Andrea Palladio, 1508-1580</h3>
+
+<p>Vicentine. Stonemason apprenticed at thirteen. Discovered as a young man by the humanist Gian Giorgio Trissino, who gave him the classical name Palladio (after Pallas Athena) and brought him to Rome to study ruins. Palladio went on to design the villas, palaces, churches, and a basilica of Vicenza and the Veneto that, in their cumulative effect, did more to spread classical architecture than any other single body of work.</p>
+
+<p>Palladio's <em>Four Books of Architecture</em>, published in Venice in 1570, presented the orders with measured drawings of his own designs, of antiquities, and of theoretical buildings. It was the architectural pattern book the rest of the world would use for two and a half centuries. The Villa Rotonda (begun 1567), a perfectly symmetrical building with four identical Ionic temple-front porticos facing the four directions, was so admired that Thomas Jefferson cited it directly when designing Monticello. The Villa Foscari, the Villa Emo, the Villa Barbaro: Palladio set the template for the American country house and for thousands of plantation, university, and federal buildings that followed.</p>
+
+<p>The English architect Inigo Jones (1573-1652) brought Palladio's books and drawings back to England and built Palladian buildings in London (the Banqueting House, 1622). The eighteenth-century English Palladian movement, led by Lord Burlington and his protege William Kent, in turn fed America. Jefferson's Monticello and the University of Virginia are explicitly Palladian. Most American statehouses through 1900 are Palladian. The form lasted because it works.</p>
+
+<h2 id="french-english">French and English Classical</h2>
+
+<p>The French strand. Louis XIV's Versailles (begun 1661, expanded over decades) was the dominant building of seventeenth-century Europe, a vast palace and gardens conceived as a single composition. The east front of the Louvre, designed by Claude Perrault in 1667, presented a long, strong, sober colonnade that became the model for serious civic architecture across Europe. The French school built engineering academies and pattern books that influenced American civic architecture through the Ecole des Beaux-Arts in the nineteenth century. By the time we get to the Beaux-Arts era in America (roughly 1880-1930), the dominant influence on the U.S. Capitol additions, on the great train stations, and on the libraries and museums is French Beaux-Arts classicism filtered through American architects who trained in Paris.</p>
+
+<p>The English strand. Christopher Wren (1632-1723), trained as a mathematician and astronomer, became Surveyor of the King's Works after the Great Fire of London in 1666 and designed fifty-two London churches and St. Paul's Cathedral (1675-1710). St. Paul's combines a Palladian classical exterior with a Baroque dome conceived as a deliberate response to St. Peter's in Rome. James Gibbs (1682-1754) designed St. Martin-in-the-Fields in London (1721-1726), whose tower-over-portico pattern was copied in hundreds of American churches. Gibbs's <em>Book of Architecture</em> (1728) was the most-used pattern book in colonial America. If your American hometown has a white-spired church on the green, the spire descends from Gibbs.</p>
+
+<h2 id="american">The American Founders' Choice</h2>
+
+<p>The American Founders were classically educated. Jefferson read Greek, Latin, French, Italian, and Spanish. He owned Palladio's Four Books in three different editions. He read Vitruvius. He was an amateur architect of genuine skill. When the Continental Congress decided in 1791 that the new federal city would be built on the Potomac, the question of what its buildings should look like was, for Jefferson and the small circle around him, not really a question. The Roman Republic was the model. Therefore the buildings would be classical.</p>
+
+<p>Jefferson designed the Virginia State Capitol (1785-1788) on the explicit model of the Maison Carrée, after seeing the original in Nîmes in 1787. The U.S. Capitol design competition of 1792 was won by William Thornton, an amateur from the British Virgin Islands, with a classical scheme that Jefferson personally endorsed. Construction passed through Benjamin Latrobe and Charles Bulfinch, both classicists, and the Capitol assumed its eventual form, with the great cast-iron dome by Thomas U. Walter, between 1855 and 1866. The dome is consciously the Pantheon, doubled and lifted on a drum. The interior of the U.S. Capitol Rotunda is the Pantheon rendered in the iron and plaster of nineteenth-century American technique. The line is direct.</p>
+
+<p>Other Founder-era buildings: the White House (James Hoban, won the design competition with a Georgian Palladian scheme based on Leinster House in Dublin); the original Capitol's wings and chambers (Latrobe); the U.S. Treasury (Robert Mills, 1836-1842, Greek Revival with a long Ionic colonnade); the Patent Office (Mills, 1836); the Old Post Office (Mills again, 1839). For half a century, almost every important federal building in Washington was designed by men consciously working in the classical inheritance. Jefferson called these buildings "the cradle of our infant republic."</p>
+
+<h2 id="city-beautiful">McMillan, Burnham, and the City Beautiful</h2>
+
+<p>By the late nineteenth century the United States had grown rich, urbanized, and ambitious enough to attempt classical building at the European scale. The triggering event was the World's Columbian Exposition of 1893 in Chicago. The director of works was Daniel Burnham. The chief consulting architect was Frederick Law Olmsted. Together they staged an entire temporary city of plaster classical buildings, painted white, along a lagoon, and twenty-seven million Americans came to see it.</p>
+
+<p>The fair launched the City Beautiful movement. American cities began planning monumental civic centers, parkways, and waterfronts in coordinated classical schemes. The McMillan Plan of 1901-1902 reorganized the Mall in Washington, removed the railroad tracks that had been laid across it, and reconstituted L'Enfant's original 1791 vision in monumental classical terms. The Lincoln Memorial (Henry Bacon, 1922) at the western end of the Mall is a Doric temple of the Parthenon proportions. The Jefferson Memorial (John Russell Pope, 1943) at the southern end is a half-scale Pantheon. Union Station (Burnham himself, 1908) is a Beaux-Arts temple of transit, modeled on the Baths of Diocletian.</p>
+
+<p>Burnham extended the work to Chicago with the 1909 Plan of Chicago, codified in <a href="#" onclick="return false;">Wacker's Manual</a> (1911), the eighth-grade civic textbook that taught the plan to a generation of Chicago schoolchildren. Burnham's Cleveland Group Plan (1903), San Francisco Plan (1905), and Manila plan (1905) all worked in similar vocabulary. Other cities followed. The Seattle Bogue Plan of 1911, voted down by referendum in 1912, was Seattle's missed opportunity to participate. The argument for why the city should have approved it, and what was lost when it did not, is the subject of much of what Burnham Civic is doing today.</p>
+
+<h2 id="break">The 1960s Break</h2>
+
+<p>From the 1930s onward, modernism gradually displaced classicism as the default for American civic building. The Bauhaus emigres, the International Style, Mies van der Rohe at IIT and the Seagram Building, Le Corbusier's influence on government work: the architectural profession's leaders, its schools, and its prizes all pivoted away from classical practice. For a long time you could still hire a competent classical architect; by the 1980s you sometimes could not. Federal courthouse design from roughly 1962 onward was given over almost entirely to modernist and brutalist schemes. Boston City Hall (1968), the J. Edgar Hoover FBI Building (1975), the U.S. Tax Court Building (1974), the Robert C. Weaver HUD Headquarters (1968): these are the federal buildings of the break.</p>
+
+<p>It is worth being precise about what the break was. Classicism did not lose because it failed. It lost because the architectural profession declared it dead, withdrew its teaching from most schools, and refused to credential new practitioners in it. The buildings the public asked for were not the buildings the schools were producing. The polling data on this is consistent and bipartisan, decade after decade. The 2020 Harris poll for the National Civic Art Society found that seventy-two percent of Americans preferred classical to modernist for new federal buildings. Most architects polled differently. For a long time the architects' preferences won at the design-jury table.</p>
+
+<h2 id="now">2025 and the Return</h2>
+
+<p>Executive Order 14344, signed August 28, 2025, makes traditional and classical architecture the preferred style for federal courthouses, agency headquarters, and large federal buildings, and makes classical architecture the default in Washington, D.C., absent exceptional circumstances. It applies to courthouses anywhere, all federal buildings in the National Capital Region, and any federal building costing more than fifty million dollars. The order names six classical styles (Neoclassical, Georgian, Federal, Greek Revival, Beaux-Arts, Art Deco) and six broader traditional styles. It revives the spirit of a 2020 order that had been revoked in 2021.</p>
+
+<p>The order, as a piece of policy, is short and simple. As a piece of cultural argument, it is doing something larger. It is restoring the federal government to the architectural language the Founders chose on purpose, the language we have just spent twenty-eight sections walking through. The Mycenaean Lion Gate's triangular slab over the door is the same triangular slab on the pediment of the U.S. Capitol. The Doric column at Paestum is the same Doric column at the Lincoln Memorial. The Pantheon's dome is the Jefferson Memorial's dome. The basilica's apse is the courthouse's bench. The forum's cardo and decumanus are the great avenues of Washington and the streets of every Roman colonial town from London to Aleppo.</p>
+
+<p>The reader who has come this far can now walk through the next federal courthouse, capitol, library, or museum in your city and read it. You can name the order. You can identify the plan type. You can see the stacked-orders pattern on a facade and recognize the Colosseum's grammar in a modern bank. You can know that the dome above your head, if you are standing in Washington, is the third great dome in the line: Pantheon to Florence to here. The buildings are a conversation. You are now part of it.</p>
+
+<div class="pull">The buildings are a conversation. You are now part of it.</div>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<p>If you want to go deeper, in order of accessibility.</p>
+
+<h4>Start here</h4>
+<ul>
+  <li><strong>John Summerson, <em>The Classical Language of Architecture</em></strong> (1963). A short book of six lectures originally given on BBC radio. The single best introduction.</li>
+  <li><strong>Robert Adam, <em>Classical Architecture: A Complete Handbook</em></strong> (1990). Illustrated, comprehensive, written by a working classical architect.</li>
+  <li><strong>Henry Hope Reed, <em>The Golden City</em></strong> (1959, rev. 1971). The classic American polemic for classical architecture's revival. Short, vivid, still in print.</li>
+</ul>
+
+<h4>Greek</h4>
+<ul>
+  <li><strong>A. W. Lawrence, <em>Greek Architecture</em></strong> (Pelican History of Art, multiple revised editions). The standard scholarly survey.</li>
+  <li><strong>J. J. Pollitt, <em>Art and Experience in Classical Greece</em></strong> (1972). The cultural context, beautifully written.</li>
+  <li><strong>John Boardman, <em>Greek Art</em></strong> (Thames & Hudson World of Art series, multiple editions). Compact, well illustrated.</li>
+</ul>
+
+<h4>Roman</h4>
+<ul>
+  <li><strong>Frank Sear, <em>Roman Architecture</em></strong> (1982, revised 1989). The standard one-volume survey.</li>
+  <li><strong>William L. MacDonald, <em>The Architecture of the Roman Empire</em></strong> (two volumes, 1965 and 1986). The most thorough modern treatment.</li>
+  <li><strong>William L. MacDonald, <em>The Pantheon: Design, Meaning, and Progeny</em></strong> (1976). One building, deeply read.</li>
+  <li><strong>Vitruvius, <em>The Ten Books on Architecture</em></strong>. Multiple translations available; the Morris Hicky Morgan version is in the public domain and free on Project Gutenberg.</li>
+</ul>
+
+<h4>Renaissance and after</h4>
+<ul>
+  <li><strong>Andrea Palladio, <em>The Four Books of Architecture</em></strong>. Available in multiple editions; the Tavernor and Schofield translation (1997) is the modern standard. Also free on archive.org in the older Ware translation.</li>
+  <li><strong>Rudolf Wittkower, <em>Architectural Principles in the Age of Humanism</em></strong> (1949). How the Renaissance read the Romans.</li>
+  <li><strong>James Ackerman, <em>Palladio</em></strong> (1966). The classic critical biography.</li>
+</ul>
+
+<h4>American</h4>
+<ul>
+  <li><strong>Carroll William Westfall and Robert Jan van Pelt, <em>Architectural Principles in the Age of Historicism</em></strong> (1991). The continuity argument, written by Notre Dame's classical theorists.</li>
+  <li><strong>Allan Greenberg, <em>George Washington, Architect</em></strong> (1999). The Founding-era classical case.</li>
+  <li><strong>Steven W. Semes, <em>The Future of the Past</em></strong> (2009). Historic preservation and new classical work in dialogue.</li>
+</ul>
+
+<h4>The deepest one book</h4>
+<ul>
+  <li><strong>Mark Wilson Jones, <em>Principles of Roman Architecture</em></strong> (2000). If you want to understand what the Romans actually did proportion-wise, this is the technical bible.</li>
+</ul>
+
+<hr>
+
+<p class="note">Compiled June 2026. Cross-references throughout to the other Burnham Civic pages: <a href="eo-14344.html">EO 14344</a>, <a href="athens-to-america.html">Athens to America</a>, <a href="century-gate.html">Century Gate</a>. The companion file on people, the classical architecture network that EO 14344 elevated, is <em>EO-14344-Architecture-Leads.md</em> in the Fundraising folder.</p>
+
+</main>
+</div>
+
+</body>
+</html>
