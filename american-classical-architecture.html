@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>American Classical Architecture: A Reader's Course - BURNHAM CIVIC</title>
+<meta name="description" content="From Jefferson at Monticello through Bulfinch, Mills, McKim, Burnham, Bacon, and Pope, to the 1960s break and the 2025 return. The buildings of the Republic and the men who built them.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #1e3a5f; --gold: #c9a227; --ink: #111; --paper: #fff; --rule: #ccc; --muted: #555; --tint: #f7f7f5; }
+  * { box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.65; letter-spacing: -0.01em; -webkit-font-smoothing: antialiased; }
+  a { color: #00c; }
+  a:visited { color: #551a8b; }
+  a:hover { color: #c00; }
+  .page { display: grid; grid-template-columns: 240px 1fr; gap: 32px; max-width: 1200px; margin: 32px auto; padding: 0 24px; }
+  aside.toc { position: sticky; top: 24px; align-self: start; max-height: calc(100vh - 48px); overflow-y: auto; font-size: 12px; padding-right: 12px; border-right: 1px solid var(--rule); }
+  aside.toc h2 { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy); margin: 0 0 12px; font-weight: 700; }
+  aside.toc ol { list-style: none; padding: 0; margin: 0; counter-reset: section; }
+  aside.toc li { counter-increment: section; margin: 0 0 8px; }
+  aside.toc li::before { content: counter(section, decimal-leading-zero) ". "; color: var(--gold); font-weight: 700; }
+  aside.toc a { color: var(--ink); text-decoration: none; }
+  aside.toc a:hover { color: #c00; text-decoration: underline; }
+  main { max-width: 760px; }
+  .header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+  h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
+  .subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: var(--navy); padding: 5px 14px; text-decoration: none; }
+  .subscribe:hover { background: #2a4a73; }
+  .subscribe:visited { color: #fff; }
+  .nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
+  .nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+  .nav a:hover { color: #c00; }
+  hr { border: none; border-top: 1px solid var(--rule); margin: 16px 0; }
+  .back { font-size: 12px; margin-bottom: 24px; display: block; }
+  h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 42px; font-weight: 400; line-height: 1.1; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .article-subtitle { font-size: 18px; color: var(--muted); font-style: italic; margin: 0 0 28px; letter-spacing: -0.01em; }
+  h2 { font-size: 22px; font-weight: 700; margin: 44px 0 10px; letter-spacing: -0.01em; border-bottom: 1px solid var(--rule); padding-bottom: 6px; scroll-margin-top: 20px; }
+  h3 { font-size: 16px; font-weight: 700; margin: 26px 0 6px; color: #1c1917; }
+  h4 { font-size: 14px; font-weight: 700; margin: 18px 0 4px; color: #1c1917; text-transform: uppercase; letter-spacing: 0.5px; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 4px; }
+  table.brief { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 13px; }
+  table.brief td, table.brief th { border: 1px solid var(--rule); padding: 7px 9px; text-align: left; vertical-align: top; }
+  table.brief th { background: #eee; font-weight: 700; }
+  .note { font-size: 13px; color: var(--muted); }
+  .callout { position: relative; padding: 18px 16px 18px 28px; margin: 24px 0; background: var(--tint); }
+  .callout::before { content: ""; position: absolute; left: 8px; top: 12px; bottom: 12px; width: 2px; background: var(--navy); }
+  .callout p { margin: 4px 0; }
+  figure { margin: 28px 0; text-align: center; }
+  figure svg { max-width: 100%; height: auto; }
+  figcaption { font-size: 12px; color: var(--muted); margin-top: 8px; font-style: italic; }
+  .pull { font-family: 'Instrument Serif', Georgia, serif; font-size: 22px; line-height: 1.3; color: var(--navy); padding: 16px 0; margin: 20px 0; border-top: 1px solid var(--navy); border-bottom: 1px solid var(--navy); }
+  .term { font-variant: small-caps; letter-spacing: 0.5px; font-weight: 700; }
+  @media (max-width: 900px) { .page { grid-template-columns: 1fr; } aside.toc { position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--rule); padding-bottom: 16px; margin-bottom: 16px; } main { max-width: none; } }
+</style>
+<link rel="canonical" href="https://burnhamcivic.org/american-classical-architecture.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="American Classical Architecture: A Reader's Course - BURNHAM CIVIC">
+<meta property="og:description" content="From Jefferson at Monticello to EO 14344. Two hundred and fifty years of the buildings of the Republic.">
+</head>
+<body>
+
+<div class="page">
+
+<aside class="toc">
+<h2>Contents</h2>
+<ol>
+  <li><a href="#preface">How to Read This</a></li>
+  <li><a href="#colonial">Before the Republic: Colonial Foundations</a></li>
+  <li><a href="#jefferson">Thomas Jefferson, the Amateur of Consequence</a></li>
+  <li><a href="#monticello">Monticello</a></li>
+  <li><a href="#virginia-capitol">The Virginia State Capitol</a></li>
+  <li><a href="#uva">The University of Virginia</a></li>
+  <li><a href="#lenfant">L'Enfant and the Plan of the Capital</a></li>
+  <li><a href="#white-house">Hoban and the White House</a></li>
+  <li><a href="#thornton-capitol">Thornton and the Original Capitol</a></li>
+  <li><a href="#latrobe">Benjamin Latrobe, the First Professional</a></li>
+  <li><a href="#bulfinch">Charles Bulfinch and the New England Federal</a></li>
+  <li><a href="#mills">Robert Mills and the Federal Office Building</a></li>
+  <li><a href="#greek-revival">The Greek Revival, 1820-1860</a></li>
+  <li><a href="#walter">Thomas U. Walter and the Iron Dome</a></li>
+  <li><a href="#civil-war-pause">The Civil War Pause</a></li>
+  <li><a href="#richardson">Richardson and the Romanesque Interlude</a></li>
+  <li><a href="#columbian">The 1893 World's Columbian Exposition</a></li>
+  <li><a href="#mckim">McKim, Mead and White</a></li>
+  <li><a href="#burnham">Daniel Burnham, the City Planner</a></li>
+  <li><a href="#mcmillan">The McMillan Plan and the Mall</a></li>
+  <li><a href="#carrere-hastings">Carrere and Hastings, the New York Library</a></li>
+  <li><a href="#gilbert">Cass Gilbert and the Supreme Court</a></li>
+  <li><a href="#pope">John Russell Pope</a></li>
+  <li><a href="#bacon">Henry Bacon and the Lincoln Memorial</a></li>
+  <li><a href="#state-capitols">State Capitols, 1880-1935</a></li>
+  <li><a href="#wpa">WPA Federal Classical</a></li>
+  <li><a href="#break">The 1962 Break: Moynihan and the Modernist Turn</a></li>
+  <li><a href="#penn-station">The Demolition of Penn Station</a></li>
+  <li><a href="#drought">The Sixty-Year Drought</a></li>
+  <li><a href="#return">2025 and the Return</a></li>
+  <li><a href="#further-reading">Further Reading</a></li>
+</ol>
+</aside>
+
+<main>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="index.html" class="subscribe">Home</a>
+</div>
+
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="greco-roman-architecture.html">Greco-Roman</a>
+  <a href="renaissance-architecture.html">Renaissance</a>
+  <a href="eo-14344.html">EO 14344</a>
+</div>
+
+<hr>
+
+<a href="renaissance-architecture.html" class="back">&larr; Previous: Renaissance Architecture</a>
+
+<h1 class="article-title">American Classical Architecture: A Reader's Course</h1>
+<div class="article-subtitle">Two and a half centuries of the buildings of the Republic, from Jefferson's drafting table at Monticello to Executive Order 14344, with the men who built them and the moments when the tradition almost did not survive.</div>
+
+<h2 id="preface">How to Read This</h2>
+
+<p>This is the third chapter of a three-part reading course. The <a href="greco-roman-architecture.html">first chapter</a> covered where the classical language came from. The <a href="renaissance-architecture.html">second chapter</a> followed it from the rediscovery of Vitruvius in 1414 through Palladio's Four Books in 1570 and the arrival of the language in England through Inigo Jones. This chapter picks up in the British North American colonies in the 1730s and follows the tradition forward to today.</p>
+
+<p>The American classical story has a particular shape. It begins as a colonial inheritance, becomes the conscious choice of the Founders, broadens into a national style through the nineteenth century, peaks around 1900-1935 in the City Beautiful and Beaux-Arts era, suffers a sixty-year decline through the modernist period, and is restored, in policy if not yet in completed projects, by Executive Order 14344 in 2025. Most readers know parts of this story. The point of this chapter is to give you the whole thing in one read.</p>
+
+<p>A few practical notes. American classical architecture is not one style. It is a family of styles, all of which trace to the same Greco-Roman root through the same Palladian filter, but each of which has its own period flavor. We will distinguish among <strong>Colonial</strong> (1700-1780), <strong>Federal</strong> (1780-1830), <strong>Greek Revival</strong> (1820-1860), <strong>Beaux-Arts</strong> (1880-1935), and <strong>Stripped Classical</strong> or <strong>WPA Federal</strong> (1930-1942). Each name describes a particular set of preferences within the larger tradition. If you can tell them apart, you can date most American public buildings to within a generation just by looking at them.</p>
+
+<h2 id="colonial">Before the Republic: Colonial Foundations</h2>
+
+<p>The American colonies built in wood and brick versions of what they remembered from England. For the first century of settlement, the buildings were vernacular: New England saltboxes, Tidewater Virginia hall-and-parlor houses, Dutch farmhouses in New York and New Jersey. Architecture as a conscious profession barely existed. Builders worked from carpenter's manuals and from memory.</p>
+
+<p>This began to change after 1700 as the colonies grew wealthy enough to import English architectural pattern books. The single most important book in American colonial architecture was James Gibbs's <em>A Book of Architecture</em>, published in London in 1728. Gibbs gave colonial builders measured drawings for churches, country houses, garden temples, and ornamental details. Almost every important American colonial church and country house between 1730 and 1780 owes something to Gibbs. St. Michael's Church in Charleston (1761), Christ Church in Cambridge (1760), Christ Church in Alexandria (1773), and dozens of New England meeting houses are downstream of him.</p>
+
+<p>The other essential pattern book was William Salmon's <em>Palladio Londinensis</em> (1734), a builder's adaptation of Palladio's classical orders for English carpenters. Through Salmon and his many imitators, Palladian proportions reached small-town American carpenters who would never see a real Palladio plate. The carpenter who built the Charleston single house with its tiered piazzas, or the Boston tradesman who built the Beacon Hill town houses, was working from Salmon-derived dimensions.</p>
+
+<p>The grandest pre-Revolutionary American houses were built by Southern planters: <strong>Westover</strong> in Virginia (William Byrd II, c. 1750), <strong>Drayton Hall</strong> in South Carolina (c. 1742), <strong>Stratford Hall</strong> (c. 1738, ancestral home of the Lees), and Washington's <strong>Mount Vernon</strong> (rebuilt and expanded 1758-1778). All four are Palladian compositions: symmetrical central block, balanced wings, classical detail, set in landscape. Washington designed the Mount Vernon expansion himself, with pattern books on his desk.</p>
+
+<h2 id="jefferson">Thomas Jefferson, the Amateur of Consequence</h2>
+
+<p>Thomas Jefferson (1743-1826) was the most consequential amateur architect in American history. He was not the most original, not the most prolific, and not the most professionally trained. What he was was the most thoughtful. He read Palladio in three editions, owned Vitruvius in Latin, traveled to France and Italy as ambassador in the 1780s, and personally designed every building he commissioned. His buildings are not perfect, but they are arguments. Each of them is making a case about what an American building should be.</p>
+
+<p>Jefferson's architectural conviction had four parts. First, the model should be Roman, because the Roman Republic was the political model for the American one. Second, the buildings should be made of brick or stone, not wood, because permanence mattered for civic statement. Third, the proportions should be Palladian, because Palladio had given the most lucid and teachable account of the orders. Fourth, the buildings should be habitable, not just monumental, because American republicanism was about citizens living their daily lives, not subjects gathering in palaces. Every Jefferson building reflects all four convictions.</p>
+
+<h2 id="monticello">Monticello</h2>
+
+<p>Jefferson began Monticello in 1769 on a hill outside Charlottesville. He was twenty-six. The first version, a two-story Palladian villa with a two-story portico, was built between 1770 and 1784. Then Jefferson went to Paris as minister to France from 1784 to 1789, where he encountered French Neoclassical architecture, particularly the Hotel de Salm (now the Legion of Honor building), which had a low silhouette dominated by a hemispherical dome.</p>
+
+<p>When Jefferson came back from Paris, he tore most of his existing house down and rebuilt it. The second version, finished in 1809, is the Monticello we know: a low single-story silhouette (the second floor is hidden behind a high cornice), a Doric portico on each long facade, and the famous low Pantheon-derived dome rising from the center. Inside, the rooms are arranged in a tightly orchestrated sequence. The entrance hall is decorated as a kind of museum with Indian artifacts Lewis and Clark brought back. The parlor has a parquet floor of Jefferson's own design. The dining room has a dumbwaiter built into the fireplace mantel. The whole house is a working architectural laboratory in which Jefferson was constantly testing ideas.</p>
+
+<p>Monticello is not great architecture in the strict critical sense. The proportions are sometimes awkward, the sequence is sometimes forced, the elevations are eccentric. But Monticello is the first American building that was conceived as a sustained argument. It claims, building-as-text, that a free citizen of a republic can build a house that is at once practical and Palladian, agricultural and learned, American and Roman. The argument is still legible.</p>
+
+<h2 id="virginia-capitol">The Virginia State Capitol</h2>
+
+<p>In 1785, while Jefferson was minister to France, the Virginia legislature wrote to ask him to send back a design for a new state capitol building. Jefferson went to Nimes in southern France to study the <strong>Maison Carree</strong>, the small Roman temple from around 4-7 AD that had survived nearly intact (Augustus's grandson Lucius had dedicated it). Jefferson called himself in a letter "an Hypochondriac Englishman, attacked by the cholic, who had stayed there two whole hours, examining all its beauties, with the most enraptured attention." He commissioned the French neoclassicist Charles-Louis Clerisseau to help him develop drawings.</p>
+
+<p>The Virginia State Capitol, built in Richmond between 1785 and 1788, is the first major American building modeled directly on a specific ancient Roman building. It is a Roman temple, hexastyle Ionic, on a high podium, with the cella stretched into a longer rectangle to accommodate the legislative chambers inside. Jefferson substituted Ionic for the Maison Carree's Corinthian, partly because Ionic was easier to carve and partly because he thought Ionic better suited a republican legislature than the more royal Corinthian.</p>
+
+<p>The Virginia Capitol broke the colonial pattern. Before Jefferson, state capitols were Georgian houses scaled up. After Jefferson, the state capitol became a Roman temple, and other states followed: Massachusetts (1797, Bulfinch), Connecticut (1796), North Carolina (1840), Tennessee (1859, Strickland), Ohio (1861), Mississippi (1903). The Virginia State Capitol established the type.</p>
+
+<h2 id="uva">The University of Virginia</h2>
+
+<p>Jefferson's last architectural project, begun in 1817 when he was seventy-four and finished in 1826, the year he died, was the University of Virginia in Charlottesville. He called it "the Academical Village." The plan is one of the great American architectural compositions.</p>
+
+<p>Picture a long rectangular lawn, framed on three sides by buildings. Down each long side, ten two-story brick <strong>pavilions</strong> alternate with single-story <strong>student rooms</strong>, all joined by a continuous covered colonnade. Each pavilion is a different Palladian or Roman composition, modeled on a different ancient building, intended as a kind of three-dimensional textbook of the orders. The Lawn slopes gently downhill. At the head of the Lawn stands the <strong>Rotunda</strong>, Jefferson's half-scale version of the Pantheon, built of brick with a white-painted wooden dome, housing the library at the symbolic center of the university.</p>
+
+<p>The Lawn is the most influential piece of American campus planning. The campus quadrangle, opening at one end onto a major building (the library or chapel) and forming an academic-village community along its sides, is the standard American university plan, and it descends from Jefferson's UVA. Stanford, the University of Washington's Drumheller Fountain axis, the Texas A&M quad, and a hundred others trace lineage here. Jefferson designed the buildings in collaboration with Benjamin Latrobe and William Thornton, who reviewed his drawings and suggested refinements. The result is the most coherent classical campus in the world.</p>
+
+<div class="pull">The Lawn is the most influential piece of American campus planning. The standard American university plan, the academic quadrangle opening onto a library, descends from Jefferson's UVA.</div>
+
+<h2 id="lenfant">L'Enfant and the Plan of the Capital</h2>
+
+<p>In 1790, Congress chose a site on the Potomac for a new federal capital. President Washington appointed Pierre Charles L'Enfant (1754-1825), a French-born engineer who had fought in the Revolution as a Continental Army major, to lay out the city. L'Enfant produced a plan in 1791 that fused two traditions: the Roman grid of cardo and decumanus and the radial-diagonal pattern of Baroque French city planning, particularly Versailles's gardens and Louis XIV's reorganization of Paris.</p>
+
+<p>L'Enfant's plan put the Capitol on a hill at the eastern end and the President's House (later White House) about a mile and a half to the northwest, with a great processional avenue (Pennsylvania Avenue) connecting them at an oblique angle. From each of the two anchor buildings, diagonal avenues radiated out to dozens of public squares and parks. The diagonals cut across a regular grid of east-west and north-south streets, producing the distinctive Washington pattern of diagonal avenues named for states and a grid of numbered and lettered streets.</p>
+
+<p>L'Enfant was dismissed in 1792 after fights with the commissioners (he was notoriously difficult to work with), but his plan survived in essential form. It was nearly lost to neglect through the nineteenth century, when railroad tracks were laid across the Mall and the original axis was obscured by clutter, but it was restored by the McMillan Plan of 1901-1902 (covered below). The Washington we walk through today is L'Enfant's Washington. The plan is one of the great urban designs of the Western tradition, a synthesis of Roman regularity and Baroque grandeur, executed at continental scale.</p>
+
+<h2 id="white-house">Hoban and the White House</h2>
+
+<p>The 1792 design competition for the President's House was won by James Hoban (1758-1831), an Irish-born architect who had trained in Dublin and emigrated to Charleston. Hoban's design was based on Leinster House in Dublin (now the seat of the Irish parliament), a Palladian country mansion built in the 1740s. The President's House, finished in 1800 and burned by the British in 1814, was rebuilt by Hoban afterward to essentially the same design. The familiar white-painted stone (the source of the name "White House," which became official only in 1901) was painted to seal the masonry and was kept after the rebuild.</p>
+
+<p>The White House is, architecturally, the most modest of the founding-era federal buildings. It is a country house, in the Anglo-Irish Palladian manner, transplanted to America. Subsequent additions (Latrobe's porticos, completed 1829, and the West Wing and Oval Office added in 1902 by McKim, Mead and White) have refined but not changed the basic Palladian composition. The South Portico is Latrobe's. The North Portico is Hoban's. The interior was redesigned several times, most consequentially by Truman in 1948-1952, but the building you see is essentially what Hoban built.</p>
+
+<h2 id="thornton-capitol">Thornton and the Original Capitol</h2>
+
+<p>The 1792 design competition for the Capitol was won by William Thornton (1759-1828), a physician, inventor, and amateur architect born in the British Virgin Islands and trained in Scotland. Thornton had no formal architectural training. He submitted a design after the competition deadline and after the initial winning entry had been judged inadequate. Jefferson endorsed Thornton's design enthusiastically: "simple, noble, beautiful, excellently distributed."</p>
+
+<p>Thornton's plan was for a building with two legislative wings flanking a domed central rotunda. The central dome was modeled on the Pantheon. The legislative chambers were modeled on Roman court-of-justice halls. Construction began in 1793 with Washington laying the cornerstone. The Senate wing was finished by 1800. The House wing was finished by 1811. The original wooden dome, smaller than the present one, was completed by 1824.</p>
+
+<p>The Thornton Capitol was burned by the British during the War of 1812, in August 1814, alongside the White House. The interiors were destroyed; the exterior walls survived. The rebuild was led by Benjamin Latrobe (1815-1817) and then by Charles Bulfinch (1818-1830). The final building from this phase was nearly complete by 1830 and was the working seat of government for the next twenty years.</p>
+
+<h2 id="latrobe">Benjamin Latrobe, the First Professional</h2>
+
+<p>Benjamin Henry Latrobe (1764-1820), English-born, trained in Germany, and emigrated to America in 1796, was the first professionally trained architect to practice in the United States. He brought with him the European understanding of architecture as a discipline distinct from carpentry: a profession that did drawings, ran projects, and supervised construction without holding a hammer.</p>
+
+<p>Latrobe's American projects were transformative. <strong>The Bank of Pennsylvania</strong> (Philadelphia, 1799-1801, demolished 1867) was the first major Greek Revival building in America, with an Ionic portico that closely studied the Erechtheion in Athens. Latrobe corresponded with Jefferson about classical proportions and worked alongside him on UVA and the Capitol. <strong>The Baltimore Cathedral</strong> (begun 1804), the first Catholic cathedral built in the United States, is Latrobe's neoclassical masterpiece: a Pantheon-derived domed central space, with vaulted side aisles, flooded with light from a thirty-foot oculus and from clerestory windows. It is one of the most original American buildings of the early nineteenth century.</p>
+
+<p>At the Capitol, Latrobe replaced the burned interiors after 1814 with the spaces we still partly use today, including the chamber that is now National Statuary Hall (built as the original House chamber) and the small Old Senate Chamber (now restored). His invention of the <strong>corncob capital</strong> (replacing Roman acanthus with American corn) and the <strong>tobacco-leaf capital</strong> was a small piece of self-conscious American adaptation of the classical language, decorative but symbolically pointed. The Founders were not afraid to put American emblems on Roman columns.</p>
+
+<h2 id="bulfinch">Charles Bulfinch and the New England Federal</h2>
+
+<p>Charles Bulfinch (1763-1844) was the leading architect of Federal-period New England, the man who gave Boston and surrounding cities their classical face. Bulfinch was Harvard-educated (class of 1781), traveled in Europe (1785-1787), and met Jefferson in Paris. He came home convinced that America needed an architectural profession and devoted his career to building one.</p>
+
+<p>His key buildings, all in Boston unless noted: the <strong>Massachusetts State House</strong> (1795-1797, with its golden dome, the first major American state capitol designed as a Roman temple-and-dome composition); the <strong>Tontine Crescent</strong> (1793-1794, an entire block of attached town houses in Bath-style curve, the first European urban composition in America, demolished 1858); <strong>Faneuil Hall</strong> (renovation and expansion 1805-1806); the <strong>Hartford State House</strong> (1796); and dozens of Federal-period houses across Beacon Hill and the Back Bay. From 1818 to 1830, Bulfinch was Architect of the Capitol in Washington, finishing the Capitol after Latrobe.</p>
+
+<p>The "Federal style" that Bulfinch perfected (also worked by Asher Benjamin, Samuel McIntire, and Alexander Parris) is a refined Palladian Adamesque architecture: tall thin proportions, delicate moldings, oval rooms, fanlights over doors, elaborate cornices, restrained use of the orders. It was the dominant American residential style from roughly 1790 to 1830. The Federal house is the architectural language of the Founding generation's prosperous merchants and lawyers, the people the Constitution was written by and for.</p>
+
+<h2 id="mills">Robert Mills and the Federal Office Building</h2>
+
+<p>Robert Mills (1781-1855) was a Charleston-born architect who studied under Hoban, Latrobe, and Jefferson, the first American-born architect of major rank. He served as Architect of Public Buildings under Andrew Jackson, then under his successors. Mills did more than anyone else to give Washington the look it had through the rest of the nineteenth century.</p>
+
+<p>His Washington buildings: the <strong>Treasury Building</strong> (1836-1842), a vast Greek Revival office block with a 466-foot Ionic colonnade running its length, the longest classical colonnade in the United States; the <strong>Patent Office Building</strong> (1836-1867, now the Smithsonian American Art Museum and National Portrait Gallery), an enormous Doric quadrangle modeled on the Parthenon; and the <strong>General Post Office Building</strong> (1839-1842, now the Hotel Monaco), a Corinthian palazzo. All three are still standing. All three were the first generation of monumental federal office buildings, and all three set the type.</p>
+
+<p>Mills's other great contribution was the <strong>Washington Monument</strong> (1848-1884). His original 1836 design was elaborate, with a colonnaded base. Construction began in 1848 and stopped in 1854 over funding and Civil War. When it resumed in 1876, the colonnaded base was abandoned, leaving the present simple obelisk. The result is a stripped-down, abstract classical monument: a tall Egyptian-derived obelisk rather than a Roman column, dedicated by Congress in 1885. It remains the tallest stone structure in the world. Its dignity comes from its severity.</p>
+
+<h2 id="greek-revival">The Greek Revival, 1820-1860</h2>
+
+<p>From roughly 1820 to 1860, a deep wave of pure Greek Revival architecture spread across the United States. It coincided with the Greek War of Independence (1821-1832), which generated tremendous American sympathy: the Greeks were re-fighting Marathon, this time against the Turks. Americans renamed their towns Athens, Sparta, Troy, Ithaca, Syracuse, Corinth, and Olympia. They built courthouses, banks, and houses as miniature Greek temples.</p>
+
+<p>The Greek Revival was the first national American style, in a way that the earlier Federal had not been. It crossed all regions: New England farmhouses, New York banks, Philadelphia gentlemen's clubs, Charleston single houses, Mississippi plantation Big Houses, Ohio courthouses, Wisconsin frontier cabins. The white-painted classical portico became, for forty years, the universal American architectural gesture. When you picture an antebellum Southern plantation, you are picturing Greek Revival. When you picture a small-town New England town hall, you are picturing Greek Revival.</p>
+
+<p>The pattern books that drove the diffusion: Asher Benjamin's <em>The American Builder's Companion</em> (1806, multiple editions through 1856), Minard Lafever's <em>The Modern Builder's Guide</em> (1833), and the various editions of Vignola's <em>Five Orders</em> circulated by American publishers. Trained architects worked in the style too: William Strickland in Philadelphia (Second Bank of the United States, 1818-1824, a Parthenon in marble), Ithiel Town and Alexander Jackson Davis in New York and New Haven, Thomas U. Walter in Philadelphia (Founder's Hall at Girard College, 1833-1847, the largest Corinthian Greek Revival building ever built in America).</p>
+
+<p>The Greek Revival was the architectural language of Jacksonian democracy, of westward expansion, of the early industrial age, and, ambiguously, of the slave South. It ended, as a national style, with the Civil War. The South's plantation Greek Revival became, after 1865, an awkward and contested heritage. The North moved on to Romanesque and Gothic Revivals as fashionable alternatives. But the Greek Revival had so deeply marked American building that variations on it continued in smaller buildings, especially in the South and Midwest, well into the twentieth century. The 1923 white-columned bank in a small Mississippi town is a child of the Greek Revival.</p>
+
+<h2 id="walter">Thomas U. Walter and the Iron Dome</h2>
+
+<p>The Capitol building that William Thornton designed and Latrobe and Bulfinch finished was too small for the growing Congress by 1850. The country had added new states. The House had outgrown its chamber. A competition was held in 1850 and won by Thomas U. Walter (1804-1887), a Philadelphia-trained Greek Revival architect. Walter's expansion was the work that gave the Capitol its present form.</p>
+
+<p>Walter doubled the length of the building by adding two long wings on the north (Senate) and south (House) ends, each housing a new larger legislative chamber. Then he addressed the dome. Bulfinch's original wooden dome had been small and out of proportion with the enlarged building. Walter designed a new dome, much taller, made of cast iron, modeled in proportion on St. Peter's in Rome and on the Pantheon-on-a-drum scheme that Michelangelo had originated. The cast iron was a technological choice: it was lighter than masonry, it could be prefabricated and assembled on site, and it could be lifted to a height that masonry could not reach.</p>
+
+<p>Construction of the Walter dome began in 1855. It continued through the Civil War. Lincoln famously insisted that work continue: "If people see the Capitol going on, it is a sign we intend the Union shall go on." The dome was finished in 1866. It is 288 feet tall from the ground to the top of the bronze Statue of Freedom. It is the most copied dome in American architecture. Every state capitol that has a dome (and most do) is derived from Walter's design, with the dome rising from a drum, ribbed on the exterior, topped by a small Tempietto-derived lantern, crowned by a classical statue.</p>
+
+<p>The Walter dome is the visual symbol of the federal government. It appears on the back of the fifty-dollar bill, in the seal of the Architect of the Capitol, on television behind every Washington news broadcast, and in the imagination of every American who has ever pictured Congress. The dome did the political work the building was meant to do.</p>
+
+<h2 id="civil-war-pause">The Civil War Pause</h2>
+
+<p>The Civil War (1861-1865) was a four-year suspension of major American architectural activity. Federal building paused. The Capitol dome continued only because Lincoln pushed it through. Private wealth was diverted to war. Construction in the South was devastated by the war and the long economic depression after Reconstruction. The architectural energy that had been building from Jefferson through Walter went quiet.</p>
+
+<p>When American building resumed in scale after about 1870, the country had changed. The Industrial Revolution had matured. The first generation of millionaires from steel, oil, railroads, and banking was emerging. The federal capital was at last being completed. The center of architectural gravity shifted from the political and craftsman traditions of the Founders to the new wealth of New York, Chicago, and Boston. The next thirty years would be a different architectural era, and it would begin with a pause in the classical tradition.</p>
+
+<h2 id="richardson">Richardson and the Romanesque Interlude</h2>
+
+<p>Henry Hobson Richardson (1838-1886), Louisiana-born and Harvard-and-Beaux-Arts-Paris-trained, was the dominant American architect of the 1870s and early 1880s. His preferred manner was a heavy round-arched Romanesque, a return not to ancient Greco-Roman but to medieval Romanesque architecture, the eleventh-century Romanesque of French and Spanish abbey churches. Richardson's mature work, called the <strong>Richardsonian Romanesque</strong>, used rough-faced stone, deep round arches springing from short squat columns, heavy walls, low silhouettes, and color contrasts of brown and pink and gray stone.</p>
+
+<p>Richardson's masterworks: <strong>Trinity Church in Boston</strong> (1872-1877), a polychrome Romanesque church on Copley Square that became one of the most influential American buildings of its century; the <strong>Allegheny County Courthouse and Jail</strong> in Pittsburgh (1884-1888), the prototypical American Romanesque civic building; and the <strong>Marshall Field Wholesale Store</strong> in Chicago (1885-1887, demolished 1930), a six-story warehouse that astonished a generation by treating an ordinary commercial program with the gravitas of a Roman palace.</p>
+
+<p>The Richardsonian Romanesque was not classical in the Jefferson-Latrobe sense. It was a deliberate alternative. But it was a serious and rigorous tradition, deeply schooled, and it provided the architectural training ground for the next great American classical generation. Charles McKim and Stanford White both worked in Richardson's office. So did several of the Beaux-Arts giants. When Richardson died young in 1886, his lessons in scale, weight, and seriousness carried forward into the classical revival that followed.</p>
+
+<h2 id="columbian">The 1893 World's Columbian Exposition</h2>
+
+<p>The single event that turned American architecture back to classicism was the World's Columbian Exposition of 1893, the world's fair held in Chicago to mark the four-hundredth anniversary of Columbus's voyage. Daniel Burnham (1846-1912) was Director of Works. Frederick Law Olmsted designed the site plan. The chief consulting architects included Charles McKim, George Post, and Richard Morris Hunt. They decided to build the fair in a unified classical style, all the major buildings to a single cornice line, all painted white. Charles McKim and Stanford White led the design jury that enforced the rule.</p>
+
+<p>The result was the <strong>White City</strong>: a vast temporary classical city of plaster-on-wood Beaux-Arts buildings arranged around a Court of Honor and a lagoon, with monumental staircases, sculptured fountains, electric lights at night, and the largest concentration of classical architecture ever assembled on the North American continent. Twenty-seven million Americans came to see it. That is roughly a quarter of the entire population of the country at the time. They went home convinced they had seen the future.</p>
+
+<p>What the fair did, more than anything else, was create a national consensus that the American future should look classical. The City Beautiful movement, which dominated American city planning for the next four decades, was a direct result. The Beaux-Arts revival, which produced the great civic buildings, libraries, museums, and train stations of 1900 to 1930, was a direct result. The McMillan Plan of Washington and the 1909 Plan of Chicago were direct results. The 1893 fair, more than any other single event, set the architectural language of the United States for the next two generations.</p>
+
+<h2 id="mckim">McKim, Mead and White</h2>
+
+<p>The dominant American architectural firm of the late nineteenth century was McKim, Mead and White, founded in New York in 1879. Charles Follen McKim (1847-1909) had trained at the Ecole des Beaux-Arts in Paris. William Rutherford Mead (1846-1928) was the partner who ran the office. Stanford White (1853-1906) was the brilliant, charismatic designer murdered in 1906 in a notorious scandal that produced the term "the trial of the century."</p>
+
+<p>The firm's output between 1890 and 1915 was the most influential body of work in American architectural history. Their key buildings:</p>
+
+<ul>
+  <li><strong>Boston Public Library</strong> (1888-1895), a Renaissance palazzo facing Trinity Church across Copley Square. The deliberate dialogue is one of America's great urban moments: Richardson's Romanesque church on one side, McKim's classical library on the other.</li>
+  <li><strong>Low Library, Columbia University</strong> (1895-1898), a Pantheon transposed into a university library, with a great Ionic portico and a low dome.</li>
+  <li><strong>Pennsylvania Station, New York</strong> (1902-1910), the firm's masterpiece. McKim modeled the main concourse on the frigidarium of the Baths of Caracalla, scaled to handle two hundred thousand passengers a day. The great train shed was a steel-and-glass cathedral. The waiting room was a Roman bath enlarged. Penn Station was, until its 1963 demolition, the largest indoor public space in America.</li>
+  <li><strong>Morgan Library</strong> (1902-1906), J. P. Morgan's private Renaissance library on East 36th Street, with a great rotunda and the most refined private library interior in the country.</li>
+  <li><strong>The Tiffany House</strong>, the <strong>University Club</strong> in New York, the <strong>Harvard Club</strong>, the <strong>Knickerbocker Trust</strong>, the <strong>Brooklyn Museum</strong>, the <strong>Bowery Savings Bank</strong>, and dozens of country houses, town houses, and clubs.</li>
+</ul>
+
+<p>McKim was the firm's serious classicist. He had taken the Pantheon, the Maison Carree, the Renaissance palazzos, the great French and Italian Renaissance plans, and synthesized them into a comfortable, dignified, American manner. He believed, as Burnham did, that the American future was a Roman future, and he was willing to give years of his life to projects he never personally lived to see finished. He died in 1909, the year the McMillan Plan was finally getting traction. The firm continued building in his manner until the Depression, when the era ended.</p>
+
+<h2 id="burnham">Daniel Burnham, the City Planner</h2>
+
+<p>Daniel Burnham (1846-1912) was, with McKim, the dominant force of American classicism between 1890 and his death. He was a Chicago architect, partner in Burnham and Root (with John Wellborn Root, until Root's death in 1891), then sole leader of D. H. Burnham and Company. Burnham's first reputation came from Chicago commercial architecture, particularly the steel-frame skyscrapers (the <strong>Rookery</strong>, 1888, and the <strong>Reliance Building</strong>, 1895, both still standing) that helped invent the tall building. But his greatest contribution was his pivot to city planning after the 1893 Columbian Exposition.</p>
+
+<p>Burnham's major plans: the <strong>Plan of Washington (the McMillan Plan)</strong>, co-led with McKim, Olmsted Jr., and the sculptor Augustus Saint-Gaudens, 1901-1902; the <strong>Cleveland Group Plan</strong>, 1903; the <strong>San Francisco Plan</strong>, 1905; the <strong>Manila Plan</strong>, 1905 (and the related plan for Baguio in the Philippines); and his masterwork, the <strong>Plan of Chicago</strong>, 1906-1909.</p>
+
+<p>The 1909 Plan of Chicago, published as a beautifully illustrated book, was the most ambitious civic plan ever attempted in America. Burnham proposed reorganizing the entire Chicago lakefront into a continuous chain of parks, building a vast civic center west of the Loop, reorganizing the regional rail system, building a network of boulevards radiating from the city out into the suburbs, and creating a system of forest preserves around the entire metropolitan area. Much of the plan was actually built, including the lakefront parks (now Chicago's defining urban feature), Wacker Drive, Michigan Avenue improvements, and the chain of forest preserves. The civic center was never built. The plan was sold to the public through <strong>Wacker's Manual of the Plan of Chicago</strong> (1911), an 8th-grade textbook by Walter D. Moody that was taught in all Chicago schools for twenty years.</p>
+
+<p>Burnham's famous motto, "Make no little plans; they have no magic to stir men's blood," is the credo of the City Beautiful movement and of the modern American civic ambition tradition. The Burnham Compact, the civic project this site exists to advance, takes its name and its premise from him.</p>
+
+<div class="callout">
+<p><strong>Make no little plans; they have no magic to stir men's blood and probably themselves will not be realized. Make big plans; aim high in hope and work, remembering that a noble, logical diagram once recorded will never die, but long after we are gone will be a living thing, asserting itself with ever-growing insistency.</strong></p>
+<p>Daniel Burnham, 1907</p>
+</div>
+
+<h2 id="mcmillan">The McMillan Plan and the Mall</h2>
+
+<p>The McMillan Plan of 1901-1902 was the document that reorganized the National Mall in Washington and restored L'Enfant's original 1791 plan to full operation. It was commissioned by the Senate, named after its sponsor Senator James McMillan of Michigan, and produced by Burnham, McKim, Olmsted Jr., and Saint-Gaudens.</p>
+
+<p>By 1900 the Mall was a mess. The Pennsylvania Railroad had a station and tracks running across it. The Washington Monument was finished but isolated. The Smithsonian Castle was on the south side. The grand axis L'Enfant had drawn from the Capitol to the Washington Monument was barely legible. The McMillan Plan removed the railroad (the Pennsylvania moved into Burnham's new <strong>Union Station</strong>, 1908, north of the Capitol), extended the Mall's axis westward to a new memorial site, and proposed a sequence of monumental classical buildings framing the axis.</p>
+
+<p>Most of the McMillan Plan was eventually built. The <strong>Lincoln Memorial</strong> (Henry Bacon, 1922) anchored the new western end of the extended axis. The <strong>Jefferson Memorial</strong> (John Russell Pope, 1943) anchored the south end of a new cross-axis. The <strong>Reflecting Pool</strong> (1924) connected the Lincoln and the Washington Monument. The <strong>National Gallery of Art</strong> (Pope, 1941), the <strong>Federal Triangle</strong> (1928-1938), and the <strong>National Archives</strong> (1935) all built out the Mall's frame. By 1945 the Mall was substantially as we know it today. The McMillan Plan, like the Plan of Chicago, was the rare comprehensive civic plan that mostly got built.</p>
+
+<h2 id="carrere-hastings">Carrere and Hastings, the New York Library</h2>
+
+<p>John Carrere (1858-1911) and Thomas Hastings (1860-1929) were Beaux-Arts contemporaries of McKim, also Paris-trained, who founded their firm in 1885. Their masterpiece is the <strong>New York Public Library</strong> on Fifth Avenue at 42nd Street, finished in 1911. It is the great American classical urban building of the early twentieth century: a long marble facade with a central Corinthian portico flanked by paired Corinthian columns, two stone lions (Patience and Fortitude) on the steps, a triple-arched entry, and a sequence of grand interior halls that culminates in the Rose Reading Room, a vast cathedral-like space lined with murals and topped by a coffered ceiling. The building is the model for every great American public library that came after it.</p>
+
+<p>Carrere and Hastings also designed the <strong>House and Senate Office Buildings</strong> in Washington (1909), part of the McMillan Plan's reorganization of Capitol Hill, and the <strong>Frick Mansion</strong> in New York (now the Frick Collection, 1914), one of the most refined American urban palaces ever built.</p>
+
+<h2 id="gilbert">Cass Gilbert and the Supreme Court</h2>
+
+<p>Cass Gilbert (1859-1934) was a St. Paul-trained architect who studied at MIT, worked briefly under McKim, and went on to build some of the most prominent American buildings of the early twentieth century. He was a versatile classicist who worked in multiple manners. The <strong>Woolworth Building</strong> in New York (1913), at its time the tallest building in the world, is a sixty-story Gothic skyscraper. The <strong>Minnesota State Capitol</strong> in St. Paul (1905) is a domed Roman Renaissance composition. The <strong>U.S. Custom House</strong> in New York (1907) is a Beaux-Arts palace.</p>
+
+<p>Gilbert's last major work was the <strong>United States Supreme Court Building</strong> in Washington, finished in 1935 after his death. It is one of the most rigorously classical American federal buildings: a Corinthian temple, on a high podium, with a sixteen-column hexastyle prostyle portico, marble throughout, friezes by Adolph Weinman, the inscription "Equal Justice Under Law" on the architrave. The Supreme Court Building is the last of the great federal classical buildings before the modernist break. It is also the building that visually proves the case the EO 14344 makes: that a classical Roman temple, deployed with seriousness, can still be the appropriate language of American constitutional government in the twentieth century.</p>
+
+<h2 id="pope">John Russell Pope</h2>
+
+<p>John Russell Pope (1874-1937) was the most prolific American Beaux-Arts classicist of the early twentieth century. New York-born, Columbia-trained, then a Prix de Rome winner who studied at the American Academy in Rome and the Ecole des Beaux-Arts in Paris, Pope returned to America in 1900 and built a forty-year career in monumental classical work. His clients were governments, universities, and wealthy patrons. His buildings were Roman.</p>
+
+<p>The major works:</p>
+
+<ul>
+  <li><strong>The National Archives Building</strong>, Washington (1935): a Corinthian temple on a podium, with a great central rotunda housing the Constitution, the Declaration of Independence, and the Bill of Rights.</li>
+  <li><strong>The Jefferson Memorial</strong>, Washington (designed 1937, finished 1943 after Pope's death). A direct Pantheon homage at modest scale: a circular peripteral colonnade of twenty-six Ionic columns surrounding a domed central rotunda housing a nineteen-foot bronze statue of Jefferson. Pope's solution was to use the Pantheon form but to open it out, so that the colonnade was free-standing rather than attached to the cella, allowing the building to be approached and walked around from all sides. The Jefferson Memorial was controversial when designed (modernist critics had been ascending for a decade and called the design retrograde) but has aged into one of the most beloved buildings in Washington.</li>
+  <li><strong>The West Building of the National Gallery of Art</strong>, Washington (1937-1941, finished after Pope's death). A long Corinthian-marble palace with a central rotunda, two long galleries flanking it, and a sculpture garden. Andrew Mellon was the patron. Pope designed the building to hold the Mellon collection (later joined by the Kress and Widener collections), with the gallery sequence calibrated to the human attention span. It is one of the great museum buildings in the world.</li>
+  <li><strong>The Frick Collection</strong>, New York (post-Carrere modifications, 1931-1935).</li>
+  <li><strong>Constitution Hall</strong>, the DAR headquarters in Washington (1929).</li>
+  <li><strong>The Tate Gallery extensions</strong>, London (1928-1937, the Duveen Gallery for the Elgin Marbles).</li>
+</ul>
+
+<p>Pope was, by 1935, the most successful classical architect in America. He was also the last great one before the break. When Pope died in 1937, the architectural profession was already pivoting toward modernism, and within ten years his manner would be out of fashion in nearly every school of architecture in the country.</p>
+
+<h2 id="bacon">Henry Bacon and the Lincoln Memorial</h2>
+
+<p>Henry Bacon (1866-1924) studied at the University of Illinois, won the Prix de Rome, and worked under McKim. He is remembered mostly for one building, the most famous American building of his generation: the <strong>Lincoln Memorial</strong> on the Mall in Washington, finished in 1922.</p>
+
+<p>Bacon's Lincoln Memorial is a Doric peripteral temple in white Colorado marble, with thirty-six columns (one for each state at Lincoln's death) surrounding a single great room housing the seated nineteen-foot statue of Lincoln by Daniel Chester French. The building is calibrated with all the optical refinements of the Parthenon: subtle entasis on the columns, slight curvature of the steps, columns slightly inclined toward the center. The proportions are based on Greek temple architecture rather than Roman, a deliberate choice. Bacon argued that Doric was the most austere and most serious of the orders, the proper architecture for honoring a President who had carried the country through its great trial.</p>
+
+<p>The Lincoln Memorial was dedicated on Memorial Day 1922, with Robert Todd Lincoln (the President's only surviving son, then 78) in attendance. It became, almost immediately, the symbolic civic space of the United States. Marian Anderson sang there in 1939 after the DAR refused her Constitution Hall. Martin Luther King Jr. delivered "I Have a Dream" from its steps in 1963. The Lincoln Memorial is, in the strict architectural sense, the most fully Greek of any major American building, and it is also one of the most politically active. The argument that classical architecture is inherently inert is refuted, almost by itself, by the Lincoln Memorial.</p>
+
+<h2 id="state-capitols">State Capitols, 1880-1935</h2>
+
+<p>The half-century between roughly 1880 and 1935 was the great age of the American state capitol building. Almost every state in the union built or rebuilt its capitol in classical style during this period. Most followed the Walter Capitol model: a long horizontal building with a central domed rotunda flanked by legislative chambers. Several stand out as masterpieces.</p>
+
+<ul>
+  <li><strong>Texas State Capitol</strong>, Austin (1888), the largest state capitol building in the country, a pink-granite Renaissance Revival composition.</li>
+  <li><strong>Rhode Island State House</strong>, Providence (1904, McKim, Mead and White), one of the most refined of all state capitols, with a great central marble dome.</li>
+  <li><strong>Minnesota State Capitol</strong>, St. Paul (1905, Cass Gilbert).</li>
+  <li><strong>Wisconsin State Capitol</strong>, Madison (1917), the tallest state-capitol dome in the country.</li>
+  <li><strong>Missouri State Capitol</strong>, Jefferson City (1917, Tracy and Swartwout).</li>
+  <li><strong>West Virginia State Capitol</strong>, Charleston (1932, Cass Gilbert).</li>
+  <li><strong>Nebraska State Capitol</strong>, Lincoln (1932, Bertram Goodhue), the great exception to the rule: a vertical limestone tower rising four hundred feet above a low base, classical in detail but Art Deco in massing.</li>
+  <li><strong>Louisiana State Capitol</strong>, Baton Rouge (1932, Weiss Dreyfous and Seiferth), another Art Deco classical tower, built by Huey Long.</li>
+</ul>
+
+<p>The American state capitol, taken as a class, is the most consistent and visible expression of the classical tradition in American civic life. Most of these buildings were built within a single generation, by architects working in conscious dialogue with each other and with the federal Capitol. They are the architectural face of American republicanism. A traveler driving through forty-eight state capitals can essentially complete a tour of American classical architecture in three months.</p>
+
+<h2 id="wpa">WPA Federal Classical</h2>
+
+<p>The 1930s, even in the depths of the Depression, produced one last great wave of federal classical building. The <strong>Public Works Administration</strong> (PWA, 1933-1944) and the <strong>Works Progress Administration</strong> (WPA, 1935-1943) funded thousands of federal, state, and municipal buildings: courthouses, post offices, libraries, schools, and federal office buildings. The architectural manner of these buildings has come to be called <strong>Stripped Classical</strong> or <strong>WPA Federal</strong>.</p>
+
+<p>Stripped Classical kept the classical massing, symmetry, and proportions of the Beaux-Arts tradition but simplified the ornament. Pilasters replaced full columns. Cornices were flatter. Sculpture was lower-relief and stylized in an Art Deco manner. Materials were limestone or granite, often with bronze details. The result was an architectural language that was clearly classical, clearly American, clearly civic, but more affordable to build during the Depression.</p>
+
+<p>The best examples are scattered across every state. The <strong>Federal Triangle</strong> in Washington (1928-1938), a massive complex of seven federal buildings between Pennsylvania Avenue and Constitution Avenue, is the most concentrated stripped-classical project ever built. The <strong>U.S. Courthouse</strong> in Los Angeles (1940), the <strong>Federal Reserve Bank of San Francisco</strong> (1924), and hundreds of smaller post offices and courthouses across the country share the family resemblance.</p>
+
+<p>The WPA classical tradition extended into a final flowering after the war. The <strong>Air Force Memorial</strong> design, the <strong>Tomb of the Unknown Soldier</strong> at Arlington (1932), the <strong>Iwo Jima Memorial</strong> (1954, sculptural rather than architectural but in the same tradition), and a handful of late state capitols stretched the tradition into the 1950s. By 1960 the tradition was effectively over as a working idiom.</p>
+
+<h2 id="break">The 1962 Break: Moynihan and the Modernist Turn</h2>
+
+<p>The official end of the American federal classical tradition was a 1962 document called the <strong>Guiding Principles for Federal Architecture</strong>, written by Daniel Patrick Moynihan, then a young assistant secretary of labor in the Kennedy administration, as part of an internal report to the Ad Hoc Committee on Federal Office Space. The Guiding Principles, three short paragraphs, became official federal policy and remain official policy in modified form to this day. The key passage:</p>
+
+<div class="callout">
+<p>"The development of an official style must be avoided. Design must flow from the architectural profession to the Government, and not vice versa. The Government should be willing to pay some additional cost to avoid excessive uniformity in design of Federal buildings. Competitions should be encouraged."</p>
+<p>Daniel Patrick Moynihan, 1962</p>
+</div>
+
+<p>The language was about avoiding an "official style," which sounded principled and republican. But in practice, the architectural profession in 1962 had already pivoted decisively to modernism. The major American architecture schools were all teaching International Style and various derivatives. The Beaux-Arts tradition had been driven out of Harvard's Graduate School of Design in the late 1930s by Walter Gropius. Yale had pivoted under Louis Kahn. Cornell, Columbia, and MIT had all followed. By 1962, the architectural profession was no longer producing classicists. "Design must flow from the architectural profession to the Government" therefore meant "the government will build whatever the modernist profession decides to build."</p>
+
+<p>The result, over the next thirty years, was a series of federal buildings unlike anything the country had produced before. The <strong>J. Edgar Hoover FBI Building</strong> (1975, brutalist concrete), the <strong>Robert C. Weaver HUD Headquarters</strong> (1968, curved concrete), the <strong>U.S. Tax Court Building</strong> (1974), <strong>Boston City Hall</strong> (1968, Concrete brutalist, regularly voted the ugliest building in America), and dozens of federal courthouses across the country were designed in unbroken modernist manner. Polling consistently showed that the public preferred the older classical buildings. The profession, the schools, and the design juries did not. For thirty years, the gap between what was built and what the country wanted was not closed.</p>
+
+<h2 id="penn-station">The Demolition of Penn Station</h2>
+
+<p>The single sharpest wound of the modernist period was the demolition of <strong>Pennsylvania Station</strong> in New York between 1963 and 1966. The McKim, Mead and White masterpiece, the largest indoor public space in America, the most monumental train station the country had ever built, was torn down to make way for a new Madison Square Garden above an underground replacement station. The demolition was protested but went forward anyway. The architectural critic Vincent Scully wrote afterward: "Through it one entered the city like a god. One scuttles in now like a rat."</p>
+
+<p>The destruction of Penn Station galvanized the historic preservation movement. New York City passed its Landmarks Preservation Law in 1965 directly in response. The federal government passed the National Historic Preservation Act in 1966. The architectural profession's quiet consensus that older classical buildings could simply be torn down for modernist replacements was broken by the public outrage over Penn Station. The buildings, by then, had defenders.</p>
+
+<p>But preservation is not building. The lost generation of American classical architects was not replaced. Most of the firms that had built the great Beaux-Arts buildings did not survive the Depression and the postwar pivot. The skills of monumental masonry, of architectural sculpture, of the great atrium-and-rotunda planning, of the ornamental painting and gilding that filled the interiors, were no longer being taught. By the 1980s, working classical architecture had nearly disappeared as a profession in America. The architectural schools that produced classicists could be counted on one hand. Notre Dame's School of Architecture, which had kept the tradition alive under Thomas Gordon Smith and later Michael Lykoudis, was nearly alone.</p>
+
+<h2 id="drought">The Sixty-Year Drought</h2>
+
+<p>From roughly 1965 to 2025, the American classical tradition continued in three narrow channels:</p>
+
+<ul>
+  <li><strong>Notre Dame and ICAA.</strong> The University of Notre Dame School of Architecture, under Thomas Gordon Smith (dean 1989-1998) and then Michael Lykoudis (dean 2002-2019), retained classical training as its core curriculum. The Institute of Classical Architecture and Art (ICAA), founded in 1991 and reorganized in 2002, provided continuing education and a professional society. The Richard H. Driehaus Prize, established at Notre Dame in 2003 as a counterweight to the Pritzker Prize (which had honored only modernists), gave classical architects an international platform.</li>
+  <li><strong>A small number of working firms.</strong> Robert A. M. Stern Architects, Allan Greenberg Architect, David M. Schwarz Architects, Harrison Design, McCrery Architects, Hartman-Cox, Ferguson and Shamamian, Duncan Stroik, and a handful of others kept working in classical idioms through the lean decades, mostly on residential, ecclesiastical, and college-campus projects. The federal commissions almost entirely dried up.</li>
+  <li><strong>Public preference, unmet.</strong> Polling from the early 1980s onward consistently showed substantial public preference for classical over modernist civic architecture. The 2020 Harris poll for the National Civic Art Society found 72 percent of Americans preferred classical to modernist for new federal buildings. The preference crossed party lines, racial lines, and regional lines. For sixty years, the profession built mostly what the public would not have chosen.</li>
+</ul>
+
+<p>The 2020 Executive Order on Promoting Beautiful Federal Civic Architecture, the first attempt to reverse the Guiding Principles, was signed in the closing weeks of the first Trump administration in December 2020 and revoked in February 2021 by the incoming Biden administration. The five-year debate that followed was sharp. Architects' groups (AIA, ACSA) opposed the order. Classical architects' groups (NCAS, ICAA) supported it. Public polling continued to favor classical.</p>
+
+<h2 id="return">2025 and the Return</h2>
+
+<p>Executive Order 14344, "Making Federal Architecture Beautiful Again," was signed on August 28, 2025 and published in the Federal Register on September 3, 2025. It makes traditional and classical architecture the preferred style for federal courthouses, agency headquarters, and large federal buildings, and makes classical architecture the default in Washington, D.C., absent exceptional circumstances. It applies to courthouses anywhere, all federal buildings in the National Capital Region, and any federal building costing more than fifty million dollars. The full text is covered in our <a href="eo-14344.html">primer on the order</a>.</p>
+
+<p>The order is, in policy terms, a return to a default the country had held from the Founding through 1962. The opening passage of the order reads almost as a continuation of Jefferson's argument:</p>
+
+<div class="callout">
+<p>"President George Washington and Secretary of State Thomas Jefferson consciously modeled the most important buildings in Washington, D.C., on the classical architecture of ancient Athens and Rome. They sought to use classical architecture to visually connect our contemporary Republic with the antecedents of democracy in classical antiquity."</p>
+<p>Executive Order 14344, Section 1</p>
+</div>
+
+<p>The order is the policy. The buildings will follow over the next decade. The federal courthouse system has dozens of new buildings in various stages of planning. The General Services Administration has been reorganized to align its review processes with the order. The Commission of Fine Arts has been reconstituted with classical-leaning commissioners. The Mayflower of the Architecture Renaissance, the National Civic Art Society in Washington, has gone from a small advocacy group to the institutional engine of the new federal program. The firms that kept the tradition alive (Robert A. M. Stern, Greenberg, Schwarz, Harrison, McCrery, Hartman-Cox, Ferguson and Shamamian) are first in line for the new commissions.</p>
+
+<p>The question for the next decade is not whether classical architecture will return to federal commissioning. The order makes that decision. The question is whether the new buildings will be good. The skills of monumental classical building have to be relearned by a generation of architects, builders, stonemasons, sculptors, and ornamental craftsmen who did not train in them. The schools have to expand. The supply chains for limestone, marble, bronze, and architectural sculpture have to be rebuilt. This is the work of the next twenty years.</p>
+
+<p>For Seattle in particular, the order opens a specific opportunity. The Convention Center I-5 lid project, which the city is now studying for additional construction, sits at the symbolic gateway between downtown and Capitol Hill. The Burnham Civic proposal for a <a href="century-gate.html">Century Gate</a> at that site (a dual classical arch spanning both faces of the lid, cladding the existing brutalist structure in classical materials, becoming the largest civic landmark project on the West Coast in fifty years) is one application of the EO 14344 moment. The story this page has been telling, from the Greek temple at Paestum through Jefferson at Monticello, continues into the next chapter, where it will be written by buildings that have not yet been built.</p>
+
+<div class="pull">The story this page has been telling, from Paestum to Monticello, continues into the next chapter, where it will be written by buildings that have not yet been built.</div>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<h4>Start here</h4>
+<ul>
+  <li><strong>Henry Hope Reed, <em>The Golden City</em></strong> (1959, rev. 1971). The classic American polemic for classical architecture's revival. Short, vivid, still in print.</li>
+  <li><strong>Mark Alan Hewitt, <em>The Architect and the American Country House, 1890-1940</em></strong> (1990). The residential side of the Beaux-Arts boom.</li>
+  <li><strong>Robert A. M. Stern, Thomas Mellins, and David Fishman, <em>New York 1900</em></strong> and the following volumes in the New York 1880-2000 series. The most thorough urban architectural history of the period.</li>
+</ul>
+
+<h4>The Founders' architecture</h4>
+<ul>
+  <li><strong>Jack McLaughlin, <em>Jefferson and Monticello: The Biography of a Builder</em></strong> (1988). How Jefferson actually designed and built the house, with the rebuilds.</li>
+  <li><strong>Allan Greenberg, <em>George Washington, Architect</em></strong> (1999). The classical architect on the classical Founder.</li>
+  <li><strong>Carl Lounsbury, <em>An Architectural History of the Virginia State Capitol</em></strong> (2018).</li>
+  <li><strong>William Seale, <em>The President's House</em></strong> (two volumes, 1986). The definitive history of the White House.</li>
+</ul>
+
+<h4>The federal capital</h4>
+<ul>
+  <li><strong>Pamela Scott and Antoinette Lee, <em>Buildings of the District of Columbia</em></strong> (Buildings of the United States series, 1993). The architectural guidebook.</li>
+  <li><strong>John W. Reps, <em>Monumental Washington</em></strong> (1967). The L'Enfant-McMillan-Burnham story, beautifully told.</li>
+  <li><strong>Sue Kohler, <em>The Commission of Fine Arts: A Brief History</em></strong> (multiple editions). The administrative spine of federal classicism.</li>
+</ul>
+
+<h4>The Beaux-Arts and City Beautiful era</h4>
+<ul>
+  <li><strong>Thomas Hines, <em>Burnham of Chicago: Architect and Planner</em></strong> (1974). The standard Burnham biography.</li>
+  <li><strong>Mosette Broderick, <em>Triumvirate: McKim, Mead and White</em></strong> (2010). The firm.</li>
+  <li><strong>Erik Larson, <em>The Devil in the White City</em></strong> (2003). The 1893 Columbian Exposition as popular history. Compelling and accurate on the architecture.</li>
+  <li><strong>Steven Bedford, <em>John Russell Pope, Architect of Empire</em></strong> (1998).</li>
+  <li><strong>Christopher Thomas, <em>The Lincoln Memorial and American Life</em></strong> (2002).</li>
+</ul>
+
+<h4>The break and the return</h4>
+<ul>
+  <li><strong>Tom Wolfe, <em>From Bauhaus to Our House</em></strong> (1981). The polemical popular account of the modernist takeover, still readable and largely correct.</li>
+  <li><strong>Steven W. Semes, <em>The Future of the Past</em></strong> (2009). The preservation and new-classical case from Notre Dame.</li>
+  <li><strong>Catesby Leigh, various essays in The American Mind, City Journal, The New Criterion (2010-2025)</strong>. The most articulate ongoing critical voice for the classical revival.</li>
+  <li><strong>Justin Shubow and the National Civic Art Society's policy papers (2019-2025)</strong>. The institutional argument that produced EO 14344.</li>
+</ul>
+
+<h4>The deep one book</h4>
+<ul>
+  <li><strong>Carroll William Westfall and Robert Jan van Pelt, <em>Architectural Principles in the Age of Historicism</em></strong> (1991). The continuity argument. If you want one book that puts Greek temple, Roman basilica, Renaissance palazzo, Jefferson villa, and American courthouse on a single conceptual continuum, this is it.</li>
+</ul>
+
+<hr>
+
+<p class="note">This is the third of three reading-course chapters: <a href="greco-roman-architecture.html">Greco-Roman</a>, <a href="renaissance-architecture.html">Renaissance</a>, American Classical. Together they cover the whole story from Mycenae through 2025. Related Burnham Civic pages: <a href="eo-14344.html">EO 14344</a> (the order), <a href="athens-to-america.html">Athens to America</a> (the policy companion), <a href="century-gate.html">Century Gate</a> (the Seattle proposal).</p>
+
+</main>
+</div>
+
+</body>
+</html>
