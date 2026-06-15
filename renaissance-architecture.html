@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renaissance Architecture: A Reader's Course - BURNHAM CIVIC</title>
+<meta name="description" content="From the rediscovery of Vitruvius in 1414 through Palladio's Four Books in 1570, the architects who put the classical language back to work and sent it on to America.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #1e3a5f; --gold: #c9a227; --ink: #111; --paper: #fff; --rule: #ccc; --muted: #555; --tint: #f7f7f5; }
+  * { box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.65; letter-spacing: -0.01em; -webkit-font-smoothing: antialiased; }
+  a { color: #00c; }
+  a:visited { color: #551a8b; }
+  a:hover { color: #c00; }
+  .page { display: grid; grid-template-columns: 240px 1fr; gap: 32px; max-width: 1200px; margin: 32px auto; padding: 0 24px; }
+  aside.toc { position: sticky; top: 24px; align-self: start; max-height: calc(100vh - 48px); overflow-y: auto; font-size: 12px; padding-right: 12px; border-right: 1px solid var(--rule); }
+  aside.toc h2 { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy); margin: 0 0 12px; font-weight: 700; }
+  aside.toc ol { list-style: none; padding: 0; margin: 0; counter-reset: section; }
+  aside.toc li { counter-increment: section; margin: 0 0 8px; }
+  aside.toc li::before { content: counter(section, decimal-leading-zero) ". "; color: var(--gold); font-weight: 700; }
+  aside.toc a { color: var(--ink); text-decoration: none; }
+  aside.toc a:hover { color: #c00; text-decoration: underline; }
+  main { max-width: 760px; }
+  .header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+  h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
+  .subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: var(--navy); padding: 5px 14px; text-decoration: none; }
+  .subscribe:hover { background: #2a4a73; }
+  .subscribe:visited { color: #fff; }
+  .nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
+  .nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+  .nav a:hover { color: #c00; }
+  hr { border: none; border-top: 1px solid var(--rule); margin: 16px 0; }
+  .back { font-size: 12px; margin-bottom: 24px; display: block; }
+  h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 42px; font-weight: 400; line-height: 1.1; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .article-subtitle { font-size: 18px; color: var(--muted); font-style: italic; margin: 0 0 28px; letter-spacing: -0.01em; }
+  h2 { font-size: 22px; font-weight: 700; margin: 44px 0 10px; letter-spacing: -0.01em; border-bottom: 1px solid var(--rule); padding-bottom: 6px; scroll-margin-top: 20px; }
+  h3 { font-size: 16px; font-weight: 700; margin: 26px 0 6px; color: #1c1917; }
+  h4 { font-size: 14px; font-weight: 700; margin: 18px 0 4px; color: #1c1917; text-transform: uppercase; letter-spacing: 0.5px; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 4px; }
+  table.brief { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 13px; }
+  table.brief td, table.brief th { border: 1px solid var(--rule); padding: 7px 9px; text-align: left; vertical-align: top; }
+  table.brief th { background: #eee; font-weight: 700; }
+  .note { font-size: 13px; color: var(--muted); }
+  .callout { position: relative; padding: 18px 16px 18px 28px; margin: 24px 0; background: var(--tint); }
+  .callout::before { content: ""; position: absolute; left: 8px; top: 12px; bottom: 12px; width: 2px; background: var(--navy); }
+  .callout p { margin: 4px 0; }
+  figure { margin: 28px 0; text-align: center; }
+  figure svg { max-width: 100%; height: auto; }
+  figcaption { font-size: 12px; color: var(--muted); margin-top: 8px; font-style: italic; }
+  .pull { font-family: 'Instrument Serif', Georgia, serif; font-size: 22px; line-height: 1.3; color: var(--navy); padding: 16px 0; margin: 20px 0; border-top: 1px solid var(--navy); border-bottom: 1px solid var(--navy); }
+  .term { font-variant: small-caps; letter-spacing: 0.5px; font-weight: 700; }
+  @media (max-width: 900px) { .page { grid-template-columns: 1fr; } aside.toc { position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--rule); padding-bottom: 16px; margin-bottom: 16px; } main { max-width: none; } }
+</style>
+<link rel="canonical" href="https://burnhamcivic.org/renaissance-architecture.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="Renaissance Architecture: A Reader's Course - BURNHAM CIVIC">
+<meta property="og:description" content="From the rediscovery of Vitruvius in 1414 through Palladio's Four Books in 1570.">
+</head>
+<body>
+
+<div class="page">
+
+<aside class="toc">
+<h2>Contents</h2>
+<ol>
+  <li><a href="#preface">How to Read This</a></li>
+  <li><a href="#rediscovery">The 1414 Rediscovery</a></li>
+  <li><a href="#brunelleschi">Brunelleschi and the Dome of Florence</a></li>
+  <li><a href="#perspective">Brunelleschi's Other Invention: Perspective</a></li>
+  <li><a href="#michelozzo">Michelozzo and the Florentine Palazzo</a></li>
+  <li><a href="#alberti">Alberti, the First Modern Architect</a></li>
+  <li><a href="#alberti-buildings">Alberti's Buildings</a></li>
+  <li><a href="#bramante">Bramante and the High Renaissance</a></li>
+  <li><a href="#tempietto">The Tempietto</a></li>
+  <li><a href="#st-peters">St. Peter's, the Endless Project</a></li>
+  <li><a href="#raphael-peruzzi">Raphael, Peruzzi, and the Roman Studio</a></li>
+  <li><a href="#sack-1527">The Sack of Rome, 1527</a></li>
+  <li><a href="#michelangelo">Michelangelo as Architect</a></li>
+  <li><a href="#mannerism">Mannerism and Giulio Romano</a></li>
+  <li><a href="#serlio-vignola">Serlio, Vignola, and the Pattern Book</a></li>
+  <li><a href="#sansovino-venice">Sansovino and the Venice School</a></li>
+  <li><a href="#palladio">Andrea Palladio</a></li>
+  <li><a href="#palladio-vicenza">Palladio in Vicenza</a></li>
+  <li><a href="#palladio-villas">The Villas</a></li>
+  <li><a href="#villa-rotonda">The Villa Rotonda, Close Read</a></li>
+  <li><a href="#palladio-venice">Palladio's Venetian Churches</a></li>
+  <li><a href="#four-books">The Four Books, 1570</a></li>
+  <li><a href="#scamozzi">Scamozzi, the Hinge to Modernity</a></li>
+  <li><a href="#baroque-pivot">The Baroque Pivot</a></li>
+  <li><a href="#palladianism">Palladianism Travels</a></li>
+  <li><a href="#inigo-jones">Inigo Jones Brings It to England</a></li>
+  <li><a href="#to-america">From England to America</a></li>
+  <li><a href="#further-reading">Further Reading</a></li>
+</ol>
+</aside>
+
+<main>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="index.html" class="subscribe">Home</a>
+</div>
+
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="greco-roman-architecture.html">Greco-Roman</a>
+  <a href="american-classical-architecture.html">American Classical</a>
+  <a href="eo-14344.html">EO 14344</a>
+</div>
+
+<hr>
+
+<a href="greco-roman-architecture.html" class="back">&larr; Previous: Greco-Roman Architecture</a>
+
+<h1 class="article-title">Renaissance Architecture: A Reader's Course</h1>
+<div class="article-subtitle">The hundred and seventy years between the rediscovery of Vitruvius in 1414 and the publication of Palladio's Four Books in 1570 are the period when classical building came back to life. This is the road from Brunelleschi's dome to the Villa Rotonda.</div>
+
+<h2 id="preface">How to Read This</h2>
+
+<p>The Renaissance is the period when European architects started reading Roman ruins on purpose. They went to Rome, measured columns, sketched cornices, copied the few surviving manuscripts of Vitruvius, and worked out for themselves how the classical language fit together. They were not preservationists. They wanted to build new things in the old language. The buildings they made are what we live with now, because that classical revival, refined over five generations, was the one that traveled to England and then to America.</p>
+
+<p>This is the middle chapter of a three-part story. The first chapter, <a href="greco-roman-architecture.html">Greco-Roman Architecture</a>, covered where the language came from. The third chapter, <a href="american-classical-architecture.html">American Classical Architecture</a>, follows it across the Atlantic. This page is the bridge. Read in order, or jump in here if Renaissance Italy is your interest.</p>
+
+<p>A note on names. We will follow a small number of architects: Brunelleschi, Alberti, Bramante, Raphael, Michelangelo, Vignola, Sansovino, Palladio, Scamozzi, Inigo Jones. About a dozen people did most of the work that mattered for the long American story. Learn them once, and you will spot them again in books, museums, and tour-guide signage for the rest of your life.</p>
+
+<h2 id="rediscovery">The 1414 Rediscovery</h2>
+
+<p>The story begins in a Swiss monastery. In 1414, a Florentine humanist and papal secretary named Poggio Bracciolini was attending the Council of Constance, a vast church gathering convened to resolve a schism in the papacy. Poggio had a side interest. He had been combing monastery libraries across central Europe looking for lost classical manuscripts. At the Abbey of Saint Gall in eastern Switzerland, he found a complete copy of Vitruvius's <em>De Architectura</em>. The text had not been seen in any usable form for a thousand years.</p>
+
+<p>Poggio copied the manuscript and sent it back to Florence. Within a generation it was being read by every literate Italian architect. The Roman ruins they had been walking past their whole lives suddenly had an instruction manual. The orders had names again. The proportions could be reconstructed. The vocabulary of the cornices and capitals could be matched up with a Roman writer who explained what each part was called and why it looked the way it did. The world that had been visible but illegible was now visible and readable.</p>
+
+<p>It mattered that Florence was where the manuscript landed. Florence was wealthy from banking and wool, governed by a republic that was self-conscious about its identity, and unusually full of mathematically literate craftsmen. The conditions for an architectural revival were already there. The book gave them the language to organize it.</p>
+
+<h2 id="brunelleschi">Brunelleschi and the Dome of Florence</h2>
+
+<p>Filippo Brunelleschi (1377-1446) was trained as a goldsmith. As a young man he competed for the commission to design the bronze doors of the Florence Baptistery in 1401, lost the competition to Lorenzo Ghiberti, and reportedly walked away from sculpture altogether. He went to Rome with his friend Donatello and spent years there measuring ancient ruins. When he came back to Florence in his forties, he was the only person in the city with a working understanding of how the Romans had built large concrete domes.</p>
+
+<p>This mattered because Florence had a problem. Its cathedral, Santa Maria del Fiore, had been begun in 1296 with an unbuilt void at the crossing 142 feet across. No one had any idea how to span it. The cathedral was built around the hole, and the hole was left for someone in the future to figure out. By the 1420s, the problem was eighty years old. The city held a competition.</p>
+
+<p>Brunelleschi won, and from 1420 to 1436 he built the dome. He invented machines to lift the eighteen-thousand tons of brick. He invented the herringbone bricklaying pattern that let the dome rise without temporary scaffolding. He invented a double-shell structure where an inner dome carried the load and an outer dome carried the silhouette, with ribs and chains binding the whole thing. The dome is, in engineering terms, a hybrid of a Roman concrete dome and a Gothic ribbed vault. The visual outcome is neither: it is a new thing, the first major building of the Renaissance, the first time anyone in a thousand years had built at Roman scale.</p>
+
+<p>Brunelleschi never finished the lantern on top. He died in 1446 and the lantern was finished by his successors. But he had broken the spell. Renaissance architecture, after Brunelleschi, was a problem that could be solved.</p>
+
+<h2 id="perspective">Brunelleschi's Other Invention: Perspective</h2>
+
+<p>Brunelleschi made one more invention that mattered for architecture as much as the dome. Around 1413, before the Vitruvius discovery, he worked out the mathematics of linear perspective, the technique of representing three-dimensional space on a two-dimensional surface using vanishing points. He demonstrated it by painting two small panels of Florentine buildings (the Baptistery from the cathedral porch, and the Palazzo Vecchio from a corner of the Piazza della Signoria), with a small viewing hole drilled in each panel so an observer could compare the painting to the actual building through a mirror.</p>
+
+<figure>
+<svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .grid { fill: none; stroke: #1e3a5f; stroke-width: 1; }
+    .vp { fill: #c9a227; }
+    .ray { stroke: #c9a227; stroke-width: 0.8; stroke-dasharray: 3,3; fill: none; }
+    .horizon { stroke: #555; stroke-width: 1; stroke-dasharray: 5,4; }
+    .lbl { font: 11px Georgia, serif; fill: #1e3a5f; text-anchor: middle; font-style: italic; }
+    .key { font: 700 11px Georgia, serif; fill: #1e3a5f; }
+  </style>
+  <rect class="grid" x="80" y="40" width="560" height="160"/>
+  <line class="horizon" x1="80" y1="120" x2="640" y2="120"/>
+  <circle class="vp" cx="360" cy="120" r="4"/>
+  <line class="ray" x1="80" y1="40" x2="360" y2="120"/>
+  <line class="ray" x1="640" y1="40" x2="360" y2="120"/>
+  <line class="ray" x1="80" y1="200" x2="360" y2="120"/>
+  <line class="ray" x1="640" y1="200" x2="360" y2="120"/>
+  <line class="ray" x1="200" y1="40" x2="360" y2="120"/>
+  <line class="ray" x1="520" y1="40" x2="360" y2="120"/>
+  <line class="ray" x1="200" y1="200" x2="360" y2="120"/>
+  <line class="ray" x1="520" y1="200" x2="360" y2="120"/>
+  <line class="grid" x1="160" y1="60" x2="160" y2="180"/>
+  <line class="grid" x1="240" y1="76" x2="240" y2="164"/>
+  <line class="grid" x1="300" y1="92" x2="300" y2="148"/>
+  <line class="grid" x1="420" y1="92" x2="420" y2="148"/>
+  <line class="grid" x1="480" y1="76" x2="480" y2="164"/>
+  <line class="grid" x1="560" y1="60" x2="560" y2="180"/>
+  <text class="key" x="368" y="116">VP</text>
+  <text class="lbl" x="360" y="222">vanishing point on the horizon line</text>
+</svg>
+<figcaption>One-point perspective. All orthogonal lines (the lines running away from the viewer) converge on a single vanishing point. Architects after Brunelleschi could draw a building before they built it.</figcaption>
+</figure>
+
+<p>Why this matters for architecture: it gave architects a way to design buildings on paper before construction, and to share the designs with patrons who could now see the building in advance. Before perspective, architectural drawing was mostly plan and elevation. After perspective, you could draw the experience of walking up to the front door. This is the deep change that turned medieval master masons into Renaissance architects. The architect became the person who imagined the building first and then communicated it to the builders. Vasari called Brunelleschi "the father of architecture" partly for this reason. Without perspective, the Renaissance design process is not possible.</p>
+
+<h2 id="michelozzo">Michelozzo and the Florentine Palazzo</h2>
+
+<p>Michelozzo di Bartolomeo (1396-1472) was Brunelleschi's slightly younger contemporary and Cosimo de' Medici's house architect. In 1444 he began the Palazzo Medici on the Via Larga in Florence, the building that defined the Renaissance urban palace. The exterior is three stories of rusticated stonework, with rougher rustication at the ground floor and progressively smoother stone as you rise. The windows on the upper floors are arched in pairs. The cornice on top is a heavy classical Roman cornice imitating the cornices on Roman buildings the architects had measured. Inside, a colonnaded courtyard with Corinthian columns gives the public reception space the dignity of a Roman atrium.</p>
+
+<p>The Palazzo Medici set the template for the Italian urban palace for the next two centuries. Every important Florentine, Roman, and Venetian family palace built between 1450 and 1650 is some variation on it: rusticated street wall, regular floors, courtyard inside, heavy cornice on top. Alberti's Palazzo Rucellai (begun 1450) is the next move, adding the stacked orders to the facade. From Florence the type traveled to Rome (Palazzo Farnese, 1517-1546, by Antonio da Sangallo and Michelangelo), to Venice (Palazzo Grimani, 1556, by Sanmicheli), and eventually to London and Washington, where it underlies almost every nineteenth-century bank building.</p>
+
+<h2 id="alberti">Alberti, the First Modern Architect</h2>
+
+<p>Leon Battista Alberti (1404-1472) is the figure who reorganized what an architect was. Born illegitimate to a wealthy exiled Florentine family in Genoa, he was educated at Padua and Bologna, took holy orders, served as a papal secretary, and worked in Rome from the 1430s onward. He was a polymath of the most useful kind: he wrote on painting, sculpture, family life, cryptography (his treatise <em>De Cifris</em> is the first known European treatment of frequency analysis), the dignity of the Italian vernacular, and architecture.</p>
+
+<p>His architectural treatise, <em>De Re Aedificatoria</em>, was finished around 1452, presented to Pope Nicholas V, and published in 1485, after his death. It is the first major architectural treatise since Vitruvius, and it is the book that reframed architecture as a liberal art rather than a craft. Alberti's three principal points were:</p>
+
+<ul>
+  <li><strong>Beauty is rational.</strong> A building is beautiful when nothing can be added, taken away, or altered without making it worse. This is Alberti's famous definition of <span class="term">concinnitas</span>, the quality of perfect fittedness. It is a Pythagorean argument: there is a single right answer to a design problem, and the architect's job is to find it.</li>
+  <li><strong>Proportion is musical.</strong> The ratios that produce pleasing buildings are the same ratios that produce pleasing musical intervals (1:2, 2:3, 3:4 and so on). This idea, which Alberti got from Pythagoras and Vitruvius, ran through the rest of the Renaissance. Palladio takes it for granted.</li>
+  <li><strong>The architect is a thinker, not a craftsman.</strong> Alberti distinguished sharply between the architect (who designs) and the builder (who executes). Before Alberti, the two were the same person. After Alberti, in the higher Italian practice, they could be separated. This is the move that produced the modern profession of architecture.</li>
+</ul>
+
+<p>Alberti did not write in the Italian vernacular. He wrote in Latin, deliberately, to claim architecture as a humanist discipline. The book was translated into Italian by Cosimo Bartoli in 1550, into French in 1553, into Spanish in 1582, into English by Giacomo Leoni in 1726. Every important Renaissance treatise after Alberti, including Palladio's, is in some way a response to him.</p>
+
+<h2 id="alberti-buildings">Alberti's Buildings</h2>
+
+<p>Alberti's buildings are smaller in number than his influence. He worked mostly as a designer commissioning others to execute. Four buildings matter.</p>
+
+<h3>Palazzo Rucellai, Florence, c. 1450</h3>
+
+<p>The first Renaissance palace facade to apply the stacked orders pattern from the Colosseum. Pilasters (engaged piers in the form of columns) divide the facade into a grid: Tuscan order on the ground floor, a kind of Ionic on the second floor, Corinthian on the third. The cornice is heavy and Roman. The Rucellai is the bridge between the Palazzo Medici (where the orders were not yet applied to the facade) and every later Renaissance palace that uses pilasters as a face-grammar.</p>
+
+<h3>Santa Maria Novella, Florence, c. 1456-1470</h3>
+
+<p>Alberti was commissioned by Giovanni Rucellai to finish the facade of an existing Gothic Dominican church. He could not change what was already built. Instead, he designed an exterior skin that reconciled the church's awkward proportions with classical geometry. He invented the great <span class="term">volute</span>, a giant scroll that fills the gap between the lower aisle roofs and the upper nave roof. The volute is one of the most copied elements in architectural history. Every Baroque church facade that uses a scroll to mediate between a high center and lower wings descends from Alberti at Santa Maria Novella.</p>
+
+<h3>Sant'Andrea, Mantua, begun 1472</h3>
+
+<p>The most influential of Alberti's churches. The facade is conceived as a Roman triumphal arch, with a giant central arched opening flanked by tall pilasters, all under a temple-front pediment. Inside, the nave is a single barrel-vaulted hall (a deliberate echo of the great vaulted halls of the Baths of Diocletian and the Basilica of Maxentius). There are no aisles. The whole congregation gathers in one space under one vault. Sant'Andrea is the prototype of the great vaulted Italian church. Every Roman Baroque church from Il Gesu (1568) onward owes its basic section to Alberti at Mantua.</p>
+
+<h3>Tempio Malatestiano, Rimini, begun 1450</h3>
+
+<p>A renovation of an existing church for the warlord Sigismondo Malatesta. Alberti wrapped the medieval church in a new exterior skin modeled on the Arch of Augustus at Rimini (which Sigismondo could see from his palace). The arches along the sides house tombs of the Malatesta court humanists. The facade was never finished, but in its incomplete state it remains one of the clearest demonstrations of how Alberti thought: take a Roman model, adapt it to a modern function, dress the old building in the new language. The strategy is the strategy of the Renaissance.</p>
+
+<h2 id="bramante">Bramante and the High Renaissance</h2>
+
+<p>Donato Bramante (1444-1514) was born near Urbino, trained as a painter, and moved to Milan around 1476, where he worked under Lodovico Sforza alongside Leonardo da Vinci. In 1499, when the French invaded Milan and the Sforza fell, Bramante moved to Rome. He was fifty-five. The next fifteen years made him the most important architect in Europe.</p>
+
+<p>In Rome, Bramante studied the ancient ruins with the seriousness of someone who knew his time was short. He measured the Pantheon. He measured the Baths of Diocletian. He measured the Basilica of Maxentius. He developed a way of building in which Roman engineering, Roman scale, and Roman proportion came together in a way Alberti, who was a theorist more than a builder, never quite achieved. Bramante was the first Renaissance architect who built in Roman terms.</p>
+
+<h2 id="tempietto">The Tempietto</h2>
+
+<p>Begun in 1502, completed around 1510, the Tempietto is a tiny circular building in the cloister of San Pietro in Montorio on the Janiculum hill in Rome. It is fifteen feet across. It is one of the most influential buildings ever made.</p>
+
+<p>The brief was simple: mark the traditional site of St. Peter's martyrdom. Bramante's solution was a perfect <span class="term">peripteral</span> rotunda: a small cylindrical cella surrounded by sixteen Tuscan Doric columns carrying a Doric entablature, topped by a balustrade, topped by a hemispherical dome on a low drum. The proportions are Roman to the millimeter. The Doric frieze is correctly carved with triglyphs and metopes. It looks like a building Vitruvius would have approved had he stepped out of his grave.</p>
+
+<p>The Tempietto became the model for the small classical pavilion for the next four centuries. Christopher Wren cited it. The dome of St. Peter's was conceived by Michelangelo as a giant Tempietto raised on a drum. The Jefferson Memorial is, in its small scale, a Tempietto-shaped building enlarged. The Capitol dome's lantern is a Tempietto. If you want to learn how to compose a classical building, the Tempietto is the single best object to study, because every part is right and every part is small enough to read at once.</p>
+
+<h2 id="st-peters">St. Peter's, the Endless Project</h2>
+
+<p>In 1505, Pope Julius II decided to demolish the original fourth-century basilica of St. Peter (Old St. Peter's, built by Constantine) and replace it with a new church on a scale no one had ever attempted in modern times. Bramante won the competition. He proposed a Greek cross plan (four equal arms, central dome) covering an area roughly four hundred feet by four hundred feet, with a dome the diameter of the Pantheon raised on a high drum. Construction began. Bramante built the four enormous piers that would carry the central dome, and the first arches springing from them, before he died in 1514.</p>
+
+<p>The project then passed through a sequence of architects, each of whom altered the plan: Raphael (1514-1520, switched to a Latin cross), Antonio da Sangallo the Younger (1520-1546, kept the Latin cross, redesigned in detail), Michelangelo (1546-1564, returned to Bramante's Greek cross and designed the dome), Vignola and Pirro Ligorio (1564-1572, executing Michelangelo's design), Giacomo della Porta (completed the dome 1590), Carlo Maderno (1602-1626, extended the nave forward into the Latin cross again and added the present facade), and Bernini (1656-1667, added the great colonnade enclosing the piazza). The project took 121 years. Every major Italian architect of the High Renaissance, Mannerism, and Baroque worked on it at some point. The building is in some ways the entire architectural history of the period in one place.</p>
+
+<p>The dome, raised between 1561 and 1590, was the largest dome built since the Pantheon. It became the model for every great church dome since: the dome of the Invalides in Paris (1706), St. Paul's in London (1710), the U.S. Capitol (1866), and on through every state capitol from Sacramento to Augusta. When you stand in the U.S. Capitol Rotunda and look up, you are looking at a building that thinks of itself as the descendant of Michelangelo's St. Peter's.</p>
+
+<h2 id="raphael-peruzzi">Raphael, Peruzzi, and the Roman Studio</h2>
+
+<p>Bramante's office in Rome trained the next generation. After Bramante's death, the leading Roman architects were Raphael (1483-1520, primarily known as a painter but a serious architect for the last six years of his short life), Baldassare Peruzzi (1481-1536, an architect-painter from Siena who designed the Villa Farnesina), and Antonio da Sangallo the Younger (1484-1546, who designed the Palazzo Farnese, the grandest Renaissance urban palace in Rome).</p>
+
+<p>Raphael's most influential architectural work was the Villa Madama (begun 1518, never finished, partially destroyed in the Sack of Rome in 1527). The villa is conceived as a Roman country villa, with a circular courtyard, a great loggia overlooking the Tiber valley, and frescoed interiors imitating the recently-discovered painted rooms at Nero's Domus Aurea. The Villa Madama type, half country house and half garden temple, traveled across the Alps and became the European country villa.</p>
+
+<p>The Roman studio of the 1510s and 1520s established a working method that the rest of the Renaissance followed. Architects collaborated with painters, sculptors, and surveyors. They measured ancient ruins systematically. They sent younger associates back to their home cities with the new Roman manner. Sebastiano Serlio, who worked under Peruzzi, took the manner to Venice and then to France. Giulio Romano took it to Mantua. Sansovino took it to Venice. The Roman Renaissance, in this sense, did not stay in Rome. It diffused outward through architect-disciples.</p>
+
+<h2 id="sack-1527">The Sack of Rome, 1527</h2>
+
+<p>On May 6, 1527, the army of the Holy Roman Emperor Charles V, unpaid and out of control, sacked Rome. Thirty thousand soldiers, many of them German Lutherans, looted the city for ten months. Churches were stripped, manuscripts burned, citizens killed or ransomed. The pope was besieged in Castel Sant'Angelo. The destruction was on a scale Rome had not seen since the Gothic sacks of the fifth century.</p>
+
+<p>The architectural consequence was a dispersal. The architects, painters, and sculptors of the Roman studio scattered across Italy and beyond. Giulio Romano went to Mantua. Sansovino went to Venice. Serlio went to Venice and then France. Peruzzi went back to Siena. The Roman Renaissance, which had been concentrated in one city, became a network of regional schools. This was, paradoxically, good for the long-term diffusion of the classical revival. By the time Rome recovered in the 1540s, the new architectural language had taken root in a dozen other Italian cities and in the French royal court.</p>
+
+<h2 id="michelangelo">Michelangelo as Architect</h2>
+
+<p>Michelangelo Buonarroti (1475-1564) thought of himself first as a sculptor. He took up architecture in middle age, almost reluctantly, and then transformed it. His architectural career is essentially the last thirty years of his life, from 1516 (when he was commissioned to design the facade of San Lorenzo in Florence, never built) until his death at age eighty-eight.</p>
+
+<h3>Laurentian Library, Florence, 1525-1571</h3>
+
+<p>A small but extraordinary project for the Medici family library at San Lorenzo. The vestibule contains the famous Mannerist staircase, a flowing waterfall of stone treads that fills the small room. The columns are recessed into the wall rather than standing free, the consoles do not actually support anything, and the proportions are deliberately strange. Michelangelo was demonstrating that the classical language could express tension and unease as well as serenity. The Laurentian vestibule is the first major Mannerist building.</p>
+
+<h3>The Campidoglio, Rome, designed 1538, executed 1546-1655</h3>
+
+<p>Pope Paul III asked Michelangelo to redesign the piazza on top of the Capitoline Hill, the ancient civic center of Rome that had decayed into a muddy goat pasture. Michelangelo's plan is one of the great Renaissance urban gestures. He set the equestrian statue of Marcus Aurelius in the center of a trapezoidal piazza paved with an oval geometric pattern. Three buildings face the piazza: the Palazzo Senatorio (city hall, on the long axis), the Palazzo dei Conservatori (right), and the Palazzo Nuovo (left). All three use a colossal Corinthian pilaster order running through two stories, the first use of a giant order in Renaissance architecture. The whole composition is symmetrical, monumental, and outward-facing, with a grand staircase, the Cordonata, leading up from the city below. The Campidoglio is the model for monumental civic squares for the next four hundred years. The U.S. Capitol's east front composition is its descendant.</p>
+
+<h3>St. Peter's Dome, Rome, 1546-1564</h3>
+
+<p>Michelangelo took over St. Peter's at age seventy-one, after Antonio da Sangallo's death. He returned to Bramante's Greek cross plan, simplified the piers, and designed the dome that would crown the building. The dome was finished after his death by Giacomo della Porta, who raised it slightly higher than Michelangelo had drawn. It is the most influential building element of the Renaissance. It established that a great civic or religious building should have a dome, raised on a drum, ribbed on the exterior, topped by a lantern. Every great dome from St. Peter's onward, including the U.S. Capitol, follows this scheme.</p>
+
+<h2 id="mannerism">Mannerism and Giulio Romano</h2>
+
+<p>Mannerism, the architectural movement of roughly 1520-1580, was the period when Renaissance classicism became self-conscious enough to play with its own rules. Mannerist architects knew the classical language thoroughly and used that knowledge to introduce deliberate strangeness: columns that did not quite line up, pediments broken in the middle, rustication that crawled over architectural elements like vines, rooms with dropped keystones that looked like they were about to fall.</p>
+
+<p>The masterwork of Mannerism is the <strong>Palazzo Te</strong> in Mantua, designed by Giulio Romano (1499-1546) for Federico Gonzaga and built 1525-1535. The Palazzo Te is a single-story country palace set in a garden, conceived as a stage set as much as a building. The exterior has Tuscan rustication with triglyphs that appear to slip out of place. Inside, the Sala dei Giganti is painted floor to ceiling with collapsing buildings and falling giants, designed so that standing in the center makes you feel the world is coming down on top of you. Mannerism in this sense is architecture that knows the rules and breaks them on purpose to produce a specific psychological effect.</p>
+
+<p>Mannerism never took deep root in America. The American classical tradition runs through the calmer, more orderly Palladian strand, not the Mannerist one. But Mannerist ideas surface occasionally in American buildings, particularly in the Beaux-Arts era, where dramatic rustication and exaggerated keystones become a vocabulary for banks and hotels.</p>
+
+<h2 id="serlio-vignola">Serlio, Vignola, and the Pattern Book</h2>
+
+<p>The Renaissance produced more than buildings. It produced printed treatises that taught the classical language to people who would never go to Italy. The printing press was sixty years old when Alberti's <em>De Re Aedificatoria</em> appeared in 1485. By 1550, the architectural treatise had become a recognized genre, and by 1570 the pattern book had become the most powerful distribution mechanism in architectural history.</p>
+
+<h3>Sebastiano Serlio, 1475-c. 1554</h3>
+
+<p>A Bolognese painter and architect who worked in Rome under Peruzzi, in Venice after the Sack, and in France from 1541 in the service of Francis I. Serlio published seven books on architecture between 1537 and 1575 (the last three posthumously). His Book IV (1537) was the first illustrated architectural treatise to treat the five orders systematically with measured drawings. Book III (1540) measured the ancient ruins of Rome. Books I and II (1545) covered geometry and perspective. Serlio's books were translated into Dutch, French, English, Spanish, and German, and they became the foundational reference for non-Italian architects for the next century. Inigo Jones's working copy of Serlio survives in Oxford, annotated in his own hand.</p>
+
+<h3>Jacopo Barozzi da Vignola, 1507-1573</h3>
+
+<p>A Bolognese-trained architect who worked in Rome and Mantua, designed the Villa Giulia for Pope Julius III (1551-1555), and finished the lower portion of St. Peter's dome after Michelangelo. His most influential building is the Church of Il Gesu in Rome (1568-1584), the mother church of the Jesuit order. Il Gesu is the prototype of the Baroque Catholic church: a single broad nave, side chapels rather than aisles, a domed crossing, and a facade with two stories of paired pilasters joined by a great volute that descends from Alberti at Santa Maria Novella. Every Jesuit church in Europe and Latin America for the next two hundred years is some variant on Il Gesu.</p>
+
+<p>Vignola's lasting contribution, however, was a book. <em>Regola delli cinque ordini d'architettura</em> ("Rule of the Five Orders of Architecture") was published in 1562. It was thin (a handful of plates with measured drawings of each order) and ruthlessly practical. Where Alberti philosophized about beauty, Vignola gave you the column diameter at the base and the height of every part above it, in module units, in a way you could copy and use. <em>Regola</em> went through more than five hundred editions in every major European language. It became the standard architectural reference book for educated builders and gentlemen-amateurs. Jefferson owned Vignola. Every American carpenter-builder who designed a Greek Revival farmhouse between 1800 and 1860 was looking at Vignola or a derivative.</p>
+
+<h2 id="sansovino-venice">Sansovino and the Venice School</h2>
+
+<p>Venice was a special case. It was a republic, immensely wealthy from Mediterranean trade, set on a lagoon, and uninterested in being like anyone else. Venetian architecture before 1530 was a beautiful local hybrid of Byzantine, Gothic, and early Renaissance elements. After the Sack of Rome, several major Roman architects ended up in Venice, and Venetian classicism became one of the dominant strands of the late Renaissance.</p>
+
+<p>The leader was Jacopo Sansovino (1486-1570), a Florentine sculptor and architect who had worked under Bramante in Rome and fled to Venice in 1527. He became the chief architect of the Venetian Republic. His major works are the <strong>Library of San Marco</strong> (begun 1537), a long, two-story Doric-and-Ionic colonnade facing the Doge's Palace across the Piazzetta; the <strong>Loggetta del Campanile</strong> (1538-1546), a small ceremonial pavilion at the base of the great campanile; the <strong>Zecca</strong> (the Mint, 1536-1547), a heavily rusticated treasury building; and the <strong>Palazzo Corner della Ca' Grande</strong> on the Grand Canal (begun 1532), the grandest Venetian palace of the century.</p>
+
+<p>Sansovino's Library of San Marco was deeply influential. Palladio called it "perhaps the most beautiful building put up since antiquity." The young Palladio, who came to Venice in the 1540s to study, took the Library as one of his models. The Library's clear two-story composition, its handling of the orders, and its use of sculpted figures filling the spandrels of the upper arches all show up in Palladio's later work.</p>
+
+<h2 id="palladio">Andrea Palladio</h2>
+
+<p>Andrea di Pietro della Gondola (1508-1580) is the architect whose influence on the long American story is greatest. He was born in Padua and apprenticed at age thirteen to a stonemason in Vicenza, a medium-sized city in the Venetian Republic. He worked as a builder's mason into his late twenties. Then, around 1535, he met the humanist scholar Gian Giorgio Trissino, who recognized something unusual in him.</p>
+
+<p>Trissino took the twenty-something stonemason under his wing, taught him Latin, brought him into the humanist circle, and gave him a classical name. Andrea di Pietro became Andrea Palladio, after Pallas Athena, the goddess of wisdom. Trissino took Palladio to Rome at least three times between 1541 and 1554. Palladio measured the ancient ruins, sketched the major Renaissance buildings, and absorbed the architectural culture that Vitruvius, Alberti, Bramante, and Michelangelo had built.</p>
+
+<p>When Palladio came back to the Veneto, he had what no other working architect in northern Italy had: a deep, measured, first-hand knowledge of Roman building combined with a craftsman's training in actually getting things built. He had taste, scholarship, and a foreman's discipline. His clients were the patrician families of Vicenza, Venice, and the Venetian mainland (the <em>terraferma</em>). Over the next forty years, he designed for them the buildings that defined Renaissance domestic and civic architecture for the rest of the world.</p>
+
+<div class="pull">Palladio had what no other working architect in northern Italy had: deep measured knowledge of Roman building combined with a craftsman's training in actually getting things built.</div>
+
+<h2 id="palladio-vicenza">Palladio in Vicenza</h2>
+
+<p>Vicenza is the city Palladio rebuilt. Walk through it today and you will see his work on every other block.</p>
+
+<h3>The Basilica Palladiana, 1549-1614</h3>
+
+<p>The medieval town hall of Vicenza had a vaulted second story that was structurally failing. The city held a competition for a solution. Palladio won in 1549 with a brilliant proposal: rather than rebuild the hall, wrap it in a two-story Doric-and-Ionic loggia. The loggia uses what is now called the <span class="term">Palladian motif</span> (or the Serliana, since Serlio had drawn it first): a central arched opening flanked by two narrower flat-headed openings, with the columns of the flat openings carrying small entablatures over the side openings. The motif solved a structural problem (the existing building's irregular bays did not match a regular column rhythm) and produced a uniquely flexible classical pattern that could absorb any module. Every American Palladian doorway, every Federal-period window with a half-round above flanking sidelights, descends from the Basilica of Vicenza.</p>
+
+<h3>The Vicenza Palaces</h3>
+
+<p>Palladio designed about a dozen palaces for Vicentine families: Palazzo Thiene (1542), Palazzo Chiericati (begun 1551, the present home of the Vicenza museum), Palazzo Iseppo Porto, Palazzo Valmarana, Palazzo Barbaran da Porto (now the Palladio Museum). Each works variations on the urban palace type. The Palazzo Chiericati is perhaps the most influential: a long facade with a two-story open loggia in the center flanked by closed wings, the whole composition set back behind a small piazza. This open-center, closed-end pattern shows up in dozens of American public buildings.</p>
+
+<h3>The Teatro Olimpico, 1580-1585</h3>
+
+<p>Palladio's last building, finished by Scamozzi after his death. The first permanent indoor classical theatre built since antiquity, modeled on the Roman theatre of Marcellus and the descriptions of Greek theatres in Vitruvius. The stage scenery, perspective streets receding into the wall behind the proscenium, is a single permanent set still in place. Standing in the Teatro Olimpico is the closest a modern person can come to seeing Roman theatre as the Romans saw it.</p>
+
+<h2 id="palladio-villas">The Villas</h2>
+
+<p>The Venetian Republic, in the sixteenth century, was undergoing an agricultural transformation. The patrician families of Venice, who had made their fortunes in maritime trade, were investing increasingly in land on the mainland. They needed country houses that could function as agricultural estates, as showpieces of family standing, and as places of cultivated retirement. Palladio designed dozens of villas for them. The villa type, as he developed it, became the most exported building form in architectural history.</p>
+
+<p>The Palladian villa has three parts: a central residential block (the padronale, or master's house), usually fronted by a temple-front portico; two side wings, called <em>barchesse</em>, that housed the farm functions (granaries, stables, agricultural processing); and connecting arcades or colonnades joining the wings to the central block. The whole composition is symmetrical, set in axial gardens or aligned with a road, and meant to be read from a distance.</p>
+
+<p>Important examples:</p>
+
+<ul>
+  <li><strong>Villa Godi</strong> (begun 1537), Palladio's first major villa, in Lonedo. Earlier than his Roman trips, still transitional.</li>
+  <li><strong>Villa Foscari (La Malcontenta)</strong>, c. 1559, on the Brenta canal near Venice. Tall single-block villa with a giant Ionic portico approached by water.</li>
+  <li><strong>Villa Barbaro</strong> at Maser, begun 1554, designed for the humanist brothers Daniele and Marcantonio Barbaro. Long horizontal composition with a tall central block and arcaded wings. Daniele Barbaro was the editor of the standard Renaissance edition of Vitruvius. Working with the Barbaros gave Palladio access to the most learned humanist circle in Venice.</li>
+  <li><strong>Villa Emo</strong> at Fanzolo, c. 1559. Lower, simpler, agricultural in feeling. A demonstration that the Palladian villa could be modest.</li>
+  <li><strong>Villa Cornaro</strong> at Piombino Dese, begun 1553. Two-story portico of paired columns, an idea Jefferson used at Monticello's east front.</li>
+  <li><strong>Villa Rotonda</strong>, begun 1567 (next section).</li>
+</ul>
+
+<h2 id="villa-rotonda">The Villa Rotonda, Close Read</h2>
+
+<p>Of all Palladio's buildings, the Villa Rotonda (also called Villa Capra) is the one that traveled furthest. Begun in 1567 for the cleric Paolo Almerico, a half-mile outside Vicenza on a small hill, the building is uniquely symmetrical. It is square in plan, with four identical Ionic temple-front porticos facing the four cardinal directions, and a low dome rising over a central circular hall. The plan is a Greek cross with a circle inscribed in it, the most rigorously geometric villa Palladio ever designed.</p>
+
+<p>The Rotonda was not really a working farm villa. It was a country retreat, a place to read and entertain visitors, set on a site from which all four porticos commanded different views of the surrounding hills. Palladio designed it as much as a theoretical exercise as a functional building. He described it himself, in the Second Book of the Four Books, as the perfect demonstration of how a building could be both rigorous and various: same plan four times, four different landscapes.</p>
+
+<p>The Rotonda's influence ran through three channels. First, Inigo Jones (next section) traveled to Vicenza in 1613-1614 and brought back Palladio's drawings, including the Rotonda. Second, the English Palladian movement of the eighteenth century made the Rotonda the canonical model. Lord Burlington's Chiswick House (1729) is a direct copy. William Kent's Holkham Hall takes the type and stretches it. Third, Thomas Jefferson, reading Palladio in the 1760s, took the Rotonda as one of his models for the central dome at Monticello and for the Rotunda at the University of Virginia.</p>
+
+<h2 id="palladio-venice">Palladio's Venetian Churches</h2>
+
+<p>Late in his career Palladio designed two churches in Venice that solved a classical-architecture problem that had stumped everyone for a century: how to put a Roman temple front on a basilica-plan church with a tall nave and lower side aisles.</p>
+
+<h3>San Giorgio Maggiore, 1566-1610</h3>
+
+<p>Set on its own island opposite the Doge's Palace, San Giorgio is one of the great urban views of the world. Palladio's solution to the facade problem was to superimpose two temple fronts: a large central temple front for the high nave, and a wider, lower temple front for the aisles, with the two interpenetrating each other. The pediments overlap. The columns of the smaller temple front emerge from behind the columns of the larger. The whole facade reads as a single coherent classical composition that registers the section of the church behind it.</p>
+
+<h3>Il Redentore, 1577-1592</h3>
+
+<p>Commissioned by the Venetian Senate as a votive offering for the city's deliverance from a plague. Across the Giudecca canal, set on a small island, designed to be reached annually by a pontoon bridge across the canal in a votive procession that still happens every July. The facade refines the San Giorgio solution. The interior is a single barrel-vaulted nave leading to a domed crossing and an apse behind a screen of columns, with the brightness of the apse glimpsed through the screen. Il Redentore is the most serene of Renaissance churches.</p>
+
+<h2 id="four-books">The Four Books, 1570</h2>
+
+<p><em>I Quattro Libri dell'Architettura</em>, published in Venice in 1570 with woodcut illustrations Palladio supervised personally, is the architecture book that mattered most for the next three hundred years. It is organized in four parts.</p>
+
+<ul>
+  <li><strong>Book I</strong> covers materials, the five orders with measured proportions, and the elements of buildings (doors, windows, chimneys, stairs).</li>
+  <li><strong>Book II</strong> presents Palladio's own house and villa designs, with measured plans, sections, and elevations.</li>
+  <li><strong>Book III</strong> covers public buildings, urban design, and bridge design.</li>
+  <li><strong>Book IV</strong> measures and analyzes ancient Roman temples.</li>
+</ul>
+
+<p>Three things made <em>Quattro Libri</em> uniquely influential. First, every plate had measurements. You could copy a Palladian villa exactly because Palladio had given you the dimensions. Second, the building types Palladio illustrated, particularly the villa, were exactly the building types that Northern European country gentry and American planters needed. Third, the book was reasonably affordable, distributed widely, and translated quickly. The first English translation (a partial one) appeared in 1663. Giacomo Leoni's complete English translation in 1715-1720 launched the eighteenth-century English Palladian movement that, in turn, produced the architecture Jefferson learned from.</p>
+
+<p>Jefferson owned Palladio in three editions, including Leoni. He called Palladio "the Bible" of architecture. He laid out Monticello with Palladio's measurements on his drafting table. The University of Virginia is, in significant part, an exercise in inhabited Palladianism: ten pavilions on a lawn, each pavilion a different Palladian type, joined by colonnades, anchored by the Rotunda (a Pantheon at half scale) at the head. The line from Vicenza to Charlottesville is direct, and the book is the carrier.</p>
+
+<h2 id="scamozzi">Scamozzi, the Hinge to Modernity</h2>
+
+<p>Vincenzo Scamozzi (1548-1616) was Palladio's protege, his assistant in the last years, the architect who completed several of Palladio's unfinished projects (including the Teatro Olimpico), and the author of the next major architectural treatise after the Four Books. His <em>L'idea della architettura universale</em>, published 1615, was intended as a six-book treatise but only the first two parts were finished before he died. Even incomplete, it ran through dozens of editions.</p>
+
+<p>Scamozzi did three things that mattered. He systematized Palladio. Where Palladio's Four Books were a working architect's notebook, Scamozzi's <em>L'idea</em> was a textbook. He standardized the proportions Palladio had used by feel. He made Palladianism teachable. Second, he traveled. He went to France, the Low Countries, Bohemia, and Poland in the 1590s and early 1600s, bringing the Venetian classical manner with him in person. He met the young Inigo Jones in Venice in 1613-1614 and almost certainly influenced him directly. Third, he kept building. The Procuratie Nuove on Piazza San Marco, the Villa Rocca Pisana, and the church of San Nicola da Tolentino in Venice all date from this transitional period and show classical architecture moving from the High Renaissance into the Baroque.</p>
+
+<h2 id="baroque-pivot">The Baroque Pivot</h2>
+
+<p>After 1600 the dominant architectural energy in Italy shifted to Rome and shifted in character. The Baroque, the architectural movement of roughly 1600-1750, kept the classical orders but used them with new theatrical intensity. Walls undulated. Columns broke free from the wall and stepped forward. Pediments split open. Cornices curved. The Baroque made the static classical facade dynamic. Its great practitioners were Carlo Maderno (1556-1629, finished St. Peter's facade), Gian Lorenzo Bernini (1598-1680, the colonnade of St. Peter's Square, the Cornaro Chapel), and Francesco Borromini (1599-1667, San Carlo alle Quattro Fontane, Sant'Ivo).</p>
+
+<p>The Baroque had a vast influence on European architecture, especially Catholic Europe, France, Austria, and Bavaria. It influenced England and America much less. The English Palladians (Lord Burlington, William Kent) deliberately preferred Palladio over the Roman Baroque. The American colonial builders, who knew architecture mostly through English pattern books, mostly followed the Palladian strand. The American classical tradition is therefore a Palladian tradition, not a Baroque one. A few American Baroque buildings exist (Bertram Goodhue's Saint Bartholomew's Church in New York, certain Carrere & Hastings buildings), but the dominant American thread runs Palladio - Inigo Jones - Wren - Gibbs - Jefferson - the Founders.</p>
+
+<h2 id="palladianism">Palladianism Travels</h2>
+
+<p>Palladio's books crossed the Alps within a generation. By 1600 architects in France, the Low Countries, England, and Germany were studying the Four Books and the Roman ruins it documented. The pace and form of the diffusion varied by country.</p>
+
+<p>In France, the dominant influence was Roman, then the Roman through the lens of Italian-trained Frenchmen like Jean Bullant and Philibert de l'Orme, and finally, in the seventeenth century, through the establishment of the French Academy of Architecture in 1671 and the Academy in Rome (founded 1666) that sent French architects to Italy on prestigious fellowships. The Louvre east front (1667), Versailles (begun 1661), and the Hotel des Invalides (1671-1706) are the great seventeenth-century French classical buildings. French classicism is more austere, more symmetrical, and grander in scale than Italian Renaissance work.</p>
+
+<p>In the Low Countries, Palladian classicism took a domestic, mercantile form. Dutch country houses and city halls of the seventeenth century use Palladian proportions on brick walls with stone trim. The Mauritshuis in The Hague (1641) is a famous example. Dutch classicism, in turn, traveled with Dutch settlers to South Africa, New York, and Curacao.</p>
+
+<p>In Germany and central Europe, Palladianism merged with the Baroque and produced a hybrid that runs from Sanssouci near Berlin to the great Bavarian abbeys. This is the strand that mattered least for America.</p>
+
+<p>In England, Palladianism arrived in two waves separated by a hundred years. The first wave was Inigo Jones.</p>
+
+<h2 id="inigo-jones">Inigo Jones Brings It to England</h2>
+
+<p>Inigo Jones (1573-1652) is the architect who delivered Italian Renaissance classicism to Britain and, through Britain, to America. He was the son of a London cloth-worker, started as a designer of court masques (theatrical productions for James I and Charles I), and learned architecture by reading Serlio and Palladio. He traveled to Italy at least twice, in 1597-1603 (he was in Venice when Scamozzi was active there) and in 1613-1614, when he made a systematic tour of the Veneto, measuring Palladio's buildings personally. He returned with annotated copies of Palladio's Four Books that survive at Worcester College, Oxford.</p>
+
+<p>Jones's working life as an architect was relatively short. He was appointed Surveyor of the King's Works in 1615 and worked until the Civil War shut down major building in the 1640s. His career was interrupted by Cromwell, and he died in 1652. But the buildings he produced in those three decades changed English architecture.</p>
+
+<h3>The Queen's House, Greenwich, 1616-1635</h3>
+
+<p>The first fully classical building in England. A modest two-story villa designed for Queen Anne (wife of James I), then for Queen Henrietta Maria (wife of Charles I). Clean white walls, regular fenestration, Ionic loggia on the garden front. After centuries of English Tudor and Jacobean architecture (gables, leaded glass, brick chimneys), the Queen's House looked like nothing else in Britain. It looked, deliberately, like an Italian villa.</p>
+
+<h3>The Banqueting House, Whitehall, 1619-1622</h3>
+
+<p>The surviving fragment of what was meant to be a vast new royal palace. The Banqueting House is a single grand hall, two stories, with paired Ionic columns below and paired Composite columns above, capped by a heavy classical cornice. Inside, a single great room rises through both stories with a ceiling Jones commissioned from Rubens. The Banqueting House was the most rigorously classical building in northern Europe at the time. From its central balcony, Charles I stepped onto the scaffold and was beheaded in 1649, a fact that gave the building an additional kind of immortality.</p>
+
+<h3>The Covent Garden Square, 1631</h3>
+
+<p>Jones designed for the Earl of Bedford the first urban square in England, with houses arranged formally around an open piazza and a church (St. Paul's Covent Garden) closing one end. This was the prototype of the Georgian London square that defined Bloomsbury, Mayfair, and most American Federal-era town planning. The American university quadrangle, the New England town green with its meetinghouse, and the Washington plan all trace some lineage back to Jones at Covent Garden.</p>
+
+<h2 id="to-america">From England to America</h2>
+
+<p>The road from Jones to Jefferson runs through three more figures.</p>
+
+<p><strong>Christopher Wren</strong> (1632-1723), trained as a mathematician and astronomer, became Surveyor of the King's Works after the Great Fire of London in 1666. He designed fifty-two London churches and St. Paul's Cathedral (1675-1710), combining a Palladian classical exterior with a Baroque dome modeled on St. Peter's. Wren did not visit Italy. He learned the classical language from books and from one productive trip to Paris in 1665. The Wren steeple, a Doric or Corinthian church tower rising in stages, became the standard for English and American Protestant churches.</p>
+
+<p><strong>James Gibbs</strong> (1682-1754), a Scot who did study in Rome, designed St. Martin-in-the-Fields in London (1721-1726), whose tower rising directly above a temple-front portico became one of the most-copied compositions in English-speaking architecture. Gibbs's <em>Book of Architecture</em> (1728) was the most-used pattern book in colonial America. The white-spired New England church on the village green is St. Martin-in-the-Fields, downsized, in wood.</p>
+
+<p><strong>Lord Burlington and William Kent</strong> led the second wave of English Palladianism, around 1715-1750. Burlington was an amateur, an English aristocrat who had traveled to the Veneto and bought Palladio's drawings directly from the Scamozzi estate. He spent his fortune publishing Palladio (Leoni's 1715-1720 translation), commissioning Palladian buildings, and supporting younger Palladian architects, particularly William Kent. The buildings of this movement (Chiswick House, Holkham Hall, Mereworth Castle, Stowe) were the immediate models for the country houses of the American planter aristocracy in Virginia and South Carolina in the 1750s through 1770s. George Washington's Mount Vernon is a Palladian villa. So is the original block of Monticello, before Jefferson rebuilt it. So are dozens of plantation houses up and down the eastern seaboard.</p>
+
+<p>By the time of the Revolution, the American architectural language was Palladian. The Founders did not have to invent a national style. They inherited one. The next chapter, <a href="american-classical-architecture.html">American Classical Architecture</a>, picks up where this one ends, with Jefferson opening Palladio's <em>Four Books</em> in his library at Monticello and beginning to design the buildings of the Republic.</p>
+
+<div class="pull">By the time of the Revolution, the American architectural language was Palladian. The Founders did not have to invent a national style. They inherited one.</div>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<h4>Start here</h4>
+<ul>
+  <li><strong>James S. Ackerman, <em>Palladio</em></strong> (1966, revised 1991). The single best introduction to the most important figure of the Renaissance, by the most important Palladio scholar of the twentieth century.</li>
+  <li><strong>John Summerson, <em>Architecture in Britain, 1530-1830</em></strong> (Pelican History of Art, multiple editions). The standard account of how the Renaissance came to England and then to America.</li>
+  <li><strong>Peter Murray, <em>The Architecture of the Italian Renaissance</em></strong> (Thames & Hudson World of Art, 1969). Short, well illustrated, still in print.</li>
+</ul>
+
+<h4>The big books</h4>
+<ul>
+  <li><strong>Rudolf Wittkower, <em>Architectural Principles in the Age of Humanism</em></strong> (1949). How the Renaissance read Vitruvius and what they did with it. Brilliant and short.</li>
+  <li><strong>Ludwig Heydenreich and Wolfgang Lotz, <em>Architecture in Italy, 1400-1600</em></strong> (Pelican History of Art). The standard scholarly survey of the whole period.</li>
+  <li><strong>Manfredo Tafuri, <em>Interpreting the Renaissance</em></strong> (2006, English trans.). The harder critical theory side, for readers who want to go deep.</li>
+</ul>
+
+<h4>Single buildings, single architects</h4>
+<ul>
+  <li><strong>Ross King, <em>Brunelleschi's Dome</em></strong> (2000). Accessible, brilliantly told, popular history of the Florence dome.</li>
+  <li><strong>Christoph Luitpold Frommel, <em>The Architecture of the Italian Renaissance</em></strong> (2007). Beautifully illustrated, organized by architect.</li>
+  <li><strong>Bruce Boucher, <em>Andrea Palladio: The Architect in His Time</em></strong> (1994). The definitive critical biography.</li>
+  <li><strong>Witold Rybczynski, <em>The Perfect House: A Journey with Renaissance Master Andrea Palladio</em></strong> (2002). Less academic, very readable, takes the reader to each major villa.</li>
+</ul>
+
+<h4>Primary sources, in translation</h4>
+<ul>
+  <li><strong>Leon Battista Alberti, <em>On the Art of Building in Ten Books</em></strong> (Rykwert, Leach, Tavernor translation, 1988). The standard modern English Alberti.</li>
+  <li><strong>Andrea Palladio, <em>The Four Books on Architecture</em></strong> (Tavernor and Schofield translation, 1997). The standard modern English Palladio. The 1738 Ware translation is also free on archive.org.</li>
+  <li><strong>Sebastiano Serlio, <em>On Architecture</em></strong> (Hart and Hicks translation, 1996 and 2001, two volumes). The first illustrated treatise on the orders.</li>
+  <li><strong>Vignola, <em>Canon of the Five Orders of Architecture</em></strong> (Tavernor and Schofield translation, 1999). The textbook every working classical architect needed.</li>
+</ul>
+
+<hr>
+
+<p class="note">Companion pages on this site: <a href="greco-roman-architecture.html">Greco-Roman Architecture</a> for what the Renaissance was reviving, and <a href="american-classical-architecture.html">American Classical Architecture</a> for where it went next. The <a href="eo-14344.html">EO 14344</a> primer explains the policy that made classical the federal default again in 2025.</p>
+
+</main>
+</div>
+
+</body>
+</html>
