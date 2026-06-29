@@ -260,7 +260,7 @@ function sendLihi(){
   var e=document.getElementById('lihi-email').value;
   var t=document.getElementById('lihi-type').value;
   var m=document.getElementById('lihi-msg').value;
-  var subj='[LIHI] '+t+' — '+n;
+  var subj='[LIHI] '+t+' - '+n;
   var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: Low Income Housing Institute\n\n'+(m||'No message.');
   var a=document.createElement('a');
   a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
