@@ -280,7 +280,7 @@ function sendDesc(){
   var e=document.getElementById('desc-email').value;
   var t=document.getElementById('desc-type').value;
   var m=document.getElementById('desc-msg').value;
-  var subj='[DESC] '+t+' — '+n;
+  var subj='[DESC] '+t+' - '+n;
   var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: DESC\n\n'+(m||'No message.');
   var a=document.createElement('a');
   a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
