@@ -818,14 +818,7 @@ function showTab(tab) {
   try { localStorage.setItem('tab', tab); } catch (e) {}
 }
 
-(function restoreTab(){
-  try {
-    var saved = localStorage.getItem('tab');
-    if (saved && tabs.indexOf(saved) !== -1 && saved !== 'la' && saved !== 'intelligence' && saved !== 'seattle') {
-      showTab(saved);
-    }
-  } catch (e) {}
-})();
+/* Always default to the Seattle tab. */ (function(){ try { localStorage.removeItem('tab'); } catch (e) {} })();
 
 document.addEventListener('keydown', function(e) {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
