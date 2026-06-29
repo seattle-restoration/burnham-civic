@@ -172,9 +172,9 @@ hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
 <div class="subtitle">Support civic operations. Get access to intelligence, strategy, and the decision-maker network.</div>
 <hr>
 
-<p style="font-size:14px;margin-bottom:8px;">Burnham Civic is an operations board, not a newsletter. Membership funds the work: public records requests, parcel research, policy briefs, and direct engagement with decision makers.</p>
+<p style="font-size:14px;margin-bottom:8px;">Burnham Civic runs as an operations board. Membership funds the work: public records requests, parcel research, policy briefs, and direct engagement with decision makers.</p>
 
-<p style="font-size:14px;margin-bottom:24px;">Every dollar goes to operations. No galas. No overhead. No consultants.</p>
+<p style="font-size:14px;margin-bottom:24px;">Every dollar goes to operations rather than galas, overhead, or consultants.</p>
 
 <div class="tiers">
 
@@ -368,11 +368,6 @@ function prefillForm(tier) {
     if (sel.options[i].value === tier) { sel.selectedIndex = i; break; }
   }
   document.getElementById('mf-name').focus();
-}
-
-function submitInterest() {
-  // Form now submits directly via Formspree
-  return false;
 }
 
 // Auto-select LA tab if coming from /la/ pages
