@@ -276,7 +276,7 @@ function sendInquiry(){
   var e=document.getElementById('ms-email').value;
   var t=document.getElementById('ms-type').value;
   var m=document.getElementById('ms-msg').value;
-  var subj='[Material Standard] '+t+' — '+n;
+  var subj='[Material Standard] '+t+' - '+n;
   var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: Material Standard\n\n'+(m||'No message.');
   var a=document.createElement('a');
   a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
