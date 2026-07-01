@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water Treaty Economics - BURNHAM CIVIC</title>
+<meta name="description" content="Two US-Canada treaties quietly move hundreds of millions of dollars a year in power and flood control across the border. Who pays, who profits, and why Seattle overpays for both.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+.subscribe {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1e3a5f;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav {
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+.back {
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: block;
+}
+h1.article-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 6px;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+.article-subtitle {
+  font-size: 17px;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+h2 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 36px 0 10px;
+  color: #111;
+  letter-spacing: -0.01em;
+}
+h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 24px 0 6px;
+  color: #111;
+  letter-spacing: 0;
+}
+p {
+  margin: 0 0 14px;
+  color: #1a1a1a;
+}
+.stat-block {
+  border-left: 3px solid #1e3a5f;
+  padding: 12px 16px;
+  margin: 24px 0;
+  background: #f7f7f5;
+}
+.stat-block p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+.stat-block strong {
+  font-size: 16px;
+}
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 14px;
+}
+.comparison-table th, .comparison-table td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+.comparison-table th {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  font-weight: 700;
+}
+.comparison-table tr:last-child td { border-bottom: none; }
+.lever-name { font-weight: 700; }
+
+/* === DECO SYSTEM OVERRIDES (sitewide) === */
+.burnham-quote, .stat-block {
+  position: relative !important;
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
+  background-size: 1px 100% !important;
+  background-position: 4px 0 !important;
+  background-repeat: no-repeat !important;
+}
+.burnham-quote::before, .burnham-quote::after,
+.stat-block::before, .stat-block::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before, .stat-block::before { top: 9px; }
+.burnham-quote::after, .stat-block::after { bottom: 9px; }
+.standard-list { padding-left: 0; list-style: none; }
+.standard-list li {
+  border-left: 0 !important;
+  padding-left: 22px !important;
+  position: relative;
+  border-bottom: 1px dotted #ddd;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.standard-list li:last-child { border-bottom: none; }
+.standard-list li::before {
+  content: ""; position: absolute;
+  left: 0; top: 17px;
+  width: 16px; height: 10px;
+  background: #1c1917;
+  clip-path: polygon(0 100%, 0 0, 25% 0, 25% 25%, 50% 25%, 50% 50%, 75% 50%, 75% 75%, 100% 75%, 100% 100%);
+}
+.standard-list li strong { color: #1c1917 !important; }
+</style>
+<!-- SEO -->
+<link rel="canonical" href="https://burnhamcivic.org/water-treaty-economics.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="Water Treaty Economics - BURNHAM CIVIC">
+<meta property="og:description" content="Two US-Canada treaties quietly move hundreds of millions of dollars a year in power and flood control across the border. Who pays, who profits, and why Seattle overpays for both.">
+<meta property="og:url" content="https://burnhamcivic.org/water-treaty-economics.html">
+<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TBCNewsAction">
+<meta name="twitter:title" content="Water Treaty Economics - BURNHAM CIVIC">
+<meta name="twitter:description" content="Two US-Canada treaties quietly move hundreds of millions of dollars a year in power and flood control across the border. Who pays, who profits, and why Seattle overpays for both.">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJC34M3909"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WJC34M3909');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="#subscribe" class="subscribe">Subscribe</a>
+</div>
+
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')">Intelligence</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
+</div>
+
+<hr>
+
+<a href="index.html" class="back">&larr; Back to Seattle</a>
+
+<h1 class="article-title">Water Treaty Economics</h1>
+<div class="article-subtitle">Two US-Canada treaties quietly move hundreds of millions of dollars a year in power and flood control across the border. Here is who pays, who profits, and why Seattle overpays for both.</div>
+
+<p>Most people in Seattle have never heard of the two treaties that govern the rivers their electricity and their flood safety depend on. One runs on the Skagit, the other on the Columbia. Together they move hundreds of millions of dollars a year across the Canadian border, and they were both negotiated in a world of 1960s and 1980s engineering assumptions that no longer hold. On one of them, Seattle is quietly winning. On the other, the United States has overpaid Canada for sixty years. And the city utility that operates the Skagit dams charges its own customers roughly three times what Tacoma charges for the same public hydropower.</p>
+
+<p>This is an explainer and an accounting. The treaties are not secret, but the economics inside them almost never get laid out in plain numbers. When you do lay them out, a clear picture appears: the United States built its own dams, financed Canada's, pays Canada fairly for a real flood-control service, and on top of all of that keeps overpaying Canada for power on a formula both governments have already admitted is too generous.</p>
+
+<h2>Two Treaties, Two Rivers</h2>
+
+<p>The first thing to get straight is that these are two separate agreements on two separate rivers. They get bundled in strategy because they are the same US-Canada energy relationship, but on paper they are distinct.</p>
+
+<table class="comparison-table">
+  <tr><th style="width:16%"></th><th style="width:42%">High Ross Treaty (Skagit)</th><th style="width:42%">Columbia River Treaty (Columbia)</th></tr>
+  <tr><td class="lever-name">Signed</td><td>1984</td><td>1964</td></tr>
+  <tr><td class="lever-name">River</td><td>Skagit and Ross Lake, plus a Pend d'Oreille rider</td><td>Columbia</td></tr>
+  <tr><td class="lever-name">Dams</td><td>Ross, Diablo, Gorge (Seattle City Light)</td><td>Mica, Arrow (Keenleyside), Duncan, Libby, Grand Coulee</td></tr>
+  <tr><td class="lever-name">What is at stake</td><td>A below-market power deal, a $4 billion relicensing, the Seven Mile back-flood</td><td>Flood control for the lower Columbia, and a large power overpayment</td></tr>
+  <tr><td class="lever-name">US operator</td><td>Seattle City Light</td><td>Bonneville Power Administration and the US Army Corps of Engineers</td></tr>
+</table>
+
+<h2>The Skagit Deal Seattle Should Defend</h2>
+
+<p>The High Ross Treaty settled a fight over whether Seattle would raise Ross Dam and flood the Skagit valley on the Canadian side. Seattle agreed never to raise it. In exchange, British Columbia delivers about 35.4 average megawatts of firm, winter-shaped hydropower to the Seattle load center, and Seattle pays for it.</p>
+
+<p>Here is the part almost nobody has noticed. Seattle's capital payments under that deal ran from 1986 through 2020 only, and they are now finished. From 2021 to the treaty's end on January 1, 2066, Seattle pays only a small operations charge, on the order of $300,000 a year, for roughly 310,000 megawatt-hours of firm carbon-free hydropower that is worth many times that at today's market prices.</p>
+
+<div class="stat-block">
+  <p><strong>The High Ross deal today</strong></p>
+  <p>Seattle pays about $0.3 million a year for power worth roughly $20 to $24 million a year at market. That is a 70 to 130 times annual return, and it runs to 2066.</p>
+</div>
+
+<p>The deal was not always this good. Through the 1980s and 1990s the fixed payment ran above market and Seattle was arguably overpaying Canada. The crossover came in the late 2000s. Now that the capital payments have ended, Seattle sits firmly on the winning side. The right move is to defend it. Every proposal to reopen and modernize the power payment would move Seattle's price up toward the open market. The status quo is the best outcome the city has.</p>
+
+<p>There is a separate problem on the Skagit worth flagging, because it points the other way. The three Skagit dams are in the middle of a federal relicensing whose settlement runs to about $4 billion over the 50-year license. Roughly half of that is ordinary operations and dam capital the utility owes regardless. Inside the rest sits a fish-passage program capped near $979 million. That is close to a billion dollars of ratepayer money for trap-and-haul passage on three high mountain dams, in a river system where the science points at road-runoff chemistry, not dam passage, as the main killer of returning coho. The relicensing is still open for public comment, which is the moment to demand an independent cost-benefit review and a ratepayer cost cap before the license locks in around 2030.</p>
+
+<h2>The Columbia Overpayment</h2>
+
+<p>The Columbia River Treaty is the bigger and older of the two. Canada built three large storage dams that regulate the river so that US dams downstream can generate more steadily. In exchange, Canada is paid half of that extra downstream power, the Canadian Entitlement, worth in the range of $229 to $335 million a year by the US government's own valuation.</p>
+
+<p>The problem is how the payment is calculated. The formula credits Canadian storage as the first increment of storage added to the whole system, ranked ahead of every US dam built after 1961, including Libby and Dworshak. Storage has diminishing returns, so ranking Canada first hands it credit for the most valuable slice and inflates the payment. Recalculated honestly, ranking Canadian storage after the US dams that were actually built later, the real present-day benefit is roughly half.</p>
+
+<p>This is not a fringe claim. The Congressional Research Service, a nonpartisan arm of the US Congress, states in report R43287 that removing the first-added benefit and a related surplus limit would make the entitlement "slightly less than half of current values." A modernization agreement reached in 2024 independently confirms it: the two governments agreed to cut the entitlement about 37 percent immediately and roughly 50 percent by 2033. By signing that, Canada conceded the old number was too high.</p>
+
+<div class="stat-block">
+  <p><strong>The Columbia overpayment</strong></p>
+  <p>A last-added, fish-constrained recalculation cuts the entitlement roughly 45 to 55 percent, on the order of $115 to $170 million a year. Even after the 2024 deal, the corrected number likely still overpays by $50 to $100 million a year.</p>
+</div>
+
+<h2>The United States Built the Dams</h2>
+
+<p>The Canadian grievance about the Columbia is real and emotional. Filling the four treaty reservoirs permanently flooded roughly 600 square kilometers of Canadian valley bottom, about three times the size of Kootenay Lake, and the Arrow Lakes reservoir alone displaced 23 communities and more than 2,000 people. British Columbia points to that sacrifice to justify what it is paid.</p>
+
+<p>The financing tells a different story. When the treaty took effect in 1964, British Columbia did not pay for the dams out of its own pocket. It sold the first 30 years of the Canadian Entitlement to a consortium of 37 public and 4 private US utilities for a lump sum of $254.4 million, and used that American money to build Duncan, Arrow, and Mica. The United States separately paid Canada about $64 million for 60 years of assured flood control, and the US Army Corps built Libby Dam itself in Montana. In 1964 dollars that was roughly $318 million up front, on the order of $2.5 to $3 billion today, before a single dollar of ongoing entitlement was ever paid.</p>
+
+<p>So American ratepayers financed the very dams that flooded those Canadian valleys, paid separately for the flood control, and built the one treaty dam on US soil. Canada was compensated at every step. The hardship the affected Canadian communities felt was real, but it was a failure of British Columbia to share the money with the people it displaced, which is why the province had to create the Columbia Basin Trust in 1995, thirty years late, to finally send benefits back to the region. That is Canada's internal accounting, not a debt the United States owes.</p>
+
+<h2>Flood Control Is the One Real Canadian Card</h2>
+
+<p>There is one place where Canada holds genuine leverage, and it is flood control. To understand it you have to understand that flood control is not about holding water. It is about keeping empty space ready. A reservoir can only catch a flood if it has room to catch it in, so real flood operation means drawing reservoirs down ahead of the spring snowmelt, then capturing the surge and releasing it slowly. That is the opposite of what a power operator wants, which is a full reservoir for maximum generation and the flexibility to sell when prices are high. The flood-control payment compensates Canada for running its reservoirs against its own power interest.</p>
+
+<p>The stakes are not hypothetical. The entire arrangement exists because of one disaster. On May 30, 1948, the Columbia, running at twice its normal volume, breached a levee and destroyed Vanport, Oregon, then the state's second-largest city of about 18,500 people, in a single afternoon. At least 15 people died. That flood is why the United States wanted Canadian storage in the first place. The risk concentrates downstream, at the mouth, where the whole basin's flow converges on the flat, densely built floodplain of Portland and Vancouver. Today Canada holds back more than a trillion gallons each spring for US flood protection.</p>
+
+<p>As of 2024 that flood service shifted from an assured, pre-paid arrangement to a "called upon" one, where the United States requests Canadian flood storage and pays for it. The interim version of that arrangement expires July 31, 2027 without a ratified treaty. That deadline is the pressure point, and it is the reason the ports of Portland and Vancouver have been sounding the alarm.</p>
+
+<h2>How It Nets Out</h2>
+
+<p>The clearest way to see the whole thing is to keep two ledgers separate, which is exactly what Canada prefers to blur.</p>
+
+<p>The first ledger is power. The United States overpays because the entitlement is calculated on an inflated 1960s formula. That overpayment is on the order of $50 to $170 million a year, it is indefensible, and both a US government report and Canada's own 2024 signature say so. This is the ledger to correct.</p>
+
+<p>The second ledger is flood control. Canada genuinely delivers it, at real cost to its own power business, on land it flooded to build the reservoirs. It is worth paying for, at about $37.6 million a year plus call costs. This is the ledger to honor.</p>
+
+<p>The thing the United States should pay for is real and modest. The thing it should stop paying is inflated and several times larger. Splitting the two is the entire game. It is also clean: the United States is not refusing to pay Canada for flood control, it is ending a six-decade overcharge on power that a US report and Canada's own signature both call too high. Money that stays home instead of flowing north.</p>
+
+<h2>The Seattle Angle</h2>
+
+<p>All of this is federal, run through the State Department, the Bonneville Power Administration, and the Army Corps, not through City Hall. But there is a local hook, and it is a sharp one. Seattle City Light operates the Skagit dams and sits on some of the cheapest power on the continent, including the below-market High Ross deal. Yet it charges its residential customers about 13.4 cents per kilowatt-hour, roughly three times Tacoma Power's 4.5 cents, for the same publicly owned Northwest hydropower, while raising rates again.</p>
+
+<p>The treaty economics and the utility economics point at the same conclusion. Seattle has access to extraordinarily cheap public power, and both the federal government and its own city utility have arranged for ratepayers to see far too little of the benefit. The federal fix is to stop overpaying Canada for power while honoring the flood-control bill. The local fix is for Seattle City Light to justify a threefold markup on some of the cheapest power in the country, or pass it through.</p>
+
+<h2>What Should Happen</h2>
+
+<ul class="standard-list">
+  <li><strong>Do not ratify the Columbia deal as it stands.</strong> The 2024 agreement cut the entitlement roughly in half, but a fully corrected, fish-constrained number is lower still. The current pause is the opening to press for a deeper cut on an actual-benefit standard rather than 1960s assumptions.</li>
+  <li><strong>Keep the two ledgers separate.</strong> Pay Canada fairly for flood control as the distinct, called-upon service it now is, and refuse to let the flooded-valleys argument be used to justify the separate power overpayment.</li>
+  <li><strong>Use the calendar.</strong> The interim flood arrangement expires July 31, 2027 and a broader US-Canada trade review lands in July 2026. Those deadlines create leverage while British Columbia is fiscally strained by the $16 billion Site C overrun and dependent on US power in dry years.</li>
+  <li><strong>Defend the High Ross power deal and never reopen it.</strong> It delivers roughly $20 million a year in below-market clean power to Seattle through 2066.</li>
+  <li><strong>Demand a cost-benefit review of the Skagit relicensing.</strong> Use the open federal comment period to require an independent review of the $979 million fish-passage program and a ratepayer cost cap before the license locks in.</li>
+  <li><strong>Hold Seattle City Light accountable</strong> for charging its own customers roughly three times what a comparable public utility charges for the same hydropower.</li>
+</ul>
+
+<p>None of this is aggression toward Canada. It is fairness. The United States built its own dams, financed Canada's, and pays a real bill for flood control. What it should stop doing is overpaying, forever, for power on a formula that everyone involved already agrees was too generous.</p>
+
+<div id="subscribe" style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
+  <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute expertise, or join as a member? Tell us who you are and how you want to help.</p>
+  <form onsubmit="return sendWTE()" style="margin:0;">
+    <input type="text" id="wte-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="wte-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
+    <select id="wte-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
+      <option value="Public Supporter">I want to support this publicly</option>
+      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
+      <option value="Expert/Contributor">I have expertise to contribute (energy, hydropower, federal policy)</option>
+      <option value="Media">Media inquiry</option>
+      <option value="Other">Other</option>
+    </select><br>
+    <textarea id="wte-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
+    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
+    <span id="wte-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
+  </form>
+</div>
+
+<script>
+function sendWTE(){
+  var n=document.getElementById('wte-name').value;
+  var e=document.getElementById('wte-email').value;
+  var t=document.getElementById('wte-type').value;
+  var m=document.getElementById('wte-msg').value;
+  var subj='[Water Treaty Economics] '+t+' - '+n;
+  var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: Water Treaty Economics\n\n'+(m||'No message.');
+  var a=document.createElement('a');
+  a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
+    +'?subject='+encodeURIComponent(subj)
+    +'&body='+encodeURIComponent(body);
+  a.click();
+  document.getElementById('wte-sent').style.display='inline';
+  return false;
+}
+</script>
+
+</body>
+</html>
