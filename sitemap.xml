@@ -3,6 +3,8 @@
   <url><loc>https://burnhamcivic.org/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://burnhamcivic.org/membership.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://burnhamcivic.org/news.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://burnhamcivic.org/seattle-grand-prix.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://burnhamcivic.org/elliott-bay-pier.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://burnhamcivic.org/cso.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://burnhamcivic.org/material-standard.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://burnhamcivic.org/440-foot-eyesores.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
