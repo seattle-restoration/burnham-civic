@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Elliott Bay Fishing Pier - BURNHAM CIVIC</title>
+<meta name="description" content="Expedia built a 40-acre campus on Elliott Bay at Smith Cove and opened its shoreline to the public, the best stretch of working-waterfront beach downtown. It is missing one thing: a place to walk out over the water. Build the pier.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header { display: flex; align-items: baseline; justify-content: space-between; }
+h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
+.subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #1e3a5f; padding: 5px 14px; text-decoration: none; font-family: Georgia, serif; }
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+.back { font-size: 12px; margin-bottom: 24px; display: block; }
+h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; font-weight: 400; line-height: 1.15; margin: 0 0 6px; color: #111; letter-spacing: -0.02em; }
+.article-subtitle { font-size: 17px; color: #555; font-style: italic; margin: 0 0 24px; letter-spacing: -0.01em; }
+h2 { font-size: 19px; font-weight: 700; margin: 36px 0 10px; color: #111; letter-spacing: -0.01em; }
+p { margin: 0 0 14px; color: #1a1a1a; }
+.stat-block { padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
+.stat-block p { margin: 4px 0; font-size: 15px; }
+.stat-block strong { font-size: 17px; }
+/* === DECO SYSTEM OVERRIDES (sitewide) === */
+.burnham-quote, .stat-block {
+  position: relative !important;
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
+  background-size: 1px 100% !important;
+  background-position: 4px 0 !important;
+  background-repeat: no-repeat !important;
+}
+.burnham-quote::before, .burnham-quote::after,
+.stat-block::before, .stat-block::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before, .stat-block::before { top: 9px; }
+.burnham-quote::after, .stat-block::after { bottom: 9px; }
+/* === MEMBERS GATE === */
+.lockpanel { background:#1e3a5f; padding:20px 24px; margin:32px 0; color:#cbd5e1; }
+.lockpanel .mtag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#fbbf24; color:#1e3a5f; padding:2px 8px; margin-bottom:10px; }
+.lockpanel h3 { font-family:Georgia,serif; font-size:16px; color:#fff; margin:0 0 8px; font-weight:700; }
+.lockpanel ul { margin:0 0 14px 18px; padding:0; font-size:13px; }
+.lockpanel li { margin:3px 0; }
+.lockpanel input[type=password] { font-family:Georgia,serif; font-size:13px; padding:5px 8px; border:1px solid #475569; background:#16304f; color:#fff; width:180px; }
+.lockpanel button { font-family:Georgia,serif; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#1e3a5f; background:#fbbf24; border:none; padding:6px 14px; margin-left:6px; cursor:pointer; }
+.lockpanel .sub-link { font-size:12px; margin-left:12px; }
+.lockpanel .sub-link a { color:#fbbf24; }
+.lockpanel .pw-err { font-size:12px; color:#fca5a5; display:none; margin-top:8px; }
+.members-content { display:none; }
+body.tbc-member .members-content { display:block; }
+body.tbc-member .lockpanel { display:none; }
+.members-content .mbadge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#1e3a5f; color:#fbbf24; padding:2px 8px; margin:24px 0 0; }
+</style>
+<!-- SEO -->
+<link rel="canonical" href="https://burnhamcivic.org/elliott-bay-pier.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="The Elliott Bay Fishing Pier - BURNHAM CIVIC">
+<meta property="og:description" content="Expedia opened the best stretch of working-waterfront beach in Seattle to the public and stopped one step short. Build a proper public fishing and gathering pier at Smith Cove.">
+<meta property="og:url" content="https://burnhamcivic.org/elliott-bay-pier.html">
+<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TBCNewsAction">
+<meta name="twitter:title" content="The Elliott Bay Fishing Pier - BURNHAM CIVIC">
+<meta name="twitter:description" content="Expedia opened the best stretch of working-waterfront beach in Seattle to the public and stopped one step short. Build the pier at Smith Cove.">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJC34M3909"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WJC34M3909');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="membership.html" class="subscribe">Subscribe</a>
+</div>
+
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','international')">International</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')">Intelligence</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
+</div>
+
+<hr>
+
+<a href="index.html" class="back">&larr; Back to Seattle</a>
+
+<h1 class="article-title">The Elliott Bay Fishing Pier</h1>
+<div class="article-subtitle">Expedia moved its headquarters onto the Seattle waterfront, spent a fortune fixing the shoreline, and opened the best stretch of working-waterfront beach in the city to the public. It stopped one step short of the thing that would make it a civic place. Build the pier.</div>
+
+<p>In 2019 Expedia Group moved into the old Amgen campus at Smith Cove, a forty-acre site on Elliott Bay just north of downtown, and did something Seattle almost never sees on its industrial waterfront. It opened the shoreline. The campus put a public promenade along the water, cleaned up the beach, and connected the whole thing to the Elliott Bay Trail that runs from Myrtle Edwards Park up to the cruise terminal at Pier 91. On a clear evening it is one of the few places in the city where the public can stand on a real beach, downtown, and look straight west at the Olympics across open salt water.</p>
+
+<p>It is genuinely good. It is also unfinished, and the missing piece is obvious the moment you stand there. There is nowhere to go out over the water.</p>
+
+<h2>The One Good Place</h2>
+
+<p>Seattle's central waterfront is a wall of piers owned by the port, the cruise lines, and the freight terminals. Public access to the actual water, the kind where you can put your feet near it and cast a line, is close to nonexistent between Alki and Golden Gardens. The Smith Cove shoreline is the exception, and half a mile south of it sits the proof of what people do with that kind of access when they get it.</p>
+
+<p>The Elliott Bay Fishing Pier at Centennial Park, built by the Port of Seattle at Terminal 86 in the 1970s, is a public pier that reaches out into the bay for the sole purpose of letting people fish and stand over deep water. It has an artificial reef built beneath it to draw fish. It has been in continuous public use for half a century. It is one of the most-used pieces of public waterfront the city owns, and it exists because someone decided the public deserved a way out onto Elliott Bay that was not a boat.</p>
+
+<p>That pier is aging, it is small for the demand, and it sits at the far end of a parking lot. The new center of gravity on this stretch of waterfront is Smith Cove, where a Fortune 500 company just spent years landscaping the shoreline and inviting the public onto it. The pier belongs there.</p>
+
+<h2>The Project</h2>
+
+<p>Burnham Civic proposes a public fishing and gathering pier on Elliott Bay at the Smith Cove shoreline, next to the Expedia campus and the existing public beach. Not a dock and not a boardwalk. A real pier, wide enough to hold people three ways at once: those who came to fish, those who came to walk out over the water at sunset, and those who came to sit. A covered pavilion at the head of it for shade and weather. Rod holders, cleaning stations, and a bench line along both rails. An artificial reef beneath it, the way the Terminal 86 pier has one, so that it fishes as well as it looks.</p>
+
+<p>It should be built to last a century and detailed like it matters. Stone and heavy timber and cast metal, not the galvanized pipe rail of a maintenance dock. This is the western terminus of the Elliott Bay Trail and the front porch of the whole Smith Cove shoreline. It should read, from a ferry deck or a passing cruise ship, as a civic object, the way the great municipal piers of the early twentieth century did before American cities forgot how to build them.</p>
+
+<div class="stat-block">
+  <p><strong>40 acres</strong> of restored public shoreline already delivered at Smith Cove by the Expedia campus</p>
+  <p><strong>1/2 mile</strong> south sits the Terminal 86 fishing pier, a 50-year proof of demand</p>
+  <p><strong>1</strong> new pier to connect them and finish the one good stretch of downtown waterfront</p>
+</div>
+
+<h2>Why It Works</h2>
+
+<p>Almost everything hard about a waterfront project is already solved here. The shoreline is stabilized and public. The trail already lands at the site. The parking, the transit, and the sidewalks were built for a corporate campus of thousands. There is a willing private neighbor with an interest in the public realm next door being excellent rather than empty. And there is a fifty-year-old pier down the trail that answers, in advance, every skeptic who asks whether Seattle would actually use a fishing pier. Seattle has been using one, hard, since Nixon was in office.</p>
+
+<h2>The Standard</h2>
+
+<p>This project is a test case for the principle that runs through everything Burnham Civic publishes: public infrastructure should be built in the style that makes people want to keep it. See <a href="material-standard.html">The Standard Seattle Forgot</a>. A city that can restore forty acres of contaminated waterfront to a public beach can build a pier worthy of standing on it. The question is only whether it gets built to the standard of a civic monument or the standard of a bus shelter.</p>
+
+<h2>What TBC Is Doing</h2>
+
+<p>We are developing the concept brief, assembling the ownership and jurisdiction map for the Smith Cove tidelands, and building the case for the coalition that takes it to the Port of Seattle, the city, and the private neighbor. The working file below is for members.</p>
+
+<div class="lockpanel">
+  <span class="mtag">MEMBERS</span>
+  <h3>The Operation File: Elliott Bay Fishing Pier</h3>
+  <ul>
+    <li>The jurisdiction map: Port of Seattle tidelands, DNR aquatic lands lease, and the city shoreline permits, in the right order</li>
+    <li>The precedent file: the Terminal 86 pier, plus modern public piers and what they cost to build and maintain</li>
+    <li>The environmental path: the artificial reef, the salmon migration rules, and the Army Corps Section 404 sequence</li>
+    <li>The coalition map: the Port, Expedia, the fishing public, and the tribes, and who says yes first</li>
+  </ul>
+  <form onsubmit="return tbcTryPw('ebp-pw')" style="margin:0;display:inline;">
+    <input type="password" id="ebp-pw" placeholder="Member password">
+    <button type="submit">Enter</button>
+    <span class="sub-link"><a href="membership.html">Become a member &rarr;</a></span>
+  </form>
+  <p class="pw-err" id="ebp-pw-err">Incorrect password.</p>
+</div>
+
+<div class="members-content">
+
+<span class="mbadge">MEMBERS FILE</span>
+<h2>The Jurisdiction Map</h2>
+
+<p>Smith Cove is Port of Seattle territory. The uplands run to the port and the private campus lease, and the water and tidelands are a mix of port ownership and state-owned aquatic land managed by the Washington Department of Natural Resources. That means the pier is a lease question before it is a permit question. The first move is not a design. It is a conversation with the Port about a public pier on port tidelands adjacent to the cruise operation at Terminal 91, and a parallel DNR aquatic lands use authorization for whatever sits over state bedlands. Get the landlords aligned and the rest is process.</p>
+
+<h2>The Environmental Path</h2>
+
+<p>Any structure over Elliott Bay touches salmon. The bay is designated critical habitat and the migration corridor rules govern overwater coverage, light penetration through the deck, and in-water work windows. This is the part that kills naive waterfront proposals and the part where the Terminal 86 pier is worth its weight, because it already carries an engineered artificial reef and a half-century operating record in the same water. The path runs through the Army Corps under Section 404, the state under the Hydraulic Project Approval, and the tribes with treaty fishing rights in the bay, who should be partners in a public fishing pier rather than an obstacle to one. Grated decking, a light in-water footprint, and a reef that adds habitat rather than shading it are the design constraints that turn the environmental review from a fight into a selling point.</p>
+
+<h2>The Funding Stack</h2>
+
+<p>A public fishing pier is one of the most fundable civic objects in the recreation grant world. The state Recreation and Conservation Office runs the boating and Aquatic Lands Enhancement programs that exist for exactly this. The Port has a public-access mandate tied to its shoreline holdings. And a named pier at the front door of a Fortune 500 headquarters is a philanthropic and corporate object of obvious appeal to the neighbor whose shoreline it completes. The reef and the deck are the public grant story. The pavilion and the detailing are the naming-gift story.</p>
+
+<h2>The Coalition Map</h2>
+
+<p>Four parties, one page. The Port of Seattle owns the ground and holds the public-access mandate. Expedia holds the shoreline next door and the interest in it being excellent. The fishing public, organized around the Terminal 86 pier, is the constituency that shows up. And the tribes hold treaty fishing rights in Elliott Bay and belong at the front of a project about public access to fish, not the back. Nobody has put those four on the same page. A public pier at Smith Cove is the project that does it.</p>
+
+</div>
+
+<div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
+  <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute engineering or shoreline expertise, or join as a member? Tell us who you are and how you want to help.</p>
+  <form onsubmit="return sendInquiry()" style="margin:0;">
+    <input type="text" id="ms-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="ms-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
+    <select id="ms-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
+      <option value="Public Supporter">I want to support this publicly</option>
+      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
+      <option value="Expert/Contributor">I have expertise to contribute</option>
+      <option value="Media">Media inquiry</option>
+      <option value="Other">Other</option>
+    </select><br>
+    <textarea id="ms-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
+    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
+    <span id="ms-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
+  </form>
+</div>
+
+<script>
+(function(){
+  var PASS='maga', COOKIE='tbc_maga_auth';
+  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
+  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
+  function unlock(){document.body.classList.add('tbc-member');}
+  if(getCookie(COOKIE)===btoa(PASS)) unlock();
+  window.tbcTryPw=function(id){
+    var inp=document.getElementById(id);
+    if(inp.value===PASS){setCookie(COOKIE,btoa(PASS),30);unlock();}
+    else{var e=document.getElementById(id+'-err');if(e)e.style.display='block';inp.value='';}
+    return false;
+  };
+})();
+function sendInquiry(){
+  var n=document.getElementById('ms-name').value;
+  var e=document.getElementById('ms-email').value;
+  var t=document.getElementById('ms-type').value;
+  var m=document.getElementById('ms-msg').value;
+  var subj='[Elliott Bay Fishing Pier] '+t+' - '+n;
+  var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: The Elliott Bay Fishing Pier\n\n'+(m||'No message.');
+  var a=document.createElement('a');
+  a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
+    +'?subject='+encodeURIComponent(subj)
+    +'&body='+encodeURIComponent(body);
+  a.click();
+  document.getElementById('ms-sent').style.display='inline';
+  return false;
+}
+</script>
+
+</body>
+</html>

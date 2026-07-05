@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Seattle Grand Prix - BURNHAM CIVIC</title>
+<meta name="description" content="Formula 1 turned Miami and Las Vegas into the biggest civic events in America and made street circuits the sport's marquee races. Seattle has the stadium district, the rail, and a waterfront backdrop no American circuit can match. Put the city on the calendar.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 860px;
+  margin: 32px auto 32px 10%;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #00c; }
+a:visited { color: #551a8b; }
+a:hover { color: #c00; }
+.header { display: flex; align-items: baseline; justify-content: space-between; }
+h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
+.subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #1e3a5f; padding: 5px 14px; text-decoration: none; font-family: Georgia, serif; }
+.subscribe:hover { background: #2a4a73; }
+.subscribe:visited { color: #fff; }
+.nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+.nav a.active { color: #111; text-decoration: underline; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+.back { font-size: 12px; margin-bottom: 24px; display: block; }
+h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; font-weight: 400; line-height: 1.15; margin: 0 0 6px; color: #111; letter-spacing: -0.02em; }
+.article-subtitle { font-size: 17px; color: #555; font-style: italic; margin: 0 0 24px; letter-spacing: -0.01em; }
+h2 { font-size: 19px; font-weight: 700; margin: 36px 0 10px; color: #111; letter-spacing: -0.01em; }
+p { margin: 0 0 14px; color: #1a1a1a; }
+.stat-block { padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
+.stat-block p { margin: 4px 0; font-size: 15px; }
+.stat-block strong { font-size: 17px; }
+/* === DECO SYSTEM OVERRIDES (sitewide) === */
+.burnham-quote, .stat-block {
+  position: relative !important;
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
+  background-size: 1px 100% !important;
+  background-position: 4px 0 !important;
+  background-repeat: no-repeat !important;
+}
+.burnham-quote::before, .burnham-quote::after,
+.stat-block::before, .stat-block::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before, .stat-block::before { top: 9px; }
+.burnham-quote::after, .stat-block::after { bottom: 9px; }
+/* === MEMBERS GATE === */
+.lockpanel { background:#1e3a5f; padding:20px 24px; margin:32px 0; color:#cbd5e1; }
+.lockpanel .mtag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#fbbf24; color:#1e3a5f; padding:2px 8px; margin-bottom:10px; }
+.lockpanel h3 { font-family:Georgia,serif; font-size:16px; color:#fff; margin:0 0 8px; font-weight:700; }
+.lockpanel ul { margin:0 0 14px 18px; padding:0; font-size:13px; }
+.lockpanel li { margin:3px 0; }
+.lockpanel input[type=password] { font-family:Georgia,serif; font-size:13px; padding:5px 8px; border:1px solid #475569; background:#16304f; color:#fff; width:180px; }
+.lockpanel button { font-family:Georgia,serif; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#1e3a5f; background:#fbbf24; border:none; padding:6px 14px; margin-left:6px; cursor:pointer; }
+.lockpanel .sub-link { font-size:12px; margin-left:12px; }
+.lockpanel .sub-link a { color:#fbbf24; }
+.lockpanel .pw-err { font-size:12px; color:#fca5a5; display:none; margin-top:8px; }
+.members-content { display:none; }
+body.tbc-member .members-content { display:block; }
+body.tbc-member .lockpanel { display:none; }
+.members-content .mbadge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#1e3a5f; color:#fbbf24; padding:2px 8px; margin:24px 0 0; }
+</style>
+<!-- SEO -->
+<link rel="canonical" href="https://burnhamcivic.org/seattle-grand-prix.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="The Seattle Grand Prix - BURNHAM CIVIC">
+<meta property="og:description" content="F1 made street circuits the biggest civic events in America. Seattle has the stadium district, the rail, and a waterfront backdrop no American circuit can match.">
+<meta property="og:url" content="https://burnhamcivic.org/seattle-grand-prix.html">
+<meta property="og:image" content="https://burnhamcivic.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TBCNewsAction">
+<meta name="twitter:title" content="The Seattle Grand Prix - BURNHAM CIVIC">
+<meta name="twitter:description" content="F1 made street circuits the biggest civic events in America. Seattle has the backdrop no American circuit can match. Put the city on the calendar.">
+<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJC34M3909"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WJC34M3909');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="membership.html" class="subscribe">Subscribe</a>
+</div>
+
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','international')">International</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','intelligence')">Intelligence</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
+</div>
+
+<hr>
+
+<a href="index.html" class="back">&larr; Back to Seattle</a>
+
+<h1 class="article-title">The Seattle Grand Prix</h1>
+<div class="article-subtitle">Formula 1 came back to the United States and turned street circuits into the biggest civic events in the country. Miami and Las Vegas got there first. Seattle has the one thing neither of them has: a backdrop.</div>
+
+<p>Ten years ago Formula 1 ran one race in the United States, at a purpose-built track outside Austin, and most Americans could not have named a single driver. Today F1 runs three American races, two of them on temporary street circuits threaded through the middle of a major city, and the sport is one of the fastest-growing properties in American media. Miami built a circuit around its stadium. Las Vegas closed the Strip and ran cars past its casinos at two hundred miles an hour. Both events draw hundreds of thousands of visitors and put the host city in front of a global television audience of hundreds of millions across a single weekend.</p>
+
+<p>The lesson of the modern F1 boom is not about racing. It is that a street circuit is the most powerful civic marketing event a city can stage, because the city itself is the set. The cars are the excuse. What the world actually watches for three days is the place.</p>
+
+<h2>Why Seattle</h2>
+
+<p>Seattle has assets for this that the existing American circuits would trade for. Miami races around a stadium in a parking sea. Las Vegas races down a commercial strip. Seattle has a stadium district on the edge of downtown, served by light rail and heavy rail, sitting between the working port and the rebuilt central waterfront, under a skyline, with the Olympics on one horizon and Rainier on the other. There is no American circuit with that camera. There is barely a circuit in the world with that camera.</p>
+
+<div class="stat-block">
+  <p><strong>3</strong> F1 races now run in the United States, up from one a decade ago</p>
+  <p><strong>2</strong> of them are temporary street circuits through the heart of a city</p>
+  <p><strong>1</strong> American city has a stadium district, rail, a working port, and a mountain-and-sound backdrop in a single frame</p>
+</div>
+
+<h2>The Circuit</h2>
+
+<p>The natural site is the stadium district and SoDo. The area was built for crowds and for closing streets: two major stadiums, wide industrial arterials on a grid, rail on two sides, and a street network that already goes quiet on non-event days. A temporary circuit through SoDo and around the stadium district, brushing the reopened Alaskan Way waterfront, gives the layout the two things a great street race needs. It gives the drivers a genuine circuit, with the long straights of the industrial grid and the tight corners of the stadium approaches. And it gives the broadcast the shot, with the skyline, the water, and the port cranes standing behind every frame.</p>
+
+<p>A street circuit is temporary by design. The barriers, the grandstands, and the paddock go up for a race week and come down after. The permanent civic footprint is small, which is the point: the value is the weekend, not a stadium that sits empty the other fifty-one.</p>
+
+<h2>The Economics</h2>
+
+<p>The host-city case for an F1 weekend is hotel nights, restaurant covers, and airport traffic compressed into three days, plus a television broadcast money cannot otherwise buy. Las Vegas and Miami both reported economic impact in the hundreds of millions of dollars for their inaugural races. The honest version of the pitch acknowledges the other side of the ledger too: street circuits are disruptive, they close roads for weeks of setup, and the promoter economics have to work without the public holding the risk. A serious Seattle bid is structured so the sanctioning fee and the buildout sit with a private promoter and the sport, and the city's contribution is the streets, the permitting, and the welcome.</p>
+
+<h2>The Standard</h2>
+
+<p>The pieces of a street circuit that do become permanent, the pit structure, the grandstand anchors, the gateway a city builds at the entrance to its race, are civic architecture, and they should be built to the standard this organization argues for everywhere else. See <a href="material-standard.html">The Standard Seattle Forgot</a>. Monaco's harbor and Singapore's Marina Bay are famous circuits because they are famous places first. A Seattle race should look, on the broadcast, like the city meant it.</p>
+
+<h2>What TBC Is Doing</h2>
+
+<p>We are developing the concept, mapping the circuit options and the ownership and permitting picture across the stadium district and the port, and identifying the promoter and sanctioning path. The working file below is for members.</p>
+
+<div class="lockpanel">
+  <span class="mtag">MEMBERS</span>
+  <h3>The Operation File: Seattle Grand Prix</h3>
+  <ul>
+    <li>The circuit options: three routings through SoDo, the stadium district, and the waterfront, with the tradeoffs</li>
+    <li>The sanctioning path: F1 and its ownership, the promoter model, and how Miami and Las Vegas actually got made</li>
+    <li>The jurisdiction map: the city, the port, the stadium authorities, and the freight interests whose streets these are</li>
+    <li>The economics file: the real impact numbers behind the headline figures, and how to structure the risk off the public</li>
+  </ul>
+  <form onsubmit="return tbcTryPw('sgp-pw')" style="margin:0;display:inline;">
+    <input type="password" id="sgp-pw" placeholder="Member password">
+    <button type="submit">Enter</button>
+    <span class="sub-link"><a href="membership.html">Become a member &rarr;</a></span>
+  </form>
+  <p class="pw-err" id="sgp-pw-err">Incorrect password.</p>
+</div>
+
+<div class="members-content">
+
+<span class="mbadge">MEMBERS FILE</span>
+<h2>The Circuit Options</h2>
+
+<p>Three routings are worth studying. The first is a pure SoDo grid circuit, using the wide industrial arterials for straights and the stadium approaches for the technical section, entirely on city and port streets that empty out on non-event days. It is the cleanest to permit and the least disruptive, and it trades away the waterfront shot. The second brushes the reopened Alaskan Way to pull the central waterfront and the ferries into frame, at the cost of closing the city's marquee new street for setup. The third wraps tighter around the two stadiums to lean on the ready-made crowd infrastructure and the transit. The right answer is almost certainly a hybrid, and the choice is a negotiation with the freight interests as much as a question of racing geometry.</p>
+
+<h2>The Sanctioning Path</h2>
+
+<p>An F1 race is not a thing a city grants itself. It runs through the sport's commercial ownership and a race promoter who carries the sanctioning fee and the buildout. The instructive cases are recent and domestic. Miami's race was driven by the stadium's ownership as promoter. Las Vegas was driven by the sport itself, which bought the land and promoted its own race, an unusual structure that tells you how much the property wanted a marquee American street event. A Seattle path starts by deciding which of those models fits, then finding the promoter with the balance sheet and the appetite. The city's job in the early going is to signal that the streets and the permits are gettable, because no promoter spends against a city that has not said yes.</p>
+
+<h2>The Jurisdiction Map</h2>
+
+<p>The stadium district and SoDo are a patchwork. The city holds the streets. The Port of Seattle holds the freight corridors and has a working-waterfront mission that a race weekend has to be reconciled with, not steamrolled. The two stadium authorities hold the anchor venues and their event calendars. And the SoDo freight and industrial interests, who have spent a decade fighting to keep the area working rather than entertaining, are the constituency most likely to object and the one that most needs to be brought in early. A race that treats the port and the freight district as partners in a three-day event, with a clear plan to hand their streets back, is a race that can happen. One that treats them as obstacles is not.</p>
+
+<h2>The Economics File</h2>
+
+<p>The headline impact figures cities announce for these races are promotional and should be read with a discount. The defensible case is narrower and still strong: a compressed spike of hotel, dining, and travel spending, a sold-out city for a week, and a global broadcast that reaches an audience Seattle cannot otherwise buy, all landing in a shoulder season the city would love to fill. The structure that protects the public is the important part. The sanctioning fee, the buildout, and the downside risk belong with the promoter and the sport. The city trades access and welcome, not cash it cannot get back. Get that structure right and the Seattle Grand Prix is upside with a fixed, small public cost. Get it wrong and it is a subsidy with a checkered flag on it.</p>
+
+</div>
+
+<div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
+  <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute event, motorsport, or promoter expertise, or join as a member? Tell us who you are and how you want to help.</p>
+  <form onsubmit="return sendInquiry()" style="margin:0;">
+    <input type="text" id="ms-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="ms-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
+    <select id="ms-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
+      <option value="Public Supporter">I want to support this publicly</option>
+      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
+      <option value="Expert/Contributor">I have expertise to contribute</option>
+      <option value="Media">Media inquiry</option>
+      <option value="Other">Other</option>
+    </select><br>
+    <textarea id="ms-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
+    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
+    <span id="ms-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
+  </form>
+</div>
+
+<script>
+(function(){
+  var PASS='maga', COOKIE='tbc_maga_auth';
+  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
+  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
+  function unlock(){document.body.classList.add('tbc-member');}
+  if(getCookie(COOKIE)===btoa(PASS)) unlock();
+  window.tbcTryPw=function(id){
+    var inp=document.getElementById(id);
+    if(inp.value===PASS){setCookie(COOKIE,btoa(PASS),30);unlock();}
+    else{var e=document.getElementById(id+'-err');if(e)e.style.display='block';inp.value='';}
+    return false;
+  };
+})();
+function sendInquiry(){
+  var n=document.getElementById('ms-name').value;
+  var e=document.getElementById('ms-email').value;
+  var t=document.getElementById('ms-type').value;
+  var m=document.getElementById('ms-msg').value;
+  var subj='[Seattle Grand Prix] '+t+' - '+n;
+  var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: The Seattle Grand Prix\n\n'+(m||'No message.');
+  var a=document.createElement('a');
+  a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
+    +'?subject='+encodeURIComponent(subj)
+    +'&body='+encodeURIComponent(body);
+  a.click();
+  document.getElementById('ms-sent').style.display='inline';
+  return false;
+}
+</script>
+
+</body>
+</html>
