@@ -206,6 +206,21 @@ body { font-family:'Inter',system-ui,sans-serif; background:var(--dark); color:v
 </head>
 <body>
 
+<style>
+.bc-topnav{font-family:Georgia,'Times New Roman',serif;font-size:11px;margin:0;padding:10px 24px;letter-spacing:0.5px;line-height:2;background:#0d0d0d;border-bottom:1px solid rgba(201,168,76,0.15);}
+.bc-topnav a{margin-right:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9a84c;text-decoration:none;}
+.bc-topnav a:hover{color:#fff;}
+</style>
+<div class="bc-topnav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="la/">LA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','international')">International</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+  <a href="membership.html">Intelligence</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
+</div>
 <nav class="nav">
 <div class="nav-inner">
   <a href="index.html" class="nav-brand">Burnham Civic</a>

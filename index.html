@@ -869,7 +869,19 @@ function showTab(tab) {
   try { localStorage.setItem('tab', tab); } catch (e) {}
 }
 
-/* Always default to the Seattle tab. */ (function(){ try { localStorage.removeItem('tab'); } catch (e) {} })();
+/* On load, honor a tab requested by a sub-page nav link (passed via localStorage),
+   then clear it so a direct visit or manual reload still defaults to Seattle.
+   Intelligence and LA are excluded here because sub-pages link them directly to
+   their own pages (membership.html, la/). */
+(function(){
+  var t;
+  try { t = localStorage.getItem('tab'); } catch (e) {}
+  try { localStorage.removeItem('tab'); } catch (e) {}
+  var valid = { usa:1, international:1, news:1, strategy:1, contact:1 };
+  if (t && valid[t]) {
+    try { showTab(t); localStorage.removeItem('tab'); } catch (e) {}
+  }
+})();
 
 document.addEventListener('keydown', function(e) {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
