@@ -66,6 +66,10 @@ figcaption { font-size: 12px; color: #666; margin-top: 6px; line-height: 1.4; }
 .hl.t5 .say { font-size: 24px; border-left-color: #3a5a8a; color: #1e3a5f; }
 .hl.t6 .say { font-size: 26px; border-left-color: #1e3a5f; color: #1e3a5f; font-weight: 400; }
 .headlines .hl-note { font-size: 11px; color: #999; font-style: italic; margin: 14px 0 6px; line-height: 1.4; }
+.source-quote { border: 1px solid #ddd; background: #fbfbfa; padding: 18px 22px; margin: 26px 0; }
+.source-quote .sq-text { font-family: 'Instrument Serif', Georgia, serif; font-size: 19px; line-height: 1.35; color: #1a1a1a; margin: 0 0 10px; }
+.source-quote .sq-attr { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #a16207; }
+.source-quote .sq-src { font-size: 12px; color: #777; font-style: italic; margin-top: 2px; }
 </style>
 <link rel="canonical" href="https://burnhamcivic.org/napoleon-elba.html">
 <meta property="og:type" content="website">
@@ -105,9 +109,11 @@ figcaption { font-size: 12px; color: #666; margin-top: 6px; line-height: 1.4; }
 <a href="index.html" class="back" onclick="localStorage.setItem('tab','international')">&larr; Back to International</a>
 
 <h1 class="article-title">Napoleon's Elba</h1>
-<div class="article-subtitle">In April 1814 Napoleon Bonaparte was exiled to an 86-square-mile island in the Tyrrhenian Sea. He had ten months before he escaped. He did not sulk. He governed Elba like a sovereign state and rebuilt it, month by month, from the ground up. This is the account of those ten months.</div>
+<div class="article-subtitle">In April 1814 Napoleon Bonaparte was exiled to an 86-square-mile island in the Tyrrhenian Sea. He had ten months before he escaped. Instead of sulking, he governed Elba like a sovereign state and rebuilt it, month by month, from the ground up. This is the account of those ten months.</div>
 
-<p>The story everyone knows is the escape: the brig slipping out of the harbor, the Old Guard marching on Paris, the regiment sent to arrest him switching sides. The Hundred Days. Waterloo. The story almost no one knows is what he did with the ten months in between, and it is the more instructive one. Given the smallest possible command, a punitive rock in the Mediterranean, the most capable administrator in Europe could not stop himself from building. He arrived with a defeated army and no working stipend, and within a single year the island had new roads, a dredged harbor, reopened mines, a school, a theatre, a public library, fountains, a hospital, refuse collection, a court of appeal, and a civil code. It is the clearest demonstration on record of what a real operator does with a patch of ground, and it is a standing rebuke to every modern city that has been handed far more and built far less.</p>
+<p>The story everyone knows is the escape: the brig slipping out of the harbor, the Old Guard marching on Paris, the regiment sent to arrest him switching sides. The Hundred Days. Waterloo. The story almost no one knows is what he did with the ten months in between, and it is the more instructive one. Given the smallest possible command, a punitive rock in the Mediterranean, the most capable administrator in Europe could not stop himself from building. He arrived with a defeated army and no working stipend, and within a single year the island had new roads, a working harbor, reopened mines, a school, a theatre, a public library, fountains, a hospital, refuse collection, a court of appeal, and an overhauled legal system. It is the clearest demonstration on record of what a real operator does with a patch of ground, and it is a standing rebuke to every modern city that has been handed far more and built far less.</p>
+
+<p>The record of those ten months survives in unusual detail, and much of it is firsthand: the journal of Sir Neil Campbell, the British commissioner who wrote down his conversations with Napoleon; the diary of Captain Thomas Ussher of HMS Undaunted, the frigate that carried the Emperor into exile; the memoirs of Andre Pons de l'Herault, who ran the iron mines; and the account books of Peyrusse, the treasurer, in which every franc of the little state is entered. This article quotes all of them.</p>
 
 <figure>
   <img src="_assets/elba/mulini.jpg" alt="The Palazzina dei Mulini, Portoferraio, Elba">
@@ -116,28 +122,91 @@ figcaption { font-size: 12px; color: #666; margin-top: 6px; line-height: 1.4; }
 
 <h2>The Terms</h2>
 
-<p>Napoleon abdicated at Fontainebleau in April 1814. The Treaty of Fontainebleau, signed on April 11, sent him into exile on paper that looked generous. He kept the title of Emperor, now Emperor of Elba. He was granted a personal guard, full sovereignty over the island, and an annual stipend of two million francs to be paid by the restored Bourbon government of Louis XVIII. He would never receive a single payment of that stipend, a fact that shaped everything he did for the next ten months. He sailed from the south of France aboard the British frigate HMS Undaunted, and on May 3 to 4, 1814, he came ashore at Portoferraio and took possession of a sovereignty roughly the size of an American county.</p>
+<p>Napoleon abdicated at Fontainebleau in April 1814. Campbell reached the palace on the evening of April 16 and was shown in to the fallen Emperor the next morning, and his description of that first audience is worth reading as a portrait of a builder at the bottom of his arc.</p>
 
-<p>He did not arrive alone. He brought a government and an army. General Antoine Drouot became Governor of Elba. Grand Marshal Henri-Gatien Bertrand ran his household and staff. Giuseppe Balbiani handled the treasury. General Pierre Cambronne commanded the guard. The military establishment was about a thousand men in total: roughly six hundred of the Old Guard (grenadiers, chasseurs, sailors, and gunners), a hundred Polish lancers, a Corsican battalion of three hundred, and fifty gendarmes. His navy was the brig Inconstant, about three hundred tons, eighteen guns, later up-gunned to twenty-six, with a handful of smaller vessels. This was the apparatus he pointed at an island of twelve thousand people and eighty-six square miles.</p>
+<div class="source-quote"><p class="sq-text">"I saw before me a short active-looking man, who was rapidly pacing the length of his apartment, like some wild animal in his cell. He was dressed in an old green uniform with gold epaulets, blue pantaloons, and red topboots, unshaven, uncombed, with the fallen particles of snuff scattered profusely upon his upper lip and breast."</p><div class="sq-attr">Sir Neil Campbell</div><div class="sq-src">Journal, Fontainebleau, April 17, 1814; published as Napoleon at Fontainebleau and Elba, 1869.</div></div>
+
+<p>The Treaty of Fontainebleau, signed on April 11, sent him into exile on paper that looked generous. Article 3 provided that Elba "shall form during his life a separate principality, which he shall possess in full sovereignty and property," together with "an annual revenue of two million francs, which shall be carried as a rent-charge upon the great book of France." He kept the title of Emperor, now Emperor of Elba, and was granted a personal guard. He would never receive a single payment of that stipend, a fact that shaped everything he did for the next ten months. On the morning of his departure he told the Austrian commissioner, General Koller, that he wanted nothing beyond security against pirates: "Je vivrai la comme juge de paix," he said. I shall live there like a justice of the peace. Campbell wrote it down and, within weeks of reaching the island, stopped believing it.</p>
+
+<p>Before the convoy rolled south came the scene in the Cour du Cheval-Blanc on April 20, when Napoleon said goodbye to the Old Guard. Campbell set the speech down on the spot, "as nearly as I could recollect the words, in conjunction with the other Commissioners."</p>
+
+<figure>
+  <img src="_assets/elba/farewell-fontainebleau.jpg" alt="Napoleon's farewell to the Imperial Guard at Fontainebleau, April 20, 1814">
+  <figcaption>Napoleon's farewell to the Imperial Guard in the Cour du Cheval-Blanc at Fontainebleau, April 20, 1814, on the eve of his departure for Elba. Antoine Alphonse Montfort, after Horace Vernet. Palace of Versailles, via Wikimedia Commons (public domain).</figcaption>
+</figure>
+
+<div class="source-quote"><p class="sq-text">"Officers, non-commissioned officers, and soldiers of the Old Guard! I bid you farewell. For twenty years I have found you ever brave and faithful, marching in the path of glory... You are all my children. I cannot embrace you all, but I will do so in the person of your General."</p><div class="sq-attr">Napoleon, farewell to the Old Guard</div><div class="sq-src">Fontainebleau, April 20, 1814; transcribed on the spot by Campbell and the allied commissioners. Campbell, Napoleon at Fontainebleau and Elba, 1869.</div></div>
+
+<p>He embraced General Petit, kissed the eagle standard, and closed with "Farewell! Preserve me in your remembrance!" Campbell recorded the crowd in a single line: "Some of the officers and men wept, some remained silent with grief, while others called out 'Vive l'Empereur!'" He sailed from the south of France aboard the British frigate HMS Undaunted, and on May 3 to 4, 1814, he came ashore at Portoferraio and took possession of a sovereignty roughly the size of an American county.</p>
+
+<p>He did not arrive alone: he brought a government and an army. General Antoine Drouot became Governor of Elba. Grand Marshal Henri-Gatien Bertrand ran his household and staff. Peyrusse became Treasurer and Receiver-General of the island. General Pierre Cambronne commanded the guard. The military establishment was about a thousand men in total: roughly six hundred of the Old Guard (grenadiers, chasseurs, sailors, and gunners), a hundred Polish lancers, fifty gendarmes, and a Corsican battalion of three hundred recruited on the island itself. His navy was the brig Inconstant, about three hundred tons, eighteen guns, later up-gunned to twenty-six, with a handful of smaller vessels. This was the apparatus he pointed at an island of twelve thousand people and eighty-six square miles.</p>
+
+<div style="margin:30px 0; border:1px solid #ddd; background:#fbfbfa; padding:20px 24px;">
+  <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#666; margin-bottom:2px;">The Government of Elba</div>
+  <div style="font-size:13px; color:#777; font-style:italic; margin-bottom:16px;">The smallest sovereign administration in Europe, 1814-1815</div>
+  <div style="text-align:center; margin-bottom:12px;">
+    <div style="display:inline-block; border:1px solid #ccc; border-top:3px solid #1e3a5f; background:#fff; padding:10px 24px; max-width:420px;">
+      <div style="font-weight:700; font-size:14px; color:#1e3a5f;">Napoleon, Emperor of Elba</div>
+      <div style="font-size:12px; color:#666; line-height:1.4;">Sovereign; personally surveyed the island, fixed the budgets, and signed the decrees</div>
+    </div>
+  </div>
+  <div style="display:flex; flex-wrap:wrap; gap:10px;">
+    <div style="flex:1 1 145px; border:1px solid #ddd; border-top:3px solid #a16207; background:#fff; padding:10px 12px;">
+      <div style="font-weight:700; font-size:13px;">Gen. Antoine Drouot</div>
+      <div style="font-size:12px; color:#666; line-height:1.4;">Governor of the island; refused a 100,000 franc gift and drew 12,000 a year</div>
+    </div>
+    <div style="flex:1 1 145px; border:1px solid #ddd; border-top:3px solid #a16207; background:#fff; padding:10px 12px;">
+      <div style="font-weight:700; font-size:13px;">Grand Marshal Bertrand</div>
+      <div style="font-size:12px; color:#666; line-height:1.4;">Ran the household, the staff, and the machinery of the court</div>
+    </div>
+    <div style="flex:1 1 145px; border:1px solid #ddd; border-top:3px solid #a16207; background:#fff; padding:10px 12px;">
+      <div style="font-weight:700; font-size:13px;">Gen. Pierre Cambronne</div>
+      <div style="font-size:12px; color:#666; line-height:1.4;">Commanded the Guard, the exile army's six hundred veterans</div>
+    </div>
+    <div style="flex:1 1 145px; border:1px solid #ddd; border-top:3px solid #a16207; background:#fff; padding:10px 12px;">
+      <div style="font-weight:700; font-size:13px;">Peyrusse</div>
+      <div style="font-size:12px; color:#666; line-height:1.4;">Treasurer and Receiver-General; kept the ledger of the whole state at 12,000 francs a year</div>
+    </div>
+    <div style="flex:1 1 145px; border:1px solid #ddd; border-top:3px solid #a16207; background:#fff; padding:10px 12px;">
+      <div style="font-weight:700; font-size:13px;">Pons de l'Herault</div>
+      <div style="font-size:12px; color:#666; line-height:1.4;">Administrator of the Rio iron mines, the state's largest source of revenue</div>
+    </div>
+  </div>
+  <div style="font-size:11px; color:#999; font-style:italic; margin-top:12px; line-height:1.4;">Roles and salaries per Campbell (1869), Young (1914), and Peyrusse's accounts. Drouot's refusal of the 100,000 franc gift is recorded in Young, pp. 117-118.</div>
+</div>
 
 <h2>The Island He Inherited</h2>
 
-<p>Elba in 1814 was a hundred kilometers of coastline, a population of about twelve thousand, and not much else. Iron mines that had been worked since the Etruscans. Salt works. Scrubland and vineyards on the slopes. A tuna fishery. A half-functional harbor at Portoferraio between the forts Stella and Falcone. Pirates and smugglers along the coast. Half the villages had no road connecting them to any other village. It was, in short, an ordinary neglected place, the kind of jurisdiction that in every century absorbs money and produces excuses. He set out to change it, and the record of how he did it survives almost week by week.</p>
+<p>Elba in 1814 was nearly 150 kilometers of coastline, a population of about twelve thousand, and not much else. Iron mines that had been worked since the Etruscans. Salt works. Scrubland and vineyards on the slopes. A tuna fishery. A half-functional harbor at Portoferraio between the forts Stella and Falcone. Pirates and smugglers along the coast. Half the villages had no road connecting them to any other village. The French garrison Napoleon inherited told the same story of neglect: Ussher noted that a force of roughly three thousand men had melted away through desertion and discharge to about seven hundred by the time the Undaunted anchored. It was, in short, an ordinary neglected place, the kind of jurisdiction that in every century absorbs money and produces excuses. He set out to change it, and the record of how he did it survives almost week by week.</p>
+
+<figure>
+  <img src="_assets/elba/elba-map-1814.jpg" alt="Period French map of Elba, published after 1814">
+  <figcaption>"Plan de l'Ile d'Elbe, Residence de Buonaparte": a French engraved map of Elba published by J.B. Tardieu after a design by Bacler d'Albe, Napoleon's own topographer, issued after 1814 when the island became his sovereign domain. Musee Carnavalet, Paris, inv. G.34021, via Wikimedia Commons (CC0 public domain dedication).</figcaption>
+</figure>
 
 <h2>The Ten Months</h2>
 
 <h3><span class="mo">May 1814</span>The survey and the first orders</h3>
 
-<p>He did not rest a day. Contemporary accounts have him giving orders to the townspeople the moment he landed, and on the day after his arrival he was already inspecting Portoferraio's fortifications and riding out to the iron mines. In his first weeks he toured the island end to end on horseback, inspecting the mines at Rio Marina, auditing the salt works at Porto Azzurro, meeting the mayors, cataloguing the harbors and the coastline, and identifying, item by item, what was broken. He was a trained artillery officer and he read ground for a living; he did the survey himself rather than commissioning one. By early summer he had a written reform program for the entire island. He also designed a flag, white with a red diagonal band bearing three golden bees, which flies over Elba to this day. And he took possession of his two residences: the Palazzina dei Mulini, a town palace on the ridge between the two forts overlooking the harbor, and the Villa San Martino, a country house inland that he began remodeling as a private retreat.</p>
+<p>The takeover began before he even stepped ashore. On May 3 a delegation of Elban notables, Pons among them, came aboard the Undaunted to be presented to their new sovereign; Pons recorded his own vertigo at the meeting: "It all seemed to me a dream, a painful dream, a frightful dream." The same day the Emperor's first message went to the islanders through General Dalesme, the French commandant, whose printed proclamation quoted him directly: they should know "that they will be the constant object of my most active concern."</p>
+
+<p>Ussher's diary for May 4 catches the founding morning of the little state. Napoleon was on deck at daylight, talked for two hours with the harbour-master, then, working from "a book with all the ancient and modern flags of Tuscany," fixed the design for a national flag, white with a red diagonal band bearing three golden bees, and had the ship's tailor run up two copies so one could be flying over the batteries by one o'clock. It flies over Elba to this day. When he landed that afternoon, through a harbor loud with bands of music and shouts of "Vive l'Empereur!", the keys of the town were presented to him on a plate. He was at work before his subjects woke the next day. "At 4 a.m.," Ussher wrote, "I was awakened by shouts of 'Vive l'Empereur!' and by drums beating; Napoleon was already up, and going on foot over the fortifications, magazines, and storehouses." That afternoon he rode two leagues into the country and gave money to the poor he met on the road.</p>
+
+<figure>
+  <img src="_assets/elba/portoferraio-view-1814.jpg" alt="Period print of Portoferraio, its town, forts and harbor, 1812-1814">
+  <figcaption>"Vue Generale de L'ile d'Elbe, de la Ville et du Cateau de Porto Ferrajo": a print of Portoferraio's town, forts and harbor by Louis Lecoeur, published in Paris between 1812 and 1814, at the moment the port became Napoleon's capital. Rijksmuseum, Amsterdam, RP-P-1907-2715, via Wikimedia Commons (CC0 public domain dedication).</figcaption>
+</figure>
+
+<p>He did not rest a day. In his first weeks he toured the island end to end on horseback, inspecting the mines at Rio Marina, auditing the salt works near Portoferraio, meeting the mayors, cataloguing the harbors and the coastline, and identifying, item by item, what was broken. He was a trained artillery officer and he read ground for a living; he did the survey himself rather than commissioning one. By early summer he had a written reform program for the entire island. He took possession of his two residences, the Palazzina dei Mulini on the ridge above the harbor and the Villa San Martino inland, which he began remodeling as a private retreat. On May 26 five British transports arrived from Savona carrying about 750 volunteers of his Guard. The same day he visited the Undaunted, made a speech to the crew, and sent them a thousand bottles of wine and a thousand dollars; when the frigate sailed in early June he embraced the captain "a la Francaise" and said, "Adieu, Capitaine, comptez sur moi. Adieu!"</p>
 
 <figure style="max-width:360px;">
   <img src="_assets/elba/flag.jpg" alt="The flag of the Principality of Elba, designed by Napoleon">
   <figcaption>The flag Napoleon designed for the Principality of Elba: a white field crossed by a red diagonal band bearing three golden bees, his personal emblem. Adopted in May 1814, it remains the flag of Elba today. Image: Wikimedia Commons (public domain).</figcaption>
 </figure>
 
-<h3><span class="mo">June &ndash; July 1814</span>The building season</h3>
+<h3><span class="mo">June-July 1814</span>The building season</h3>
 
-<p>Through the height of summer the reform program became construction. He put men to work on the roads, the drainage, the harbor, and the mines all at once. Portoferraio got an underground drainage system to stop the streets from flooding; streets were widened, with walls knocked down where they had to be so the imperial carriage could pass; the road from the town up to his residence was paved. Out on the island he began the network of new roads that would eventually total around sixty miles, including the road up to the hermitage of the Madonna del Monte and the roads linking Portoferraio to the mining districts. He issued decrees on modern agricultural methods, pushed the expansion of the vineyards and the wine trade, and reorganized the tuna fishery. He was, by every account, everywhere at once, because with a defeated army and no stipend the one resource he had in surplus was his own restless attention.</p>
+<p>Through the height of summer the reform program became construction. He put men to work on the roads, the drainage, the harbor, and the mines all at once. Portoferraio got an underground drainage system to stop the streets from flooding; streets were widened, with walls knocked down where they had to be so the imperial carriage could pass; the road from the town up to his residence was paved. Out on the island he began a network of new roads, including the road up to the hermitage of the Madonna del Monte and the roads linking Portoferraio to the mining districts. He issued decrees on modern agricultural methods, pushed the expansion of the vineyards and the wine trade, and reorganized the tuna fishery. He was, by every account, everywhere at once, because with a defeated army and no stipend the one resource he had in surplus was his own restless attention.</p>
 
 <div class="pull">Give him eighty-six square miles of punitive exile, no budget, and ten months, and within a year it has roads, a harbor, a school, a theatre, and a balance sheet.</div>
 
@@ -147,57 +216,174 @@ figcaption { font-size: 12px; color: #666; margin-top: 6px; line-height: 1.4; }
 
 <h3><span class="mo">September 1814</span>Walewska, and the shadow from Vienna</h3>
 
-<p>On September 1, 1814, Marie Walewska, his Polish mistress, arrived on the island with their young son Alexandre. They stayed a few days at the hermitage of the Madonna del Monte, high in the hills, before she left again; his wife, the Empress Marie Louise, and their legitimate son never came at all. That same month the Congress of Vienna opened, and with it the first serious talk among the powers of moving Napoleon somewhere far more remote than a Tuscan island. Names like St. Helena, St. Lucia, Trinidad, and the Azores began to circulate. The exile that was supposed to be permanent and comfortable was starting to look temporary and precarious, and Napoleon, well informed through smugglers and visitors, knew it.</p>
+<p>On September 1, 1814, Marie Walewska, his Polish mistress, arrived on the island with their young son Alexandre. They stayed a few days at the hermitage of the Madonna del Monte, high in the hills, before she left again; his wife, the Empress Marie Louise, and their legitimate son never came at all. That same month the Congress of Vienna opened, and with it the first serious talk among the powers of moving Napoleon somewhere far more remote than a Tuscan island. Names like St. Helena, St. Lucia, Trinidad, and the Azores began to circulate. The exile that was supposed to be permanent and comfortable was starting to look temporary and precarious, and Napoleon, well informed through smugglers and visitors, knew it. To Campbell he performed serenity, delivering at an audience on September 16 a speech of retirement that reads very differently once you know what came five months later.</p>
 
-<h3><span class="mo">October &ndash; November 1814</span>The civic realm</h3>
+<div class="source-quote"><p class="sq-text">"I think of nothing outside my little island. I could have kept up the war during twenty years if I had wanted that. I exist no longer for the world. I am a dead man. I only occupy myself with my family and my retreat, my cows and my mules."</p><div class="sq-attr">Napoleon, to Campbell</div><div class="sq-src">Audience of September 16, 1814; Campbell, Napoleon at Fontainebleau and Elba, 1869 (translation as printed in the 1869 edition).</div></div>
+
+<h3><span class="mo">October-November 1814</span>The civic realm</h3>
 
 <p>Through the autumn the public works matured into institutions. He founded a public library that grew to some eleven hundred volumes. He began converting the deconsecrated Chiesa del Carmine into a proper theatre, the Teatro dei Vigilanti, still the main theatre on the island. He built fountains, established a hospital, and instituted regular refuse collection in Portoferraio, an unglamorous municipal service the island had never had. He stood up a court of appeals and a road inspection corps, the small permanent bodies that keep infrastructure and justice functioning after the builder has moved on. This is the tell of a serious administrator: not the monuments but the maintenance, the library and the garbage collection and the appeals court, the boring machinery of a governed place.</p>
 
 <h3><span class="mo">December 1814</span>The money runs out</h3>
 
-<p>By December the fiscal reality was undeniable. The stipend from France had never arrived. His troops and ships were costing roughly a million francs a year while the island's revenues came to only about four hundred thousand. He cut officials' salaries and leaned on the islanders for unpaid labor, which generated real local resentment. The mines and the salt and the wine were producing more than they ever had, but they could not close a gap that size. A sovereign state with a real army and no external funding cannot run indefinitely on an island economy, and Napoleon, who understood budgets as well as he understood artillery, could see the arithmetic ending badly.</p>
+<p>By December the fiscal reality was undeniable. The stipend from France had never arrived, and the numbers in Peyrusse's ledger were brutal. Over the entire reign the island's own revenues came to just 606,309 francs, of which the Rio iron mines supplied 373,129, by far the largest single line, while the state paid out 2,852,315 francs, the war establishment alone consuming 689,317 francs in the last seven months of 1814. The gap of roughly 2.25 million was covered the only way it could be: out of the 3,979,915 francs in cash Napoleon had carried into exile. Peyrusse had watched him wave away the loss of the far larger Crown treasure at Fontainebleau with a shrug: "Bah! when one loses the Empire one may as well lose everything." Now the arithmetic of the remnant set the clock on the whole enterprise.</p>
+
+<div style="margin:30px 0; border:1px solid #ddd; background:#fbfbfa; padding:20px 24px;">
+  <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#666; margin-bottom:2px;">The Elban Ledger</div>
+  <div style="font-size:13px; color:#777; font-style:italic; margin-bottom:14px;">The sovereign principality as a going concern, May 1814 to June 1815, in francs</div>
+  <div style="overflow-x:auto;">
+  <table style="width:100%; border-collapse:collapse; font-family:Georgia,serif; font-size:13.5px; background:#fff; border:1px solid #ddd;">
+    <tr>
+      <td colspan="2" style="padding:8px 12px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#1e3a5f; border-bottom:1px solid #ddd; background:#f7f7f5;">What came in</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee;">Rio iron mines (the largest single item)</td>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee; text-align:right; white-space:nowrap;">373,129</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee;">Salt works, fisheries, customs, and other revenue</td>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee; text-align:right; white-space:nowrap;">approx. 211,500</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee;">Land tax, entire reign (of which 2,282 collected by troops at Capoliveri)</td>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee; text-align:right; white-space:nowrap;">21,666</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px; border-top:1px solid #1c1917; border-bottom:1px solid #eee; font-weight:700;">Total receipts, May 1814 to June 3, 1815</td>
+      <td style="padding:6px 12px; border-top:1px solid #1c1917; border-bottom:1px solid #eee; text-align:right; font-weight:700; white-space:nowrap;">606,309</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px; border-bottom:1px solid #ddd; color:#a16207;">Treaty stipend due from France, 2,000,000 per year: amount actually received</td>
+      <td style="padding:6px 12px; border-bottom:1px solid #ddd; text-align:right; color:#a16207; font-weight:700; white-space:nowrap;">0</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding:8px 12px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#1e3a5f; border-bottom:1px solid #ddd; background:#f7f7f5;">What went out</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee;">War establishment (a paper strength of 1,592 men, including two never-completed battalions recruited on the island, plus the navy), last seven months of 1814 alone</td>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee; text-align:right; white-space:nowrap;">689,317</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee;">War budget fixed for 1815</td>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee; text-align:right; white-space:nowrap;">1,015,000</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee;">Household budget for 1815</td>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee; text-align:right; white-space:nowrap;">380,000</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee;">Civil administration budget for 1815 (of which 40,000 for roads and bridges)</td>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee; text-align:right; white-space:nowrap;">114,530</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px; border-top:1px solid #1c1917; border-bottom:1px solid #eee; font-weight:700;">Total payments, May 1814 to June 3, 1815</td>
+      <td style="padding:6px 12px; border-top:1px solid #1c1917; border-bottom:1px solid #eee; text-align:right; font-weight:700; white-space:nowrap;">2,852,315</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee; font-weight:700; color:#1e3a5f;">Deficit, covered from cash carried from France</td>
+      <td style="padding:6px 12px; border-bottom:1px solid #eee; text-align:right; font-weight:700; color:#1e3a5f; white-space:nowrap;">2,246,006</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 12px;">Cash Napoleon brought to Elba (Fontainebleau 488,913; Orleans 2,580,002; Rambouillet 911,000)</td>
+      <td style="padding:6px 12px; text-align:right; white-space:nowrap;">3,979,915</td>
+    </tr>
+  </table>
+  </div>
+  <div style="font-size:11px; color:#999; font-style:italic; margin-top:12px; line-height:1.4;">Figures from the accounts of Peyrusse, Napoleon's treasurer, as printed in Norwood Young, Napoleon in Exile: Elba (1914), pp. 199, 207-211; war spending and army strength for 1814 from Gruyer, Napoleon, King of Elba (1906), pp. 86-87, citing the imperial correspondence. The 1815 budget lines are the plan Napoleon fixed with Peyrusse; the totals are Peyrusse's actuals to June 3, 1815. "Approx." figures are rounded from the difference between Peyrusse's itemized and total receipts.</div>
+</div>
+
+<p>He responded by cutting officials' salaries, leaning on the islanders for unpaid labor, which generated real local resentment, and pressing the hated land tax, which raised only 21,666 francs in the entire reign. The mines and the salt and the wine were producing more than they ever had, but they could not close a gap that size. A sovereign state with a real army and no external funding cannot run indefinitely on an island economy, and Napoleon, who understood budgets as well as he understood artillery, could see the arithmetic ending badly.</p>
 
 <h3><span class="mo">January 1815</span>The theatre opens, the works slow</h3>
 
-<p>In the new year the Teatro dei Vigilanti opened, the civic capstone of the ten months and a genuine gift to the island's public life. But the same month the money forced retreat: he suspended the road-building program and halted further work on the country residence. He had built more in eight months than the island had seen in a century, and now he was being throttled by a stipend a defeated France had simply declined to pay. The combination of a closing fiscal trap and the news from the mainland, Bourbon unpopularity, a restless army, and the threat of deportation, was resolving into a single conclusion.</p>
+<p>In the new year the Teatro dei Vigilanti opened, inaugurated on January 24, 1815, in the shell of the deconsecrated Church of the Carmine, the civic capstone of the ten months and a genuine gift to the island's public life. But the same month the money forced retreat: he suspended the road-building program and halted further work on the country residence. He had built more in eight months than the island had seen in a century, and now he was being throttled by a stipend a defeated France had simply declined to pay. The combination of a closing fiscal trap and the news from the mainland, Bourbon unpopularity, a restless army, and the threat of deportation, was resolving into a single conclusion.</p>
+
+<figure>
+  <img src="_assets/elba/teatro-vigilanti.jpg" alt="The stage of the Teatro dei Vigilanti, Portoferraio, with the 1815 curtain by Revelli">
+  <figcaption>The Teatro dei Vigilanti in Portoferraio, created for Napoleon from the deconsecrated Church of the Carmine and inaugurated in January 1815, with the original 1815 stage curtain by Vincenzo Antonio Revelli. Photo: Sailko, via Wikimedia Commons (CC BY 3.0).</figcaption>
+</figure>
 
 <h3><span class="mo">February 1815</span>The decision and the departure</h3>
 
-<p>On February 16 the British commissioner Neil Campbell, who was supposed to keep an eye on Napoleon, left Elba for the mainland at Livorno. In mid-February an emissary, Fleury de Chaboulon, reached the island with urgent word from France, including a message attributed to Marshal Davout that the moment would not wait. Napoleon moved fast. He had the Inconstant repainted to look like an English ship, re-armed, and provisioned for a hundred and twenty men for three months, and he embargoed all shipping off the island so no word could get out. On the evening of February 26, 1815, embarkation began at five, he embraced his mother and sister at the Mulini palace at seven, and at eight a cannon signaled the departure. The story continues below.</p>
+<p>On February 16 the British commissioner Neil Campbell, who was supposed to keep an eye on Napoleon, left Elba aboard HMS Partridge for what he called "a short excursion to the Continent for my health," to consult a doctor in Florence about the increasing deafness from his old wounds. His journal entry on the eve of that departure is the last portrait of Napoleonic Portoferraio at full boil.</p>
+
+<div class="source-quote"><p class="sq-text">"It is scarcely possible to convey an idea of Porto Ferrajo, which is like the area of a great barrack, being occupied by military, gendarmes, police officers of all descriptions, dependants of the court, servants, and adventurers, all connected with Napoleon, and holding some place of honour or emolument in subservience to him."</p><div class="sq-attr">Sir Neil Campbell</div><div class="sq-src">Journal, February 16, 1815; Napoleon at Fontainebleau and Elba, 1869.</div></div>
+
+<figure style="max-width:360px;">
+  <img src="_assets/elba/neil-campbell.jpg" alt="Portrait of Sir Neil Campbell by Casimir Carbonnier, 1818">
+  <figcaption>Sir Neil Campbell (1776-1827), the British commissioner on Elba whose absence in February 1815 opened the door for Napoleon's escape. Oil on canvas by Casimir Carbonnier, 1818. Via Wikimedia Commons (public domain).</figcaption>
+</figure>
+
+<p>In Florence, days before the escape, Campbell raised Napoleon's situation with Edward Cooke, the British Under-Secretary of State, and got an answer that deserves its place in the history of official complacency: "Nobody thinks of him at all. He is quite forgotten, as much as if he had never existed!" Back on the island, an emissary named Fleury de Chaboulon had already reached Napoleon with urgent word from Maret, Duc de Bassano, of the grave unrest in France. Napoleon moved fast. He had the Inconstant repainted to look like an English ship, re-armed, and provisioned for a hundred and twenty men for three months, and he embargoed all shipping off the island so no word could get out. On February 25 he put the question to his mother, and by her own account Madame M&egrave;re answered him like a Roman: "If death must be your fate, my son, Providence, which has not desired that it should occur in a period of an idleness which is unworthy of you, will not wish, I hope, that it should be by poison, but sword in hand."</p>
+
+<p>The next evening, February 26, 1815, the little state he had built put itself quietly to sea. Campbell reconstructed the night when he returned to the empty harbor two days later: at seven the troops marched out of the fortifications "without music or noise" and embarked in feluccas and boats, and at nine Napoleon himself came down.</p>
+
+<div class="source-quote"><p class="sq-text">"At 9 p.m. Napoleon with General Bertrand passed out in the Princess Pauline's small carriage drawn by four horses, embarked at the health-office in a boat, and went on board of the brig 'L'Inconstant'... Mr. Grattan says that his curiosity tempted him to hire a boat to go alongside of the brig, as he could scarcely believe his eyes and senses. There he saw Napoleon in his grey surtout and round hat pacing the quarter-deck."</p><div class="sq-attr">Sir Neil Campbell</div><div class="sq-src">Journal, February 28, 1815, reconstructing the night of the 26th from eyewitnesses; Napoleon at Fontainebleau and Elba, 1869.</div></div>
 
 <div class="stat-block">
   <p><strong>Apr 11, 1814</strong> Treaty of Fontainebleau; exile to Elba</p>
-  <p><strong>May 3&ndash;4, 1814</strong> Napoleon lands at Portoferraio</p>
-  <p><strong>Summer 1814</strong> 60 miles of new road, drainage, harbor, mines</p>
+  <p><strong>May 3-4, 1814</strong> Napoleon lands at Portoferraio</p>
+  <p><strong>Summer 1814</strong> New roads, drainage, harbor, mines</p>
   <p><strong>Aug 1814</strong> Madame M&egrave;re arrives; the court forms</p>
   <p><strong>Sep 1, 1814</strong> Marie Walewska visits the Madonna del Monte</p>
   <p><strong>Autumn 1814</strong> Library, hospital, theatre, court of appeal</p>
-  <p><strong>Dec 1814</strong> Costs ~1M francs vs ~400,000 in revenue</p>
-  <p><strong>Feb 26, 1815</strong> Escape from Portoferraio, ~1,150 men</p>
+  <p><strong>Dec 1814</strong> Peyrusse's ledger: 606,309 fr in, 2,852,315 fr out</p>
+  <p><strong>Feb 26, 1815</strong> Escape from Portoferraio: ~1,150 aboard seven vessels</p>
 </div>
+
+<h2>The Daily Routine of the Emperor of Elba</h2>
+
+<p>The witnesses agree on the shape of his day, and it began before dawn. Ussher was woken at four in the morning on Napoleon's first full day of sovereignty to find him already on foot among the fortifications and storehouses. He walked the works in the early hours, rode the island in the afternoon, held his weekly councils, and reviewed his guard daily. Campbell, a professional soldier, spent that first summer simply trying to keep up, and on May 27, 1814, he set down the definitive account of the working method.</p>
+
+<div class="source-quote"><p class="sq-text">"I have never seen a man in any situation of life with so much personal activity and restless perseverance... After being yesterday on foot in the heat of the sun, from 5 a.m. to 3 p.m., visiting the frigates and transports, and even going down to the hold among the horses, he rode on horseback for three hours, as he told me afterwards, 'pour se defatiguer!' His thoughts seem to dwell perpetually upon the operations of war."</p><div class="sq-attr">Sir Neil Campbell</div><div class="sq-src">Journal, Portoferraio, May 27, 1814; Napoleon at Fontainebleau and Elba, 1869. "Pour se defatiguer": to un-tire himself.</div></div>
+
+<p>In the same entry Campbell added the observation London should have read as a warning: "I do not think it possible for him to sit down to study, on any pursuits of retirement, as proclaimed by him to be his intention, so long as his state of health permits corporeal exercise." The man who had promised to live like a justice of the peace was un-tiring himself with three-hour rides after ten-hour inspections, and for ten months all of that energy went into the island: into the hold among the horses, onto the fortifications at dawn, down every road, at the level of detail where problems actually live.</p>
+
+<h2>The Court in Miniature</h2>
+
+<p>Around the working machine he built a court, scaled to the island but run with full imperial seriousness. Madame M&egrave;re presided; Pauline, his favorite sister, ran the social season of balls, concerts, and theatricals, and it was her small carriage, drawn by four horses, that carried her brother down to the harbor on the night of the escape. Etiquette was maintained and uniforms were required, but the men at the top took almost nothing: Drouot, the Governor, refused a gift of 100,000 francs outright and drew a salary of 12,000, about 480 pounds, and Peyrusse the same. San Martino, the country residence in the hills, got a painted Egyptian room recalling his Egyptian campaign and served as the private retreat of a man who almost never retreated.</p>
+
+<figure>
+  <img src="_assets/elba/san-martino.jpg" alt="Villa San Martino, Napoleon's country residence on Elba">
+  <figcaption>Villa San Martino, Napoleon's country residence in the hills above Portoferraio, with the neoclassical Demidoff gallery added below the original house in 1851. Photo: Edisonblus, via Wikimedia Commons (CC BY-SA 3.0).</figcaption>
+</figure>
+
+<p>The strangest feature of the court's season was the audience. Elba had become a destination, with English travelers in particular crossing to see the caged conqueror and touring the mines. Pons, who received most of them at Rio, recorded the pattern with some amusement: "What is uniform among the English, to whatever class they may belong, is praise of the Emperor, and really they seem to rival each other in their expressions of eulogy." The nation that had fought him for twenty years supplied his most reliable admirers.</p>
+
+<figure style="max-width:420px;">
+  <img src="_assets/elba/pauline-borghese-canova.jpg" alt="Pauline Bonaparte as Venus Victrix, by Antonio Canova">
+  <figcaption>Pauline Bonaparte as Venus Victrix, marble by Antonio Canova, 1804-1808. Napoleon's favorite sister joined him on Elba and ran the small court's social life. Galleria Borghese, Rome. Photo: Architas, via Wikimedia Commons (CC BY-SA 4.0; the sculpture is public domain).</figcaption>
+</figure>
 
 <h2>The Roads</h2>
 
-<p>He built roughly sixty miles of new road across mountainous terrain, connecting villages that had never been connected to one another and driving new links out to the mining districts and up to the mountain hermitage. He supervised the engineering himself. The comparison is worth stating plainly: a defeated exile with no working budget and a few hundred soldiers built sixty miles of durable mountain road in under a year. Most modern American administrators, with bonding authority and full engineering departments, cannot deliver a single mile of a single street in the same span. In Portoferraio he also solved the problem underneath the roads, laying an underground drainage system so the streets stopped flooding, the kind of invisible infrastructure that cities routinely defer for decades.</p>
+<p>He built a network of new roads across mountainous terrain, connecting villages that had never been connected to one another and driving new links out to the mining districts and up to the mountain hermitage. He supervised the engineering himself. The comparison is worth stating plainly: a defeated exile with no working budget and a few hundred soldiers built a durable network of mountain roads in under a year. Most modern American administrators, with bonding authority and full engineering departments, cannot deliver a single mile of a single street in the same span. In Portoferraio he also solved the problem underneath the roads, laying an underground drainage system so the streets stopped flooding, the kind of invisible infrastructure that cities routinely defer for decades. And the roads had a line in the budget: of the 114,530 francs he fixed with Peyrusse for the civil administration of 1815, 40,000 was reserved for roads and bridges.</p>
 
 <h2>The Harbor and the Mines</h2>
 
-<p>The harbor at Portoferraio was reorganized and its trade rebuilt; within months Elba was functioning as a serious little Mediterranean port and its salt exports had climbed. The iron mines at Rio Marina, dug since antiquity, were the fiscal engine, and he treated them as such: he modernized the extraction, pushed up output, and shipped the ore out to be sold, taxing the proceeds to fund the rest of the program. The mines he restarted in 1814 kept producing until 1981. His ten-month administration set an industrial operation running that outlasted him by more than a century and a half. He understood, as competent builders always do, that a public realm has to be paid for by a productive economy, and he rebuilt the economy first.</p>
+<p>The harbor at Portoferraio was reorganized and its trade rebuilt; within months Elba was functioning as a serious little Mediterranean port and its salt exports had climbed. The iron mines at Rio Marina, dug since antiquity, were the fiscal engine, and he treated them as such: he modernized the extraction, pushed up output, and shipped the ore out to be sold, taxing the proceeds to fund the rest of the program. By Peyrusse's ledger the mines yielded 373,129 francs of the state's 606,309 francs of total revenue, more than everything else combined. The mines he restarted in 1814 kept producing until 1981. His ten-month administration set an industrial operation running that outlasted him by more than a century and a half. He understood, as competent builders always do, that a public realm has to be paid for by a productive economy, and he rebuilt the economy first.</p>
+
+<p>The mines also produced the best story of the reign, because the man who ran them refused to be bullied. When Napoleon arrived, some 229,000 francs of pre-abdication mine profits sat in the hands of Pons de l'Herault, money that legally belonged to the Legion of Honour in Paris. Napoleon demanded it. Pons, brought before him by Bertrand, records his own answer: "I replied that the money belonged to the French Government whatever might be that Government." Napoleon stared, shrugged, and turned his back; Bertrand told Pons afterward, "You have wounded the feelings of His Majesty." By Gruyer's account the Emperor shouted "after all, I am the Emperor" with such violence that the windows shook, and Pons answered that "three hundred thousand bayonets should not force him to give up the money." Napoleon left without it, and Pons surrendered the funds only after referring the matter to Paris and receiving the Legion of Honour's authorization: even a sovereign could not simply take the money, he had to wait for the lawful owner to sign it over. The mines went on out-earning everything else on the island under the same administrator.</p>
 
 <h2>The Civic Realm and the Law</h2>
 
-<p>The list of civic works is what separates an administrator from a tourist. In ten months, on an island of twelve thousand people, he built or established: a public library of some eleven hundred volumes; a theatre carved out of a disused church; fountains; a hospital; regular municipal refuse collection; a court of appeals; and a road inspection corps. He imposed a civil code modeled on the Napoleonic Code of 1804, standardized weights and measures, built a tax system on the old French door-and-window method, and banned public drunkenness. By the island's own account it was the first effective civic administration Elba had ever had. He governed the smallest state in Europe with the same seriousness he had brought to a continent, because seriousness is a habit, not a function of scale.</p>
+<p>The list of civic works is what separates an administrator from a tourist. In ten months, on an island of twelve thousand people, he built or established: a public library of some eleven hundred volumes; a theatre carved out of a disused church; fountains; a hospital; regular municipal refuse collection; a court of appeals; and a road inspection corps. He overhauled the island's legal and administrative system from top to bottom. By the island's own account it was the first effective civic administration Elba had ever had. He governed the smallest state in Europe with the same seriousness he had brought to a continent, because seriousness is a habit, not a function of scale.</p>
 
 <h2>The Escape</h2>
 
-<p>The flotilla that left Portoferraio on the night of February 26 was the Inconstant, now carrying twenty-six guns, together with the merchant brig Saint-Esprit, the bombard &Eacute;toile, the felucca Caroline, and several smaller craft. Aboard were about eleven hundred and fifty men: the six hundred of the Old Guard, a hundred Polish lancers without their horses, the three hundred of the Corsican battalion, fifty gendarmes, and around a hundred civilians and servants. Light winds becalmed them; by dawn on the 27th they had barely made ten kilometers, and that afternoon a French brig, the Z&eacute;phir, came close enough to hail before its captain was talked past. At dawn on March 1, 1815, the flotilla raised the tricolor and by early afternoon anchored at Golfe-Juan, between Cannes and Antibes. Napoleon was back on French soil.</p>
+<p>The flotilla that left Portoferraio on the night of February 26 was the Inconstant, now carrying twenty-six guns, together with the merchant brig Saint-Esprit, the bombard &Eacute;toile, the felucca Caroline, and several smaller craft, seven vessels in all. Aboard were about eleven hundred and fifty men: the six hundred of the Old Guard, a hundred Polish lancers without their horses, the three hundred of the Corsican battalion, fifty gendarmes, and around a hundred civilians and servants. Light winds becalmed them; by dawn on the 27th they had barely made ten kilometers, and that afternoon a French brig, the Z&eacute;phir, came close enough to hail before its captain was talked past. On the crowded deck Napoleon told his companions how it would end; Peyrusse recorded the prediction: "I shall arrive in Paris without firing a shot." At dawn on March 1, 1815, the flotilla raised the tricolor and by early afternoon anchored at Golfe-Juan, between Cannes and Antibes. Napoleon was back on French soil.</p>
+
+<figure>
+  <img src="_assets/elba/napoleon-leaves-elba.jpg" alt="Napoleon leaving the island of Elba, February 26, 1815, by Joseph Beaume">
+  <figcaption>"Napoleon Ier quittant l'ile d'Elbe, 26 fevrier 1815," by Joseph Beaume, 1836: the Emperor embarks at Portoferraio to begin the Hundred Days. Musee naval et napoleonien, Cap d'Antibes, via Wikimedia Commons (public domain).</figcaption>
+</figure>
+
+<p>The proclamations he brought ashore had been printed at Portoferraio before sailing and dated Golfe-Juan, March 1, 1815. To the French people he explained the exile in a single sentence: "I consulted only the interests of the nation; I took myself into exile on a rock in the middle of the sea." To the army he gave the image that carried the whole campaign: "Victory shall march in double quick time; the eagle bearing the colours of the nation will fly from steeple to steeple until it reaches the towers of Notre-Dame Cathedral." The march north then produced the scene that defines the whole return. Near Grenoble, at Laffrey, he met a battalion of the 5th Regiment of the Line, sent to stop him. He walked forward alone, opened his coat, and, by the traditional account, called out: "Soldiers, do you recognise me? If there is one among you who wishes to kill his Emperor, here I am." The battalion switched sides to a man. The men sent to arrest the revival became the revival. He reached Paris on March 20 without a shot fired, exactly as he had told Peyrusse he would, and the Hundred Days had begun. They would end at Waterloo in June.</p>
 
 <figure>
   <img src="_assets/elba/return-from-elba.jpg" alt="The Return of Napoleon from Elba, by Charles de Steuben">
   <figcaption>"The Return of Napoleon from Elba," Charles de Steuben, 1818. The soldiers sent to arrest him throw down their arms and rally to the Emperor on the road to Grenoble. Steuben painted the moment the regime's own troops changed sides. Image: Wikimedia Commons (public domain).</figcaption>
 </figure>
-
-<p>The march north produced the scene that defines the whole return. Near Grenoble, at Laffrey, he met the 5th Regiment of the Royal Army, sent to stop him. He walked forward alone, opened his coat, and said: "Soldiers of the Fifth, if there is any among you who would shoot his Emperor, here I am." Every man in the regiment switched sides. The men sent to arrest the revival became the revival. He reached Paris on March 20 without a shot fired, and the Hundred Days had begun. They would end at Waterloo in June.</p>
 
 <p>Nothing captures the collapse of the Bourbon regime's nerve like the way the Paris press covered the march. As Napoleon drew closer to the capital, the headlines climbed from contempt to terror to open flattery, the same man renamed step by step from monster to Emperor. The sequence below is the famous, much-embellished version long attributed to the official gazette, the Moniteur; whether or not every line ran exactly as legend has it, the arc is real, and it is the sound of an establishment discovering it has no ground to stand on.</p>
 
@@ -211,20 +397,20 @@ figcaption { font-size: 12px; color: #666; margin-top: 6px; line-height: 1.4; }
   <div class="hl t4"><span class="when">Mar 18</span><span class="say">"Napoleon approaches, but he will never reach Paris."</span></div>
   <div class="hl t5"><span class="when">Mar 19</span><span class="say">"The Emperor will be beneath our walls tomorrow."</span></div>
   <div class="hl t6"><span class="when">Mar 20</span><span class="say">"His Majesty the Emperor entered his palace at the Tuileries last night, amid his faithful subjects."</span></div>
-  <div class="hl-note">The sequence is traditionally credited to the Moniteur Universel and is almost certainly polished in the retelling; it first appeared, in this escalating form, in an English periodical soon after the events. It survives because it is true to what happened: twenty days, one man, and a government that renamed him from ogre to sovereign as fast as its couriers could ride.</div>
+  <div class="hl-note">The sequence is traditionally credited to the Moniteur Universel and is almost certainly polished in the retelling; it first appeared as a satirical squib in the French paper Le Nain Jaune on March 25, 1815, mocking the turncoat royalist press, and was popularized by Alexandre Dumas in 1841. It survives because it is true to what happened: twenty days, one man, and a government that renamed him from ogre to sovereign as fast as its couriers could ride.</div>
 </div>
 
 <h2>Elba After</h2>
 
-<p>The empire did not survive. The island did. Most of the modern roads on Elba, the harbor works at Portoferraio, the drainage, the civic squares, the theatre, and the school and library system still trace to those ten months, and the Rio Marina mines he reopened ran until 1981. A man passing through as a prisoner, expecting to leave, left behind the permanent civic bones of a place he governed for less than a year and never saw again. That is the strange, clarifying fact at the center of the story: he did not build Elba because he loved it or planned to stay. He built it because building is what a serious operator does with any ground he is standing on.</p>
+<p>The empire did not survive, but the island did. Most of the modern roads on Elba, the harbor works at Portoferraio, the drainage, the civic squares, the theatre, and the school and library system still trace to those ten months, and the Rio Marina mines he reopened ran until 1981. A man passing through as a prisoner, expecting to leave, left behind the permanent civic bones of a place he governed for less than a year and never saw again. That is the strange, clarifying fact at the center of the story: he built Elba not because he loved it or planned to stay, but because building is what a serious operator does with any ground he is standing on.</p>
 
 <h2>Why It Matters</h2>
 
-<p>This site is an argument that competent civic building is a real and teachable practice, not an accident of money or luck. Elba is the cleanest possible test of that argument, because it strips away every excuse. No budget: the stipend was never paid, and by December he was running at a loss. No time: he had ten months and did not know it would be ten months. No mandate worth having: he was a defeated prisoner on a rock the powers of Europe were already planning to take from him. No workforce to speak of: a thousand soldiers and a poor island population. And still, in that single year, sixty miles of road, a rebuilt harbor, reopened mines, a library, a theatre, a hospital, a court, and a code.</p>
+<p>This site is an argument that competent civic building is a real and teachable practice, not an accident of money or luck. Elba is the cleanest possible test of that argument, because it strips away every excuse. No budget: the stipend was never paid, and Peyrusse's ledger shows the state spending 2.85 million francs against 606,309 of revenue. No time: he had ten months and did not know it would be ten months. No mandate worth having: he was a defeated prisoner on a rock the powers of Europe were already planning to take from him, a man a British Under-Secretary could dismiss, days before the escape, as "quite forgotten, as much as if he had never existed." No workforce to speak of: a thousand soldiers and a poor island population. And still, in that single year, a network of new roads, a rebuilt harbor, reopened mines, a library, a theatre, a hospital, a court, and an overhauled legal system.</p>
 
-<p>Seattle has eighty-four square miles, almost exactly the area of Elba. It has had not ten months but twenty years, a multi-billion-dollar budget, professional engineering and planning departments, and a peacetime mandate from its own voters. It has produced neither the roads nor the harbor works nor the balance sheet. The gap between what Napoleon did with Elba and what a modern American city does with the same acreage is not a gap of resources. It is a gap of seriousness, of accountability, and of the plain willingness to survey the ground, write down what is broken, and build it.</p>
+<p>Seattle has eighty-four square miles, almost exactly the area of Elba. It has had not ten months but twenty years, a multi-billion-dollar budget, professional engineering and planning departments, and a peacetime mandate from its own voters. It has produced neither the roads nor the harbor works nor the balance sheet. The gap between what Napoleon did with Elba and what a modern American city does with the same acreage is not a gap of resources but a gap of seriousness, of accountability, and of the plain willingness to survey the ground, write down what is broken, and build it.</p>
 
-<p>The point is not the strongman. Napoleon the conqueror is not the man to admire here, and the empire he tried to rebuild ended in a field in Belgium. The man to study is Napoleon the administrator: the surveyor on horseback, the lawgiver, the builder of roads and libraries and drains. The lesson of Elba is that this kind of competence exists, that it is recognizable, and that it can be applied to any patch of ground by anyone willing to do the work. That is the standard. Most places do not meet it. The first step to meeting it is to notice that a bored exile, running at a deficit, with the powers of Europe closing in, did.</p>
+<p>The point is not the strongman. Napoleon the conqueror is not the man to admire here, and the empire he tried to rebuild ended in a field in Belgium. The man to study is Napoleon the administrator: the surveyor on horseback, the lawgiver, the builder of roads and libraries and drains, the man Campbell described with "so much personal activity and restless perseverance" that hardened soldiers sank under the fatigue of following him around an island the size of a county. The lesson of Elba is that this kind of competence exists, that it is recognizable, and that it can be applied to any patch of ground by anyone willing to do the work. That is the standard. Most places do not meet it. The first step to meeting it is to notice that a bored exile, running at a deficit, with the powers of Europe closing in, did.</p>
 
 <div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
   <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
@@ -245,7 +431,7 @@ figcaption { font-size: 12px; color: #666; margin-top: 6px; line-height: 1.4; }
 </div>
 
 <hr>
-<p class="sources"><strong>Sources.</strong> Treaty terms, administration, and military establishment: Wikipedia, "Principality of Elba." Reforms and public works (roads, drainage, mines, library, theatre, refuse collection, court of appeal): napoleon.org and infoelba.com; Portoferraio bicentennial materials. Governance, finances, family visits, and the escape (Campbell's departure, the flotilla, Golfe-Juan): Shannon Selin, "How did Napoleon escape from Elba?"; History.com. Dates for Marie Walewska's visit (Sept 1, 1814) and the flag: visitelba.com. Compiled and cross-checked July 2026.</p>
+<p class="sources"><strong>Sources.</strong> Primary: Sir Neil Campbell, <a href="https://archive.org/details/cu31924024321253">Napoleon at Fontainebleau and Elba; being a Journal of Occurrences in 1814-1815</a> (John Murray, 1869), for the Fontainebleau audiences, the farewell to the Old Guard, the journal entries of May 26-27 and September 16, 1814 and February 16 and 28, 1815, and the escape reconstruction; the diaries of Admiral Sir Thomas Ussher and John R. Glover, <a href="https://archive.org/details/napoleonslastvoy00usshrich">Napoleon's Last Voyages</a> (1906), for the voyage, the flag, the landing, and the routine of May 4-5, 1814; Andre Pons de l'Herault, Souvenirs et anecdotes de l'ile d'Elbe, and the treasury accounts and letters of Peyrusse, both as translated and printed in Norwood Young, <a href="https://archive.org/details/napoleoninexilee00youn">Napoleon in Exile: Elba</a> (1914), which also prints the Treaty of Fontainebleau of April 11, 1814; Paul Gruyer, <a href="https://archive.org/details/napoleonkingofel00gruy">Napoleon, King of Elba</a> (1906), for the 1814 war spending, the army strength, and the Pons confrontation; and the Golfe-Juan proclamations of March 1, 1815, at the University of Warwick's <a href="https://100days.org.uk/items/show/11">Napoleon's 100 Days</a> project, with the original broadside at <a href="https://gallica.bnf.fr/ark:/12148/btv1b6954504v">Gallica (BnF)</a>. Secondary, for the public works, reforms, and chronology: Wikipedia, "Principality of Elba"; napoleon.org and infoelba.com; Portoferraio bicentennial materials; Shannon Selin, "How did Napoleon escape from Elba?"; History.com; visitelba.com (Walewska visit and the flag). Compiled and cross-checked July 2026.</p>
 
 <script>
 function sendForm(){
