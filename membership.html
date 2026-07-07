@@ -283,9 +283,11 @@ hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
       document.getElementById('mf-success').style.display='block';
       document.getElementById('mf-error').style.display='none';
       btn.textContent='Submitted';
+      if(typeof gtag==='function'){gtag('event','join_interest',{tier:document.getElementById('mf-tier').value});}
     },function(){
       document.getElementById('mf-error').style.display='block';
       btn.textContent='Submit Interest';btn.disabled=false;
+      if(typeof gtag==='function'){gtag('event','join_interest_error',{tier:document.getElementById('mf-tier').value});}
     });
     return false;
   }
@@ -368,6 +370,7 @@ function prefillForm(tier) {
     if (sel.options[i].value === tier) { sel.selectedIndex = i; break; }
   }
   document.getElementById('mf-name').focus();
+  if (typeof gtag === 'function') { gtag('event', 'join_click', { tier: tier }); }
 }
 
 // Auto-select LA tab if coming from /la/ pages
