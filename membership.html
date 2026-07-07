@@ -285,7 +285,11 @@ hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
       btn.textContent='Submitted';
       if(typeof gtag==='function'){gtag('event','join_interest',{tier:document.getElementById('mf-tier').value});}
     },function(){
-      document.getElementById('mf-error').style.display='block';
+      var mlSubj='Membership Interest: '+document.getElementById('mf-tier').value;
+      var mlBody='Name: '+document.getElementById('mf-name').value+'\r\nEmail: '+document.getElementById('mf-email').value+'\r\nTier: '+document.getElementById('mf-tier').value+'\r\nInterest: '+document.getElementById('mf-interest').value;
+      var errDiv=document.getElementById('mf-error');
+      errDiv.innerHTML='Something went wrong sending automatically. <a href="mailto:operations@burnhamcivic.org?subject='+encodeURIComponent(mlSubj)+'&amp;body='+encodeURIComponent(mlBody)+'" style="color:#dc2626;text-decoration:underline;">Click here to send your interest by email instead</a>.';
+      errDiv.style.display='block';
       btn.textContent='Submit Interest';btn.disabled=false;
       if(typeof gtag==='function'){gtag('event','join_interest_error',{tier:document.getElementById('mf-tier').value});}
     });
