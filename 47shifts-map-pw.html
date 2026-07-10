@@ -80,15 +80,11 @@ html, body { height:100%; font-family: Georgia, 'Times New Roman', serif; backgr
 <div id="app" style="display:none;">
   <div id="tabs">
     <span class="brand">47 SHIFTS</span>
-    <button class="tab-btn active" data-tab="plan">Operations Plan</button>
-    <button class="tab-btn" data-tab="map">Live Map</button>
+    <button class="tab-btn active" data-tab="map">Live Map</button>
     <span class="spacer"></span>
     <a href="/" class="home">&larr; burnhamcivic.org</a>
   </div>
-  <div class="frame-wrap" data-pane="plan">
-    <iframe id="frame-plan" src="about:blank" title="Operations Plan"></iframe>
-  </div>
-  <div class="frame-wrap hidden" data-pane="map">
+  <div class="frame-wrap" data-pane="map">
     <iframe id="frame-map" src="about:blank" title="Live Map"></iframe>
   </div>
 </div>
@@ -101,14 +97,13 @@ html, body { height:100%; font-family: Georgia, 'Times New Roman', serif; backgr
   function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
   function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
 
-  var planLoaded=false, mapLoaded=false;
-  function loadPlan(){ if(!planLoaded){ document.getElementById('frame-plan').src='/_pw/plan.html'; planLoaded=true; } }
+  var mapLoaded=false;
   function loadMap(){ if(!mapLoaded){ document.getElementById('frame-map').src='/_pw/map.html'; mapLoaded=true; } }
 
   function showApp(){
     document.getElementById('paywall-gate').style.display='none';
     document.getElementById('app').style.display='block';
-    loadPlan();
+    loadMap();
   }
 
   function activate(name){
@@ -116,7 +111,6 @@ html, body { height:100%; font-family: Georgia, 'Times New Roman', serif; backgr
     for(var i=0;i<btns.length;i++){ btns[i].classList.toggle('active', btns[i].dataset.tab===name); }
     var panes=document.querySelectorAll('.frame-wrap');
     for(var j=0;j<panes.length;j++){ panes[j].classList.toggle('hidden', panes[j].dataset.pane!==name); }
-    if(name==='plan') loadPlan();
     if(name==='map') loadMap();
   }
 
