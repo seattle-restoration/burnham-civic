@@ -521,7 +521,7 @@ function sendForm(){
     if(e.key.length!==1) return;
     buf+=e.key.toLowerCase();
     if(buf.length>10) buf=buf.slice(-10);
-    if(buf.indexOf('/maga')!==-1){
+    if(buf.indexOf('/maga')!==-1||buf.indexOf('/america')!==-1){
       buf='';
       unlocked=!unlocked;
       document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
