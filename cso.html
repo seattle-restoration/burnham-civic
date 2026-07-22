@@ -140,6 +140,7 @@ p {
 .bc-stacklabels { display: flex; justify-content: space-between; font-size: 13px; margin-top: 6px; }
 .bc-note { font-size: 12px; color: #666; margin-top: 10px; line-height: 1.5; }
 .bc-scroll { overflow-x: auto; }
+.bc-img { width: 100%; display: block; border: 1px solid #ccc; }
 @media (max-width: 540px) { .bc-lab { width: 116px; font-size: 12px; } }
 
 /* === DECO SYSTEM OVERRIDES (sitewide) === */
@@ -280,52 +281,6 @@ body.tbc-member .lockpanel { display:none; }
 <p>CSO stands for Combined Sewer Overflow. In older cities like Seattle, a single pipe carries both sewage from homes and businesses and rainwater from streets and roofs. When it rains hard, the pipe fills up. When the pipe fills up, the system has two options: back sewage into basements, or open a valve and dump the overflow into the nearest body of water.</p>
 
 <p>Seattle chose the valve. SPU operates 82 CSO outfalls along the city's waterways, and King County operates another 38 serving the bigger drainage basins. Each one is a concrete pipe that opens directly into the water. When it rains, the pipes open. The sewage flows out.</p>
-
-<figure class="bc-fig">
-  <div class="bc-fig-title">How a Combined Sewer Overflow Works</div>
-  <div class="bc-scroll">
-  <svg viewBox="0 0 640 252" style="min-width:540px;width:100%;height:auto;display:block;" role="img" aria-label="Diagram: sewage from buildings and rainwater from streets share one combined pipe. In dry weather everything flows to the treatment plant. In heavy rain the pipe hits capacity and an overflow valve sends the combined flow, sewage included, directly to the waterway.">
-    <!-- source boxes -->
-    <rect x="10" y="26" width="180" height="46" fill="#f7f7f5" stroke="#1c1917" stroke-width="1.5"/>
-    <text x="100" y="45" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#1c1917" letter-spacing="1">HOMES &amp; BUSINESSES</text>
-    <text x="100" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#555">sewage</text>
-    <rect x="10" y="106" width="180" height="46" fill="#f7f7f5" stroke="#1c1917" stroke-width="1.5"/>
-    <text x="100" y="125" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#1c1917" letter-spacing="1">STREETS &amp; ROOFS</text>
-    <text x="100" y="142" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#555">rainwater</text>
-    <!-- merge lines into combined pipe -->
-    <polyline points="190,49 218,49 218,187 236,187" fill="none" stroke="#1c1917" stroke-width="2"/>
-    <polyline points="190,129 218,129 218,187" fill="none" stroke="#1c1917" stroke-width="2"/>
-    <!-- combined pipe -->
-    <rect x="238" y="169" width="212" height="36" fill="#1e3a5f"/>
-    <text x="344" y="191" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#fff" letter-spacing="1.5">ONE COMBINED PIPE</text>
-    <!-- junction diamond -->
-    <rect x="466" y="179" width="16" height="16" fill="#1c1917" transform="rotate(45 474 187)"/>
-    <line x1="450" y1="187" x2="463" y2="187" stroke="#1c1917" stroke-width="2"/>
-    <!-- to treatment plant -->
-    <line x1="485" y1="187" x2="512" y2="187" stroke="#1c1917" stroke-width="2"/>
-    <polygon points="512,182 522,187 512,192" fill="#1c1917"/>
-    <rect x="524" y="164" width="106" height="46" fill="#f7f7f5" stroke="#1c1917" stroke-width="1.5"/>
-    <text x="577" y="183" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1c1917" letter-spacing="0.5">TREATMENT</text>
-    <text x="577" y="199" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1c1917" letter-spacing="0.5">PLANT</text>
-    <text x="577" y="226" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-style="italic" fill="#555">dry weather</text>
-    <!-- overflow branch -->
-    <line x1="474" y1="176" x2="474" y2="92" stroke="#1c1917" stroke-width="2"/>
-    <polygon points="469,92 474,82 479,92" fill="#1c1917"/>
-    <rect x="414" y="36" width="120" height="46" fill="#fbbf24" stroke="#1c1917" stroke-width="1.5"/>
-    <text x="474" y="55" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#1c1917" letter-spacing="1">CSO OUTFALL</text>
-    <text x="474" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-style="italic" fill="#1c1917">opens in heavy rain</text>
-    <!-- waterway waves -->
-    <path d="M548 48 q8 -7 16 0 q8 7 16 0 q8 -7 16 0" fill="none" stroke="#1e3a5f" stroke-width="2"/>
-    <path d="M548 62 q8 -7 16 0 q8 7 16 0 q8 -7 16 0" fill="none" stroke="#1e3a5f" stroke-width="2"/>
-    <text x="572" y="88" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#1e3a5f" letter-spacing="1.5">WATERWAY</text>
-    <line x1="534" y1="59" x2="544" y2="59" stroke="#1c1917" stroke-width="2"/>
-    <!-- pipe caption -->
-    <text x="344" y="226" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-style="italic" fill="#555">sewage and rain in the same pipe</text>
-  </svg>
-  </div>
-  <div class="bc-note">Dry weather: everything reaches the treatment plant. Heavy rain: the pipe hits capacity, the outfall valve opens, and the combined flow, sewage included, goes straight to the nearest waterway.</div>
-</figure>
-
 <p>This is legal. It is permitted under a federal consent decree between Seattle, the EPA, the Department of Justice, and the Washington State Department of Ecology, in force since 2013. The agreement gives the federal government direct authority over how Seattle manages its sewer infrastructure.</p>
 
 <p>Most people in Seattle do not know this. The federal government has direct legal authority over the city's sewer system right now, backed by a court order, enforced by the EPA, and financed by hundreds of millions in federal loans where the EPA is both the regulator and the lender. Nobody at City Hall is talking about it.</p>
@@ -422,6 +377,37 @@ body.tbc-member .lockpanel { display:none; }
   </div>
   <div class="bc-note">January to June 2026 actuals, annualized. Operating statements for a 21-building Seattle multifamily portfolio, provided to Burnham Civic. Sewer is highlighted because wastewater rates are where CSO compliance costs land. Excludes electricity and gas.</div>
 </figure>
+
+<h2>Where the Tunnel Actually Goes, and How Far Along It Is</h2>
+
+<p>The storage tunnel itself is real, and it is finished. It runs 2.7 miles, about 14,000 feet, under the north side of the Ship Canal from Ballard to Wallingford, with an internal diameter of 18 feet 10 inches, roughly the height of a two-story house. The boring machine launched in 2021 from the east end, at the Tunnel Effluent Pump Station site in Wallingford, and completed its drive in 2023. When the system runs, the tunnel will hold combined sewage from the Ballard, Fremont, and Wallingford basins, plus King County's 3rd Avenue W and 11th Avenue NW basins, during storms, then release it for treatment once the storm passes. The agencies project it will cut CSO discharges into the Ship Canal, Salmon Bay, and Lake Union by more than 75 million gallons a year.</p>
+
+<p>Here is the part the ribbon-cutting coverage will skip: the tunnel was fully bored in 2023 and will not store a single gallon until 2027. SPU's own winter update says it plainly: "We will be back in 2027 when the storage tunnel becomes operational." Design work began in November 2015. Twelve years from drawing board to operation, and every storm season in between, the outfalls keep doing what they did 161 times in 2024.</p>
+
+<p>What stands between the finished tunnel and a working system is everything on the ends of it. At the Wallingford end, the Tunnel Effluent Pump Station, a 65-foot concrete tower over a 110-foot-deep shaft, topped out its concrete shell in December 2025; the mechanical fit-out that actually makes it pump is expected to run to the end of 2027. At the Ballard end, crews are placing rebar and conduits for the new Ballard Pump Station's tower walls, and a second, smaller boring machine, 7 feet in diameter, is underground right now cutting the conveyance pipe that connects Ballard's outfalls to the storage tunnel. It passed beneath NW Market St in early July 2026, heading north under 24th Ave NW to NW 56th St, where it gets pulled out, turned, and relaunched west to 28th Ave NW. SPU's June 2026 bulletin describes the machine working twelve hours a day, six days a week, through late 2026: "This new sewer pipe, along with the pump station and completed storage tunnel, helps reduce polluted stormwater and sewage from flowing into local waterways."</p>
+
+<figure class="bc-fig">
+  <div class="bc-fig-title">SPU's Route Map: The Ballard Conveyance Tunnel, 2026</div>
+  <img class="bc-img" src="_assets/cso/spu-ballard-tbm-route-map.png" alt="SPU map of the 7-foot tunnel boring machine route in Ballard: north under 24th Ave NW past NW Market St, then west under NW 56th St to 28th Ave NW, with the pump station work area near Shilshole Ave NW" loading="lazy">
+  <div class="bc-note">The 7-foot boring machine's path from the Ballard Pump Station site near Shilshole Ave NW: north under 24th Ave NW, then west under NW 56th St to 28th Ave NW. Map: Seattle Public Utilities, May 2026 project bulletin.</div>
+</figure>
+
+<figure class="bc-fig">
+  <div class="bc-fig-title">The Machine Doing the Work</div>
+  <img class="bc-img" src="_assets/cso/spu-ballard-tbm.png" alt="The 7-foot-diameter tunnel boring machine, painted yellow, being lifted by crane into the Ballard work site with Salmon Bay and fishing vessels behind it" loading="lazy">
+  <div class="bc-note">The 7-foot conveyance boring machine arriving at the Ballard site on Salmon Bay, May 2026. Photo: Seattle Public Utilities.</div>
+</figure>
+
+<table class="comparison-table">
+  <tr><th>Component</th><th>Status</th><th>Per SPU / contractor reporting</th></tr>
+  <tr><td>Storage tunnel, Ballard to Wallingford</td><td><strong>Bored and lined, complete</strong></td><td>TBM launched 2021, tunneling completed 2023</td></tr>
+  <tr><td>Tunnel Effluent Pump Station, Wallingford</td><td>Concrete shell topped out</td><td>December 2025; fit-out expected through end of 2027</td></tr>
+  <tr><td>Ballard Pump Station</td><td>Under construction</td><td>Tower wall rebar and conduits in progress, winter 2026</td></tr>
+  <tr><td>Ballard conveyance pipe, 7-ft bore</td><td>Boring now</td><td>Passed NW Market St July 2026; tunneling into late 2026, small-diameter work through spring 2027</td></tr>
+  <tr><td>System starts storing sewage</td><td><strong>2027</strong></td><td>"We will be back in 2027 when the storage tunnel becomes operational"</td></tr>
+</table>
+
+<p>One more detail from the project's own updates, offered without comment. In January 2025, SPU tested the finished tunnel's 42,000-gallon flushing system by holding what it called the Combined Sewer Storage Tunnel Waterfowl Flotation Endurance Race: five rubber ducks, racing the length of a $710 million pipe that will begin doing its actual job in 2027.</p>
 
 <h2>The Green Alternative Already Works. The City Said So.</h2>
 
