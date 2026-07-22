@@ -126,6 +126,22 @@ p {
 }
 .comparison-table tr:last-child td { border-bottom: none; }
 
+/* === FIGURES === */
+.bc-fig { margin: 26px 0 30px; }
+.bc-fig-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #1c1917; margin-bottom: 12px; position: relative; padding-left: 18px; }
+.bc-fig-title::before { content: ""; position: absolute; left: 0; top: 3px; width: 8px; height: 8px; background: #1e3a5f; transform: rotate(45deg); }
+.bc-row { display: flex; align-items: center; margin: 7px 0; }
+.bc-lab { width: 190px; flex-shrink: 0; font-size: 13px; color: #1a1a1a; text-align: right; padding-right: 12px; line-height: 1.25; }
+.bc-track { flex: 1; display: flex; align-items: center; }
+.bc-bar { height: 20px; background: #1e3a5f; flex-shrink: 0; }
+.bc-bar.gold { background: #fbbf24; box-shadow: inset 0 0 0 1px #1c1917; }
+.bc-val { font-size: 13px; font-weight: 700; color: #1c1917; padding-left: 8px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.bc-stackwrap { display: flex; height: 26px; }
+.bc-stacklabels { display: flex; justify-content: space-between; font-size: 13px; margin-top: 6px; }
+.bc-note { font-size: 12px; color: #666; margin-top: 10px; line-height: 1.5; }
+.bc-scroll { overflow-x: auto; }
+@media (max-width: 540px) { .bc-lab { width: 116px; font-size: 12px; } }
+
 /* === DECO SYSTEM OVERRIDES (sitewide) === */
 .burnham-quote, .stat-block {
   position: relative !important;
@@ -243,6 +259,20 @@ body.tbc-member .lockpanel { display:none; }
 
 <p>That's the average. In 2024 the real number was 161. Seattle Public Utilities' own annual report, filed with state and federal regulators, counts 161 combined sewer overflows in 2024 totaling 19.5 million gallons. Sixty-three percent of that volume poured out of a single pipe: Outfall 152 in Ballard.</p>
 
+<figure class="bc-fig">
+  <div class="bc-fig-title">Where the 19.5 Million Gallons Went, 2024</div>
+  <div class="bc-stackwrap">
+    <div class="bc-bar gold" style="width:63%;height:26px;" title="Outfall 152, Ballard: 63 percent of 2024 overflow volume"></div>
+    <div style="width:2px;flex-shrink:0;background:#fff;"></div>
+    <div class="bc-bar" style="width:35%;height:26px;" title="All 119 other outfalls combined: 37 percent"></div>
+  </div>
+  <div class="bc-stacklabels">
+    <span><strong>Outfall 152, Ballard: 63%</strong></span>
+    <span>All 119 other outfalls combined: 37%</span>
+  </div>
+  <div class="bc-note">One pipe outproduced the rest of the system put together. Source: SPU 2024 CSO annual report.</div>
+</figure>
+
 <p>This is not a secret. It is, in fact, exactly how the system was designed.</p>
 
 <h2>What a CSO Is</h2>
@@ -250,6 +280,51 @@ body.tbc-member .lockpanel { display:none; }
 <p>CSO stands for Combined Sewer Overflow. In older cities like Seattle, a single pipe carries both sewage from homes and businesses and rainwater from streets and roofs. When it rains hard, the pipe fills up. When the pipe fills up, the system has two options: back sewage into basements, or open a valve and dump the overflow into the nearest body of water.</p>
 
 <p>Seattle chose the valve. SPU operates 82 CSO outfalls along the city's waterways, and King County operates another 38 serving the bigger drainage basins. Each one is a concrete pipe that opens directly into the water. When it rains, the pipes open. The sewage flows out.</p>
+
+<figure class="bc-fig">
+  <div class="bc-fig-title">How a Combined Sewer Overflow Works</div>
+  <div class="bc-scroll">
+  <svg viewBox="0 0 640 252" style="min-width:540px;width:100%;height:auto;display:block;" role="img" aria-label="Diagram: sewage from buildings and rainwater from streets share one combined pipe. In dry weather everything flows to the treatment plant. In heavy rain the pipe hits capacity and an overflow valve sends the combined flow, sewage included, directly to the waterway.">
+    <!-- source boxes -->
+    <rect x="10" y="26" width="180" height="46" fill="#f7f7f5" stroke="#1c1917" stroke-width="1.5"/>
+    <text x="100" y="45" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#1c1917" letter-spacing="1">HOMES &amp; BUSINESSES</text>
+    <text x="100" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#555">sewage</text>
+    <rect x="10" y="106" width="180" height="46" fill="#f7f7f5" stroke="#1c1917" stroke-width="1.5"/>
+    <text x="100" y="125" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#1c1917" letter-spacing="1">STREETS &amp; ROOFS</text>
+    <text x="100" y="142" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#555">rainwater</text>
+    <!-- merge lines into combined pipe -->
+    <polyline points="190,49 218,49 218,187 236,187" fill="none" stroke="#1c1917" stroke-width="2"/>
+    <polyline points="190,129 218,129 218,187" fill="none" stroke="#1c1917" stroke-width="2"/>
+    <!-- combined pipe -->
+    <rect x="238" y="169" width="212" height="36" fill="#1e3a5f"/>
+    <text x="344" y="191" text-anchor="middle" font-family="Georgia,serif" font-size="12.5" font-weight="bold" fill="#fff" letter-spacing="1.5">ONE COMBINED PIPE</text>
+    <!-- junction diamond -->
+    <rect x="466" y="179" width="16" height="16" fill="#1c1917" transform="rotate(45 474 187)"/>
+    <line x1="450" y1="187" x2="463" y2="187" stroke="#1c1917" stroke-width="2"/>
+    <!-- to treatment plant -->
+    <line x1="485" y1="187" x2="512" y2="187" stroke="#1c1917" stroke-width="2"/>
+    <polygon points="512,182 522,187 512,192" fill="#1c1917"/>
+    <rect x="524" y="164" width="106" height="46" fill="#f7f7f5" stroke="#1c1917" stroke-width="1.5"/>
+    <text x="577" y="183" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1c1917" letter-spacing="0.5">TREATMENT</text>
+    <text x="577" y="199" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" font-weight="bold" fill="#1c1917" letter-spacing="0.5">PLANT</text>
+    <text x="577" y="226" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-style="italic" fill="#555">dry weather</text>
+    <!-- overflow branch -->
+    <line x1="474" y1="176" x2="474" y2="92" stroke="#1c1917" stroke-width="2"/>
+    <polygon points="469,92 474,82 479,92" fill="#1c1917"/>
+    <rect x="414" y="36" width="120" height="46" fill="#fbbf24" stroke="#1c1917" stroke-width="1.5"/>
+    <text x="474" y="55" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="#1c1917" letter-spacing="1">CSO OUTFALL</text>
+    <text x="474" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-style="italic" fill="#1c1917">opens in heavy rain</text>
+    <!-- waterway waves -->
+    <path d="M548 48 q8 -7 16 0 q8 7 16 0 q8 -7 16 0" fill="none" stroke="#1e3a5f" stroke-width="2"/>
+    <path d="M548 62 q8 -7 16 0 q8 7 16 0 q8 -7 16 0" fill="none" stroke="#1e3a5f" stroke-width="2"/>
+    <text x="572" y="88" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#1e3a5f" letter-spacing="1.5">WATERWAY</text>
+    <line x1="534" y1="59" x2="544" y2="59" stroke="#1c1917" stroke-width="2"/>
+    <!-- pipe caption -->
+    <text x="344" y="226" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-style="italic" fill="#555">sewage and rain in the same pipe</text>
+  </svg>
+  </div>
+  <div class="bc-note">Dry weather: everything reaches the treatment plant. Heavy rain: the pipe hits capacity, the outfall valve opens, and the combined flow, sewage included, goes straight to the nearest waterway.</div>
+</figure>
 
 <p>This is legal. It is permitted under a federal consent decree between Seattle, the EPA, the Department of Justice, and the Washington State Department of Ecology, in force since 2013. The agreement gives the federal government direct authority over how Seattle manages its sewer infrastructure.</p>
 
@@ -289,6 +364,36 @@ body.tbc-member .lockpanel { display:none; }
 
 <p>The price is the scandal. The project was budgeted at $423 million in 2014. By 2018 the estimate had climbed to $570 million. It now stands at approximately $710 million, a 68 percent overrun. The publicly itemized increases tell the story: $25 million to widen the tunnel, $47 million in design "refinements," $39 million in construction cost escalation, $19 million in "planning and estimating corrections." Each line item sailed through. Nobody was fired. Nobody was fined.</p>
 
+<figure class="bc-fig">
+  <div class="bc-fig-title">One Tunnel, Three Budgets</div>
+  <div class="bc-row">
+    <div class="bc-lab">2014 budget</div>
+    <div class="bc-track"><div class="bc-bar" style="width:59.6%;" title="2014 budget: 423 million dollars"></div><span class="bc-val">$423M</span></div>
+  </div>
+  <div class="bc-row">
+    <div class="bc-lab">2018 estimate</div>
+    <div class="bc-track"><div class="bc-bar" style="width:80.3%;" title="2018 estimate: 570 million dollars"></div><span class="bc-val">$570M</span></div>
+  </div>
+  <div class="bc-row">
+    <div class="bc-lab">Today</div>
+    <div class="bc-track"><div class="bc-bar gold" style="width:100%;" title="Current estimate: approximately 710 million dollars"></div><span class="bc-val">$710M</span></div>
+  </div>
+  <div class="bc-note">Up $287 million, a 68 percent overrun, with no audit published. Source: SPU project records.</div>
+</figure>
+
+<figure class="bc-fig">
+  <div class="bc-fig-title">What a Mile of Sewer Tunnel Costs</div>
+  <div class="bc-row">
+    <div class="bc-lab">Seattle, Ship Canal</div>
+    <div class="bc-track"><div class="bc-bar gold" style="width:100%;" title="Seattle Ship Canal tunnel: 263 million dollars per mile"></div><span class="bc-val">$263M / mile</span></div>
+  </div>
+  <div class="bc-row">
+    <div class="bc-lab">Chicago, TARP Deep Tunnel</div>
+    <div class="bc-track"><div class="bc-bar" style="width:10.6%;min-width:3px;" title="Chicago TARP Deep Tunnel: 28 million dollars per mile"></div><span class="bc-val">$28M / mile</span></div>
+  </div>
+  <div class="bc-note">Roughly nine times Chicago's cost per mile of comparable deep-bore sewer tunnel.</div>
+</figure>
+
 <table class="comparison-table">
   <tr><th>City</th><th>Project</th><th>Cost per Mile</th></tr>
   <tr><td>Seattle</td><td>Ship Canal Tunnel</td><td><strong>$263 million</strong></td></tr>
@@ -299,6 +404,25 @@ body.tbc-member .lockpanel { display:none; }
 
 <p>Who covers it? You do. Drainage charges ride on your property tax statement where most people never itemize them, and SPU's own 2025-2027 rate study plans roughly 5 percent revenue increases every year for both drainage and wastewater. The Seattle Times put it plainly when the rate path was proposed: water, sewage, waste, and drainage rates up more than 20 percent by 2026, while the city "moves forward" the huge tunnel. Seattle's drainage rates are the highest in the Pacific Northwest, and they are still not enough to cover the tunnel without federal loans.</p>
 
+<p>Here is what that looks like on an actual bill. Burnham Civic reviewed six months of operating statements for one Seattle apartment portfolio, 21 buildings, most of them the older brick walkups this city says it wants to preserve. Their combined SPU services run at about $863,000 a year. Sewer alone, the line that funds the CSO program, runs at about $421,000. Nearly all of it passes through to residents as utility billbacks on their leases. When the tunnel takes another change order, these are the bills that absorb it.</p>
+
+<figure class="bc-fig">
+  <div class="bc-fig-title">One Seattle Apartment Portfolio's SPU Bills, Annualized</div>
+  <div class="bc-row">
+    <div class="bc-lab">Sewer</div>
+    <div class="bc-track"><div class="bc-bar gold" style="width:100%;" title="Sewer: about 421,000 dollars per year; wastewater rates fund the CSO program"></div><span class="bc-val">$421,000</span></div>
+  </div>
+  <div class="bc-row">
+    <div class="bc-lab">Garbage</div>
+    <div class="bc-track"><div class="bc-bar" style="width:75.6%;" title="Garbage: about 318,000 dollars per year"></div><span class="bc-val">$318,000</span></div>
+  </div>
+  <div class="bc-row">
+    <div class="bc-lab">Water</div>
+    <div class="bc-track"><div class="bc-bar" style="width:29.3%;" title="Water: about 123,000 dollars per year"></div><span class="bc-val">$123,000</span></div>
+  </div>
+  <div class="bc-note">January to June 2026 actuals, annualized. Operating statements for a 21-building Seattle multifamily portfolio, provided to Burnham Civic. Sewer is highlighted because wastewater rates are where CSO compliance costs land. Excludes electricity and gas.</div>
+</figure>
+
 <h2>The Green Alternative Already Works. The City Said So.</h2>
 
 <p>Not every city solves its CSO problem with a tunnel. Green stormwater infrastructure, rain gardens, bioswales, cisterns, permeable pavement, and restored wetlands, absorbs the rain before it ever reaches the combined pipe. Every gallon a yard soaks up is a gallon that never mixes with sewage and never needs a valve, a tunnel, or a treatment plant.</p>
@@ -307,9 +431,35 @@ body.tbc-member .lockpanel { display:none; }
 
 <p>Read those two numbers side by side. Green infrastructure citywide now manages roughly 700 million gallons of stormwater a year. The entire 2024 combined sewer overflow was 19.5 million gallons. The distributed, planted, neighborhood-scale approach is already handling 36 times the volume of the problem, and it did not require a $710 million bore under Ballard.</p>
 
+<figure class="bc-fig">
+  <div class="bc-fig-title">The Two Numbers, Side by Side</div>
+  <div class="bc-row">
+    <div class="bc-lab">Stormwater managed by green infrastructure, per year</div>
+    <div class="bc-track"><div class="bc-bar" style="width:100%;" title="Green infrastructure: roughly 700 million gallons per year"></div><span class="bc-val">700M gal</span></div>
+  </div>
+  <div class="bc-row">
+    <div class="bc-lab">Total 2024 sewage overflow</div>
+    <div class="bc-track"><div class="bc-bar gold" style="width:2.8%;min-width:4px;" title="2024 combined sewer overflow: 19.5 million gallons"></div><span class="bc-val">19.5M gal</span></div>
+  </div>
+  <div class="bc-note">The planted approach already handles 36 times the volume of the entire problem. Source: SPU 2024 annual report, page 57.</div>
+</figure>
+
 <p><strong>The city will literally pay you to do this.</strong> The RainWise program, run jointly by SPU and King County, rebates homeowners in eligible CSO basins an average of about $4,800, up to $13.12 per square foot of roof runoff controlled, to install rain gardens and cisterns on their own property. It is one of the only programs in the city where the ratepayer money flows back uphill, to the people who actually fix the problem at the source.</p>
 
 <p>So how is the city treating its one proven, cheap, citizen-scale program? In 2024, by SPU's own account, RainWise outreach was reduced "due to SPU staffing limitations." More than 800 contractors have been trained since 2009; exactly 20 are currently active on the program's contractor list. The megaproject that is $287 million over budget gets every change order it asks for. The program that pays neighbors to absorb the rain at one ten-thousandth of the cost cannot keep its outreach staffed.</p>
+
+<figure class="bc-fig">
+  <div class="bc-fig-title">RainWise Contractors: Trained vs. Active</div>
+  <div class="bc-row">
+    <div class="bc-lab">Trained since 2009</div>
+    <div class="bc-track"><div class="bc-bar" style="width:100%;" title="More than 800 contractors trained since 2009"></div><span class="bc-val">800+</span></div>
+  </div>
+  <div class="bc-row">
+    <div class="bc-lab">Active today</div>
+    <div class="bc-track"><div class="bc-bar gold" style="width:2.5%;min-width:4px;" title="20 contractors currently active on the program list"></div><span class="bc-val">20</span></div>
+  </div>
+  <div class="bc-note">Outreach was cut "due to SPU staffing limitations," per SPU's own 2024 reporting.</div>
+</figure>
 
 <p><strong>It works at every scale, and Seattle has the receipts.</strong> The Thornton Creek watershed in northeast Seattle manages stormwater through natural infiltration at a fraction of tunnel cost. The Barton CSO rain gardens in West Seattle were built specifically to cut overflows, and SPU's own data shows they did. And homeowners outside the combined basins, in the creek watersheds like Thornton and Ravenna where runoff goes straight to the creek instead of the sewer, do not have to wait for the city at all: a bioswale on private property takes that roof and driveway runoff out of the system the day it is planted.</p>
 
