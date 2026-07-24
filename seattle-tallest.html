@@ -82,6 +82,18 @@ table.compare td:first-child { font-weight: 700; font-size: 13px; }
 body.tbc-member .members-content { display:block; }
 body.tbc-member .lockpanel { display:none; }
 .members-content .mbadge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#1e3a5f; color:#fbbf24; padding:2px 8px; margin:24px 0 0; }
+/* === DEEPER PLAN GATE (/america) === */
+.plan-gate { background:#1c1917; padding:22px 26px; margin:36px 0; color:#d6d3cd; border-top:3px solid #991b1b; }
+.plan-gate .mtag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#991b1b; color:#fff; padding:2px 8px; margin-bottom:10px; }
+.plan-gate h3 { font-family:Georgia,serif; font-size:17px; color:#fff; margin:0 0 8px; font-weight:700; }
+.plan-gate p { font-size:13px; margin:0 0 12px; color:#cbd5e1; }
+.plan-gate input[type=password] { font-family:Georgia,serif; font-size:13px; padding:5px 8px; border:1px solid #57534e; background:#0c0a09; color:#fff; width:180px; }
+.plan-gate button { font-family:Georgia,serif; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#fff; background:#991b1b; border:none; padding:6px 14px; margin-left:6px; cursor:pointer; }
+.plan-gate .pw-err { font-size:12px; color:#fca5a5; display:none; margin-top:8px; }
+.plan-content { display:none; }
+body.america-member .plan-content { display:block; }
+body.america-member .plan-gate { display:none; }
+.plan-content .pbadge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#991b1b; color:#fff; padding:2px 8px; margin:24px 0 0; }
 </style>
 <!-- SEO -->
 <link rel="canonical" href="https://burnhamcivic.org/seattle-tallest.html">
@@ -434,6 +446,65 @@ body.tbc-member .lockpanel { display:none; }
 
 <p>Drive north from the airport and look at the hole in the skyline. Then ask why a city that builds everything else refuses to finish its own silhouette.</p>
 
+<div class="plan-gate" id="plan-gate">
+  <span class="mtag">Deeper File</span>
+  <h3>The Build: how the summit actually gets made</h3>
+  <p>The parcel file above is where the tower goes. This is what the tower is, and how a city that has not raised a great masonry building in a century builds one again. The design, the material, the shop, the bench, and the honest numbers.</p>
+  <p>This file is held separately. If you have the word, enter it.</p>
+  <form onsubmit="return tbcTryPlan('plan-pw')" style="margin:0;display:inline;">
+    <input type="password" id="plan-pw" placeholder="Password">
+    <button type="submit">Enter</button>
+  </form>
+  <p class="pw-err" id="plan-pw-err">Not it.</p>
+</div>
+
+<div class="plan-content">
+
+<span class="pbadge">The Build File</span>
+<h2>What Goes in the Gap</h2>
+
+<p>The answer to the gap is a tower of roughly seventy stories built in real stone, and building it means restarting a trade this country walked away from around 1930. The building is the visible half of the plan. The invisible half is a supply chain, a fabrication shop, and a bench of masons that does not currently exist anywhere in this region. Most people who talk about beautiful buildings only argue the visible half, which is why nothing gets built. This file is both halves, because you cannot have the first without the second.</p>
+
+<h2>The Tower Is a Column</h2>
+
+<p>Louis Sullivan settled the design problem a hundred and thirty years ago, and almost everyone forgot the answer. A tall building composes like a classical column, in three parts. The base is the pedestal, and it holds the thing you reach for first: a soaring, high-ceilinged public atrium where the tower meets the street, five to eight stories of tall, ornamented, human-scaled room. This is where all the craft and all the drama concentrate, and it is the building's gift to the city, the public room that makes a commercial tower a civic one. Charles Moore wrote that you have to pay for the public life, and a great atrium facing City Hall is that sentence built in stone.</p>
+
+<p>The shaft is the repeating middle, and here the tradition blesses the economics. The shaft of a column is meant to be uniform, so the sixty typical floors are not a compromise, they are the correct classical move. One superb floor, designed once and raised sixty times. The crown is the capital, the sculpted top that gives Seattle a silhouette worth photographing, the way the Smith Tower and the Chrysler resolve into a summit instead of a flat cutoff. Grand atrium base, calm repeating shaft, sculpted crown. The program runs to roughly one and a half million square feet and about six hundred thousand square feet of facade, at Columbia Center's scale, which means Seattle has physically built a thing this size before.</p>
+
+<p>Behind the stone is a modern ductile structure, reinforced and very likely base isolated, engineered to ride out a Cascadia megaquake and to stand for five centuries. That is the line no glass tower can say out loud. We build for the Big One, in stone, to outlast everyone in the room.</p>
+
+<h2>The Material: Masonry After 1930</h2>
+
+<p>Masonry stopped evolving the year we stopped building with it, and everyone since has treated it as heritage rather than as a living material with a hundred years of missing research. The plan is to restart it with twenty-first century tools. Robotic subtractive carving, the Monumental Labs approach, collapses the cost of ornament by roughing ninety percent of the stone with a machine and leaving the finish to a human. Structural stone, the work of Amin Taha and Webb Yates in London, uses stone as the frame rather than the skin, at roughly a tenth of the embodied carbon of steel, which turns the climate argument from an enemy into an ally. Terra cotta returns as it always worked, a master modeled once and pressed many times, the catalog logic that clad Seattle the first time. And low-carbon binders replace Portland cement where the chemistry allows.</p>
+
+<p>This is where the ambition earns the Dubai comparison and then beats it. The Gulf pairs unlimited ambition with new fabrication, but most of what it builds is a parametric skin on a conventional frame, which is exactly the veneer a serious classicist rejects. Seattle can do the harder and better thing: the ambition and the robotics, on real load-bearing structure. We build the way the Gulf dreams and the way Rome actually did.</p>
+
+<h2>The Shop: the Third Node</h2>
+
+<p>Two plants serve the entire continent, Boston Valley in Buffalo and Gladding, McBean in California. Everything west of the Rockies and north of Sacramento, plus all of British Columbia, is served from eight hundred miles away, on a product that is heavy, bulky, and breaks in transit. That is an opening. Seattle is the strongest candidate on the map for the third node: it has one of the densest concentrations of historic terra cotta in America, a mandatory retrofit wave arriving on more than eleven hundred masonry buildings at once, a regional service area nobody covers, and the clay still in the ground that fed the old Denny-Renton works before the company left in 1927. The raw material never left. The plant did.</p>
+
+<p>The move is not to demand a company relocate. It is to broker a demonstration. Convene Monumental Labs and Boston Valley around one Seattle project, prove the economics in public, and let the demand book summon the capacity. Nobody builds a kiln on enthusiasm. Everybody builds on a backlog, and the backlog is the coalition's to assemble. The first object is already chosen: scan an intact Arctic Club walrus, reproduce it, and publish the cost. That single head is the Monumental Labs pilot, the first entry in a Seattle Ornament Catalog that lets any owner in the city order authentic Seattle ornament at machined marginal cost, and the proof that summons the shop.</p>
+
+<h2>The Bench: Rebuilding a Trade</h2>
+
+<p>The wage was never the problem. The bench is. Skilled masonry is not that hard to learn, the Gulf trains crews from near zero, but the American transmission chain that ran master to apprentice for three thousand years snapped around 1930, and the knowledge stopped being handed down. You do not need a tower full of master carvers. You need a handful of masters and a wide base of competent hands, because robotics rough the repeats and the rare masters do the few pieces that carry the soul.</p>
+
+<p>So the plan rebuilds the chain and compresses it with the same tools that are reshaping every skilled trade, including accounting. Encode the tacit rules that were never written down, from proportion systems to the difference between lime mortar and Portland cement that quietly destroys historic brick. Let apprentices carve a digital model a hundred times before touching real stone, on the same model the robot will cut. Overlay the target form on the real block with augmented reality, so three thousand years of common mistakes get caught in real time. Train an eye copilot on the canon so a first-year apprentice can see a proportional error he could not yet feel. A three-year apprentice with that tooling reaches where a seven-year apprentice used to, exactly the way a junior accountant reaches competence faster today. Duncan McRoberts sets the standard and his judgment, encoded, trains a hundred hands he could never reach one tutorial at a time. His eye becomes the training data. The masters carry the standard, and the mission fills the ranks.</p>
+
+<h2>The Economics, Honestly</h2>
+
+<p>Here is the number that ends the affordability argument. Swapping a glass curtain wall for real anchored stone on a tower of this size is a three to six percent increase on a roughly billion-dollar project, and full ornamental treatment is maybe fourteen. Against the land and the financing, beauty is a rounding error, and it is bought back a hundredfold in what the building becomes and what it commands. Alys Beach mandated solid masonry on every home and now holds the highest prices in Florida. Durable beauty is not a cost, it is the premium. The tower is also the easiest building type to author well, because it repeats, which means the master-model cost of every ornament amortizes across seventy floors until it approaches nothing. Ornament on a tower should cost less per square foot than ornament on a mansion. If a bill of materials shows otherwise, the design is fighting the machine.</p>
+
+<h2>The Move</h2>
+
+<p>One person present every day for three years is the input institutional capital cannot buy, and it is the single thing that separates every great building from every mediocre one. REITs hire it out to a manager juggling six jobs and optimizing for the exit, which is why they build boxes. The owner who stands on the deck and holds the standard for a thousand days is the rarest force in construction, and it is the role this plan is built around. The author holds the vision; the professionals and the tools execute. And when the incumbents hesitate, as Seattle's governance always does, the coalition plays the part Prime Minister Depretis played over the Vittoriano: it does not petition the hesitant for ambition, it overrules them with a constituency they cannot ignore. The <a href="committee-of-correspondence.html">Committee of Correspondence</a> is that body.</p>
+
+<h2>Profit, and Country</h2>
+
+<p>There are profit incentives, and then there are America incentives, and only the second one builds cathedrals. A profit incentive rents a mason at eighty dollars an hour and loses him at eighty-two. The reason men carved a hundred and seventy-five thousand stones for one college, or set the Capitol dome by hand, or finished the Vittoriano across fifty years after the architect had died, is that the work itself was the reward and they were building for something larger than a paycheck. That is the recruiting engine, and it is the most practical thing in this plan. There are carvers and masons in this country trained for cathedral work who never got to build one, and the offer to come raise the first great American masonry tower in a century is an offer no wage competes with. The federal moment is aligned behind it, from the beautiful-architecture mandate to the country's two hundred and fiftieth year. A Seattle crew building in stone, for the nation, on the most-watched ground in the Pacific Northwest, is that policy made physical on the West Coast. The gap gets filled not with another glass box financed for the exit, but with a stone building raised by a rebuilt trade, by people who showed up for the country.</p>
+
+</div>
+
 <div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
   <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
   <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute expertise, or join as a member? Tell us who you are and how you want to help.</p>
@@ -455,16 +526,33 @@ body.tbc-member .lockpanel { display:none; }
 <script>
 (function(){
   var PASS='maga', COOKIE='tbc_maga_auth';
+  var PASS2='america', COOKIE2='tbc_america_auth';
   function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
   function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
   function unlock(){document.body.classList.add('tbc-member');}
+  function unlockPlan(){document.body.classList.add('america-member');}
   if(getCookie(COOKIE)===btoa(PASS)) unlock();
+  if(getCookie(COOKIE2)===btoa(PASS2)) unlockPlan();
   window.tbcTryPw=function(id){
     var inp=document.getElementById(id);
     if(inp.value===PASS){setCookie(COOKIE,btoa(PASS),30);unlock();}
     else{var e=document.getElementById(id+'-err');if(e)e.style.display='block';inp.value='';}
     return false;
   };
+  window.tbcTryPlan=function(id){
+    var inp=document.getElementById(id);
+    if(inp.value.toLowerCase()===PASS2){setCookie(COOKIE2,btoa(PASS2),30);unlockPlan();
+      var el=document.querySelector('.plan-content'); if(el) el.scrollIntoView({behavior:'smooth'});}
+    else{var e=document.getElementById(id+'-err');if(e)e.style.display='block';inp.value='';}
+    return false;
+  };
+  var buf='';
+  document.addEventListener('keydown',function(ev){
+    if(ev.key && ev.key.length===1){
+      buf=(buf+ev.key.toLowerCase()).slice(-12);
+      if(buf.indexOf('america')>=0){setCookie(COOKIE2,btoa(PASS2),30);unlockPlan();}
+    }
+  });
 })();
 function sendInquiry(){
   var n=document.getElementById('ms-name').value;
