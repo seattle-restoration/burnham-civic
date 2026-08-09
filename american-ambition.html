@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Brief for American Ambition - BURNHAM CIVIC</title>
+<meta name="description" content="A titan rising at Starbase, a colossus proposed for Alcatraz, an arch and a garden of heroes rising in Washington, and the towers we have filed for Puget Sound. The Republic is 250 this year.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 32px auto 32px 10%; padding: 0 16px; background: #fff; color: #111; font-size: 16px; line-height: 1.7; }
+a { color: #00c; } a:visited { color: #551a8b; } a:hover { color: #c00; }
+.header { display: flex; align-items: baseline; justify-content: space-between; }
+h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
+.subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #1e3a5f; padding: 5px 14px; text-decoration: none; font-family: Georgia, serif; }
+.subscribe:hover { background: #2a4a73; } .subscribe:visited { color: #fff; }
+.nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+.back { font-size: 12px; margin-bottom: 24px; display: block; }
+h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 38px; font-weight: 400; line-height: 1.2; margin: 0 0 6px; color: #111; }
+.article-subtitle { font-size: 17px; color: #555; font-style: italic; margin: 0 0 24px; font-family: 'Instrument Serif', Georgia, serif; }
+h2 { font-size: 20px; font-weight: 700; margin: 32px 0 12px; color: #111; }
+h3 { font-size: 17px; font-weight: 700; margin: 24px 0 8px; color: #333; }
+p { margin: 0 0 16px; }
+.stat-block { border-left: 3px solid #1e3a5f; padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
+.stat-block p { margin: 4px 0; font-size: 15px; }
+.stat-block strong { font-size: 17px; }
+.deficit { color: #991b1b; font-weight: 700; }
+.keep { color: #15803d; font-weight: 700; }
+.callout { border-left: 3px solid #991b1b; padding: 12px 16px; margin: 24px 0; background: #fef2f2; }
+.callout p { margin: 4px 0; font-size: 15px; }
+.burnham-quote { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 18px; color: #1c1917; padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
+.burnham-quote .cite { display: block; margin-top: 8px; font-size: 13px; color: #666; font-style: normal; font-family: Georgia, serif; }
+.source { font-size: 12px; color: #888; margin-top: -12px; margin-bottom: 16px; }
+.footer { font-size: 11px; color: #999; margin-top: 48px; padding-top: 12px; border-top: 1px solid #ddd; }
+.timeline { margin: 20px 0; }
+.timeline .event { margin: 0 0 12px; font-size: 15px; }
+.timeline .event .date { font-weight: 700; }
+
+/* === DECO SYSTEM OVERRIDES (sitewide) === */
+.burnham-quote, .stat-block {
+  position: relative !important;
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
+  background-size: 1px 100% !important;
+  background-position: 4px 0 !important;
+  background-repeat: no-repeat !important;
+}
+.burnham-quote::before, .burnham-quote::after,
+.stat-block::before, .stat-block::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before, .stat-block::before { top: 9px; }
+.burnham-quote::after, .stat-block::after { bottom: 9px; }
+.timeline {
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  position: relative;
+}
+.timeline::before {
+  content: ""; position: absolute;
+  left: 4px; top: 8px; bottom: 8px; width: 1px;
+  background: #1c1917;
+}
+.timeline .event { position: relative; }
+.timeline .event::before {
+  content: ""; position: absolute;
+  left: -23px; top: 6px;
+  width: 7px; height: 7px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.timeline .event .date { color: #1c1917 !important; }
+
+figure.illus { margin: 28px 0; padding: 0; }
+figure.illus img { width: 100%; height: auto; display: block; border: 1px solid #ddd; }
+figure.illus figcaption { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 14px; color: #555; line-height: 1.5; margin: 8px 4px 0; }
+figure.illus figcaption .credit { font-family: Georgia, serif; font-style: normal; font-size: 11px; color: #888; display: block; margin-top: 4px; letter-spacing: 0.3px; }
+figure.illus.tall { max-width: 380px; margin-left: 0; }
+figure.illus.tall img { border: 1px solid #ddd; }
+</style>
+<link rel="canonical" href="https://burnhamcivic.org/american-ambition.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="A Brief for American Ambition - BURNHAM CIVIC">
+<meta property="og:description" content="A titan rising at Starbase, a colossus proposed for Alcatraz, an arch and a garden of heroes rising in Washington, and the towers we have filed for Puget Sound. The Republic is 250 this year.">
+<meta property="og:url" content="https://burnhamcivic.org/american-ambition.html">
+<meta property="og:image" content="https://burnhamcivic.org/_assets/og/ambition-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TBCNewsAction">
+<meta name="twitter:title" content="A Brief for American Ambition">
+<meta name="twitter:description" content="A titan rising at Starbase, a colossus proposed for Alcatraz, an arch and a garden of heroes rising in Washington, and the towers we have filed for Puget Sound.">
+<meta name="twitter:image" content="https://burnhamcivic.org/_assets/og/ambition-og.png">
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="membership.html" class="subscribe">Subscribe</a>
+</div>
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="la/">LA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','international')">International</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+  <a href="membership.html">Intelligence</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
+</div>
+<hr>
+<a href="index.html" class="back" onclick="localStorage.setItem('tab','usa')">&larr; Back to USA</a>
+
+<h1 class="article-title">A Brief for American Ambition</h1>
+<p class="article-subtitle">A bronze titan rising at Starbase, a colossus proposed for Alcatraz, an arch and a garden of heroes rising in Washington, and the towers we have filed for Puget Sound. The Republic is 250 this year. This is the brief in support.</p>
+
+<h2>The News</h2>
+
+<p>This week a workshop called Atelier Missor is raising a fifty foot bronze Prometheus at the gates of SpaceX's Starbase in Texas, cast in sections in France and shipped across the Atlantic. The atelier was founded in 2021 by two brothers who cast the old way, molten metal poured into plaster molds taken from wax models, a technique roughly six thousand years old. Their first act was gifting a three meter bronze of Napoleon to the city of Nice. Their stated ambition is an American foundry and thousands of statues honoring the Western tradition, and their standing line is that our era needs statues.</p>
+
+<p>The Starbase figure is bronze, cast the old way, budgeted at about a million dollars, and commissioned by nobody: the atelier secured private land and local permits at the city limits and is raising it as its own tribute. Their declared next medium is titanium, which is lighter than bronze, stronger than steel by weight, immune to salt air, and unused in monumental art. Either metal meets the standard this organization has argued for since its founding: permanent materials for permanent statements.</p>
+
+<p>The statue is one item in a longer ledger. For the first time in several generations, colossal civic ambition is under construction in America, on both coasts and in the capital, and this brief is filed as a friend of all of it.</p>
+
+<h2>The Precedent</h2>
+
+<p>France has sent a colossus before, and America almost said no. Bartholdi's Liberty was assembled to full height over a Paris courtyard in 1884, taken apart into 350 pieces, and shipped across the Atlantic in 214 crates. Congress would not fund the pedestal. The project stalled until Joseph Pulitzer opened the New York World to small donors in 1885, and about 120,000 Americans gave roughly $102,000, most of them less than a dollar each. The editorials that called the statue a folly are remembered by no one. The statue is recognized by everyone on earth.</p>
+
+<div class="burnham-quote">
+  Every objection aimed at the current slate of American monuments was aimed at Liberty first: too expensive, wrong site, vanity dressed as gift. The objections did not age well. The statue did.
+</div>
+
+<h2>The Clarity of 1905</h2>
+
+<p>At the turn of the last century this kind of ambition did not need a defense, because it was the working assumption of the men running the country's cities. Daniel Burnham is the proof. In 1893 he raised a city of two hundred buildings on a Chicago swamp in twenty-six months and the fair opened on time. In 1902 the McMillan Commission he anchored gave Washington the Mall as Americans know it. And from the spring of 1904 to the summer of 1905 he worked from a cottage on Twin Peaks above San Francisco, tracing forty-three sight lines across forty-nine summits, and delivered the city a complete plan on September 27, 1905. He took no fee.</p>
+
+<p>The report ran 184 pages and 73 plates, nine chapters, each one a buildable program: a civic center on a 1,200 foot oval at Van Ness and Market with a 200 foot Doric column carrying a colossal bronze at its center, an outer boulevard, the hills held for the public, a park system running from the Civic Center to the ocean.</p>
+
+<figure class="illus">
+  <img src="_assets/sf-plan/athenaeum-1905.jpg" alt="The Athenaeum, from Burnham's 1905 Report on a Plan for San Francisco">
+  <figcaption>The Athenaeum, chapter VII of the 1905 Report on a Plan for San Francisco: a national university city above Lake Merced, with a library modeled on the Bibliothèque Nationale, an observatory, formal gardens, and rowing courses on the lake.
+  <span class="credit">From Burnham's Report on a Plan for San Francisco, delivered September 27, 1905. Digitally restored.</span></figcaption>
+</figure>
+
+<p>Chapter VII was the Athenaeum. Burnham specified a national university campus at Lake Merced: a library modeled on the Bibliothèque Nationale, an observatory, formal gardens, rowing courses on the lake itself, and a residential quadrangle for two thousand students. He positioned it as the intellectual anchor of the Pacific city, the West Coast counterpart to Harvard and Columbia. Look at the plate and then look at the renders for the Prometheion ringing Alcatraz; it is the same instinct, a crown of civic architecture on the most commanding ground available, built to tell the city what it is for. The Athenaeum site became San Francisco State, the zoo, and a golf course. None of it is what Burnham specified, which means the chapter is not dead, it is <a href="burnham-plan-sf.html">still pending</a>.</p>
+
+<p>The plan itself was delivered seven months before the 1906 earthquake and buried in the rush to rebuild fast rather than well. That is the cautionary half of the story: ambition at this scale has a window, and a city that misses the window waits a century for the next one. The window is open again now, and this time it is open in Texas, in San Francisco Bay, in Washington, and in Puget Sound at once.</p>
+
+<h2>The Ledger</h2>
+
+<h3>Starbase</h3>
+<p>The Missor Prometheus is rising at the edge of the company town of the American launch industry. The pairing is exact: Prometheus stole fire from the gods and handed it to men, and Starbase exists to hand men the means to leave the planet. A country that put Paul Manship's gilded Prometheus at the center of Rockefeller Center in 1934, in the middle of the Depression, will understand a second one standing over a rocket works in Texas.</p>
+
+<h3>Alcatraz</h3>
+<p>In San Francisco, the American Colossus Foundation proposes a Prometheus roughly 450 feet tall over Alcatraz Island, taller than the Statue of Liberty, ringed by a museum called the Prometheion, privately funded, and offered as a gift for the country's 250th birthday. The site argument is the strong one. Alcatraz carried the first lighthouse on the Pacific coast in 1854 and the first American fort at the Golden Gate; the penitentiary everyone knows ran twenty-nine years and has now been closed more than twice as long as it was open. The most prominent rock in the finest harbor on the Pacific coast is a ruin with a gift shop, and the current federal proposal is to spend $152 million making it a prison again. The Greeks raised the Colossus at the harbor mouth of Rhodes because arrival is the moment a city says what it is. A closed prison is not a civic identity. A harbor entrance is.</p>
+
+<p>The proposal is early. There is no filing at Interior, and raising anything on a National Historic Landmark inside the Golden Gate National Recreation Area means Congress, environmental review, and Section 106 consultation, with public comment at every stage. That is where friends of the project file, and we will. A monument should clear a high bar. The bar is what separates a monument from a billboard.</p>
+
+<h3>Washington</h3>
+<p>The capital is not debating ambition, it is pouring concrete. The White House ballroom is under construction, with the East Wing cleared and Clark Construction under contract. A Triumphal Arch is planned for the Arlington Memorial Bridge approach, the ceremonial axis the McMillan Plan drew in 1902, with construction slated to begin in 2026. The National Garden of American Heroes is sited for West Potomac Park, with the National Endowment for the Humanities funding commissions for some 150 sculptors, the largest federal statuary program in the country's history. The Reflecting Pool is being renovated. And behind all of it stands EO 14344, which made classical architecture the default for federal buildings. One can argue any single project. Together they are the first coordinated monumental program in Washington since the McMillan Commission, and the sculptors the NEH is funding are the future workforce of every atelier, including the French one trying to open an American foundry.</p>
+
+<h3>Puget Sound</h3>
+<p>We are not filing this brief as spectators. Our own docket runs the same direction. <a href="seattle-tallest.html">Seattle's Tallest Building Plan</a> starts from the two places the city actually sees itself, I-5 at SeaTac and the crest of the Ship Canal Bridge, where the skyline has a hole between Columbia Center and Rainier Square. The next tallest building in Seattle goes exactly there, and it goes up in materials that will not look dated in fifteen years. <a href="redmond-tallest.html">Redmond's Tallest Building Plan</a> makes the suburban case: Busan put a 101-story tower on the beach at Haeundae, while Redmond headquarters Microsoft, just opened light rail, holds 640 acres of parkland on Lake Sammamish, and caps its downtown at 144 feet. Redmond's tallest building is the opening move in the doctrine of beautiful suburban architecture. Behind those sit the rest of the docket: twin mega-bores through the Cascades on the Gotthard model, and a semiconductor play for Centralia. The scale is the point. Small plans do not get built either; they just fail quietly.</p>
+
+<h2>Our Position</h2>
+
+<p>Burnham Civic supports the titan at Starbase, the colossus proposed for Alcatraz, the monumental program under way in Washington, and the towers we have drawn for Puget Sound, on the same grounds. The materials are permanent. The sites are the most symbolically loaded ground available. The funding models, private gifts and crowdfunded pedestals and commissioned sculptors, have a 140 year old American precedent. And the calendar is real: Burnham proved in 1893 that twenty-six months is enough time to build a city, and the semiquincentennial is this year. The clarity of 1905 is available to anyone willing to claim it.</p>
+
+<p>The founders of Atelier Missor say our era needs statues. We agree, and we would add that it needs towers, arches, and harbors that announce something on arrival. Make no little plans. We file accordingly.</p>
+
+<div class="footer">
+  <p>BURNHAM CIVIC &middot; <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a></p>
+  <p>Related: <a href="seattle-tallest.html">Seattle's Tallest Building Plan</a> &middot; <a href="redmond-tallest.html">Redmond's Tallest Building Plan</a> &middot; <a href="burnham-plan-sf.html">Burnham's Plan for San Francisco</a> &middot; <a href="material-standard.html">The Material Standard</a> &middot; <a href="burnham-columbian-exposition.html">The 1893 Columbian Exposition</a></p>
+  <p>Sources: City Journal, "Promethean Ambitions" (July 2025); The Art Newspaper on the $450m Alcatraz Prometheus proposal (Nov 5, 2025); americancolossus.org; Founders, Inc. portfolio, Atelier Missor; CBS News, "Reflecting Pool renovation, a massive White House ballroom and a triumphal arch: How Trump is remaking D.C."; NPR construction tracker, "The many ways Trump wants to change D.C." (May 4, 2026); Fox News on the National Garden of American Heroes at West Potomac Park; NEH sculptor grant program announcements (2025); National Park Service, Golden Gate NRA and Alcatraz Island history; NPS Statue of Liberty NM, pedestal fund history; White House FY26 budget request coverage of the $152M Alcatraz reopening (May 2026).</p>
+</div>
+
+</body>
+</html>
