@@ -1,7 +1,7 @@
 // gate.js - Password gate for restricted Civic Works pages
-// Password: 'fraser', cookie: tbc_civicworks_auth, 30-day expiry
+// Password: 'usa', cookie: tbc_civicworks_auth, 30-day expiry
 (function() {
-  var PASS = 'fraser';
+  var PASS = 'usa';
   var COOKIE = 'tbc_civicworks_auth';
   var DAYS = 30;
 
