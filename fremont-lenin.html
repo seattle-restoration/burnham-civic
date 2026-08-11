@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Washington for Washington - BURNHAM CIVIC</title>
+<meta name="description" content="The Lenin standing in Fremont has been for sale for thirty years. The Republic has melted a statue before, and it knew what to cast next.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 32px auto 32px 10%; padding: 0 16px; background: #fff; color: #111; font-size: 16px; line-height: 1.7; }
+a { color: #00c; } a:visited { color: #551a8b; } a:hover { color: #c00; }
+.header { display: flex; align-items: baseline; justify-content: space-between; }
+h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
+.subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #1e3a5f; padding: 5px 14px; text-decoration: none; font-family: Georgia, serif; }
+.subscribe:hover { background: #2a4a73; } .subscribe:visited { color: #fff; }
+.nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
+.nav a:hover { color: #c00; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+.back { font-size: 12px; margin-bottom: 24px; display: block; }
+h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 38px; font-weight: 400; line-height: 1.2; margin: 0 0 6px; color: #111; }
+.article-subtitle { font-size: 17px; color: #555; font-style: italic; margin: 0 0 24px; font-family: 'Instrument Serif', Georgia, serif; }
+h2 { font-size: 20px; font-weight: 700; margin: 32px 0 12px; color: #111; }
+h3 { font-size: 17px; font-weight: 700; margin: 24px 0 8px; color: #333; }
+p { margin: 0 0 16px; }
+.stat-block { border-left: 3px solid #1e3a5f; padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
+.stat-block p { margin: 4px 0; font-size: 15px; }
+.stat-block strong { font-size: 17px; }
+.deficit { color: #991b1b; font-weight: 700; }
+.keep { color: #15803d; font-weight: 700; }
+.callout { border-left: 3px solid #991b1b; padding: 12px 16px; margin: 24px 0; background: #fef2f2; }
+.callout p { margin: 4px 0; font-size: 15px; }
+.burnham-quote { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 18px; color: #1c1917; padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
+.burnham-quote .cite { display: block; margin-top: 8px; font-size: 13px; color: #666; font-style: normal; font-family: Georgia, serif; }
+.source { font-size: 12px; color: #888; margin-top: -12px; margin-bottom: 16px; }
+.footer { font-size: 11px; color: #999; margin-top: 48px; padding-top: 12px; border-top: 1px solid #ddd; }
+.timeline { margin: 20px 0; }
+.timeline .event { margin: 0 0 12px; font-size: 15px; }
+.timeline .event .date { font-weight: 700; }
+
+/* === DECO SYSTEM OVERRIDES (sitewide) === */
+.burnham-quote, .stat-block {
+  position: relative !important;
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
+  background-size: 1px 100% !important;
+  background-position: 4px 0 !important;
+  background-repeat: no-repeat !important;
+}
+.burnham-quote::before, .burnham-quote::after,
+.stat-block::before, .stat-block::after {
+  content: ""; position: absolute;
+  left: 0; width: 9px; height: 9px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.burnham-quote::before, .stat-block::before { top: 9px; }
+.burnham-quote::after, .stat-block::after { bottom: 9px; }
+.timeline {
+  border-left: 0 !important;
+  padding-left: 24px !important;
+  position: relative;
+}
+.timeline::before {
+  content: ""; position: absolute;
+  left: 4px; top: 8px; bottom: 8px; width: 1px;
+  background: #1c1917;
+}
+.timeline .event { position: relative; }
+.timeline .event::before {
+  content: ""; position: absolute;
+  left: -23px; top: 6px;
+  width: 7px; height: 7px;
+  background: #1c1917; transform: rotate(45deg);
+}
+.timeline .event .date { color: #1c1917 !important; }
+
+figure.illus { margin: 28px 0; padding: 0; }
+figure.illus img { width: 100%; height: auto; display: block; border: 1px solid #ddd; }
+figure.illus figcaption { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 14px; color: #555; line-height: 1.5; margin: 8px 4px 0; }
+figure.illus figcaption .credit { font-family: Georgia, serif; font-style: normal; font-size: 11px; color: #888; display: block; margin-top: 4px; letter-spacing: 0.3px; }
+figure.illus.tall { max-width: 380px; margin-left: 0; }
+figure.illus.tall img { border: 1px solid #ddd; }
+</style>
+<link rel="canonical" href="https://burnhamcivic.org/fremont-lenin.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burnham Civic">
+<meta property="og:title" content="A Washington for Washington - BURNHAM CIVIC">
+<meta property="og:description" content="The Lenin standing in Fremont has been for sale for thirty years. The Republic has melted a statue before, and it knew what to cast next.">
+<meta property="og:url" content="https://burnhamcivic.org/fremont-lenin.html">
+<meta property="og:image" content="https://burnhamcivic.org/_assets/lenin/lenin-fremont-highsmith.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TBCNewsAction">
+<meta name="twitter:title" content="A Washington for Washington">
+<meta name="twitter:description" content="The Lenin standing in Fremont has been for sale for thirty years. The Republic has melted a statue before, and it knew what to cast next.">
+<meta name="twitter:image" content="https://burnhamcivic.org/_assets/lenin/lenin-fremont-highsmith.jpg">
+</head>
+<body>
+
+<div class="header">
+  <h1 class="site-title">BURNHAM CIVIC</h1>
+  <a href="membership.html" class="subscribe">Subscribe</a>
+</div>
+<div class="nav">
+  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
+  <a href="la/">LA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','international')">International</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
+  <a href="membership.html">Intelligence</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','strategy')">Strategy</a>
+  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
+</div>
+<hr>
+<a href="index.html" class="back" onclick="localStorage.setItem('tab','seattle')">&larr; Back to Seattle</a>
+
+<h1 class="article-title">A Washington for Washington</h1>
+<p class="article-subtitle">The Lenin standing at a Fremont intersection has been for sale for thirty years. The Republic has melted a statue before, and it knew what to cast next.</p>
+
+<h2>The Statue</h2>
+
+<p>At the corner of Fremont Place North and North 36th Street, a sixteen foot bronze of Vladimir Lenin stands over a retail plaza, seven tons of metal on a corner where people wait for the light. It has been there since 1995, long enough that most of Seattle has stopped seeing it. Fremont's official line is that the statue is a joke the neighborhood is in on, an ironic trophy in the self-declared Artistic Republic of Fremont, dressed in holiday lights each December and repainted with red hands by protesters most years in between.</p>
+
+<figure class="illus tall">
+  <img src="_assets/lenin/lenin-fremont-highsmith.jpg" alt="Emil Venkov's bronze Lenin at the corner of Fremont Place North and North 36th Street, Seattle.">
+  <figcaption>Venkov's Lenin at the Fremont intersection. The sculptor's stated subject was a violent revolutionary advancing through guns and flame.
+  <span class="credit">Carol M. Highsmith, Library of Congress (public domain).</span></figcaption>
+</figure>
+
+<p>The sculptor did not think it was a joke. Emil Venkov, a Bulgarian-born Slovak artist, won the commission from the Communist Party of Czechoslovakia in a 1981 competition and spent most of the decade on the figure. Where the standard-issue Lenin holds a book or waves a cap, Venkov's Lenin strides forward out of a wall of abstracted rifles and fire. Venkov said later that he had smuggled his real subject past the commissars: not the father of the Soviet state but the violence that made it. The statue went up in Poprad, Czechoslovakia, in 1988, at a cost of 334,000 koruna. It stood for about a year. The Velvet Revolution arrived in 1989, and the town pulled it down.</p>
+
+<h2>The Schoolteacher</h2>
+
+<p>Lewis Carpenter, an English teacher from Issaquah working in Poprad, found the statue lying face down in a municipal scrapyard with a homeless man sheltering inside the hollow bronze. He decided a work of that quality should not be cut apart for salvage, whatever its subject. On March 16, 1993 he signed a contract with the city of Poprad to buy the statue for $13,000, then mortgaged his house to cover roughly $40,000 in shipping, and sent seven tons of Lenin around the world to his backyard in Issaquah. He was killed in a car crash in February 1994, before he could find it a home.</p>
+
+<p>His family nearly melted it down then. Peter Bevis of the Fremont Fine Arts Foundry intervened, and in 1995 the Fremont Chamber of Commerce agreed to hold the statue in trust and display it until a buyer appeared. It was unveiled on June 3, 1995, and moved a block to the present corner the following year. The arrangement has never changed: the display is officially temporary, and the statue is officially for sale, and both of those facts are now thirty years old.</p>
+
+<h2>The Terms</h2>
+
+<div class="stat-block">
+  <p><strong>The Fremont Lenin, by the record</strong></p>
+  <p>Owner: the heirs of Lewis Carpenter, held in trust by the Fremont Chamber of Commerce since 1995</p>
+  <p>Status: for sale since 1995; asking $150,000 in 1996, $250,000 or best offer by 2015</p>
+  <p>Commission: 35 percent to the Chamber, earmarked for local artists</p>
+  <p>Land: a 3,992 square foot privately owned corner parcel; the display is temporary by the terms of the trust</p>
+  <p>City jurisdiction: none, conceded by the mayor's office in 2017 and by state legislators in 2019</p>
+</div>
+
+<p>Every few years someone demands the city take the statue down, and every few years the city correctly answers that it cannot. After Charlottesville in 2017, protesters gathered at the corner and Mayor Ed Murray said Seattle should not idolize figures of atrocity, while acknowledging the city had no power over a private statue on private land. A 2019 bill in the state legislature made the same discovery. The demands fail because they are addressed to the wrong party. There is no city approval to seek and no council vote to win. There is a family that has been waiting three decades for a buyer, a chamber of commerce that earns a commission on the sale, and a private landowner whose corner hosts the display at sufferance. The Lenin question is not a political fight. It is a transaction.</p>
+
+<h2>The Precedent</h2>
+
+<p>The Republic has faced this exact situation before, at its founding, and its answer is one of the best stories it owns. On July 9, 1776, after the Declaration of Independence was read aloud to Washington's troops in New York, a crowd marched to Bowling Green and pulled down the gilded equestrian statue of George III that had stood there for six years. The lead was carted to Litchfield, Connecticut, where by the count kept at the time it was melted into 42,088 musket balls for the Continental Army. The statue of the king was fired back at the king's soldiers. No American monument has ever said more with less.</p>
+
+<figure class="illus">
+  <img src="_assets/lenin/george-iii-bowling-green.jpg" alt="Pulling down the statue of George III at Bowling Green, New York, July 1776. Painted by Johannes Oertel, engraved by John C. McRae.">
+  <figcaption>Bowling Green, July 9, 1776. The king came down and became 42,088 musket balls for the army of the Republic.
+  <span class="credit">Johannes A. Oertel, engraved by John C. McRae. Library of Congress (public domain).</span></figcaption>
+</figure>
+
+<p>And when the Republic wanted to say what it was for rather than what it was against, it knew the answer to that too. In 1939 the New York World's Fair opened on the 150th anniversary of Washington's first inauguration, which had taken place in the same city, and the fair's organizers raised James Earle Fraser's statue of Washington on Constitution Mall, sixty five feet of him counting the base, facing the Trylon and Perisphere in his inaugural robes. Fraser was the sculptor of the buffalo nickel and End of the Trail, and his Washington was called the largest portrait statue of the modern era. It was built of plaster because it was built for a fair, and it came down when the fair closed. The ambition was real; only the material was temporary. That is precisely backwards from how a republic should build, and <a href="material-standard.html">we have already filed our position on materials</a>.</p>
+
+<figure class="illus tall">
+  <img src="_assets/lenin/washington-1939-nywf.jpg" alt="James Earle Fraser's colossal George Washington on Constitution Mall at the 1939 New York World's Fair.">
+  <figcaption>Fraser's Washington over Constitution Mall, New York World's Fair, 1939. Sixty five feet, raised for the 150th anniversary of the first inauguration.
+  <span class="credit">Library of Congress (no known restrictions).</span></figcaption>
+</figure>
+
+<h2>The Proposal</h2>
+
+<p>Buy the Lenin. Melt it. Cast a George Washington from the bronze.</p>
+
+<p>The purchase is the easy part; the statue has been waiting for its buyer since 1995, and the sale terms are public. The foundry work is the old, well-understood kind. And the symmetry does the rest of the work on its own. Venkov's subject, by his own account, was the violence of the Soviet founding. Melting that bronze and recasting it as the first president is not the erasure of a monument, it is the completion of one: the same metal, redeemed the same way the Republic redeemed the king at Bowling Green, except that where 1776 turned a tyrant into ammunition, 2026 can turn one into a founder. The metal keeps its history. Guns and flame go in; Washington comes out.</p>
+
+<p>The destination argues for itself. Washington is the only American state named for a president, and its largest city keeps exactly one notable statue of him, the bronze Lorado Taft made for the 1909 Alaska-Yukon-Pacific Exposition, standing quietly on the university campus. The state that carries the name can do better than one campus statue and a Soviet leftover, and the Republic's 250th year is the right calendar to do it on. A new Washington, cast from the Fremont bronze, would be the only monument in the country whose provenance runs Poprad to Puget Sound through the fall of the Soviet bloc, and Fremont's corner does not need to lose its landmark to make it happen: the neighborhood that hosted Lenin ironically for thirty years has first claim on hosting whatever is cast in his place, and a commission worthy of the corner is part of the proposal, not an afterthought.</p>
+
+<div class="burnham-quote">
+  Fremont's joke was that Lenin stood in the one country he could not conquer. The better joke is that he ends up as the man who founded it.
+</div>
+
+<h2>The Arc</h2>
+
+<div class="timeline">
+  <div class="event"><span class="date">1776</span> &nbsp;George III comes down at Bowling Green and becomes 42,088 musket balls for the Continental Army.</div>
+  <div class="event"><span class="date">1789</span> &nbsp;Washington takes the first oath of office in New York.</div>
+  <div class="event"><span class="date">1909</span> &nbsp;Lorado Taft's Washington is raised for the Alaska-Yukon-Pacific Exposition in Seattle.</div>
+  <div class="event"><span class="date">1939</span> &nbsp;Fraser's sixty five foot Washington presides over Constitution Mall at the New York World's Fair.</div>
+  <div class="event"><span class="date">1988</span> &nbsp;Venkov's Lenin is installed in Poprad, Czechoslovakia.</div>
+  <div class="event"><span class="date">1989</span> &nbsp;The Velvet Revolution pulls it down.</div>
+  <div class="event"><span class="date">1993</span> &nbsp;Lewis Carpenter buys the statue from a Poprad scrapyard and mortgages his house to ship it home.</div>
+  <div class="event"><span class="date">1995</span> &nbsp;The Fremont Chamber of Commerce takes the statue in trust and lists it for sale. It has been for sale ever since.</div>
+  <div class="event"><span class="date">2017</span> &nbsp;The city concedes it has no jurisdiction over the statue.</div>
+  <div class="event"><span class="date">2026</span> &nbsp;The Republic turns 250. The bronze is still waiting.</div>
+</div>
+
+<h2>Our Position</h2>
+
+<p>Burnham Civic's position on monuments is on the record: permanent materials, symbolically loaded ground, and private funding models with a 140 year American pedigree, argued at length in <a href="american-ambition.html">A Brief for American Ambition</a>. The Fremont Lenin is the local test of the same doctrine, and it is the cheapest test in the country, because the removal everyone has argued about for thirty years was never blocked by politics. It was blocked by the absence of a buyer with a better idea for the metal.</p>
+
+<p>The better idea is on the table. Seven tons of bronze, a founding-era precedent, a state that carries the name, and a neighborhood corner that keeps its landmark. Someone is going to write that check eventually. The 250th year is the time, and the West Coast has the foundries. We file accordingly.</p>
+
+<div class="footer">
+  <p>BURNHAM CIVIC &middot; <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a></p>
+  <p>Related: <a href="american-ambition.html">A Brief for American Ambition</a> &middot; <a href="material-standard.html">The Material Standard</a> &middot; <a href="440-foot-eyesores.html">Seattle Glass Tower Eyesores</a> &middot; <a href="seattle-tallest.html">Seattle's Tallest Building Plan</a></p>
+  <p>Sources: King County Assessor parcel and sales records for parcel 197220-3035; Seattle Times, "Lenin statue is loved, hated, and very Fremont"; KIRO 7, "Lenin statue in Seattle: Q&amp;A about how it got to Fremont"; Fremont Historical Society, "Fremont Public Art: The Lenin Statue"; Mental Floss on the sale terms and Chamber commission; KUOW and NW Public Broadcasting on the 2019 state bill; Wikipedia, "Statue of Lenin (Seattle)" and the Venkov commission history; NYPL Digital Collections and Library of Congress records of the Fraser Washington, 1939 New York World's Fair; historical records of the Bowling Green statue and the Litchfield musket ball count.</p>
+</div>
+
+</body>
+</html>
