@@ -172,35 +172,14 @@ body.tbc-member .lockpanel { display:none; }
     <li>The coalition map: who on the north bank says yes first</li>
   </ul>
   <form onsubmit="return tbcTryPw('fb-pw')" style="margin:0;display:inline;">
-    <input type="password" id="fb-pw" placeholder="Member password">
+    <input type="password" id="fb-pw" placeholder="Member passphrase">
     <button type="submit">Enter</button>
     <span class="sub-link"><a href="membership.html">Become a member &rarr;</a></span>
   </form>
-  <p class="pw-err" id="fb-pw-err">Incorrect password.</p>
+  <p class="pw-err" id="fb-pw-err">Incorrect passphrase.</p>
 </div>
 
-<div class="members-content">
-
-<span class="mbadge">MEMBERS FILE</span>
-<h2>The Precedent File</h2>
-
-<p>Movable bike and pedestrian bridges are a solved problem. The Gateshead Millennium Bridge on the Tyne, finished in 2001, tilts open for river traffic and became the most photographed structure in northeast England. Copenhagen opened the Inderhavnsbroen, a sliding bike and pedestrian span across its inner harbor, in 2016, and Cirkelbroen, a swing span, in 2015. Kiel's Hörnbrücke folds. None of these cities agonized about whether a dedicated crossing for people was worth building over working water. They built them, and the bridges became the postcard.</p>
-
-<p>The Fremont version is easier than any of those, because the hard questions are already answered by the bridge standing next to it: span length, clearance, opening protocol, even the paint. Designing the twin is mostly a copying job, and the original 1917 drawings are public record.</p>
-
-<h2>The Permit Path</h2>
-
-<p>The Ship Canal is a federal navigation channel, so the sequence matters. Army Corps of Engineers first, under Section 408, because the canal is their water and their walls. Coast Guard bridge permit second, where the synchronized-opening case carries the argument: a twin that lifts with the existing bridge adds zero new interruptions to navigation. SDOT third, with the approaches and the Westlake and Burke-Gilman connections. The Fremont Chamber and the north-bank owners come before all three in practice, because a neighborhood that shows up unified is the difference between a five-year process and a fifteen-year one.</p>
-
-<h2>The Funding Stack</h2>
-
-<p>The federal Bridge Investment Program and the surface transportation grant programs exist for exactly this: a discrete, photogenic, bike and pedestrian crossing with a freight-relief story. Seattle's 2024 transportation levy is the local match pool. The remainder is the interesting part: a bascule bridge with a tender house is one of the most brandable civic objects a donor can put a name on. The 1917 bridge cost $410,000. A naming gift at the scale Seattle philanthropy spends on a building wing covers the entire design phase of its twin.</p>
-
-<h2>The Coalition Map</h2>
-
-<p>The north bank of the canal at Fremont is held by legacy industrial owners whose families have run that waterfront for generations, and who have watched every recent transportation idea arrive as a plan to take something away from them: a lane, a dock, a parking lot. This project is the opposite, and they should hear it first, before the city does. It adds capacity, honors the 1917 bridge their neighborhood painted by referendum, and makes their waterfront the most photographed industrial frontage on the West Coast. The ask is a letter: the owners of the north bank, the Fremont Chamber, the bike organizations, and the freight interests, all on one page, telling the city to build instead of ration. Nobody has put those four groups on the same page in twenty years. This is the project that does it.</p>
-
-</div>
+<div class="members-content"></div>
 
 <div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
   <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
@@ -220,20 +199,10 @@ body.tbc-member .lockpanel { display:none; }
   </form>
 </div>
 
+<script src="/tbc-vault.js"></script>
 <script>
-(function(){
-  var PASS='maga', COOKIE='tbc_maga_auth';
-  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
-  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
-  function unlock(){document.body.classList.add('tbc-member');}
-  if(getCookie(COOKIE)===btoa(PASS)) unlock();
-  window.tbcTryPw=function(id){
-    var inp=document.getElementById(id);
-    if(inp.value===PASS){setCookie(COOKIE,btoa(PASS),30);unlock();}
-    else{var e=document.getElementById(id+'-err');if(e)e.style.display='block';inp.value='';}
-    return false;
-  };
-})();
+var TBC_ENC={"v":2,"iter":600000,"iv":"4/t703x2bCwXdltc","ct":"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","wraps":[{"salt":"k6G3BP+qhWUlYnzmLNNEjw==","iv":"WCCbt9FuJWFG3Gw4","wk":"KlXJ3pjaEkhFEPnOSlYIzEaYFMu0B2QN0gBtHU1jj8prGBDhovRnJuMSZTbWBj+9"}]};
+tbcMembersGate(TBC_ENC,'fb-pw','tbc_m_fbe');
 function sendInquiry(){
   var n=document.getElementById('ms-name').value;
   var e=document.getElementById('ms-email').value;

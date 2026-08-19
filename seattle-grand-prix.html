@@ -160,33 +160,14 @@ body.tbc-member .lockpanel { display:none; }
     <li>The economics file: the real impact numbers behind the headline figures, and how to structure the risk off the public</li>
   </ul>
   <form onsubmit="return tbcTryPw('sgp-pw')" style="margin:0;display:inline;">
-    <input type="password" id="sgp-pw" placeholder="Member password">
+    <input type="password" id="sgp-pw" placeholder="Member passphrase">
     <button type="submit">Enter</button>
     <span class="sub-link"><a href="membership.html">Become a member &rarr;</a></span>
   </form>
-  <p class="pw-err" id="sgp-pw-err">Incorrect password.</p>
+  <p class="pw-err" id="sgp-pw-err">Incorrect passphrase.</p>
 </div>
 
-<div class="members-content">
-
-<span class="mbadge">MEMBERS FILE</span>
-<h2>The Circuit Options</h2>
-
-<p>Three routings are worth studying. The first is a pure SoDo grid circuit, using the wide industrial arterials for straights and the stadium approaches for the technical section, entirely on city and port streets that empty out on non-event days. It is the cleanest to permit and the least disruptive, and it trades away the waterfront shot. The second brushes the reopened Alaskan Way to pull the central waterfront and the ferries into frame, at the cost of closing the city's marquee new street for setup. The third wraps tighter around the two stadiums to lean on the ready-made crowd infrastructure and the transit. The right answer is almost certainly a hybrid, and the choice is a negotiation with the freight interests as much as a question of racing geometry.</p>
-
-<h2>The Sanctioning Path</h2>
-
-<p>An F1 race is not a thing a city grants itself. It runs through the sport's commercial ownership and a race promoter who carries the sanctioning fee and the buildout. The instructive cases are recent and domestic. Miami's race was driven by the stadium's ownership as promoter. Las Vegas was driven by the sport itself, which bought the land and promoted its own race, an unusual structure that tells you how much the property wanted a marquee American street event. A Seattle path starts by deciding which of those models fits, then finding the promoter with the balance sheet and the appetite. The city's job in the early going is to signal that the streets and the permits are gettable, because no promoter spends against a city that has not said yes.</p>
-
-<h2>The Jurisdiction Map</h2>
-
-<p>The stadium district and SoDo are a patchwork. The city holds the streets. The Port of Seattle holds the freight corridors and has a working-waterfront mission that a race weekend has to be reconciled with, not steamrolled. The two stadium authorities hold the anchor venues and their event calendars. And the SoDo freight and industrial interests, who have spent a decade fighting to keep the area working rather than entertaining, are the constituency most likely to object and the one that most needs to be brought in early. A race that treats the port and the freight district as partners in a three-day event, with a clear plan to hand their streets back, is a race that can happen. One that treats them as obstacles is not.</p>
-
-<h2>The Economics File</h2>
-
-<p>The headline impact figures cities announce for these races are promotional and should be read with a discount. The defensible case is narrower and still strong: a compressed spike of hotel, dining, and travel spending, a sold-out city for a week, and a global broadcast that reaches an audience Seattle cannot otherwise buy, all landing in a shoulder season the city would love to fill. The structure that protects the public is the important part. The sanctioning fee, the buildout, and the downside risk belong with the promoter and the sport. The city trades access and welcome, not cash it cannot get back. Get that structure right and the Seattle Grand Prix is upside with a fixed, small public cost. Get it wrong and it is a subsidy with a checkered flag on it.</p>
-
-</div>
+<div class="members-content"></div>
 
 <div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
   <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
@@ -206,20 +187,10 @@ body.tbc-member .lockpanel { display:none; }
   </form>
 </div>
 
+<script src="/tbc-vault.js"></script>
 <script>
-(function(){
-  var PASS='maga', COOKIE='tbc_maga_auth';
-  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
-  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
-  function unlock(){document.body.classList.add('tbc-member');}
-  if(getCookie(COOKIE)===btoa(PASS)) unlock();
-  window.tbcTryPw=function(id){
-    var inp=document.getElementById(id);
-    if(inp.value===PASS){setCookie(COOKIE,btoa(PASS),30);unlock();}
-    else{var e=document.getElementById(id+'-err');if(e)e.style.display='block';inp.value='';}
-    return false;
-  };
-})();
+var TBC_ENC={"v":2,"iter":600000,"iv":"WrmPIZEV3NNm4/pn","ct":"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","wraps":[{"salt":"N5Pok9LaRgSMcWdy2+GHmQ==","iv":"2u9F+Zx4AM4fzxqh","wk":"OQRhlYHSPMSrxg5+Yvb26S/DUa4jOlQMOescqXPrHq2+6WOqAvGjR0Yt+QJTB+ym"}]};
+tbcMembersGate(TBC_ENC,'sgp-pw','tbc_m_sgp');
 function sendInquiry(){
   var n=document.getElementById('ms-name').value;
   var e=document.getElementById('ms-email').value;

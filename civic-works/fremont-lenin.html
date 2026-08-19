@@ -4,209 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Washington for Washington - BURNHAM CIVIC</title>
-<meta name="description" content="The Lenin standing in Fremont has been for sale for thirty years. The Republic has melted a statue before, and it knew what to cast next.">
+<meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 32px auto 32px 10%; padding: 0 16px; background: #fff; color: #111; font-size: 16px; line-height: 1.7; }
-a { color: #00c; } a:visited { color: #551a8b; } a:hover { color: #c00; }
-.header { display: flex; align-items: baseline; justify-content: space-between; }
-h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
-.subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #1e3a5f; padding: 5px 14px; text-decoration: none; font-family: Georgia, serif; }
-.subscribe:hover { background: #2a4a73; } .subscribe:visited { color: #fff; }
-.nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
-.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
-.nav a:hover { color: #c00; }
-hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
-.back { font-size: 12px; margin-bottom: 24px; display: block; }
-h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 38px; font-weight: 400; line-height: 1.2; margin: 0 0 6px; color: #111; }
-.article-subtitle { font-size: 17px; color: #555; font-style: italic; margin: 0 0 24px; font-family: 'Instrument Serif', Georgia, serif; }
-h2 { font-size: 20px; font-weight: 700; margin: 32px 0 12px; color: #111; }
-h3 { font-size: 17px; font-weight: 700; margin: 24px 0 8px; color: #333; }
-p { margin: 0 0 16px; }
-.stat-block { border-left: 3px solid #1e3a5f; padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
-.stat-block p { margin: 4px 0; font-size: 15px; }
-.stat-block strong { font-size: 17px; }
-.deficit { color: #991b1b; font-weight: 700; }
-.keep { color: #15803d; font-weight: 700; }
-.callout { border-left: 3px solid #991b1b; padding: 12px 16px; margin: 24px 0; background: #fef2f2; }
-.callout p { margin: 4px 0; font-size: 15px; }
-.burnham-quote { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 18px; color: #1c1917; padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
-.burnham-quote .cite { display: block; margin-top: 8px; font-size: 13px; color: #666; font-style: normal; font-family: Georgia, serif; }
-.source { font-size: 12px; color: #888; margin-top: -12px; margin-bottom: 16px; }
-.footer { font-size: 11px; color: #999; margin-top: 48px; padding-top: 12px; border-top: 1px solid #ddd; }
-.timeline { margin: 20px 0; }
-.timeline .event { margin: 0 0 12px; font-size: 15px; }
-.timeline .event .date { font-weight: 700; }
-
-/* === DECO SYSTEM OVERRIDES (sitewide) === */
-.burnham-quote, .stat-block {
-  position: relative !important;
-  border-left: 0 !important;
-  padding-left: 24px !important;
-  padding-top: 18px !important;
-  padding-bottom: 18px !important;
-  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
-  background-size: 1px 100% !important;
-  background-position: 4px 0 !important;
-  background-repeat: no-repeat !important;
-}
-.burnham-quote::before, .burnham-quote::after,
-.stat-block::before, .stat-block::after {
-  content: ""; position: absolute;
-  left: 0; width: 9px; height: 9px;
-  background: #1c1917; transform: rotate(45deg);
-}
-.burnham-quote::before, .stat-block::before { top: 9px; }
-.burnham-quote::after, .stat-block::after { bottom: 9px; }
-.timeline {
-  border-left: 0 !important;
-  padding-left: 24px !important;
-  position: relative;
-}
-.timeline::before {
-  content: ""; position: absolute;
-  left: 4px; top: 8px; bottom: 8px; width: 1px;
-  background: #1c1917;
-}
-.timeline .event { position: relative; }
-.timeline .event::before {
-  content: ""; position: absolute;
-  left: -23px; top: 6px;
-  width: 7px; height: 7px;
-  background: #1c1917; transform: rotate(45deg);
-}
-.timeline .event .date { color: #1c1917 !important; }
-
-figure.illus { margin: 28px 0; padding: 0; }
-figure.illus img { width: 100%; height: auto; display: block; border: 1px solid #ddd; }
-figure.illus figcaption { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 14px; color: #555; line-height: 1.5; margin: 8px 4px 0; }
-figure.illus figcaption .credit { font-family: Georgia, serif; font-style: normal; font-size: 11px; color: #888; display: block; margin-top: 4px; letter-spacing: 0.3px; }
-figure.illus.tall { max-width: 380px; margin-left: 0; }
-figure.illus.tall img { border: 1px solid #ddd; }
+html,body{height:100%;margin:0;font-family:Georgia,'Times New Roman',serif;background:#111;color:#e5e5e5;}
+#gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:24px;}
+#gate h1{font-size:20px;letter-spacing:2px;color:#fbbf24;margin:0 0 6px;text-align:center;}
+#gate h2{font-size:15px;color:#e5e5e5;margin:0 0 20px;font-weight:400;text-align:center;}
+#gate input{font-family:Georgia,serif;font-size:14px;padding:7px 10px;border:1px solid #475569;background:#16304f;color:#fff;width:230px;}
+#gate button{font-family:Georgia,serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#1e3a5f;background:#fbbf24;border:none;padding:8px 16px;margin-left:6px;cursor:pointer;}
+#gate .err{font-size:12px;color:#fca5a5;display:none;margin-top:10px;}
+#gate a{color:#fbbf24;font-size:12px;margin-top:18px;}
 </style>
-<link rel="canonical" href="https://burnhamcivic.org/civic-works/fremont-lenin.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Burnham Civic">
-<meta property="og:title" content="A Washington for Washington - BURNHAM CIVIC">
-<meta property="og:description" content="The Lenin standing in Fremont has been for sale for thirty years. The Republic has melted a statue before, and it knew what to cast next.">
-<meta property="og:url" content="https://burnhamcivic.org/civic-works/fremont-lenin.html">
-<meta property="og:image" content="https://burnhamcivic.org/_assets/lenin/lenin-fremont-highsmith.jpg?v=2">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@TBCNewsAction">
-<meta name="twitter:title" content="A Washington for Washington">
-<meta name="twitter:description" content="The Lenin standing in Fremont has been for sale for thirty years. The Republic has melted a statue before, and it knew what to cast next.">
-<meta name="twitter:image" content="https://burnhamcivic.org/_assets/lenin/lenin-fremont-highsmith.jpg?v=2">
 </head>
 <body>
-
-<div class="header">
-  <h1 class="site-title">BURNHAM CIVIC</h1>
-  <a href="../membership.html" class="subscribe">Subscribe</a>
+<div id="gate">
+  <h1>BURNHAM CIVIC</h1>
+  <h2>A Washington for Washington &middot; Members</h2>
+  <div><input type="password" id="pw-input" placeholder="Passphrase"><button id="pw-submit">Enter</button></div>
+  <p class="err" id="pw-error">Incorrect passphrase.</p>
+  <a href="/membership.html">Become a member &rarr;</a>
 </div>
-<div class="nav">
-  <a href="../index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
-  <a href="../la/">LA</a>
-  <a href="../index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
-  <a href="../index.html" onclick="localStorage.setItem('tab','international')">International</a>
-  <a href="../index.html" onclick="localStorage.setItem('tab','news')">News</a>
-  <a href="../membership.html">Intelligence</a>
-  <a href="../index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
-</div>
-<hr>
-<a href="../index.html" class="back" onclick="localStorage.setItem('tab','seattle')">&larr; Back to Seattle</a>
-
-<h1 class="article-title">A Washington for Washington</h1>
-<p class="article-subtitle">The Lenin standing at a Fremont intersection has been for sale for thirty years. The Republic has melted a statue before, and it knew what to cast next.</p>
-
-<h2>The Statue</h2>
-
-<p>At the corner of Fremont Place North and North 36th Street, a sixteen foot bronze of Vladimir Lenin stands over a retail plaza, seven tons of metal on a corner where people wait for the light. It has been there since 1995, long enough that most of Seattle has stopped seeing it. Fremont's official line is that the statue is a joke the neighborhood is in on, an ironic trophy in the self-declared Artistic Republic of Fremont, dressed in holiday lights each December and repainted with red hands by protesters most years in between.</p>
-
-<figure class="illus tall">
-  <img src="../_assets/lenin/lenin-fremont-highsmith.jpg" alt="Emil Venkov's bronze Lenin at the corner of Fremont Place North and North 36th Street, Seattle.">
-  <figcaption>Venkov's Lenin at the Fremont intersection. The sculptor's stated subject was a violent revolutionary advancing through guns and flame.
-  <span class="credit">Carol M. Highsmith, Library of Congress (public domain).</span></figcaption>
-</figure>
-
-<p>The sculptor did not think it was a joke. Emil Venkov, a Bulgarian-born Slovak artist, won the commission from the Communist Party of Czechoslovakia in a 1981 competition and spent most of the decade on the figure. Where the standard-issue Lenin holds a book or waves a cap, Venkov's Lenin strides forward out of a wall of abstracted rifles and fire. Venkov said later that he had smuggled his real subject past the commissars: not the father of the Soviet state but the violence that made it. The statue went up in Poprad, Czechoslovakia, in 1988, at a cost of 334,000 koruna. It stood for about a year. The Velvet Revolution arrived in 1989, and the town pulled it down.</p>
-
-<h2>The Schoolteacher</h2>
-
-<p>Lewis Carpenter, an English teacher from Issaquah working in Poprad, found the statue lying face down in a municipal scrapyard with a homeless man sheltering inside the hollow bronze. He decided a work of that quality should not be cut apart for salvage, whatever its subject. On March 16, 1993 he signed a contract with the city of Poprad to buy the statue for $13,000, then mortgaged his house to cover roughly $40,000 in shipping, and sent seven tons of Lenin around the world to his backyard in Issaquah. He was killed in a car crash in February 1994, before he could find it a home.</p>
-
-<p>His family nearly melted it down then. Peter Bevis of the Fremont Fine Arts Foundry intervened, and in 1995 the Fremont Chamber of Commerce agreed to hold the statue in trust and display it until a buyer appeared. It was unveiled on June 3, 1995, and moved a block to the present corner the following year. The arrangement has never changed: the display is officially temporary, and the statue is officially for sale, and both of those facts are now thirty years old.</p>
-
-<h2>The Terms</h2>
-
-<div class="stat-block">
-  <p><strong>The Fremont Lenin, by the record</strong></p>
-  <p>Owner: the heirs of Lewis Carpenter, held in trust by the Fremont Chamber of Commerce since 1995</p>
-  <p>Status: for sale since 1995; asking $150,000 in 1996, $250,000 or best offer by 2015</p>
-  <p>Commission: 35 percent to the Chamber, earmarked for local artists</p>
-  <p>Land: a 3,992 square foot privately owned corner parcel; the display is temporary by the terms of the trust</p>
-  <p>City jurisdiction: none, conceded by the mayor's office in 2017 and by state legislators in 2019</p>
-</div>
-
-<p>Every few years someone demands the city take the statue down, and every few years the city correctly answers that it cannot. After Charlottesville in 2017, protesters gathered at the corner and Mayor Ed Murray said Seattle should not idolize figures of atrocity, while acknowledging the city had no power over a private statue on private land. A 2019 bill in the state legislature made the same discovery. The demands fail because they are addressed to the wrong party. There is no city approval to seek and no council vote to win. There is a family that has been waiting three decades for a buyer, a chamber of commerce that earns a commission on the sale, and a private landowner whose corner hosts the display at sufferance. The Lenin question is not a political fight. It is a transaction.</p>
-
-<h2>The Precedent</h2>
-
-<p>The Republic has faced this exact situation before, at its founding, and its answer is one of the best stories it owns. On July 9, 1776, after the Declaration of Independence was read aloud to Washington's troops in New York, a crowd marched to Bowling Green and pulled down the gilded equestrian statue of George III that had stood there for six years. The lead was carted to Litchfield, Connecticut, where by the count kept at the time it was melted into 42,088 musket balls for the Continental Army. The statue of the king was fired back at the king's soldiers. No American monument has ever said more with less.</p>
-
-<figure class="illus">
-  <img src="../_assets/lenin/george-iii-bowling-green.jpg" alt="Pulling down the statue of George III at Bowling Green, New York, July 1776. Painted by Johannes Oertel, engraved by John C. McRae.">
-  <figcaption>Bowling Green, July 9, 1776. The king came down and became 42,088 musket balls for the army of the Republic.
-  <span class="credit">Johannes A. Oertel, engraved by John C. McRae. Library of Congress (public domain).</span></figcaption>
-</figure>
-
-<p>And when the Republic wanted to say what it was for rather than what it was against, it knew the answer to that too. In 1939 the New York World's Fair opened on the 150th anniversary of Washington's first inauguration, which had taken place in the same city, and the fair's organizers raised James Earle Fraser's statue of Washington on Constitution Mall, sixty five feet of him counting the base, facing the Trylon and Perisphere in his inaugural robes. Fraser was the sculptor of the buffalo nickel and End of the Trail, and his Washington was called the largest portrait statue of the modern era. It was built of plaster because it was built for a fair, and it came down when the fair closed. The ambition was real; only the material was temporary. That is precisely backwards from how a republic should build, and <a href="../material-standard.html">we have already filed our position on materials</a>.</p>
-
-<figure class="illus tall">
-  <img src="../_assets/lenin/washington-1939-nywf.jpg" alt="James Earle Fraser's colossal George Washington on Constitution Mall at the 1939 New York World's Fair.">
-  <figcaption>Fraser's Washington over Constitution Mall, New York World's Fair, 1939. Sixty five feet, raised for the 150th anniversary of the first inauguration.
-  <span class="credit">Library of Congress (no known restrictions).</span></figcaption>
-</figure>
-
-<h2>The Proposal</h2>
-
-<p>Buy the Lenin. Melt it. Cast a George Washington from the bronze.</p>
-
-<p>The purchase is the easy part; the statue has been waiting for its buyer since 1995, and the sale terms are public. The foundry work is the old, well-understood kind. And the symmetry does the rest of the work on its own. Venkov's subject, by his own account, was the violence of the Soviet founding. Melting that bronze and recasting it as the first president is not the erasure of a monument, it is the completion of one: the same metal, redeemed the same way the Republic redeemed the king at Bowling Green, except that where 1776 turned a tyrant into ammunition, 2026 can turn one into a founder. The metal keeps its history. Guns and flame go in; Washington comes out.</p>
-
-<p>The destination argues for itself. Washington is the only American state named for a president, and its largest city keeps exactly one notable statue of him, the bronze Lorado Taft made for the 1909 Alaska-Yukon-Pacific Exposition, standing quietly on the university campus. The state that carries the name can do better than one campus statue and a Soviet leftover, and the Republic's 250th year is the right calendar to do it on. A new Washington, cast from the Fremont bronze, would be the only monument in the country whose provenance runs Poprad to Puget Sound through the fall of the Soviet bloc, and Fremont's corner does not need to lose its landmark to make it happen: the neighborhood that hosted Lenin ironically for thirty years has first claim on hosting whatever is cast in his place, and a commission worthy of the corner is part of the proposal, not an afterthought.</p>
-
-<div class="burnham-quote">
-  Fremont's joke was that Lenin stood in the one country he could not conquer. The better joke is that he ends up as the man who founded it.
-</div>
-
-<h2>The Arc</h2>
-
-<div class="timeline">
-  <div class="event"><span class="date">1776</span> &nbsp;George III comes down at Bowling Green and becomes 42,088 musket balls for the Continental Army.</div>
-  <div class="event"><span class="date">1789</span> &nbsp;Washington takes the first oath of office in New York.</div>
-  <div class="event"><span class="date">1909</span> &nbsp;Lorado Taft's Washington is raised for the Alaska-Yukon-Pacific Exposition in Seattle.</div>
-  <div class="event"><span class="date">1939</span> &nbsp;Fraser's sixty five foot Washington presides over Constitution Mall at the New York World's Fair.</div>
-  <div class="event"><span class="date">1988</span> &nbsp;Venkov's Lenin is installed in Poprad, Czechoslovakia.</div>
-  <div class="event"><span class="date">1989</span> &nbsp;The Velvet Revolution pulls it down.</div>
-  <div class="event"><span class="date">1993</span> &nbsp;Lewis Carpenter buys the statue from a Poprad scrapyard and mortgages his house to ship it home.</div>
-  <div class="event"><span class="date">1995</span> &nbsp;The Fremont Chamber of Commerce takes the statue in trust and lists it for sale. It has been for sale ever since.</div>
-  <div class="event"><span class="date">2017</span> &nbsp;The city concedes it has no jurisdiction over the statue.</div>
-  <div class="event"><span class="date">2026</span> &nbsp;The Republic turns 250. The bronze is still waiting.</div>
-</div>
-
-<h2>Our Position</h2>
-
-<p>Burnham Civic's position on monuments is on the record: permanent materials, symbolically loaded ground, and private funding models with a 140 year American pedigree, argued at length in <a href="../american-ambition.html">A Brief for American Ambition</a>. The Fremont Lenin is the local test of the same doctrine, and it is the cheapest test in the country, because the removal everyone has argued about for thirty years was never blocked by politics. It was blocked by the absence of a buyer with a better idea for the metal.</p>
-
-<p>The better idea is on the table. Seven tons of bronze, a founding-era precedent, a state that carries the name, and a neighborhood corner that keeps its landmark. Someone is going to write that check eventually. The 250th year is the time, and the West Coast has the foundries. We file accordingly.</p>
-
-<div class="footer">
-  <p>BURNHAM CIVIC &middot; <a href="mailto:operations@burnhamcivic.org">operations@burnhamcivic.org</a></p>
-  <p>Related: <a href="../american-ambition.html">A Brief for American Ambition</a> &middot; <a href="../material-standard.html">The Material Standard</a> &middot; <a href="../440-foot-eyesores.html">Seattle Glass Tower Eyesores</a> &middot; <a href="../seattle-tallest.html">Seattle's Tallest Building Plan</a></p>
-  <p>Sources: King County Assessor parcel and sales records for parcel 197220-3035; Seattle Times, "Lenin statue is loved, hated, and very Fremont"; KIRO 7, "Lenin statue in Seattle: Q&amp;A about how it got to Fremont"; Fremont Historical Society, "Fremont Public Art: The Lenin Statue"; Mental Floss on the sale terms and Chamber commission; KUOW and NW Public Broadcasting on the 2019 state bill; Wikipedia, "Statue of Lenin (Seattle)" and the Venkov commission history; NYPL Digital Collections and Library of Congress records of the Fraser Washington, 1939 New York World's Fair; historical records of the Bowling Green statue and the Litchfield musket ball count.</p>
-</div>
-
-<script src="gate.js"></script>
+<script src="/tbc-vault.js"></script>
+<script>
+var TBC_ENC={"v":2,"iter":600000,"iv":"bHbW8taNqCDhD7ut","ct":"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","wraps":[{"salt":"miRivTArdvectLfPUV6BSw==","iv":"PNDAb3x5TEgj2nN9","wk":"vXFv6fJAflWkjhpkzomCAN61g0y29pXL6+GyiaJQVjPgQpkTv4rcpkry/P1MB7Ot"},{"salt":"sMCDXU6yCN3k6iM+q8ofNA==","iv":"UOLyqb1Vs+rqSen/","wk":"Gc0a/xa/TByIXakxkhX7SNx7y+IWTvLgbklP1DkSUldGfDbYjw+DteaPBzrXiy4n"}]};
+(function(){
+  var LSK='tbc_v_cw';
+  function tryPw(){
+    var inp=document.getElementById('pw-input');
+    tbcPageUnlock(TBC_ENC,inp.value,LSK).then(function(ok){
+      if(!ok){ document.getElementById('pw-error').style.display='block'; inp.value=''; inp.focus(); }
+    });
+  }
+  document.getElementById('pw-submit').addEventListener('click',tryPw);
+  document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')tryPw();});
+  setTimeout(function(){document.getElementById('pw-input').focus();},100);
+  var saved=null; try{saved=localStorage.getItem(LSK);}catch(e){}
+  if(saved){tbcPageUnlock(TBC_ENC,saved,LSK);}
+})();
+</script>
 </body>
 </html>

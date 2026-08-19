@@ -164,33 +164,14 @@ body.tbc-member .lockpanel { display:none; }
     <li>The coalition map: the Port, Expedia, the fishing public, and the tribes, and who says yes first</li>
   </ul>
   <form onsubmit="return tbcTryPw('ebp-pw')" style="margin:0;display:inline;">
-    <input type="password" id="ebp-pw" placeholder="Member password">
+    <input type="password" id="ebp-pw" placeholder="Member passphrase">
     <button type="submit">Enter</button>
     <span class="sub-link"><a href="membership.html">Become a member &rarr;</a></span>
   </form>
-  <p class="pw-err" id="ebp-pw-err">Incorrect password.</p>
+  <p class="pw-err" id="ebp-pw-err">Incorrect passphrase.</p>
 </div>
 
-<div class="members-content">
-
-<span class="mbadge">MEMBERS FILE</span>
-<h2>The Jurisdiction Map</h2>
-
-<p>Smith Cove is Port of Seattle territory. The uplands run to the port and the private campus lease, and the water and tidelands are a mix of port ownership and state-owned aquatic land managed by the Washington Department of Natural Resources. That means the pier is a lease question before it is a permit question. The first move is not a design. It is a conversation with the Port about a public pier on port tidelands adjacent to the cruise operation at Terminal 91, and a parallel DNR aquatic lands use authorization for whatever sits over state bedlands. Get the landlords aligned and the rest is process.</p>
-
-<h2>The Environmental Path</h2>
-
-<p>Any structure over Elliott Bay touches salmon. The bay is designated critical habitat and the migration corridor rules govern overwater coverage, light penetration through the deck, and in-water work windows. This is the part that kills naive waterfront proposals and the part where the Terminal 86 pier is worth its weight, because it already carries an engineered artificial reef and a half-century operating record in the same water. The path runs through the Army Corps under Section 404, the state under the Hydraulic Project Approval, and the tribes with treaty fishing rights in the bay, who should be partners in a public fishing pier rather than an obstacle to one. Grated decking, a light in-water footprint, and a reef that adds habitat rather than shading it are the design constraints that turn the environmental review from a fight into a selling point.</p>
-
-<h2>The Funding Stack</h2>
-
-<p>A public fishing pier is one of the most fundable civic objects in the recreation grant world. The state Recreation and Conservation Office runs the boating and Aquatic Lands Enhancement programs that exist for exactly this. The Port has a public-access mandate tied to its shoreline holdings. And a named pier at the front door of a Fortune 500 headquarters is a philanthropic and corporate object of obvious appeal to the neighbor whose shoreline it completes. The reef and the deck are the public grant story. The pavilion and the detailing are the naming-gift story.</p>
-
-<h2>The Coalition Map</h2>
-
-<p>Four parties, one page. The Port of Seattle owns the ground and holds the public-access mandate. Expedia holds the shoreline next door and the interest in it being excellent. The fishing public, organized around the Terminal 86 pier, is the constituency that shows up. And the tribes hold treaty fishing rights in Elliott Bay and belong at the front of a project about public access to fish, not the back. Nobody has put those four on the same page. A public pier at Smith Cove is the project that does it.</p>
-
-</div>
+<div class="members-content"></div>
 
 <div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
   <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
@@ -210,20 +191,10 @@ body.tbc-member .lockpanel { display:none; }
   </form>
 </div>
 
+<script src="/tbc-vault.js"></script>
 <script>
-(function(){
-  var PASS='maga', COOKIE='tbc_maga_auth';
-  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
-  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
-  function unlock(){document.body.classList.add('tbc-member');}
-  if(getCookie(COOKIE)===btoa(PASS)) unlock();
-  window.tbcTryPw=function(id){
-    var inp=document.getElementById(id);
-    if(inp.value===PASS){setCookie(COOKIE,btoa(PASS),30);unlock();}
-    else{var e=document.getElementById(id+'-err');if(e)e.style.display='block';inp.value='';}
-    return false;
-  };
-})();
+var TBC_ENC={"v":2,"iter":600000,"iv":"SP03yRoKwxDjeNtx","ct":"XoFARKjQX4bFEDasv9MUxyvRMU/xjAdPg92K1lKUbBrHpWjvmKujHnycFRr4DNPJ/qSW/D5GeTZsJrbEmdeBresyKLqoXgc1gLjLJeAKB8sZF3de++Oq+ATYyz4rRDgSIo+/tDN5U6Vstx8Ok9o5GDISAaKSFognIyZNNfPiHdX1tw2xlMt6iYW9lljS1b+zDW2afMhIQB+6A3iPzlzwfbgcN6cxkRZ7uy5GUN4z0/pjhXsYBAtJIkQXYvQbR8u5wFTBnXRfGU04EgrzsafoMR+ZMfDNgVL40bN8obMdKelAwnCTBp3l8a7Akt+BPbm7M9h5BXoQXbog53wPNf761mssw6CCbZ0lsX0nZI9rSe8Gvo6Rnd+exQKwU8PekTVgu0wSPtMSAH7eStRfSmNgfmjfvGOJX+QhRQ2yacbrTYNG9H8i2ueqZkIrH7wyeUVtdjqPoHYaYXxKaAW2Jrc4aqSB2dMdJJz5hb+n/nN1Sole0CgAK0rypQKUop92wbwOCJPJQOdb+EFfGrMsTAjM98SsJJHUnWtSahwvk6b5PIBpMcAgdLg7W7fenZzEO7T8Rbmo2uTlbnltZA9ITWKWCePCFBSMf/4FtUqkiBYa7i6uVHDomBBmqMP02rSL+I6lRafuFHsUE6Xr7PuURDx1SqCOxIK+PXz8RpHELiuD3M+lHnBhrKCRfu5c2UJURo5EBoxCaiOrS4FaE/0YA4IxOqnswADJzJUtQiFaQLhSg+bHpOQeprkQ7bv6j8tLV48o29Ue6qH5+3lC2YWcOqt/CsgYGPEzeKwUtUOFwOZV1qNdQLFuRHM5xZbq4l1pGW5Q96t6rdeO5HkeULvzj1E+Acj4soi6dXi/6IBCi5J4mutWJ97RNoo2KVpiMJZkBziMWZtyqFCqvWD9IyqT34t24VG4z6+YtAVYyrSdwjPY1RZmz+2KJLqjTrjVSQYDNfxZ02mx3FH2YZ9eSScQ2n37yPstr6IP/T/QnzERMMNkPQHhR4zcvc/y1PtVwcwFxa61M4KNtvDL7B257C3sJfSWYf2PHUieP3kueOuPYvCjnbXF9BQ1mOnlUhrTmxYEVkVz6nv48Uv4rW8rX1Wtz38YG16tbrcbWH4PNsfMj5OUav7/v+6nMatpu77TtKPunLWZE5uFxYgXXg9INGIPDJ7jm3o5dQMUXea9e3GwiwlLVrBYCmO01N03dj7KIxASFFjBvVPGhrTF70W1mR0l25v+MbXweGX+vjEiiH2xQr7mcC3nwxTQXCFue4iQBCfW38PTxt37FB3sBkN9n6vTbeO+nVVK/2auS3FKkIyg8w6NbrZP8AsYCnalq/0xurXlAHlCKiwtV5sCO65hPGzzv9EhsPiz/wGl+AYuU9LjwqfMUQSo6vMZ5Ph0OPntNgrF/j1skipy0KLkIMZHRR0lCqbDIQ0PnVKYPVOPMEymDzDaJSTkUMS5pYcBXSW4vmJvXH636SMJrNVM5usiq2Vl79NpfSzJh5BZSu03ARxLWp0wtv0XYiI8lvJySYU4S3CT5+FudouxL7vm1CHptGNP0qL98fjthWjiVruc714m6AtCs0SX8DgghdYkXuFMwiPR8acL+PWgWgGLAibAo9Lujn4RmMNCjf486tycGK7wCkqbpL6W+D6HN2/HY2vr9VY1fvKwQRacmA05rorKbsoPmyFUw9BjizbGRChHPH/Yqp1VQNMDXYdKN3xHDnPgLb/wo2+BxVm3OV+dH/Ruu4dQ51BQOpxOsRfJ7Pz6Xggq3WGrLx0uQxSRybQzg10WVKK7hX2pS4PmHwViMuotqxmRd/JLKp3CITude3DKrWgoswCdY5CCOUo/IU4PdC/nDO7e6ezjm5AaHHfcdEsaSOyL//l56LOx79aINUkXmuJINH7DNw3xyP+FE98wbYdeHnXel26mTxjPUEOXv75nrYfE8nW5IAXaN04ikFmvkY339ckxgBEJUuHTlVLepxH+MQY3+tCnp4KJz5bABedxkFz0+7ET/vC5rfYhgy9peFsdcp6FIS5YE1T6vtZ+QHu5xJPeXxJWiVAh04qaNsGFjQ/C0v1JV2Faaek6YaiyitaoIkZNnliHXWaEMbABrxszMsbeAPOcFjmGIFfE4DTG84j8QEFoIKIqyw91TmObjB6Uk+xW7io6aMHh7LLJxknmULVdN0jL9smaO7B2iGW69oJQN7kEuIvq3pIJEXceRQUABZH0cHpbXS/NpLXw/QEl6V1XVXUaYjrosOo3xrdbiOjLjPqhEMCz3hDWteoSZSWaN/r8eZiSeFyJa1/yJiwCRzJWth+hbT+ZwmnfG/9zz3V/lf+hX51oef2cguh/1OGFQx1+NKjtWgkSjro6X/ZpP/gRv+V7pyz8z37MZQgBV7+cIOkbNCFhTIPWe21+b7pxM5f1+TtOF0yqZ7noxp6ecagIJdkQ7khFY1djFYKshy9rWc1KHl6PfcJwdVYBOe6+WIXjq/9dVixThM/QLN4vOmp4/TV0GyFreS5rIMuDpFcnnfBAXwmsRqtBwBSZqz2cT5drdwj0MJStaQu2sNeC8mKYAtcX3ayrTw0x9+h0PhhJK5t99cyI7Tmhq1dGGjumk9o3ut2tXK5/Kn22Ty17GK/ANhQSRcpXiCdysn7FfwwwqgnOLMrshdRL80/EWED6vhiJDrp+eUFi+1jaSWhCJN3P3Kkq0UiEtUI5vKboCGlzGdX8qjFdSdiNPix2Mjk1jWlPXhWXoeVXvNjcja3987Q/YJel0qm02mq5qANyErR9vC8+9ufxI/P5eXOo8Jv4smFO0e3b7w6UfnSV/K6C07vtY2CqSWArgSDe5wyfVd5qNGkoqVBbs7U4TetttcpkAnryBy6HUi8lu/t7NzfmsdYIm4GCZ1blf4tHcBCynEXfN65jgKcbN8zUrLXPsW5nxofhl+0OjpKkLGC8JH2SeDlyHOUTDr2axOSD1gsc5f4OAHc4C4Pcy8YrXcoXBrU5Ucl7Mkz4upPSwhJhhPOQqdaf3r4G7xlo8ku16vRPsJUB+BejujD5HXGV8Cjfn7aELfnYh95LaCVwvrMmTpvqjq2GSH4SUVvg5js+pcVFUJ24Ml5ecfigjfiDSDcE1z1WnLXNyHHgJ9K+P53mD7TwV+bfiOs3ozePghs5iuENTD/p976uTfGReqL7mPyf/ebyxDoOnC9SdwHtdgAKXsF15G54UXUjKeSRNJ1KO4fesyLsRh707gXrnG9klNnUZoaeXykz+qNXxg87O3olDr+yv1fSIQPMTZjcu6A2eqCnqAOcEnSA4BnxjFyvOQmluLMpLvCSnkeSTHesr/973oSYdf1ZOhUvzxFRCPQ5zX31WABF2W2Aid6ebUAPge0FiEXWUlR5mn+FGNBy310UbMDm70MMJ3glVt3FgCFxqtbi33tpUcVY8dIQr7bj81rwbd4jUvFAaAiGfjFPtziZeBo+4oj03BOfgMLFDL/PJZ+G8EMSxCHAzlOzZ2grloA8rI2UP9rUC54vB/isELK5lxWtqcQAjAQybWtwISOEwK+B1vyfwciL+llVm3V1euM537DJuOO5Ic92G5QNY83vqu3Nt/qj7WE7DXfN7o+N/V4sSUDreRdg5Fsp5j6aZp8ZBZmMfgxJ+5BdZ2e8i2qoyo9+LG/ltiFDJOjNLoFiivWAR0PBW9W2JwgCDUOsMBBxJjUQOA==","wraps":[{"salt":"7M8z2zvwrQAqDkQOFy5rpg==","iv":"XYbfgjen7WVLnwCX","wk":"q+J10BQu6g44gg1pcSgcaPB3iL761/tSTqmVe7CGoI3GmAnUPdwvZIuHpp1rDCpD"}]};
+tbcMembersGate(TBC_ENC,'ebp-pw','tbc_m_ebp');
 function sendInquiry(){
   var n=document.getElementById('ms-name').value;
   var e=document.getElementById('ms-email').value;
