@@ -61,9 +61,9 @@ html, body { height:100%; font-family: Georgia, 'Times New Roman', serif; backgr
   <h1>BURNHAM CIVIC</h1>
   <h2>TBC 3D Intelligence Map</h2>
   <p class="lead">Restricted access. Members-only multi-region parcel intelligence.</p>
-  <input type="password" id="pw-input" placeholder="Password" autocomplete="off">
+  <input type="password" id="pw-input" placeholder="Passphrase" autocomplete="off">
   <button id="pw-submit">Enter</button>
-  <p id="pw-error">Incorrect password.</p>
+  <p id="pw-error">Incorrect passphrase.</p>
   <a href="/" class="home-link">&larr; burnhamcivic.org</a>
 </div>
 
@@ -79,30 +79,35 @@ html, body { height:100%; font-family: Georgia, 'Times New Roman', serif; backgr
   </div>
 </div>
 
+<script src="/tbc-vault.js"></script>
 <script>
 (function(){
-  var PASS='maga';
-  var COOKIE='tbc_maga_auth';
-  var DAYS=30;
-  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
-  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
+  var LSK='tbc_v_3d';
 
-  function showApp(){
+  function showApp(html){
     document.getElementById('paywall-gate').style.display='none';
     document.getElementById('app').style.display='block';
-    document.getElementById('map-frame').src='/_pw/tbc-3d-map.html';
+    var withBase=html.replace(/<head([^>]*)>/i,'<head$1><base href="/_pw/">');
+    document.getElementById('map-frame').srcdoc=withBase;
   }
-
-  if(getCookie(COOKIE)===btoa(PASS)){ showApp(); return; }
-
+  async function attempt(pw,remember){
+    var html=await tbcVaultFetch('/_pw/tbc-3d-map.enc',pw);
+    if(html===null) return false;
+    if(remember){try{localStorage.setItem(LSK,pw);}catch(e){}}
+    showApp(html);
+    return true;
+  }
   function tryPw(){
     var inp=document.getElementById('pw-input');
-    if(inp.value===PASS){ setCookie(COOKIE,btoa(PASS),DAYS); showApp(); }
-    else { document.getElementById('pw-error').style.display='block'; inp.value=''; inp.focus(); }
+    attempt(inp.value,true).then(function(ok){
+      if(!ok){ document.getElementById('pw-error').style.display='block'; inp.value=''; inp.focus(); }
+    });
   }
   document.getElementById('pw-submit').addEventListener('click',tryPw);
   document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')tryPw();});
   setTimeout(function(){document.getElementById('pw-input').focus();},100);
+  var saved=null; try{saved=localStorage.getItem(LSK);}catch(e){}
+  if(saved){attempt(saved,false);}
 })();
 </script>
 

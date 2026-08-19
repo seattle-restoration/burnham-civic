@@ -321,87 +321,38 @@ canvas { width: 100% !important; }
   <h2 style="font-family:Georgia,serif;font-size:20px;margin-bottom:12px;">&#9878; TBC Intelligence</h2>
   <p style="font-size:14px;color:#666;margin-bottom:16px;">This operational dashboard is available to TBC Intelligence members.</p>
   <a href="index.html" onclick="localStorage.setItem('tab','intelligence')" style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;padding:8px 24px;text-decoration:none;font-family:Georgia,serif;">Join - $2,500/year</a>
+
+<form onsubmit="return tbcGateTry()" style="margin-top:18px;"><input type="password" id="311-vpw" placeholder="Member passphrase" style="font-family:Georgia,serif;font-size:13px;padding:6px 8px;border:1px solid #ccc;width:200px;"><button type="submit" style="font-family:Georgia,serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:7px 14px;margin-left:6px;cursor:pointer;">Enter</button><p id="311-vpw-err" style="font-size:12px;color:#c00;display:none;margin-top:8px;">Incorrect passphrase.</p></form>
 </div>
 
-<div id="gated-content" style="display:none;">
-<div class="loading" id="loading">Loading service requests from data.seattle.gov...</div>
+<div id="gated-content" style="display:none;"></div><!-- end gated-content -->
 
-<div id="dashboard" style="display:none;">
-
-  <div class="stat-row" id="statRow">
-    <div class="stat-card">
-      <div class="stat-num" id="totalRequests">--</div>
-      <div class="stat-label">Total Requests (12 mo)</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num" id="openRequests">--</div>
-      <div class="stat-label">Open / Unresolved</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num" id="avgPerDay">--</div>
-      <div class="stat-label">Avg per Day</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num" style="color:#1e3a5f;" id="shiftsNeeded">47</div>
-      <div class="stat-label">Shifts to Clear (47 Shifts)</div>
-    </div>
-  </div>
-
-  <div class="section-head">NSSE Crew Chief Zones / 47 Shifts</div>
-  <div class="zone-grid" id="zoneGrid"></div>
-
-  <div class="chart-row">
-    <div class="chart-box">
-      <h3>By Category</h3>
-      <canvas id="catChart" height="280"></canvas>
-    </div>
-    <div class="chart-box">
-      <h3>Monthly Volume (12 months)</h3>
-      <canvas id="trendChart" height="280"></canvas>
-    </div>
-  </div>
-
-  <div class="section-head">Map</div>
-  <div id="map"></div>
-
-  <div class="section-head">47 Shifts Team Assignment</div>
-  <table class="shifts-table">
-    <thead>
-      <tr>
-        <th>311 Category</th>
-        <th>47 Shifts Team</th>
-        <th>Crew/Shift</th>
-        <th>Open Requests</th>
-        <th>Shifts to Clear</th>
-      </tr>
-    </thead>
-    <tbody id="assignmentBody"></tbody>
-  </table>
-
-</div>
-
-<div class="footer">
-  Data: City of Seattle Open Data Portal (Socrata API). Updates on page load.<br>
-  47 Shifts operational plan: 47 shifts x 5.3 hours = 250 hours. 120+ personnel. 4 zones.
-</div>
-
-</div><!-- end gated-content -->
-
+<script src="/tbc-vault.js"></script>
 <script>
+var TBC_ENC={"v":2,"iter":600000,"iv":"5kkxmYwu4A3kYV90","ct":"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","wraps":[{"salt":"TGgg+NGPGpXPeu5lqz9MlQ==","iv":"w7ACalZTBBuwEZQN","wk":"isR7SqhSKCQgvBBFGQLVSnyDOqy/CMBgWN9a9cpTlGJZ5GrXwbvCSl9garbNs97v"}]};
 (function(){
-  var buf='',unlocked=false;
-  document.addEventListener('keydown',function(e){
-    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
-    if(e.key.length!==1) return;
-    buf+=e.key.toLowerCase();
-    if(buf.length>10) buf=buf.slice(-10);
-    if(buf.indexOf('/maga')!==-1){
-      buf='';
-      unlocked=!unlocked;
-      document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
-      document.getElementById('gated-content').style.display=unlocked?'block':'none';
-      if(unlocked&&!window._311loaded){ window._311loaded=true; init(); }
-    }
+  var LSK='tbc_g_311';
+  async function attempt(pw,remember){
+    var html=await tbcVaultOpen(TBC_ENC,pw);
+    if(html===null) return false;
+    var g=document.getElementById('gated-content');
+    g.innerHTML=html;
+    document.getElementById('paywall-gate').style.display='none';
+    g.style.display='block';
+    if(remember){try{localStorage.setItem(LSK,pw);}catch(e){}}
+    if(!window._311loaded){window._311loaded=true;init();}
+    return true;
+  }
+  window.tbcGateTry=function(){
+    var inp=document.getElementById('311-vpw');
+    attempt(inp.value,true).then(function(ok){
+      if(!ok){var e=document.getElementById('311-vpw-err');if(e)e.style.display='block';inp.value='';}
+    });
+    return false;
+  };
+  window.addEventListener('load',function(){
+    var saved=null;try{saved=localStorage.getItem(LSK);}catch(e){}
+    if(saved){attempt(saved,false);}
   });
 })();
 </script>

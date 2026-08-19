@@ -143,129 +143,38 @@ table.data td.num { text-align: right; font-family: Georgia, serif; }
   <h2>&#9878; TBC Intelligence</h2>
   <p>This accountability brief is available to TBC Intelligence members.</p>
   <a href="index.html" onclick="localStorage.setItem('tab','intelligence')" class="join-btn">Join - $2,500/year</a>
+
+<form onsubmit="return tbcGateTry()" style="margin-top:18px;"><input type="password" id="eco-vpw" placeholder="Member passphrase" style="font-family:Georgia,serif;font-size:13px;padding:6px 8px;border:1px solid #ccc;width:200px;"><button type="submit" style="font-family:Georgia,serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:7px 14px;margin-left:6px;cursor:pointer;">Enter</button><p id="eco-vpw-err" style="font-size:12px;color:#c00;display:none;margin-top:8px;">Incorrect passphrase.</p></form>
 </div>
 
-<div id="gated-content">
+<div id="gated-content"></div>
 
-<h2>Overview</h2>
-<p>Washington Department of Ecology is the state's primary environmental regulatory agency. It issues permits, enforces environmental law, and administers the Climate Commitment Act cap-and-invest program. It is both the enforcer of Seattle's combined sewer overflow consent decree and the distributor of billions in climate auction revenue. It is failing at both jobs.</p>
-
-<h2>The CSO Enforcement Joke</h2>
-<p>Seattle's combined sewer system dumps raw sewage into Puget Sound approximately 87 times per year. Ecology's response has been to issue fines ranging from $35,000 to $71,000 per year. That works out to roughly $402 per overflow event. For context, SPU's Ship Canal Water Quality Project costs $263 million per mile to tunnel. The fines are not a deterrent. They are a rounding error on a rounding error.</p>
-<p>Meanwhile, Ecology and EPA extended the consent decree deadline from 2030 to 2037 because Seattle could not hit its targets. The city got a seven-year extension and a slap on the wrist. No one was held accountable. No one was fired. The raw sewage kept flowing.</p>
-
-<div class="stat-block">
-<p><strong>~87 overflow events per year</strong> into Puget Sound, Elliott Bay, the Duwamish, and Lake Union</p>
-<p><strong>$402 per overflow</strong> in effective penalty cost</p>
-<p><strong>7-year extension</strong> granted on the consent decree (2030 to 2037)</p>
-</div>
-
-<p>Recent penalties tell the story clearly:</p>
-
-<table class="data">
-<tr><th>Year</th><th>Jurisdiction</th><th>Penalty</th><th>Details</th></tr>
-<tr><td>2024</td><td>Seattle</td><td class="num">$35,000</td><td>Sanitary sewer overflows + dry weather overflow</td></tr>
-<tr><td>2024</td><td>King County</td><td class="num">$52,500</td><td>Combined sewer overflow violations</td></tr>
-<tr><td>2023</td><td>Seattle</td><td class="num">$71,000</td><td>$50,000 for 20 sanitary overflows, $21,000 for 7 wet weather overflows</td></tr>
-</table>
-
-<p>The consent decree was modified in May 2025, signed by the federal court, pushing the compliance timeline to 2037. Green stormwater infrastructure alternatives have demonstrated real results at a fraction of the tunnel cost. Thornton Creek's natural channel restoration costs $21,600 per acre. Barton Street's rain gardens filter stormwater at $0.04 per gallon over their 30-year lifespan. But Ecology has not required SPU to evaluate green infrastructure as a primary compliance pathway. The agency defaults to concrete.</p>
-
-<h2>The Climate Commitment Act Reporting Disaster</h2>
-<p>The Climate Commitment Act is Washington's cap-and-invest program, launched in January 2023. It generates roughly $2.1 billion per biennium in auction revenue, distributed to 35 state agencies across approximately 3,600 projects. The program was supposed to demonstrate that Washington could lead on climate. Instead, the reporting has been a catastrophe.</p>
-
-<p>The most egregious failure came from the Department of Commerce, which claimed 7.5 million metric tons of CO2 reductions from just eight home electrification rebate projects. The actual number, after correction, was 78,000 tons. That is a 96x error. Commerce called it a "data entry error," as though accidentally adding four extra digits to a climate claim is the kind of mistake that just happens.</p>
-
-<div class="stat-block">
-<p><strong>7.5 million metric tons</strong> of CO2 reductions claimed by Commerce</p>
-<p><strong>78,000 metric tons</strong> after correction (a 96x overstatement)</p>
-<p><strong>86%</strong> of total CCA CO2 reductions claimed across the program are probably fabricated, per Washington Policy Center analysis</p>
-</div>
-
-<p>The problems go well beyond one agency's spreadsheet. Washington Policy Center's analysis found that 86% of the total CO2 reductions claimed across the entire CCA program are probably fake. Ecology has been reviewing all 3,600 projects by 37 agencies, but the results of that review are not yet public. A lawsuit was filed against Ecology and Commerce for failing to release timely greenhouse gas emissions data. The Joint Legislative Audit and Review Committee's comprehensive review is not due until December 2029, six full years after the program started spending money.</p>
-
-<p>Perhaps the most damning detail: Ecology was still "developing" the CCA reporting requirements for the 35 receiving agencies well into the program's operation. The money was already flowing. Billions distributed before the rules for tracking them were written.</p>
-
-<h2>$2.1 Billion With No Guardrails</h2>
-<p>The CCA directs auction revenue to 35 state agencies. Ecology is responsible for ensuring those agencies report their spending and outcomes. As of late 2023, Ecology was still developing those reporting requirements. This is the same pattern seen at King County DCHS, which awarded $1.8 billion in grants while reviewing only 1% of grantees' financial records. The state is doing at scale what the county does locally: distribute billions first, build accountability later.</p>
-
-<p>When the reporting frameworks do not exist, the agencies fill the void with whatever numbers make them look good. Commerce claimed 7.5 million tons. Nobody at Ecology caught it. External analysts at Washington Policy Center caught it. That is the system working backwards. The watchdog is asleep. The people being watched are grading their own homework. And the money keeps moving.</p>
-
-<h2>The Enforcement Gap</h2>
-<p>Ecology is supposed to be the environmental cop. It writes the permits, sets the standards, and carries the authority to penalize violators. In practice, none of that authority translates into consequences.</p>
-
-<p>On CSO enforcement, the fines are trivial. A $35,000 penalty against a utility with a $1.3 billion annual budget is not enforcement. It is theater. On CCA reporting, the data submitted by agencies was fabricated or wrong by orders of magnitude, and Ecology did not catch it. On permit compliance, the agency extended Seattle's consent decree deadline by seven years rather than enforce the original timeline.</p>
-
-<p>The pattern is consistent across every domain Ecology touches: issue the rules, fail to enforce them, and extend the timelines when deadlines are missed. The agency functions as a paperwork generator, not a regulator.</p>
-
-<h2>Public Records Requests</h2>
-<p>TBC has identified 8 PRA targets for the Department of Ecology, spanning both CSO enforcement and CCA reporting failures.</p>
-
-<p><strong>CSO Enforcement (5 requests):</strong></p>
-<ul class="pra-list">
-<li>All CSO violation penalties assessed against Seattle and King County, 2020 through 2025, including amounts, descriptions, and compliance status</li>
-<li>All correspondence between Ecology and SPU regarding the consent decree modification from 2030 to 2037</li>
-<li>CSO monitoring data submitted by Seattle and King County for all outfall locations, 2020 through 2025</li>
-<li>All WIFIA loan compliance reviews and material adverse change notifications for the Ship Canal Water Quality Project</li>
-<li>Ecology's assessment of green stormwater infrastructure versus the tunnel approach, including any cost-benefit analyses submitted or prepared</li>
-</ul>
-
-<p><strong>CCA Reporting (3 requests):</strong></p>
-<ul class="pra-list">
-<li>All CCA fund reporting data submitted by the 37 receiving agencies, 2023 through 2025, including original submissions and all corrections</li>
-<li>Internal communications regarding the 7.5 million to 78,000 ton "data entry error," including when Ecology became aware of the discrepancy</li>
-<li>Status of CCA reporting requirements development for all 35 agencies, including draft frameworks and implementation timelines</li>
-</ul>
-
-<h2>Key Questions</h2>
-<p>1. Why are CSO fines set at levels ($402 per overflow) that provide no financial incentive for compliance?</p>
-<p>2. How did a 96x error in climate reporting go undetected until external analysts flagged it?</p>
-<p>3. What percentage of the $2.1 billion in CCA auction revenue can Ecology verify was spent as intended?</p>
-<p>4. Why was the consent decree extended to 2037 instead of enforcing the 2030 deadline?</p>
-<p>5. What is Ecology's position on requiring green infrastructure as a primary compliance pathway for CSO reduction?</p>
-
-<div class="related">
-  <div class="related-title">Related Briefs</div>
-  <a href="cso.html">CSO Outfall Map</a>
-  <a href="epa.html">EPA Consent Decree</a>
-  <a href="kcrha.html">KCRHA</a>
-  <a href="spd.html">SPD World's Fair Standard</a>
-</div>
-
-<div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
-  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
-  <p style="font-size:14px;margin:0 0 12px;">Want to support this operation, contribute expertise, or join as a member? Tell us who you are and how you want to help.</p>
-  <form onsubmit="return sendEco()" style="margin:0;">
-    <input type="text" id="eco-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="eco-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
-    <select id="eco-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
-      <option value="Public Supporter">I want to support this publicly</option>
-      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
-      <option value="Expert/Contributor">I have expertise to contribute</option>
-      <option value="Media">Media inquiry</option>
-      <option value="Other">Other</option>
-    </select><br>
-    <textarea id="eco-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
-    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
-    <span id="eco-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
-  </form>
-</div>
-
-</div>
-
+<script src="/tbc-vault.js"></script>
 <script>
+var TBC_ENC={"v":2,"iter":600000,"iv":"ROSOp92ms+eG4nxD","ct":"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","wraps":[{"salt":"EsV7pLXMKZZTjbpDn05ePQ==","iv":"dayH8ve+z++WwRcs","wk":"R95vxF2T33gZ2PDqIByuGyNg/ueyuq06MMT3zZUnnkad1H5TA94pNRh8w93cLGvi"}]};
 (function(){
-  var buf='',unlocked=false;
-  document.addEventListener('keydown',function(e){
-    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
-    if(e.key.length!==1) return;
-    buf+=e.key.toLowerCase();
-    if(buf.length>10) buf=buf.slice(-10);
-    if(buf.indexOf('/maga')!==-1){
-      buf='';
-      unlocked=!unlocked;
-      document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
-      document.getElementById('gated-content').style.display=unlocked?'block':'none';
-    }
+  var LSK='tbc_g_eco';
+  async function attempt(pw,remember){
+    var html=await tbcVaultOpen(TBC_ENC,pw);
+    if(html===null) return false;
+    var g=document.getElementById('gated-content');
+    g.innerHTML=html;
+    document.getElementById('paywall-gate').style.display='none';
+    g.style.display='block';
+    if(remember){try{localStorage.setItem(LSK,pw);}catch(e){}}
+    
+    return true;
+  }
+  window.tbcGateTry=function(){
+    var inp=document.getElementById('eco-vpw');
+    attempt(inp.value,true).then(function(ok){
+      if(!ok){var e=document.getElementById('eco-vpw-err');if(e)e.style.display='block';inp.value='';}
+    });
+    return false;
+  };
+  window.addEventListener('load',function(){
+    var saved=null;try{saved=localStorage.getItem(LSK);}catch(e){}
+    if(saved){attempt(saved,false);}
   });
 })();
 function sendEco(){

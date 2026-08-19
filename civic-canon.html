@@ -97,27 +97,11 @@
     <p style="font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--muted);font-size:17px;max-width:640px;margin:0 auto 22px;">202 American civic landmarks, from the Early Republic to the present. The proof, building by building, that we already know how to build.</p>
     <p style="font-size:13px;color:#666;max-width:560px;margin:0 auto 26px;line-height:1.6;">The full visual library is open to TBC Intelligence members. Filterable by era, city, and style, with a full-screen plate for every building.</p>
     <a href="membership.html" style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--navy);padding:11px 30px;text-decoration:none;border-radius:3px;">Join Intelligence</a>
-  </div>
+  
+<form onsubmit="return tbcGateTry()" style="margin-top:18px;"><input type="password" id="canon-vpw" placeholder="Member passphrase" style="font-family:Georgia,serif;font-size:13px;padding:6px 8px;border:1px solid #ccc;width:200px;"><button type="submit" style="font-family:Georgia,serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:7px 14px;margin-left:6px;cursor:pointer;">Enter</button><p id="canon-vpw-err" style="font-size:12px;color:#c00;display:none;margin-top:8px;">Incorrect passphrase.</p></form>
+</div>
 
-  <div id="gated-content" style="display:none;">
-
-  <div class="hero">
-    <h1 class="title">The American Civic Canon</h1>
-    <div class="sub">A working library of the buildings, halls, fairs, and monuments that prove this country already knows how to build greatly. We are not starting from nothing. We are picking up where we left off.</div>
-    <div class="stat">202 landmarks &nbsp;&middot;&nbsp; 40 cities &nbsp;&middot;&nbsp; 1836 to 2021</div>
-  </div>
-
-  <div class="controls">
-    <div class="eras"><button class="f-era active" data-era="">All <span>202</span></button><button class="f-era" data-era="Early Republic">Early Republic <span>3</span></button><button class="f-era" data-era="Gilded Age">Gilded Age <span>23</span></button><button class="f-era" data-era="City Beautiful">City Beautiful <span>122</span></button><button class="f-era" data-era="Machine Age">Machine Age <span>53</span></button><button class="f-era" data-era="Modern & Revival">Modern & Revival <span>1</span></button></div>
-    <div class="searchrow">
-      <input id="q" type="text" placeholder="Search a building, city, or style...">
-      <span id="count"></span>
-    </div>
-  </div>
-
-  <div class="grid" id="grid"></div>
-
-  </div><!-- end gated-content -->
+  <div id="gated-content" style="display:none;"></div><!-- end gated-content -->
 
   <footer>
     Burnham Civic &middot; The American Civic Canon. A civic reference library of historical photographs and faithful reconstructions of American landmarks. The point of the collection is simple: we have the plans, the precedents, and the proof in our back pocket.
@@ -174,16 +158,32 @@ document.addEventListener('keydown', e=>{
 document.getElementById('lb').addEventListener('click', e=>{ if(e.target.id==='lb') closeLb(); });
 apply();
 </script>
+<script src="/tbc-vault.js"></script>
 <script>
-(function(){ var buf='', unlocked=false;
-  document.addEventListener('keydown', function(e){
-    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
-    if(e.key.length!==1) return;
-    buf+=e.key.toLowerCase(); if(buf.length>10) buf=buf.slice(-10);
-    if(buf.indexOf('/maga')!==-1){ buf=''; unlocked=!unlocked;
-      document.getElementById('paywall-gate').style.display=unlocked?'none':'block';
-      document.getElementById('gated-content').style.display=unlocked?'block':'none';
-    }
+var TBC_ENC={"v":2,"iter":600000,"iv":"LvXL6Isgj/bnWTcC","ct":"moMxB3tmdSSv9hrHLtWsswvQiUBFpNIPUBA+ZhYs6HIIRej3hDlKo0fF3j4hXjicu2kWnZKhtLSW1FCmjNxlQ/zo57ifcyGFP78OtQh9y7HB1Pxtq+9JAAT/LrhwgqSFbv4lYcfwpgcsS4ynzCWA4fEXofxH7/szsVn7RmVkvCrrzitwFROwYL91DbwdqUhQpgn69jPsR8tl9mKCFt5BCWTj7eNvozINTzOO5+MIWsA8/IMpd/3Qz+bogBvcHjQ/pf2/s83HAlPjQkDBfisZCDunN2bSVwy/y78StRytKgHVXRB+WfMyylMjRNjJ3ORFFb4qL6O6fxi6MLQoLFSv6E5Ea8K0F7jmMf4VMeGZ5uZsw4A8lWV55fLCOBgHCSQCg40iiuynjqL4Gr9gd1ASMI4WCkXRfJYDNMrBipKO2XCLUwmhJ+MMrMsTTtszsQ2MzltZHDzEDLYtWQf23h3B+oaUYyZwTdDiJHTMfS5NBFfb3ziOSPs64fmq68p6HIC22IBFGz/VNtbEhomuMFG9Qik7+xgLDAyN4FHpnHROUkBdQ3Qpj9InN9df07RZZY+wHVeh1HuEXHeFyw1FL8pOOHTvBx8ZxFsbl1yaD6PjxQPlWdCDeF/9gZCt8l6gqTAqx7adC7DisMBbMyeVnzsQOPwxAA79/SpDyHUdquSWN1XQmgF7GESTtZ2MGEI951e00LXykbA8/ZGct8x92UUUUHL8K0EuOrQitf2tHJVvz0JMfnpKEECSecFcu37RY1ZRNj6JBJUXdI42h8yxD0P71iNMsPsdcVVPz/l+Jha+HFTaMlWwcZ1ZvRTOKu3/tarNY4FPOtFh0+qVcBGXvAfR2IY7R2QiSbXXpIUKVOkAUxJS2DVMF7hWzlqyxbUcOyywyfVz9p+rf41poFYNYA118lHx0Q2j5jGgKUbw7NykCrUvt12Md049dHxv4AIpzLqmrn2+sZpyHa3zGRua2Eb8TxiOCuRCuwP9zYG87A890Ki4nhfBE2jQ9ZYAwJ/Ojw7tNGAP7BmpxsmnEPzIw2e1mAHbjFP7ue+CGRjZZNF5tNphk1lO59aSuSKCVe3031yR9k0GHn2h9lavmkiKlmfZJKWIPhSHt2SEVicZMOso7sn/pe/3rLH9Q38pa+mkSzPs3x1indEc0EnDSZR3gDfO1zcm3/ice+YUSItdQSEbFeTiAnfNmpslWRnAsq9qvbYHjPE24JrrkdGoJ1KKYM1vQkrlwn9RsBa0nsJ9Yu+7zg1XzeGVXFkOTup0hnYJCK/Zz5ERblMr3zuO8nCew/moE4Zlw/WJIDfbImzCop6z2wzb+TpI/vYgsR6egUOxie0/7piHEqKb9RR1TL1mZT7UPk7Llhr4VXQM4K37LYaC9s80xfRYJBAPU+1ruCrjG5Jud0KtcmrC+Zv23b2E4Tx3ircV5dRAz2eI0aK7NSUS7+sQMXo+Xmd03cuBXC1yRwtKxgGHb9/qPbxAupLMcyEIR4PLm1Y7VEWhQNOppBa/tfcmrXazvcGpAVkmKZjZXLUAUbBY0tJ6AxiSqlysP+TNAJS3h2CfeUY=","wraps":[{"salt":"l+9CR2jWV5tu7b9M5KIs/A==","iv":"RShYuLQvQs2q3sVS","wk":"6/9EhxcClUhZ32oZVvCyFuL2PqU3i9TJ0RBXHHfJ9uEuLOKrQGq3E+Tyezpwd4vk"}]};
+(function(){
+  var LSK='tbc_g_canon';
+  async function attempt(pw,remember){
+    var html=await tbcVaultOpen(TBC_ENC,pw);
+    if(html===null) return false;
+    var g=document.getElementById('gated-content');
+    g.innerHTML=html;
+    document.getElementById('paywall-gate').style.display='none';
+    g.style.display='block';
+    if(remember){try{localStorage.setItem(LSK,pw);}catch(e){}}
+    
+    return true;
+  }
+  window.tbcGateTry=function(){
+    var inp=document.getElementById('canon-vpw');
+    attempt(inp.value,true).then(function(ok){
+      if(!ok){var e=document.getElementById('canon-vpw-err');if(e)e.style.display='block';inp.value='';}
+    });
+    return false;
+  };
+  window.addEventListener('load',function(){
+    var saved=null;try{saved=localStorage.getItem(LSK);}catch(e){}
+    if(saved){attempt(saved,false);}
   });
 })();
 </script>

@@ -72,9 +72,9 @@ html, body { height:100%; font-family: Georgia, 'Times New Roman', serif; backgr
   <h1>47 SHIFTS</h1>
   <h2>Operations</h2>
   <p class="lead">Restricted access.</p>
-  <input type="password" id="pw-input" placeholder="Password">
+  <input type="password" id="pw-input" placeholder="Passphrase">
   <button id="pw-submit">Enter</button>
-  <p id="pw-error">Incorrect password.</p>
+  <p id="pw-error">Incorrect passphrase.</p>
 </div>
 
 <div id="app" style="display:none;">
@@ -89,45 +89,44 @@ html, body { height:100%; font-family: Georgia, 'Times New Roman', serif; backgr
   </div>
 </div>
 
+<script src="/tbc-vault.js"></script>
 <script>
 (function(){
-  var PASS='saveseattle';
-  var COOKIE='tbc_pw_auth';
-  var DAYS=30;
-  function getCookie(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
-  function setCookie(n,v,d){var x=new Date();x.setTime(x.getTime()+d*86400000);document.cookie=n+'='+v+';expires='+x.toUTCString()+';path=/';}
-
-  var mapLoaded=false;
-  function loadMap(){ if(!mapLoaded){ document.getElementById('frame-map').src='/_pw/map.html'; mapLoaded=true; } }
-
-  function showApp(){
-    document.getElementById('paywall-gate').style.display='none';
-    document.getElementById('app').style.display='block';
-    loadMap();
-  }
+  var LSK='tbc_v_47';
 
   function activate(name){
     var btns=document.querySelectorAll('.tab-btn');
     for(var i=0;i<btns.length;i++){ btns[i].classList.toggle('active', btns[i].dataset.tab===name); }
     var panes=document.querySelectorAll('.frame-wrap');
     for(var j=0;j<panes.length;j++){ panes[j].classList.toggle('hidden', panes[j].dataset.pane!==name); }
-    if(name==='map') loadMap();
   }
-
   document.querySelectorAll('.tab-btn').forEach(function(b){
     b.addEventListener('click', function(){ activate(b.dataset.tab); });
   });
-
-  if(getCookie(COOKIE)===btoa(PASS)){ showApp(); return; }
-
+  function showApp(html){
+    document.getElementById('paywall-gate').style.display='none';
+    document.getElementById('app').style.display='block';
+    var withBase=html.replace(/<head([^>]*)>/i,'<head$1><base href="/_pw/">');
+    document.getElementById('frame-map').srcdoc=withBase;
+  }
+  async function attempt(pw,remember){
+    var html=await tbcVaultFetch('/_pw/map.enc',pw);
+    if(html===null) return false;
+    if(remember){try{localStorage.setItem(LSK,pw);}catch(e){}}
+    showApp(html);
+    return true;
+  }
   function tryPw(){
     var inp=document.getElementById('pw-input');
-    if(inp.value===PASS){ setCookie(COOKIE,btoa(PASS),DAYS); showApp(); }
-    else { document.getElementById('pw-error').style.display='block'; inp.value=''; inp.focus(); }
+    attempt(inp.value,true).then(function(ok){
+      if(!ok){ document.getElementById('pw-error').style.display='block'; inp.value=''; inp.focus(); }
+    });
   }
   document.getElementById('pw-submit').addEventListener('click',tryPw);
   document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')tryPw();});
   setTimeout(function(){document.getElementById('pw-input').focus();},100);
+  var saved=null; try{saved=localStorage.getItem(LSK);}catch(e){}
+  if(saved){attempt(saved,false);}
 })();
 </script>
 
