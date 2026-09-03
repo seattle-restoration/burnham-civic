@@ -4,209 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Century Gate Lid - BURNHAM CIVIC</title>
-<meta name="description" content="Freeway Park was Seattle's Bicentennial lid over I-5. The Semiquincentennial deserves the rest of it: a lid from Madison to Denny built to a standard, with the Century Gate at the far end of Denny Way. Century Gate 1a is the arch. Century Gate 1b is the lid.">
+<meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231e3a5f'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' font-weight='700' fill='%23fbbf24' text-anchor='middle'>B</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
 <style>
-body {
-  font-family: Georgia, 'Times New Roman', serif;
-  max-width: 860px;
-  margin: 32px auto 32px 10%;
-  padding: 0 16px;
-  background: #fff;
-  color: #111;
-  font-size: 15px;
-  line-height: 1.6;
-  letter-spacing: -0.01em;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: #00c; }
-a:visited { color: #551a8b; }
-a:hover { color: #c00; }
-.header { display: flex; align-items: baseline; justify-content: space-between; }
-h1.site-title { font-size: 22px; letter-spacing: 2px; margin: 0; font-weight: 700; font-family: Georgia, serif; }
-.subscribe { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #1e3a5f; padding: 5px 14px; text-decoration: none; font-family: Georgia, serif; }
-.subscribe:hover { background: #2a4a73; }
-.subscribe:visited { color: #fff; }
-.nav { font-size: 12px; margin-bottom: 16px; letter-spacing: 0.5px; }
-.nav a { margin-right: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: #00c; text-decoration: none; }
-.nav a:hover { color: #c00; }
-.nav a.active { color: #111; text-decoration: underline; }
-hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
-.back { font-size: 12px; margin-bottom: 24px; display: block; }
-h1.article-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; font-weight: 400; line-height: 1.15; margin: 0 0 6px; color: #111; letter-spacing: -0.02em; }
-.article-subtitle { font-size: 17px; color: #555; font-style: italic; margin: 0 0 24px; letter-spacing: -0.01em; }
-h2 { font-size: 19px; font-weight: 700; margin: 36px 0 10px; color: #111; letter-spacing: -0.01em; }
-p { margin: 0 0 14px; color: #1a1a1a; }
-.stat-block { padding: 12px 16px; margin: 24px 0; background: #f7f7f5; }
-.stat-block p { margin: 4px 0; font-size: 15px; }
-.stat-block strong { font-size: 17px; }
-/* === DECO SYSTEM OVERRIDES (sitewide) === */
-.burnham-quote, .stat-block {
-  position: relative !important;
-  border-left: 0 !important;
-  padding-left: 24px !important;
-  padding-top: 18px !important;
-  padding-bottom: 18px !important;
-  background-image: linear-gradient(to bottom, transparent 18px, #1c1917 18px, #1c1917 calc(100% - 18px), transparent calc(100% - 18px)) !important;
-  background-size: 1px 100% !important;
-  background-position: 4px 0 !important;
-  background-repeat: no-repeat !important;
-}
-.burnham-quote::before, .burnham-quote::after,
-.stat-block::before, .stat-block::after {
-  content: ""; position: absolute;
-  left: 0; width: 9px; height: 9px;
-  background: #1c1917; transform: rotate(45deg);
-}
-.burnham-quote::before, .stat-block::before { top: 9px; }
-.burnham-quote::after, .stat-block::after { bottom: 9px; }
-/* === MEMBERS GATE === */
-.lockpanel { background:#1e3a5f; padding:20px 24px; margin:32px 0; color:#cbd5e1; }
-.lockpanel .mtag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#fbbf24; color:#1e3a5f; padding:2px 8px; margin-bottom:10px; }
-.lockpanel h3 { font-family:Georgia,serif; font-size:16px; color:#fff; margin:0 0 8px; font-weight:700; }
-.lockpanel ul { margin:0 0 14px 18px; padding:0; font-size:13px; }
-.lockpanel li { margin:3px 0; }
-.lockpanel input[type=password] { font-family:Georgia,serif; font-size:13px; padding:5px 8px; border:1px solid #475569; background:#16304f; color:#fff; width:180px; }
-.lockpanel button { font-family:Georgia,serif; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#1e3a5f; background:#fbbf24; border:none; padding:6px 14px; margin-left:6px; cursor:pointer; }
-.lockpanel .sub-link { font-size:12px; margin-left:12px; }
-.lockpanel .sub-link a { color:#fbbf24; }
-.lockpanel .pw-err { font-size:12px; color:#fca5a5; display:none; margin-top:8px; }
-.members-content { display:none; }
-body.tbc-member .members-content { display:block; }
-body.tbc-member .lockpanel { display:none; }
-.members-content .mbadge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; background:#1e3a5f; color:#fbbf24; padding:2px 8px; margin:24px 0 0; }
+html,body{height:100%;margin:0;font-family:Georgia,'Times New Roman',serif;background:#111;color:#e5e5e5;}
+#gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:24px;}
+#gate h1{font-size:20px;letter-spacing:2px;color:#fbbf24;margin:0 0 6px;text-align:center;}
+#gate h2{font-size:15px;color:#e5e5e5;margin:0 0 20px;font-weight:400;text-align:center;}
+#gate input{font-family:Georgia,serif;font-size:14px;padding:7px 10px;border:1px solid #475569;background:#16304f;color:#fff;width:230px;}
+#gate button{font-family:Georgia,serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#1e3a5f;background:#fbbf24;border:none;padding:8px 16px;margin-left:6px;cursor:pointer;}
+#gate .err{font-size:12px;color:#fca5a5;display:none;margin-top:10px;}
+#gate a{color:#fbbf24;font-size:12px;margin-top:18px;}
 </style>
-<!-- SEO -->
-<link rel="canonical" href="https://burnhamcivic.org/i5-lid.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Burnham Civic">
-<meta property="og:title" content="The Century Gate Lid - BURNHAM CIVIC">
-<meta property="og:description" content="Freeway Park was Seattle's Bicentennial lid over I-5. The Semiquincentennial deserves the rest of it: a lid from Madison to Denny built to a standard, with the Century Gate at the far end of Denny Way. Century Gate 1a is the arch. Century Gate 1b is the lid.">
-<meta property="og:url" content="https://burnhamcivic.org/i5-lid.html">
-<meta property="og:image" content="https://burnhamcivic.org/og-image.png?v=2">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@TBCNewsAction">
-<meta name="twitter:title" content="The Century Gate Lid - BURNHAM CIVIC">
-<meta name="twitter:description" content="Freeway Park was Seattle's Bicentennial lid over I-5. The Semiquincentennial deserves the rest of it: a lid from Madison to Denny built to a standard, with the Century Gate at the far end of Denny Way. Century Gate 1a is the arch. Century Gate 1b is the lid.">
-<meta name="twitter:image" content="https://burnhamcivic.org/og-image.png?v=2">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJC34M3909"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WJC34M3909');</script>
 </head>
 <body>
-
-<div class="header">
-  <h1 class="site-title">BURNHAM CIVIC</h1>
-  <a href="membership.html" class="subscribe">Subscribe</a>
+<div id="gate">
+  <h1>BURNHAM CIVIC</h1>
+  <h2>The Century Gate Lid &middot; Members</h2>
+  <div><input type="password" id="pw-input" placeholder="Passphrase"><button id="pw-submit">Enter</button></div>
+  <p class="err" id="pw-error">Incorrect passphrase.</p>
+  <a href="/membership.html">Become a member &rarr;</a>
 </div>
-
-<div class="nav">
-  <a href="index.html" onclick="localStorage.setItem('tab','seattle')">Seattle</a>
-  <a href="la/">LA</a>
-  <a href="index.html" onclick="localStorage.setItem('tab','usa')">USA</a>
-  <a href="index.html" onclick="localStorage.setItem('tab','international')">International</a>
-  <a href="index.html" onclick="localStorage.setItem('tab','news')">News</a>
-  <a href="membership.html">Intelligence</a>
-  <a href="index.html" onclick="localStorage.setItem('tab','contact')">Contact</a>
-</div>
-
-<hr>
-
-<a href="civic-works/" class="back">&larr; Back to The Civic Works Series</a>
-
-<h1 class="article-title">The Century Gate Lid</h1>
-<div class="article-subtitle">Freeway Park was Seattle's Bicentennial project. The lid over I-5 downtown is the Semiquincentennial's, and it is the second half of the Century Gate.</div>
-
-<p>On July 4, 1976, Seattle opened Freeway Park. It was the first park in America built on top of a freeway, 4.9 acres of Lawrence Halprin's concrete canyons and waterfalls poured over Interstate 5 between Seneca and University streets. It cost $9.5 million, and $4 million of that came from the Forward Thrust bonds voters had approved in 1968. The city chose the nation's two hundredth birthday to open it, and for fifty years it has been the only serious answer Seattle ever gave to the trench it dug through its own downtown.</p>
-
-<p>The trench came first. The freeway opened through downtown in 1967 and cut First Hill and Capitol Hill off from the business district with a ditch up to ten lanes wide. Everything east of it has been "across the freeway" ever since. The convention center put a second lid on between 1985 and 1988, and its expansion added a third. Then nothing for thirty years, while Mercer Island got the largest freeway lid in the country and State Route 520 got three.</p>
-
-<h2>The Study</h2>
-
-<p>In 2020 the city and WSDOT finished a feasibility study of a lid from Madison Street to Denny Way. It answered the engineering question. The freeway can be covered, and the cover can carry a park, streets, and buildings.</p>
-
-<div class="stat-block">
-  <p><strong>17 acres</strong> of study area, Madison Street to Denny Way</p>
-  <p><strong>$966 million</strong> for the minimum lid, a park and streets and nothing else</p>
-  <p><strong>$1.3 to 1.5 billion</strong> for the hybrid case, park plus development on the edges</p>
-  <p><strong>$2.3 to 2.5 billion</strong> for the full build</p>
-  <p><strong>9.8 acres</strong> of new park in the largest case, a downtown Grant Park</p>
-  <p><strong>4,500 homes</strong> feasible on the lid's edges, with towers from 200 to 680 feet where the structure can carry them</p>
-</div>
-
-<p>A volunteer coalition called Lid I-5 spent more than a decade getting the city to that study. The Seattle Parks Foundation sponsors it, Allied Arts partners with it, and the City Council has passed a resolution in support. In March 2024 the campaign won a $2 million federal Reconnecting Communities grant for the city, with $200,000 more from the state. In January 2025 the city authorized $2.2 million for the next phase, which the Office of Planning and Community Development calls Community-Building and Planning Studies. The first public events are scheduled for late 2026, with the shared vision due by 2028.</p>
-
-<h2>What Is Missing</h2>
-
-<p>The program on every page of the study is parks, housing, and civic facilities. Read it end to end and you will not find a sentence about what the lid should look like, what it should be built of, or what should stand at the place where the freeway arrives downtown. It is an engineering feasibility exercise and a land-use pro forma. That is not a criticism of the people who carried it this far. It is the gap Burnham Civic exists to fill, and the 2026 visioning process is the moment to fill it.</p>
-
-<h2>The Project</h2>
-
-<p>The Century Gate is Seattle's arch. It is a classical gate for the American 250th at Seattle Center, built in the <a href="material-standard.html">material standard</a> to stand from the fairgrounds of 1962 to their centennial in 2062. That is Century Gate 1a. The lid over I-5 is Century Gate 1b.</p>
-
-<p>The two are a mile apart on the same street. Denny Way runs from the fairgrounds east to the freeway, and the Denny Way overpass is the north end of the study area. One project puts the gate at the west end of that mile and the other closes the trench at the east end. Built together, they turn Denny Way into the civic axis Seattle has never had, from the Space Needle to a park over the freeway.</p>
-
-<p>Century Gate 1b adds four things the study does not have.</p>
-
-<p>The lid is built to a standard, not just a load rating. Stone-faced parapets, balustrades, real lamp standards, and paving that will still look right in 2062. Halprin's park is kept and extended, not replaced.</p>
-
-<p>The Denny end is a gateway. Where the freeway passes under the lid from the north, the portals are designed as portals, with faces, the way the great tunnel mouths of the last century have faces, instead of as culvert openings.</p>
-
-<p>The park is laid out on axis. A downtown park of nearly ten acres deserves a plan in the Olmsted and Burnham sense, with a center, edges, and a reason to be shaped the way it is.</p>
-
-<p>The buildings on the edges follow the material standard. Four thousand homes over a freeway can be a row of glass boxes or the most handsome new street in the city. The choice is made at the design standard, years before the first permit.</p>
-
-<h2>The Precedents</h2>
-
-<p>Dallas built Klyde Warren Park over Woodall Rodgers Freeway in 2012, 5.2 acres for about $110 million, and it remade the district around it. Boston tore down the Central Artery and put the Rose Kennedy Greenway in its place. Mercer Island's Aubrey Davis Park, 12.7 acres over I-90, is the largest freeway lid in the country and sits ten minutes from downtown Seattle. Seattle already has the original. Freeway Park turns fifty this year.</p>
-
-<h2>What TBC Is Doing</h2>
-
-<p>We are writing the design chapter the study does not have, so that when the city's 2026 events ask what people want on the lid, there is a drawn and costed answer on the table. We are taking it to the Lid I-5 coalition and the Seattle Parks Foundation as the missing chapter of their plan, not a competing one. And we are folding it into the <a href="century-gate.html">Century Gate</a> design standard, so the arch and the lid are read as one project with two parts.</p>
-
-<p>Seattle built Freeway Park for the Bicentennial with a $4 million bond and a landscape architect who did not ask permission to be ambitious. The Semiquincentennial deserves the rest of it.</p>
-
-<div style="border:1px solid #ccc;padding:16px 20px;margin:32px 0;">
-  <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px;">Get Involved</div>
-  <p style="font-size:14px;margin:0 0 12px;">Want to support this project, contribute design or engineering expertise, or join as a member? Tell us who you are and how you want to help.</p>
-  <form onsubmit="return sendInquiry()" style="margin:0;">
-    <input type="text" id="ms-name" placeholder="Name" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;margin-right:2%;"><input type="email" id="ms-email" placeholder="Email" required style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:48%;"><br>
-    <select id="ms-type" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;margin-top:8px;">
-      <option value="Public Supporter">I want to support this publicly</option>
-      <option value="Member Inquiry">I'm interested in TBC Intelligence membership</option>
-      <option value="Expert/Contributor">I have expertise to contribute</option>
-      <option value="Media">Media inquiry</option>
-      <option value="Other">Other</option>
-    </select><br>
-    <textarea id="ms-msg" placeholder="Message (optional)" style="font-family:Georgia,serif;font-size:14px;padding:6px 8px;border:1px solid #ccc;width:100%;height:80px;margin-top:8px;resize:vertical;"></textarea><br>
-    <button type="submit" style="font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#1e3a5f;border:none;padding:6px 20px;margin-top:8px;cursor:pointer;">Send</button>
-    <span id="ms-sent" style="font-size:13px;color:#2d5016;margin-left:12px;display:none;">Sent. We'll be in touch.</span>
-  </form>
-</div>
-
-<h2>Related</h2>
-<p><a href="century-gate.html">The Century Gate</a>, the design standard and the arch, Century Gate 1a.<br>
-<a href="material-standard.html">The Standard Seattle Forgot</a>, the materials rule the lid should be built to.<br>
-<a href="civic-works/">The Civic Works Series</a>, the projects we intend to see built.</p>
-
+<script src="/tbc-vault.js"></script>
 <script>
-function sendInquiry(){
-  var n=document.getElementById('ms-name').value;
-  var e=document.getElementById('ms-email').value;
-  var t=document.getElementById('ms-type').value;
-  var m=document.getElementById('ms-msg').value;
-  var subj='[Century Gate Lid] '+t+' - '+n;
-  var body='From: '+n+' ('+e+')\nType: '+t+'\nPage: The Century Gate Lid\n\n'+(m||'No message.');
-  var a=document.createElement('a');
-  a.href='mai'+'lto:'+'oper'+'ations@burn'+'hamcivic'+'.org'
-    +'?subject='+encodeURIComponent(subj)
-    +'&body='+encodeURIComponent(body);
-  a.click();
-  document.getElementById('ms-sent').style.display='inline';
-  return false;
-}
+var TBC_ENC={"v":2,"iter":600000,"iv":"bUKAap31Gc9QwhBB","ct":"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","wraps":[{"salt":"/LwK6vZTkembcV5fp5nBiQ==","iv":"gQo+GuNIy8hsnKnl","wk":"nPlrd86bXGA3xI0Kh5cLWf4+CYbo4o4jEwSuahjkc6KuMVVibh+jhSXE3LkL9VxR"},{"salt":"SAC3WWpaZTDJBwMdCAU/4A==","iv":"zPyMMBfTAlWXwmI1","wk":"R+gfQ8IjNyfRZ5Zzvf2RlQKuy2Sx+Pg7zMVbWgkh3JYM50gOXpQFq3SMI4BrhuaI"}]};
+(function(){
+  var LSK='tbc_v_i5lid';
+  function tryPw(){
+    var inp=document.getElementById('pw-input');
+    tbcPageUnlock(TBC_ENC,inp.value,LSK).then(function(ok){
+      if(!ok){ document.getElementById('pw-error').style.display='block'; inp.value=''; inp.focus(); }
+    });
+  }
+  document.getElementById('pw-submit').addEventListener('click',tryPw);
+  document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')tryPw();});
+  setTimeout(function(){document.getElementById('pw-input').focus();},100);
+  var saved=null; try{saved=localStorage.getItem(LSK);}catch(e){}
+  if(saved){tbcPageUnlock(TBC_ENC,saved,LSK);}
+})();
 </script>
-
 </body>
 </html>
